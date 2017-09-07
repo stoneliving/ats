@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>2.0速览</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main.css">
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+.guiding{position:fixed;width:1200px;height:600px;margin:-300px 0 0 -600px;top:50%;left:50%;z-index: 300;text-align: center;}
+.bmask{background-color:rgba(0,0,0,0.6);position:fixed;width:100%;height:100%;left:0;top:0;z-index:200;}
+.nextStep {position:absolute;background-color:#2196f3;color:#fff;border-radius:2px;cursor:pointer;padding:4px 0 4px 8px;}
+.nextStep:hover{background-color:#1f85d6;}
+.nextStep span{font-family:yotujob;font-size:24px;}
+.skipGuide{font-family:yotujob;position:fixed;font-size:48px;color:#fff;background-color:red;right:24px;top:24px;z-index:300;border-radius:2px;cursor:pointer;}
+.skipGuide:hover{color:red;background-color:rgba(0,0,0,0);}
+.finishGuide{position:absolute;color:#fff;background-color:#2196f3;bottom:54px;right:160px;font-size:18px;padding:2px 2px 2px 8px; border-radius:2px}
+</style>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+</head>
+
+<body style="background-color:#5e6060">
+<header class="header" style="background-color:#001223">
+</header>
+<div class="content z150" style="margin-top:0">
+  <img id="step0" src="images/guiding/step0.png" alt="" class="">
+  <img id="step1" src="images/guiding/step1.png" alt="" class="hidden po-a t0">
+  <img id="step2" src="images/guiding/step2.png" alt="" class="hidden">
+  <img id="step3" src="images/guiding/step3.png" alt="" class="hidden">
+  <img id="step4" src="images/guiding/step4.png" alt="" class="hidden">
+  <img id="step5" src="images/guiding/step5.png" alt="" class="hidden">
+  <div id="toStep2" class="nextStep hidden" style="top:390px;left:705px">下一步<span></span></div>
+  <div id="toStep3" class="nextStep hidden"  style="top:680px;left:1100px">下一步<span></span></div>
+  <div id="toStep4" class="nextStep hidden"  style="top:630px;left:1100px">下一步<span></span></div>
+  <div id="toStep5" class="nextStep hidden"  style="top:300px;left:760px">下一步<span></span></div>
+  <div id="toStep6" class="nextStep hidden"  style="top:290px;left:860px">下一步<span></span></div>
+</div>
+<div class="guiding card5-nbg">
+  <img src="images/guiding/gd1.png" alt="">
+  <div id="toStep1" class="po-a ic f48 cw bg-b cu-po ho-1f bdrs2" style="right:200px;top:326px;"></div>
+</div>
+<div id="step6" class="guiding card5-nbg hidden">
+  <img src="images/guiding/step6.png" alt="">
+  <a href="Overview.html" id="finalStep" class="a finishGuide ho-1f">进入2.0系统 <span class="ic f32"></span></a>
+</div>
+<a href="Overview.html" class="a skipGuide" title="跳过引导页"></a>
+</body>
+<script>
+$('#toStep1').click(function(e) {
+    $(this).parent().hide();
+	$('#step1,#toStep2').show();
+	$('header').css('background-color','#003056');
+});
+$('#toStep2').click(function(e) {
+    $('#step0,#step1,#toStep2').hide();
+	$('header').css('background-color','#001223');
+	$('#step2,#toStep3').show();
+});
+$('#toStep3').click(function(e) {
+    $('#step2,#toStep3').hide();
+	$('#step3,#toStep4').show();
+});
+$('#toStep4').click(function(e) {
+    $('#step3,#toStep4').hide();
+	$('#step4,#toStep5').show();
+});
+$('#toStep5').click(function(e) {
+    $('#step4,#toStep5').hide();
+	$('#step5,#toStep6').show();
+});
+$('#toStep6').click(function(e) {
+    $('#step5,#toStep6').hide();
+	$('#step6,#finalStep,#step0').show();
+});
+</script>
+</html>

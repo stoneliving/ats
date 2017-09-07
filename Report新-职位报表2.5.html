@@ -1,0 +1,584 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>职位报表</title>
+  <link rel="shortcut icon" href="images/logo_favicon.png">
+  <link rel="stylesheet" href="css/main-New.css">
+  <link rel="stylesheet" href="css/select2.css">
+  <link rel="stylesheet" href="css/cityselect.css">
+  <link rel="stylesheet" href="css/datepicker.css">
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/datepicker.js"></script>
+  <script src="js/cityselect.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/jquery-scrolltofixed-min.js"></script>
+  <script src="js/highcharts.js"></script>
+</head>
+<style>
+</style>
+
+<body class="bg-ec">
+  <header class="header"></header>
+  <div class="content card1" style="padding-bottom:0;">
+    <div class="p24">
+      <div class="bold f18 c3e fl"><span class="ic f24 fw-n mr4"></span>职位报表</div>
+      <div class="fl mt4 ml32">
+        <div class="fl po-r ho-sh2 trans ml16 bd1-c bdrs2 mt-6"> <span class="ic f24 c-c ml4"></span>
+          <input type="text" placeholder="输入公司名或职位名进行搜索" id="select-company1" autofocus name="companName" class="f14 h32 bdrs2 pl4 w240" style="border:none;" autocomplete="off">
+        </div>
+        <div class="clear"></div>
+      </div>
+      <span class="f14 c2 ho-cb cu-po fr mt1" id="excelreport"><span class="ic f20 pr4"></span>导出Excel</span>
+    </div>
+    <div class="f14 mt16">
+      <div class="c2 p816 bg-f2"> <span class="ic f24"></span>筛选
+        <span class="filter-tag d-ib a ml8 cu-po bd1-c pl8">立项时间：<span class="filter-value">不限</span><span class="ic f20"></span>
+        <div id="timeType" class="note hidden c1" style="display: block;">
+          <div class="p4-0">
+            <input type="radio" value="day" name="cre-time" id="day" data-value="当天"><label for="day">当天</label>&nbsp;&nbsp;
+            <input type="radio" value="preday" name="cre-time" id="preday" data-value="昨天"><label for="preday">昨天</label>
+          </div>
+          <div class="p4-0 bdt1-d">
+            <input type="radio" value="week" name="cre-time" id="week" data-value="本周" checked=""><label for="week">本周</label>&nbsp;&nbsp;
+            <input type="radio" value="preweek" name="cre-time" id="preweek" data-value="上周"><label for="preweek">上周</label></div>
+          <div class="p4-0 bdt1-d">
+            <input type="radio" value="month" name="cre-time" id="month" data-value="本月"><label for="month">本月</label>&nbsp;&nbsp;
+            <input type="radio" value="premonth" name="cre-time" id="premonth" data-value="上月"><label for="premonth">上月</label>
+          </div>
+          <div class="p4-0 bdt1-d"><input type="radio" value="custom" name="cre-time" id="custom"><label for="custom">自定义</label></div>
+          <div class="custom hidden">
+            <div class="ml16">
+              <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="start">
+            </div>
+            <div class="ta-c ml16">~</div>
+            <div class="ml16">
+              <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="end">
+            </div>
+          </div>
+          <div class="mt16 mb8">
+            <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">确认</span>
+            <span class="filter-cancel fr p4-8 ho-u">取消</span>
+          </div>
+        </div>
+        </span>
+        <span class="filter-tag d-ib a ml8 cu-po bd1-c pl8">职位状态：<span class="filter-value ">全部</span><span class="ic f20"></span></span>
+        <span class="filter-tag d-ib a ml8 cu-po bd1-c pl8">跟进顾问：<span class="filter-value">全部</span><span class="ic f20"></span></span>
+        <span class="filter-tag d-ib a ml8 cu-po bd1-c pl8">对接人：<span class="filter-value">全部</span><span class="ic f20"></span></span>
+        <span class="filter-tag d-ib a ml8 cu-po bd1-c pl8">BD：<span class="filter-value">全部</span><span class="ic f20"></span></span>
+        <span class="filter-tag d-ib a ml8 cu-po bd1-c pl8">立项团队：<span class="filter-value">全部</span><span class="ic f20"></span></span>
+        <span class="d-ib mt4 ml8">共<span class="bold p0-4 c1">23</span>个职位</span>
+      </div>
+    </div>
+    <div id="div-header" class="stickToTop c2 ov-h h54 f14 bold bg-w">
+      <div>
+        <div class="h48 fl w32"></div>
+        <div class="w120 fl pt16">职位名称</div>
+        <div class="w94 sort cu-po ho-cb po-r fl pt16"> <span class="ascend"></span> <span class="descend"></span> <span>立项时间</span> </div>
+        <div class="w86 fl pt16">状态</div>
+        <div class="w60 fl pt16">优先级</div>
+        <div class="w72 fl pt16">跟进顾问</div>
+        <div class="w60 fl pt16">对接人</div>
+        <div class="w136 fl pt16">客户公司</div>
+        <div class="w66 fl pt16">客户状态</div>
+        <div class="w54 fl pt16">BD</div>
+        <div class="sort w48 cu-po ho-cb po-r fl pt16"> <span class="ascend"></span> <span class="descend"></span> <span>推荐</span> </div>
+        <div class="sort w48 cu-po ho-cb po-r fl pt16"> <span class="ascend"></span> <span class="descend"></span> <span>合格</span> </div>
+        <div class="sort w48 cu-po ho-cb po-r fl pt16"> <span class="ascend"></span> <span class="descend"></span> <span>初试</span> </div>
+        <div class="sort w48 cu-po ho-cb po-r fl pt16"> <span class="ascend"></span> <span class="descend"></span> <span>复试</span> </div>
+        <div class="sort w48 cu-po ho-cb po-r fl pt16"> <span class="ascend"></span> <span class="descend"></span> <span>待发</span> </div>
+        <div class="sort w48 cu-po ho-cb po-r fl pt16"> <span class="ascend"></span> <span class="descend"></span> <span>已发</span> </div>
+        <div class="sort w60 cu-po ho-cb po-r fl pt16"> <span class="ascend"></span> <span class="descend"></span> <span>不合适</span> </div>
+        <div class="sort w72 cu-po ho-cb po-r fl pt16"> <span class="ascend"></span> <span class="descend"></span> <span>已回款</span> </div>
+      </div>
+    </div>
+    <div id="div-table" class="ovx-a">
+      <table class="c1 bdcl ta-l c1 f14 clear">
+        <tr style="height:0">
+          <td>
+            <div class="w32"></div>
+          </td>
+          <td>
+            <div class="w120"></div>
+          </td>
+          <td>
+            <div class="w94"></div>
+          </td>
+          <td>
+            <div class="w86"></div>
+          </td>
+          <td>
+            <div class="w60"></div>
+          </td>
+          <td>
+            <div class="w72"></div>
+          </td>
+          <td>
+            <div class="w60"></div>
+          </td>
+          <td>
+            <div class="w136"></div>
+          </td>
+          <td>
+            <div class="w66"></div>
+          </td>
+          <td>
+            <div class="w54"></div>
+          </td>
+          <td>
+            <div class="w48"></div>
+          </td>
+          <td>
+            <div class="w48"></div>
+          </td>
+          <td>
+            <div class="w48"></div>
+          </td>
+          <td>
+            <div class="w48"></div>
+          </td>
+          <td>
+            <div class="w48"></div>
+          </td>
+          <td>
+            <div class="w48"></div>
+          </td>
+          <td>
+            <div class="w52"></div>
+          </td>
+          <td>
+            <div class="w80"></div>
+          </td>
+        </tr>
+        <tr class="bdt1 h48 ho-ec">
+          <td><span class="f12 c3">1.</span></td>
+          <td><a href="" class="a c1 w112 ol" title="高级Java开发工程师">高级Java开发工程师</a></td>
+          <td>2017-06-01</td>
+          <td>已关闭-成功</td>
+          <td><span class="pl12">高</span></td>
+          <td class="w72"><span class="name-tag">吴江涛</span><span class="name-tag">骆小根</span><span class="name-tag">宋艳</span></td>
+          <td><span class="name-tag">张文娟</span></td>
+          <td>
+            <div class="w120 ol">深圳市萨摩耶互联网金融技术有限公司</div>
+          </td>
+          <td>签约谈判</td>
+          <td><span class="name-tag">熊佳欢</span></td>
+          <td><span class="expand cb cu-po p0-4">160</span></td>
+          <td><span class="expand cb cu-po p0-4">60</span></td>
+          <td><span class="expand cb cu-po p0-4">30</span></td>
+          <td><span class="expand cb cu-po p0-4">20</span></td>
+          <td><span class="expand cb cu-po p0-4">2</span></td>
+          <td><span class="expand cb cu-po p0-4">1</span></td>
+          <td><span class="expand cb cu-po p0-4">23</span></td>
+          <td><span class="expand cb cu-po">￥23,000</span></td>
+        </tr>
+        <tr class="">
+          <td colspan="18"></td>
+        </tr>
+        <tr class="bdt1 h48 ho-ec hidden">
+          <td class="f12 c2">总计:</td>
+          <td class="bold">17个职位</td>
+          <td>--</td>
+          <td>--</td>
+          <td>--</td>
+          <td>4位顾问</td>
+          <td>--</td>
+          <td>5家公司</td>
+          <td>--</td>
+          <td>3为BD</td>
+          <td class="bold">400</td>
+          <td class="bold">300</td>
+          <td class="bold">200</td>
+          <td class="bold">100</td>
+          <td class="bold">10</td>
+          <td class="bold">50</td>
+          <td class="bold">2</td>
+          <td class="bold f12">￥50,000,000</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="ta-c p8 c3 mb48">已是列表底部了</div>
+
+
+  <!--推荐表-->
+  <table data-mark="insertTable" id="recommendation" class="hidden bdcl fr bdl1 c1">
+    <tr class="h36 bg-e3">
+      <td><div class="w48 ta-c">序号<!--按时间倒序排列--></div></td>
+      <td>
+        <div class="w120">候选人</div>
+      </td>
+      <td>
+        <div class="w120">候选人来自</div>
+      </td>
+       <td>
+        <div class="w120">Pipeline操作</div>
+      </td>
+      <td>
+        <div class="w200">操作时间</div>
+      </td>
+    </tr>
+    <tr class="h48 bdt1 ho-ec">
+     <td class="ta-c c2">2.</td>
+      <td><a href="" class="w80 a c1">王精英</a></td>
+      <td><span class="name-tag">吴江涛</span></td>
+      <td>推荐</td>
+      <td>2017-06-10 18:20</td>
+    </tr><tr class="h48 bdt1 ho-ec">
+     <td class="ta-c c2">1.</td>
+      <td><a href="" class="w80 a c1">王精英</a></td>
+      <td><span class="name-tag">吴江涛</span></td>
+      <td>推荐</td>
+      <td>2017-06-10 18:20</td>
+    </tr>
+  </table>
+
+  <!--合格表-->
+  <table data-mark="insertTable" id="qualified" class="hidden bdcl fr bdl1">
+    <tr class="h36 bg-e3">
+      <td><div class="w48 ta-c">序号<!--按时间倒序排列--></div></td>
+      <td>
+        <div class="w120">候选人</div>
+      </td>
+      <td>
+        <div class="w120">候选人来自</div>
+      </td>
+       <td>
+        <div class="w120">Pipeline操作</div>
+      </td>
+      <td>
+        <div class="w200">操作时间</div>
+      </td>
+    </tr>
+    <tr class="h48 bdt1 ho-ec">
+     <td class="ta-c c2">2.</td>
+      <td><a href="" class="w80 a c1">王精英</a></td>
+      <td><span class="name-tag">吴江涛</span></td>
+      <td>合格</td>
+      <td>2017-06-10 18:20</td>
+    </tr>
+  </table>
+
+  <!--初试表-->
+  <table data-mark="insertTable" id="interview" class="hidden bdcl fr bdl1">
+    <tr class="h36 bg-e3">
+      <td><div class="w48 ta-c">序号<!--按时间倒序排列--></div></td>
+      <td>
+        <div class="w120">候选人</div>
+      </td>
+      <td>
+        <div class="w120">候选人来自</div>
+      </td>
+       <td>
+        <div class="w120">Pipeline操作</div>
+      </td>
+      <td>
+        <div class="w200">操作时间</div>
+      </td>
+    </tr>
+    <tr class="h48 bdt1 ho-ec">
+     <td class="ta-c c2">2.</td>
+      <td><a href="" class="w80 a c1">王精英</a></td>
+      <td><span class="name-tag">吴江涛</span></td>
+      <td>安排初试</td>
+      <td>2017-06-10 18:20</td>
+    </tr>
+  </table>
+
+  <!--复试表-->
+  <table data-mark="insertTable" id="re-interview" class="hidden bdcl fr bdl1">
+    <tr class="h36 bg-e3">
+      <td><div class="w48 ta-c">序号<!--按时间倒序排列--></div></td>
+      <td>
+        <div class="w120">候选人</div>
+      </td>
+      <td>
+        <div class="w120">候选人来自</div>
+      </td>
+       <td>
+        <div class="w120">Pipeline操作</div>
+      </td>
+      <td>
+        <div class="w200">操作时间</div>
+      </td>
+    </tr>
+    <tr class="h48 bdt1 ho-ec">
+     <td class="ta-c c2">2.</td>
+      <td><a href="" class="w80 a c1">王精英</a></td>
+      <td><span class="name-tag">吴江涛</span></td>
+      <td>安排复试</td>
+      <td>2017-06-10 18:20</td>
+    </tr>
+  </table>
+
+  <!--待发表-->
+  <table data-mark="insertTable" id="offer-due" class="hidden bdcl fr bdl1">
+    <tr class="h36 bg-e3">
+      <td><div class="w48 ta-c">序号<!--按时间倒序排列--></div></td>
+      <td>
+        <div class="w120">候选人</div>
+      </td>
+      <td>
+        <div class="w120">候选人来自</div>
+      </td>
+       <td>
+        <div class="w120">Pipeline操作</div>
+      </td>
+      <td>
+        <div class="w200">操作时间</div>
+      </td>
+    </tr>
+    <tr class="h48 bdt1 ho-ec">
+     <td class="ta-c c2">2.</td>
+      <td><a href="" class="w80 a c1">王精英</a></td>
+      <td><span class="name-tag">吴江涛</span></td>
+      <td>待发Offer</td>
+      <td>2017-06-10 18:20</td>
+    </tr>
+  </table>
+
+  <!--已发表-->
+  <table data-mark="insertTable" id="offer" class="hidden bdcl fr bdl1">
+    <tr class="h36 bg-e3">
+      <td><div class="w48 ta-c">序号<!--按时间倒序排列--></div></td>
+      <td>
+        <div class="w120">候选人</div>
+      </td>
+      <td>
+        <div class="w120">候选人来自</div>
+      </td>
+       <td>
+        <div class="w120">Pipeline操作</div>
+      </td>
+      <td>
+        <div class="w200">操作时间</div>
+      </td>
+    </tr>
+    <tr class="h48 bdt1 ho-ec">
+     <td class="ta-c c2">2.</td>
+      <td><a href="" class="w80 a c1">王精英</a></td>
+      <td><span class="name-tag">吴江涛</span></td>
+      <td>签订Offer</td>
+      <td>2017-06-10 18:20</td>
+    </tr>
+  </table>
+  
+    <!--不合适表-->
+  <table data-mark="insertTable" id="unfit" class="hidden bdcl fr bdl1">
+    <tr class="h36 bg-e3">
+      <td><div class="w48 ta-c">序号<!--按时间倒序排列--></div></td>
+      <td>
+        <div class="w120">候选人</div>
+      </td>
+      <td>
+        <div class="w120">候选人来自</div>
+      </td>
+       <td>
+        <div class="w120">Pipeline操作</div>
+      </td>
+      <td>
+        <div class="w200">操作时间</div>
+      </td>
+    </tr>
+    <tr class="h48 bdt1 ho-ec">
+     <td class="ta-c c2">2.</td>
+      <td><a href="" class="w80 a c1">王精英</a></td>
+      <td><span class="name-tag">吴江涛</span></td>
+      <td>不合适</td>
+      <td>2017-06-10 18:20</td>
+    </tr>
+  </table>
+
+  <!--回款表-->
+  <table data-mark="insertTable" id="moneyReceived" class="hidden bdcl fr bdl1">
+    <tr class="bg-e3 h36 c2">
+      <td>
+        <div class="w120 pl24">Offer候选人</div>
+      </td>
+      <td>
+        <div class="w80">来自顾问</div>
+      </td>
+      <td>
+        <div class="w96">Offer日期</div>
+      </td>
+      <td>
+        <div class="w96">实际入职日期</div>
+      </td>
+      <td>
+        <div class="w80">保证期</div>
+      </td>
+      <td>
+        <div class="w90">年薪</div>
+      </td>
+      <td>
+        <div class="w86">收费比例</div>
+      </td>
+      <td>
+        <div class="w86">Offer金额</div>
+      </td>
+      <td>
+        <div class="w90">已回款</div>
+      </td>
+    </tr>
+    <tr class="h48 bdt1 ho-ec">
+      <td><a href="" class="w80 a c1 pl24">李国平</a></td>
+      <td><span class="name-tag">吴江涛</span></td>
+      <td>2016-09-01</td>
+      <td>2016-10-01</td>
+      <td>3个月</td>
+      <td>￥360,000</td>
+      <td>20%</td>
+      <td>￥72,000</td>
+      <td>￥43,200</td>
+    </tr>
+  </table>
+
+</body>
+
+<script>
+  /*显示辅助： 鼠标所在单元格的表头项标蓝---begin*/
+  $('td').on('mouseenter', function() {
+    var colNo = $(this).index() + 1;
+    $('#div-header').children().children().removeClass('cb');
+    $('#div-header').children().children(':nth-child(' + colNo + ')').addClass('cb');
+  });
+  $('table').on('mouseleave', function() {
+    $('#div-header').children().children().removeClass('cb');
+  });
+  /*显示辅助： 鼠标所在单元格的表头项标蓝---end*/
+
+
+
+  /*单击一级列表中的标蓝数字，展开和收起详情-----begin----*/
+  $('.expand').on('click', function() {
+    var that = $(this);
+    var expanded = that.parent().hasClass('bg-e3'); // 是否已展开状态
+    var tr = that.parents('tr').next().children(); //定位下行tr内的td，插入相关详情表table
+    var indexNo = that.parent().index(); // 获得单击的index
+    var tableName = $('#div-header').children().children().eq(indexNo).children().eq(2).html(); //判断单击哪个详情
+
+    if (expanded) { //如果已展开，则移除背景，隐藏详情
+      $('td.bg-e3').removeClass('bg-e3');
+      tr.hide();
+    } else { //未展开时，移除其它展开的背景，给当前td添加背景，显示详情
+      $('td.bg-e3').removeClass('bg-e3');
+      that.parent().addClass('bg-e3');
+      $(tr).show();
+    };
+    $('[data-mark="insertTable"]').hide();
+    switch (tableName) { //根据单击的详情表名，更新相应表数据然后插入相应位置	
+
+      case '推荐':
+        $('#recommendation').appendTo(tr).show();
+        break;
+      case '合格':
+        $('#qualified').appendTo(tr).show();
+        break;
+      case '初试':
+        $('#interview').appendTo(tr).show();
+        break;
+      case '复试':
+        $('#re-interview').appendTo(tr).show();
+        break;
+      case '待发':
+        $('#offer-due').appendTo(tr).show();
+        break;
+      case '已发':
+        $('#offer').appendTo(tr).show();
+        break;
+      case '不合适':
+        $('#unfit').appendTo(tr).show();
+        break;
+      case '已回款':
+        $('#moneyReceived').appendTo(tr).show();
+        break;
+    }
+  });
+  /*单击一级列表中的标蓝数字，展开和收起详情-----end----*/
+
+
+
+
+  /*滚动的时候滚动固定大表表头--begin--*/
+  $('.stickToTop').scrollToFixed({
+    preFixed: function() {
+      $(this).addClass('card2-nbg');
+    },
+    postFixed: function() {
+      $(this).removeClass('card2-nbg');
+    }
+  });
+  /*滚动的时候滚动固定大表表头--end--*/
+
+
+  /*--列表表头单击排序：小图标填色--*/
+  $('.sort').on('click', function() {
+    var des = $(this).children('.descend');
+    var ase = $(this).children('.ascend');
+    $(this).siblings().children('.cb').removeClass('cb').addClass('ce0');
+    if ($(des).hasClass('cb')) {
+      $(ase).removeClass('ce0').addClass('cb');
+      $(des).removeClass('cb').addClass('ce0')
+    } else {
+      $(des).removeClass('ce0').addClass('cb');
+      $(ase).removeClass('cb').addClass('ce0');
+    }
+  });
+
+
+  /*--单击筛选标签--*/
+  $('.filter-tag').on('click', function() {
+    $(this).siblings().children('div').hide();
+    $(this).children('div').show();
+  });
+  $('.filter-add,.filter-cancel').on('click', function(e) {
+    event.stopPropagation();
+    $(this).parents('.note').hide();
+  });
+
+  /*单击文档任意位置关闭筛选框*/
+  $(document).on('click', function(e) {
+    if (!$(event.target).closest('.filter-tag').length && !$(event.target).closest('[class^="datepicker"]').length && !$(event.target).closest('.select2-container').length) {
+      $('.filter-tag .note').hide()
+    }
+  });
+
+  /*--自定义时间收起展示--*/
+  $('input[name$="time"]').on('click', function() {
+    var that = $(this);
+    var value = $('input[name$="time"]:checked').val();
+    if (value == "custom") {
+      $(that).parent().siblings('.custom').show()
+    } else {
+      $(that).parent().siblings('.custom').hide()
+    }
+  });
+  /*--自定义时间选择:起始时间--*/
+  var $start = $('#start'),
+    $end = $('#end');
+  $start.datepicker({
+    onSelect: function(fd, date) {
+      $end.data('datepicker')
+        .update('minDate', date)
+    }
+  })
+  $end.datepicker({
+    onSelect: function(fd, date) {
+      $start.data('datepicker')
+        .update('maxDate', date)
+    }
+  });
+
+  /*--选择select实例化--*/
+  $('#select-conTeam,#select-city,#select-comp').select2({
+    placeholder: " ",
+    minimumResultsForSearch: Infinity,
+  });
+
+  $(".header").load("header.html");
+
+</script>
+
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>通知中心</title>
+  <link rel="shortcut icon" href="images/logo_favicon.png">
+  <link rel="stylesheet" href="css/main-New.css">
+  <link rel="stylesheet" href="css/select2.css">
+  <link rel="stylesheet" href="css/cityselect.css">
+  <link rel="stylesheet" href="css/datepicker.css">
+  <link rel="stylesheet" href="css/viewer.min.css">
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/js.cookie.js"></script>
+  <script src="js/My97DatePicker/WdatePicker.js"></script>
+  <script src="js/cityselect.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/highcharts.js"></script>
+  <script src="js/jquery-scrolltofixed-min.js"></script>
+  <script src="js/autogrow.min.js"></script>
+  <script src="js/viewer.min.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/velocity.addon.js"></script>
+</head>
+
+<body>
+  <header class="header"></header>
+  <main class="main">
+    <section class="list-func-wrapper">
+      <div class="searchbar-wrapper fl card1 ho-sh2">
+        <input type="text" placeholder="按关键字查找通知消息" class="w360 p1016 f14 h40" style="border:none;">
+        <span id="searchBtn" class="search-btn"></span> </div>
+      <div class="clear"></div>
+    </section>
+    <section class="content">
+      <div class="card1">
+        <div class="p16"><span id="btn-mark-tr-read" class="cb bold cu-po">全部标为已读</span><span class="ml16 c2">共230条通知</span></div>
+
+        <table id="noti-table" class="bdcl ta-l lh64">
+          <tr class="lh46">
+            <th class="w178 pl24">发送方</th>
+            <th class="w868">主题内容</th>
+            <th class="w160">发送时间</th>
+          </tr>
+          <tr class="noti-tr bdt1 bg-w cu-po ho-bdl">
+            <td class="pl24"><img src="images/notify-icon.png" class="noti-sender-pic" alt="">智聘系统</td>
+            <td>
+              <div class="w820 ol"><span class="bold">候选人状态滞留2周</span><span class="p0-10 c3">-</span><span>你给职位【高级Java】-【深圳某某科技有限公司】推荐的候选人【王精英】，在“已推荐职位”阶段滞留了2周了</span></div>
+            </td>
+            <td>2017-08-15 16:32</td>
+          </tr>
+          <tr class="noti-tr bdt1 bg-w cu-po ho-bdl">
+            <td class="pl24"><img src="images/notify-icon.png" class="noti-sender-pic" alt="">智聘系统</td>
+            <td>
+              <div class="w820 ol"><span class="bold">候选人状态滞留2周</span><span class="p0-10 c3">-</span><span>你给职位【高级Java】-【深圳某某科技有限公司】推荐的候选人【王精英】，在“已推荐职位”阶段滞留了2周了</span></div>
+            </td>
+            <td>2017-08-15 16:32</td>
+          </tr>
+          <tr class="noti-tr bdt1 bg-w cu-po ho-bdl">
+            <td class="pl24"><img src="images/notify-icon.png" class="noti-sender-pic" alt="">智聘系统</td>
+            <td>
+              <div class="w820 ol"><span class="bold">候选人状态滞留2周</span><span class="p0-10 c3">-</span><span>你给职位【高级Java】-【深圳某某科技有限公司】推荐的候选人【王精英】，在“已推荐职位”阶段滞留了2周了</span></div>
+            </td>
+            <td>2017-08-15 16:32</td>
+          </tr>
+          <tr class="noti-tr bdt1 bg-w cu-po ho-bdl">
+            <td class="pl24"><img src="images/notify-icon.png" class="noti-sender-pic" alt="">智聘系统</td>
+            <td>
+              <div class="w820 ol"><span class="bold">候选人状态滞留2周</span><span class="p0-10 c3">-</span><span>你给职位【高级Java】-【深圳某某科技有限公司】推荐的候选人【王精英】，在“已推荐职位”阶段滞留了2周了</span></div>
+            </td>
+            <td>2017-08-15 16:32</td>
+          </tr>
+          <tr class="noti-tr bdt1 bg-w cu-po ho-bdl">
+            <td class="pl24"><img src="images/notify-icon.png" class="noti-sender-pic" alt="">智聘系统</td>
+            <td>
+              <div class="w820 ol"><span class="bold">候选人状态滞留2周</span><span class="p0-10 c3">-</span><span>你给职位【高级Java】-【深圳某某科技有限公司】推荐的候选人【王精英】，在“已推荐职位”阶段滞留了2周了</span></div>
+            </td>
+            <td>2017-08-15 16:32</td>
+          </tr>
+          <tr class="noti-tr bdt1 bg-w cu-po ho-bdl">
+            <td class="pl24"><img src="images/notify-icon.png" class="noti-sender-pic" alt="">智聘系统</td>
+            <td>
+              <div class="w820 ol"><span class="bold">候选人状态滞留2周</span><span class="p0-10 c3">-</span><span>你给职位【高级Java】-【深圳某某科技有限公司】推荐的候选人【王精英】，在“已推荐职位”阶段滞留了2周了</span></div>
+            </td>
+            <td>2017-08-15 16:32</td>
+          </tr>
+          <tr class="bdt1">
+            <td colspan="100">此处放分页</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+  </main>
+  <div id="popup-noti-detail" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n"></span>通知详情</div>
+        <div class="popup-content">
+          <h2 class="f13 fw-n ta-l lh24 p8 bg-ec c2">
+            <div><span class="bold c1 f14">候选人逾期未操作</span></div>
+            <div><span class="d-ib c3 w44">来自：</span>智聘系统</div>
+            <div><span class="d-ib c3 w44">时间：</span>2017-09-01 10:00</div>
+            <div><span class="d-ib c3 w44">接收：</span><span class="name-tag">骆小根</span><span class="name-tag">张文娟</span><span class="name-tag">王翔</span></div>
+          </h2>
+          <div class="f13 lh24 ta-l p8">
+            <p class="ti-24">你给职位【<a href="" class="a cb">高级Java</a>】-【<a href="" class="a cb">深圳市某某科技有限公司</a>】推荐的候选人【<a href="" class="a cb">王精英</a>】已经停留在推荐阶段56天了，<a href="" class="a cb">单击此处</a>去更新后续人的状态吧。</p>
+            <p class="ti-24 c3 f12 mt8" style="line-height:20px;"><span class="ic f18 c-c"></span>tips：及时更新候选人的Pipeline状态，有助于把握工作整体进展，有效准确的数据，也有利于分析统计、同事协作和二次开展。</p>
+          </div>
+        </div>
+        <div class="popup-footer"><span id="btn-close-pop" class="btn-flat-b">关闭</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<script>
+  /*单击消息行，弹出消息详情弹窗*/
+  $('#noti-table').on('click', '.noti-tr', function() {
+    if($(this).hasClass('bg-w')){//有白色背景，代表未读
+      $(this).removeClass('bg-w').addClass('bg-f2');//标记为已读
+    } 
+    popin('#popup-noti-detail');
+  });
+  
+  /*消息详情-关闭弹窗按钮*/
+$('#btn-close-pop').on('click',function(){
+  popout('#popup-noti-detail');
+});
+  
+  /*全部标为已读*/
+  $('#btn-mark-tr-read').on('click',function(){
+    $('.noti-tr').removeClass('bg-w').addClass('bg-f2');
+    toast('操作成功');
+  });
+</script>
+
+</html>

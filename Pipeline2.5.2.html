@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pipeline</title>
+  <link rel="shortcut icon" href="images/logo_favicon.png">
+  <link rel="stylesheet" href="css/main-New.css">
+  <link rel="stylesheet" href="css/select2.css">
+  <link rel="stylesheet" href="css/cityselect.css">
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/My97DatePicker/WdatePicker.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/jquery-scrolltofixed-min.js"></script>
+  <script src="js/autogrow.min.js"></script>
+  <script src="js/components.js"></script>
+</head>
+<style>
+  .cv-link {
+    position: relative;
+  }
+
+</style>
+
+<body>
+  <header class="header"></header>
+  <main class="main">
+    <section class="content-filter">
+      <div class="filters">筛选</div>
+      <div class="filter-result">筛选结果</div>
+    </section>
+    <section class="content-results">
+      <div data-descript="tabs-header" class="f14 c2 bg-ec" style="line-height:33px;">
+        <div class="tab pl-tab" data-zIndex=1 style="padding-left:8px"><span class="ic f24"></span> <span><span class="bold f20 mr4">1</span>智推</span>
+        </div>
+        <div class="tab pl-tab pl-tab-selected" data-zIndex=2><span class="ic f24"></span> <span><span class="cb bold f20 mr4">9</span>加入</span>
+        </div>
+        <div class="tab pl-tab" data-zIndex=3><span class="ic f24"></span> <span><span class="cb bold f20 mr4">9</span>推荐</span>
+        </div>
+        <div class="tab pl-tab" data-zIndex=4><span class="ic f24"></span> <span><span class="cb bold f20 mr4">9</span>面试</span>
+        </div>
+        <div class="tab pl-tab" data-zIndex=5><span class="ic f24"></span> <span><span class="cb bold f20 mr4">9</span>Offer</span>
+        </div>
+        <div class="tab pl-tab" data-zIndex=6><span class="ic f24"></span> <span><span class="cb bold f20 mr4">9</span>入职</span>
+        </div>
+        <div class="tab pl-tab" data-zIndex=7><span class="ic f24"></span> <span><span class="cb bold f20 mr4">9</span>保证期</span>
+        </div>
+        <div class="tab pl-tab chev-exception" data-zIndex=8><span class="ic f24"></span> <span><span class="cb bold f20 mr4">9</span>已过保</span>
+        </div>
+        <div class="tab pl-tab chev-exception" data-id="unfit" data-zIndex=9 style="float:right;padding-left:8px;"><span class="ic f24"></span> <span><span class="bold f20 mr4">9</span>不合适</span>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div data-descript="tabs-contents">
+        <!--以下是tab空状态，直接放入相应tab内即可-->
+        <div data-descript="空状态" class="hidden ta-c p16">
+          <div class="ic f96 ce0"></div>
+          <p class="c3 f16">此阶段暂无候选人</p>
+          <p class="c-c f12 mt8 mb8"><span class="ic f18 mr4"></span>先把简历加入职位，再通过Pipeline统一管理</p>
+        </div>
+        <div class="unfit-tabs-header c2 bdb1 lh30 mt8 hidden">
+          <div class="d-ib ml24 c3">不合适分类：</div>
+          <div data-id="#unfit-add" class="unfit-tab bdb3-b cb">加入阶段<span class="bold ml4 f16">600</span></div>
+          <div data-id="#unfit-rec" class="unfit-tab">推荐阶段<span class="bold ml4 f16">400</span></div>
+          <div data-id="#unfit-inter" class="unfit-tab">面试阶段<span class="bold ml4 f16">100</span></div>
+          <div data-id="#unfit-offer" class="unfit-tab">Offer阶段<span class="bold ml4 f16">60</span></div>
+          <div data-id="#unfit-entry" class="unfit-tab">入职阶段<span class="bold ml4 f16">40</span></div>
+          <div data-id="#unfit-warrant" class="unfit-tab">保证期阶段<span class="bold ml4 f16">20</span></div>
+        </div>
+        <table data-descript="主表" class="c1 bdcl ta-l c1">
+          <tr class="c2 h64 f13" style="border:none;">
+            <th class="w52"></th>
+            <th class="w104">候选人</th>
+            <th class="w66">操作</th>
+            <th class="w200">招聘流程</th>
+            <th class="w66"> 备注 </th>
+            <th class="w200">推荐职位</th>
+            <th class="w112">职位优先级</th>
+            <th class="w109">职位状态</th>
+            <th class="w200">客户公司</th>
+            <th class="sort w120 cu-po ho-cb"> <span class="ascend ce0"></span> <span class="descend ce0"></span> <span>最后操作时间</span> </th>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td></td>
+            <td id="matchcv-1" class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王精英</span> </a>
+
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td><span></span><span>智推待筛选</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td></td>
+            <td id="addtocv-1" class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王精英</span> </a> <span class="ic f20 po-a c-sta mt-12"></span></td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>已加入职位</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td></td>
+            <td id="reccv-1" class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>已推荐职位</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td></td>
+            <td id="reccv-1" class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c-gr"></span> <span class="c-gr">已通过筛选</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td></td>
+            <td id="intercv-1" class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>面试</span> <span>：待1面</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td></td>
+            <td id="intercv-1" class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="c-gr hireprocess"><span class="ic f20"></span> <span>面试</span><span>：通过1面</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td></td>
+            <td id="offercv-1" class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>待发Offer</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td></td>
+            <td id="entrycv-1" class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>待入职</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>未过保证期</span> <span class="p0-4 bdrs2 c3"><span class="cb bold">26天</span><span class="f12">/90天</span></span>
+            </td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c-gr"></span> <span class="c-gr">已过保证期</span><span class="p0-4 bdrs2 c3"><span class="c-gr bold">126天</span><span class="f12">/90天</span></span>
+            </td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+
+
+
+          <!--以下是不合适的-->
+
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>已加入职位</span> <span>--不合适</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>已加入职位</span> <span>--不感兴趣</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>已推荐职位</span> <span>--不合适</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>已推荐职位</span> <span>--待定</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>推荐合格</span> <span>--候选人放弃</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>推荐合格</span> <span>--企业取消</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>推荐合格</span> <span>--待定</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>面试：1面</span> <span>--未到场</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>待发Offer</span> <span>--拒绝Offer</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>待发Offer</span> <span>--薪酬不合适</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>待入职</span> <span>--放弃入职</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>待入职</span> <span>--取消录用</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>已入职</span> <span>--辞职</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <label for="cv1"></label></td>
+            <td class="cv-link">
+              <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+            </td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+            </td>
+            <td class="hireprocess"><span class="ic f20 c3"></span> <span>已入职</span> <span>--辞退</span></td>
+            <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              </span>
+            </td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+            </td>
+            <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+            <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td>
+              <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+            </td>
+            <td>2016-06-13</td>
+          </tr>
+          <tr data-unfit="unfit" class="bdt1 h64 c2 ta-r">
+            <td colspan="11" class="pr16">此区域放分页组件</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!--操作menu-->
+  <div id="dropmenu" class="hidden po-a card5 lh30 ta-l cu-po trans sc0 op0">
+    <div id="m-toposition" data-popupID="#popup-addto" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>加入职位</div>
+    <div id="m-recommend" data-popupID="#popup-recommend" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>推荐职位</div>
+    <div id="m-passrec" data-popupID="#popup-passrec" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>通过筛选</div>
+    <div id="m-interview" data-popupID="#popup-interview" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>安排面试</div>
+    <div id="m-checkinter" data-popupID="#popup-checkinter" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>查看面试安排</div>
+    <div id="m-passcurrent" data-popupID="#popup-passinter" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>通过本轮面试</div>
+    <div id="m-interview2" data-popupID="#popup-interviewnext" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>安排下轮面试</div>
+    <div id="m-passinter" data-popupID="#popup-readyoffer" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>待发Offer</div>
+    <div id="m-signoffer" data-popupID="#popup-signoffer" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>签订Offer</div>
+    <div id="m-checkoffer" data-popupID="#popup-checkoffer" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>查看Offer信息</div>
+    <div id="m-entry" data-popupID="#popup-entry" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>入职</div>
+    <div id="m-checkentry" data-popupID="#popup-checkentry" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>查看入职信息</div>
+    <div id="m-managevisit" data-popupID="#popup-visit" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>管理入职回访</div>
+    <div id="m-unfit" data-popupID="notfit" class="bdt1-d p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>不合适</div>
+    <div id="m-undo" data-popupID="#popup-undo-notfit" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>撤销不合适</div>
+  </div>
+
+  <!--【智推】加入职位-->
+  <!--功能暂未开放-->
+  <div id="popup-addto" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>加入职位</div>
+        <div class="popup-content bg-f2" style="box-sizing:content-box">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span> <span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>加入职位：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认加入</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【智推】不合适-->
+  <!--功能暂未开放-->
+  <div id="popup-ainot" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>不合适</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>智推职位：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>不合适：</td>
+              <td>
+                <input type="radio" name="ainot" checked id="ainot1"><label for="ainot1" class="c2 lh-n">学历不符</label>
+                <input type="radio" name="ainot" checked id="ainot2"><label for="ainot2" class="c2 lh-n ml16">职能不符</label>
+                <input type="radio" name="ainot" checked id="ainot3"><label for="ainot3" class="c2 lh-n ml16">经验不符</label>
+              </td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认不合适</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【加入】推荐职位-->
+  <div id="popup-recommend" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>推荐职位</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span> <span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>推荐职位：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span><span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认推荐</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【加入】不合适-->
+  <div id="popup-addnot" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>不合适</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>不合适：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>原因：</td>
+              <td><input type="radio" name="addnot" checked id="addnot"><label for="addnot" class="c2 lh-n">不感兴趣</label></td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认不合适</span></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--【推荐】通过筛选-->
+  <div id="popup-passrec" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>通过筛选</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>通过筛选：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">通过筛选</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【推荐】安排面试-->
+  <div id="popup-interview" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>安排面试</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>面试职位：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>面试轮数：</td>
+              <td><b>1</b>面</td>
+            </tr>
+            <tr>
+              <td>面试时间<span class="required-mark">*</span>：</td>
+              <td><input type="text" class="w160 pl4 h30" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"></td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认安排</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【推荐】不合适--#已推荐职位#状态-->
+  <div id="popup-recnot" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>不合适</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>不合适：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>原因：</td>
+              <td class="lh-n">
+                <input type="radio" name="recnot" checked id="recnot1">
+                <label for="recnot1" class="c2">不合适</label>
+                <input type="radio" name="recnot" id="recnot2">
+                <label for="recnot2" class="c2 ml24">待定</label>
+              </td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认不合适</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【推荐】不合适--#已通过筛选#状态-->
+  <div id="popup-passrecnot" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>不合适</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>不合适：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>原因：</td>
+              <td class="lh-n">
+                <input type="radio" name="passrecnot" checked id="passrecnot1">
+                <label for="passrecnot1" class="c2">候选人放弃</label>
+                <input type="radio" name="passrecnot" id="passrecnot2">
+                <label for="passrecnot2" class="c2 ml24">企业方取消</label>
+                <input type="radio" name="passrecnot" id="passrecnot3">
+                <label for="passrecnot3" class="c2 ml24">待定</label>
+              </td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认不合适</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【面试】安排下轮面试-->
+  <div id="popup-interviewnext" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>安排面试</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>面试职位：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>面试轮数：</td>
+              <td><b>2</b>面</td>
+            </tr>
+            <tr>
+              <td>面试时间<span class="required-mark">*</span>：</td>
+              <td><input type="text" class="w160 pl4 h30" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"></td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认安排</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【面试】查看面试安排信息-->
+  <div id="popup-checkinter" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>面试安排<span id="btn-editinter" class="fr cu-po fw-n f14 cb"><span class="ic f20"></span>编辑</span>
+        </div>
+        <div class="popup-content">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>面试职位：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>面试轮数：</td>
+              <td><b>1</b>面</td>
+            </tr>
+            <tr>
+              <td>面试时间：</td>
+              <td><input type="text" disabled class="w160 pl4 h30 input-display f14" value="2017-08-01 15:30" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"></td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" disabled class="w300 pl4 h30 input-display f14" value="关于面试安排的一些备注" title="关于面试安排的一些备注"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer">
+          <div class="displayStatus"><span id="btn-checkinter-close" class="btn-flat-b ml8 pop-cancel">关闭</span></div>
+          <div class="editStatus hidden"><span id="btn-editinter-cancel" class="btn-flat-c">取消</span><span id="btn-editinter-update" class="btn-flat-b ml8">更新安排</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--【面试】通过本轮面试-->
+  <div id="popup-passinter" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>通过本轮面试</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>通过面试：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>面试轮数：</td>
+              <td><b>1</b>面</td>
+            </tr>
+            <tr>
+              <td>面试时间：</td>
+              <td>2017-08-01 15:30</td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认通过</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【面试】待发Offer-->
+  <div id="popup-readyoffer" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>待发Offer</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>待发Offer：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认待发</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【面试】不合适--#面试：待n面#状态-->
+  <div id="popup-internot" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>不合适</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>不合适：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>原因：</td>
+              <td class="lh-n">
+                <input type="radio" name="internot" checked id="internot1">
+                <label for="internot1">面试未通过</label>
+                <input type="radio" name="internot" id="internot2">
+                <label for="internot2" class="ml24">面试未到场</label>
+                <input type="radio" name="internot" id="internot3">
+                <label for="internot3" class="ml24">待定</label>
+              </td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认不合适</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【面试】不合适--#面试：通过n面#状态-->
+  <div id="popup-passinternot" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>不合适</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>不合适：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>原因：</td>
+              <td class="lh-n">
+                <input type="radio" name="passinternot" checked id="passinternot1">
+                <label for="passinternot1">候选人放弃</label>
+                <input type="radio" name="passinternot" id="passinternot2">
+                <label for="passinternot2" class="ml24">企业方取消</label>
+                <input type="radio" name="passinternot" id="passinternot3">
+                <label for="passinternot3" class="ml24">待定</label>
+              </td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认不合适</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【Offer】签订offer-->
+  <div id="popup-signoffer" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>签订Offer</div>
+        <div class="popup-content bg-f2">
+          <table class="lh40 bdcl ta-l">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>Offer职位：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>年薪<span class="required-mark">*</span>：</td>
+              <td><span class="po-a c3 pt1">￥</span><input type="number" class="h30 w102 pl16"></td>
+            </tr>
+            <tr>
+              <td>年薪说明<span class="required-mark">*</span></td>
+              <td><input type="text" class="h30 w240 pl4"></td>
+            </tr>
+            <tr>
+              <td>预计入职<span class="required-mark">*</span>：</td>
+              <td><input type="text" class="w102 pl4 h30" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})"></td>
+            </tr>
+            <tr>
+              <td>保证期<span class="required-mark">*</span>：</td>
+              <td>
+                <select name="" id="select-warr" class="w56">
+              <option value="">0</option>
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+              <option value="">5</option>
+              <option value="">6</option>
+            </select>个月
+              </td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="h30 w240 pl4"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认签订</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【Offer】不合适-->
+  <div id="popup-offernot" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>不合适</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>不合适：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>原因：</td>
+              <td class="lh-n">
+                <input type="radio" name="offernot" checked id="offernot1">
+                <label for="offernot1">候选人放弃</label>
+                <input type="radio" name="offernot" id="offernot2">
+                <label for="offernot2" class="ml24">企业方取消</label>
+                <input type="radio" name="offernot" id="offernot3">
+                <label for="offernot3" class="ml24">待定</label>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认不合适</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【入职】入职-->
+  <div id="popup-entry" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>入职</div>
+        <div class="popup-content bg-f2">
+          <table class="lh40 bdcl ta-l">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>入职：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>保证期：</td>
+              <td>3个月</td>
+            </tr>
+            <tr>
+              <td>预计入职：</td>
+              <td>2017-07-30</td>
+            </tr>
+            <tr>
+              <td>实际入职<span class="required-mark">*</span>：</td>
+              <td><input type="text" class="w102 pl4 h30" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})">
+                <!--默认值为今天-->
+              </td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="h30 w240 pl4"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认入职</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【入职】【保证期】【已过保】查看offer-->
+  <div id="popup-checkoffer" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>Offer信息<span id="btn-editoffer" class="fr cu-po fw-n f14 cb"><span class="ic f20"></span>编辑</span>
+        </div>
+        <div class="popup-content">
+          <table class="lh40 bdcl ta-l">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>Offer职位：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>年薪：</td>
+              <td><span class="po-a c3 pt1">￥</span><input type="number" value="240000" disabled class="input-display h30 w102 pl16 f14"></td>
+            </tr>
+            <tr>
+              <td>年薪说明：</td>
+              <td><input disabled value="20k*12个月" type="text" class="input-display h30 w240 pl4 f14"></td>
+            </tr>
+            <tr>
+              <td>预计入职：</td>
+              <td><input disabled value="2017-09-01" type="text" class="input-display w102 pl4 h30 f14" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})"></td>
+            </tr>
+            <tr>
+              <td>保证期：</td>
+              <td>
+
+
+                <select name="" disabled id="select-warr2" class="w56">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option selected value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select> 个月
+              </td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input value="一些关于Offer的备注" disabled type="text" class="input-display h30 w240 pl4 f14"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer">
+          <div class="displayStatus"><span id="btn-checkoffer-close" class="btn-flat-b ml8 pop-cancel">关闭</span></div>
+          <div class="editStatus hidden"><span id="btn-editoffer-cancel" class="btn-flat-c">取消</span><span id="btn-editoffer-update" class="btn-flat-b ml8">更新信息</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--【入职】不合适-->
+  <div id="popup-entrynot" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>不合适</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>不合适：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>原因：</td>
+              <td class="lh-n">
+                <input type="radio" name="entrynot" checked id="entrynot1">
+                <label for="entrynot1">放弃入职</label>
+                <input type="radio" name="entrynot" id="entrynot2">
+                <label for="entrynot2" class="ml24">取消录用</label>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认不合适</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【保证期】管理入职回访-->
+  <!--此处暂时屏蔽，使用率太低-->
+  <div id="popup-visit" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header">管理入职回访</div>
+        <div class="popup-content">
+          <iframe src="Pipeline-iframe保证期回访管理2.5.2.html" frameborder="0" style="width:830px;height:calc(100vh - 160px)"></iframe>
+        </div>
+        <div class="popup-footer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【保证期】【已过保】查看入职信息-->
+  <div id="popup-checkentry" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>入职信息<span id="btn-editentry" class="fr cu-po fw-n f14 cb"><span class="ic f20"></span>编辑</span>
+        </div>
+        <div class="popup-content">
+          <table class="lh40 bdcl ta-l">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>入职：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>保证期：</td>
+              <td>3个月</td>
+            </tr>
+            <tr>
+              <td>预计入职：</td>
+              <td>2017-07-30</td>
+            </tr>
+            <tr>
+              <td>实际入职：</td>
+              <td><input value="2017-08-02" type="text" disabled class="input-display w102 pl4 h30 f14" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})">
+                <!--默认值为今天-->
+              </td>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input value="关于入职的一些备注" type="text" disabled title="value" class="input-display h30 w240 pl4 f14"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer">
+          <div class="displayStatus"><span id="btn-checkentry-close" class="btn-flat-b ml8 pop-cancel">关闭</span></div>
+          <div class="editStatus hidden"><span id="btn-editentry-cancel" class="btn-flat-c">取消</span><span id="btn-editentry-update" class="btn-flat-b ml8">更新安排</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--【保证期】不合适-->
+  <div id="popup-warrantnot" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>不合适</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span><span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>不合适：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>原因：</td>
+              <td class="lh-n">
+                <input type="radio" name="warrantnot" checked id="warrantnot1">
+                <label for="warrantnot1">辞职</label>
+                <input type="radio" name="warrantnot" id="warrantnot2">
+                <label for="warrantnot2" class="ml24">辞退</label>
+            </tr>
+            <tr>
+              <td>备注：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认不合适</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!--【不合适】撤销不合适-->
+  <div id="popup-undo-notfit" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>撤销不合适</div>
+        <div class="popup-content bg-f2">
+          <table class="bdcl f14 lh40">
+            <tr>
+              <td class="w80">人才：</td>
+              <td><span class="ic f24 c3"></span> <span>王精英</span></td>
+            </tr>
+            <tr>
+              <td>相关职位：</td>
+              <td><span class="ic f20 c3"></span> <span>Java高级开发工程师</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="ic f20 c3"></span><span>深圳市Bravos科技股份有限公司</span></td>
+            </tr>
+            <tr>
+              <td>状态更改：</td>
+              <td>【不合适】<span class="ic f24 c3 p0-16"></span>【加入】</td>
+            </tr>
+            <tr>
+              <td>撤销原因：</td>
+              <td><input type="text" class="w300 pl4 h30"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="btn-flat-c pop-cancel">取消</span><span class="btn-flat-b ml8 pop-confirm">确认撤销</span></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--悬停简历所在td，预览联系方式-->
+  <div class="contact-preview note po-a wh-nw hidden">
+    <table class="bdcl lh30 f13 oddtd-c3">
+      <tr>
+        <td>
+          <div class="w56">姓名：</div>
+        </td>
+        <td>王精英</td>
+      </tr>
+      <tr>
+        <td>电话：</td>
+        <td>18666666666</td>
+      </tr>
+      <tr>
+        <td>邮箱:</td>
+        <td>test.name@email.com</td>
+      </tr>
+      <tr>
+        <td>QQ:</td>
+        <td>123146578</td>
+      </tr>
+      <tr>
+        <td>现职位:</td>
+        <td>高级java工程师</td>
+      </tr>
+      <tr>
+        <td>现公司:</td>
+        <td>深圳市某某科技股份有限公司</td>
+      </tr>
+    </table>
+  </div>
+
+  <!--招聘流程弹窗内容-->
+  <div class="note hidden" id="hireprocess">
+    <div class="mh240 ovy-a po-r pl4 Scrollable">
+      <table class="bdcl lh36 bdl1">
+        <tr>
+          <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-20 20:00</td>
+          <td class="f13 c1 w220">
+            <div><span class="ic f20 c3 mr4"></span>入职<span class="ml16 f12 c3">操作者：某顾问</span></div>
+            <div class="f12 c3 lh-n">
+              <p><span>备注：</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, praesentium, maxime, tempora.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-19 19:00</td>
+          <td class="f13 w240">
+            <div><span class="ic f20 c3 mr4"></span>签订Offer<span class="ml16 f12 c3">操作者：某顾问</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-18 18:00</td>
+          <td class="f13"><span class="ic f20 c3 mr4"></span>待发Offer<span class="ml16 f12 c3">操作者：某顾问</span></td>
+        </tr>
+        <tr>
+          <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-17 17:00</td>
+          <td class="f13"><span class="ic f20 c3 mr4"></span>面试：通过2面<span class="ml16 f12 c3">操作者：某顾问</span></td>
+        </tr>
+        <tr>
+          <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-16 16:00</td>
+          <td class="f13"><span class="ic f20 c3 mr4"></span>面试：待2面<span class="ml16 f12 c3">操作者：某顾问</span></td>
+        </tr>
+        <tr>
+          <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-15 15:00</td>
+          <td class="f13"><span class="ic f20 c3 mr4"></span>面试：通过1面<span class="ml16 f12 c3">操作者：某顾问</span></td>
+        </tr>
+        <tr>
+          <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-14 14:00</td>
+          <td class="f13"><span class="ic f20 c3 mr4"></span>面试：待1面<span class="ml16 f12 c3">操作者：某顾问</span></td>
+        </tr>
+        <tr>
+          <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-13 13:00</td>
+          <td class="f13"><span class="ic f20 c3 mr4"></span>已通过筛选<span class="ml16 f12 c3">操作者：某顾问</span></td>
+        </tr>
+        <tr>
+          <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-12 12:00</td>
+          <td class="f13"><span class="ic f20 c3 mr4"></span>推荐职位<span class="ml16 f12 c3">操作者：某顾问</span></td>
+        </tr>
+        <tr>
+          <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-11 11:00</td>
+          <td class="f13"><span class="ic f20 c3 mr4"></span>加入职位<span class="ml16 f12 c3">操作者：某顾问</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  /*单击不同阶段tab，更改样式，查询相应列表*/
+  $('.tab').on('click', function() {
+    var that = $(this);
+    var tabSelected = $(this).hasClass('pl-tab-selected'); //是否已经选中
+    if (tabSelected) { //若已选中，不做操作
+    } else { //未选中情况下
+      $(this).addClass('pl-tab-selected').siblings().removeClass('pl-tab-selected');
+      if (that.index() == 8) {
+        $('.unfit-tabs-header').show();
+      } else {
+        $('.unfit-tabs-header').hide();
+      }
+    }
+  });
+
+  /*单击不合适分类tab，更改样式，查询相应的列表*/
+  $(document).on('click', '.unfit-tab', function() {
+    var tabSelected = $(this).hasClass('bdb3-b');
+    if (tabSelected) { //若已选中，不作操作
+    } else { //未选中时查询相应列表，更改样式
+      $(this).addClass('bdb3-b cb').siblings().removeClass('bdb3-b cb');
+    }
+  });
+
+
+  /*--id小菜单--点击操作icon弹出操作菜单--*/
+  $('.op-menu').click(function(e) {
+    var that = $(this),
+      All = $('#dropmenu div');
+    var beforeSts = $(this).parents('tr').children('td:nth-child(4)').children('span:nth-child(2)').html(); //取得招聘流程
+    var cgr = that.parents('tr').children('td:nth-child(4)').hasClass('c-gr');
+    switch (beforeSts) {
+      case '智推待筛选':
+        All.hide();
+        $('#m-toposition,#m-nomatch,#m-unfit').show();
+        break;
+      case '已加入职位':
+        All.hide();
+        $('#m-recommend,#m-unfit').show();
+        break;
+      case '已推荐职位':
+        All.hide();
+        $('#m-interview,#m-passrec,#m-unfit').show();
+        break;
+      case '已通过筛选':
+        All.hide();
+        $('#m-interview,#m-unfit').show();
+        break;
+      case '面试':
+        if (cgr) {
+          All.hide();
+          $('#m-checkinter,#m-interview2,#m-passinter,#m-unfit').show();
+        } else {
+          All.hide();
+          $('#m-checkinter,#m-passcurrent,#m-interview2,#m-passinter,#m-unfit').show();
+        }
+        break;
+      case '待发Offer':
+        All.hide();
+        $('#m-signoffer,#m-unfit').show();
+        break;
+      case '待入职':
+        All.hide();
+        $('#m-checkoffer,#m-entry,#m-unfit').show();
+        break;
+      case '未过保证期':
+        All.hide();
+        $('#m-checkoffer,#m-checkentry,#m-managevisit,#m-unfit').show();
+        break;
+      case '已过保证期':
+        All.hide();
+        $('#m-checkoffer,#m-checkentry,#m-managevisit').show();
+        break;
+    }; //根据招聘流程状态，控制菜单的可操作内容
+    if (that.parents('tr').attr('data-unfit')) { //如果是不合适阶段，则只显示撤销按钮
+      All.hide();
+      $('#m-undo').show();
+    } else {};
+
+    var has = $(that).has('#dropmenu').length;
+    var visible = !$('#dropmenu').hasClass('sc0');
+    var icons = $('.op-menu').children('.ic');
+    var Icon = $(that).children('.ic');
+    if (has && visible) {
+      $('#dropmenu').addClass('sc0 op0');
+      $(Icon).removeClass('cb z50');
+      setTimeout(function() {
+        $('#dropmenu').hide();
+      }, 150);
+    } else {
+      $('#dropmenu').appendTo(that);
+      $('#dropmenu').show();
+      $(icons).removeClass('cb z50');
+      $(Icon).addClass('cb z50');
+      setTimeout(function() {
+        $('#dropmenu').removeClass('sc0 op0')
+      }, 1);
+    }
+  });
+  $(document).on('click', function() { //单击其它地方关闭菜单
+    var that = $('#dropmenu').parent();
+    var Icon = $('#dropmenu').siblings();
+    if (!$(event.target).closest(that).length) {
+      $('#dropmenu').addClass('sc0 op0');
+      $(Icon).removeClass('cb z50');
+    };
+  });
+
+
+  /*--拂过简历ID，ajax加载简历预览--*/
+  var showcv, delay = 500;
+  
+  $(document).on('mouseenter','.cv-link',function(){//悬浮
+    var that = $(this);
+    showcv = setTimeout(function() {
+      $('.contact-preview').appendTo(that);
+      $('.contact-preview').show();
+    }, delay);
+  });  
+  
+  $(document).on('mouseleave','.cv-link',function(){//离开
+    clearTimeout(showcv);
+    $('.contact-preview').hide().appendTo('body');
+  });
+  
+
+  /*单击小菜单出现相应的弹窗*/
+  $('#dropmenu>div').on('click', function() {
+
+    if ($(this).attr('data-popupID') == 'notfit') { //不合适弹窗有多种，需要判断
+      var unfitStage = $(this).parents('tr').children('td:nth-child(4)').children('span:nth-child(2)').html(); //取得招聘流程
+      var cgr = $(this).parents('tr').children('td:nth-child(4)').hasClass('c-gr');
+      switch (unfitStage) {
+        case '智推待筛选':
+          popin('#popup-ainot');
+          break;
+        case '已加入职位':
+          popin('#popup-addnot');
+          break;
+        case '已推荐职位':
+          popin('#popup-recnot');
+          break;
+        case '已通过筛选':
+          popin('#popup-passrecnot');
+          break;
+        case '面试':
+          if (cgr) {
+            popin('#popup-passinternot');
+          } else {
+            popin('#popup-internot');
+          }
+          break;
+        case '待发Offer':
+          popin('#popup-offernot');
+          break;
+        case '待入职':
+          popin('#popup-entrynot');
+          break;
+        case '未过保证期':
+          popin('#popup-warrantnot');
+          break;
+      };
+    } else { //其它操作，弹出相应的弹窗即可
+
+      popin($($(this).attr('data-popupID')));
+    };
+    $('.popup-opened-tr').removeClass('popup-opened-tr'); //移除其它有标记的
+    $(this).parents('tr').addClass('popup-opened-tr'); //标记弹窗行
+  });
+
+  /*单击弹窗内的取消和确认*/
+  $('.pop-cancel,.pop-confirm').on('click', function() { //单击弹窗右下角的取消或确认
+    popout($(this).parents('[id^="popup-"]')); //隐藏弹窗
+  });
+  $('.pop-confirm').on('click', function() { //单击弹窗右下角确认时，有多种情况
+    var confirmType = $(this).parents('[id^="popup"]').attr('id');
+    switch (confirmType) {
+      case 'popup-addto': //【智推】加入职位
+      case 'popup-recommend': //【加入】推荐职位
+      case 'popup-interview': //【推荐】安排面试  
+      case 'popup-readyoffer': //【面试】待发offer  
+      case 'popup-signoffer': //【offer】签订offer  
+      case 'popup-entry': //【入职】入职 
+        flyToNext(); //简历飞入下个阶段动画 & 更新阶段计数
+        break;
+
+      case 'popup-addnot':
+      case 'popup-recnot':
+      case 'popup-passrecnot':
+      case 'popup-internot':
+      case 'popup-passinternot':
+      case 'popup-offernot':
+      case 'popup-entrynot':
+      case 'popup-warrantnot':
+        flyToUnfit(); //简历飞入不合适阶段动画 & 更新阶段计数
+        break;
+      case 'popup-ainot':
+        toast('反馈已收到');
+        $('.popup-opened-tr').velocity('fadeOut', 500); //隐掉当前智推简历
+        break;
+
+      case 'popup-undo-notfit': //【不合适】撤销不合适
+        var oriStageIndex = $('.unfit-tab.cb').index();
+        flyToStage(oriStageIndex);
+    }
+  });
+
+
+  /*【Offer】签订Offer弹窗，select初始化*/
+  $('#select-warr,#select-warr2').select2({
+    minimumResultsForSearch: Infinity
+  }); //初始化保证期n个月下拉选择
+
+
+  /*查看【面试】【Offer】【入职】信息，编辑和更新操作--begin--*/
+  $('#btn-editinter,#btn-editoffer,#btn-editentry').on('click', function() { //单击编辑
+    $(this).hide(); //隐藏编辑按钮
+    var popupContent = $(this).parents('.popup-header').siblings('.popup-content'); //弹窗内容区域
+    popupContent.addClass('bg-f2'); //内容区增加背景色
+    popupContent.find('.input-display').each(function() { //更改input状态为可编辑
+      $(this).removeClass('input-display').addClass('input-edit').attr('disabled', false);
+    });
+    popupContent.siblings('.popup-footer').children('.editStatus').show().siblings().hide(); //弹窗footer按钮变为编辑状态下的相应操作
+    if (popupContent.find('select').length) {
+      popupContent.find('select').attr('disabled', false);
+      $('#select-warr2').val('6').trigger('change');
+    }
+  });
+
+  $('#btn-editinter-cancel,#btn-editinter-update,#btn-editoffer-cancel,#btn-editoffer-update,#btn-editentry-cancel,#btn-editentry-update').on('click', function() { //取消编辑或更新【面试】【Offer】【入职】信息
+
+    var popupContent = $(this).parents('.popup-footer').siblings('.popup-content');
+    popupContent.siblings('.popup-header').find('[id^="btn-edit"]').show();
+    popupContent.removeClass('bg-f2');
+    popupContent.find('.input-edit').each(function() { //更改input状态为不可编辑的展示状态
+      $(this).addClass('input-display').removeClass('input-edit').attr('disabled', true);
+    });
+    popupContent.siblings('.popup-footer').children('.displayStatus').show().siblings().hide(); //弹窗footer按钮变为编辑状态下的相应操作
+    if (popupContent.find('select').length) {
+      popupContent.find('select').attr('disabled', true);
+    }
+  });
+
+  $('#btn-editinter-update').on('click', function() { //更新编辑面试信息
+    toast('已更新面试安排');
+  });
+  $('#btn-editoffer-update').on('click', function() { //更新编辑面试信息
+    toast('已更新Offer信息');
+  });
+  $('#btn-editentry-update').on('click', function() { //更新编辑面试信息
+    toast('已更新入职信息');
+  });
+
+  /*查看【面试】【Offer】【入职】信息，编辑和更新操作--end--*/
+
+
+  /*--招聘流程拂过显示内容--*/
+  $(document).on('mouseenter', '.hireprocess', function() {
+    var that = $(this);
+    showHireprocess = setTimeout(function() {
+      $('#hireprocess').appendTo(that).show();
+    }, 500);
+  });
+  $(document).on('mouseleave', '.hireprocess', function() {
+    var that = $(this);
+    clearTimeout(showHireprocess);
+    $('#hireprocess').hide().appendTo('body')
+  });
+
+
+
+  //飞入动画基本函数
+  function flyToElement(flyer, flyingTo) {
+    var $func = $(this);
+    var divider = 3;
+    var flyerClone = $(flyer).clone();
+    $(flyerClone).css({
+      position: 'absolute',
+      top: $(flyer).offset().top + "px",
+      left: $(flyer).offset().left + "px",
+      opacity: 1,
+      'z-index': 1000
+    });
+    $('body').append($(flyerClone));
+    var gotoX = $(flyingTo).offset().left - 8;
+    var gotoY = $(flyingTo).offset().top;
+    $(flyerClone).velocity({
+        opacity: 0.4,
+        left: gotoX,
+        top: gotoY,
+        scaleX: 0.8,
+        scaleY: 0.8,
+        //width: $(flyer).width()/divider,
+        //height: $(flyer).height()/divider,
+      }, 1000,
+      function() {
+        $(flyingTo).fadeOut('fast', function() {
+          $(flyingTo).fadeIn('fast', function() {
+            $(flyerClone).fadeOut('fast', function() {
+              $(flyerClone).remove();
+            });
+          });
+        });
+      });
+  };
+
+  /*简历飞入下阶段 & 阶段计数更新 函数*/
+  function flyToNext() {
+    var CV = $('.popup-opened-tr').children(':nth-child(2)').children();
+    var currentStage = $('.pl-tab.pl-tab-selected').find('.cb');
+    var nextStage = $('.pl-tab.pl-tab-selected').next().find('.cb');
+    var currentCount = Number(currentStage.html());
+    var nextCount = Number(nextStage.html());
+    setTimeout(function() { //简历飞动画
+      flyToElement(CV, nextStage);
+    }, 200);
+    setTimeout(function() { //动画完成后移除当前简历所在行
+      $('.popup-opened-tr').velocity('fadeOut', {
+        duration: 500,
+        complete: function() { //行隐藏后，菜单按钮移动到body（避免被移除），然后移除此行
+          $('#dropmenu').appendTo('body');
+          $(this).remove();
+        }
+      })
+    }, 900);
+    setTimeout(function() { //更新两个阶段的计数
+      currentStage.html(--currentCount);
+      nextStage.html(++nextCount);
+    }, 1100);
+  };
+
+  /*简历飞入不合适阶段 & 计数更新 函数*/
+  function flyToUnfit() {
+    var CV = $('.popup-opened-tr').children(':nth-child(2)').children();
+    var currentStage = $('.pl-tab.pl-tab-selected').find('.cb');
+    var unfitStage = $('[data-id="unfit"]').find('.bold');
+    var currentCount = Number(currentStage.html());
+    var unfitCount = Number(unfitStage.html());
+    setTimeout(function() { //简历飞动画
+      flyToElement(CV, unfitStage);
+    }, 200);
+    setTimeout(function() { //动画完成后移除当前简历所在行
+      $('.popup-opened-tr').velocity('fadeOut', {
+        duration: 500,
+        complete: function() { //行隐藏后，菜单按钮移动到body（避免被移除），然后移除此行
+          $('#dropmenu').appendTo('body');
+          $(this).remove();
+        }
+      })
+    }, 900);
+    setTimeout(function() { //更新两个阶段的计数
+      currentStage.html(--currentCount);
+      unfitStage.html(++unfitCount);
+    }, 1100);
+  };
+
+  /*撤销不合适-飞入原先阶段*/
+  function flyToStage(N) {
+    var CV = $('.popup-opened-tr').children(':nth-child(2)').children();
+    var nthChildNo = Number(N) + 1;
+    var stageN = $('.tab.pl-tab:nth-child(' + nthChildNo + ')').find('.cb');
+    var stageNCount = Number(stageN.html());
+    var unfitTotal = $('[data-id="unfit"]').find('.bold');
+    var unfitTotalCount = Number(unfitTotal.html());
+    var unfitStageN = $('.unfit-tab.cb').find('.bold');
+    var unfitStageNCount = Number($('.unfit-tab.cb').find('.bold').html());
+    setTimeout(function() { //简历飞动画
+      flyToElement(CV, stageN);
+    }, 200);
+    setTimeout(function() { //动画完成后移除当前简历所在行
+      $('.popup-opened-tr').velocity('fadeOut', {
+        duration: 500,
+        complete: function() { //行隐藏后，菜单按钮移动到body（避免被移除），然后移除此行
+          $('#dropmenu').appendTo('body');
+          $(this).remove();
+        }
+      })
+    }, 900);
+    setTimeout(function() { //更新两个阶段的计数
+      unfitTotal.html(--unfitTotalCount);
+      unfitStageN.html(--unfitStageNCount);
+      stageN.html(++stageNCount);
+    }, 1100);
+
+  }
+
+</script>
+
+</html>

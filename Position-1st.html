@@ -1,0 +1,2398 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>职位</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main-New.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/cityselect.css">
+<link rel="stylesheet" href="css/datepicker.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/datepicker.js"></script>
+<script src="js/cityselect.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+
+</head>
+<body class="bg-ec">
+  <header class="header"></header>
+<div class="content">
+  <div class="fl w200">
+    <div class="card1 pb16">
+      <div class="card-header"> <span class="ic f20"></span> 我的职位 <span class="f12 ml16"><input type="checkbox" id="allpos"><label for="allpos" class="pt1" style="padding-top:2px">全公司</label></span></div>
+      <div class="folder c1 f14 p816 ho-cb ho-ec cu-po"> <span>所有职位</span> <span class="ta-r fr">136</span> </div>
+      <div class="folder c1 f14 p816 cb cu-po bdl5"> <span><span class="ic f20 c3"></span>草稿</span> <span class="ta-r fr">17</span> </div>
+      <div class="folder c1 f14 p816 ho-cb ho-ec cu-po"> <span>待审核</span> <span class="ta-r fr">136</span> </div>      
+      <div class="folder c1 f14 p816 ho-cb ho-ec cu-po"> <span>进展中的</span> <span class="ta-r fr">13</span> </div>
+      <div class="folder c1 f14 p816 ho-cb ho-ec cu-po"> <span>暂停中的</span> <span class="ta-r fr">23</span> </div>
+      <div class="folder c1 f14 p816 ho-cb ho-ec cu-po"> <span>已关闭的</span> <span class="ta-r fr">17</span> </div>
+      <div class="folder c1 f14 p816 ho-cb ho-ec cu-po bdt1-d"> <span>未通过审核</span> <span class="ta-r fr">13</span> </div>
+    </div>
+    <div class="card1 pb16 mt24">
+      <div class="card-header"> <span class="ic f20"></span> 职位文件夹 <span class="fr f13 ho-u ho-cb cu-po">编辑</span> </div>
+      <div class="c1 f14 p816 ho-cb ho-ec cu-po mt8"> <span class="ic f20 cf6"></span> <span>默认文件夹</span> <span class="ta-r fr">0</span> </div>
+      <div class="c1 f14 p816 ho-cb ho-ec cu-po"> <span class="ic f20 cf6"></span> <span>Java普通岗</span> <span class="ta-r fr">0</span> </div>
+      <div class="c1 f14 p816 ho-cb ho-ec cu-po"> <span class="ic f20 cf6"></span> <span>PHP开发</span> <span class="ta-r fr">0</span> </div>
+      <div class="c1 f14 p816 ho-cb ho-ec cu-po"> <span class="ic f20 cf6"></span> <span>技术总监岗</span> <span class="ta-r fr">0</span> </div>
+      <div class="c1 f14 p816 ho-cb ho-ec cu-po"> <span class="ic f20 cf6"></span> <span>iOS开发</span> <span class="ta-r fr">0</span> </div>
+    </div>
+  </div>
+  <div class="fl w968 ml32"> <a href="Position-add.html" class="card1 a fl f14 p816 cb ho-blue cu-po trans ho-sh po-r z50"> <span class="ic f24 ml-5"></span> 新增职位 </a>
+	<div class="fl card1 po-r trans ho-sh2 ml24">
+		<span class="ic f24 c-c ml4"></span>
+		<input type="text" placeholder="输入职位或公司名称搜索" class="f14 h40 bdrs2 w360 pl4" style="border:none;">
+	</div> 
+    <div class="card1 mt16 w968 f14 fl clear">
+      <div class="bg-f2 c2 p816"> <span class="ic f24"></span>筛选: <span class="filter-tag d-ib a ml24 cu-po">职位名称
+        <div class="note hidden">
+          <div class="mt8">
+            <select name="" id="select-company" class="select-con w240">
+              <option></option>
+              <option>A公司</option>
+              <option>B公司</option>
+              <option>C公司</option>
+              <option>D公司</option>
+              <option>E公司</option>
+              <option>F公司</option>
+              <option>G公司</option>
+              <option>H公司</option>
+              <option>I公司</option>
+              <option>G公司</option>
+              <option>K公司</option>
+              <option>L公司</option>
+              <option>M公司</option>
+              <option>N公司</option>
+              <option>O公司</option>
+              <option>P公司</option>
+              <option>Q公司</option>
+              <option>R公司</option>
+              <option>S公司</option>
+              <option>T公司</option>
+              <option>U公司</option>
+              <option>V公司</option>
+              <option>W公司</option>
+              <option>X公司</option>
+              <option>Y公司</option>
+              <option>Z公司</option>
+            </select>
+          </div>
+          <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+        </div>
+        </span> <span class="filter-tag d-ib a ml24 cu-po">职位状态
+        <div class="note hidden">
+          <div class="mt8">
+            <select name="" id="select-status" class="select-con w160">
+              <option></option>
+              <option>潜在客户</option>
+              <option>意向客户</option>
+              <option>签约谈判中</option>
+              <option>已签约客户</option>
+              <option>客户池</option>
+            </select>
+          </div>
+          <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+        </div>
+        </span> <span class="filter-tag d-ib a ml24 cu-po">城市
+        <div class="note hidden">
+          <div class="mt8">
+            <input type="text" id="citySelect1" class="w160 p8 h32">
+          </div>
+          <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+        </div>
+        </span> <span class="filter-tag d-ib a ml24 cu-po">行业
+        <div class="note hidden">
+          <div class="mt8">
+            <input type="text" class="w240 p8 h32">
+          </div>
+          <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+        </div>
+        </span> <span class="filter-tag d-ib a ml24 cu-po">所属顾问
+        <div class="note hidden">
+          <div class="mt8">
+            <select name="" id="select-bd" class="select-position w160">
+              <option value="-1"></option>
+              <optgroup label="凤凰队">
+              <option value="">张</option>
+              <option value="">王</option>
+              <option value="">李</option>
+              </optgroup>
+              <optgroup label="热火队">
+              <option value="">赵</option>
+              <option value="">刘</option>
+              </optgroup>
+              <optgroup label="麒麟队">
+              <option value="">邓</option>
+              <option value="">周</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+        </div>
+        </span> <span class="filter-tag d-ib a ml24 cu-po">所属团队
+        <div class="note hidden">
+          <div class="mt8">
+            <select name="" id="select-team" class="select-con w160">
+              <option></option>
+              <option>凤凰队</option>
+              <option>麒麟队</option>
+              <option>热火队</option>
+            </select>
+          </div>
+          <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+        </div>
+        </span> <span class="filter-tag d-ib a ml24 cu-po">创建者
+        <div class="note hidden">
+          <div class="mt8">
+            <input type="radio" name="creator" value="personal" id="personal">
+            <label for="personal"></label>
+            个人
+            <input type="radio" name="creator" value="group" id="group">
+            <label for="group" class="ml16"></label>
+            团队
+            <div class="select-personal hidden mt8">
+              <select name="" class="select-personal w160" id="select-personal">
+                <option value="-1"></option>
+                <optgroup label="BD">
+                <option value="">张</option>
+                <option value="">王</option>
+                <option value="">李</option>
+                </optgroup>
+                <optgroup label="顾问">
+                <option value="">赵</option>
+                <option value="">刘</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="select-group hidden mt8">
+              <select name="" class="select-group w160" id="select-group">
+                <option value="-1"></option>
+                <optgroup label="BD团队">
+                <option value="">热火队</option>
+                <option value="">麒麟队</option>
+                </optgroup>
+                <optgroup label="顾问团队">
+                <option value="">火箭队</option>
+                <option value="">凤凰队</option>
+                <option value="">勇士队</option>
+                <option value="">灰熊队</option>
+                </optgroup>
+              </select>
+            </div>
+            <script>
+/*切换个人和团队筛选*/			
+$('input[name="creator"]').on('click', function() {
+    var that = $(this);
+    var value = $('input[name="creator"]:checked').val();
+    if (value == "personal") {
+      $('.select-personal').show();$('.select-group').hide();
+    } else {
+      $('.select-personal').hide();$('.select-group').show();
+    }
+  })           
+</script> 
+          </div>
+          <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+        </div>
+        </span> <span class="filter-tag d-ib a ml24 cu-po">创建时间
+        <div class="note hidden">
+          <div class="p4-0">
+            <input type="radio" value="week" name="cre-time" id="week">
+            <label for="week"></label>
+            一周内</div>
+          <div class="p4-0">
+            <input type="radio" value="month" name="cre-time" id="month">
+            <label for="month"></label>
+            一月内</div>
+          <div class="p4-0">
+            <input type="radio" value="month3" name="cre-time" id="month3">
+            <label for="month3"></label>
+            三月内</div>
+          <div class="p4-0">
+            <input type="radio" value="custom" name="cre-time" id="custom">
+            <label for="custom"></label>
+            自定义</div>
+          <div class="custom hidden">
+            <div class="ml16">
+              <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="start">
+            </div>
+            <div class="ta-c ml16">~</div>
+            <div class="ml16">
+              <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="end">
+            </div>
+          </div>
+          <script>
+            $('input[name="cre-time"]').on('click',function(){
+				var that = $(this);
+				var value = $('input[name="cre-time"]:checked').val();
+				if(value == "custom"){
+					$(that).parent().siblings('.custom').show()} else{$(that).parent().siblings('.custom').hide()}
+				})
+            </script>
+          <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+        </div>
+        </span> <span class="filter-tag d-ib a ml24 cu-po">领取时间
+        <div class="note hidden">
+          <div class="p4-0">
+            <input type="radio" value="week" name="get-time" id="week1">
+            <label for="week1"></label>
+            一周内</div>
+          <div class="p4-0">
+            <input type="radio" value="month" name="get-time" id="month1">
+            <label for="month1"></label>
+            一月内</div>
+          <div class="p4-0">
+            <input type="radio" value="month3" name="get-time" id="month31">
+            <label for="month31"></label>
+            三月内</div>
+          <div class="p4-0">
+            <input type="radio" value="custom" name="get-time" id="custom1">
+            <label for="custom1"></label>
+            自定义</div>
+          <div class="custom hidden">
+            <div class="ml16">
+              <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="start1">
+            </div>
+            <div class="ta-c ml16">~</div>
+            <div class="ml16">
+              <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="end1">
+            </div>
+          </div>
+          <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+        </div>
+        </span> <span class="filter-tag d-ib a ml24 cu-po">最后操作时间
+        <div class="note hidden">
+          <div class="p4-0">
+            <input type="radio" value="week" name="op-time" id="week2">
+            <label for="week2"></label>
+            一周内</div>
+          <div class="p4-0">
+            <input type="radio" value="month" name="op-time" id="month2">
+            <label for="month2"></label>
+            一月内</div>
+          <div class="p4-0">
+            <input type="radio" value="month3" name="op-time" id="month32">
+            <label for="month32"></label>
+            三月内</div>
+          <div class="p4-0">
+            <input type="radio" value="custom" name="op-time" id="custom2">
+            <label for="custom2"></label>
+            自定义</div>
+          <div class="custom hidden">
+            <div class="ml16">
+              <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="start2">
+            </div>
+            <div class="ta-c ml16">~</div>
+            <div class="ml16">
+              <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="end2">
+            </div>
+          </div>
+          <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+        </div>
+        </span> </div>
+      <div class="p816 mt8 c1"> <span class="fl p3-4">所有职位</span> <span class="ic f24 c3 mr-8 fl"></span> <span class="tag-search"> <span class="c3">更新时间：</span> <span>三天内</span><span class="ic ml4 f16 c3"></span> </span> <span class="tag-search"> <span class="c3">顾问：</span> <span>王翔</span><span class="ic ml4 f16 c3"></span> </span> <span class="tag-search"> <span class="c3">城市：</span> <span>深圳</span><span class="ic ml4 f16 c3"></span> </span> <span class="ml8 fl">共<span class="bold cb f16 m0-4">36</span>个相关职位</span> <span class="fl cb bold cu-po ml24 f14">清空筛选条件</span>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="card1-nbg mt16 fl clear w968 f14">
+      <div class="p1016 bg-w">
+        <div class="fl">
+          <input type="checkbox" id="chk-comp">
+          <label for="chk-comp"></label>
+          <span class="cb cu-po ho-cb bold">批量加入文件夹</span> </div>
+        <div class="fr c2"> <span class="cu-po ho-bd" id="showgrid"> <span class="ic f24"></span> <span>详细</span> </span> <span class="ml16 cb cu-po" id="showlist"> <span class="ic f24"></span> <span>列表</span> </span> <span class="ml16"> <span>每页显示：</span> <a href="" class="a ml8 cb">20</a> <a href="" class="a ml8 c2">30</a> <a href="" class="a ml8 c2">50</a> </span> </div>
+        <div class="clear"></div>
+      </div>
+      <div>
+        <table class="c1 bdcl ta-l c1">
+          <tr class="c2 h64 f13 bg-w" style="border:none;">
+            <th class="w48"></th>
+            <th class="w178">职位名称</th>
+            <th class="w52">操作</th>
+            <th class="sort w108 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> 状态 </th>
+            <th class="sort w66 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> 备注 </th>
+            <th class="sort w66 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span class="">优先级</span> </th>
+            <th class="sort w80 ta-r pr24 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> 年薪</th>
+            <th class="w136"> <span>客户公司</span> </th>
+            <th class="w66"> <span>联系人</span> </th>
+            <th class="w66">城市</th>
+            <th class="sort ta-r w102 pr24 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>更新时间</span> </th>
+          </tr>
+          <tr class="bdt1 bg-w h64 ho-ec">
+            <td class="w48 pl16"><input type="checkbox" id="chk-comp1">
+              <label for="chk-comp1"></label></td>
+            <td class="cv-link"><a href="Position-2nd.html" class="a cb bold w154 ol">Java高级开发工程师</a></td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r"></span> </span></td>
+            <td class="beforeSts"><span class="c2 p0-4">草稿</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              <div class="note op1 hidden">
+                <div class="p4-0 mh240 w360 ovy-a Scrollable" >
+                  <div class="btn-newnote fl cb ml32 mb8 cu-po"><span class="ic f24"></span> 新增备注</div>
+                  <ul class="tl-container c1 lh-n f14 clear">
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum corrupti optio fugit </p>
+                        <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </span></td>
+            <td><span class="priority d-ib cu-po"> <span class="bdb1-d">无</span> </span></td>
+            <td class="ta-r pr24"><span>15</span>~<span>25</span>万 </td>
+            <td><a href="" class="a ol c1 w112">顺丰科技有限公司</a></td>
+            <td><span class="d-ib note-ho ho-cb">赵先生
+              <div class="hidden note w240" style="padding:8px 0 8px 16px;">
+                <div class="h240 ov-y Scrollable">
+                  <div class="c1">
+                    <div class="fl lh30">
+                      <div><span class="d-ib w44 c3">性别：</span> <span>男</span></div>
+                      <div><span class="d-ib w44 c3">职位：</span> <span>招聘经理</span></div>
+                      <div><span class="d-ib w44 c3">状态：</span> 在职</div>
+                      <div><span class="d-ib w44 c3">电话：</span> <span>18612345678</span></div>
+                      <div><span class="d-ib w44 c3">邮箱：</span> <span>test@abcompany.com</span></div>
+                    </div>
+                    <div class="fl lh30">
+                      <div> <span class="d-ib w44 c3">QQ：</span> <span>1234567890</span> </div>
+                      <div> <span class="d-ib w44 c3">微信：</span> <span>zhihui.zhang</span> </div>
+                      <div> <span class="d-ib w44 c3">录入：</span> <span>高阳</span> </div>
+                      <div> <span class="d-ib w44 c3 fl">备注：</span>
+                        <p class="fl ml4 mt7 lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quod, deleniti voluptatibus</p>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+              </span></td>
+            <td>深圳市</td>
+            <td class="ta-r pr24">2016-06-13</td>
+          </tr>
+          <tr class="bdt1 bg-w h64 ho-ec">
+            <td class="w48 pl16"><input type="checkbox" id="chk-comp1">
+              <label for="chk-comp1"></label></td>
+            <td class="cv-link"><a href="Position-2nd.html" class="a cb bold w154 ol">Java高级开发工程师</a></td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r"></span> </span></td>
+            <td class="beforeSts"><span class="c2 p0-4">待审核</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              <div class="note op1 hidden">
+                <div class="p4-0 mh240 w360 ovy-a Scrollable" >
+                  <div class="btn-newnote fl cb ml32 mb8 cu-po"><span class="ic f24"></span> 新增备注</div>
+                  <ul class="tl-container c1 lh-n f14 clear">
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum corrupti optio fugit </p>
+                        <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </span></td>
+            <td><span class="priority d-ib cu-po"> <span class="bdb1-d">无</span> </span></td>
+            <td class="ta-r pr24"><span>15</span>~<span>25</span>万 </td>
+            <td><a href="" class="a ol c1 w112">顺丰科技有限公司</a></td>
+            <td><span class="d-ib note-ho ho-cb">赵先生
+              <div class="hidden note w240" style="padding:8px 0 8px 16px;">
+                <div class="h240 ov-y Scrollable">
+                  <div class="c1">
+                    <div class="fl lh30">
+                      <div><span class="d-ib w44 c3">性别：</span> <span>男</span></div>
+                      <div><span class="d-ib w44 c3">职位：</span> <span>招聘经理</span></div>
+                      <div><span class="d-ib w44 c3">状态：</span> 在职</div>
+                      <div><span class="d-ib w44 c3">电话：</span> <span>18612345678</span></div>
+                      <div><span class="d-ib w44 c3">邮箱：</span> <span>test@abcompany.com</span></div>
+                    </div>
+                    <div class="fl lh30">
+                      <div> <span class="d-ib w44 c3">QQ：</span> <span>1234567890</span> </div>
+                      <div> <span class="d-ib w44 c3">微信：</span> <span>zhihui.zhang</span> </div>
+                      <div> <span class="d-ib w44 c3">录入：</span> <span>高阳</span> </div>
+                      <div> <span class="d-ib w44 c3 fl">备注：</span>
+                        <p class="fl ml4 mt7 lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quod, deleniti voluptatibus</p>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+              </span></td>
+            <td>深圳市</td>
+            <td class="ta-r pr24">2016-06-13</td>
+          </tr>
+          <tr class="bdt1 bg-w h64 ho-ec ho-n-ec">
+            <td class="w48 pl16"><input type="checkbox" id="chk-comp1">
+              <label for="chk-comp1"></label></td>
+            <td class="cv-link"><a href="Position-2nd.html" class="a cb bold w154 ol">Java高级开发工程师</a></td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r"></span> </span></td>
+            <td class="beforeSts"><span class="red p0-4">未通过</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              <div class="note op1 hidden">
+                <div class="p4-0 mh240 w360 ovy-a Scrollable" >
+                  <div class="btn-newnote fl cb ml32 mb8 cu-po"><span class="ic f24"></span> 新增备注</div>
+                  <ul class="tl-container c1 lh-n f14 clear">
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum corrupti optio fugit </p>
+                        <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </span></td>
+            <td><span class="priority d-ib cu-po"> <span class="bdb1-d">无</span> </span></td>
+            <td class="ta-r pr24"><span>15</span>~<span>25</span>万 </td>
+            <td><a href="" class="a ol c1 w112">顺丰科技有限公司</a></td>
+            <td><span class="d-ib note-ho ho-cb">赵先生
+              <div class="hidden note w240" style="padding:8px 0 8px 16px;">
+                <div class="h240 ov-y Scrollable">
+                  <div class="c1">
+                    <div class="fl lh30">
+                      <div><span class="d-ib w44 c3">性别：</span> <span>男</span></div>
+                      <div><span class="d-ib w44 c3">职位：</span> <span>招聘经理</span></div>
+                      <div><span class="d-ib w44 c3">状态：</span> 在职</div>
+                      <div><span class="d-ib w44 c3">电话：</span> <span>18612345678</span></div>
+                      <div><span class="d-ib w44 c3">邮箱：</span> <span>test@abcompany.com</span></div>
+                    </div>
+                    <div class="fl lh30">
+                      <div> <span class="d-ib w44 c3">QQ：</span> <span>1234567890</span> </div>
+                      <div> <span class="d-ib w44 c3">微信：</span> <span>zhihui.zhang</span> </div>
+                      <div> <span class="d-ib w44 c3">录入：</span> <span>高阳</span> </div>
+                      <div> <span class="d-ib w44 c3 fl">备注：</span>
+                        <p class="fl ml4 mt7 lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quod, deleniti voluptatibus</p>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+              </span></td>
+            <td>深圳市</td>
+            <td class="ta-r pr24">2016-06-13</td>
+          </tr>
+          <tr class="detail-list hidden  ho-ec ho-ec f13 c2 bg-w">
+            <td class="pb16 pt1" colspan="11"><div class="ta-l">
+                <div class="ic ca7 fl f64 bd1-e0 ml24 mt8"></div>
+                <div class="fl ml16 lh30 w240">
+                  <div>招聘人数： <span>1人</span></div>
+                  <div>进展天数： <span>32天</span> </div>
+                  <div> 职位偏好： <span class="mr16">BAT</span> <span class="mr16">华中科技大学</span> </div>
+                </div>
+                <div class="fl ml16 mt8 po-r pline">
+                  <div class="po-r z50"> <a href="" class="a fl ta-c ho-bdb cu-po"> <span class="bold c3 f24">0</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">加入</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">0</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">推荐</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">0</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">面试</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">0</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">Offer</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">0</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">入职</p>
+                    </a> </div>
+                </div>
+                <div class="fl mt16 pl24 ml40 bdl1">
+                  <div class="c3 ho-cb cu-po"> <span class="ic f24"></span> <span>发票：<span class="bold f20 ml12">0</span></span> </div>
+                  <div class="c3 ho-cb cu-po mt8"> <span class="ic f24"></span> <span>不合适：<span class="bold f20">6</span></span> </div>
+                </div>
+              </div></td>
+          </tr>
+          <tr class="bdt1 h64 bg-w ho-ec ho-n-ec">
+            <td class="w48 pl16"><input type="checkbox" id="chk-comp2">
+              <label for="chk-comp2"></label></td>
+            <td class="cv-link"><a href="Position-2nd.html" class="a cb bold w154 ol">Java高级开发工程师</a></td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r"></span> </span></td>
+            <td class="beforeSts"><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>0</span></span>
+              <div class="note op1 hidden">
+                <div class="p4-0 mh240 w360 ovy-a Scrollable" >
+                  <div class="btn-newnote fl cb ml32 mb8 cu-po"><span class="ic f24"></span> 新增备注</div>
+                  <ul class="tl-container c1 lh-n f14 clear">
+                  </ul>
+                </div>
+              </div>
+              </span></td>
+            <td><span class="priority d-ib cu-po"> <span class="cw bdrs2 bg-b p0-4">高</span> </span></td>
+            <td class="ta-r pr24"><span>15</span>~<span>25</span>万 </td>
+            <td><a href="" class="a ol c1 w112">顺丰科技有限公司</a></td>
+            <td><span class="d-ib note-ho ho-cb">赵先生
+              <div class="hidden note w240" style="padding:8px 0 8px 16px;">
+                <div class="h240 ov-y Scrollable">
+                  <div class="c1">
+                    <div class="fl lh30">
+                      <div><span class="d-ib w44 c3">性别：</span> <span>男</span></div>
+                      <div><span class="d-ib w44 c3">职位：</span> <span>招聘经理</span></div>
+                      <div><span class="d-ib w44 c3">状态：</span> 在职</div>
+                      <div><span class="d-ib w44 c3">电话：</span> <span>18612345678</span></div>
+                      <div><span class="d-ib w44 c3">邮箱：</span> <span>test@abcompany.com</span></div>
+                    </div>
+                    <div class="fl lh30">
+                      <div> <span class="d-ib w44 c3">QQ：</span> <span>1234567890</span> </div>
+                      <div> <span class="d-ib w44 c3">微信：</span> <span>zhihui.zhang</span> </div>
+                      <div> <span class="d-ib w44 c3">录入：</span> <span>高阳</span> </div>
+                      <div> <span class="d-ib w44 c3 fl">备注：</span>
+                        <p class="fl ml4 mt7 lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quod, deleniti voluptatibus</p>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+              </span></td>
+            <td>深圳市</td>
+            <td class="ta-r pr24">2016-06-13</td>
+          </tr>
+          <tr class="detail-list hidden  ho-ec ho-ec f13 c2 bg-w">
+            <td class="pb16 pt1" colspan="11"><div class="ta-l">
+                <div class="ic ca7 fl f64 bd1-e0 ml24 mt8"></div>
+                <div class="fl ml16 lh30 w240">
+                  <div>招聘人数： <span>1人</span></div>
+                  <div>进展天数： <span>32天</span> </div>
+                  <div> 职位偏好： <span class="mr16">BAT</span> <span class="mr16">华中科技大学</span> </div>
+                </div>
+                <div class="fl ml16 mt8 po-r pline">
+                  <div class="po-r z50"> <a href="" class="a fl ta-c ho-bdb cu-po"> <span class="bold cb f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">加入</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold cb f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">推荐</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold cb f24">3</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">面试</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold cb f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">Offer</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold cb f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">入职</p>
+                    </a> </div>
+                </div>
+                <div class="fl mt16 pl24 ml40 bdl1">
+                  <div class="c3 ho-cb cu-po"> <span class="ic f24"></span> <span>发票：<span class="bold f20 ml12">0</span></span> </div>
+                  <div class="c3 ho-cb cu-po mt8"> <span class="ic f24"></span> <span>不合适：<span class="bold f20">6</span></span> </div>
+                </div>
+              </div></td>
+          </tr>
+          <tr class="bdt1 h64 bg-w ho-ec ho-n-ec">
+            <td class="w48 pl16"><input type="checkbox" id="chk-comp3">
+              <label for="chk-comp3"></label></td>
+            <td class="cv-link"><a href="Position-2nd.html" class="a cb bold w154 ol">Java高级开发工程师</a></td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r"></span> </span></td>
+            <td class="beforeSts"><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              <div class="note op1 hidden">
+                <div class="p4-0 mh240 w360 ovy-a Scrollable" >
+                  <div class="btn-newnote fl cb ml32 mb8 cu-po"><span class="ic f24"></span> 新增备注</div>
+                  <ul class="tl-container c1 lh-n f14 clear">
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum corrupti optio fugit </p>
+                        <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </span></td>
+            <td><span class="priority d-ib cu-po"> <span class="cw bdrs2 bg75 p0-4">中</span> </span></td>
+            <td class="ta-r pr24"><span>15</span>~<span>25</span>万 </td>
+            <td><a href="" class="a ol c1 w112">顺丰科技有限公司</a></td>
+            <td><span class="d-ib note-ho ho-cb">赵先生
+              <div class="hidden note w240" style="padding:8px 0 8px 16px;">
+                <div class="h240 ov-y Scrollable">
+                  <div class="c1">
+                    <div class="fl lh30">
+                      <div><span class="d-ib w44 c3">性别：</span> <span>男</span></div>
+                      <div><span class="d-ib w44 c3">职位：</span> <span>招聘经理</span></div>
+                      <div><span class="d-ib w44 c3">状态：</span> 在职</div>
+                      <div><span class="d-ib w44 c3">电话：</span> <span>18612345678</span></div>
+                      <div><span class="d-ib w44 c3">邮箱：</span> <span>test@abcompany.com</span></div>
+                    </div>
+                    <div class="fl lh30">
+                      <div> <span class="d-ib w44 c3">QQ：</span> <span>1234567890</span> </div>
+                      <div> <span class="d-ib w44 c3">微信：</span> <span>zhihui.zhang</span> </div>
+                      <div> <span class="d-ib w44 c3">录入：</span> <span>高阳</span> </div>
+                      <div> <span class="d-ib w44 c3 fl">备注：</span>
+                        <p class="fl ml4 mt7 lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quod, deleniti voluptatibus</p>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+              </span></td>
+            <td>深圳市</td>
+            <td class="ta-r pr24">2016-06-13</td>
+          </tr>
+          <tr class="detail-list hidden  ho-ec ho-ec f13 c2 bg-w">
+            <td class="pb16 pt1" colspan="11"><div class="ta-l">
+                <div class="ic ca7 fl f64 bd1-e0 ml24 mt8"></div>
+                <div class="fl ml16 lh30 w240">
+                  <div>招聘人数： <span>1人</span></div>
+                  <div>进展天数： <span>32天</span> </div>
+                  <div> 职位偏好： <span class="mr16">BAT</span> <span class="mr16">华中科技大学</span> </div>
+                </div>
+                <div class="fl ml16 mt8 po-r pline">
+                  <div class="po-r z50"> <a href="" class="a fl ta-c ho-bdb cu-po"> <span class="bold cb f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">加入</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold cb f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">推荐</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold cb f24">3</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">面试</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold cb f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">Offer</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold cb f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">入职</p>
+                    </a> </div>
+                </div>
+                <div class="fl mt16 pl24 ml40 bdl1">
+                  <div class="c3 ho-cb cu-po"> <span class="ic f24"></span> <span>发票：<span class="bold f20 ml12">0</span></span> </div>
+                  <div class="c3 ho-cb cu-po mt8"> <span class="ic f24"></span> <span>不合适：<span class="bold f20">6</span></span> </div>
+                </div>
+              </div></td>
+          </tr>
+          <tr class="bdt1 h64 bg-w ho-ec ho-n-ec">
+            <td class="w48 pl16"><input type="checkbox" id="chk-comp4">
+              <label for="chk-comp4"></label></td>
+            <td class="cv-link"><a href="Position-2nd.html" class="a cb bold w154 ol">Java高级开发工程师</a></td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r"></span> </span></td>
+            <td class="beforeSts"><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              <div class="note op1 hidden">
+                <div class="p4-0 mh240 w360 ovy-a Scrollable" >
+                  <div class="btn-newnote fl cb ml32 mb8 cu-po"><span class="ic f24"></span> 新增备注</div>
+                  <ul class="tl-container c1 lh-n f14 clear">
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum corrupti optio fugit </p>
+                        <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </span></td>
+            <td><span class="priority d-ib cu-po"> <span class="cw bdrs2 bg50 p0-4">低</span> </span></td>
+            <td class="ta-r pr24"><span>15</span>~<span>25</span>万 </td>
+            <td><a href="" class="a ol c1 w112">顺丰科技有限公司</a></td>
+            <td><span class="d-ib note-ho ho-cb">赵先生
+              <div class="hidden note w240" style="padding:8px 0 8px 16px;">
+                <div class="h240 ov-y Scrollable">
+                  <div class="c1">
+                    <div class="fl lh30">
+                      <div><span class="d-ib w44 c3">性别：</span> <span>男</span></div>
+                      <div><span class="d-ib w44 c3">职位：</span> <span>招聘经理</span></div>
+                      <div><span class="d-ib w44 c3">状态：</span> 在职</div>
+                      <div><span class="d-ib w44 c3">电话：</span> <span>18612345678</span></div>
+                      <div><span class="d-ib w44 c3">邮箱：</span> <span>test@abcompany.com</span></div>
+                    </div>
+                    <div class="fl lh30">
+                      <div> <span class="d-ib w44 c3">QQ：</span> <span>1234567890</span> </div>
+                      <div> <span class="d-ib w44 c3">微信：</span> <span>zhihui.zhang</span> </div>
+                      <div> <span class="d-ib w44 c3">录入：</span> <span>高阳</span> </div>
+                      <div> <span class="d-ib w44 c3 fl">备注：</span>
+                        <p class="fl ml4 mt7 lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quod, deleniti voluptatibus</p>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+              </span></td>
+            <td>深圳市</td>
+            <td class="ta-r pr24">2016-06-13</td>
+          </tr>
+          <tr class="detail-list hidden  ho-ec ho-ec f13 c2 bg-w">
+            <td class="pb16 pt1" colspan="11"><div class="ta-l">
+                <div class="ic ca7 fl f64 bd1-e0 ml24 mt8"></div>
+                <div class="fl ml16 lh30 w240">
+                  <div>招聘人数： <span>1人</span></div>
+                  <div>进展天数： <span>32天</span> </div>
+                  <div> 职位偏好： <span class="mr16">BAT</span> <span class="mr16">华中科技大学</span> </div>
+                </div>
+                <div class="fl ml16 mt8 po-r pline">
+                  <div class="po-r z50"> <a href="" class="a fl ta-c ho-bdb cu-po"> <span class="bold cb f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">加入</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold cb f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">推荐</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold cb f24">3</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">面试</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold cb f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">Offer</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold cb f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">入职</p>
+                    </a> </div>
+                </div>
+                <div class="fl mt16 pl24 ml40 bdl1">
+                  <div class="c3 ho-cb cu-po"> <span class="ic f24"></span> <span>发票：<span class="bold f20 ml12">0</span></span> </div>
+                  <div class="c3 ho-cb cu-po mt8"> <span class="ic f24"></span> <span>不合适：<span class="bold f20">6</span></span> </div>
+                </div>
+              </div></td>
+          </tr>
+          <tr class="bdt1 h64 bg-w ho-ec ho-n-ec">
+            <td class="w48 pl16"><input type="checkbox" id="chk-comp5">
+              <label for="chk-comp5"></label></td>
+            <td class="cv-link"><a href="Position-2nd.html" class="a c3 bold w154 ol">Java高级开发工程师</a></td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r"></span> </span></td>
+            <td class="beforeSts"><span class="cw bdrs2 bg9e p0-4">暂停中</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              <div class="note op1 hidden">
+                <div class="p4-0 mh240 w360 ovy-a Scrollable" >
+                  <div class="btn-newnote fl cb ml32 mb8 cu-po"><span class="ic f24"></span> 新增备注</div>
+                  <ul class="tl-container c1 lh-n f14 clear">
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum corrupti optio fugit </p>
+                        <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </span></td>
+            <td><span class="cw bdrs2 bg9e p0-4">高</span></td>
+            <td class="ta-r pr24"><span>15</span>~<span>25</span>万 </td>
+            <td><a href="" class="a ol c1 w112">顺丰科技有限公司</a></td>
+            <td><span class="d-ib note-ho ho-cb">赵先生
+              <div class="hidden note w240" style="padding:8px 0 8px 16px;">
+                <div class="h240 ov-y Scrollable">
+                  <div class="c1">
+                    <div class="fl lh30">
+                      <div><span class="d-ib w44 c3">性别：</span> <span>男</span></div>
+                      <div><span class="d-ib w44 c3">职位：</span> <span>招聘经理</span></div>
+                      <div><span class="d-ib w44 c3">状态：</span> 在职</div>
+                      <div><span class="d-ib w44 c3">电话：</span> <span>18612345678</span></div>
+                      <div><span class="d-ib w44 c3">邮箱：</span> <span>test@abcompany.com</span></div>
+                    </div>
+                    <div class="fl lh30">
+                      <div> <span class="d-ib w44 c3">QQ：</span> <span>1234567890</span> </div>
+                      <div> <span class="d-ib w44 c3">微信：</span> <span>zhihui.zhang</span> </div>
+                      <div> <span class="d-ib w44 c3">录入：</span> <span>高阳</span> </div>
+                      <div> <span class="d-ib w44 c3 fl">备注：</span>
+                        <p class="fl ml4 mt7 lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quod, deleniti voluptatibus</p>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+              </span></td>
+            <td>深圳市</td>
+            <td class="ta-r pr24">2016-06-13</td>
+          </tr>
+          <tr class="detail-list hidden  ho-ec ho-ec f13 c2 bg-w">
+            <td class="pb16 pt1" colspan="11"><div class="ta-l">
+                <div class="ic ca7 fl f64 bd1-e0 ml24 mt8"></div>
+                <div class="fl ml16 lh30 w240">
+                  <div>招聘人数： <span>1人</span></div>
+                  <div>进展天数： <span>32天</span> </div>
+                  <div> 职位偏好： <span class="mr16">BAT</span> <span class="mr16">华中科技大学</span> </div>
+                </div>
+                <div class="fl ml16 mt8 po-r pline">
+                  <div class="po-r z50"> <a href="" class="a fl ta-c ho-bdb cu-po"> <span class="bold c3 f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">加入</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">推荐</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">3</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">面试</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">Offer</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">入职</p>
+                    </a> </div>
+                </div>
+                <div class="fl mt16 pl24 ml40 bdl1">
+                  <div class="c3 ho-cb cu-po"> <span class="ic f24"></span> <span>发票：<span class="bold f20 ml12">0</span></span> </div>
+                  <div class="c3 ho-cb cu-po mt8"> <span class="ic f24"></span> <span>不合适：<span class="bold f20">6</span></span> </div>
+                </div>
+              </div></td>
+          </tr>
+          <tr class="bdt1 h64 bg-w ho-ec ho-n-ec">
+            <td class="w48 pl16"><input type="checkbox" id="chk-comp6">
+              <label for="chk-comp6"></label></td>
+            <td class="cv-link"><a href="Position-2nd.html" class="a c3 bold w154 ol">Java高级开发工程师</a></td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r"></span> </span></td>
+            <td class="beforeSts"><span class="cw bdrs2 bg9e p0-4">已关闭-失败</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              <div class="note op1 hidden">
+                <div class="p4-0 mh240 w360 ovy-a Scrollable" >
+                  <div class="btn-newnote fl cb ml32 mb8 cu-po"><span class="ic f24"></span> 新增备注</div>
+                  <ul class="tl-container c1 lh-n f14 clear">
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum corrupti optio fugit </p>
+                        <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </span></td>
+            <td><span class="cw bdrs2 bg9e p0-4">高</span></td>
+            <td class="ta-r pr24"><span>15</span>~<span>25</span>万 </td>
+            <td><a href="" class="a ol c1 w112">顺丰科技有限公司</a></td>
+            <td><span class="d-ib note-ho ho-cb">赵先生
+              <div class="hidden note w240" style="padding:8px 0 8px 16px;">
+                <div class="h240 ov-y Scrollable">
+                  <div class="c1">
+                    <div class="fl lh30">
+                      <div><span class="d-ib w44 c3">性别：</span> <span>男</span></div>
+                      <div><span class="d-ib w44 c3">职位：</span> <span>招聘经理</span></div>
+                      <div><span class="d-ib w44 c3">状态：</span> 在职</div>
+                      <div><span class="d-ib w44 c3">电话：</span> <span>18612345678</span></div>
+                      <div><span class="d-ib w44 c3">邮箱：</span> <span>test@abcompany.com</span></div>
+                    </div>
+                    <div class="fl lh30">
+                      <div> <span class="d-ib w44 c3">QQ：</span> <span>1234567890</span> </div>
+                      <div> <span class="d-ib w44 c3">微信：</span> <span>zhihui.zhang</span> </div>
+                      <div> <span class="d-ib w44 c3">录入：</span> <span>高阳</span> </div>
+                      <div> <span class="d-ib w44 c3 fl">备注：</span>
+                        <p class="fl ml4 mt7 lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quod, deleniti voluptatibus</p>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+              </span></td>
+            <td>深圳市</td>
+            <td class="ta-r pr24">2016-06-13</td>
+          </tr>
+          <tr class="detail-list hidden  ho-ec ho-ec f13 c2 bg-w">
+            <td class="pb16 pt1" colspan="11"><div class="ta-l">
+                <div class="ic ca7 fl f64 bd1-e0 ml24 mt8"></div>
+                <div class="fl ml16 lh30 w240">
+                  <div>招聘人数： <span>1人</span></div>
+                  <div>进展天数： <span>32天</span> </div>
+                  <div> 职位偏好： <span class="mr16">BAT</span> <span class="mr16">华中科技大学</span> </div>
+                </div>
+                <div class="fl ml16 mt8 po-r pline">
+                  <div class="po-r z50"> <a href="" class="a fl ta-c ho-bdb cu-po"> <span class="bold c3 f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">加入</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">推荐</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">3</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">面试</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">Offer</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">入职</p>
+                    </a> </div>
+                </div>
+                <div class="fl mt16 pl24 ml40 bdl1">
+                  <div class="c3 ho-cb cu-po"> <span class="ic f24"></span> <span>发票：<span class="bold f20 ml12">0</span></span> </div>
+                  <div class="c3 ho-cb cu-po mt8"> <span class="ic f24"></span> <span>不合适：<span class="bold f20">6</span></span> </div>
+                </div>
+              </div></td>
+          </tr>
+          <tr class="bdt1 h64 bg-w ho-ec ho-n-ec">
+            <td class="w48 pl16"><input type="checkbox" id="chk-comp7">
+              <label for="chk-comp7"></label></td>
+            <td class="cv-link"><a href="Position-2nd.html" class="a c3 bold w154 ol">Java高级开发工程师</a></td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r"></span> </span></td>
+            <td class="beforeSts"><span class="cw bdrs2 bg9e p0-4">已关闭-取消</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              <div class="note op1 hidden">
+                <div class="p4-0 mh240 w360 ovy-a Scrollable" >
+                  <div class="btn-newnote fl cb ml32 mb8 cu-po"><span class="ic f24"></span> 新增备注</div>
+                  <ul class="tl-container c1 lh-n f14 clear">
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum corrupti optio fugit </p>
+                        <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </span></td>
+            <td><span class="cw bdrs2 bg9e p0-4">高</span></td>
+            <td class="ta-r pr24"><span>15</span>~<span>25</span>万 </td>
+            <td><a href="" class="a ol c1 w112">顺丰科技有限公司</a></td>
+            <td><span class="d-ib note-ho ho-cb">赵先生
+              <div class="hidden note w240" style="padding:8px 0 8px 16px;">
+                <div class="h240 ov-y Scrollable">
+                  <div class="c1">
+                    <div class="fl lh30">
+                      <div><span class="d-ib w44 c3">性别：</span> <span>男</span></div>
+                      <div><span class="d-ib w44 c3">职位：</span> <span>招聘经理</span></div>
+                      <div><span class="d-ib w44 c3">状态：</span> 在职</div>
+                      <div><span class="d-ib w44 c3">电话：</span> <span>18612345678</span></div>
+                      <div><span class="d-ib w44 c3">邮箱：</span> <span>test@abcompany.com</span></div>
+                    </div>
+                    <div class="fl lh30">
+                      <div> <span class="d-ib w44 c3">QQ：</span> <span>1234567890</span> </div>
+                      <div> <span class="d-ib w44 c3">微信：</span> <span>zhihui.zhang</span> </div>
+                      <div> <span class="d-ib w44 c3">录入：</span> <span>高阳</span> </div>
+                      <div> <span class="d-ib w44 c3 fl">备注：</span>
+                        <p class="fl ml4 mt7 lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quod, deleniti voluptatibus</p>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+              </span></td>
+            <td>深圳市</td>
+            <td class="ta-r pr24">2016-06-13</td>
+          </tr>
+          <tr class="detail-list hidden  ho-ec ho-ec f13 c2 bg-w">
+            <td class="pb16 pt1" colspan="11"><div class="ta-l">
+                <div class="ic ca7 fl f64 bd1-e0 ml24 mt8"></div>
+                <div class="fl ml16 lh30 w240">
+                  <div>招聘人数： <span>1人</span></div>
+                  <div>进展天数： <span>32天</span> </div>
+                  <div> 职位偏好： <span class="mr16">BAT</span> <span class="mr16">华中科技大学</span> </div>
+                </div>
+                <div class="fl ml16 mt8 po-r pline">
+                  <div class="po-r z50"> <a href="" class="a fl ta-c ho-bdb cu-po"> <span class="bold c3 f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">加入</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">推荐</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">3</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">面试</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">Offer</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">入职</p>
+                    </a> </div>
+                </div>
+                <div class="fl mt16 pl24 ml40 bdl1">
+                  <div class="c3 ho-cb cu-po"> <span class="ic f24"></span> <span>发票：<span class="bold f20 ml12">0</span></span> </div>
+                  <div class="c3 ho-cb cu-po mt8"> <span class="ic f24"></span> <span>不合适：<span class="bold f20">6</span></span> </div>
+                </div>
+              </div></td>
+          </tr>
+          <tr class="bdt1 h64 bg-w ho-ec ho-n-ec">
+            <td class="w48 pl16"><input type="checkbox" id="chk-comp8">
+              <label for="chk-comp8"></label></td>
+            <td class="cv-link"><a href="Position-2nd.html" class="a c3 bold w154 ol">Java高级开发工程师</a></td>
+            <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r"></span> </span></td>
+            <td class="beforeSts"><span class="cw bdrs2 bgok p0-4">已关闭-成功</span></td>
+            <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+              <div class="note op1 hidden">
+                <div class="p4-0 mh240 w360 ovy-a Scrollable" >
+                  <div class="btn-newnote fl cb ml32 mb8 cu-po"><span class="ic f24"></span> 新增备注</div>
+                  <ul class="tl-container c1 lh-n f14 clear">
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum corrupti optio fugit </p>
+                        <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <li class="li-no pb12 clear">
+                      <div class="fl ml16 tl-ldot"></div>
+                      <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                        <p class="wh-pw lh24">一些备注</p>
+                        <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </span></td>
+            <td><span class="cw bdrs2 bg9e p0-4">高</span></td>
+            <td class="ta-r pr24"><span>15</span>~<span>25</span>万 </td>
+            <td><a href="" class="a ol c1 w112">顺丰科技有限公司</a></td>
+            <td><span class="d-ib note-ho ho-cb">赵先生
+              <div class="hidden note w240" style="padding:8px 0 8px 16px;">
+                <div class="h240 ov-y Scrollable">
+                  <div class="c1">
+                    <div class="fl lh30">
+                      <div><span class="d-ib w44 c3">性别：</span> <span>男</span></div>
+                      <div><span class="d-ib w44 c3">职位：</span> <span>招聘经理</span></div>
+                      <div><span class="d-ib w44 c3">状态：</span> 在职</div>
+                      <div><span class="d-ib w44 c3">电话：</span> <span>18612345678</span></div>
+                      <div><span class="d-ib w44 c3">邮箱：</span> <span>test@abcompany.com</span></div>
+                    </div>
+                    <div class="fl lh30">
+                      <div> <span class="d-ib w44 c3">QQ：</span> <span>1234567890</span> </div>
+                      <div> <span class="d-ib w44 c3">微信：</span> <span>zhihui.zhang</span> </div>
+                      <div> <span class="d-ib w44 c3">录入：</span> <span>高阳</span> </div>
+                      <div> <span class="d-ib w44 c3 fl">备注：</span>
+                        <p class="fl ml4 mt7 lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quod, deleniti voluptatibus</p>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+              </span></td>
+            <td>深圳市</td>
+            <td class="ta-r pr24">2016-06-13</td>
+          </tr>
+          <tr class="detail-list hidden  ho-ec ho-ec f13 c2 bg-w">
+            <td class="pb16 pt1" colspan="11"><div class="ta-l">
+                <div class="ic ca7 fl f64 bd1-e0 ml24 mt8"></div>
+                <div class="fl ml16 lh30 w240">
+                  <div>招聘人数： <span>1人</span></div>
+                  <div>进展天数： <span>32天</span> </div>
+                  <div> 职位偏好： <span class="mr16">BAT</span> <span class="mr16">华中科技大学</span> </div>
+                </div>
+                <div class="fl ml16 mt8 po-r pline">
+                  <div class="po-r z50"> <a href="" class="a fl ta-c ho-bdb cu-po"> <span class="bold c3 f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">加入</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">8</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">推荐</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">3</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">面试</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">Offer</p>
+                    </a> <a href="" class="a fl ta-c ml64 ho-bdb cu-po"> <span class="bold c3 f24">1</span> <br>
+                    <span class="ic f24 c3"></span>
+                    <p class="c2">入职</p>
+                    </a> </div>
+                </div>
+                <div class="fl mt16 pl24 ml40 bdl1">
+                  <div class="c3 ho-cb cu-po"> <span class="ic f24"></span> <span>发票：<span class="bold f20 ml12">1</span></span> </div>
+                  <div class="c3 ho-cb cu-po mt8"> <span class="ic f24"></span> <span>不合适：<span class="bold f20">6</span></span> </div>
+                </div>
+              </div></td>
+          </tr>
+          <tr class="bdt1 h64 c2 ta-r bg-w">
+            <td colspan="11" class="w968"><ul class="page-nav-ul c1" style="display:inline-block; margin:0; padding:0;">
+                <li class="p-active"> <a class="page-a-tag" href="">首页</a> </li>
+                <li class="p-active" style="padding:0 8px 0 8px;"> <a class="page-a-tag" href=""><span class="ic f24 c3"></span></a> </li>
+                <li class="p-active-selected"> <a class="page-a-tag-selected" href="">1</a> </li>
+                <li class="p-active"> <a class="page-a-tag" href="">2</a> </li>
+                <li class="p-active"> <a class="page-a-tag" href="">3</a> </li>
+                <li class="p-active"> <a class="page-a-tag" href="">4</a> </li>
+                <li class="p-active"> <a class="page-a-tag" href="">5</a> </li>
+                <li class="p-active" style="padding:0 8px 0 8px;"> <a class="page-a-tag" href=""><span class="ic f24 c3"></span></a> </li>
+                <li class="p-active"> <a class="page-a-tag" href="">尾页</a> </li>
+                <li class="p-active" style="border:none;"> <a class="page-a-tag" href="">共92页</a> </li>
+                <li class="p-active" style="border:none;"> 跳转到
+                  <input type="text" class="w40 h32 ml4 mr4 p0-4">
+                  页 </li>
+                <li class="clear li-no"></li>
+              </ul></td>
+          </tr>
+        </table>
+      </div>
+      <!--职位为空时放以下内容--> 
+      <!--<div class="pt16 pb24 bg-w">
+        <div class="ic ta-c f96 c-c mt8"></div>
+        <p class="c3 ta-c f18">没有相关职位</p>
+        <img src="images/emptyStates-position.png" alt="" class=" ml64 mt36 bd2-d">
+      </div>--> 
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<footer class="footer">
+  <p class="f13">© 深圳市仕通优途科技有限公司 2013-2016</p>
+  <p class="mt4"> 粤ICP备16038562号-1 16038562号-2</p>
+</footer>
+<!--预览小箭头--><i class="pre-p hidden"></i> 
+<!--职位预览-->
+<div class=" cv-preview po-f f14 z99 card5-nbg bg-ec bdrs2 bd1c w820 l50p" style="width:796px;margin-left:-204px;padding-bottom:24px;">
+  <div class="po-a w100p mt-32">
+    <div class=" c2 mr40"> <span class="ml16 ho-cb cu-po">Pipeline:</span> <a href="" class="a c2"><span class="ml16 ho-cb cu-po">加入<span class="cb bold f16 ml4">17</span></span></a> <a href="" class="a c2"><span class="ml16 ho-cb cu-po">推荐<span class="cb bold f16 ml4">6</span></span></a> <a href="" class="a c2"><span class="ml16 ho-cb cu-po">面试<span class="cb bold f16 ml4">3</span></span></a> <a href="" class="a c2"><span class="ml16 ho-cb cu-po">Offer<span class="cb bold f16 ml4">0</span></span></a> <a href="" class="a c2"><span class="ml16 ho-cb cu-po">入职<span class="cb bold f16 ml4">0</span></span></a> <a href="" class="a c2"><span class="ml16 ho-cb cu-po">保证期<span class="cb bold f16 ml4">0</span></span></a> <a href="" class="a c2"><span class="ml16 ho-cb cu-po">不合适<span class="cb bold f16 ml4">23</span></span></a> </div>
+  </div>
+  <div id="cv-content" class="card1 pl8 pr8 h100p ovy-a pb48 Scrollable">
+    <div class="p16">
+      <div class="bg-f2 f16 c1 bold p4-8 bdl5 clear">职位信息</div>
+      <div class="p16">
+        <table class="lh36 bdcl oddtd-c3">
+                    <tr>
+                      <td class="w86">职位名称：</td>
+                      <td class="w280">职位</td>
+                      <td class="w80">所属行业：</td>
+                      <td>行业</td>
+                    </tr>
+                    <tr>
+                      <td>公司名称：</td>
+                      <td>公司名</td>
+                      <td>所属职能：</td>
+                      <td>职能</td>
+                    </tr>
+                    <tr>
+                      <td>招聘人数：</td>
+                      <td>1人</td>
+                      <td>汇报对象：</td>
+                      <td>职能</td>
+                    </tr>
+                    <tr>
+                      <td>年薪范围：</td>
+                      <td>20万~40万</td>
+                      <td>下属人数：</td>
+                      <td>3人</td>
+                    </tr>
+                    <tr>
+                      <td>工作城市：</td>
+                      <td>深圳</td>
+                      <td>跟进顾问：</td>
+                      <td><span class="mr16">顾问1</span><span class="mr16">顾问2</span></td>
+                    </tr>
+                    <tr>
+                      <td>项目对接人:</td>
+                      <td>对接人</td>
+                    </tr>
+                    <tr>
+                      <td class="va-t">工作职责：</td>
+                      <td colspan="3">
+                        <p class="lh24 p4-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, earum! Placeat dignissimos esse inventore repudiandae, et, aperiam molestiae hic mollitia nulla ipsam officiis eveniet cum tenetur illo libero error maxime.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="va-t">任职资格：</td>
+                      <td colspan="3">
+                        <p class="lh24 p4-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, earum! Placeat dignissimos esse inventore repudiandae, et, aperiam molestiae hic mollitia nulla ipsam officiis eveniet cum tenetur illo libero error maxime.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="va-t">客户联系人：</td>
+                      <td colspan="3">
+                        <div class="bd1-c p8">
+                          <table class="bdcl lh30 oddtd-c3">
+                            <tr>
+                              <td class="w60">姓名：</td>
+                              <td class="w160">姓名</td>
+                              <td class="w60">手机：</td>
+                              <td>手机</td>
+                            </tr>
+                            <tr>
+                              <td>性别：</td>
+                              <td>性别</td>
+                              <td>邮箱：</td>
+                              <td>邮箱</td>
+                            </tr>
+                            <tr>
+                              <td>职位：</td>
+                              <td>职位</td>
+                              <td>QQ：</td>
+                              <td>qq</td>
+                            </tr>
+                            <tr>
+                              <td>状态：</td>
+                              <td>状态</td>
+                              <td>微信：</td>
+                              <td>微信</td>
+                            </tr>
+                            <tr>
+                              <td>电话：</td>
+                              <td>电话</td>
+                              <td>地址：</td>
+                              <td>地址</td>
+                            </tr>
+                            <tr>
+                              <td class="va-t">备注：</td>
+                              <td colspan="3">
+                                <p class="lh24">Lorem ipsum dolor </p>
+                              </td>
+                            </tr>
+
+                          </table>
+                        </div>
+
+                      </td>
+                    </tr>
+                  </table>
+      </div>
+      <div class="mt8 bg-f2 f16 c1 bold p4-8 bdl5 clear">职位分析</div>
+      <div class="p16">
+        <table class="bdcl lh36 firsttd-c2">
+                    <tr>
+                      <td class="w86">职位评级：</td>
+                      <td><span class="p0-4 cw bg-b bdrs2">高</span></td>
+                    </tr>
+                    <tr>
+                      <td class="va-t">招聘原因：</td>
+                      <td>
+                        <p class="lh24 p4-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="va-t">核心需求：</td>
+                      <td>
+                        <p class="lh24 p4-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>职位卖点<br>
+                        <p class="lh-n  mt-12">及吸引策略：</p>
+                      </td>
+                      <td>
+                        <p class="lh24 p4-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>职位难点
+                        <p class="lh-n mt-12">及对应策略：</p>
+                      </td>
+                      <td>
+                        <p class="lh24 p4-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>偏好性别：</td>
+                      <td>性别</td>
+                    </tr>
+                    <tr>
+                      <td>偏好行业：</td>
+                      <td>行业</td>
+                    </tr>
+                    <tr>
+                      <td>偏好职能：</td>
+                      <td>职能</td>
+                    </tr>
+                    <tr>
+                      <td>偏好企业：</td>
+                      <td>企业</td>
+                    </tr>
+                    <tr>
+                      <td>偏好学校：</td>
+                      <td>学校</td>
+                    </tr>
+                  </table>
+
+      </div>
+      <div class="mt8 bg-f2 f16 c1 bold p4-8 bdl5 clear">行动方案</div>
+      <div class="p16">
+        <table class="bdcl lh36 oddtd-c3 mt8">
+                    <tr class="lh-n">
+                      <td colspan="2"><span class="c1 bold">寻访方向</span></td>
+                    </tr>
+                    <tr>
+                      <td class="w86 va-t">行业方向</td>
+                      <td>
+                        <p class="lh24 p4-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="va-t">职位难点
+                        <p class="lh-n mt-12">或名单：</p>
+                      </td>
+                      <td>
+                        <p class="lh24 p4-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="va-t">职位难点
+                        <p class="lh-n mt-12">或名单：</p>
+                      </td>
+                      <td>
+                        <p class="lh24 p4-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="va-t">寻访策略</td>
+                      <td>
+                        <p class="lh24 p4-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="va-t">寻访渠道</td>
+                      <td>
+                        <p class="lh24 p4-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </td>
+                    </tr>
+                    <tr class="lh-n">
+                      <td colspan="2" class="pt16"><span class="c1 bold">资源梳理</span></td>
+                    </tr>
+                    <tr>
+                      <td class="va-t">现有资源</td>
+                      <td>
+                        <p class="lh24 p4-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="va-t">所需资源</td>
+                      <td>
+                        <p class="lh24 p4-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </td>
+                    </tr>
+                  </table>
+
+      </div>
+    </div>
+    <div id="publishRecord" class="card1 po-a mt16 w100p bg-w p8 ov-h Scrollable" style="width:780px;height:48px; bottom:24px;left:8px; border-top:1px solid #bcd9e3; box-shadow: 0 0 10px #d3d2d2; background-color:rgba(255,255,255,0.95); transition: height .5s cubic-bezier(0,1,.5,1);">
+      <div class="fl"> <span class="ic f20 c3"></span> <span>发布记录：</span> </div>
+      <div class="fl f14 ml24 ovy-h" style="width:620px;">
+        <div class="bdt1-d p4-8"><div class="fl"> <span>2016-10-10 16:16</span></div> <div class="fl ml40" style="width:440px;"><div>项目总监：刘谋立<span class="ml16 mr16 red bold">否决</span>发布职位</div>
+         <p class="f13 c2 mt4"><span class="bold">备注：</span>中长此何大说贯意屡便乐听的“作是一时现可？是—重理，的还应自点样据已实大随充题特己习工是管来反者方方就 军，问师要记这—的苦们把好知但国自付己也势的，理己并力这到</p>
+         </div>
+         <div class="clear"></div>
+        </div>
+        <div class="bdt1-d p4-8"><div class="fl"> <span>2016-10-10 16:16</span></div> <div class="fl ml40" style="width:440px;"><div>项目总监：刘谋立<span class="ml16 mr16 c-gr bold">批准</span>发布职位</div>
+         <p class="f13 c2 mt4"><span class="bold">备注：</span>中长此何大说贯意屡便乐听的“作是一时现可？是—重理，的还应自点样据已实大随充题特己习工是管来反者方方就 军，问师要记这—的苦们把好知但国自付己也势的，理己并力这到</p>
+         </div>
+         <div class="clear"></div>
+        </div>
+        <div class="bdt1-d p4-8"><div class="fl"> <span>2016-10-10 16:16</span></div> <div class="fl ml40" style="width:440px;"><div>猎头顾问：王浩<span class="cb bold ml16 mr16">提交</span>发布职位</div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="po-a" style="top:67px;right:32px"> <span class="approvePost c-gr p4-8 bg-e3 bdrs2 card1-nbg cu-po trans ho-sh" style="background-color: #00A388;color:#fff;"><span class="ic f20"></span>批准发布</span> <span class="disapprovePost red p4-8 bg-e3 bdrs2 card1-nbg cu-po trans ho-sh ml16" style="background-color:red;color:white;"><span class="ic f20"></span>否决发布</span> </div>
+</div>
+<!--职位列表操作menu-->
+<div id="dropmenu" class="hidden po-a card5 lh30 ta-l cu-po trans sc0 op0"><!--JS： id小菜单-->
+  <div id="m-delegate" class="p0-10 ho-blue">分配给顾问</div>
+  <div id="m-folder" class="p0-10 ho-blue">加入文件夹</div>
+  <!--<div id="m-claim" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>领取</div>-->
+  <div id="m-import" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>导入候选人</div>
+  <div id="m-pause" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>暂停</div>
+  <div id="m-continue" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>继续</div>
+  <div id="m-close" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>关闭</div>
+  <div id="m-refresh" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>重新发布</div>
+<div id="m-approvePost" class="approvePost p0-10 ho-blue"><span class="ic f20 c3"></span>批准发布</div>
+<div id="m-disapprovePost" class="disapprovePost p0-10 ho-blue"><span class="ic f20 c3"></span>否决发布</div>
+<div id="m-editPost" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>编辑</div>
+  <div id="m-delPost" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>删除</div>
+</div>
+<!--分配给顾问-->
+<div id="popup-delegate" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>分配BD</h4>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">职位：</span> <span class="ic f24 c3 pr4"></span> <span>Java高级开发工程师</span> </div>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">分配给顾问：</span>
+    <select name="" id="select-cons" class="w160">
+      <option value="-1"></option>
+      <optgroup label="凤凰队">
+      <option value="">张</option>
+      <option value="">王</option>
+      <option value="">李</option>
+      </optgroup>
+      <optgroup label="热火队">
+      <option value="">赵</option>
+      <option value="">刘</option>
+      </optgroup>
+      <optgroup label="麒麟队">
+      <option value="">邓</option>
+      <option value="">周</option>
+      </optgroup>
+    </select>
+    <script>
+	 /*选择顾问实例化*/
+     $('#select-cons').select2({
+  minimumResultsForSearch: Infinity,
+  placeholder: {
+    id: '-1', // the value of the option
+    text: ''
+  }
+		 });
+     </script> 
+  </div>
+  <div class="clear"></div>
+  <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认分配</span> </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--加入公司文件夹-->
+<div id="popup-toposfolder" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212"><!--JS:id新建文件夹-->
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>加入文件夹</h4>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">公司：</span> <span class="ic f24 c3 pr4"></span> <span>深圳市Bravos股份科技有限公司</span> </div>
+  <div class="p816"> <span class="fl w86 c2">选择文件夹：</span>
+    <div class="fl bg-w w200 p8">
+      <ul id="talfolder-source" class="mh168 ovy-a">
+        <li class="folder-select li-no lh30 ho-ec ho-cb cu-po"><span class="ic f20 cf6 mr4"></span><span>默认文件夹</span></li>
+        <li id="newfolder" class="folder-select li-no lh30 hidden ho-ec ho-cb cu-po"><span class="ic f20 cf6 mr4"></span>
+          <input type="text" onKeyUp="confirmFolder(event)" class="w120 pl4 lh24">
+        </li>
+        <li class="li-no lh30"><span class="addfolder cu-po cb"><span class="ic f24"></span>新增文件夹</span></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+  <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认加入</span> </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--领取职位-->
+<div id="popup-claim" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>领取职位</h4>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">职位：</span> <span class="ic f24 c3 pr4"></span> <span>Java高级开发工程师</span> </div>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">职位状态：</span> <span>待领取</span> <span class="ic f24 c3 ml24"></span> <span class="cw bdrs2 bg-b p0-4 ml24">进展中</span> </div>
+  <div class="clear"></div>
+  <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认领取</span> </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--暂停职位-->
+<div id="popup-pause" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>暂停职位</h4>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">职位：</span> <span class="ic f24 c3 pr4"></span> <span>Java高级开发工程师</span> </div>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">职位状态：</span> <span class="cw bdrs2 bg-b p0-4">进展中</span> <span class="ic f24 c3 ml24"></span> <span class="cw bdrs2 bg9e p0-4 ml24">暂停中</span> </div>
+  <div class="clear"></div>
+  <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认暂停</span> </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--继续职位-->
+<div id="popup-continue" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>继续职位</h4>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">职位：</span> <span class="ic f24 c3 pr4"></span> <span>Java高级开发工程师</span> </div>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">职位状态：</span> <span class="cw bdrs2 bg9e p0-4">暂停中</span> <span class="ic f24 c3 ml24"></span> <span class="cw bdrs2 bg-b p0-4 ml24">进展中</span> </div>
+  <div class="clear"></div>
+  <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认继续</span> </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--关闭职位-->
+<div id="popup-close" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>关闭职位</h4>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">职位：</span> <span class="ic f24 c3 pr4"></span> <span>Java高级开发工程师</span> </div>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">关闭原因<span class="red po-a mt-5">*</span>：</span><!--JS: id关闭原因--> 
+    <span>
+    <input type="radio" id="success" name="reason">
+    <label for="success" class="c2">成功</label>
+    </span> <span class="ml16">
+    <input type="radio" id="fail" name="reason">
+    <label for="fail" class="c2">失败</label>
+    </span> <span class="ml16">
+    <input type="radio" id="cancel" name="reason">
+    <label for="cancel" class="c2">取消</label>
+    </span> </div>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">职位状态：</span> <span class="cw bdrs2 bg-b p0-4">进展中</span> <span class="ic f24 c3 ml24"></span> <span class="cw bdrs2 bg9e p0-4 ml24 sts-close">已关闭</span> </div>
+  <div class="clear"></div>
+  <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认关闭</span> </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--重发职位-->
+<div id="popup-refresh" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>重发职位</h4>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">职位：</span> <span class="ic f24 c3 pr4"></span> <span>Java高级开发工程师</span> </div>
+  <div class="mt8 p816"> <span class="d-ib w86 c2">职位状态：</span> <span class="cw bdrs2 bg-b p0-4">进展中</span> <span class="ic f24 c3 ml24"></span> <span class="cw bdrs2 bg9e p0-4 ml24">暂停中</span> </div>
+  <div class="clear"></div>
+  <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认重发</span> </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--删除草稿、未通过的职位弹窗警告-->
+<div id="popup-delPost" class="hidden po-f bg-f2 l50p card5-nbg t50p f14 z200 c2 Scrollable" style="margin:-80px 0 0 -300px;width:600px">
+  <div class="p24"><span class="ic f24 fw-n pr4 red"></span><span class="f16 w524 ol"><span class="f14">确认删除职位：</span><span class="c1 bold">Java高级开发工程师</span>--<span class="f14">深圳市腾讯计算机技术有限公司</span></span></div>
+  <div class="bdt1">
+    <span class="fr p16-24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 red p4-8 bdrs2 cu-po ho-red">确认删除</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+
+<!--弹框背景-->
+<div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z150"></div>
+<!--新增备注框-->
+<li id="newnote" class="hidden li-no pb12 clear">
+  <div class="fl ml16 tl-ldot"></div>
+  <div class="fl w280 w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+    <textarea name="" id="" class="p0-4 lh24 w100p h120"></textarea>
+    <div class="po-a" style="margin:-168px 0 0 218px;"> <span id="newnote-cancel" class="ic f24 red cu-po ho-u"></span> <span id="newnote-confirm" class="ic f24 c-gr cu-po ho-u"></span> </div>
+  </div>
+  <div class="clear"></div>
+</li>
+<!--操作冒泡提示-->
+<div id="toast" class="hidden op0 po-f z200 cw card5-nbg l50p t50p mt80 ml-58 p16-24 bg-toa"> <span class="ic f24 cb bdrs12 d-ib po-r"></span> <span></span> </div>
+<!--编辑优先级小弹窗-->
+<div id="priority" class="note hidden">
+  <div class="p4-0">
+    <input type="radio" name="priority" id="priority-h">
+    <label for="priority-h"><span class="cw bdrs2 bg-b p0-4">高</span></label>
+  </div>
+  <div class="p4-0">
+    <input type="radio" name="priority" id="priority-m">
+    <label for="priority-m"><span class="cw bdrs2 bg75 p0-4">中</span></label>
+  </div>
+  <div class="p4-0">
+    <input type="radio" name="priority" id="priority-l">
+    <label for="priority-l"><span class="cw bdrs2 bg50 p0-4">低</span></label>
+  </div>
+  <div class="p4-0">
+    <input type="radio" name="priority" id="priority-n">
+    <label for="priority-n"><span class="d-ib bdb1-d cu-po">无</span></label>
+  </div>
+</div>
+<!--批准职位立项弹窗-->
+<div id="popup-approvePost" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>批准职位发布</h4>
+  <div class="mt8 p816">
+    <span class="d-ib w60 c2">职位：</span>
+    <span class="ic f24 c3"></span>
+    <a href="" target="_blank" class="a c1">Java高级开发工程师</a>
+  </div>
+  <div class="p816">
+   <span class="d-ib w60 c2 fl">备注：</span>
+   <textarea class="fl p0-4" style="width:308px;height:100px" maxlength="100"></textarea>
+  </div>
+  <div class="mt8 clear">
+    <span class="fr p24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 cb bold cu-po ho-u" id="approvePost">批准发布</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--否决职位立项弹窗-->
+<div id="popup-disapprovePost" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>否决职位发布</h4>
+  <div class="mt8 p816">
+    <span class="d-ib w60 c2">职位：</span>
+    <span class="ic f24 c3"></span>
+    <a href="" target="_blank" class="a c1">Java高级开发工程师</a>
+  </div>
+  <div class="p816">
+   <span class="d-ib w60 c2 fl">备注：</span>
+   <textarea class="fl p0-4" style="width:308px;height:100px" maxlength="100"></textarea>
+  </div>
+  <div class="mt8 clear">
+    <span class="fr p24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 red bold cu-po ho-u" id="approvePost">否决发布</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+
+</body>
+<script>
+/*--------优先级行内编辑--begin------*/
+/*单击优先级，显示弹窗，取值当前*/
+$('.priority').on('click',function(){
+	var that = $(this);
+	var oriValue = $(this).children('span').html();
+	switch (oriValue) {
+		case '高':
+		$('#priority-h').prop('checked',true);
+		break;
+		case '中':
+		$('#priority-m').prop('checked',true);
+		break;
+		case '低':
+		$('#priority-l').prop('checked',true);
+		break;
+		case '无':
+		$('#priority-n').prop('checked',true);
+		break;
+		};
+	$('#priority').appendTo(that).show();	
+	});
+/*确认编辑*/	
+$('[for^="priority"]').on('click',function(){
+	var value = $(this).children().html();
+	var content = $(this).parents('.priority').children('span');
+	switch (value) {
+		case '高':
+		$(content).replaceWith('<span class="cw bdrs2 bg-b p0-4">高</span>');
+		break;
+		case '中':
+		$(content).replaceWith('<span class="cw bdrs2 bg75 p0-4">中</span>');
+		break;
+		case '低':
+		$(content).replaceWith('<span class="cw bdrs2 bg50 p0-4">低</span>');
+		break;
+		case '无':
+		$(content).replaceWith('<span class="d-ib bdb1-d cu-po">无</span>');
+		break;
+		};
+	$('#priority').hide();	
+	});
+/*阻止冒泡*/
+$('#priority').on('click',function(e){
+	event.stopPropagation();});	 
+/*单击外部关闭优先级
+弹窗*/
+$(document).on('click',function(){
+	if (!$(event.target).closest('.priority').length){
+		$('#priority').hide();}
+	});	 
+/*--------优先级行内编辑--end------*/
+</script>
+<script>
+/*id关闭原因*/
+$('#fail').on('click',function(){
+	$('.sts-close').removeClass('bgok').addClass('bg9e').html('已关闭-失败')});
+$('#cancel').on('click',function(){
+	$('.sts-close').removeClass('bgok').addClass('bg9e').html('已关闭-取消')});
+$('#success').on('click',function(){
+	$('.sts-close').removeClass('bg9e').addClass('bgok').html('已关闭-成功')});	
+</script>
+<script>
+/*--id小菜单--点击操作icon弹出操作菜单--*/
+$('.op-menu').click(function(e) {
+  var that = $(this),All = $('#dropmenu div');
+  var beforeSts = $(that).parent().siblings('.beforeSts').children().html();//取得职位的现有状态
+		  switch(beforeSts) {
+			  /*case '待领取':
+			  All.hide();
+			  $('#m-claim,#m-delegate,#m-import').show();
+			  break;*/
+			  case '进展中':
+			  All.hide();
+			  $('#m-close,#m-pause,#m-delegate,#m-import').show();
+			  break;
+			  case '暂停中':
+			  All.hide();
+			  $('#m-close,#m-continue,#m-delegate').show();
+			  break;
+			  case '已关闭-失败':
+			  case '已关闭-成功':
+			  case '已关闭-取消':
+			  All.hide();
+			  $('#m-refresh').show();
+			  break;
+			  case '待审核':
+				All.hide();
+				$('#m-disapprovePost,#m-approvePost,#m-editPost').show();
+			  break;  
+			  case '草稿':
+			  case '未通过':
+			  All.hide();
+			  $('#m-editPost,#m-delPost').show();
+			  break;
+			  
+			  };//根据职位现状态，控制菜单的可操作内容
+	var has = $(that).has('#dropmenu').length;
+	var visible = !$('#dropmenu').hasClass('sc0');
+	var icons = $('.op-menu').children('.ic');
+	var Icon = $(that).children('.ic');
+	if (has&&visible) {
+		$('#dropmenu').addClass('sc0 op0');
+		$(Icon).removeClass('cb z50');
+		setTimeout(function(){
+			$('#dropmenu').hide();
+			},150);
+		} else {
+			$('#dropmenu').appendTo(that);
+			$('#dropmenu').show();
+			$(icons).removeClass('cb z50');
+			$(Icon).addClass('cb z50');
+			setTimeout(function() {
+			  $('#dropmenu').removeClass('sc0 op0')
+			}, 1);
+			}	
+});
+/*单击任意地方关闭菜单*/
+$(document).on('click',function(){
+	var that = $('#dropmenu').parent();
+	var Icon = $('#dropmenu').siblings();
+	if(!$(event.target).closest(that).length){
+		  $('#dropmenu').addClass('sc0 op0');
+		  $(Icon).removeClass('cb z50');
+		};
+	});
+</script>
+<script>
+/*---------id小菜单----------*/
+/*分配顾问*/
+$('#m-delegate').on('click',function(){
+	$('#popbg,#popup-delegate').velocity('fadeIn',200);
+	});
+/*加入职位文件夹*/
+$('#m-folder').on('click',function(){
+	$('#popbg,#popup-toposfolder').velocity('fadeIn',200);
+	});
+/*领取职位*/
+$('#m-claim').on('click',function(){
+	$('#popbg,#popup-claim').velocity('fadeIn',200);
+	});
+/*暂停职位*/
+$('#m-pause').on('click',function(){
+	$('#popbg,#popup-pause').velocity('fadeIn',200);
+	});
+/*继续职位*/
+$('#m-continue').on('click',function(){
+	$('#popbg,#popup-continue').velocity('fadeIn',200);
+	});
+/*关闭职位*/
+$('#m-close').on('click',function(){
+	$('#popbg,#popup-close').velocity('fadeIn',200);
+	});	
+/*重发职位*/
+$('#m-refresh').on('click',function(){
+	$('#popbg,#popup-refresh').velocity('fadeIn',200);
+	});	
+/*删除职位*/	
+$('#m-delPost').on('click',function(){
+	$('#popbg,#popup-delPost').velocity("fadeIn",200)
+});	
+/*批准发布职位*/	
+$('#m-approvePost').on('click',function(){
+	toast('该职位已成功发布')
+});	
+/*批准发布职位*/	
+$('#m-disapprovePost').on('click',function(){
+	toast('已否决了该职位发布')
+});	
+/*--弹窗确认操作--*/	
+$('.pop-confirm').on('click',function(){
+	var ID = $(this).parent().parent().parent().attr('id');
+	var beforeSts = $('#dropmenu').parents('td').siblings('.beforeSts');
+	var tr1 = $('#dropmenu').parents('tr').children('td:nth-child(2)').children();
+	var tr2 = $(tr1).next();
+	switch(ID) {
+		case 'popup-claim':
+		toast('已成功领取职位');
+		$(beforeSts).html('<span class="cw bdrs2 bg-b p0-4">进展中</span>');
+		break;
+		case 'popup-delegate':
+		toast('已成功分配给顾问');
+		$(beforeSts).html('<span class="cw bdrs2 bg-b p0-4">进展中</span>');
+		break;
+		case 'popup-toposfolder':
+		toast('已成功加入文件夹');
+		break;
+		case 'popup-pause':
+		toast('已成功暂停职位');
+		$(beforeSts).html('<span class="cw bdrs2 bg9e p0-4">暂停中</span>');
+		/*alert($(tr1).find('.cb').html());*/
+		$(tr1).removeClass('.cb');
+		$(tr2).find('.cb').removeClass('.cb');
+		break;
+		case 'popup-continue':
+		toast('已成功继续职位');
+		$(beforeSts).html('<span class="cw bdrs2 bg-b p0-4">进展中</span>');
+		break;
+		case 'popup-close':
+		toast('已成功关闭职位');
+		$(beforeSts).html($('.sts-close').clone().removeClass('ml24 sts-close'));
+		break;
+		case 'popup-refresh':
+		toast('已成功重发职位');
+		alert('此处功能：复制当前职位，清空招聘流程数据，放入职位列表');
+		break;
+		case 'popup-delPost':
+		toast('已成功删除职位');
+		break;
+		case 'popup-approvePost':
+		toast('该职位已成功发布');
+		break;
+		case 'popup-disapprovePost':
+		toast('该职位已被驳回');
+		break;
+		};
+	$('#popbg,[id^="popup"]').velocity('fadeOut',{duration:150});
+	});		
+
+/*--弹窗单击取消--*/
+$('#popbg,.pop-cancel').on('click',function(){
+	$('#popbg,[id^="popup"]').velocity('fadeOut',{duration:150})
+	});
+</script>
+<script>
+/*--id新建文件夹、选择文件夹功能--*/
+function confirmFolder(e) {
+  var input = $('input:focus');
+  var text = input.val();
+  if (e.keyCode == 13) {
+    $('.folder-select').removeClass('bg-b cw').addClass('ho-cb ho-ec');
+    input.parent().removeClass('ho-cb ho-ec').addClass('bg-b cw');
+    input.replaceWith('<span>'+text+'</span>');
+  }
+};
+$('.addfolder').on('click', function() {
+  var that =$(this);
+  var folderForClone = that.parent().siblings('#newfolder'); 
+  var newfolder = $(folderForClone).clone();
+  newfolder.removeAttr('id');
+  newfolder.css({
+    'display': 'block'
+  });
+  newfolder.insertBefore($(folderForClone));
+  newfolder.children('input').focus();
+});
+$(document).on('click', '.folder-select', function() {
+  $(this).siblings('.folder-select').removeClass('bg-b cw').addClass('ho-cb ho-ec');
+  $(this).removeClass('ho-cb ho-ec').addClass('bg-b cw');
+});
+</script>
+<script>
+/*--操作冒泡提示功能toast()--*/
+function toast(text){
+	$('#toast').children(':last').html(text);
+	$('#toast').show().velocity({marginTop:'-=120',opacity:1,delay:150},{duration:150,easing:'easeOutCubic'});
+	window.setTimeout(function(){
+		$('#toast').velocity('reverse',{complete:function(){$('#toast').hide()}})},1800);
+		};	
+</script>
+<script>
+/*----弹窗滚轮到顶控制----*/
+$(document).on('DOMMouseScroll mousewheel','.Scrollable', function(ev) {
+    var $this = $(this),
+        scrollTop = this.scrollTop,
+        scrollHeight = this.scrollHeight,
+        height = $this.height(),
+        delta = (ev.type == 'DOMMouseScroll' ?
+            ev.originalEvent.detail * -40 :
+            ev.originalEvent.wheelDelta),
+        up = delta > 0;
+
+    var prevent = function() {
+        ev.stopPropagation();
+        ev.preventDefault();
+        ev.returnValue = false;
+        return false;
+    }
+
+    if (!up && -delta > scrollHeight - height - scrollTop) {
+        // Scrolling down, but this will take us past the bottom.
+        $this.scrollTop(scrollHeight);
+
+        return prevent();
+    } else if (up && delta > scrollTop) {
+        // Scrolling up, but this will take us past the top.
+        $this.scrollTop(0);
+        return prevent();
+    }
+});
+</script>
+<script>
+/*拂过note-ho出现和隐藏备注*/	
+$('.note-ho').hover(function(){
+	$(this).children('.note').velocity("fadeIn",200);
+	},function(){
+		$(this).children('.note').velocity("fadeOut",{duration:150});
+		});		
+/*--拂过职位，ajax加载职位预览--*/
+var showcv,delay=500;
+$('.cv-link').hover(function() {
+  var that = $(this);
+  showcv = setTimeout(function() {
+    $('.pre-p,.cv-preview').appendTo(that);
+    $('.pre-p,.cv-preview').show();
+  }, delay);
+}, function() {
+  clearTimeout(showcv);
+  $('.pre-p,.cv-preview').hide();
+});		
+/*--------备注系统-------------*/
+/*获得YYYY-MM-DD格式日期*/
+function getYMD(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+};
+/*取得HH:MM格式时间*/
+function getHM(date) {
+    var d = new Date(date),
+        hour =''+ d.getHours(),
+        minute =''+ d.getMinutes();
+	if(hour.length<2) hour = '0'+hour;
+	if(minute.length<2) minute = '0'+minute;	
+    return hour+':'+minute;
+};
+/*新增备注*/
+$('.btn-newnote').on('click',function(){
+	$('#newnote').prependTo($(this).siblings());
+	$('#newnote').show();
+	$('#newnote textarea').val('').focus();
+	});
+/*确认新增备注，有一处变动（w280）*/	
+$('#newnote-confirm').on('click',function(){
+	var notetext = $('#newnote textarea').val();
+	var hastext = notetext.trim().length;
+	if(hastext){
+	$('#newnote').hide();
+	var role = "顾问",
+	name = "王某某",
+	today = getYMD(Date()),
+	time = getHM(Date());
+	$('<li class="li-no pb12 clear"> <div class="fl ml16 tl-ldot"></div> <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <p class="wh-pw lh24">'+notetext+'</p> <div class="c3 bdt"> <span>'+today+'</span> <span class="ml8">'+time+'</span> <span class="ml24 pr4">'+role+':</span> <span>'+name+'</span> </div> </div> <div class="clear"></div> </li>').insertAfter('#newnote');
+		} else {
+			$('#newnote textarea').focus()}
+	});
+/*取消新增备注*/
+$('#newnote-cancel').on('click',function(){
+	$('#newnote').hide();
+	});		
+</script>
+<script>
+/*--列表表头单击排序：小图标填色--*/	
+$('.sort').on('click',function(){
+	var des = $(this).children('.descend');
+	var ase = $(this).children('.ascend');
+	$(this).siblings().children('.cb').removeClass('cb').addClass('ce0');
+	if($(des).hasClass('cb')){
+		$(ase).removeClass('ce0').addClass('cb');$(des).removeClass('cb').addClass('ce0')} else {
+			$(des).removeClass('ce0').addClass('cb');$(ase).removeClass('cb').addClass('ce0');}
+	});
+/*--移除筛选标签--*/
+$('.tag-search').on('click',function(){
+	$(this).velocity({left:"-120px",opacity:0,},{duration:150,complete:function(){$(this).remove();}});
+	});
+/*--单击筛选标签--*/
+$('.filter-tag').on('click', function() {
+  $(this).siblings().children('div').hide();
+  $(this).children('div').show();
+});
+$('.filter-add,.filter-cancel').on('click', function(e) {
+  event.stopPropagation();
+  $(this).parent().parent().hide();
+});
+/*单击文档任意位置关闭筛选框*/
+$(document).on('click', function(e) {
+  if (!$(event.target).closest('.filter-tag').length && !$(event.target).closest('[class^="datepicker"]').length && !$(event.target).closest('.select2-container').length) {
+    $('.filter-tag .note').hide()
+  }
+});
+/*--自定义时间收起展示--*/
+$('input[name$="time"]').on('click', function() {
+    var that = $(this);
+    var value = $('input[name$="time"]:checked').val();
+    if (value == "custom") {
+      $(that).parent().siblings('.custom').show()
+    } else {
+      $(that).parent().siblings('.custom').hide()
+    }
+  })
+/*--城市选择实例化--*/
+var currentcity=new Vcity.CitySelector({input:'citySelect1'});  
+/*--自定义时间选择--*/
+var $start = $('#start'),
+  $end = $('#end');
+$start.datepicker({
+  onSelect: function(fd, date) {
+    $end.data('datepicker')
+      .update('minDate', date)
+  }
+})
+$end.datepicker({
+  onSelect: function(fd, date) {
+    $start.data('datepicker')
+      .update('maxDate', date)
+  }
+});
+var $start1 = $('#start1'),
+  $end1 = $('#end1');
+$start1.datepicker({
+  onSelect: function(fd, date) {
+    $end1.data('datepicker')
+      .update('minDate', date)
+  }
+})
+$end1.datepicker({
+  onSelect: function(fd, date) {
+    $start1.data('datepicker')
+      .update('maxDate', date)
+  }
+});
+var $start2 = $('#start2'),
+  $end2 = $('#end2');
+$start2.datepicker({
+  onSelect: function(fd, date) {
+    $end2.data('datepicker')
+      .update('minDate', date)
+  }
+})
+$end2.datepicker({
+  onSelect: function(fd, date) {
+    $start2.data('datepicker')
+      .update('maxDate', date)
+  }
+});
+/*--选择select实例化--*/
+$('#select-company').select2({
+  placeholder: " ",
+});
+$('#select-bd,#select-personal,#select-group').select2({
+  minimumResultsForSearch: Infinity,
+  placeholder: {
+    id: '-1', // the value of the option
+    text: ''
+  }
+});
+$('#select-team,#select-status,#select-cnature,#select-csize').select2({
+  minimumResultsForSearch: Infinity,
+  placeholder: '',
+});
+/*--拂过搜索结果更改背景色(与其它页的更改背景有不同)--*/
+$('.detail-list').mouseenter(function(e) {
+    $(this).prev().removeClass('bg-w').addClass('bg-ec')
+});
+$('.detail-list').mouseleave(function(e) {
+    $(this).prev().removeClass('bg-ec').addClass('bg-w')
+});
+/*--列表-详情切换--*/
+$("#showlist").click(function(e) {
+    $(".detail-list").hide();$('.h64').removeClass('bdt12').addClass('bdt1');$("#showgrid").removeClass('cb').addClass('ho-bd');$(this).addClass('cb').removeClass('ho-bd');
+});
+$("#showgrid").click(function(e) {
+    $(".detail-list").show();$('.h64').removeClass('bdt1').addClass('bdt12');$("#showlist").removeClass('cb').addClass('ho-bd');$(this).addClass('cb').removeClass('ho-bd');
+});
+/*--选中公司--*/
+$("#position").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过展开下拉菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});
+</script>
+<script>
+/*更改左边栏选中*/
+$(document).on('click','.folder',function(){
+	$.each($('.folder'),function(){
+	    $(this).removeClass('bdl5 cb').addClass('ho-cb ho-ec');
+	});
+	$(this).removeClass('ho-cb ho-ec').addClass('bdl5 cb');
+});
+</script>
+<script>
+/*发布记录-默认48px高，鼠标拂过时根据内容自动展开*/	
+$(document).on('mouseenter','#publishRecord',function(){
+	var that = $(this);
+	var actualH = that.prop('scrollHeight');
+	if(actualH>47){
+		that.css('height',actualH)} else {
+			}
+})
+$(document).on('mouseleave','#publishRecord',function(){
+	var that = $(this);
+	var actualH = that.prop('scrollHeight');
+	if(actualH>47){
+		that.css('height',48)} else {
+			}
+})
+</script>
+<script>
+$(document).on('click','.approvePost',function(){
+	$('#popup-approvePost,#popbg').velocity('fadeIn',200);
+});
+$(document).on('click','.disapprovePost',function(){
+	$('#popup-disapprovePost,#popbg').velocity('fadeIn',200);
+});
+	
+	</script>
+</html>

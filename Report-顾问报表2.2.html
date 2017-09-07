@@ -1,0 +1,729 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>报表-KPI-BD</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main-New.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/cityselect.css">
+<link rel="stylesheet" href="css/datepicker.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/datepicker.js"></script>
+<script src="js/cityselect.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/jquery-scrolltofixed-min.js"></script>
+<script src="js/highcharts.js"></script>
+<style>
+@font-face {
+	font-family: yotujob;
+	src: url(webfonts/yotujob.ttf)
+}
+</style>
+</head>
+
+<body class="bg-ec">
+  <header class="header"></header>
+<div class="content card1" style="padding-bottom:0;margin-top:30px;">
+  <div class="p24">
+    <div class="bold f18 c3e fl"><span class="ic f24 fw-n mr4"></span>顾问报表</div>
+    <div class="fl mt4 ml32">
+      <div class="fl c2">
+        <input type="radio" checked name="selectRpt" id="personal">
+        <label for="personal"><span class="bold f15">个人报表</span></label>
+        <input type="radio" name="selectRpt" id="team">
+        <label for="team" class="ml16"><span class="bold f15">团队报表</span></label>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="po-a f14 c2 ho-cb cu-po" style="right:16px;top:16px;"><span  style="margin-right:12px;"><span class="d-ib" style="background-color:#00a388;height:4px;width:18px;position:absolute;margin:4px 0 0 0;"></span><span class="d-ib" style="background-color:red;height:4px;width:12px;"></span></span><span>KPI 监控视图</span></div>
+  </div>
+  <div class="f14 mt16">
+    <div class="c2 p816 bg-f2"> <span class="ic f24"></span>筛选 <span class="filter-tag d-ib a ml24 cu-po bd1-c pl8">统计时间：<span class="filter-value">本周</span><span class="ic f20"></span>
+      <div class="note hidden c1">
+        <div class="p4-0">
+          <input type="radio" value="day" name="cre-time" id="day">
+          <label for="day">当天</label>
+          <input type="radio" value="week" name="cre-time" id="week" checked>
+          <label for="week" class="ml8">本周</label>
+          <input type="radio" value="month" name="cre-time" id="month">
+          <label for="month" class="ml8">本月</label>
+        </div>
+        <div class="p4-0 bdt1-d">
+          <input type="radio" value="week" name="cre-time" id="week">
+          <label for="week">上周</label>
+          <input type="radio" value="month" name="cre-time" id="month">
+          <label for="month" class="ml8">上月</label>
+        </div>
+        <div class="p4-0 bdt1-d">
+          <input type="radio" value="custom" name="cre-time" id="custom">
+          <label for="custom">自定义</label>
+        </div>
+        <div class="custom hidden">
+          <div class="ml16">
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="start">
+          </div>
+          <div class="ta-c ml16">~</div>
+          <div class="ml16">
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="end">
+          </div>
+        </div>
+        <div class="mt8 mb8 ta-r"> <span class="filter-cancel p4-8 ho-u">取消</span> <span class="ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">确认</span> </div>
+      </div>
+      </span> <span class="filter-tag d-ib a ml24 cu-po bd1-c pl8">团队：<span class="filter-value">全部</span><span class="ic f20"></span>
+      <div class="note hidden c1">
+        <div class="mt8">
+          <select name="" id="select-conTeam" class="select-con w160">
+            <option selected>全部</option>
+            <option>TMT业务一部</option>
+            <option>TMT业务二部</option>
+            <option>消费业务部</option>
+            <option>金融业务部</option>
+            <option>武汉猎头业务组</option>
+            <option>北京猎头业务组</option>
+          </select>
+        </div>
+        <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">确认</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+      </div>
+      </span> <span class="filter-tag d-ib a ml24 cu-po bd1-c pl8">部门：<span class="filter-value">全部</span><span class="ic f20"></span>
+      <div class="note hidden">
+        <div class="mt8">
+          <select name="" id="select-comp" class="w160">
+            <option selected>全部</option>
+            <option>营运中心</option>
+            <option>武汉公司</option>
+            <option>北京公司</option>
+          </select>
+        </div>
+        <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">确认</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+      </div>
+      </span> 
+      <!--<span id="hdrSetting" class="fr f14 ho-cb c2 mt1 ho-ic-b po-r"><span class="ic f20"></span>表头设置
+    <div class="up1 hidden"></div>
+    <div class="up2 hidden"></div>
+    <div class="hidden po-a card5 w120 h400 z150 c2 pt8" style="margin:8px 0 0 -150px; height:284px;width:240px">
+        <ul class="fl">
+           <li class="li-no p4-16"><input id="col2" type="checkbox" checked><label for="col2">职位</label></li>
+           <li class="li-no p4-16"><input id="col3" type="checkbox" checked><label for="col3">团队</label></li>
+           <li class="li-no p4-16"><input id="col4" type="checkbox" checked><label for="col4">部门</label></li>
+           <li class="li-no p4-16"><input id="col5" type="checkbox" checked><label for="col5">工作量</label></li>
+           <li class="li-no p4-16"><input id="col6" type="checkbox" checked><label for="col6">跟进职位</label></li>
+           <li class="li-no p4-16"><input id="col7" type="checkbox" checked><label for="col7">进展天数</label></li>
+           <li class="li-no p4-16"><input id="col8" type="checkbox" checked><label for="col8">公司名称</label></li>
+           <li class="li-no p4-16"><input id="col9" type="checkbox" checked><label for="col9">紧急度</label></li>
+        </ul> 
+        <ul class="fl">
+           <li class="li-no p4-16"><input id="col10" type="checkbox" checked><label for="col10">推荐</label></li>
+           <li class="li-no p4-16"><input id="col11" type="checkbox" checked><label for="col11">合格</label></li>
+           <li class="li-no p4-16"><input id="col12" type="checkbox" checked><label for="col12">初试</label></li>
+           <li class="li-no p4-16"><input id="col13" type="checkbox" checked><label for="col13">复试</label></li>
+           <li class="li-no p4-16"><input id="col14" type="checkbox" checked><label for="col14">待发Offer</label></li>
+           <li class="li-no p4-16"><input id="col15" type="checkbox" checked><label for="col15">已发Offer</label></li>
+           <li class="li-no p4-16"><input id="col16" type="checkbox" checked><label for="col16">不合适</label></li>
+           <li class="li-no p4-16"><input id="col17" type="checkbox" checked><label for="col17">业绩</label></li>
+        </ul>
+        <div class="clear"></div>
+        <div class="mt12">
+          <span id="saveHdrSetting" class="fr ml16 mr16 filter-add p4-16 cw bg-b bdrs2 ho-1f">保存</span>
+          <span class="filter-cancel fr p4-8 ho-u">重置</span>
+          
+        </div>
+      </div>
+    </span>
+    <script>
+		var TestArray = [];
+		$('#saveHdrSetting').on('click',function(){
+			$('#hdrSetting [id^="col"]:checked').each(function(){
+				TestArray.push($(this).next().html())
+			});
+			alert(TestArray);
+		});	
+/*表头设置---begin--*/
+$('#hdrSetting').hover(function(){
+	$(this).children().show()},function(){
+		$(this).children().hide();
+		$(this).children('.ic').show();
+		});//拂过显示
+$('[for^="col"]').on('click',function(){
+	var shown = $(this).siblings().prop('checked');//获取勾选状态
+	var colNo = parseInt($(this).attr('for').substr(3),10)+1;//获取勾选表头所在列号
+	if(shown){
+		$('table td:nth-child('+colNo+')').hide();
+		$('#div-header').children().children(':nth-child('+colNo+')').hide();//取消勾选时隐藏divHeader和table相应列
+		} else{
+			$('table td:nth-child('+colNo+')').show();
+			$('#div-header').children().children(':nth-child('+colNo+')').show();//勾选时显示相应列
+		};	
+	});		
+/*表头设置---end--*/		</script>--> 
+      <span class="f14 c2 ho-cb cu-po fr mt1 mr16" id="excelreport"><span class="ic f20 pr4"></span>导出Excel</span> </div>
+    <div class="hidden pl24 pt8 c1 pb8"> <span class="fl c2 d-ib p2-4">报表：</span> <span class="fl c1 ml8 p2-4"><span class="c3">顾问团队：</span>所有团队，<span class="c3">统计时间：</span>一周内</span> <span class="tag-search"> <span class="c3">顾问团队：</span> <span>麒麟队</span><span class="ic ml4 f16 c3"></span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div id="div-header" class="stickToTop c2 ov-h h54 f14 bold bg-w" >
+    <div style="width:2200px;">
+      <div class="w32 h48 fl pt16"></div>
+      <div class="w72 fl pt16">成员</div>
+      <div class="w120 fl pt16">团队</div>
+      <div class="sort w60 cu-po ho-cb po-r fl pt16"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>工作量</span> </div>
+      <div class="w120 fl pt16">跟进职位</div>
+      <div class="sort w72 cu-po ho-cb po-r fl pt16"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>进展天数</span> </div>
+      <div class="w160 fl pt16">公司名称</div>
+      <div class="w66 fl pt16">紧急度</div>
+      <div class="sort w54 cu-po ho-cb po-r fl pt16"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>推荐</span> </div>
+      <div class="sort w54 cu-po ho-cb po-r fl pt16"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>合格</span> </div>
+      <div class="sort w54 cu-po ho-cb po-r fl pt16"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>初试</span> </div>
+      <div class="sort w56 cu-po ho-cb po-r fl pt16"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>复试</span> </div>
+      <div class="sort w60 cu-po ho-cb po-r fl pt16"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span class="d-ib mt-6">待发</span> </div>
+      <div class="sort w60 cu-po ho-cb po-r fl pt16"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span class="d-ib mt-6">已发</span> </div>
+      <div class="sort w80 cu-po ho-cb po-r fl pt16"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>不合适</span> </div>
+      <div class="sort w80 cu-po ho-cb po-r fl pt16"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>业绩</span> </div>
+    </div>
+  </div>
+  <div id="div-table" class="ovx-a">
+    <table class="c1 bdcl ta-l c1 f14 clear">
+      <tr class="consultant" style="height:0">
+        <td><div class="w32"></div></td>
+        <td><div class="w72"></div></td>
+        <td><div class="w120"></div></td>
+        <td><div class="w60"></div></td>
+        <td><div class="w120"></div></td>
+        <td><div class="w72"></div></td>
+        <td><div class="w160"></div></td>
+        <td><div class="w66"></div></td>
+        <td><div class="w54"></div></td>
+        <td><div class="w54"></div></td>
+        <td><div class="w54"></div></td>
+        <td><div class="w56"></div></td>
+        <td><div class="w60"></div></td>
+        <td><div class="w60"></div></td>
+        <td><div class="w80"></div></td>
+        <td><div class="w80"></div></td>
+      </tr>
+      <tr class="consultant bdt1 h48 ho-ec">
+        <td></td>
+        <td>骆小根</td>
+        <td>TMT业务一部</td>
+        <td><span class="bgok cw p2-4 bdrs2">Y</span></td>
+        <td><div class="w120 ol">7个职位<span class="expand cu-po cb ml4">展开</span></div></td>
+        <td>7~23天</td>
+        <td><div class="w160 ol">6家公司</div></td>
+        <td class="pl16">--</td>
+        <td><span class="p0-4">9</span></td>
+        <td><span class="p0-4">8</span></td>
+        <td><span class="p0-4">7</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td><span class="p0-4">5</span></td>
+        <td><span class="p0-4">1</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td>40000</td>
+      </tr>
+      <tr class="consultant bdt1 h48 ho-ec">
+        <td></td>
+        <td>骆小根</td>
+        <td>TMT业务一部</td>
+        <td><span class="bg-r cw p2-4 bdrs2">N</span></td>
+        <td><div class="w120 ol">7个职位<span class="expand cu-po cb ml4">展开</span></div></td>
+        <td>7~23天</td>
+        <td><div class="w160 ol">6家公司</div></td>
+        <td class="pl16">--</td>
+        <td><span class="p0-4">9</span></td>
+        <td><span class="p0-4">8</span></td>
+        <td><span class="p0-4">7</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td><span class="p0-4">5</span></td>
+        <td><span class="p0-4">1</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td>40000</td>
+      </tr>
+      <tr class="consultant bdt1 h48 ho-ec">
+        <td></td>
+        <td>骆小根</td>
+        <td>TMT业务一部</td>
+        <td><span class="bgok cw p2-4 bdrs2">Y</span></td>
+        <td><div class="w120 ol">7个职位<span class="expand cu-po cb ml4">展开</span></div></td>
+        <td>7~23天</td>
+        <td><div class="w160 ol">6家公司</div></td>
+        <td class="pl16">--</td>
+        <td><span class="p0-4">9</span></td>
+        <td><span class="p0-4">8</span></td>
+        <td><span class="p0-4">7</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td><span class="p0-4">5</span></td>
+        <td><span class="p0-4">1</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td>40000</td>
+      </tr>
+      <tr class="consultant bdt1 h48 ho-ec">
+        <td></td>
+        <td>骆小根</td>
+        <td>TMT业务一部</td>
+        <td><span class="bgok cw p2-4 bdrs2">Y</span></td>
+        <td><div class="w120 ol">7个职位<span class="expand cu-po cb ml4">展开</span></div></td>
+        <td>7~23天</td>
+        <td><div class="w160 ol">6家公司</div></td>
+        <td class="pl16">--</td>
+        <td><span class="p0-4">9</span></td>
+        <td><span class="p0-4">8</span></td>
+        <td><span class="p0-4">7</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td><span class="p0-4">5</span></td>
+        <td><span class="p0-4">1</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td>40000</td>
+      </tr>
+      <tr class="consultant bdt1 h48 ho-ec">
+        <td></td>
+        <td>骆小根</td>
+        <td>TMT业务一部</td>
+        <td><span class="bgok cw p2-4 bdrs2">Y</span></td>
+        <td><div class="w120 ol">7个职位<span class="expand cu-po cb ml4">展开</span></div></td>
+        <td>7~23天</td>
+        <td><div class="w160 ol">6家公司</div></td>
+        <td class="pl16">--</td>
+        <td><span class="p0-4">9</span></td>
+        <td><span class="p0-4">8</span></td>
+        <td><span class="p0-4">7</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td><span class="p0-4">5</span></td>
+        <td><span class="p0-4">1</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td>40000</td>
+      </tr>
+      <tr class="consultant bdt1 h48 ho-ec">
+        <td></td>
+        <td>骆小根</td>
+        <td>TMT业务一部</td>
+        <td><span class="bgok cw p2-4 bdrs2">Y</span></td>
+        <td><div class="w120 ol">7个职位<span class="expand cu-po cb ml4">展开</span></div></td>
+        <td>7~23天</td>
+        <td><div class="w160 ol">6家公司</div></td>
+        <td class="pl16">--</td>
+        <td><span class="p0-4">9</span></td>
+        <td><span class="p0-4">8</span></td>
+        <td><span class="p0-4">7</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td><span class="p0-4">5</span></td>
+        <td><span class="p0-4">1</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td>40000</td>
+      </tr>
+      <tr class="consultant bdt1 h48 ho-ec">
+        <td></td>
+        <td>骆小根</td>
+        <td>TMT业务一部</td>
+        <td><span class="bgok cw p2-4 bdrs2">Y</span></td>
+        <td><div class="w120 ol">7个职位<span class="expand cu-po cb ml4">展开</span></div></td>
+        <td>7~23天</td>
+        <td><div class="w160 ol">6家公司</div></td>
+        <td class="pl16">--</td>
+        <td><span class="p0-4">9</span></td>
+        <td><span class="p0-4">8</span></td>
+        <td><span class="p0-4">7</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td><span class="p0-4">5</span></td>
+        <td><span class="p0-4">1</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td>40000</td>
+      </tr>
+      <tr class="consultant bdt1 h48 ho-ec">
+        <td></td>
+        <td>骆小根</td>
+        <td>TMT业务一部</td>
+        <td><span class="bgok cw p2-4 bdrs2">Y</span></td>
+        <td><div class="w120 ol">7个职位<span class="expand cu-po cb ml4">展开</span></div></td>
+        <td>7~23天</td>
+        <td><div class="w160 ol">6家公司</div></td>
+        <td class="pl16">--</td>
+        <td><span class="p0-4">9</span></td>
+        <td><span class="p0-4">8</span></td>
+        <td><span class="p0-4">7</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td><span class="p0-4">5</span></td>
+        <td><span class="p0-4">1</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td>40000</td>
+      </tr>
+      <tr class="consultant bdt1 h48 ho-ec">
+        <td></td>
+        <td>骆小根</td>
+        <td>TMT业务一部</td>
+        <td><span class="bgok cw p2-4 bdrs2">Y</span></td>
+        <td><div class="w120 ol">7个职位<span class="expand cu-po cb ml4">展开</span></div></td>
+        <td>7~23天</td>
+        <td><div class="w160 ol">6家公司</div></td>
+        <td class="pl16">--</td>
+        <td><span class="p0-4">9</span></td>
+        <td><span class="p0-4">8</span></td>
+        <td><span class="p0-4">7</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td><span class="p0-4">5</span></td>
+        <td><span class="p0-4">1</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td>40000</td>
+      </tr>
+      <tr class="consultant bdt1 h48 ho-ec">
+        <td></td>
+        <td>骆小根</td>
+        <td>TMT业务一部</td>
+        <td><span class="bgok cw p2-4 bdrs2">Y</span></td>
+        <td><div class="w120 ol">7个职位<span class="expand cu-po cb ml4">展开</span></div></td>
+        <td>7~23天</td>
+        <td><div class="w160 ol">6家公司</div></td>
+        <td class="pl16">--</td>
+        <td><span class="p0-4">9</span></td>
+        <td><span class="p0-4">8</span></td>
+        <td><span class="p0-4">7</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td><span class="p0-4">5</span></td>
+        <td><span class="p0-4">1</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td>40000</td>
+      </tr>
+      <tr class="consultant bdt1 h48 ho-ec">
+        <td></td>
+        <td>骆小根</td>
+        <td>TMT业务一部</td>
+        <td><span class="bgok cw p2-4 bdrs2">Y</span></td>
+        <td><div class="w120 ol">7个职位<span class="expand cu-po cb ml4">展开</span></div></td>
+        <td>7~23天</td>
+        <td><div class="w160 ol">6家公司</div></td>
+        <td class="pl16">--</td>
+        <td><span class="p0-4">9</span></td>
+        <td><span class="p0-4">8</span></td>
+        <td><span class="p0-4">7</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td><span class="p0-4">5</span></td>
+        <td><span class="p0-4">1</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td>40000</td>
+      </tr>
+      <tr class="consultant bdt1 h48 ho-ec">
+        <td></td>
+        <td>骆小根</td>
+        <td>TMT业务一部</td>
+        <td><span class="bgok cw p2-4 bdrs2">Y</span></td>
+        <td><div class="w120 ol">7个职位<span class="expand cu-po cb ml4">展开</span></div></td>
+        <td>7~23天</td>
+        <td><div class="w160 ol">6家公司</div></td>
+        <td class="pl16">--</td>
+        <td><span class="p0-4">9</span></td>
+        <td><span class="p0-4">8</span></td>
+        <td><span class="p0-4">7</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td><span class="p0-4">5</span></td>
+        <td><span class="p0-4">1</span></td>
+        <td><span class="p0-4">6</span></td>
+        <td>40000</td>
+      </tr>
+      <tr class="consultant bdt1 h48 ho-ec">
+        <td class="f12 c2">总计:</td>
+        <td class="bold">17人</td>
+        <td class="bold">4个团队</td>
+        <td><span class="bgok cw p2-4 bdrs2">Y</span></td>
+        <td class="bold">231个职位</td>
+        <td class="bold">1~98天</td>
+        <td class="bold">123家公司</td>
+        <td class="pl16">--</td>
+        <td class="bold">90</td>
+        <td class="bold">50</td>
+        <td class="bold">100</td>
+        <td class="bold">50</td>
+        <td class="bold">3</td>
+        <td class="bold">7</td>
+        <td class="bold">80</td>
+        <td class="bold">780,000</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="ta-c p8 c3 mb48">已是列表底部了</div>
+<!--弹框背景-->
+<div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z150"></div>
+<!--操作冒泡提示-->
+<div id="toast" class="hidden op0 po-f
+ z200 cw card5-nbg l50p t50p mt80 ml-58 p16-24 bg-toa"> <span class="ic f24 cb bdrs12 d-ib po-r"></span> <span></span> </div>
+
+<!--展开职位详情表 
+此表每行内容tr跟一个空行tr，空行用于插入并展开具体推荐的人才详情table
+-->
+<table class="hidden">
+  <tr class="epdPos hidden bdt1 h48 ho-ec">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><div class="w120 ol"><a class="a c1" href="">广告销售总监</a></div></td>
+    <td><div class="pl16">23天</div></td>
+    <td><div class="w160 ol"><a class="a c1" href="">北京体育之窗文化传播有限公司</a></div></td>
+    <td class="pl16">高</td>
+    <td><span class="detail-epd">5</span></td>
+    <td><span class="detail-epd">4</span></td>
+    <td><span class="detail-epd">3</span></td>
+    <td><span class="detail-epd">2</span></td>
+    <td><span class="detail-epd">1</span></td>
+    <td><span class="detail-epd">1</span></td>
+    <td><span class="detail-epd">1</span></td>
+    <td><span class="detail-epd">20000</span></td>
+  </tr>
+  <tr class="epdPos hidden">
+    <td colspan="16"></td>
+  </tr>
+  <tr class="epdPos hidden bdt1 h48 ho-ec">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><div class="w120 ol"><a class="a c1" href="">广告销售总监</a></div></td>
+    <td><div class="pl16">23天</div></td>
+    <td><div class="w160 ol"><a class="a c1" href="">北京体育之窗文化传播有限公司</a></div></td>
+    <td class="pl16">高</td>
+    <td><span class="detail-epd">5</span></td>
+    <td><span class="detail-epd">4</span></td>
+    <td><span class="detail-epd">3</span></td>
+    <td><span class="detail-epd">2</span></td>
+    <td><span class="detail-epd">1</span></td>
+    <td><span class="detail-epd">1</span></td>
+    <td><span class="detail-epd">1</span></td>
+    <td><span class="detail-epd">20000</span></td>
+  </tr>
+  <tr class="epdPos hidden">
+    <td colspan="16"></td>
+  </tr>
+  <tr class="epdPos hidden bdt1 h48 ho-ec">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><div class="w120 ol"><a class="a c1" href="">广告销售总监</a></div></td>
+    <td><div class="pl16">23天</div></td>
+    <td><div class="w160 ol"><a class="a c1" href="">北京体育之窗文化传播有限公司</a></div></td>
+    <td class="pl16">高</td>
+    <td><span class="detail-epd">5</span></td>
+    <td><span class="detail-epd">4</span></td>
+    <td><span class="detail-epd">3</span></td>
+    <td><span class="detail-epd">2</span></td>
+    <td><span class="detail-epd">1</span></td>
+    <td><span class="detail-epd">1</span></td>
+    <td><span class="detail-epd">1</span></td>
+    <td><span class="detail-epd">20000</span></td>
+  </tr>
+  <tr class="epdPos hidden">
+    <td colspan="16"></td>
+  </tr>
+  <tr class="epdPos hidden bdt1 h48 ho-ec">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><div class="w120 ol"><a class="a c1" href="">广告销售总监</a></div></td>
+    <td><div class="pl16">23天</div></td>
+    <td><div class="w160 ol"><a class="a c1" href="">北京体育之窗文化传播有限公司</a></div></td>
+    <td class="pl16">高</td>
+    <td><span class="detail-epd">5</span></td>
+    <td><span class="detail-epd">4</span></td>
+    <td><span class="detail-epd">3</span></td>
+    <td><span class="detail-epd">2</span></td>
+    <td><span class="detail-epd">1</span></td>
+    <td><span class="detail-epd">1</span></td>
+    <td><span class="detail-epd">1</span></td>
+    <td><span class="detail-epd">20000</span></td>
+  </tr>
+  <tr class="epdPos hidden">
+    <td colspan="16"></td>
+  </tr>
+</table>
+<!--二次展开人才详情table-->
+<table id="epd-talents-table" class="hidden fr bdl1 bdcl">
+  <tr class="h36 bg-yl">
+    <td><div class="w160 pl24">候选人</div></td>
+    <td><div class="w160">Pipeline操作</div></td>
+    <td><div class="w200">操作时间</div></td>
+  </tr>
+  <tr class="h36 ho-ec">
+    <td><a href="" class="a c1 pl24">王某某</a></td>
+    <td>面试：通过一面</td>
+    <!--<td>2016-10-08</td>-->
+    <td>2017-01-12</td>
+  </tr>
+  <tr class="h36 ho-ec">
+    <td><a href="" class="a c1 pl24">王某某</a></td>
+    <td>面试：通过一面</td>
+    <!--<td>2016-10-08</td>-->
+    <td>2017-01-12</td>
+  </tr>
+  <tr class="h36 ho-ec">
+    <td><a href="" class="a c1 pl24">王某某</a></td>
+    <td>面试：通过一面</td>
+    <!--<td>2016-10-08</td>-->
+    <td>2017-01-12</td>
+  </tr>
+  <tr class="h36 ho-ec">
+    <td><a href="" class="a c1 pl24">王某某</a></td>
+    <td>面试：通过一面</td>
+    <!--<td>2016-10-08</td>-->
+    <td>2017-01-12</td>
+  </tr>
+  <tr class="h36 ho-ec">
+    <td><a href="" class="a c1 pl24">王某某</a></td>
+    <td>面试：通过一面</td>
+    <!--<td>2016-10-08</td>-->
+    <td>2017-01-12</td>
+  </tr>
+</table>
+
+<!--展开具体推荐数表-->
+
+</body>
+<script>
+/*--操作冒泡提示功能toast()--*/
+function toast(text){
+	$('#toast').children(':last').html(text);
+	$('#toast').show().velocity({marginTop:'-=120',opacity:1,delay:150},{duration:150,easing:'easeOutCubic'});
+	window.setTimeout(function(){
+		$('#toast').velocity('reverse',{complete:function(){$('#toast').hide()}})},1800);
+		};	
+</script>
+<script>
+/*显示辅助： 鼠标所在单元格的表头项标蓝---begin*/	
+$('td').on('mouseenter',function(){
+	var colNo = $(this).index()+1;
+	$('#div-header').children().children().removeClass('cb');
+	$('#div-header').children().children(':nth-child('+colNo+')').addClass('cb');
+	});
+$('table').on('mouseleave',function(){
+	$('#div-header').children().children().removeClass('cb');
+	});	
+/*显示辅助： 鼠标所在单元格的表头项标蓝---end*/	
+
+/*切换个人和团队报表--begin--*/
+//隐藏或显示个人所在列（列2）的同时更新table数据	
+$('[for="personal"]').on('click',function(){//单击个人报表
+	$('#div-header').children().children(':nth-child(2)').show();
+	$('.consultant>td:nth-child(2)').show();
+	$('.epdPos>td:nth-child(2)').show();
+	//function(){}个人工作量以Y / N显示，仅在本周和本月报表时
+	});
+$('[for="team"]').on('click',function(){//单击团队报表
+	$('#div-header').children().children(':nth-child(2)').hide();
+  $('.consultant>td:nth-child(2)').hide();
+	$('.epdPos>td:nth-child(2)').hide();
+	//function(){}，团队工作量以人头比显示 （合格人数/总人数 8/9），仅在本周和本月报表时
+	});
+/*切换到团队报表--end--*/
+
+
+
+/*单击展开和收起职位详情*/
+$('.expand').on('click',function(){
+	var that=$(this),status = that.html(),tr=that.parents('tr');
+	if (status=='展开'){
+		$('td.bg-yl').removeClass('bg-yl');
+		$('#epd-talents-table').hide();
+		//还原之前有的二次展开
+		
+		//首先将相关数据放入展开职位详情表.epdPos
+		$('.epdPos').insertAfter(tr);//将职位详情表内数据插入展开列下方
+		$('.epdPos').show();
+		tr.siblings().removeClass('bg-e3');
+		tr.addClass('bg-e3');
+		$('.expand').html('展开');
+		that.html('收起');
+		} else {
+			tr.removeClass('bg-e3');
+			$('.epdPos').hide();
+			that.html('展开');
+			}
+	});
+	
+	
+	
+/*表头滚动固定--begin--*/
+$('.stickToTop').scrollToFixed({
+	preFixed: function() {
+		$(this).addClass('card2-nbg');
+		},
+	postFixed: function() {
+		$(this).removeClass('card2-nbg');
+		}	
+	});
+/*表头滚动固定--end--*/
+</script>
+<script>
+/*--列表表头单击排序：小图标填色--*/	
+$('.sort').on('click',function(){
+	var des = $(this).children('.descend');
+	var ase = $(this).children('.ascend');
+	$(this).siblings().children('.cb').removeClass('cb').addClass('ce0');
+	if($(des).hasClass('cb')){
+		$(ase).removeClass('ce0').addClass('cb');$(des).removeClass('cb').addClass('ce0')} else {
+			$(des).removeClass('ce0').addClass('cb');$(ase).removeClass('cb').addClass('ce0');}
+	});
+/*--单击筛选标签--*/
+$('.filter-tag').on('click', function() {
+  $(this).siblings().children('div').hide();
+  $(this).children('div').show();
+});
+$('.filter-add,.filter-cancel').on('click', function(e) {
+  event.stopPropagation();
+  $(this).parents('.note').hide();
+});
+/*单击文档任意位置关闭筛选框*/
+$(document).on('click', function(e) {
+  if (!$(event.target).closest('.filter-tag').length && !$(event.target).closest('[class^="datepicker"]').length && !$(event.target).closest('.select2-container').length) {
+    $('.filter-tag .note').hide()
+  }
+});
+/*--自定义时间收起展示--*/
+$('input[name$="time"]').on('click', function() {
+    var that = $(this);
+    var value = $('input[name$="time"]:checked').val();
+    if (value == "custom") {
+      $(that).parent().siblings('.custom').show()
+    } else {
+      $(that).parent().siblings('.custom').hide()
+    }
+  });
+/*--自定义时间选择:起始时间--*/
+var $start = $('#start'),
+  $end = $('#end');
+$start.datepicker({
+  onSelect: function(fd, date) {
+    $end.data('datepicker')
+      .update('minDate', date)
+  }
+})
+$end.datepicker({
+  onSelect: function(fd, date) {
+    $start.data('datepicker')
+      .update('maxDate', date)
+  }
+});
+/*--选择select实例化--*/
+$('#select-conTeam,#select-city,#select-comp').select2({
+  placeholder: " ",minimumResultsForSearch: Infinity,
+});
+/*--选中报表--*/
+$("#report").addClass("nav-a-selected");
+</script>
+<script>
+/*单击职位内的数字二次展开详情*/	
+$('.detail-epd').on('click',function(){
+	var that = $(this);
+	var expanded = that.parent().hasClass('bg-yl');
+	var tr=that.parents('tr').next().children();
+	if (expanded){
+		$('#epd-talents-table').hide();
+		that.parent().removeClass('bg-yl');
+	} else{
+		$('td.bg-yl').removeClass('bg-yl')
+		that.parent().addClass('bg-yl');
+		$('#epd-talents-table').appendTo(tr).show();//更新epd-talents-table的数据，插入点击的数字下一行
+	}
+});	
+$('.drop-down').on('mouseenter',function(){$(this).children('.drop-down-list').show()})	
+$('.drop-down').on('mouseleave',function(){$(this).children('.drop-down-list').hide()})	
+	</script>
+</html>

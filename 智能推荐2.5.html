@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>智能推荐</title>
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/components.js"></script>
+  <link rel="stylesheet" href="css/main-New.css">
+  <link rel="stylesheet" href="css/select2.css">
+</head>
+<style>
+  .select2-container .select2-selection--single {
+    font-size: 12px;
+    height: 28px;
+  }
+  
+  .select2-results__option {
+    font-size: 12px;
+    line-height: 28px;
+  }
+  
+  [type="text"] {
+    font-size: 12px;
+  }
+  
+  .switch-label {
+    font-size: 12px;
+  }
+  
+  .ho-yl:hover {
+    color: darkorange
+  }
+  .unread-mark::before{
+    content: '未读';
+    font-size: 12px;
+    font-family: Microsoft yahei;
+    color: white;
+    padding:0 4px;
+    border-radius: 2px;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top:30px;
+    background-color: darkorange;
+    line-height: 20px;
+    padding: 
+  }
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #999;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #999;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #999;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #999;
+}
+::-webkit-scrollbar:hover {
+ width: 4px;
+ height: 4px;
+}
+</style>
+
+<body class="po-r">
+  <div>
+    <div class="popup-wrapper">
+      <div class="fcpop-close"></div>
+      <div class="card5 h100p f12" style="width:1200px">
+        <div class="fl card2 h100p ovy-a" style="width:480px;">
+          <h1 class="f16 p16"><span class="ic f24 fw-n"></span>智能推荐：
+            <span class="fw-n">
+              <select name="" class="select-position w220">
+                <optgroup label="公司A">
+                <option value="A">Java高级开发工程师</option>
+                <option value="A">iOS开发工程师</option>
+                <option value="A">安卓开发工程师</option>
+                </optgroup>
+                <optgroup label="公司B">
+                <option value="B">产品经理</option>
+                <option value="B">前端工程师</option>
+                </optgroup>
+                <optgroup label="公司C">
+                <option value="C">算法工程师</option>
+                </optgroup>
+              </select>
+            </span>
+            <span class="f12 fw-n c-ora ml24">展开筛选<span class="ic f24"></span></span>
+          </h1>
+          <div id="filter-wrapper" class="bg-f2 p8 f12">
+            <div>
+              <span><select name="" id="updateTime" class="w86"><option></option><option>不限</option><option>3天内</option></select></span>
+              <span class="ml4"><select name="" id="scholarType" class="w86"><option></option><option>不限</option><option>本科</option></select></span>
+              <span class="ml4"><select name="" id="workYears" class="w86"><option></option><option>不限</option><option>0-1年</option></select></span>
+              <span class="ml4"><select name="" id="salaryRange" class="w86"><option></option><option>不限</option><option>小于5k</option></select></span>
+              <span class="ml"><select name="" id="currentStatus" class="w86"><option></option><option>不限</option><option>离职看机会</option></select></span>
+            </div>
+            <div class="mt8 po-r">
+              <span><select name="" id="ageRange" class="w86"><option></option><option>不限</option><option>小于22岁</option></select></span>
+              <span class="ml4"><select name="" id="genderType" class="w86"><option></option><option>不限</option><option>男</option><option>女</option></select></span>
+              <span class="va-2 ml4"><input type="text" class="w262 pl4 f12" placeholder="简历关键词，多个请用逗号隔开" style="height:28px"><span class="ic f18 po-a c-c" style="margin:4px 0 0 -20px;pointer-events:none;"></span></span>
+            </div>
+
+
+          </div>
+          <div class="p8"><span class="mt4 d-ib">共<span class="p0-4">53</span>份推荐</span>
+             <span class="fr">     <span class="switch fw-n f12">
+              <input type="radio" class="switch-input" name="offerViewToggle" value="monthView" id="monthView" checked>
+              <label for="monthView" class="switch-label switch-label-off">匹配度</label>
+              <input type="radio" class="switch-input" name="offerViewToggle" value="seasonView" id="seasonView">
+              <label for="seasonView" class="switch-label switch-label-on">更新时间</label>
+              <span class="switch-selection"></span>
+            </span>
+            </span>
+            <span class="fr d-ib mt4 mr16"><input id="display-unread" type="checkbox"><label for="display-unread" class="c2 pt4">只看未读</label></span>
+          </div>
+          <div class="mt8">
+            <ul>
+              <li class="ai-rec-li unread-mark selected-bg li-no p816 lh24 bdt1 po-r">
+                <p><span class="cb f13">Java高级开发工程师</span><span class="ml16 c2">在职看机会</span><span class="fr c3">更新于：2017-06-15</span></p>
+                <p class="c2"><span>男</span><span class="c3 p0-4">·</span><span>32</span><span class="c3 p0-4">·</span><span>华东科技大学</span><span class="c3 p0-4">·</span><span>本科</span><span class="c3 p0-4">·</span><span>现居深圳</span><span class="c3 p0-4">·</span><span>意向深圳</span></p>
+                <p class="c2"><span>苏宁云商集团股份有限公司</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+                <p class="c2"><span>唯品会</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+              </li>
+              <li class="ai-rec-li unread-mark li-no p816 lh24 bdt1 po-r">
+                <p><span class="cb f13">Java高级开发工程师</span><span class="ml16 c2">在职看机会</span><span class="fr c3">更新于：2017-06-15</span></p>
+                <p class="c2"><span>男</span><span class="c3 p0-4">·</span><span>32</span><span class="c3 p0-4">·</span><span>华东科技大学</span><span class="c3 p0-4">·</span><span>本科</span><span class="c3 p0-4">·</span><span>现居深圳</span><span class="c3 p0-4">·</span><span>意向深圳</span></p>
+                <p class="c2"><span>苏宁云商集团股份有限公司</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+                <p class="c2"><span>唯品会</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+              </li><li class="ai-rec-li li-no p816 lh24 bdt1 po-r unread-mark">
+                <p><span class="cb f13">Java高级开发工程师</span><span class="ml16 c2">在职看机会</span><span class="fr c3">更新于：2017-06-15</span></p>
+                <p class="c2"><span>男</span><span class="c3 p0-4">·</span><span>32</span><span class="c3 p0-4">·</span><span>华东科技大学</span><span class="c3 p0-4">·</span><span>本科</span><span class="c3 p0-4">·</span><span>现居深圳</span><span class="c3 p0-4">·</span><span>意向深圳</span></p>
+                <p class="c2"><span>苏宁云商集团股份有限公司</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+                <p class="c2"><span>唯品会</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+              </li>
+              <li class="ai-rec-li li-no p816 lh24 bdt1 po-r">
+                <p><span class="cb f13">Java高级开发工程师</span><span class="ml16 c2">在职看机会</span><span class="fr c3">更新于：2017-06-15</span></p>
+                <p class="c2"><span>男</span><span class="c3 p0-4">·</span><span>32</span><span class="c3 p0-4">·</span><span>华东科技大学</span><span class="c3 p0-4">·</span><span>本科</span><span class="c3 p0-4">·</span><span>现居深圳</span><span class="c3 p0-4">·</span><span>意向深圳</span></p>
+                <p class="c2"><span>苏宁云商集团股份有限公司</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+                <p class="c2"><span>唯品会</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+              </li><li class="ai-rec-li li-no p816 lh24 bdt1 po-r unread-mark">
+                <p><span class="cb f13">Java高级开发工程师</span><span class="ml16 c2">在职看机会</span><span class="fr c3">更新于：2017-06-15</span></p>
+                <p class="c2"><span>男</span><span class="c3 p0-4">·</span><span>32</span><span class="c3 p0-4">·</span><span>华东科技大学</span><span class="c3 p0-4">·</span><span>本科</span><span class="c3 p0-4">·</span><span>现居深圳</span><span class="c3 p0-4">·</span><span>意向深圳</span></p>
+                <p class="c2"><span>苏宁云商集团股份有限公司</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+                <p class="c2"><span>唯品会</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+              </li>
+              <li class="ai-rec-li li-no p816 lh24 bdt1 po-r">
+                <p><span class="cb f13">Java高级开发工程师</span><span class="ml16 c2">在职看机会</span><span class="fr c3">更新于：2017-06-15</span></p>
+                <p class="c2"><span>男</span><span class="c3 p0-4">·</span><span>32</span><span class="c3 p0-4">·</span><span>华东科技大学</span><span class="c3 p0-4">·</span><span>本科</span><span class="c3 p0-4">·</span><span>现居深圳</span><span class="c3 p0-4">·</span><span>意向深圳</span></p>
+                <p class="c2"><span>苏宁云商集团股份有限公司</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+                <p class="c2"><span>唯品会</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+              </li><li class="ai-rec-li li-no p816 lh24 bdt1 po-r unread-mark">
+                <p><span class="cb f13">Java高级开发工程师</span><span class="ml16 c2">在职看机会</span><span class="fr c3">更新于：2017-06-15</span></p>
+                <p class="c2"><span>男</span><span class="c3 p0-4">·</span><span>32</span><span class="c3 p0-4">·</span><span>华东科技大学</span><span class="c3 p0-4">·</span><span>本科</span><span class="c3 p0-4">·</span><span>现居深圳</span><span class="c3 p0-4">·</span><span>意向深圳</span></p>
+                <p class="c2"><span>苏宁云商集团股份有限公司</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+                <p class="c2"><span>唯品会</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+              </li>
+              <li class="ai-rec-li li-no p816 lh24 bdt1 po-r">
+                <p><span class="cb f13">Java高级开发工程师</span><span class="ml16 c2">在职看机会</span><span class="fr c3">更新于：2017-06-15</span></p>
+                <p class="c2"><span>男</span><span class="c3 p0-4">·</span><span>32</span><span class="c3 p0-4">·</span><span>华东科技大学</span><span class="c3 p0-4">·</span><span>本科</span><span class="c3 p0-4">·</span><span>现居深圳</span><span class="c3 p0-4">·</span><span>意向深圳</span></p>
+                <p class="c2"><span>苏宁云商集团股份有限公司</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+                <p class="c2"><span>唯品会</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+              </li><li class="ai-rec-li li-no p816 lh24 bdt1 po-r unread-mark">
+                <p><span class="cb f13">Java高级开发工程师</span><span class="ml16 c2">在职看机会</span><span class="fr c3">更新于：2017-06-15</span></p>
+                <p class="c2"><span>男</span><span class="c3 p0-4">·</span><span>32</span><span class="c3 p0-4">·</span><span>华东科技大学</span><span class="c3 p0-4">·</span><span>本科</span><span class="c3 p0-4">·</span><span>现居深圳</span><span class="c3 p0-4">·</span><span>意向深圳</span></p>
+                <p class="c2"><span>苏宁云商集团股份有限公司</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+                <p class="c2"><span>唯品会</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+              </li>
+              <li class="ai-rec-li li-no p816 lh24 bdt1 po-r">
+                <p><span class="cb f13">Java高级开发工程师</span><span class="ml16 c2">在职看机会</span><span class="fr c3">更新于：2017-06-15</span></p>
+                <p class="c2"><span>男</span><span class="c3 p0-4">·</span><span>32</span><span class="c3 p0-4">·</span><span>华东科技大学</span><span class="c3 p0-4">·</span><span>本科</span><span class="c3 p0-4">·</span><span>现居深圳</span><span class="c3 p0-4">·</span><span>意向深圳</span></p>
+                <p class="c2"><span>苏宁云商集团股份有限公司</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+                <p class="c2"><span>唯品会</span><span class="c3 p0-4">·</span><span>Java高级开发工程师</span><span class="fr">2016.05-至今</span></p>
+              </li>
+            </ul>
+            <div data-note="空状态" class="hidden ta-c">
+              <div class="ic f64 c-c mt48"></div>
+              <div class="f24 c-c">没有智推的简历</div>
+            </div>
+          </div>
+        </div>
+        <div class="fl h100p ovy-a p16" style="width:720px">
+          <div data-note="智推简历详情" class="">
+            <h2 class="f16">智推简历详情<span class="fr f12 fw-n c3 mr16">智推时间: <span class="ml8">2017-06-10 15:30</span></span></h2>
+          <div class="mt24">
+            <div class="fl bd1-c bdrs2"><span class="ic f64 ca7"></span></div>
+            <div class="fl ml16 lh24 c2 mt-1">
+              <p><span class="cb f13">Java高级开发工程师</span><span class="ml16">在职看机会</span></p>
+              <p><span>男</span><span class="c3 p0-4">·</span><span>32</span><span class="c3 p0-4">·</span><span>华东科技大学</span><span class="c3 p0-4">·</span><span>本科</span><span class="c3 p0-4">·</span><span>现居深圳</span><span class="c3 p0-4">·</span><span>意向深圳</span></p>
+              <p><span>2年经验</span><span class="c3 p0-4">·</span><span>期望薪资：面议</span></p>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="mt16 lh24">
+            <p class="f14 bold b8 bg-f2">教育经历:</p>
+            <p><span>2007.09<span class="p0-4">~</span>2011.06</span><span class="ml16">武汉大学</span><span class="ml16">计算机工程</span><span class="ml16">硕士</span></p>
+            <p><span>2007.09<span class="p0-4">~</span>2011.06</span><span class="ml16">武汉大学</span><span class="ml16">计算机工程</span><span class="ml16">本科</span></p>
+          </div>
+          <div class="mt16 lh24">
+            <p class="f14 bold b8 bg-f2">工作经历:</p>
+            <div class="pb16">
+              <p class="f13"><span>2007.09<span class="p0-4">~</span>2011.06</span><span class="ml16">深圳市腾讯计算机技术有限公司</span><span class="ml16">Java开发工程师</span></p>
+            <p class="c2 pl48">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, eligendi sed enim sit nostrum quo. Incidunt, dolore, hic natus ab vitae minus quisquam veniam deserunt alias nobis laborum, impedit expedita.</p>
+            </div>
+            <div class="pb16">
+              <p class="f13"><span>2007.09<span class="p0-4">~</span>2011.06</span><span class="ml16">深圳市腾讯计算机技术有限公司</span><span class="ml16">Java开发工程师</span></p>
+            <p class="c2 pl48">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, eligendi sed enim sit nostrum quo. Incidunt, dolore, hic natus ab vitae minus quisquam veniam deserunt alias nobis laborum, impedit expedita.</p>
+            </div>
+          </div>
+          <div class="mt16 lh24">
+            <p class="f14 bold b8 bg-f2">项目经历:</p>
+            <div class="pb16">
+              <p class="f13"><span>2007.09<span class="p0-4">~</span>2011.06</span><span class="ml16">深圳市腾讯计算机技术有限公司</span><span class="ml16">Java开发工程师</span></p>
+            <p class="c2 pl48">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, eligendi sed enim sit nostrum quo. Incidunt, dolore, hic natus ab vitae minus quisquam veniam deserunt alias nobis laborum, impedit expedita.</p>
+            </div>
+            <div class="pb16">
+              <p class="f13"><span>2007.09<span class="p0-4">~</span>2011.06</span><span class="ml16">深圳市腾讯计算机技术有限公司</span><span class="ml16">Java开发工程师</span></p>
+            <p class="c2 pl48">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, eligendi sed enim sit nostrum quo. Incidunt, dolore, hic natus ab vitae minus quisquam veniam deserunt alias nobis laborum, impedit expedita.</p>
+            </div>
+          </div>
+          <div class="mt16 lh24">
+            <p class="f14 bold b8 bg-f2">自我评价:</p>
+            <div class="pb16">
+              <p class="f13 c2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo facere, sequi modi aspernatur explicabo deleniti atque molestias placeat nemo animi ut illo dolore necessitatibus qui, harum praesentium voluptatum recusandae eius.</p>
+            </div>
+          </div>
+          </div>
+          <div data-note="空状态" class=" ta-c">
+            <div class="ic f96 c-c mt48"></div>
+            <div class="f32 c-c">没有可预览的简历</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--list悬浮图标-->
+  <div id="li-hover-mask" class="po-a w100p h100p p24" style="background-color:rgba(242,242,242,0.3);left:0;top:0;">
+    <div class="fr ml24 po-r"><span id="btn-dislike" class="ic f32 d-ib ho-cb cu-po"></span>
+  </div>
+  <div class="fr po-r"><span id="btn-like" class="ic f32 ho-yl cu-po"></span>
+  </div>
+  <div class="clear"></div>
+  </div>
+  
+  <!--推荐不准确操作-->
+  <div id="btn-dislike-note" class="note c1 hidden z9999" style="width:330px;">
+                 <p class="mt8">选择推荐不准确原因，让算法更懂你~</p>
+                  <div id="dislike-reasons-container" class="mt12">
+                    <p><span class="button-flat-bd">学历不符</span>
+      <span class="button-flat-bd ml8">职能不符</span>
+      <span class="button-flat-bd ml8">薪资不符</span></p>
+      <p class="mt8 mb8"><span class="button-flat-bd">学历不符</span>
+        <span class="button-flat-bd ml8">经验不符</span>
+        <span class="button-flat-bd ml8">技能不符</span></p>
+    </div>
+  </div>
+  
+  <!--收藏购买操作-->
+  <div id="btn-like-note" class="note c1 w280 hidden z9999"><p class="mt8">获取此简历联系方式，并收藏到人才库？</p>
+                  <p class="ta-r mt12"><span id="btn-like-cancel" class="button-flat-c">取消</span><span id="btn-like-confirm" class="button-flat-b ml16">确认</span></p>
+  </div>
+  
+</body>
+<script>
+  /*选择职位实例化*/
+  $('.select-position').select2({
+    placeholder: "请选择职位",
+    minimumResultsForSearch: 4
+  });
+  /*更新时间*/
+  $('#updateTime').select2({
+    placeholder: '更新时间',
+    minimumResultsForSearch: Infinity
+  });
+  /*学历*/
+  $('#scholarType').select2({
+    placeholder: '学历',
+    minimumResultsForSearch: Infinity
+  });
+  /*工作年限*/
+  $('#workYears').select2({
+    placeholder: '工作年限',
+    minimumResultsForSearch: Infinity
+  });
+  /*薪资范围*/
+  $('#salaryRange').select2({
+    placeholder: '薪资范围',
+    minimumResultsForSearch: Infinity
+  });
+  /*当前状态*/
+  $('#currentStatus').select2({
+    placeholder: '当前状态',
+    minimumResultsForSearch: Infinity
+  });
+  /*年龄范围*/
+  $('#ageRange').select2({
+    placeholder: '年龄',
+    minimumResultsForSearch: Infinity
+  });
+  /*性别*/
+  $('#genderType').select2({
+    placeholder: '性别',
+    minimumResultsForSearch: Infinity
+  });
+
+  /*推荐list单击和悬浮*/
+  $('.ai-rec-li').on('click',function(){//单击简历list添加选中背景,移除未读标签
+    $('.ai-rec-li').removeClass('selected-bg');
+    $(this).addClass('selected-bg').removeClass('unread-mark');
+    //刷新右侧简历内容
+  });
+  
+  $('.ai-rec-li').on('mouseenter',function(){//鼠标悬浮显示操作mask
+    var opsVisible = $('#btn-like-note').is(':visible') || $('#btn-dislike-note').is(':visible');//判断是否点击出现了操作弹窗
+    if(opsVisible){//若有收藏或不合适弹窗，不作任何操作
+    }else{
+      $('#li-hover-mask').appendTo(this).show();
+    };
+  });
+  
+  $('.ai-rec-li').on('mouseleave', function(){//鼠标移开隐藏操作mask
+    var opsVisible = $('#btn-like-note').is(':visible') || $('#btn-dislike-note').is(':visible');//判断是否点击出现了操作弹窗
+    if (opsVisible){//若有收藏或不合适弹窗，不作任何操作
+    }else{
+     $('#li-hover-mask').hide();  
+    }
+  });
+  
+  $('#btn-like').on('click',function(){//单击收藏图标
+    var Top = $(this).offset().top+32+'px',
+        Left = $(this).offset().left+'px';
+    $('#btn-like-note').appendTo('body').css({
+      top: Top,
+      left: Left
+    }).show();
+  });
+  
+    $('#btn-dislike').on('click',function(){//单击收藏图标
+    var Top = $(this).offset().top+32+'px',
+        Left = $(this).offset().left+'px';
+    $('#btn-dislike-note').appendTo('body').css({
+      top: Top,
+      left: Left
+    }).show();
+  });
+  
+  $(document).on('click',function(){
+    if(!$(event.target).closest('#btn-like').length){
+      $('#btn-like-note').hide();
+    }
+  });
+    $(document).on('click',function(){
+    if(!$(event.target).closest('#btn-dislike').length){
+      $('#btn-dislike-note').hide();
+    }
+  });
+  
+  $('#btn-dislike').on('click',function(){//单击倒拇指图标
+    $(this).children('.note').show();
+  });
+  
+  $('#btn-like-cancel').on('click',function(){//取消收藏
+    event.stopPropagation();
+    $(this).parents('.note').hide();
+  });
+  
+    $('#btn-like-confirm').on('click',function(){//确认收藏
+    event.stopPropagation();  
+    $(this).parents('.note').hide();
+     window.setTimeout(function(){
+      $('.selected-bg').velocity('slideUp',300);
+    },1);
+    window.setTimeout(function(){
+      $('.selected-bg').removeClass('selected-bg').next().addClass('selected-bg');
+    //自动选中下条列表，刷新右侧简历
+    },302)  
+    toast('已收藏到人才库');  
+  });
+  
+  $('#dislike-reasons-container span').on('click',function(){//单击不合适列表
+    var that = $(this);
+    event.stopPropagation();
+    that.parents('.note').hide();
+    window.setTimeout(function(){
+      $('.selected-bg').velocity('slideUp',300);
+    },1);
+    window.setTimeout(function(){
+      $('.selected-bg').removeClass('selected-bg').next().addClass('selected-bg');
+    //自动选中下条列表，刷新右侧简历
+    },302)
+  });
+</script>
+
+</html>

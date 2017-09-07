@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>报表-KPI-BD</title>
+  <link rel="shortcut icon" href="images/logo_favicon.png">
+  <link rel="stylesheet" href="css/main-New.css">
+  <link rel="stylesheet" href="css/select2.css">
+  <link rel="stylesheet" href="css/cityselect.css">
+  <link rel="stylesheet" href="css/datepicker.css">
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/datepicker.js"></script>
+  <script src="js/cityselect.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/jquery-scrolltofixed-min.js"></script>
+  <style>
+
+
+  </style>
+</head>
+
+<body class="bg-ec">
+
+  <div class="content card1">
+    <div id="KPI-monitor">
+      <div class="p24">
+        <div class="bold f18 c3e fl"><span class="ic f24 fw-n mr4"></span>顾问报表</div>
+        <div id="switch" class="po-a f14 c2 ho-cb cu-po" style="right:16px;top:28px;">
+          <div><span style="margin-right:12px;"><span class="d-ib" style="background-color:#00a388;height:4px;width:18px;position:absolute;margin:4px 0 0 0;"></span><span class="d-ib" style="background-color:red;height:4px;width:12px;"></span></span><span>KPI 监控视图</span></div>
+          <div class="hidden"><span style="margin-right:8px;"><span class="d-ib ic f18 cb"></span></span><span>返回数据视图</span></div>
+        </div>
+        <script>
+          $('#switch').click(function() {
+            $(this).children().toggle();
+          })
+
+        </script>
+
+      </div>
+      <div class="c2 p816 bg-f2 f14 mt16">
+        <span class="ic f24"></span>筛选
+        <span class="filter-tag d-ib a ml24 cu-po bd1-c pl8">人员：<span class="filter-value" id="timeName">全部</span><span class="ic f20"></span></span>
+        <span class="filter-tag d-ib a ml24 cu-po bd1-c pl8">团队：<span class="filter-value" id="teamName">全部</span><span class="ic f20"></span></span>
+        <span class="f14 c2 ho-cb cu-po fr mt1 mr16" id="export-btn"><span class="ic f20 pr4"></span>导出Excel</span>
+      </div>
+
+
+
+      <div class="mt16 p16 f12">
+        <div>
+          <div>
+            <div class="fl" style="height:1px;width:184px"></div>
+            <div class="fl pb24">
+              <!--月天数表，一个td代表1天，用date-mark标出月份的1、5、10、15、20、25、30号，在当前天加上today-mark,已过去的天td加上class bg-ec-->
+              <table class="bdcl">
+                <tr class="month-grid-line" style="height:10px;">
+                  <td class="bg-ec"><span class="date-mark">05.01</span></td>
+                  <td class="bg-ec"></td>
+                  <td class="bg-ec"></td>
+                  <td class="bg-ec"></td>
+                  <td class="bg-ec"><span class="date-mark">05.05</span></td>
+                  <td class="bg-ec"></td>
+                  <td class="bg-ec"></td>
+                  <td class="bg-ec"></td>
+                  <td class="bg-ec"></td>
+                  <td class="bg-ec"><span class="date-mark">05.10</span></td>
+                  <td class="bg-ec"></td>
+                  <td class="bg-ec"></td>
+                  <td class="bg-ec"></td>
+                  <td class="bg-ec"></td>
+                  <td class="bg-ec"><span class="date-mark">05.15</span></td>
+                  <td class="bg-ec"></td>
+                  <td class="bg-ec"><span class="today-mark po-a"><span class="ic f24 cb"></span>今天：5月17日</span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td><span class="date-mark">05.20</span></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><span class="date-mark">05.25</span></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><span class="date-mark">05.30</span></td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="lh30 c2 p8-0">
+            <div class="fl w136 ta-c lh-n">
+              <p class="f14 mt8 c1 bold">截至今日目标</p>
+            </div>
+            <div class="fl">
+              <div class="d-f">
+                <div class="w48"></div>
+                <div>
+                  <!--目标推荐数长度=天数*20px-->
+                  <div class="goal-rec" style="width:calc(17*20px);"></div>
+                </div>
+                <div class="goal-actual-differ">目标推荐：20个</div>
+              </div>
+              <div class="d-f">
+                <div class="w48"></div>
+                <div>
+                  <!--目标合格数长度=目标推荐长度 * 4/9-->
+                  <div class="goal-ok" style="width:calc(17*20*0.4444px);"></div>
+
+                </div>
+                <div class="goal-actual-differ">目标合格：9个</div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <ul class="c2">
+          <li class="li-no lh30 p8-0 bdt1">
+            <div class="fl w136 ta-c lh-n">
+              <p class="f14 mt8 c1">骆小根</p>
+              <p class="mt4">武汉猎头业务部</p>
+            </div>
+            <div class="fl">
+              <div class="d-f">
+                <div class="w48">推荐18</div>
+                <div>
+                  <div class="goal-rec" style="width:calc(17*20px);"></div>
+
+                  <!--实际推荐长度=实际推荐数/目标推荐数 * 目标推荐长度，当小于1/2目标推荐背景色为红bg-red, 大于1/2但小于1时背景色为黄bg-yl,大于目标推荐时为绿bg-green-->
+                  <div class="actual-rec bg-yl" style="width:calc(18/20*17*20px);"></div>
+                </div>
+                <div class="goal-actual-differ">-2个</div>
+              </div>
+              <div class="d-f">
+                <div class="w48">合格10</div>
+                <div>
+                  <div class="goal-ok" style="width:calc(17*20*0.4444px);"></div>
+                  <!--实际合格长度=实际合格/目标合格 * 目标合格长度，当小于1/2目标合格背景色为红bg-red, 大于1/2但小于1时背景色为黄bg-yl,大于1时为绿bg-green-->
+                  <div class="actual-ok bg-green" style="width:calc(10/9*17*20*0.4444px);"></div>
+                </div>
+                <div class="goal-actual-differ">+1个</div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <li class="li-no lh30 p8-0 bdt1">
+            <div class="fl w136 ta-c lh-n">
+              <p class="f14 mt8 c1">骆小根</p>
+              <p class="mt4">武汉猎头业务部</p>
+            </div>
+            <div class="fl">
+              <div class="d-f">
+                <div class="w48">推荐18</div>
+                <div>
+                  <div class="goal-rec" style="width:calc(17*20px);"></div>
+                  <div class="actual-rec bg-green" style="width:calc(22/20*17*20px);"></div>
+                </div>
+                <div class="goal-actual-differ">+2个</div>
+              </div>
+              <div class="d-f">
+                <div class="w48">合格10</div>
+                <div>
+                  <div class="goal-ok" style="width:calc(17*20*0.4444px);"></div>
+                  <div class="actual-ok bg-red" style="width:calc(4/9*17*20*0.4444px);"></div>
+                </div>
+                <div class="goal-actual-differ">-5个</div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </li>
+        </ul>
+        <section class="lh30">
+
+        </section>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+</body>
+
+</html>

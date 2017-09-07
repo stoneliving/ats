@@ -1,0 +1,324 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>搜人才1级页</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main-New.css">
+<link rel="stylesheet" href="css/cityselect.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/autocomplete.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/cityselect.js"></script>
+<script src="js/jquery.autocomplete.min.js"></script>
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+</style>
+</head>
+
+<body class="bg-ec">
+<header class="header  nav-down">
+  <div class="h-contain">
+    <div class="logo fl">优途智聘2.0系统</div>
+    <ul class="fl ml24">
+      <li class="li-no w72 fl">
+        <a href="Overview.html" class="nav-a" id="overview">
+          <div class="ic f20"></div>
+          <div class="f14">总览</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Search-1st.html" class="nav-a" id="search">
+          <div class="ic f20"></div>
+          <div class="f14">搜人才</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Company-1st.html" class="nav-a" id="company">
+          <div class="ic f20"></div>
+          <div class="f14">公司</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Position-1st.html" class="nav-a" id="position">
+          <div class="ic f20"></div>
+          <div class="f14">职位</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Pipeline.html" class="nav-a" id="pipeline">
+          <div class="ic f20"></div>
+          <div class="f14">Pipeline</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Talent-1st.html" class="nav-a" id="talent">
+          <div class="ic f20"></div>
+          <div class="f14">人才库</div>
+        </a>
+      </li>      <li class="li-no w72 fl">
+        <a href="List.html" class="nav-a" id="list">
+          <div class="ic f20"></div>
+          <div class="f14">List库</div>
+        </a>
+      </li> 
+      <li class="li-no w72 fl">
+        <a href="Invoice.html" class="nav-a" id="invoice">
+          <div class="ic f20"></div>
+          <div class="f14">发票</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Report-1.html" class="nav-a" id="report">
+          <div class="ic f20"></div>
+          <div class="f14">报表</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="E-learning.html" class="nav-a" id="elearn">
+          <div class="ic f20"></div>
+          <div class="f14">E-learning</div>
+        </a>
+      </li>      
+    </ul>
+    <ul class="fr">
+      <li class="li-no fl w56">
+        <div class="nav-a" id="add">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14 w104">
+              <li class="li-no">
+                <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a>
+              </li>
+              <li class="li-no">
+                <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a>
+              </li>
+              <li class="li-no">
+                <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 批量导入</a>
+              </li>              
+            </ul>
+        </div>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Todo.html" class="nav-a" id="todo" title="待办">
+          <div class="ic f24 lh46"></div>
+          <div class="badge">9</div>
+        </a>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Message.html" class="nav-a" id="message" title="消息">
+          <div class="ic f24 lh46"></div>
+        <div class="badge">99+</div>
+        </a>
+      </li>      
+      <li class="li-no fl w56">
+        <div href="" class="nav-a" id="account">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14">
+              <li class="li-no">
+                <a href="Settings-Account.html" class="add-li-a"><span class="ic f20"></span> 系统设置</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 使用帮助</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a ho-red"><span class="ic f20"></span> 退出登录</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="content">
+  <div class="card1 pt48">
+    <div class="ta-c">
+      <input type="text" autofocus placeholder="一次可输入多个关键词，用空格隔开，例: 深圳 Java 4年经验" class="w524 p1016 f14 h40">
+      <a href="Search-2nd.html" class="a ic f24 bg-b cw cu-po ho-1f p8 va-1 ml-5"></a>
+      <div class="d-ib ml16 cu-po" id="btn-expand-search"><span class="f15 cb">高级搜索</span><span class="ic cb f24 d-ib trans"></span></div>
+    </div>
+    <div class="f14 c3 ta-l mt16 ml264 pb40">
+      <span>搜索历史:</span>
+      <a href="" class="a f14 c2 ml16">产品经理</a>
+      <a href="" class="a f14 c2 ml16">Java高级开发工程师</a>
+      <a href="" class="a f14 c2 ml16">大数据算法工程师</a>
+    </div>
+    <div class="bdt1-d bg-f7 pb40 hidden" id="vansearch">
+     <form onSubmit="alert()">
+      <table class="mt16 ml264 f14 ml264">
+        <tr>
+          <td class="w104 p1016"><span class="c2">关键字：</span></td>
+          <td>
+            <input type="text" class="w360 p8 h32">
+            <span class="red"><span class="ic f20 pr8"></span>填写错误提示</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">职能：</span></td>
+          <td><input type="text" class="w360 p8 h32"></td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">职位名称：</span></td>
+          <td><input type="text" class="w360 p8 h32"></td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">期望年薪：</span></td>
+          <td>
+            <input type="text" class="w56 p8 h32">
+            <span class="c3">万</span>
+            <span class="c3 p1016">~</span>
+            <input type="text" class="w56 p8 h32">
+            <span class="c3">万</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">行业：</span></td>
+          <td><input type="text" class="w360 p8 h32"></td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">现在公司：</span></td>
+          <td><input type="text" class="w360 p8 h32"></td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">过往公司：</span></td>
+          <td><input type="text" class="w360 p8 h32"></td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">工作年限：</span></td>
+          <td>
+            <input type="text" class="w56 p8 h32">
+            <span class="c3">年</span>
+            <span class="c3 p1016">~</span>
+            <input type="text" class="w56 p8 h32">
+            <span class="c3">年</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">所在城市：</span></td>
+          <td><input type="text" id="citySelect1" class="w360 p8 h32"></td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">期望城市：</span></td>
+          <td><input type="text" id="citySelect2" class="w360 p8 h32"></td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">学历：</span></td>
+          <td>
+            <select name="scholar" id="scholar" class="w200" >
+              <option></option>
+              <option>博士后</option>
+              <option>博士</option>
+              <option>MBA/EMBA</option>
+              <option>硕士</option>
+              <option>本科</option>
+              <option>大专</option>
+              <option>中专</option>
+              <option>中技</option>
+              <option>高中</option>
+              <option>初中</option>
+            </select>
+            <span class="ml8">
+              <input type="checkbox" id="check1">
+              <label for="check1" class="mt4"></label>
+              <span class="c3">含所选学历以上</span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">学校：</span></td>
+          <td>
+            <!--学校输入框键入联想提示-->
+            <input type="text" id="school" class=" w200 p8 h32">
+            <span class="ml8"><input type="checkbox" id="check2"><label for="check2" class="mt4"></label>
+<span class="c3">211</span></span>
+            <span class="ml24"><input type="checkbox" id="check3"><label for="check3" class="mt4"></label><span class="c3">985</span></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">年龄：</span></td>
+          <td>
+            <input type="text" class="w56 p8 h32">
+            <span class="c3">岁</span>
+            <span class="c3 p1016">~</span>
+            <input type="text" class="w56 p8 h32">
+            <span class="c3">岁</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">性别：</span></td>
+          <td>
+            <input type="radio" name="gender" id="radio-male">
+            <label for="radio-male"></label>
+            <span class="c3">男</span>
+            <input type="radio" name="gender" id="radio-female">
+            <label for="radio-female" class="ml24"></label>
+            <span class="c3">女</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"><span class="c2">简历ID：</span></td>
+          <td><input type="text" class="w360 p8 h32"></td>
+        </tr>
+        <tr>
+          <td class="w104 p1016"> </td>
+          <td class="ta-l"><label class="bg-b cw cu-po ho-1f f14 p5-48 mt8 fl ml208">高级搜索<input type="submit" class="po-a" style="left:-9999px;"></label></td>
+        </tr>
+      </table>
+     </form>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+</body>
+<script>
+/*--选择学历下拉框实例化--*/
+$('#scholar').select2({placeholder:"选择学历",minimumResultsForSearch:Infinity});
+/*--输入学校自动联想-begin--*/
+var schools = [
+   { value: '北京大学'},
+   { value: '北京航空航天大学'},
+   { value: '北京邮电大学'},
+   { value: '北京师范大学'},
+   { value: '北京科技大学'},
+   { value: '北京理工大学'},
+   { value: '北京化工大学'},
+   { value: '北京交通大学'},
+   { value: '北京工商大学'},
+   { value: '北京联合大学'},
+   { value: '北京第二外国语学院'},
+   // ...
+];
+$('#school').autocomplete({lookup: schools});
+/*--用ajax方法如下--*/
+/*
+$('#school').autocomplete({
+    serviceUrl: '/filepath/schools',
+});
+*/
+/*--输入学校自动联想-end--*/
+</script>
+<script>
+/*--城市选择实例化--*/
+var currentcity=new Vcity.CitySelector({input:'citySelect1'});
+var expectcity=new Vcity.CitySelector({input:'citySelect2'});
+</script>
+<script>
+/*--点高级搜索展开收起--*/
+$("#btn-expand-search").click(function(e) {
+	if($(".content").height()<200){$("#vansearch").velocity("slideDown",{easing:"easeOutCubic",duration:150,});$('#btn-expand-search .ic').addClass('r180');}
+	else{$("#vansearch").velocity("slideUp",{easing:"easeOutCubic",duration:100});$('#btn-expand-search .ic').removeClass('r180');}
+    
+});
+/*--选中总览--*/
+$("#search").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过显示菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});</script>
+
+</html>

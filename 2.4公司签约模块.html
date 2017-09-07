@@ -1,0 +1,1307 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>公司签约模块</title>
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/cleave.min.js"></script>
+  <script src="js/autogrow.min.js"></script>
+  <script src="js/dropzone.js"></script>
+  <script src="js/viewer.min.js"></script>
+  <script src="js/My97DatePicker/WdatePicker.js"></script>
+  <link rel="stylesheet" href="css/datepicker.css">
+  <link rel="stylesheet" href="css/main-New.css">
+  <link rel="stylesheet" href="css/select2.css">
+  <link rel="stylesheet" href="css/dropzone.css">
+  <link rel="stylesheet" href="/css/viewer.min.css">
+</head>
+<style>
+  
+  
+  
+</style>
+
+<body class="">
+
+  <!--签约谈判弹窗-->
+  <div id="popup-negotiate" class="hidden">
+    <div class="popup-wrapper">
+      <div class="card5 po-r">
+        <div class="popup-header"><span class="ic f24 fw-n pr4"></span>设为签约谈判</div>
+        <div class="popup-content bg-f2">
+
+          <div>
+            <p class="c1 mb8">请填写签约谈判的主要条款：</p>
+            <table class="bdcl lh40 c2">
+              <tr>
+                <td class="w80">签约主体：</td>
+                <td><select name="" id="" class="sel-contractbody w280">
+                 <option value="">深圳市仕通优途科技有限公司</option>
+                  <option value="">深圳市仕通智达企业管理咨询有限公司</option>
+                </select></td>
+              </tr>
+              <tr>
+                <td class="w80 va-t po-r">收费比例：</td>
+                <td class="" style="width:540px;">
+                  <div class="fl po-r z2">
+                    <div class="lh-n p8-0 w104 fee-rate-selected">
+                      <input type="radio" name="feeRate1" id="feeRate1-1" checked>
+                      <label for="feeRate1-1" data-id="#tab-feeRate1-1">固定收费</label>
+                    </div>
+                    <div class="lh-n p8-0 w104">
+                      <input type="radio" id="feeRate1-2" name="feeRate1">
+                      <label for="feeRate1-2" data-id="#tab-feeRate1-2">浮动收费</label>
+                    </div>
+                    <div class="lh-n p8-0 w104">
+                      <input type="radio" id="feeRate1-3" name="feeRate1">
+                      <label for="feeRate1-3" data-id="#tab-feeRate1-3">其它</label>
+                    </div>
+
+                  </div>
+                  <div class="rate-tabs-container">
+                    <div id="tab-feeRate1-1" class=" lh-n fl c2 po-r bdl1 ml-1" style="padding:2.5px 16px">
+                      <select name="" id="" class="sel-percent h30 w104"><option>年薪百分比</option><option>按单收费</option></select>
+                      <span class="rate-percent"><input type="text" class="h32 pl4 w48"><span class="c3 f12 po-a ml-16 mt8">%</span></span><span class="rate-fixed hidden"><input type="text" class="input-money h32 pl4 w76"><span class="c3 f12 po-a ml-16 mt8">元</span></span>
+                    </div>
+                    <div id="tab-feeRate1-2" class="hidden fl c2 po-r ml-1 p8 bdl1" style="height:264px">
+                      <div class="lh30 bdb1"><span data-id="#feeRate1-lvl2" class="d-ib p0-24 ho-cb cu-po">2档浮动</span><span data-id="#feeRate1-lvl3" class="d-ib p0-24 cu-po bdb3-b cb">3档浮动</span><span data-id="#feeRate1-lvl4" class="d-ib p0-24 ho-cb cu-po">4档浮动</span><span data-id="#feeRate1-lvl5" class="d-ib p0-24 ho-cb cu-po">5档浮动</span></div>
+                      <div class="mt8">
+                        <table id="feeRate1-lvl2" class="hidden bdcl">
+                          <tr>
+                            <td></td>
+                            <td class="w104"></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td class="w120"><span class="pr8">&#60;</span>
+                              <input type="text" class="w40 pl4 h30" onKeyUp="linkNextInput(this)">
+                              <span>万元</span></td>
+                            <td>收费
+                              <input type="text" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                          <tr class="bdt1-d">
+                            <td></td>
+                            <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                              <span class="pl8">≤ </span></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td></td>
+                            <td>收费
+                              <input type="text" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                        </table>
+                        <table id="feeRate1-lvl3" class="bdcl">
+                          <tr>
+                            <td></td>
+                            <td class="w104"></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td class="w120"><span class="pr8">&#60;</span>
+                              <input type="text" value="30" class="w40 pl4 h30" onKeyUp="linkNextInput(this)">
+                              <span>万元</span></td>
+                            <td>收费
+                              <input type="text" value="20" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                          <tr class="bdt1-d">
+                            <td></td>
+                            <td class="ta-r"><input type="text" value="30" disabled class="w40 pl4 h30"> 万元
+                              <span class="pl8">≤ </span></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td class="w120"><span class="pr8">&#60;</span>
+                              <input type="text" value="50" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                              <span>万元</span></td>
+                            <td>收费
+                              <input type="text" value="23" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                          <tr class="bdt1-d">
+                            <td></td>
+                            <td class="ta-r"><input type="text" value="50" disabled class="w40 pl4 h30"> 万元
+                              <span class="pl8">≤ </span></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td></td>
+                            <td>收费
+                              <input type="text" value="25" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                        </table>
+                        <table id="feeRate1-lvl4" class="hidden bdcl">
+                          <tr>
+                            <td></td>
+                            <td class="w104"></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td class="w120"><span class="pr8">&#60;</span>
+                              <input type="text" class="w40 pl4 h30" onKeyUp="linkNextInput(this)">
+                              <span>万元</span></td>
+                            <td>收费
+                              <input type="text" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                          <tr class="bdt1-d">
+                            <td></td>
+                            <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                              <span class="pl8">≤ </span></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td class="w120"><span class="pr8">&#60;</span>
+                              <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                              <span>万元</span></td>
+                            <td>收费
+                              <input type="text" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                          <tr class="bdt1-d">
+                            <td></td>
+                            <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                              <span class="pl8">≤ </span></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td class="w120"><span class="pr8">&#60;</span>
+                              <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                              <span>万元</span></td>
+                            <td>收费
+                              <input type="text" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                          <tr class="bdt1-d">
+                            <td></td>
+                            <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                              <span class="pl8">≤ </span></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td></td>
+                            <td>收费
+                              <input type="text" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                        </table>
+                        <table id="feeRate1-lvl5" class="hidden bdcl">
+                          <tr>
+                            <td></td>
+                            <td class="w104"></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td class="w120"><span class="pr8">&#60;</span>
+                              <input type="text" class="w40 pl4 h30" onKeyUp="linkNextInput(this)">
+                              <span>万元</span></td>
+                            <td>收费
+                              <input type="text" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                          <tr class="bdt1-d">
+                            <td></td>
+                            <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                              <span class="pl8">≤ </span></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td class="w120"><span class="pr8">&#60;</span>
+                              <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                              <span>万元</span></td>
+                            <td>收费
+                              <input type="text" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                          <tr class="bdt1-d">
+                            <td></td>
+                            <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                              <span class="pl8">≤ </span></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td class="w120"><span class="pr8">&#60;</span>
+                              <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                              <span>万元</span></td>
+                            <td>收费
+                              <input type="text" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                          <tr class="bdt1-d">
+                            <td></td>
+                            <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                              <span class="pl8">≤ </span></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td class="w120"><span class="pr8">&#60;</span>
+                              <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                              <span>万元</span></td>
+                            <td>收费
+                              <input type="text" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                          <tr class="bdt1-d">
+                            <td></td>
+                            <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                              <span class="pl8">≤ </span></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td></td>
+                            <td>收费
+                              <input type="text" class="h30 pl4 w40"> %
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div id="tab-feeRate1-3" class="hidden lh-n fl c2 po-r bdl1 ml-1" style="padding:8px;margin-top:70px">请在“<span class="bold">条款备注</span>”中说明</div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="clear"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="po-r">最低收费：</td>
+                <td><input type="text" class="h30 w48 pl4">
+                  <span class="c3">万元</span></td>
+              </tr>
+              <tr>
+                <td class="po-r">首款比例：</td>
+                <td><input type="text" class="h30 w48 pl4">
+                  <span class="c3">%</span></td>
+              </tr>
+              <tr>
+                <td class="po-r">保证期：</td>
+                <td><select name="" class="w48 sel-warrant-time">
+                  <option>1</option>
+                  <option>2</option>
+                  <option selected>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                </select>
+                  <span class="c3">个月</span></td>
+              </tr>
+              <tr>
+                <td class="po-r">退费比例：</td>
+                <td><input type="text" class="h30 w48 pl4">
+                  <span class="c3">%</span></td>
+              </tr>
+              <tr>
+                <td class="po-r">付款期限：</td>
+                <td><input type="text" class="h30 w48 pl4">
+                  <span class="c3">天</span></td>
+              </tr>
+              
+              <tr>
+                <td class="va-t">条款备注</td>
+                <td><textarea name="" id="" class="h30 mt4 p4 w280" placeholder="收费比例、保证期等特殊情况备注"></textarea></td>
+              </tr>
+              
+            </table>
+          </div>
+        </div>
+        <div class="popup-footer">
+          <span class="button-flat-c">取消</span>
+          <span class="button-flat-b ml8">确认</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--签订合同弹窗-->
+  <div id="popup-contract" class="hidden">
+    <div class="popup-wrapper">
+      <div class="card5 po-r">
+        <div class="popup-header bdb1"><span class="ic f24 fw-n pr4"></span>签约</div>
+        <div class="popup-content bg-f2">
+          <div id="contract-edit">
+            <h3 class="f14 c2 lh36">合同</h3>
+            <table class="bdcl lh40 c2 f14">
+              <tr>
+                <td class="w80">合同名称</td>
+                <td><input type="text" class="h32 w280 pl4" value="默认公司名称"></td>
+              </tr>
+              <tr>
+                <td>签约主体</td>
+                <td><select name="" id="" class="sel-contractbody w280">
+                 <option value="">深圳市仕通优途科技有限公司</option>
+                  <option value="">深圳市仕通智达企业管理咨询有限公司</option>
+                </select></td>
+              </tr>
+              <tr>
+                <td>合同附件</td>
+                <td>
+                  
+                  <div class="dropzone mt8 mb8 p8 bg-w cu-po" style="height:120px;width:580px;overflow-y:auto;">
+                  </div>
+                  <script>
+                    $(".dropzone").dropzone({
+                      url: "/file/post"
+                    });
+
+                  </script>
+                </td>
+              </tr>
+              <tr>
+                <td>合同期限</td>
+                <td><input type="text" class="h32 w109 pl4" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" id="todoStartime"><span class="p0-4">~</span><input type="text" class="h32 w109 pl4" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" id="todoStartime"></td>
+              </tr>
+            </table>
+          </div>
+          <div id="terms-display" class="p16 hidden">
+            <h3 class="f14 c2 lh36 bdt1-d">条款<span class="fr fw-n cb cu-po" onclick="$('#terms-display').hide();$('#terms-edit').show();"><span class="ic f18"></span>编辑条款</span>
+            </h3>
+            <table class="bdcl lh36 c2">
+              <tr>
+                <td class="w80">收费比例</td>
+                <td>20% 或者 <span class="cb cu-po d-ib ho-showNote">查看详情<div class="note hidden">
+                 <table class="bdcl c2 lh36">
+                          <tr>
+                            <td>①</td>
+                            <td class="w104"></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td class="w120"><span class="pr8">&#60;</span> 30
+                  <span>万元</span></td>
+                <td>收费 20 %
+                </td>
+              </tr>
+              <tr class="bdt1-d">
+                <td>②</td>
+                <td class="ta-r">30万元
+                  <span class="pl8">≤ </span></td>
+                <td class="w60 ta-c">年薪</td>
+                <td class="w120"><span class="pr8">&#60;</span> 50
+                  <span>万元</span></td>
+                <td>收费 23 %
+                </td>
+              </tr>
+              <tr class="bdt1-d">
+                <td>③</td>
+                <td class="ta-r">50万元
+                  <span class="pl8">≤ </span></td>
+                <td class="w60 ta-c">年薪</td>
+                <td></td>
+                <td>收费 25 %
+                </td>
+              </tr>
+            </table>
+          </div>
+          </span>
+          </td>
+          </tr>
+          <tr>
+            <td>最低收费</td>
+            <td>1万元</td>
+          </tr>
+          <tr>
+            <td>首款比例</td>
+            <td>80%</td>
+          </tr>
+          <tr>
+            <td>保证期</td>
+            <td>3个月</td>
+          </tr>
+          <tr>
+            <td>退费比例</td>
+            <td>20%</td>
+          </tr>
+          <tr>
+            <td>条款备注</td>
+            <td>备注</td>
+          </tr>
+          </table>
+        </div>
+        <div id="terms-edit">
+          <h3 class="f14 c2 lh36 bdt1-d">条款 <span onclick="$('#terms-display').show();$('#terms-edit').hide();" class="fr fw-n c-gr ml16 cu-po hidden"><span class="ic f18"></span>保存</span><span onclick="$('#terms-display').show();$('#terms-edit').hide();" class="fr fw-n red cu-po hidden"><span class="ic f18"></span>取消</span>
+          </h3>
+          <table class="bdcl lh40 c2">
+           <tr>
+                <td class="w80">签约主体：</td>
+                <td><select name="" id="" class="sel-contractbody w280">
+                 <option value="">深圳市仕通优途科技有限公司</option>
+                  <option value="">深圳市仕通智达企业管理咨询有限公司</option>
+                </select></td>
+              </tr>
+            <tr>
+              <td class="va-t po-r">
+                <div class="w80">收费比例:</div>
+              </td>
+              <td class="" style="width:600px;">
+                <div class="fl po-r z2">
+                  <div class="lh-n p8-0 w136 fee-rate-selected">
+                    <input type="radio" checked name="feeRate2" id="feeRate2-1">
+                    <label for="feeRate2-1" data-id="#tab-feeRate2-1">固定收费</label>
+                  </div>
+                  <div class="lh-n p8-0 w136">
+                    <input type="radio" id="feeRate2-2" name="feeRate2">
+                    <label for="feeRate2-2" data-id="#tab-feeRate2-2">浮动收费</label>
+                  </div>
+                  <div class="lh-n p8-0 w136">
+                    <input type="radio" id="feeRate2-3" name="feeRate2">
+                    <label for="feeRate2-3" data-id="#tab-feeRate2-3">其它</label>
+                  </div>
+                </div>
+                <div class="rate-tabs-container">
+                  <div id="tab-feeRate2-1" class=" lh-n fl c2 po-r bdl1 ml-1" style="padding:2.5px 16px">
+                    <select name="" id="" class="sel-percent h30 w104"><option>年薪百分比</option><option>按单收费</option></select>
+                    <span class="rate-percent"><input type="text" class="h32 pl4 w48"><span class="c3 f12 po-a ml-16 mt8">%</span></span><span class="rate-fixed hidden"><input type="text" class="input-money h32 pl4 w76"><span class="c3 f12 po-a ml-16 mt8">元</span></span>
+                  </div>
+                  <div id="tab-feeRate2-2" class="hidden fl c2 po-r ml-1 p8 bdl1" style="height:264px">
+                    <div class="lh30 bdb1"><span data-id="#feeRate2-lvl2" class="d-ib p0-24 ho-cb cu-po">2档浮动</span><span data-id="#feeRate2-lvl3" class="d-ib p0-24 cu-po bdb3-b cb">3档浮动</span><span data-id="#feeRate2-lvl4" class="d-ib p0-24 ho-cb cu-po">4档浮动</span><span data-id="#feeRate2-lvl5" class="d-ib p0-24 ho-cb cu-po">5档浮动</span></div>
+                    <div class="mt8">
+                      <table id="feeRate2-lvl2" class="hidden bdcl">
+                        <tr>
+                          <td>①</td>
+                          <td class="w104"></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td class="w120"><span class="pr8">&#60;</span>
+                            <input type="text" class="w40 pl4 h30" onKeyUp="linkNextInput(this)">
+                            <span>万元</span></td>
+                          <td>收费
+                            <input type="text" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                        <tr class="bdt1-d">
+                          <td>②</td>
+                          <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                            <span class="pl8">≤ </span></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td></td>
+                          <td>收费
+                            <input type="text" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                      </table>
+                      <table id="feeRate2-lvl3" class="bdcl">
+                        <tr>
+                          <td>①</td>
+                          <td class="w104"></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td class="w120"><span class="pr8">&#60;</span>
+                            <input type="text" value="30" class="w40 pl4 h30" onKeyUp="linkNextInput(this)">
+                            <span>万元</span></td>
+                          <td>收费
+                            <input type="text" value="20" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                        <tr class="bdt1-d">
+                          <td>②</td>
+                          <td class="ta-r"><input type="text" value="30" disabled class="w40 pl4 h30"> 万元
+                            <span class="pl8">≤ </span></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td class="w120"><span class="pr8">&#60;</span>
+                            <input type="text" value="50" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                            <span>万元</span></td>
+                          <td>收费
+                            <input type="text" value="23" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                        <tr class="bdt1-d">
+                          <td>③</td>
+                          <td class="ta-r"><input type="text" value="50" disabled class="w40 pl4 h30"> 万元
+                            <span class="pl8">≤ </span></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td></td>
+                          <td>收费
+                            <input type="text" value="25" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                      </table>
+                      <table id="feeRate2-lvl4" class="hidden bdcl">
+                        <tr>
+                          <td>①</td>
+                          <td class="w104"></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td class="w120"><span class="pr8">&#60;</span>
+                            <input type="text" class="w40 pl4 h30" onKeyUp="linkNextInput(this)">
+                            <span>万元</span></td>
+                          <td>收费
+                            <input type="text" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                        <tr class="bdt1-d">
+                          <td>②</td>
+                          <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                            <span class="pl8">≤ </span></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td class="w120"><span class="pr8">&#60;</span>
+                            <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                            <span>万元</span></td>
+                          <td>收费
+                            <input type="text" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                        <tr class="bdt1-d">
+                          <td>③</td>
+                          <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                            <span class="pl8">≤ </span></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td class="w120"><span class="pr8">&#60;</span>
+                            <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                            <span>万元</span></td>
+                          <td>收费
+                            <input type="text" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                        <tr class="bdt1-d">
+                          <td>④</td>
+                          <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                            <span class="pl8">≤ </span></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td></td>
+                          <td>收费
+                            <input type="text" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                      </table>
+                      <table id="feeRate2-lvl5" class="hidden bdcl">
+                        <tr>
+                          <td>①</td>
+                          <td class="w104"></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td class="w120"><span class="pr8">&#60;</span>
+                            <input type="text" class="w40 pl4 h30" onKeyUp="linkNextInput(this)">
+                            <span>万元</span></td>
+                          <td>收费
+                            <input type="text" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                        <tr class="bdt1-d">
+                          <td>②</td>
+                          <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                            <span class="pl8">≤ </span></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td class="w120"><span class="pr8">&#60;</span>
+                            <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                            <span>万元</span></td>
+                          <td>收费
+                            <input type="text" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                        <tr class="bdt1-d">
+                          <td>③</td>
+                          <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                            <span class="pl8">≤ </span></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td class="w120"><span class="pr8">&#60;</span>
+                            <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                            <span>万元</span></td>
+                          <td>收费
+                            <input type="text" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                        <tr class="bdt1-d">
+                          <td>④</td>
+                          <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                            <span class="pl8">≤ </span></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td class="w120"><span class="pr8">&#60;</span>
+                            <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                            <span>万元</span></td>
+                          <td>收费
+                            <input type="text" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                        <tr class="bdt1-d">
+                          <td>⑤</td>
+                          <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                            <span class="pl8">≤ </span></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td></td>
+                          <td>收费
+                            <input type="text" class="h30 pl4 w40"> %
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div id="tab-feeRate2-3" class="hidden lh-n fl c2 po-r bdl1 ml-1" style="padding:8px;margin-top:70px">请在“<span class="bold">条款备注</span>”中说明</div>
+                </div>
+                <div class="clear"></div>
+              </td>
+            </tr>
+            <tr>
+              <td class="po-r">最低收费:</td>
+              <td><input type="text" class="h30 w48 pl4">
+                <span class="c3">万元</span></td>
+            </tr>
+            <tr>
+              <td class="po-r">首款比例:</td>
+              <td><input type="text" class="h30 w48 pl4">
+                <span class="c3">%</span></td>
+            </tr>
+            <tr>
+              <td class="po-r">保证期:</td>
+              <td><select name="" class="w48 sel-warrant-time">
+                  <option>1</option>
+                  <option>2</option>
+                  <option selected>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                </select>
+                <span class="c3">个月</span></td>
+            </tr>
+            <tr>
+              <td class="po-r">退费比例:</td>
+              <td><input type="text" class="h30 w48 pl4">
+                <span class="c3">%</span></td>
+            </tr>
+            <tr>
+              <td class="po-r">付款期限:</td>
+              <td><input type="text" class="h30 w48 pl4">
+                <span class="c3">天</span></td>
+            </tr>
+            <tr>
+              <td class="va-t">条款备注</td>
+              <td><textarea name="" id="" class="h30 mt4 p4 w300" placeholder="收费比例、保证期等特殊情况备注"></textarea></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="popup-footer bdt1">
+        <span class="button-flat-c ">取消</span>
+        <span class="button-flat-b ml8 ">确认</span>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!--审批合同-->
+  <div id="popup-approveContract" class="hidden">
+    <div class="popup-wrapper">
+      <div class="card5 po-r" style="width:600px">
+        <div class="popup-header">
+          <span class="ic f24 pr4"></span>审批合同
+        </div>
+        <div class="popup-content">
+          <div id="contractFiles" class="pl16">
+            <h3 class="f14 c2 lh36">合同</h3>
+            <table class="bdcl lh36 c2 f14">
+              <tr>
+                <td class="w80">合同名称</td>
+                <td>某某公司名</td>
+              </tr>
+              <tr>
+                <td>合同附件</td>
+                <td><span class="cu-po cb">浏览</span></td>
+              </tr>
+              <tr>
+                <td>合同期限</td>
+                <td>2017年5月1日<span class="p0-4">~</span>2018年5月1日</td>
+              </tr>
+            </table>
+          </div>
+          <div id="contractTerms" class="p16">
+            <h3 class="f14 c2 lh36 bdt1-d">条款</h3>
+            <table class="bdcl lh36 c2">
+              <tr>
+                <td class="w80">收费比例</td>
+                <td>20% 或者 <span class="cb cu-po d-ib ho-showNote">查看详情<div class="note hidden">
+                 <table class="bdcl c2 lh36">
+                          <tr>
+                            <td>①</td>
+                            <td class="w104"></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td class="w120"><span class="pr8">&#60;</span> 30
+
+                  <span>万元</span></td>
+                <td>收费 20 %
+                </td>
+              </tr>
+              <tr class="bdt1-d">
+                <td>②</td>
+                <td class="ta-r">30万元
+                  <span class="pl8">≤ </span></td>
+                <td class="w60 ta-c">年薪</td>
+                <td class="w120"><span class="pr8">&#60;</span> 50
+                  <span>万元</span></td>
+                <td>收费 23 %
+                </td>
+              </tr>
+              <tr class="bdt1-d">
+                <td>③</td>
+                <td class="ta-r">50万元
+                  <span class="pl8">≤ </span></td>
+                <td class="w60 ta-c">年薪</td>
+                <td></td>
+                <td>收费 25 %
+                </td>
+              </tr>
+            </table>
+          </div>
+          </span>
+          </td>
+          </tr>
+          <tr>
+            <td>最低收费</td>
+            <td>1万元</td>
+          </tr>
+          <tr>
+            <td>首款比例</td>
+            <td>80%</td>
+          </tr>
+          <tr>
+            <td>保证期</td>
+            <td>3个月</td>
+          </tr>
+          <tr>
+            <td>退费比例</td>
+            <td>20%</td>
+          </tr>
+          <tr>
+            <td>条款备注</td>
+            <td>备注</td>
+          </tr>
+          </table>
+        </div>
+      </div>
+      <div id="rejectContract" class="hidden">
+        <div class="popup-2nd-tier-wrapper">
+          <div class="card5 po-r">
+            <div class="popup-header bold" style="border:none">驳回原因</div>
+            <div class="popup-content">
+              <ul>
+                <li class="li-no lh30">
+                  <input type="radio" name="rejectReason" id="rejectReason1"><label for="rejectReason1" class="lh-n">驳回原因1</label>
+                </li>
+                <li class="li-no lh30">
+                  <input type="radio" name="rejectReason" id="rejectReason2"><label for="rejectReason2" class="lh-n">驳回原因2</label>
+                </li>
+                <li class="li-no lh30">
+                  <input type="radio" name="rejectReason" id="rejectReason3"><label for="rejectReason3" class="lh-n">驳回原因3</label>
+                </li>
+                <li class="li-no lh30">
+                  <div class="mt16"><textarea name="" id="" placeholder="其它原因" class="p4 w240 lh24 h36"></textarea></div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="popup-footer" style="border:none"><span class="button-flat-c" onclick="$('#rejectContract').hide()">取消</span><span class="button-flat-r ml8" onclick="$('#rejectContract').hide();$('#popup-approveContract').velocity('fadeOut',150);toast('已驳回')">确认驳回</span></div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="popup-footer"><span onclick="$('#popup-approveContract').velocity('fadeOut',150)" class="button-flat-c">取消</span><span class="button-flat-r ml8" onclick="$('#rejectContract').show()">驳回</span><span class="button-flat-b ml8" onclick="$('#popup-approveContract').velocity('fadeOut',150);toast('已通过审核')">通过审核</span></div>
+    </div>
+  </div>
+  </div>
+
+  <!--合同二级详情-->
+  <div class="w868 ml16 mt16 ">
+    <div class="tab-headers">
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb hidden" data-id="#tab1"> <span class="ic f24"></span> <span class="f14">详情</span> </div>
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab2"> <span class="ic f24"></span> <span class="f14"><span class="bold pr4">5</span>联系人</span>
+      </div>
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb hidden" data-id="#tab3"> <span class="ic f24"></span> <span class="f14"><span class="bold pr4">3</span>员工</span>
+      </div>
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab4"> <span class="ic f24"></span> <span class="f14"><span class="bold pr4">2</span>职位</span>
+      </div>
+      <div class="tab fl c2 ta-c p8 cu-po bd-3 bg-w" data-id="#tab5"> <span class="ic f24"></span> <span class="f14"><span class="bold pr4">1</span>合同</span>
+      </div>
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab6"> <span class="ic f24"></span> <span class="f14"><span class="bold pr4">1</span>发票</span>
+      </div>
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab7"> <span class="ic f24"></span> <span class="f14"><span class="bold pr4">1</span>待办</span>
+      </div>
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab8"> <span class="ic f24"></span> <span class="f14"><span class="bold pr4">4</span>备注</span>
+      </div>
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab9"> <span class="ic f24"></span> <span class="f14"><span class="bold pr4">3</span>日志</span>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="tab-contents card1">
+      <div id="tab5" class="tabs po-r">
+        <div class="p16">
+          <span onclick="$('#new-contract').velocity('slideDown',150)" id="new-contract-add" class="btn-paper"> <span class="ic f24 ml-5"></span> 新增合同 </span>
+        </div>
+        <div id="new-contract" class="hidden bg-f2 p24 f14 mt16 bd1-b clear">
+          <div id="contractEdit" class="bg-f2">
+            <h3 class="mb16">新增合同</h3>
+            <h3 class="f14 c2">合同</h3>
+            <div class="p16">
+              <table class="bdcl lh40 c2 f14">
+                <tr>
+                  <td class="w80">合同名称</td>
+                  <td><input type="text" class="h32 w240 pl4" value="默认公司名称"></td>
+                </tr>
+                <tr>
+                  <td>合同附件</td>
+                  <td><label class="label button-flat-c" id="filelabel" style="color:#2196f3"><input type="file"><span class="ic f18"></span>上传合同扫描件</label></td>
+                </tr>
+                <tr>
+                  <td>合同期限</td>
+                  <td><input type="text" class="h32 w109 pl4" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" id="todoStartime"><span class="p0-4">~</span><input type="text" class="h32 w109 pl4" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" id="todoStartime"></td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+          <div id="termsEdit">
+            <p class="c2 bold pt16 bdt1-d">条款：</p>
+            <div class="p16">
+              <table class="bdcl lh40 c2">
+                <tr>
+                  <td class="w80 va-t po-r">收费比例<span class="red po-a mt-5">*</span></td>
+                  <td class="" style="width:600px;">
+                    <div class="fl po-r z2">
+                      <div class="lh-n p8-0 w136 fee-rate-selected">
+                        <input type="radio" checked name="feeRate3" id="feeRate3-1">
+                        <label for="feeRate3-1" data-id="#tab-feeRate3-1">年薪的固定 %</label>
+                      </div>
+                      <div class="lh-n p8-0 w136">
+                        <input type="radio" id="feeRate3-2" name="feeRate3">
+                        <label for="feeRate3-2" data-id="#tab-feeRate3-2">年薪的浮动 %</label>
+                      </div>
+                      <div class="lh-n p8-0 w136">
+                        <input type="radio" id="feeRate3-3" name="feeRate3">
+                        <label for="feeRate3-3" data-id="#tab-feeRate3-3">其它</label>
+                      </div>
+                    </div>
+                    <div class="rate-tabs-container">
+                      <div id="tab-feeRate3-1" class=" lh-n fl c2 po-r bdl1 ml-1" style="padding:2.5px 16px"> 收费
+                        <input type="text" class="h30 pl4 w40"> % </div>
+                      <div id="tab-feeRate3-2" class="hidden fl c2 po-r ml-1 p8 bdl1" style="height:264px">
+                        <div class="lh30 bdb1"><span data-id="#feeRate-lvl2" class="d-ib p0-24 ho-cb cu-po">2档浮动</span><span data-id="#feeRate-lvl3" class="d-ib p0-24 cu-po bdb3-b cb">3档浮动</span><span data-id="#feeRate-lvl4" class="d-ib p0-24 ho-cb cu-po">4档浮动</span><span data-id="#feeRate-lvl5" class="d-ib p0-24 ho-cb cu-po">5档浮动</span></div>
+                        <div class="mt8">
+                          <table id="feeRate-lvl2" class="hidden bdcl">
+                            <tr>
+                              <td>①</td>
+                              <td class="w104"></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td class="w120"><span class="pr8">&#60;</span>
+                                <input type="text" class="w40 pl4 h30" onKeyUp="linkNextInput(this)">
+                                <span>万元</span></td>
+                              <td>收费
+                                <input type="text" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                            <tr class="bdt1-d">
+                              <td>②</td>
+                              <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                                <span class="pl8">≤ </span></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td></td>
+                              <td>收费
+                                <input type="text" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                          </table>
+                          <table id="feeRate-lvl3" class="bdcl">
+                            <tr>
+                              <td>①</td>
+                              <td class="w104"></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td class="w120"><span class="pr8">&#60;</span>
+                                <input type="text" value="30" class="w40 pl4 h30" onKeyUp="linkNextInput(this)">
+                                <span>万元</span></td>
+                              <td>收费
+                                <input type="text" value="20" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                            <tr class="bdt1-d">
+                              <td>②</td>
+                              <td class="ta-r"><input type="text" value="30" disabled class="w40 pl4 h30"> 万元
+                                <span class="pl8">≤ </span></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td class="w120"><span class="pr8">&#60;</span>
+                                <input type="text" value="50" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                                <span>万元</span></td>
+                              <td>收费
+                                <input type="text" value="23" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                            <tr class="bdt1-d">
+                              <td>③</td>
+                              <td class="ta-r"><input type="text" value="50" disabled class="w40 pl4 h30"> 万元
+                                <span class="pl8">≤ </span></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td></td>
+                              <td>收费
+                                <input type="text" value="25" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                          </table>
+                          <table id="feeRate-lvl4" class="hidden bdcl">
+                            <tr>
+                              <td>①</td>
+                              <td class="w104"></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td class="w120"><span class="pr8">&#60;</span>
+                                <input type="text" class="w40 pl4 h30" onKeyUp="linkNextInput(this)">
+                                <span>万元</span></td>
+                              <td>收费
+                                <input type="text" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                            <tr class="bdt1-d">
+                              <td>②</td>
+                              <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                                <span class="pl8">≤ </span></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td class="w120"><span class="pr8">&#60;</span>
+                                <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                                <span>万元</span></td>
+                              <td>收费
+                                <input type="text" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                            <tr class="bdt1-d">
+                              <td>③</td>
+                              <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                                <span class="pl8">≤ </span></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td class="w120"><span class="pr8">&#60;</span>
+                                <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                                <span>万元</span></td>
+                              <td>收费
+                                <input type="text" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                            <tr class="bdt1-d">
+                              <td>④</td>
+                              <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                                <span class="pl8">≤ </span></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td></td>
+                              <td>收费
+                                <input type="text" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                          </table>
+                          <table id="feeRate-lvl5" class="hidden bdcl">
+                            <tr>
+                              <td>①</td>
+                              <td class="w104"></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td class="w120"><span class="pr8">&#60;</span>
+                                <input type="text" class="w40 pl4 h30" onKeyUp="linkNextInput(this)">
+                                <span>万元</span></td>
+                              <td>收费
+                                <input type="text" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                            <tr class="bdt1-d">
+                              <td>②</td>
+                              <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                                <span class="pl8">≤ </span></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td class="w120"><span class="pr8">&#60;</span>
+                                <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                                <span>万元</span></td>
+                              <td>收费
+                                <input type="text" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                            <tr class="bdt1-d">
+                              <td>③</td>
+                              <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                                <span class="pl8">≤ </span></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td class="w120"><span class="pr8">&#60;</span>
+                                <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                                <span>万元</span></td>
+                              <td>收费
+                                <input type="text" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                            <tr class="bdt1-d">
+                              <td>④</td>
+                              <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                                <span class="pl8">≤ </span></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td class="w120"><span class="pr8">&#60;</span>
+                                <input type="text" class="w40 h30 pl4" onKeyUp="linkNextInput(this)">
+                                <span>万元</span></td>
+                              <td>收费
+                                <input type="text" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                            <tr class="bdt1-d">
+                              <td>⑤</td>
+                              <td class="ta-r"><input type="text" disabled class="w40 pl4 h30"> 万元
+                                <span class="pl8">≤ </span></td>
+                              <td class="w60 ta-c">年薪</td>
+                              <td></td>
+                              <td>收费
+                                <input type="text" class="h30 pl4 w40"> %
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                      <div id="tab-feeRate3-3" class="hidden lh-n fl c2 po-r bdl1 ml-1" style="padding:8px;margin-top:70px">请在“<span class="bold">条款备注</span>”中说明</div>
+                    </div>
+                    <div class="clear"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="po-r">最低收费<span class="red po-a mt-5">*</span></td>
+                  <td><input type="text" class="h30 w48 pl4">
+                    <span class="c3">万元</span></td>
+                </tr>
+                <tr>
+                  <td class="po-r">首款比例<span class="red po-a mt-5">*</span></td>
+                  <td><input type="text" class="h30 w48 pl4">
+                    <span class="c3">%</span></td>
+                </tr>
+                <tr>
+                  <td class="po-r">保证期<span class="red po-a mt-5">*</span></td>
+                  <td><select name="" class="w48 sel-warrant-time">
+                  <option>1</option>
+                  <option>2</option>
+                  <option selected>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                </select>
+                    <span class="c3">个月</span></td>
+                </tr>
+                <tr>
+                  <td class="po-r">退费比例<span class="red po-a mt-5">*</span></td>
+                  <td><input type="text" class="h30 w48 pl4">
+                    <span class="c3">%</span></td>
+                </tr>
+                <tr>
+                  <td class="va-t">条款备注</td>
+                  <td><textarea name="" id="" class="h30 mt4 p4 w300" placeholder="收费比例、保证期等特殊情况备注"></textarea></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="ta-r"><span class="button-flat-c" onclick="$('#new-contract').velocity('slideUp',150)">取消</span><span class="button-flat-b ml8" onclick="$('#new-contract').velocity('slideUp',150);toast('已成功提交')">提交新合同</span></div>
+        </div>
+        <div id="contract1" class=" p16">
+          <h3 class="c1 pb8 f16">合同1<span class="fw-n f14 ml16 c3">状态: <span class="bg9e cw p0-4">未签订合同</span><span class="red">合同待审核</span><span class="c-gr">已签约生效中</span><span class="bg9e cw p0-4">合同未通过审核</span><span class="red">合同已过期<span class="bold p0-4">23</span>天</span><span class="bg9e cw p0-4">已作废</span></span> <span class="fr fw-n cb f14 cu-po" onclick="$('#makeContractInvalid').velocity('fadeIn',150);"><span class="ic f18 pr4"></span>作废该合同</span>
+          </h3>
+          <div data-id="contractFiles" class="pl16">
+            <h3 class="f14 c2 lh36">合同</h3>
+            <table class="bdcl lh36 c2 f14">
+              <tr>
+                <td class="w80">合同名称</td>
+                <td>某某公司名</td>
+              </tr>
+              <tr>
+                <td>签约主体</td>
+                <td>深圳市仕通智达企业管理咨询有限公司</td>
+              </tr>
+               <tr>
+                <td>合同附件</td>
+                <td><span data-id="viewContract" class="cu-po cb">浏览</span></td>
+              </tr>
+              <tr>
+                <td>合同期限</td>
+                <td>2017年5月1日<span class="p0-4">~</span>2018年5月1日</td>
+              </tr>
+            </table>
+          </div>
+          <div data-id="contractTerms" class="p16 f14">
+            <h3 class="f14 c2 lh36 bdt1-d">条款</h3>
+            <table class="bdcl lh36 c2">
+              <tr>
+                <td class="w80">收费比例</td>
+                <td>20% 或者 <span class="cb cu-po d-ib ho-showNote">查看详情
+                <div class="note hidden">
+                 <table class="bdcl c2 lh36">
+                          <tr>
+                            <td><span class="d-ib bd1-c lh-n bdrs12 p0-4">1</span></td>
+                <td class="w104"></td>
+                <td class="w60 ta-c">年薪</td>
+                <td class="w120"><span class="pr8">&#60;</span> 30
+
+                  <span>万元</span></td>
+                <td>收费 20 %
+                </td>
+              </tr>
+              <tr class="bdt1-d">
+                <td>②</td>
+                <td class="ta-r">30万元
+                  <span class="pl8">≤ </span></td>
+                <td class="w60 ta-c">年薪</td>
+                <td class="w120"><span class="pr8">&#60;</span> 50
+                  <span>万元</span></td>
+                <td>收费 23 %
+                </td>
+              </tr>
+              <tr class="bdt1-d">
+                <td>③</td>
+                <td class="ta-r">50万元
+                  <span class="pl8">≤ </span></td>
+                <td class="w60 ta-c">年薪</td>
+                <td></td>
+                <td>收费 25 %
+                </td>
+              </tr>
+            </table>
+          </div>
+          </span>
+          </td>
+          </tr>
+          <tr>
+            <td>最低收费</td>
+            <td>1万元</td>
+          </tr>
+          <tr>
+            <td>首款比例</td>
+            <td>80%</td>
+          </tr>
+          <tr>
+            <td>保证期</td>
+            <td>3个月</td>
+          </tr>
+          <tr>
+            <td>退费比例</td>
+            <td>20%</td>
+          </tr>
+          <tr>
+            <td>条款备注</td>
+            <td>备注</td>
+          </tr>
+          </table>
+        </div>
+
+      </div>
+      <div id="makeContractInvalid" class="hidden">
+        <div class="popup-2nd-tier-wrapper">
+          <div class="card5">
+            <div class="f16 p24">
+              <p>确认作废<span class="bold p0-4">合同1</span>？</p>
+              <p class="f14 c2 mt8">合同作废后可以提交新的合同</p>
+            </div>
+            <div class="ta-r p8 mt-12"><span class="button-flat-c" onclick="$('#makeContractInvalid').velocity('fadeOut',150);">取消</span><span class="button-flat-b ml8" onclick="$('#makeContractInvalid').velocity('fadeOut',150);toast('合同已作废')">确认</span></div>
+          </div>
+        </div>
+      </div>
+      <!--合同tab为空时显示以下内容-->
+      <div class="pt16 pb24 clear hidden">
+        <div class="ic ta-c f96 c-c mt8"></div>
+        <p class="c3 ta-c f18">没有合同</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <!--合同图片容器-->
+  <div class="contractViewer">
+    <ul id="viewerContainer" class="hidden-visual cu-in">
+      <li><img data-original="/images/contractTest/001.jpg" src="/images/imageIcon.jpg" alt="合同1"></li>
+      <li><img data-original="/images/contractTest/002.jpg" src="/images/imageIcon.jpg" alt="合同2"></li>
+      <li><img data-original="/images/contractTest/003.jpg" src="/images/imageIcon.jpg" alt="合同3"></li>
+    </ul>
+  </div>
+</body>
+<script>
+  $(document).ready(function() {
+    $('textarea').autogrow(); //初始化文本域自动增长
+  });
+
+
+  $('[data-id^="#tab-feeRate"]').on('click', function() { //单击收费比例radio时，切换右侧tab
+    $($(this).attr('data-id')).siblings().hide(); //右侧相邻tab隐藏
+    $($(this).attr('data-id')).show(); //右侧对应tab显示
+    $(this).parent().siblings().removeClass('fee-rate-selected'); //radio相邻移除选中状态
+    $(this).parent().addClass('fee-rate-selected'); //相应radio添加选中状态
+  });
+  $('[data-id^="#feeRate"]').on('click', function() { //单击年薪浮动档tab
+    $($(this).attr('data-id')).siblings().hide(); //下方相邻tab隐藏
+    $($(this).attr('data-id')).show(); //对应tab显示
+    $(this).siblings().removeClass('bdb3-b cb'); //tab-header相邻元素移除选中状态
+    $(this).addClass('bdb3-b cb'); //tab-header增加选中状态
+  });
+
+  function linkNextInput(field) { //关联下个input field，自动填值
+    $(field).parents('tr').next().children(':nth-child(2)').find('input').val(field.value);
+  };
+
+  $('.sel-warrant-time').select2({ //初始化选择开票内容
+    minimumResultsForSearch: Infinity
+  });
+
+</script>
+<script>
+  //固定收费选择
+  $('.sel-percent').select2({ //按年薪收费 or 按单收费 选择初始化
+    minimumResultsForSearch: Infinity
+  });
+  $('.sel-contractbody').select2({ //按年薪收费 or 按单收费 选择初始化
+    minimumResultsForSearch: Infinity
+  });
+  
+  $('.sel-percent').on('select2:select', function() { //固定收费内，选择年薪百分比或者按单收费
+    var type = $(this).val();
+    switch (type) {
+      case '年薪百分比':
+        $(this).siblings('.rate-fixed').hide();
+        $(this).siblings('.rate-percent').show().find('input').focus();
+        break;
+      case '按单收费':
+        $(this).siblings('.rate-fixed').show().find('input').focus();
+        $(this).siblings('.rate-percent').hide();
+        break;
+    }
+  });
+
+</script>
+<script>
+  var viewer = new Viewer(document.getElementById('viewerContainer'), { //初始化图片浏览器，图片url来源于属性 data-original，异步加载
+    transition: false,
+    url: 'data-original'
+  });
+  $('[data-id="viewContract"]').click(function() { //单击浏览合同,触发图片浏览器弹窗
+    viewer.show();
+  });
+
+</script>
+
+
+<script>
+  var dropzone = new Dropzone('#demo-upload', {
+      previewTemplate: document.querySelector('#preview-template').innerHTML,
+      parallelUploads: 2,
+      thumbnailHeight: 120,
+      thumbnailWidth: 120,
+      maxFilesize: 3,
+      filesizeBase: 1000,
+      thumbnail: function(file, dataUrl) {
+        if (file.previewElement) {
+          file.previewElement.classList.remove("dz-file-preview");
+          var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+          for (var i = 0; i < images.length; i++) {
+            var thumbnailElement = images[i];
+            thumbnailElement.alt = file.name;
+            thumbnailElement.src = dataUrl;
+          }
+          setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+        }
+      }
+    });
+
+
+  // Now fake the file upload, since GitHub does not handle file uploads
+  // and returns a 404
+
+  var minSteps = 6,
+    maxSteps = 60,
+    timeBetweenSteps = 100,
+    bytesPerStep = 100000;
+
+  dropzone.uploadFiles = function(files) {
+    var self = this;
+
+    for (var i = 0; i < files.length; i++) {
+
+      var file = files[i];
+      totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+
+      for (var step = 0; step < totalSteps; step++) {
+        var duration = timeBetweenSteps * (step + 1);
+        setTimeout(function(file, totalSteps, step) {
+          return function() {
+            file.upload = {
+              progress: 100 * (step + 1) / totalSteps,
+              total: file.size,
+              bytesSent: (step + 1) * file.size / totalSteps
+            };
+
+            self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
+            if (file.upload.progress == 100) {
+              file.status = Dropzone.SUCCESS;
+              self.emit("success", file, 'success', null);
+              self.emit("complete", file);
+              self.processQueue();
+            }
+          };
+        }(file, totalSteps, step), duration);
+      }
+    }
+  }
+
+  }
+
+</script>
+
+</html>

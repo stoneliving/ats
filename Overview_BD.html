@@ -1,0 +1,676 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>总览</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main.css">
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+</style>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+</head>
+
+<body class="bg-ec">
+<header class="header">
+  <div class="h-contain">
+    <div class="logo fl">优途智聘2.0系统</div>
+    <ul class="fl ml24">
+      <li class="li-no w72 fl">
+        <a href="Overview.html" class="nav-a" id="overview">
+          <div class="ic f20"></div>
+          <div class="f14">总览</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Search-1st.html" class="nav-a" id="search">
+          <div class="ic f20"></div>
+          <div class="f14">搜人才</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Company-1st.html" class="nav-a" id="company">
+          <div class="ic f20"></div>
+          <div class="f14">公司</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Position-1st.html" class="nav-a" id="position">
+          <div class="ic f20"></div>
+          <div class="f14">职位</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Pipeline.html" class="nav-a" id="pipeline">
+          <div class="ic f20"></div>
+          <div class="f14">Pipeline</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Talent-1st.html" class="nav-a" id="talent">
+          <div class="ic f20"></div>
+          <div class="f14">人才库</div>
+        </a>
+      </li>      <li class="li-no w72 fl">
+        <a href="List.html" class="nav-a" id="list">
+          <div class="ic f20"></div>
+          <div class="f14">List库</div>
+        </a>
+      </li> 
+      <li class="li-no w72 fl">
+        <a href="Invoice.html" class="nav-a" id="invoice">
+          <div class="ic f20"></div>
+          <div class="f14">发票</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Report-1.html" class="nav-a" id="report">
+          <div class="ic f20"></div>
+          <div class="f14">报表</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="E-learning.html" class="nav-a" id="elearn">
+          <div class="ic f20"></div>
+          <div class="f14">E-learning</div>
+        </a>
+      </li>      
+    </ul>
+    <ul class="fr">
+      <li class="li-no fl w56">
+        <div class="nav-a" id="add">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14 w104">
+              <li class="li-no">
+                <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a>
+              </li>
+              <li class="li-no">
+                <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a>
+              </li>
+              <li class="li-no">
+                <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 批量导入</a>
+              </li>              
+            </ul>
+        </div>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Todo.html" class="nav-a" id="todo" title="待办">
+          <div class="ic f24 lh46"></div>
+          <div class="badge">9</div>
+        </a>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Message.html" class="nav-a" id="message" title="消息">
+          <div class="ic f24 lh46"></div>
+        <div class="badge">99+</div>
+        </a>
+      </li>      
+      <li class="li-no fl w56">
+        <div href="" class="nav-a" id="account">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14">
+              <li class="li-no">
+                <a href="Settings-Account.html" class="add-li-a"><span class="ic f20"></span> 系统设置</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 使用帮助</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a ho-red"><span class="ic f20"></span> 退出登录</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+    </ul>
+    <div class="clear"></div>
+  </div>
+</header>
+<div class="content">
+  <div class="card1 w588 fl bdrs2">
+    <div class="card-header">
+      <span class="ic f24"></span> <span class="f16">今日待办 -（<span>6</span> 项</span>）
+      <a href="" class="a f14 fr cb ho-u">查看全部</a>
+    </div>
+    <div class="bg-w h332">
+      <table class="bdcl w100p f14 c1 ta-l">
+        <tr class="c2">
+          <th class="pl8 w44"> </th>
+          <th class="p160 w80 ta-l">类型</th>
+          <th class="w280 ta-l">关联内容</th>
+          <th class="">备注</th>
+          <th class="pr16 ta-r">开始时间</th>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="pl8 w44">
+            <input type="checkbox" id="check1">
+            <label for="check1"></label>
+          </td>
+          <td class="p160 w80">
+            <span>跟进面试</span>
+          </td>
+          <td class="w280">
+          <!--此处职位最长11个汉字，超过请截断，否则排版会错行-->
+            <a class="a c1" href="Position-2st.html"><span class="ic c2 f20"></span> <span>Java高级开发工程师</span></a>
+            <a href="Talent-2nd.html" class="a c1 ml8"><span class="ic c2 f20"></span> <span>王精英</span></a>
+          </td>
+          <td class="">
+            <div class="a c1 note-ho">
+              <span class="ic f20 c2 pr4"></span><span>1</span>
+              <p class="note hidden mw176 c2"><span>备注的内容，与待办相关，候选人 公司、职位、注意事项之类的</span></p>
+            </div>
+       </td>
+          <td class="pr16 ta-r">
+            <span>2016-06-06 10:00</span>
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="pl8 w44">
+            <input type="checkbox" id="check2">
+            <label for="check2"></label>
+          </td>
+          <td class="p160 w80">
+            <span>跟进面试</span>
+          </td>
+          <td class="w280">
+            <a class="a c1" href="Position-2nd.html"><span class="ic c2 f20"></span> <span>Java高级开发工程师</span></a>
+            <a href="Talent-2nd.html" class="a c1 ml8"><span class="ic c2 f20"></span> <span>王精英</span></a>
+          </td>
+          <td class="">
+            <div class="a c1" id="h-note2">
+              <span class="ic f20 c2 pr4"></span><span>0</span>
+              <p class="note hidden"><span>备注的内容，与待办相关，候选人 公司、职位、注意事项之类的</span></p>
+            </div>
+       </td>
+          <td class="pr16 ta-r">
+            <span>2016-06-06 10:00</span>
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="pl8 w44">
+            <input type="checkbox" id="check3">
+            <label for="check3"></label>
+          </td>
+          <td class="p160 w80">
+            <span>跟进面试</span>
+          </td>
+          <td class="w280">
+            <a class="a c1" href="Position-2nd.html"><span class="ic c2 f20"></span> <span>Java高级开发工程师</span></a>
+            <a href="Talent-2nd.html" class="a c1 ml8"><span class="ic c2 f20"></span> <span>王精英</span></a>
+          </td>
+          <td class="">
+            <div class="a c1" id="h-note3">
+              <span class="ic f20 c2 pr4"></span><span>0</span>
+              <p class="note hidden"><span>备注的内容，与待办相关，候选人 公司、职位、注意事项之类的</span></p>
+            </div>
+       </td>
+          <td class="pr16 ta-r">
+            <span>2016-06-06 10:00</span>
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="pl8 w44">
+            <input type="checkbox" id="check4">
+            <label for="check4"></label>
+          </td>
+          <td class="p160 w80">
+            <span>跟进面试</span>
+          </td>
+          <td class="w280">
+            <a class="a c1" href="Position-2nd.html"><span class="ic c2 f20"></span> <span>Java高级开发工程师</span></a>
+            <a href="Talent-2nd.html" class="a c1 ml8"><span class="ic c2 f20"></span> <span>王精英</span></a>
+          </td>
+          <td class="">
+            <div class="a c1" id="h-note4">
+              <span class="ic f20 c2 pr4"></span><span>0</span>
+              <p class="note hidden"><span>备注的内容，与待办相关，候选人 公司、职位、注意事项之类的</span></p>
+            </div>
+       </td>
+          <td class="pr16 ta-r">
+            <span>2016-06-06 10:00</span>
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="pl8 w44">
+            <input type="checkbox" id="check5">
+            <label for="check5"></label>
+          </td>
+          <td class="p160 w80">
+            <span>跟进面试</span>
+          </td>
+          <td class="w280">
+            <a class="a c1" href="Position-2nd.html"><span class="ic c2 f20"></span> <span>Java高级开发工程师</span></a>
+            <a href="Talent-2nd.html" class="a c1 ml8"><span class="ic c2 f20"></span> <span>王精英</span></a>
+          </td>
+          <td class="">
+            <div class="a c1" id="h-note5">
+              <span class="ic f20 c2 pr4"></span><span>0</span>
+              <p class="note hidden"><span>备注的内容，与待办相关，候选人 公司、职位、注意事项之类的</span></p>
+            </div>
+       </td>
+          <td class="pr16 ta-r">
+            <span>2016-06-06 10:00</span>
+          </td>
+        </tr>
+      </table>
+      <!--当表格内容为空时，将以下隐藏的div改为显示-->
+      <div class="pt48 hidden" >
+        <div class="ic ta-c f96 c3"></div>
+        <p class="c3 ta-c f20">没有待办事项了</p>
+        <p class="c3 ta-c mt8">找点事做？</p>
+      </div>
+    </div>    
+  </div>
+  <div class="card1 w588 fl bg-w ml24">
+    <div class="card-header"><span class="ic f24"></span> <span class="f16">查找公司</span></div>
+    <div>
+      <div class="ta-c mt48">
+        <input type="text" class="w360 p1016 f14 h40"><span class="bg-b cw p1016 va-1 cu-po ho-1f">搜索</span>
+      </div>
+      <div class="f14 c3 ml83 mt16 mb48">
+        <span>搜索历史:</span>
+        <!--此处放三个历史搜索记录-->
+        <a href="" class="a c2 ml16">深圳市某某A公司</a>
+        <a href="" class="a c2 ml16">上海市某某B公司</a>
+      </div>
+    </div>
+  </div>
+  <div class="card1 w588 fl bg-w ml24 mt24">
+    <div class="card-header">
+      <span class="ic f24"></span> <span class="f16">跟进中的客户 - （<span>7个</span>）</span>
+      <a href="" class="a f14 fr cb ho-u">查看全部</a>
+    </div>
+    <div class="h332">
+    
+      <table class="bdcl w100p f14 c1 ta-l">
+        <tr class="c2 h54">
+          <th class="pl24 w200">公司名</th>
+          <th class="w80">备注</th>
+          <th class="w80">联系人</th>
+          <th class="w160">状态</th>
+        </tr>
+        <tr class="bdt1 ho-ec h54">
+          <td class="pl24">
+            <a class="a c1" href="Company-2nd.html"><span>深圳市某某A公司</span></a>
+          </td>
+          <td>
+            <span class="note-ho">
+              <span class="ho-cb cnote-ho"><span class="ic f20 c2 pr4"></span><span>5</span></span>
+            </span>
+          </td>
+          <td class="w54">
+              <span class="d-ib cnote-ho ho-cb">赵先生</span>
+          </td>
+          <td class="w54">
+            <span class="cw bg75 bdrs2 p0-4">意向客户</span>
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec h54">
+          <td class="pl24">
+            <a class="a c1" href="Company-2nd.html"><span>深圳市某某A公司</span></a>
+          </td>
+          <td>
+            <span class="note-ho">
+              <span class="ho-cb"><span class="ic f20 c2 pr4"></span><span>5</span></span>
+            </span>
+          </td>
+          <td class="w54">
+              <span class="d-ib cnote-ho ho-cb">赵先生</span>
+          </td>
+          <td class="w54">
+            <span class="cw bg50 bdrs2 p0-4">潜在客户</span>
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec h54">
+          <td class="pl24">
+            <a class="a c1" href="Company-2nd.html"><span>深圳市某某A公司</span></a>
+          </td>
+          <td>
+            <span class="note-ho">
+              <span class="ho-cb"><span class="ic f20 c2 pr4"></span><span>5</span></span>
+            </span>
+          </td>
+          <td class="w54">
+              <span class="d-ib cnote-ho ho-cb">赵先生</span>
+          </td>
+          <td class="w54">
+            <span class="cw bg75 bdrs2 p0-4">意向客户</span>
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec h54">
+          <td class="pl24">
+            <a class="a c1" href="Company-2nd.html"><span>深圳市某某A公司</span></a>
+          </td>
+          <td>
+            <span class="note-ho">
+              <span class="ho-cb"><span class="ic f20 c2 pr4"></span><span>5</span></span>
+            </span>
+          </td>
+          <td class="w54">
+              <span class="d-ib cnote-ho ho-cb">赵先生</span>
+          </td>
+          <td class="w54">
+            <span class="cw bg-b bdrs2 p0-4">签约谈判</span>
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec h54">
+          <td class="pl24">
+            <a class="a c1" href="Company-2nd.html"><span>深圳市某某A公司</span></a>
+          </td>
+          <td>
+            <span class="note-ho">
+              <span class="ho-cb"><span class="ic f20 c2 pr4"></span><span>5</span></span>
+            </span>
+          </td>
+          <td class="w54">
+              <span class="d-ib cnote-ho ho-cb">赵先生</span>
+          </td>
+          <td class="w54">
+            <span class="cw bg75 bdrs2 p0-4">意向客户</span>
+          </td>
+        </tr>
+      </table>
+      <!--当表格内容为空时，将以下隐藏的div改为显示-->
+      <div class="pt48 hidden">
+        <div class="ic ta-c f96 c3" style=""></div>
+        <p class="c3 ta-c f20">没有进展中的职位了</p>
+        <p class="c3 ta-c mt8">去认领职位吧</p>
+      </div>
+    </div>
+  </div>
+  <div class="card1 w588 fl bg-w mt-212">
+    <div class="card-header">
+      <span class="ic f24"></span> <span class="f16">客户概览</span>
+      <a href="" class="a f14 fr cb ho-u">查看全部</a>
+    </div>
+    <div class="h172 p1232">
+      <div class="mt8">
+        <a href="" class="ml56 a2 ho-ec fl ta-c w104 p4-088">
+          <div class="bold f24 cb">40</div>
+          <div class="ic f24 c3 pt8"></div>
+          <div class="f14 c1">潜在客户</div>
+          <span class="r-chev"></span>
+        </a>
+        <a href="" class="a2 ho-ec fl ta-c w104 p4-088">
+          <div class="bold f24 cb">12</div>
+          <div class="ic f24 c3 pt8"></div>
+          <div class="f14 c1">意向客户</div>
+          <span class="r-chev"></span>
+        </a>
+        <a href="" class="a2 ho-ec fl ta-c w104 p4-088">
+          <div class="bold f24 cb">8</div>
+          <div class="ic f24 c2 pt8"></div>
+          <div class="f14 c1">签约谈判</div>
+          <span class="r-chev"></span>
+        </a>
+        <a href="Pipeline.html#tab6" class="a2 ho-ec fl ta-c w104 p4-088">
+          <div class="bold f24 cb">2</div>
+          <div class="ic f24 c2 pt8"></div>
+          <div class="f14 c1">已签约</div>
+        </a>
+        <div class="clear"></div>
+      </div>
+        <div class="ta-c pt8 bdt1-d">
+          <a href="" class="a2 fl w100p ho-ec"><span class="ic f24 c3"></span> <span class="f14 c1">放回客户池</span> <span class="bold f24 c3 va-2">20</span></a>
+        </div>
+    </div>
+  </div>
+  <div class="card1 w100p fl bg-w mt24">
+    <div class="card-header">
+      <span class="ic f24"></span> <span class="f16">月报表</span>
+    </div>
+    <div>
+      <div class="fl p16-50">
+        <div class="progress-pie-chart" id="piechart-1" data-percent="40">
+          <div class="ppc-progress">
+            <div class="ppc-progress-fill"></div>
+          </div>
+          <div class="ppc-percents">
+            <div class="pcc-percents-wrapper">
+              <span>%</span>
+            </div>
+          </div>
+        </div>
+        <div class="f14 cb ta-c po-a w200 mt-160">已推荐：<span class="bold">24</span>个</div>
+        <div class="f14 c1 ta-c po-a w200 mt-64">目标：<span class="bold">60</span>个</div> 
+      </div>
+      <div class="fl p16-50">
+        <div class="progress-pie-chart" id="piechart-2" data-percent="27">
+          <div class="ppc-progress">
+            <div class="ppc-progress-fill"></div>
+          </div>
+          <div class="ppc-percents">
+            <div class="pcc-percents-wrapper">
+              <span>%</span>
+            </div>
+          </div>
+        </div>
+        <div class="f14 cb ta-c po-a w200 mt-160">已面试：<span class="bold">4</span>个</div>
+        <div class="f14 c1 ta-c po-a w200 mt-64">目标：<span class="bold">15</span>个</div> 
+      </div>
+      <div class="fl p16-50">
+        <div class="progress-pie-chart" id="piechart-3" data-percent="33">
+          <div class="ppc-progress">
+            <div class="ppc-progress-fill"></div>
+          </div>
+          <div class="ppc-percents">
+            <div class="pcc-percents-wrapper">
+              <span>%</span>
+            </div>
+          </div>
+        </div>
+        <div class="f14 cb ta-c po-a w200 mt-160">已Offer：<span class="bold">1</span>个</div>
+        <div class="f14 c1 ta-c po-a w200 mt-64">目标：<span class="bold">3</span>个</div> 
+      </div>
+      <div class="fl p16-50">
+        <div class="progress-pie-chart" id="piechart-4" data-percent="100">
+          <div class="ppc-progress">
+            <div class="ppc-progress-fill"></div>
+          </div>
+          <div class="ppc-percents">
+            <div class="pcc-percents-wrapper">
+              <span>%</span>
+            </div>
+          </div>
+        </div>
+        <div class="f14 cb ta-c po-a w200 mt-160">完成业绩：<span class="bold">8.0万</span></div>
+        <div class="f14 c1 ta-c po-a w200 mt-64">目标：<span class="bold">8.0万</span></div> 
+      </div>      
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--公共备注-->
+<div id="notes" class="note hidden">
+  <div class="p4-0 mh240 w360 ovy-a Scrollable" >
+    <div class="btn-newnote fl cb ml32 mb8 cu-po"><span class="ic f24"></span> 新增备注</div>
+    <ul class="tl-container c1 lh-n f14 clear">
+      <li class="li-no pb12 clear">
+        <div class="fl ml16 tl-ldot"></div>
+        <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+          <p class="wh-pw lh24">一些备注</p>
+          <div class="c3 bdt">
+            <span>2015-09-03</span>
+            <span class="ml8">15:30</span>
+            <span class="ml24 pr4">顾问:</span>
+            <span>王某某</span>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </li>
+      <li class="li-no pb12 clear">
+        <div class="fl ml16 tl-ldot"></div>
+        <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+          <p class="wh-pw lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum corrupti optio fugit </p>
+          <div class="c3">
+            <span>2015-09-03</span>
+            <span class="ml8">15:30</span>
+            <span class="ml24 pr4">顾问:</span>
+            <span>王某某</span>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </li>
+      <li class="li-no pb12 clear">
+        <div class="fl ml16 tl-ldot"></div>
+        <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+          <p class="wh-pw lh24">一些备注</p>
+          <div class="c3 bdt">
+            <span>2015-09-03</span>
+            <span class="ml8">15:30</span>
+            <span class="ml24 pr4">顾问:</span>
+            <span>王某某</span>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </li>
+      <li class="li-no pb12 clear">
+        <div class="fl ml16 tl-ldot"></div>
+        <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+          <p class="wh-pw lh24">一些备注</p>
+          <div class="c3 bdt">
+            <span>2015-09-03</span>
+            <span class="ml8">15:30</span>
+            <span class="ml24 pr4">顾问:</span>
+            <span>王某某</span>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </li>
+      <li class="li-no pb12 clear">
+        <div class="fl ml16 tl-ldot"></div>
+        <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+          <p class="wh-pw lh24">一些备注</p>
+          <div class="c3 bdt">
+            <span>2015-09-03</span>
+            <span class="ml8">15:30</span>
+            <span class="ml24 pr4">顾问:</span>
+            <span>王某某</span>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </li>
+    </ul>            
+  </div>
+</div>             
+<!--联系人详情-->
+<div id="cnotes" class="hidden note w240 p80816">
+  <div class="h240 ov-y Scrollable">
+    <div class="c1">
+      <div class="fl lh30">
+        <div><span class="d-ib w44 c3">性别：</span> <span>男</span></div>
+        <div><span class="d-ib w44 c3">职位：</span> <span>招聘经理</span></div>
+        <div><span class="d-ib w44 c3">状态：</span> 在职</div>
+        <div><span class="d-ib w44 c3">电话：</span> <span>18612345678</span></div>
+        <div><span class="d-ib w44 c3">邮箱：</span> <span>test@abcompany.com</span></div>
+      </div>
+      <div class="fl lh30">
+        <div>
+          <span class="d-ib w44 c3">QQ：</span>
+          <span>1234567890</span>
+        </div>
+        <div>
+          <span class="d-ib w44 c3">微信：</span>
+          <span>zhihui.zhang</span>
+        </div>
+        <div>
+          <span class="d-ib w44 c3">录入：</span>
+          <span>高阳</span>
+        </div>
+        <div>
+          <span class="d-ib w44 c3 fl">备注：</span>
+          <p class="fl ml4 mt7 lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quod, deleniti voluptatibus</p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>        
+  </div>
+</div>
+
+</body>
+<script>
+/*-----今日待办 勾选完成效果----*/
+$("#check1").click(function(e) {
+	var tr =  $(this).parent().parent()
+    tr.addClass("td-l");
+	window.setTimeout(function(){
+		$("#check1").parent().parent().children().velocity("fadeOut",{duration:250,easing:"easeOutCubic"}).remove},300)
+});
+/*拂过note-ho出现和隐藏备注*/	
+$('.note-ho').hover(function(){
+	$('#notes').appendTo(this);
+	$('#notes').velocity("fadeIn",{duration:200});
+	},function(){
+		$('#notes').velocity("fadeOut",{duration:150});
+		});		
+/*拂过联系人显示联系人详情*/
+$('.cnote-ho').hover(function(){
+	$('#cnotes').appendTo(this);
+	$('#cnotes').velocity("fadeIn",{duration:200});
+	},function(){
+		$('#cnotes').velocity("fadeOut",{duration:150});
+		});		
+		
+/*--选中总览--*/
+$("#overview").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过展开下拉菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});</script>
+
+<script>
+/*--饼状图--*/
+$(function() {
+  var $ppc = $('#piechart-1'),
+    percent = parseInt($ppc.data('percent')),
+    deg = 360 * percent / 100;
+  if (percent < 100) {
+    if (percent > 50) {
+      $ppc.addClass('gt-50');
+    }
+    $('#piechart-1 .ppc-progress-fill').css('transform', 'rotate(' + deg + 'deg)');
+    $('#piechart-1 .ppc-percents span').html(percent + '%');
+  } else {
+    $ppc.addClass('gt-50');
+    $('#piechart-1 .ppc-progress-fill').css('transform', 'rotate(360deg)');
+    $('#piechart-1 .ppc-percents span').html(percent + '%');
+  };
+});
+/*--以下是重复,id不同--*/
+$(function(){
+  var $ppc = $('#piechart-2'),
+    percent = parseInt($ppc.data('percent')),
+    deg = 360*percent/100;
+  if (percent > 50) {
+    $ppc.addClass('gt-50');
+  }
+  $('#piechart-2 .ppc-progress-fill').css('transform','rotate('+ deg +'deg)');
+  $('#piechart-2 .ppc-percents span').html(percent+'%');
+});
+$(function(){
+  var $ppc = $('#piechart-3'),
+    percent = parseInt($ppc.data('percent')),
+    deg = 360*percent/100;
+  if (percent > 50) {
+    $ppc.addClass('gt-50');
+  }
+  $('#piechart-3 .ppc-progress-fill').css('transform','rotate('+ deg +'deg)');
+  $('#piechart-3 .ppc-percents span').html(percent+'%');
+});
+$(function(){
+  var $ppc = $('#piechart-4'),
+    percent = parseInt($ppc.data('percent')),
+    deg = 360*percent/100;
+  if (percent > 50) {
+    $ppc.addClass('gt-50');
+  }
+  $('#piechart-4 .ppc-progress-fill').css('transform','rotate('+ deg +'deg)');
+  $('#piechart-4 .ppc-percents span').html(percent+'%');
+});
+
+</script>
+</html>

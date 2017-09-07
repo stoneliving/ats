@@ -1,0 +1,717 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>待办</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main-New.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/datepicker.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/datepicker.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+</style>
+</head>
+
+<body class="bg-ec">
+<header class="header  nav-down">
+  <div class="h-contain">
+    <div class="logo fl">优途智聘2.0系统</div>
+    <ul class="fl ml24">
+      <li class="li-no w72 fl">
+        <a href="Overview.html" class="nav-a" id="overview">
+          <div class="ic f20"></div>
+          <div class="f14">总览</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Search-1st.html" class="nav-a" id="search">
+          <div class="ic f20"></div>
+          <div class="f14">搜人才</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Company-1st.html" class="nav-a" id="company">
+          <div class="ic f20"></div>
+          <div class="f14">公司</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Position-1st.html" class="nav-a" id="position">
+          <div class="ic f20"></div>
+          <div class="f14">职位</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Pipeline.html" class="nav-a" id="pipeline">
+          <div class="ic f20"></div>
+          <div class="f14">Pipeline</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Talent-1st.html" class="nav-a" id="talent">
+          <div class="ic f20"></div>
+          <div class="f14">人才库</div>
+        </a>
+      </li>      <li class="li-no w72 fl">
+        <a href="List.html" class="nav-a" id="list">
+          <div class="ic f20"></div>
+          <div class="f14">List库</div>
+        </a>
+      </li> 
+      <li class="li-no w72 fl">
+        <a href="Invoice.html" class="nav-a" id="invoice">
+          <div class="ic f20"></div>
+          <div class="f14">发票</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Report-1.html" class="nav-a" id="report">
+          <div class="ic f20"></div>
+          <div class="f14">报表</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="E-learning.html" class="nav-a" id="elearn">
+          <div class="ic f20"></div>
+          <div class="f14">E-learning</div>
+        </a>
+      </li>      
+    </ul>
+    <ul class="fr">
+      <li class="li-no fl w56">
+        <div class="nav-a" id="add">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14 w104">
+              <li class="li-no">
+                <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a>
+              </li>
+              <li class="li-no">
+                <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a>
+              </li>
+              <li class="li-no">
+                <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 批量导入</a>
+              </li>              
+            </ul>
+        </div>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Todo.html" class="nav-a" id="todo" title="待办">
+          <div class="ic f24 lh46"></div>
+          <div class="badge">9</div>
+        </a>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Message.html" class="nav-a" id="message" title="消息">
+          <div class="ic f24 lh46"></div>
+        <div class="badge">99+</div>
+        </a>
+      </li>      
+      <li class="li-no fl w56">
+        <div href="" class="nav-a" id="account">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14">
+              <li class="li-no">
+                <a href="Settings-Account.html" class="add-li-a"><span class="ic f20"></span> 系统设置</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 使用帮助</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a ho-red"><span class="ic f20"></span> 退出登录</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="content">
+  <div class="fl w200">
+    <div class="card1 pb16">
+      <div class="card-header">
+        <span class="ic f20"></span> 我的待办
+      </div>
+      <div class="c1 f14 p816 cb cu-po mt8">
+        <span>未完成</span>
+        <span class="ta-r fr">13</span>
+      </div>
+      <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+        <span>已完成</span>
+        <span class="ta-r fr">2</span>
+      </div>
+      <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+        <span>所有待办</span>
+        <span class="ta-r fr">2</span>
+      </div>
+    </div>
+  </div>  
+  <div class="fl w968 ml32">
+    <div id="add-todo" class="card1 a fl f14 p816 cb ho-blue cu-po trans ho-sh po-r z50">
+      <span class="ic f24 ml-5"></span> 新增待办
+    </div>
+    <div class="card1 mt16 fl clear w968 f14 pb16">
+      <div class="p1016">
+        <div id="markAll" class="fl">
+          <span class="cb bold cu-po ho-cb"><span class="ic f24 fw-n"></span>全部标记为完成</span>
+        </div>
+        <div class="fr c2">
+          <span class="ml16">
+            <span>每页显示：</span>
+            <a href="" class="a ml8 cb">20</a>
+            <a href="" class="a ml8 c2">30</a>
+            <a href="" class="a ml8 c2">50</a>
+          </span>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <table class="c1 bdcl ta-l c1">
+        <tr class="c2 h64 f13">
+          <th class="w40"></th>
+          <th class="w120">类型</th>
+          <th class="w66">备注</th>
+          <th class="w178">关联事项</th>
+          <th class=" w102">关联成员</th>
+          <th class="sort w120 cu-po ho-cb">
+            <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+            <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+            <span>开始时间</span>
+          </th>
+          <th class="sort w120 cu-po ho-cb">
+            <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+            <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+            <span>结束时间</span>
+          </th>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+        <td class="pl16">
+          <input type="checkbox" id="task-1">
+          <label for="task-1"></label>
+        </td>
+        <td>公司</td>
+        <td>
+          <span class="note-ho ho-cb c2">
+            <span class="ic f24"></span><span>1</span>
+            <div class="note hidden c2 mw560">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+          </span>
+        </td>
+        <td>
+        <a href="" class="a c1">        
+          <span class="ic f20 c3"></span><span>深圳市顺丰科技有限公司</span>
+        </a>
+        </td>
+        <td>王翔/宋艳</td>
+        <td>2016-08-01 09:30</td>
+        <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+        <td class="pl16">
+          <input type="checkbox" id="task-2">
+          <label for="task-2"></label>
+        </td>
+        <td>人才</td>
+        <td>
+          <span class="note-ho ho-cb c2">
+            <span class="ic f24"></span><span>0</span>
+            <div class="note hidden c2 mw560">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+          </span>
+        </td>
+        <td>
+        <a href="" class="a c1">        
+          <span class="ic f20 c3"></span><span>王精英</span>
+        </a>
+        </td>
+        <td>王翔/宋艳</td>
+        <td>2016-08-01 09:30</td>
+        <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+        <td class="pl16">
+          <input type="checkbox" id="task-3">
+          <label for="task-3"></label>
+        </td>
+        <td>职位</td>
+        <td>
+          <span class="note-ho ho-cb c2">
+            <span class="ic f24"></span><span>1</span>
+            <div class="note hidden c2 mw560">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+          </span>
+        </td>
+        <td>
+        <a href="" class="a c1">        
+          <span class="ic f20 c3"></span><span>Java高级开发工程师</span>
+        </a>
+        </td>
+        <td>王翔/宋艳</td>
+        <td>2016-08-01 09:30</td>
+        <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+        <td class="pl16">
+          <input type="checkbox" id="task-4">
+          <label for="task-4"></label>
+        </td>
+        <td>Pipeline</td>
+        <td>
+          <span class="note-ho ho-cb c2">
+            <span class="ic f24"></span><span>1</span>
+            <div class="note hidden c2 mw560">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+          </span>
+        </td>
+        <td>
+        <a href="" class="a c1">        
+          <span class="ic f20 c3"></span><span>王精英</span>
+        </a>
+        </td>
+        <td>王翔/宋艳</td>
+        <td>2016-08-01 09:30</td>
+        <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+        <td class="pl16">
+          <input type="checkbox" id="task-1">
+          <label for="task-1"></label>
+        </td>
+        <td>公司</td>
+        <td>
+          <span class="note-ho ho-cb c2">
+            <span class="ic f24"></span><span>1</span>
+            <div class="note hidden c2 mw560">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+          </span>
+        </td>
+        <td>
+        <a href="" class="a c1">        
+          <span class="ic f20 c3"></span><span>深圳市顺丰科技有限公司</span>
+        </a>
+        </td>
+        <td>王翔/宋艳</td>
+        <td>2016-08-01 09:30</td>
+        <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+        <td class="pl16">
+          <input type="checkbox" id="task-2">
+          <label for="task-2"></label>
+        </td>
+        <td>人才</td>
+        <td>
+          <span class="note-ho ho-cb c2">
+            <span class="ic f24"></span><span>0</span>
+            <div class="note hidden c2 mw560">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+          </span>
+        </td>
+        <td>
+        <a href="" class="a c1">        
+          <span class="ic f20 c3"></span><span>王精英</span>
+        </a>
+        </td>
+        <td>王翔/宋艳</td>
+        <td>2016-08-01 09:30</td>
+        <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+        <td class="pl16">
+          <input type="checkbox" id="task-3">
+          <label for="task-3"></label>
+        </td>
+        <td>职位</td>
+        <td>
+          <span class="note-ho ho-cb c2">
+            <span class="ic f24"></span><span>1</span>
+            <div class="note hidden c2 mw560">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+          </span>
+        </td>
+        <td>
+        <a href="" class="a c1">        
+          <span class="ic f20 c3"></span><span>Java高级开发工程师</span>
+        </a>
+        </td>
+        <td>王翔/宋艳</td>
+        <td>2016-08-01 09:30</td>
+        <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+        <td class="pl16">
+          <input type="checkbox" id="task-4">
+          <label for="task-4"></label>
+        </td>
+        <td>Pipeline</td>
+        <td>
+          <span class="note-ho ho-cb c2">
+            <span class="ic f24"></span><span>1</span>
+            <div class="note hidden c2 mw560">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+          </span>
+        </td>
+        <td>
+        <a href="" class="a c1">        
+          <span class="ic f20 c3"></span><span>王精英</span>
+        </a>
+        </td>
+        <td>王翔/宋艳</td>
+        <td>2016-08-01 09:30</td>
+        <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="bdt1 h64 op06 bg-ec td-l">
+        <td class="pl16">
+          <input type="checkbox" checked id="task-2">
+          <label for="task-2"></label>
+        </td>
+        <td>公司</td>
+        <td>
+          <span class="note-ho ho-cb c2">
+            <span class="ic f24"></span><span>1</span>
+            <div class="note hidden c2 mw560">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+          </span>
+        </td>
+        <td>
+        <a href="" class="a c1">        
+          <span class="ic f20 c3"></span><span>深圳市顺丰科技有限公司</span>
+        </a>
+        </td>
+        <td>王翔/宋艳</td>
+        <td>2016-08-01 09:30</td>
+        <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="bdt1 h64 c2 ta-r bg-w">
+          <td colspan="11" class="w968">
+            <ul class="page-nav-ul c1" style="display:inline-block; margin:0; padding:0;">
+              <li class="p-active">
+                <a class="page-a-tag" href="">首页</a>
+              </li>
+              <li class="p-active" style="padding:0 8px 0 8px;">
+                <a class="page-a-tag" href=""><span class="ic f24 c3"></span></a>
+              </li>
+              <li class="p-active-selected">
+                <a class="page-a-tag-selected" href="">1</a>
+              </li>
+              <li class="p-active">
+                <a class="page-a-tag" href="">2</a>
+              </li>
+              <li class="p-active">
+                <a class="page-a-tag" href="">3</a>
+              </li>
+              <li class="p-active">
+                <a class="page-a-tag" href="">4</a>
+              </li>
+              <li class="p-active">
+                <a class="page-a-tag" href="">5</a>
+              </li>
+              <li class="p-active" style="padding:0 8px 0 8px;">
+                <a class="page-a-tag" href=""><span class="ic f24 c3"></span></a>
+              </li>
+              <li class="p-active">
+                <a class="page-a-tag" href="">尾页</a>
+              </li>
+              <li class="p-active" style="border:none;">
+                <a class="page-a-tag" href="">共92页</a>
+              </li>
+              <li class="p-active" style="border:none;">
+                跳转到<input type="text" class="w40 h32 ml4 mr4 p0-4">页
+              </li>
+              <li class="clear li-no"></li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--新增待办-->
+<div id="popup-addtodo" class="hidden po-f bg-f2 w588 l50p card5-nbg t50p f14 z200 c2 Scrollable" style="margin:-220px 0 0 -295px;"><h4 class="card-header  po-r z50"><span class="ic f24 fw-n pr4"></span>新增待办</h4>
+  <div id="container" class="ovy-a ml64">
+    <div class="pt16 pb16">
+      <div class="p816 po-r">
+       <span class="d-ib w104 c2">开始时间：</span>
+        <input type="text" class="datepicker-here w300 pl24 h32" data-timepicker="true" data-date-format="yyyy-mm-dd">
+      </div>
+      <div class="p816">
+       <span class="d-ib w104 c2">结束时间：</span>
+        <input type="text" class="datepicker-here w300 pl24 h32" data-timepicker="true" data-date-format="yyyy-mm-dd">
+      </div>
+      <div class="p816">
+        <span class="d-ib w104 c2">提醒时间：</span>
+        <span>开始前</span>
+        <input type="text" class="p8 h32 ml8 w60">
+        <span class="choose-mh ml8 cu-po d-ib po-r lh-n">
+          <span>分钟</span>
+          <span class="ic f24 c3"></span>
+          <div class="note hidden w86">
+              <input type="radio" name="choose-mh" id="minutes" value="分钟" checked>
+              <label for="minutes" class="d-b">分钟</label>
+              <input type="radio" name="choose-mh" id="hours" value="小时">
+              <label for="hours" class="d-b mt8">小时</label>
+          </div>
+        </span>
+      </div>
+      <div class="p816">
+       <span class="d-ib w104 c2">关联事项：</span>
+        <select name="" id="selectType" class="w66">
+          <option>人才</option>
+          <option>公司</option>
+          <option>职位</option>
+        </select>
+<script>
+$('#selectType').select2({minimumResultsForSearch:Infinity});//选择关联事项实例化
+$('#selectType').on('select2:select',function(){
+	var type = $(this).val();
+	switch(type) {
+		case '人才':
+		$('.wrapper').hide();
+		$('#selectTal').parent().show();
+		break;
+		case '公司':
+		$('.wrapper').hide();
+		$('#selectCom').parent().show();
+		break;
+		case '职位':
+		$('.wrapper').hide();
+		$('#selectPos').parent().show();
+		break;
+		};
+	});//显示隐藏后面的选择
+</script>
+        <span class="wrapper">
+        <select name="" id="selectTal" class="w220">
+          <option></option>
+          <option >王精英</option>
+          <option >王二英</option>
+          <option >王三英</option>
+        </select>        
+        </span>      
+<script>
+$('#selectTal').select2({placeholder:''});//选择人才实例化
+</script>        
+        <span class="wrapper hidden">
+        <select name="" id="selectCom" class=" w220">
+          <option></option>
+          <option >深圳市A公司</option>
+          <option >深圳市B公司</option>
+          <option >深圳市C公司</option>
+        </select>
+        </span>
+<script>
+$('#selectCom').select2({placeholder:''});//选择公司实例化
+</script>        
+        <span class="wrapper hidden">
+        <select name="" id="selectPos" class=" w220">
+          <option></option>
+          <option>Java高级开发工程师</option>
+          <option>职位2</option>
+          <option>职位3</option>
+        </select>
+<script>
+$('#selectPos').select2({placeholder:''});//选择职位实例化
+</script>        
+        </span>
+      </div>
+      <div class="p816">
+       <span class="d-ib w104 c2">关联人员：</span>
+        <input type="text" class="w300 p8 h32">
+      </div>
+      <div class="p816">
+       <span class="d-ib w104 c2">待办备注：</span>
+        <input type="text" class="w300 p8 h32">
+      </div>
+    </div>
+  </div>
+  <div class="bdt1">
+    <span class="fr p16-24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 cb bold cu-po ho-u">确认新增</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+
+<!--弹框背景--><div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z150"></div>
+<!--新增备注框-->
+<li id="newnote" class="hidden li-no pb12 clear">
+  <div class="fl ml16 tl-ldot"></div>
+  <div class="fl w280 w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+    <textarea name="" id="" class="p0-4 lh24 w100p h120"></textarea>
+    <div class="po-a" style="margin:-168px 0 0 218px;">
+      <span id="newnote-cancel" class="ic f24 red cu-po ho-u"></span>                
+      <span id="newnote-confirm" class="ic f24 c-gr cu-po ho-u"></span>
+    </div>
+  </div>
+  <div class="clear"></div>
+</li>
+<!--操作冒泡提示-->
+<div id="toast" class="hidden op0 po-f z200 cw card5-nbg l50p t50p mt80 ml-58 p16-24 bg-toa">
+<span class="ic f24 cb bdrs12 d-ib po-r"></span>
+<span></span>
+</div>
+</body>
+<script>
+/*待办划线和颜色控制*/
+$('[id^="task"]').on('click',function(){
+	var that = $(this), notchecked = that.is(':checked');
+	if (notchecked) {
+		that.parents('tr').removeClass('ho-ec').addClass('op06 td-l bg-ec');
+		} else {
+			that.parents('tr').addClass('ho-ec').removeClass('op06 td-l bg-ec')};
+	});
+/*全部标记为完成*/
+$('#markAll').on('click',function(){
+	$('[id^="task"]').each(function(index, element) {
+        $(this).prop('checked',true);
+    });
+	$('tr:not(:first-child)').each(function(index, element) {
+        $(this).removeClass('ho-ec').addClass('op06 td-l bg-ec');
+    });
+	});	
+/*新增待办button*/
+$('#add-todo').on('click',function(){
+	$('#popup-addtodo,#popbg').velocity("fadeIn",200);
+	});	
+/*新增待办弹窗内操作*/
+$('.pop-cancel').on('click',function(){
+	$('#popup-addtodo,#popbg').velocity("fadeOut",150);
+	});	
+$('.pop-confirm').on('click',function(){
+	$('#popup-addtodo,#popbg').velocity("fadeOut",150);
+	toast('已新增待办');
+	});	
+</script>
+<script>
+/*待办提前提醒：选择时间和分钟*/
+$('.choose-mh').on('click',function(){
+$(this).children('.note').show();
+});
+$('[name^="choose-mh"]').on('click',function(){
+var target = $(this).parent().siblings(':first-child');
+$(target).html($(this).val());
+$(this).parent().hide();
+event.stopPropagation();
+});	
+</script>
+
+<script>
+/*--操作冒泡提示功能toast()--*/
+function toast(text){
+	$('#toast').children(':last').html(text);
+	$('#toast').show().velocity({marginTop:'-=120',opacity:1,delay:150},{duration:150,easing:'easeOutCubic'});
+	window.setTimeout(function(){
+		$('#toast').velocity('reverse',{complete:function(){$('#toast').hide()}})},1800);
+		};	
+</script>
+<script>
+/*----弹窗滚轮到顶控制----*/
+$('.Scrollable').on('DOMMouseScroll mousewheel', function(ev) {
+    var $this = $(this),
+        scrollTop = this.scrollTop,
+        scrollHeight = this.scrollHeight,
+        height = $this.height(),
+        delta = (ev.type == 'DOMMouseScroll' ?
+            ev.originalEvent.detail * -40 :
+            ev.originalEvent.wheelDelta),
+        up = delta > 0;
+
+    var prevent = function() {
+        ev.stopPropagation();
+        ev.preventDefault();
+        ev.returnValue = false;
+        return false;
+    }
+
+    if (!up && -delta > scrollHeight - height - scrollTop) {
+        // Scrolling down, but this will take us past the bottom.
+        $this.scrollTop(scrollHeight);
+
+        return prevent();
+    } else if (up && delta > scrollTop) {
+        // Scrolling up, but this will take us past the top.
+        $this.scrollTop(0);
+        return prevent();
+    }
+});
+</script>
+<script>
+/*拂过note-ho出现和隐藏备注*/	
+var showNote;
+$('.note-ho').hover(function(){
+	var that = $(this);
+	var noteCount = that.children(':nth-child(2)').html();
+	if (noteCount=='1') {
+		showNote = setTimeout(function(){
+			that.children('.note').velocity("fadeIn",200);
+			},300);
+		}
+	},function(){
+		var that = $(this);
+		clearTimeout(showNote);
+		that.children('.note').velocity("fadeOut",150);
+		});		
+/*--------备注系统-------------*/
+/*获得YYYY-MM-DD格式日期*/
+function getYMD(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+};
+/*取得HH:MM格式时间*/
+function getHM(date) {
+    var d = new Date(date),
+        hour =''+ d.getHours(),
+        minute =''+ d.getMinutes();
+	if(hour.length<2) hour = '0'+hour;
+	if(minute.length<2) minute = '0'+minute;	
+    return hour+':'+minute;
+};
+/*新增备注*/
+$('.btn-newnote').on('click',function(){
+	$('#newnote').prependTo($(this).siblings());
+	$('#newnote').show();
+	$('#newnote textarea').val('').focus();
+	});
+/*确认新增备注，有一处变动（w280）*/	
+$('#newnote-confirm').on('click',function(){
+	var notetext = $('#newnote textarea').val();
+	var hastext = notetext.trim().length;
+	if(hastext){
+	$('#newnote').hide();
+	var role = "顾问",
+	name = "王某某",
+	today = getYMD(Date()),
+	time = getHM(Date());
+	$('<li class="li-no pb12 clear"> <div class="fl ml16 tl-ldot"></div> <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <p class="wh-pw lh24">'+notetext+'</p> <div class="c3 bdt"> <span>'+today+'</span> <span class="ml8">'+time+'</span> <span class="ml24 pr4">'+role+':</span> <span>'+name+'</span> </div> </div> <div class="clear"></div> </li>').insertAfter('#newnote');
+		} else {
+			$('#newnote textarea').focus()}
+	});
+/*取消新增备注*/
+$('#newnote-cancel').on('click',function(){
+	$('#newnote').hide();
+	});		
+</script>
+<script>
+/*--列表表头单击排序：小图标填色--*/	
+$('.sort').on('click',function(){
+	var des = $(this).children('.descend');
+	var ase = $(this).children('.ascend');
+	$(this).siblings().children('.cb').removeClass('cb').addClass('ce0');
+	if($(des).hasClass('cb')){
+		$(ase).removeClass('ce0').addClass('cb');$(des).removeClass('cb').addClass('ce0')} else {
+			$(des).removeClass('ce0').addClass('cb');$(ase).removeClass('cb').addClass('ce0');}
+	});
+/*--选中待办--*/
+$("#todo").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过展开下拉菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});
+</script>
+</html>

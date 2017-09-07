@@ -1,0 +1,1016 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>报表-KPI-BD</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/cityselect.css">
+<link rel="stylesheet" href="css/datepicker.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/datepicker.js"></script>
+<script src="js/cityselect.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/jquery-scrolltofixed-min.js"></script>
+<script src="js/highcharts.js"></script>
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+</style>
+</head>
+
+<body class="bg-ec">
+<header class="header  nav-down">
+  <div class="h-contain">
+    <div class="logo fl">优途智聘2.0系统</div>
+    <ul class="fl ml24">
+      <li class="li-no w72 fl">
+        <a href="Overview.html" class="nav-a" id="overview">
+          <div class="ic f20"></div>
+          <div class="f14">总览</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Search-1st.html" class="nav-a" id="search">
+          <div class="ic f20"></div>
+          <div class="f14">搜人才</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Company-1st.html" class="nav-a" id="company">
+          <div class="ic f20"></div>
+          <div class="f14">公司</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Position-1st.html" class="nav-a" id="position">
+          <div class="ic f20"></div>
+          <div class="f14">职位</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Pipeline.html" class="nav-a" id="pipeline">
+          <div class="ic f20"></div>
+          <div class="f14">Pipeline</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Talent-1st.html" class="nav-a" id="talent">
+          <div class="ic f20"></div>
+          <div class="f14">人才库</div>
+        </a>
+      </li>      <li class="li-no w72 fl">
+        <a href="List.html" class="nav-a" id="list">
+          <div class="ic f20"></div>
+          <div class="f14">List库</div>
+        </a>
+      </li> 
+      <li class="li-no w72 fl">
+        <a href="Invoice.html" class="nav-a" id="invoice">
+          <div class="ic f20"></div>
+          <div class="f14">发票</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <div class="nav-a" id="report">
+          <div class="ic f20"></div>
+          <div class="f14">报表</div>
+          <ul class="add-ul f14 w104" style="margin:2px 0 0 -16px">
+            <li class="li-no">
+              <a href="" target="_self" class="add-li-a">顾问报表</a>
+            </li>
+            <li class="li-no">
+              <a href="" target="_self" class="add-li-a">BD报表</a>
+            </li>
+            <li class="li-no">
+              <a href="" target="_self" class="add-li-a">客户分析</a>
+            </li>
+            <li class="li-no">
+              <a href="" target="_self" class="add-li-a">职位分析</a>
+            </li>
+            <li class="li-no">
+              <a href="" target="_self" class="add-li-a">Pipeline分析</a>
+            </li>
+            <li class="li-no">
+              <a href="" target="_self" class="add-li-a">人才库分析</a>
+            </li>
+            <li class="li-no">
+              <a href="" target="_self" class="add-li-a">发票分析</a>
+            </li>
+          </ul>
+        </div>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="E-learning.html" class="nav-a" id="elearn">
+          <div class="ic f20"></div>
+          <div class="f14">E-learning</div>
+        </a>
+      </li>      
+    </ul>
+    <ul class="fr">
+      <li class="li-no fl w56">
+        <div class="nav-a" id="add">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14 w104">
+              <li class="li-no">
+                <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a>
+              </li>
+              <li class="li-no">
+                <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a>
+              </li>
+              <li class="li-no">
+                <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 批量导入</a>
+              </li>              
+            </ul>
+        </div>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Todo.html" class="nav-a" id="todo" title="待办">
+          <div class="ic f24 lh46"></div>
+          <div class="badge">9</div>
+        </a>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Message.html" class="nav-a" id="message" title="消息">
+          <div class="ic f24 lh46"></div>
+        <div class="badge">99+</div>
+        </a>
+      </li>      
+      <li class="li-no fl w56">
+        <div href="" class="nav-a" id="account">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14">
+              <li class="li-no">
+                <a href="Settings-Account.html" class="add-li-a"><span class="ic f20"></span> 系统设置</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 使用帮助</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a ho-red"><span class="ic f20"></span> 退出登录</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="content card1" style="padding-bottom:0;">
+  <div class="p24">
+    <div class="bold f18 c3e fl"><span class="ic f24 fw-n mr4"></span>BD报表</div>        
+    <div class="fl mt4 ml32">
+      <div class="fl c2 hidden">
+        <input type="radio" checked name="selectRpt" id="personal">
+        <label for="personal"><span class="bold f15">个人报表</span></label>
+        <input type="radio" name="selectRpt" id="team">
+        <label for="team" class="ml16"><span class="bold f15">团队报表</span></label>
+        <input type="radio" name="selectRpt" id="comp">
+        <label for="comp" class="ml16"><span class="bold f15">部门报表</span></label>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="po-a f14 c2 ho-cb cu-po" style="right:16px;top:16px;"><span class="ic f20"></span>更新数据</div>
+  </div>
+  <div class="f14 mt16">
+  <div class="c2 p816 bg-f2">
+    <span class="ic f24"></span>筛选
+    <span class="filter-tag d-ib a ml24 cu-po bd1-c pl8">统计时间：<span class="filter-value">一周内</span><span class="ic f20"></span>
+      <div class="note hidden c1">
+        <div class="p4-0"><input type="radio" value="day" name="cre-time" id="day"><label for="day">当天</label></div>
+        <div class="p4-0"><input type="radio" value="week" name="cre-time" id="week" checked><label for="week">一周内</label></div>
+        <div class="p4-0"><input type="radio" value="month" name="cre-time" id="month"><label for="month">一月内</label></div>
+        <div class="p4-0"><input type="radio" value="month3" name="cre-time" id="month3"><label for="month3">三月内</label></div>
+        <div class="p4-0"><input type="radio" value="custom" name="cre-time" id="custom"><label for="custom">自定义</label></div>
+        <div class="custom hidden">
+          <div class="ml16">
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="start">
+          </div>
+          <div class="ta-c ml16">~</div>
+          <div class="ml16">
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="end">
+          </div>
+        </div>
+        <div class="mt16 mb8">
+          <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">确认</span>
+          <span class="filter-cancel fr p4-8 ho-u">取消</span>
+        </div>
+      </div>
+    </span>
+    <span class="filter-tag d-ib a ml24 cu-po bd1-c pl8">团队：<span class="filter-value">全部</span><span class="ic f20"></span>
+      <div class="note hidden c1">
+        <div class="mt8">
+          <select name="" id="select-conTeam" class="select-con w160">
+            <option selected>全部</option>            
+            <option>TMT业务一部</option>
+            <option>TMT业务二部</option>
+            <option>消费业务部</option>
+            <option>金融业务部</option>
+            <option>武汉猎头业务组</option>
+            <option>北京猎头业务组</option>
+          </select>
+        </div>
+        <div class="mt16 mb8">
+          <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">确认</span>
+          <span class="filter-cancel fr p4-8 ho-u">取消</span>
+        </div>
+      </div>
+    </span>
+    <span class="filter-tag d-ib a ml24 cu-po bd1-c pl8">部门：<span class="filter-value">全部</span><span class="ic f20"></span>
+      <div class="note hidden">
+        <div class="mt8">
+          <select name="" id="select-comp" class="w160">
+            <option selected>全部</option>
+            <option>营运中心</option>
+            <option>武汉公司</option>
+            <option>北京公司</option>
+          </select>
+        </div>
+        <div class="mt16 mb8">
+          <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">确认</span>
+          <span class="filter-cancel fr p4-8 ho-u">取消</span>
+        </div>
+      </div>
+    </span>
+    <span id="hdrSetting" class="hidden fr f14 ho-cb c2 mt1 ho-ic-b po-r"><span class="ic f20"></span>表头设置
+    <div class="up1 hidden"></div>
+    <div class="up2 hidden"></div>
+    <div class="hidden po-a card5 w120 h400 z150 c2 pt8" style="margin:8px 0 0 -150px; height:284px;width:240px">
+        <ul class="fl">
+           <li class="li-no p4-16"><input id="col2" type="checkbox" checked><label for="col2">职位</label></li>
+           <li class="li-no p4-16"><input id="col3" type="checkbox" checked><label for="col3">团队</label></li>
+           <li class="li-no p4-16"><input id="col4" type="checkbox" checked><label for="col4">部门</label></li>
+           <li class="li-no p4-16"><input id="col5" type="checkbox" checked><label for="col5">工作量</label></li>
+           <li class="li-no p4-16"><input id="col6" type="checkbox" checked><label for="col6">跟进职位</label></li>
+           <li class="li-no p4-16"><input id="col7" type="checkbox" checked><label for="col7">进展天数</label></li>
+           <li class="li-no p4-16"><input id="col8" type="checkbox" checked><label for="col8">公司名称</label></li>
+           <li class="li-no p4-16"><input id="col9" type="checkbox" checked><label for="col9">紧急度</label></li>
+        </ul> 
+        <ul class="fl">
+           <li class="li-no p4-16"><input id="col10" type="checkbox" checked><label for="col10">推荐</label></li>
+           <li class="li-no p4-16"><input id="col11" type="checkbox" checked><label for="col11">合格</label></li>
+           <li class="li-no p4-16"><input id="col12" type="checkbox" checked><label for="col12">初试</label></li>
+           <li class="li-no p4-16"><input id="col13" type="checkbox" checked><label for="col13">复试</label></li>
+           <li class="li-no p4-16"><input id="col14" type="checkbox" checked><label for="col14">待发Offer</label></li>
+           <li class="li-no p4-16"><input id="col15" type="checkbox" checked><label for="col15">已发Offer</label></li>
+           <li class="li-no p4-16"><input id="col16" type="checkbox" checked><label for="col16">不合适</label></li>
+           <li class="li-no p4-16"><input id="col17" type="checkbox" checked><label for="col17">业绩</label></li>
+        </ul>
+        <div class="clear"></div>
+        <div class="mt12">
+          <span id="saveHdrSetting" class="fr ml16 mr16 filter-add p4-16 cw bg-b bdrs2 ho-1f">保存</span>
+          <span class="filter-cancel fr p4-8 ho-u">重置</span>
+          
+        </div>
+      </div>
+    </span>
+    <span class="f14 c2 ho-cb cu-po fr mt1" id="excelreport"><span class="ic f20 pr4"></span>导出Excel</span>    
+  </div>
+  <div class="hidden pl24 pt8 c1 pb8">
+    <span class="fl c2 d-ib p2-4">报表：</span>
+    <span class="fl c1 ml8 p2-4"><span class="c3">顾问团队：</span>所有团队，<span class="c3">统计时间：</span>一周内</span>
+    <span class="tag-search">
+      <span class="c3">顾问团队：</span>
+      <span>麒麟队</span><span class="ic ml4 f16 c3"></span>
+    </span>
+    
+    <div class="clear"></div>
+  </div>
+</div>
+  <div id="div-header" class="stickToTop c2 ov-h h54 f14 bold bg-w" >
+    <div>
+      <div class="w32 h48 fl pt16"></div>
+      <div class="w72 fl pt16">成员</div>
+      <div class="w90 fl pt16">职位</div>
+      <div class="w120 fl pt16">团队</div>
+      <div class="sort w80 cu-po ho-cb po-r fl pt16">
+        <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+        <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+        <span>新备注</span>
+      </div>
+      <div class="sort w86 cu-po ho-cb po-r fl pt16">
+        <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+        <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+        <span>有效沟通</span>
+      </div>
+      <div class="sort w86 cu-po ho-cb po-r fl pt16">
+        <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+        <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+        <span>拜访客户</span>
+      </div>
+      <div class="sort w86 cu-po ho-cb po-r fl pt16">
+        <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+        <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+        <span>意向客户</span>
+      </div>
+      <div class="sort w96 cu-po ho-cb po-r fl pt16">
+        <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+        <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+        <span>新签约客户</span>
+      </div>
+      <div class="sort w96 cu-po ho-cb po-r fl pt16">
+        <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+        <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+        <span>新合作客户</span>
+      </div>
+      <div class="sort w80 cu-po ho-cb po-r fl pt16">
+        <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+        <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+        <span>新职位</span>
+      </div>
+      <div class="sort w90 cu-po ho-cb po-r fl pt16">
+        <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+        <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+        <span>新增Offer</span>
+      </div>      
+      <div class="sort w96 cu-po ho-cb po-r fl pt16">
+        <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+        <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+        <span>新增Offer总额</span>
+      </div>
+    </div>
+  </div>
+  <div id="div-table" class="ovx-a">  
+    <table class="c1 bdcl ta-l c1 f14 clear">
+      <tr style="height:0">
+        <td><div class="w32"></div></td>
+        <td><div class="w72"></div></td>
+        <td><div class="w90"></div></td>
+        <td><div class="w120"></div></td>
+        <td><div class="w80"></div></td>
+        <td><div class="w86"></div></td>
+        <td><div class="w86"></div></td>
+        <td><div class="w86"></div></td>
+        <td><div class="w96"></div></td>
+        <td><div class="w96"></div></td>
+        <td><div class="w80"></div></td>
+        <td><div class="w90"></div></td>
+        <td><div class="w96"></div></td>
+      </tr>
+      <tr class="BD bdt1 h48 ho-ec">
+         <td></td>
+         <td>刘达文</td>
+         <td>商务总监</td>
+         <td>商务中心</td>
+         <td><span class="expand cu-po c1 ho-cb p4-16">27</span></td>
+        <td><span class="expand cu-po c1 ho-cb p4-16">4</span></td>
+         <td><span class="expand cu-po c1 ho-cb p4-16">9</span></td> 
+         <td><span class="expand cu-po c1 ho-cb p4-16">4</span></td>
+         <td><span class="expand cu-po c1 ho-cb p4-16">1</span></td>
+         <td><span class="expand cu-po c1 ho-cb p4-16">9</span></td>
+         <td><span class="expand cu-po c1 ho-cb p4-16">5</span></td>
+         <td><span class="expand cu-po c1 ho-cb p4-16">2</span></td>
+         <td><span class="expand cu-po c1 ho-cb p4-16">60000</span></td>
+      </tr>
+      <tr class="hidden">
+         <td colspan="14">
+         </td>
+      </tr>
+      <tr class="BD bdt1 h48 ho-ec">
+         <td class="f12 c2">总计:</td>
+         <td class="bold">6位成员</td>
+         <td>--</td>
+         <td>--</td>
+         <td><span class="p4-16 bold">152</span></td>
+        <td><span class="p4-16 bold">24</span></td>
+         <td><span class="p4-16 bold">54</span></td> 
+         <td><span class="p4-16 bold">24</span></td>
+         <td><span class="p4-16 bold">6</span></td>
+         <td><span class="p4-16 bold">56</span></td>
+         <td><span class="p4-16 bold">30</span></td>
+         <td><span class="p4-16 bold">12</span></td>
+         <td><span class="p4-16 bold">360,000</span></td>
+      </tr>
+    </table>      
+  </div>
+  
+
+</div>
+<div class="ta-c p8 c3 mb48">已是列表底部了</div>
+<!--弹框背景--><div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z150"></div>
+<!--操作冒泡提示-->
+<div id="toast" class="hidden op0 po-f
+ z200 cw card5-nbg l50p t50p mt80 ml-58 p16-24 bg-toa">
+<span class="ic f24 cb bdrs12 d-ib po-r"></span>
+<span></span>
+</div>
+<!--新备注表-->
+<table id="newNote" class="bdcl fr bdl1 hidden">
+ <tr class="bg-e3 c2 h48">
+   <th><div class="w240 w2 pl24">客户名称</div></th>
+   <th><div class="w96">客户状态</div></th>
+   <th><div class="w160">所属行业</div></th>
+   <th><div class="w160">备注时间</div></th>
+   <th><div class="w300"></div>备注内容</th>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, hic, unde, quidem porro sed qui nostrum vero vel ad esse culpa in accusamus sequi adipisci alias laudantium soluta odit iusto?</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">Lorem ipsum dolor </p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">Lorem ipsum dolor </p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">Lorem ipsum dolor </p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">Lorem ipsum dolor </p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">Lorem ipsum dolor </p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">Lorem ipsum dolor </p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">Lorem ipsum dolor </p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">Lorem ipsum dolor </p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">Lorem ipsum dolor </p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">Lorem ipsum dolor </p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">Lorem ipsum dolor </p></td>
+ </tr>
+</table>
+<!--有效沟通表-->
+<table id="communicate" class="bdcl fr bdl1 hidden">
+ <tr class="bg-e3 c2 h48">
+   <th><div class="w240 w2 pl24">客户名称</div></th>
+   <th><div class="w96">客户状态</div></th>
+   <th><div class="w160">所属行业</div></th>
+   <th><div class="w160">沟通日期</div></th>
+   <th><div class="w300"></div>沟通备注</th>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">联系的是张璐小姐，加了QQ。但是猎头渠道还是唐经理负责的，今天外出了。目前在招HRD和营销品牌总监。HRD更偏行政方向，营销品牌总监主要是过来负责17年九月份完工的新塘的ITC的项目。明天再联系唐经理</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，现在不太方便接听，留联系方式，下次沟通，加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">联系的是张璐小姐，加了QQ。但是猎头渠道还是唐经理负责的，今天外出了。目前在招HRD和营销品牌总监。HRD更偏行政方向，营销品牌总监主要是过来负责17年九月份完工的新塘的ITC的项目。明天再联系唐经理</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，现在不太方便接听，留联系方式，下次沟通，加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+</table>
+<!--拜访客户表-->
+<table id="visit" class="bdcl fr bdl1 hidden">
+ <tr class="bg-e3 c2 h48">
+   <th><div class="w240 w2 pl24">客户名称</div></th>
+   <th><div class="w96">客户状态</div></th>
+   <th><div class="w160">所属行业</div></th>
+   <th><div class="w160">拜访日期</div></th>
+   <th><div class="w300"></div>拜访备注</th>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">联系的是张璐小姐，加了QQ。但是猎头渠道还是唐经理负责的，今天外出了。目前在招HRD和营销品牌总监。HRD更偏行政方向，营销品牌总监主要是过来负责17年九月份完工的新塘的ITC的项目。明天再联系唐经理</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，现在不太方便接听，留联系方式，下次沟通，加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">联系的是张璐小姐，加了QQ。但是猎头渠道还是唐经理负责的，今天外出了。目前在招HRD和营销品牌总监。HRD更偏行政方向，营销品牌总监主要是过来负责17年九月份完工的新塘的ITC的项目。明天再联系唐经理</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，现在不太方便接听，留联系方式，下次沟通，加Q</p></td>
+ </tr>
+</table>
+<!--意向客户表-->
+<table id="intention" class="bdcl fr bdl1 hidden">
+ <tr class="bg-e3 c2 h48">
+   <th><div class="w240 w2 pl24">客户名称</div></th>
+   <th><div class="w96">客户状态</div></th>
+   <th><div class="w160">所属行业</div></th>
+   <th><div class="w160">设为意向日期</div></th>
+   <th><div class="w300"></div>备注</th>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">联系的是张璐小姐，加了QQ。但是猎头渠道还是唐经理负责的，今天外出了。目前在招HRD和营销品牌总监。HRD更偏行政方向，营销品牌总监主要是过来负责17年九月份完工的新塘的ITC的项目。明天再联系唐经理</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，现在不太方便接听，留联系方式，下次沟通，加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">联系的是张璐小姐，加了QQ。但是猎头渠道还是唐经理负责的，今天外出了。目前在招HRD和营销品牌总监。HRD更偏行政方向，营销品牌总监主要是过来负责17年九月份完工的新塘的ITC的项目。明天再联系唐经理</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，现在不太方便接听，留联系方式，下次沟通，加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，已加Q</p></td>
+ </tr>
+</table>
+<!--新签约客户表-->
+<table id="newSign" class="bdcl fr bdl1 hidden">
+ <tr class="bg-e3 c2 h48">
+   <th><div class="w240 w2 pl24">客户名称</div></th>
+   <th><div class="w96">客户状态</div></th>
+   <th><div class="w160">所属行业</div></th>
+   <th><div class="w160">签约日期</div></th>
+   <th><div class="w300"></div>签约备注</th>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">联系的是张璐小姐，加了QQ。但是猎头渠道还是唐经理负责的，今天外出了。目前在招HRD和营销品牌总监。HRD更偏行政方向，营销品牌总监主要是过来负责17年九月份完工的新塘的ITC的项目。明天再联系唐经理</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，现在不太方便接听，留联系方式，下次沟通，加Q</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">联系的是张璐小姐，加了QQ。但是猎头渠道还是唐经理负责的，今天外出了。目前在招HRD和营销品牌总监。HRD更偏行政方向，营销品牌总监主要是过来负责17年九月份完工的新塘的ITC的项目。明天再联系唐经理</p></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">百富计算机技术（深圳）有限公司 </div></td>
+   <td>意向客户</td>
+   <td>计算机软件</td>
+   <td>2016-11-26 15:30</td>
+   <td><p class="w300 pr24 pt8 pb8">没需求，现在不太方便接听，留联系方式，下次沟通，加Q</p></td>
+ </tr>
+</table>
+<!--新合作客户表-->
+<table id="newCoop" class="bdcl fr bdl1 hidden">
+ <tr class="bg-e3 c2 h48">
+   <th><div class="w240 w2 pl24">客户名称</div></th>
+   <th><div class="w96">客户状态</div></th>
+   <th><div class="w160">所属行业</div></th>
+   <th><div class="w160">客户导入日期</div></th>
+   <th><div class="w160">发布职位日期</div></th>
+   <th><div class="w240"></div>
+    合作职位</th>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-10-03 11:20</td>
+   <td>2016-11-26 15:30</td>
+   <td><a href="" class="a c1">网络安全工程师</a></td>
+ </tr>
+</table>
+<!--新职位表-->
+<table id="newPosition" class="bdcl fr bdl1 hidden">
+ <tr class="bg-e3 c2 h48">
+   <th><div class="w240 w2 pl24">客户名称</div></th>
+   <th><div class="w96">客户状态</div></th>
+   <th><div class="w160">所属行业</div></th>
+   <th><div class="w136">职位立项日期</div></th>
+   <th><div class="w240">立项职位</div></th>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26</td>
+   <td><a href="" class="a c1 w220 ol">高级服装设计师</a></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26</td>
+   <td><a href="" class="a c1">高级服装设计师</a></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26</td>
+   <td><a href="" class="a c1">高级服装设计师</a></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26</td>
+   <td><a href="" class="a c1">高级服装设计师</a></td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><div class="w220 pl24 ol">深圳卡尔丹顿服饰股份有限公司</div></td>
+   <td>意向客户</td>
+   <td>服装/服饰/纺织</td>
+   <td>2016-11-26</td>
+   <td><a href="" class="a c1">高级服装设计师</a></td>
+ </tr>
+</table>
+<!--新Offer-->
+<table id="newOffer" class="bdcl fr bdl1 hidden">
+ <tr class="bg-e3 c2 h48">
+   <th><div class="w136 pl24">Offer候选人</div></th>
+   <th><div class="w160">推荐职位</div></th>
+   <th><div class="w160">客户公司</div></th>
+   <th><div class="w96">跟进顾问</div></th>
+   <th><div class="w96">Offer日期</div></th>
+   <th><div class="w96">年薪</div></th>
+   <th><div class="w96">收费比例</div></th>
+   <th><div class="w96">收费金额</div></th>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><a href="" class="a c1 pl24">聂小明</a></td>
+   <td><a href="" class="a c1">高级IOS开发</a></td>
+   <td><a href="" class="a c1">深圳腾讯技术有限公司</a></td>
+   <td>王霜</td>
+   <td>2016-09-11</td>
+   <td>￥180,000</td>
+   <td>20%</td>
+   <td>￥36,000</td>
+ </tr>
+ <tr class="h48 bdt1 ho-ec">
+   <td><a href="" class="a c1 pl24">聂小明</a></td>
+   <td><a href="" class="a c1">高级IOS开发</a></td>
+   <td><a href="" class="a c1">深圳腾讯技术有限公司</a></td>
+   <td>王霜</td>
+   <td>2016-09-11</td>
+   <td>￥180,000</td>
+   <td>20%</td>
+   <td>￥36,000</td>
+ </tr>
+</table>
+</body>
+<script>
+/*--操作冒泡提示功能toast()--*/
+function toast(text){
+	$('#toast').children(':last').html(text);
+	$('#toast').show().velocity({marginTop:'-=120',opacity:1,delay:150},{duration:150,easing:'easeOutCubic'});
+	window.setTimeout(function(){
+		$('#toast').velocity('reverse',{complete:function(){$('#toast').hide()}})},1800);
+		};	
+</script>
+<script>
+
+/*显示辅助*/	
+$('#div-table tr').children('td').on('mouseenter',function(){
+	var colNo = $(this).index()+1;
+	$('#div-header').children().children().removeClass('cb');
+	$('#div-header').children().children(':nth-child('+colNo+')').addClass('cb');
+	});
+$('#div-table').on('mouseleave',function(){
+	$('#div-header').children().children().removeClass('cb');
+	});	
+
+/*切换到团队报表--begin--*/
+$('[for="personal"]').on('click',function(){//单击团队报表
+	$('#div-header').children().children(':nth-child(2),:nth-child(3),:nth-child(4),:nth-child(5)').show();
+	$('td:nth-child(2),td:nth-child(3),td:nth-child(4),td:nth-child(5)').show();
+	$('#col2,#col3,#col4').prop('disabled',false);
+	});
+$('[for="team"]').on('click',function(){//单击团队报表
+	$('#div-header').children().children(':nth-child(2),:nth-child(3)').hide();
+	$('#div-header').children().children(':nth-child(4),:nth-child(5)').show();
+    $('td:nth-child(2),td:nth-child(3)').hide();
+	$('td:nth-child(4),td:nth-child(5)').show();
+	$('#col2,#col3').prop('disabled',true);
+	$('#col4').prop('disabled',false);
+	});
+$('[for="comp"]').on('click',function(){
+	$('#div-header').children().children(':nth-child(2),:nth-child(3),:nth-child(4)').hide();
+	$('td:nth-child(2),td:nth-child(3),td:nth-child(4)').hide();
+	$('td:nth-child(5)').show();
+	$('#col2,#col3,#col4').prop('disabled',true);
+	});//单击部门报表
+/*切换到团队报表--end--*/
+
+
+
+/*单击展开和收起职位详情*/
+$('.expand').on('click',function(){
+	var that=$(this),expanded = that.parent().hasClass('bg-e3'),tr=that.parents('tr').next();
+	var tableName = that.parent().index();
+	if (expanded){
+		$('td.bg-e3').removeClass('bg-e3');
+		tr.hide();
+		} else {
+			$('td.bg-e3').removeClass('bg-e3');
+			that.parent().addClass('bg-e3');
+			$(tr).show();
+			};
+	function showTable(tableID){
+		$('#communicate,#visit,#intention,#newSign,#newCoop,#newNote,#newPosition,#newOffer').hide();
+		$(tableID).appendTo($(tr).children()).show();
+		}		
+	switch (tableName) {
+		case 5:
+		showTable('#newNote')
+		break;
+		case 6:
+		showTable('#communicate');
+		break;
+		case 7:
+		showTable('#visit');
+		break;
+		case 8:
+		showTable('#intention')
+		break;
+		case 9:
+		showTable('#newSign')
+		break;
+		case 10:
+		showTable('#newCoop')
+		break;
+		case 11:
+		showTable('#newPosition')
+		break;
+		case 12:
+		showTable('#newOffer')
+		break;
+		};		
+	});
+/*单击具体推荐数弹出pipeline窗口，窗口居中且精简过工具栏*/
+function Pop(url) {
+	LeftPosition = (screen.width) ? (screen.width-1280)/2 : 0;
+    TopPosition = (screen.height) ? (screen.height-640)/2 : 0;
+popupWindow = window.open(url,'popUpWindow','height=600,width=1280,left='+LeftPosition+',top='+TopPosition+',resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
+	}
+/*同时滚动table表格和div表头*/
+$('#div-table').on('scroll',function(){
+	$('#div-header').scrollLeft($('#div-table').scrollLeft());
+	});
+/*新滚动固定--begin--*/
+$('.stickToTop').scrollToFixed({
+	preFixed: function() {
+		$(this).addClass('card2-nbg');
+		},
+	postFixed: function() {
+		$(this).removeClass('card2-nbg');
+		}	
+	});
+/*新滚动固定--end--*/
+</script>
+<script>
+/*--列表表头单击排序：小图标填色--*/	
+$('.sort').on('click',function(){
+	var des = $(this).children('.descend');
+	var ase = $(this).children('.ascend');
+	$(this).siblings().children('.cb').removeClass('cb').addClass('ce0');
+	if($(des).hasClass('cb')){
+		$(ase).removeClass('ce0').addClass('cb');$(des).removeClass('cb').addClass('ce0')} else {
+			$(des).removeClass('ce0').addClass('cb');$(ase).removeClass('cb').addClass('ce0');}
+	});
+/*--单击筛选标签--*/
+$('.filter-tag').on('click', function() {
+  $(this).siblings().children('div').hide();
+  $(this).children('div').show();
+});
+$('.filter-add,.filter-cancel').on('click', function(e) {
+  event.stopPropagation();
+  $(this).parents('.note').hide();
+});
+/*单击文档任意位置关闭筛选框*/
+$(document).on('click', function(e) {
+  if (!$(event.target).closest('.filter-tag').length && !$(event.target).closest('[class^="datepicker"]').length && !$(event.target).closest('.select2-container').length) {
+    $('.filter-tag .note').hide()
+  }
+});
+/*--自定义时间收起展示--*/
+$('input[name$="time"]').on('click', function() {
+    var that = $(this);
+    var value = $('input[name$="time"]:checked').val();
+    if (value == "custom") {
+      $(that).parent().siblings('.custom').show()
+    } else {
+      $(that).parent().siblings('.custom').hide()
+    }
+  });
+/*--自定义时间选择:起始时间--*/
+var $start = $('#start'),
+  $end = $('#end');
+$start.datepicker({
+  onSelect: function(fd, date) {
+    $end.data('datepicker')
+      .update('minDate', date)
+  }
+})
+$end.datepicker({
+  onSelect: function(fd, date) {
+    $start.data('datepicker')
+      .update('maxDate', date)
+  }
+});
+/*--选择select实例化--*/
+$('#select-conTeam,#select-city,#select-comp').select2({
+  placeholder: " ",minimumResultsForSearch: Infinity,
+});
+/*--选中报表--*/
+$("#report").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过展开下拉菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});
+$("#report").mouseenter(function(e) {$("#report ul").show()});
+$("#report").mouseleave(function(e) {$("#report ul").hide()});
+</script>
+</html>

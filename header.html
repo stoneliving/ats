@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>header</title>
+  <link rel="stylesheet" href="css/main-New.css">
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/velocity.addon.js"></script>
+  <style>
+
+
+  </style>
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="headerwrapper">
+      <div class="logo fl">优途智聘2.0系统</div>
+      <ul class="nav-main">
+        <li>
+          <a href="Overview.html" class="nav-a">
+            <div></div>
+            <div>总览</div>
+          </a>
+        </li>
+        <li>
+          <a href="Search-1st.html" class="nav-a">
+            <div></div>
+            <div>搜人才</div>
+          </a>
+        </li>
+        <li>
+          <a href="Company-1st.html" class="nav-a">
+            <div></div>
+            <div>公司</div>
+          </a>
+        </li>
+        <li>
+          <a href="Position-1st.html" class="nav-a">
+            <div></div>
+            <div>职位</div>
+          </a>
+        </li>
+        <li>
+          <a href="Pipeline.html" class="nav-a">
+            <div></div>
+            <div>Pipeline</div>
+          </a>
+        </li>
+        <li>
+          <a href="Talent-1st.html" class="nav-a">
+            <div></div>
+            <div>人才库</div>
+          </a>
+        </li>
+        <li>
+          <a href="List.html" class="nav-a">
+            <div></div>
+            <div>List库</div>
+          </a>
+        </li>
+        <li>
+          <a href="Invoice.html" class="nav-a">
+            <div></div>
+            <div>发票</div>
+          </a>
+        </li>
+        <li>
+          <div class="drop-down nav-a">
+            <div class="ic f20"></div>
+            <div jid="Receipt" class="f14">报表</div>
+            <ul class="drop-down-list add-ul" style="margin: 2px 0px 0px -16px;">
+              <li>
+                <a href="" class="add-li-a">顾问报表</a>
+                <a href="" class="add-li-a">BD报表</a>
+                <a href="" class="add-li-a">客户报表</a>
+                <a href="" class="add-li-a">职位报表</a>
+                <a href="" class="add-li-a">候选人分析</a>
+                <a href="" class="add-li-a">Offer报表</a>
+                <a href="" class="add-li-a">业绩分析</a>
+                <a href="" class="add-li-a">发票分析</a>
+                <a href="" class="add-li-a">行为统计</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="E-learning.html" class="nav-a">
+            <div></div>
+            <div>E-learning</div>
+          </a>
+        </li>
+      </ul>
+      <ul class="nav-sub">
+        <li>
+          <div class="drop-down nav-a" id="add">
+            <div class="ic f24 lh46"></div>
+            <ul class="drop-down-list add-ul">
+              <li> <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a> </li>
+              <li> <a href="批量上传人才2.6.html" target="new" class="add-li-a"><span class="ic f20"></span> 批量上传</a> </li>
+              <li> <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a> </li>
+              <li> <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a> </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="Todo.html" class="nav-a" id="todo" title="待办">
+            <div class="ic f24 lh46"></div>
+            <div class="badge">9</div>
+          </a>
+        </li>
+        <li>
+          <div id="noti-container" class="nav-a cu-po po-r">
+            <div id="noti-icon" class="notification active" title="通知"><span class="ic f24 lh46 d-ib"></span></div>
+            <div id="noti-badge" class="badge">3</div>
+            <div id="noti-pop" class="noti-pop hidden">
+              <div class="po-r ov-h">
+                <div descript="总消息界面" class="noti-all po-r">
+                  <h2 class="noti-header fw-n ta-c f16 p8 bdb1"><span class="bold c2">通知</span><span id="btn-noti-setting" class="btn-noti-setting" title="设置"></span><span id="btn-clear-all-list" class="btn-clear-all-list" title="清理全部通知"></span></h2>
+                  <ul descript="消息列表" class="noti-lists">
+                    <li class="noti-list card1">
+                      <div class="list-wrapper p8">
+                        <div class="po-a"><img src="images/notify-icon.png" class="noti-sender-pic" alt=""></div>
+                        <div class="ml48 ta-l">
+                          <h3 class="f14">逾期未操作<span class="noti-time fr fw-n f12 c3">2017-08-30</span></h3>
+                          <p class="f12 mt4 c2 lh15">骆小根已7个工作日没有向【高级Java】-【深圳某某公司】推荐新的候选人了</p>
+                        </div>
+                        <div class="btn-clear-list hidden"><span class="ic f32"></span></div>
+                      </div>
+                    </li>
+                    <li class="noti-list card1">
+                      <div class="list-wrapper p8">
+                        <div class="po-a"><img src="images/notify-icon.png" class="noti-sender-pic" alt=""></div>
+                        <div class="ml48 ta-l">
+                          <h3 class="f14">逾期未操作<span class="noti-time fr fw-n f12 c3">2017-08-30</span></h3>
+                          <p class="f12 mt4 c2 lh15">骆小根已7个工作日没有向【高级Java】-【深圳某某公司】推荐新的候选人了</p>
+                        </div>
+                        <div class="btn-clear-list hidden"><span class="ic f32"></span></div>
+                      </div>
+                    </li>
+                    <li class="noti-list card1">
+                      <div class="list-wrapper p8">
+                        <div class="po-a"><img src="images/notify-icon.png" class="noti-sender-pic" alt=""></div>
+                        <div class="ml48 ta-l">
+                          <h3 class="f14">逾期未操作<span class="noti-time fr fw-n f12 c3">2017-08-30</span></h3>
+                          <p class="f12 mt4 c2 lh15">骆小根已7个工作日没有向【高级Java】-【深圳某某公司】推荐新的候选人了</p>
+                        </div>
+                        <div class="btn-clear-list hidden"><span class="ic f32"></span></div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div id="noti-empty" decript="空状态" class="p816 mt-12 hidden">
+                    <h2 class="ic f48 fw-n c-d"></h2>
+                    <p class="c-c f14">没有未读通知</p>
+                  </div>
+
+                  <a href="Notification-Center.html" class="noti-footer a f14 c2 p8 d-ib w100p ho-ec">进入通知中心</a>
+                </div>
+                <div decript="单条消息界面" class="noti-single hidden">
+                  <h2 class="noti-header fw-n ta-c f16 p8"><span class="bold c2">通知</span><span id="btn-backto-noti" class="btn-backto-noti" title="返回"></span></h2>
+                  <div class="noti-list-content">
+                    <div class="card1 mb">
+                      <h2 class="f13 fw-n ta-l lh24 p8 bg-ec c2">
+                        <div><span class="bold c1 f14">候选人逾期未操作</span></div>
+                        <div><span class="d-ib c3 w44">来自：</span>智聘系统</div>
+                        <div><span class="d-ib c3 w44">时间：</span>2017-09-01 10:00</div>
+                        <div><span class="d-ib c3 w44">接收：</span><span class="name-tag">骆小根</span><span class="name-tag">张文娟</span><span class="name-tag">王翔</span></div>
+                      </h2>
+                      <div class="f13 lh24 ta-l p8">
+                        <p class="ti-24">你给职位【<a href="" class="a cb">高级Java</a>】-【<a href="" class="a cb">深圳市某某科技有限公司</a>】推荐的候选人【<a href="" class="a cb">王精英</a>】已经停留在推荐阶段56天了，<a href="" class="a cb">单击此处</a>去更新后续人的状态吧。</p>
+                        <p class="ti-24 c3 f12 mt8" style="line-height:20px;"><span class="ic f18 c-c"></span>tips：及时更新候选人的Pipeline状态，有助于把握工作整体进展，有效准确的数据，也有利于分析统计、同事协作和二次开展。</p>
+                      </div>
+                      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut harum aliquam sint aspernatur alias error assumenda incidunt, repellendus, quibusdam numquam perspiciatis cum ab natus molestias nobis asperiores fugiat quam possimus.</div>
+                      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut harum aliquam sint aspernatur alias error assumenda incidunt, repellendus, quibusdam numquam perspiciatis cum ab natus molestias nobis asperiores fugiat quam possimus.</div>
+                      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut harum aliquam sint aspernatur alias error assumenda incidunt, repellendus, quibusdam numquam perspiciatis cum ab natus molestias nobis asperiores fugiat quam possimus.</div>
+                      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut harum aliquam sint aspernatur alias error assumenda incidunt, repellendus, quibusdam numquam perspiciatis cum ab natus molestias nobis asperiores fugiat quam possimus.</div>
+                      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut harum aliquam sint aspernatur alias error assumenda incidunt, repellendus, quibusdam numquam perspiciatis cum ab natus molestias nobis asperiores fugiat quam possimus.</div>
+                      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut harum aliquam sint aspernatur alias error assumenda incidunt, repellendus, quibusdam numquam perspiciatis cum ab natus molestias nobis asperiores fugiat quam possimus.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </li>
+        <li> <span class="nav-account nav-a drop-down" id="account"><img src="images/default-profile-pic.jpg" class="nav-profile-pic" alt="">
+        <div class="account-dropdown drop-down-list hidden">
+          <a href="" class="board">
+						<div><img src="images/animals/level1.png" class="level-pic" alt=""></div>
+						<div class="info-wrapper">
+							<p><span class="d-ib w40 c3">积分</span><span class="color-orange">503分</span></p>
+          <p><span class="d-ib w40 c3">头衔</span><span class="color-orange">高手</span></p>
+          <p><span class="d-ib w40 c3">优币</span><span class="color-orange">503分</span></p>
+    </div>
+    </a>
+    <div class="wrapper pl16 pr16 pb8"> <a href="" class="sys-setting bdt1"><span class="ic f18 mr4"></span>系统设置</a> <a href="" class="sys-help"><span class="ic f18 mr4"></span>使用帮助</a> <a href="" class="sys-logout"><span class="ic f18 mr4"></span>退出登录</a> </div>
+    </div>
+    </span>
+    </li>
+    </ul>
+    </div>
+  </header>
+
+</body>
+<script>
+  /*单击通知铃铛图标#noti-icon，显示通知浮窗noti-pop*/
+  $('#noti-icon').on('click', function() {
+    if ($('#noti-pop').is(':visible')) { //若已显示，则隐藏
+      $('#noti-pop').hide();
+    } else { //若未显示，则显示
+      $('.noti-list.read').remove(); //移除已读通知
+      if ($('#noti-badge').html() == 0) { //若未读通知为0，则显示空状态
+        $('#noti-empty').show();
+      } else {
+        $('#noti-empty').hide();
+      }
+      $('#noti-pop').show(); //显示通知弹窗
+    }
+  });
+  /*单击其它区域，关闭通知浮窗*/
+  $(document).on('click', function() {
+    if (!$(event.target).closest('#noti-container').length) {
+      $('#noti-pop').hide();
+    }
+  });
+
+
+
+  /*方法 subtractNoti() ：通知红色角标-数字减1并更新*/
+  function subtractNoti() {
+    var badge = $('#noti-badge');
+    var updateCount = Number(badge.html()) - 1; //更新角标数字
+    if (updateCount == 0) { //若为0时：
+      badge.velocity({ //1.角标消失
+        scale: 0
+      }, 250);
+      $('.notification.active').removeClass('active'); //2.铃铛不摇
+      if ($('.noti-list').length == 1) { //3.显示空状态
+        $('#noti-empty').delay(250).velocity('slideDown', 150);
+      }
+    };
+    badge.html(updateCount); //更新角标
+  };
+
+
+
+  /*方法：增加n条通知*/
+  function addNoti(n) {
+    badgeCount = Number($('#noti-badge').html()); //取得当前角标数
+    if (badgeCount == 0) { //角标若为0
+      $('#noti-badge').velocity({
+        scale: 1
+      }, 250); //弹出角标
+      $('.noti-empy').hide(); //隐藏空状态
+    }
+    $('#noti-badge').html(badgeCount + n); //更新角标数
+
+    /*以下为插入对应条数的通知demo代码*/
+    var Html = '<li class="noti-list card1"> <div class="list-wrapper p8"> <div class="po-a"><img src="images/notify-icon.png" class="noti-sender-pic" alt=""></div> <div class="ml48 ta-l"> <h3 class="f14">逾期未操作<span class="noti-time fr fw-n f12 c3">2017-08-30</span></h3> <p class="f12 mt4 c2 lh15">骆小根已7个工作日没有向【高级Java】-【深圳某某公司】推荐新的候选人了</p> </div> <div class="btn-clear-list hidden"><span class="ic f32"></span></div> </div> </li>'; //list的html
+    var notiListHtml = Html.repeat(n); //复制n份
+    $(notiListHtml).prependTo('.noti-lists'); //插入
+  };
+
+
+
+  /*注册动画：batchRemoveList(批量移除通知list)*/
+  $.Velocity.RegisterEffect("batchRemoveList", {
+    defaultDuration: 250,
+    calls: [
+      [{
+        translateX: '384px',
+        height: 0,
+        opacity: 0,
+        marginBottom: 0
+      }]
+    ]
+  });
+
+
+
+  /*按钮.btn-clear-list：清除单条通知*/
+  $('#noti-pop').on('click', '.btn-clear-list', function(event) {
+    var notiList = $(this).parents('.noti-list');
+    event.stopPropagation(); //阻止冒泡，避免滑出详情
+    notiList.velocity({ //动画
+      translateX: '384px',
+      height: 0,
+      opacity: 0,
+      marginBottom: 0
+    }, {
+      duration: 250,
+      complete: function() {
+        $(this).remove();
+      }
+    });
+    if (notiList.hasClass('read')) { //若为已读
+      if ($('.noti-list').length == 1) { //且只剩最后一条
+        $('#noti-empty').delay(250).velocity('slideDown', 150); //显示空状态
+      }
+    } else { //若为未读，角标减一
+      subtractNoti();
+    }
+  });
+
+
+
+  /*按钮#btn-clear-all-list：清除所有通知*/
+  $('#btn-clear-all-list').on('click', function() {
+    $('.noti-list').velocity("batchRemoveList", { //批量动画
+      stagger: 50,
+      complete: function() {
+        $('#noti-empty').velocity('slideDown', 150);
+        $('.noti-list').remove();
+      }
+    });
+    $('#noti-badge').html(0).velocity({ //角标更新为0并消失
+      scale: 0
+    }, 250);
+    $('.notification.active').removeClass('active'); //铃铛不摇
+  });
+
+
+
+  /*单击通知列表.noti-list，从右侧滑出详情*/
+  $('#noti-pop').on('click', '.noti-list', function() {
+    var that = $(this);
+    $('.noti-all').velocity({ //通知列表滑出动画
+      translateX: "-400px"
+    }, {
+      duration: 250,
+      begin: function() { //动画beforehand:更改定位
+        $(this).removeClass('po-r').addClass('po-a');
+      },
+      complete: function() { //动画callback:移除白色背景，表示已读
+        that.removeClass('card1').addClass('card1-nbg'); //
+      },
+      easing: 'ease'
+    });
+    $('.noti-single').show().velocity({ //通知详情滑入动画
+      translateX: [0, 400]
+    }, {
+      duration: 250,
+      begin: function() { //动画beforehand：更改定位和已读样式
+        $(this).removeClass('po-a card1').addClass('po-r card1-nbg');
+      }
+    });
+    if (that.hasClass('read')) { //如果已读，不做操作
+
+    } else { //如果未读，添加已读标记'.read'，角标减1更新
+      that.addClass('read');
+      subtractNoti();
+    }
+  });
+
+
+
+  /*按钮#btn-backto-noti：从通知详情返回列表*/
+  $('#noti-pop').on('click', '#btn-backto-noti', function() {
+    $('.noti-all').show().velocity('reverse', {
+      duration: 250,
+      begin: function() {
+        $(this).removeClass('po-a').addClass('po-r');
+      },
+    }); //逆向动画
+    $('.noti-single').velocity('reverse', { //逆向动画
+      duration: 250,
+      begin: function() {
+        $(this).removeClass('po-r').addClass('po-a');
+      },
+      complete: function() {
+        $(this).hide()
+      }
+    });
+    if ($('.noti-list').length = 0) {
+      $('#noti-empty').show();
+    } else {
+      $('#noti-empty').hide();
+    }
+  });
+
+</script>
+
+</html>

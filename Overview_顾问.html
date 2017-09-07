@@ -1,0 +1,478 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>总览</title>
+  <link rel="shortcut icon" href="images/logo_favicon.png">
+  <link rel="stylesheet" href="css/main-New.css">
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/components.js"></script>
+</head>
+<body>
+  <header class="header"></header>
+  <div class="content">
+    <div class="card1 w588 fl bdrs2">
+      <div class="card-header">
+        <span class="ic f48 po-a" style="margin-top:-14px"></span><span class="f16 ml40">简历上传榜</span><span>本月 | 总</span>
+        <a href="" class="a f14 fr cb">我的明细</a>
+      </div>
+      <div class="bg-w h332">
+        <table class="bdcl lh46 ta-c">
+          <tr>
+            <th class="w80 pl16">排名</th>
+            <th class="w80">成员</th>
+            <th class="w120">上传简历数</th>
+            <th class="w80">当前成就</th>
+            <th class="w80">等级</th>
+            <th class="w120 pl16">解锁徽章</th>
+          </tr>
+          <tr>
+            <td class="pl16">1</td>
+            <td><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+            <td>890份</td>
+            <td>沉静湖泊</td>
+            <td>1级</td>
+            <td>3枚<img src="images/medal.svg"  class="h30 po-a mt8 ml4" alt=""></td>
+          </tr>
+          <tr>
+            <td class="pl16">1</td>
+            <td><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+            <td>890份</td>
+            <td>沉静湖泊</td>
+            <td>1级</td>
+            <td>3枚<img src="images/medal.svg"  class="h30 po-a mt8 ml4" alt=""></td>
+          </tr>
+          <tr>
+            <td class="pl16">1</td>
+            <td><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+            <td>890份</td>
+            <td>沉静湖泊</td>
+            <td>1级</td>
+            <td>3枚<img src="images/medal.svg"  class="h30 po-a mt8 ml4" alt=""></td>
+          </tr>
+          <tr>
+            <td class="pl16">1</td>
+            <td><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+            <td>890份</td>
+            <td>沉静湖泊</td>
+            <td>1级</td>
+            <td>3枚<img src="images/medal.svg"  class="h30 po-a mt8 ml4" alt=""></td>
+          </tr>
+          <tr>
+            <td class="pl16">1</td>
+            <td><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+            <td>890份</td>
+            <td>沉静湖泊</td>
+            <td>1级</td>
+            <td>3枚<img src="images/medal.svg"  class="h30 po-a mt8 ml4" alt=""></td>
+          </tr>
+        </table>
+        <!--当表格内容为空时，将以下隐藏的div改为显示-->
+        <div class="pt48 hidden">
+          <div class="ic ta-c f96 c3"></div>
+          <p class="c3 ta-c f20">没有待办事项了</p>
+          <p class="c3 ta-c mt8">找点事做？</p>
+        </div>
+      </div>
+    </div>
+    <!--关键指标提醒-->
+    <div class="card1 w588 fl bg-w ml24">
+     
+      <div class="card-header">
+        <span style="margin-right:12px;"><span class="d-ib" style="background-color:#00a388;height:4px;width:18px;position:absolute;margin:4px 0 0 0;"></span><span class="d-ib" style="background-color:red;height:4px;width:12px;"></span></span>关键指标提醒
+      </div>
+      <div id="KPI-monitor" style="overflow-x:auto;overflow-y:auto;max-height:160px">
+        <div class="mt16 p16 f12">
+          <div>
+            <div class="po-r">
+              <div class="fl pb24">
+                <!--月天数表，一个td代表1天，用date-mark标出月份的1、5、10、15、20、25、30号，在当前天加上today-mark,已过去的天td加上class bg-ec-->
+                <table class="bdcl">
+                  <tr class="month-grid-line" style="height:10px;">
+                    <td class="bg-ec"><span class="date-mark">05.01</span></td>
+                    <td class="bg-ec"></td>
+                    <td class="bg-ec"></td>
+                    <td class="bg-ec"></td>
+                    <td class="bg-ec"><span class="date-mark">05.05</span></td>
+                    <td class="bg-ec"></td>
+                    <td class="bg-ec"></td>
+                    <td class="bg-ec"></td>
+                    <td class="bg-ec"></td>
+                    <td class="bg-ec"><span class="date-mark">05.10</span></td>
+                    <td class="bg-ec"></td>
+                    <td class="bg-ec"></td>
+                    <td class="bg-ec"></td>
+                    <td class="bg-ec"></td>
+                    <td class="bg-ec"><span class="date-mark">05.15</span></td>
+                    <td class="bg-ec"></td>
+                    <td class="bg-ec"><span class="today-mark po-a"><span class="ic f24 cb"></span>今天：5月17日</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="date-mark">05.20</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="date-mark">05.25</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="date-mark">05.30</span></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+              <div class="clear"></div>
+            </div>
+
+            <div class="lh30 c2 p8-0 hidden">
+              <div class="fl w136 ta-c lh-n">
+                <p class="f14 mt8 c1 bold">截至今日目标</p>
+              </div>
+              <div class="fl">
+                <div class="d-f">
+                  <div class="w48"></div>
+                  <div>
+                    <!--目标推荐数长度=天数*20px-->
+                    <div class="goal-rec" style="width:calc(17*20px);"></div>
+                  </div>
+                  <div class="goal-actual-differ">目标推荐：20个</div>
+                </div>
+                <div class="d-f">
+                  <div class="w48"></div>
+                  <div>
+                    <!--目标合格数长度=目标推荐长度 * 4/9-->
+                    <div class="goal-ok" style="width:calc(17*20*0.4444px);"></div>
+
+                  </div>
+                  <div class="goal-actual-differ">目标合格：9个</div>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <ul class="c2">
+            <li class="li-no lh30 p8-0">
+              <div class="fl w136 ta-c lh-n">
+                <p class="f14 mt8 c1">骆小根</p>
+                <p class="mt4">武汉猎头业务部</p>
+              </div>
+              <div class="fl">
+                <div class="d-f">
+                  <div class="w48">推荐18</div>
+                  <div>
+                    <div class="goal-rec" style="width:calc(17*15px);"></div>
+
+                    <!--实际推荐长度=实际推荐数/目标推荐数 * 目标推荐长度，当小于1/2目标推荐背景色为红bg-red, 大于1/2但小于1时背景色为黄bg-yl,大于目标推荐时为绿bg-green-->
+                    <div class="actual-rec bg-yl" style="width:calc(18/20*17*15px);"></div>
+                  </div>
+                  <div class="goal-actual-differ">-2个</div>
+                </div>
+                <div class="d-f">
+                  <div class="w48">合格10</div>
+                  <div>
+                    <div class="goal-ok" style="width:calc(17*15*0.4444px);"></div>
+                    <!--实际合格长度=实际合格/目标合格 * 目标合格长度，当小于1/2目标合格背景色为红bg-red, 大于1/2但小于1时背景色为黄bg-yl,大于1时为绿bg-green-->
+                    <div class="actual-ok bg-green" style="width:calc(10/9*17*15*0.4444px);"></div>
+                  </div>
+                  <div class="goal-actual-differ">+1个</div>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+            
+            <li class="li-no lh30 p8-0">
+              <div class="fl w136 ta-c lh-n">
+                <p class="f14 mt8 c1">骆小根</p>
+                <p class="mt4">武汉猎头业务部</p>
+              </div>
+              <div class="fl">
+                <div class="d-f">
+                  <div class="w48">推荐18</div>
+                  <div>
+                    <div class="goal-rec" style="width:calc(17*15px);"></div>
+
+                    <!--实际推荐长度=实际推荐数/目标推荐数 * 目标推荐长度，当小于1/2目标推荐背景色为红bg-red, 大于1/2但小于1时背景色为黄bg-yl,大于目标推荐时为绿bg-green-->
+                    <div class="actual-rec bg-yl" style="width:calc(18/20*17*15px);"></div>
+                  </div>
+                  <div class="goal-actual-differ">-2个</div>
+                </div>
+                <div class="d-f">
+                  <div class="w48">合格10</div>
+                  <div>
+                    <div class="goal-ok" style="width:calc(17*15*0.4444px);"></div>
+                    <!--实际合格长度=实际合格/目标合格 * 目标合格长度，当小于1/2目标合格背景色为红bg-red, 大于1/2但小于1时背景色为黄bg-yl,大于1时为绿bg-green-->
+                    <div class="actual-ok bg-green" style="width:calc(10/9*17*15*0.4444px);"></div>
+                  </div>
+                  <div class="goal-actual-differ">+1个</div>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li class="li-no lh30 p8-0">
+              <div class="fl w136 ta-c lh-n">
+                <p class="f14 mt8 c1">骆小根</p>
+                <p class="mt4">武汉猎头业务部</p>
+              </div>
+              <div class="fl">
+                <div class="d-f">
+                  <div class="w48">推荐18</div>
+                  <div>
+                    <div class="goal-rec" style="width:calc(17*15px);"></div>
+
+                    <!--实际推荐长度=实际推荐数/目标推荐数 * 目标推荐长度，当小于1/2目标推荐背景色为红bg-red, 大于1/2但小于1时背景色为黄bg-yl,大于目标推荐时为绿bg-green-->
+                    <div class="actual-rec bg-yl" style="width:calc(18/20*17*15px);"></div>
+                  </div>
+                  <div class="goal-actual-differ">-2个</div>
+                </div>
+                <div class="d-f">
+                  <div class="w48">合格10</div>
+                  <div>
+                    <div class="goal-ok" style="width:calc(17*15*0.4444px);"></div>
+                    <!--实际合格长度=实际合格/目标合格 * 目标合格长度，当小于1/2目标合格背景色为红bg-red, 大于1/2但小于1时背景色为黄bg-yl,大于1时为绿bg-green-->
+                    <div class="actual-ok bg-green" style="width:calc(10/9*17*15*0.4444px);"></div>
+                  </div>
+                  <div class="goal-actual-differ">+1个</div>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="card1 w588 fl bg-w ml24 mt24">
+      <div class="card-header">
+        <span class="ic f24"></span> <span class="f15">智能推荐<span class="f12 ml16">今日推荐<span class="bold f14 c-ora p0-4">34</span>份</span></span>
+        <a href="" class="a f14 fr cb ho-u">查看全部</a>
+      </div>
+      <div class="h332 ovy-a">
+        <table class="bdcl w100p f12 c1 ta-l lh40 ">
+          <tr class="c2">
+            <th class="pl16 w160">智推职位</th>
+            <th class="w200">客户公司</th>
+            <th class="w72">年薪范围</th>
+            <th class="w72">工作城市</th>
+            <th>智推简历</th>
+          </tr>
+          <tr class="bdt1 ho-ec">
+            <td class="pl16"><span class="ol w136">高级Java开发工程师</span></td>
+            <td><span class="ol w186">深圳市萨摩耶互联网金融有限公司</span></td>
+            <td>20~35万</td>
+            <td>深圳</td>
+            <td><a href="" class="a c1"><span class="c-ora bold f14 mr4">5</span>份未查看</a></td>
+          </tr>
+      </table>
+      <!--空状态： 没有未读的智推简历-->
+       <div id="ai-recommend-empty-state" class="hidden ta-c pt48">
+         <div class="ic ta-c f96 c-c mt8"></div>
+          <p class="c3 ta-c f18">没有未读的智推简历</p>
+       </div>
+      
+      </div>
+    </div>
+    <div class="card1 w588 fl bg-w mt-212">
+      <div class="card-header">
+        <span class="ic f24"></span> <span class="f16">Pipeline </span>
+        <a href="" class="a f14 fr cb ho-u">查看全部</a>
+      </div>
+      <div class="h172 p1232">
+        <div class="mt8">
+          <a href="" class="a2 ho-ec fl ta-c w104 p4-088">
+            <div class="bold f24 cb">40</div>
+            <div class="ic f24 c2 pt8"></div>
+            <div class="f14 c1">加入</div>
+            <span class="r-chev"></span>
+          </a>
+          <a href="" class="a2 ho-ec fl ta-c w104 p4-088">
+            <div class="bold f24 cb">12</div>
+            <div class="ic f24 c2 pt8"></div>
+            <div class="f14 c1">推荐</div>
+            <span class="r-chev"></span>
+          </a>
+          <a href="" class="a2 ho-ec fl ta-c w104 p4-088">
+            <div class="bold f24 cb">8</div>
+            <div class="ic f24 c2 pt8"></div>
+            <div class="f14 c1">面试</div>
+            <span class="r-chev"></span>
+          </a>
+          <a href="Pipeline.html#tab6" class="a2 ho-ec fl ta-c w104 p4-088">
+            <div class="bold f24 cb">2</div>
+            <div class="ic f24 c2 pt8"></div>
+            <div class="f14 c1">Offer</div>
+            <span class="r-chev"></span>
+          </a>
+          <a href="" class="a2 ho-ec fl ta-c w104 p4-088">
+            <div class="bold f24 cb">1</div>
+            <div class="ic f24 c2 pt8"></div>
+            <div class="f14 c1">入职</div>
+          </a>
+          <div class="clear"></div>
+        </div>
+        <div class="ta-c pt8 bdt1-d">
+          <a href="" class="a2 fl w262 ho-ec"><span class="ic f24 c2"></span> <span class="f14 c1">不合适</span> <span class="bold f24 c3 va-2">20</span></a>
+          <a href="" class="a2 fl w262 ho-ec"><span class="ic f24 c2"></span> <span class="f14 c1">发票</span> <span class="bold f24 cb va-2">3</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="card1 w100p fl bg-w mt24">
+      <div class="card-header">
+        <span class="ic f24"></span> <span class="f16">月报表</span>
+      </div>
+      <div>
+        <div class="fl p16-50">
+          <div class="progress-pie-chart" id="piechart-1" data-percent="40">
+            <div class="ppc-progress">
+              <div class="ppc-progress-fill"></div>
+            </div>
+            <div class="ppc-percents">
+              <div class="pcc-percents-wrapper">
+                <span>%</span>
+              </div>
+            </div>
+          </div>
+          <div class="f14 cb ta-c po-a w200 mt-160">已推荐：<span class="bold">24</span>个</div>
+          <div class="f14 c1 ta-c po-a w200 mt-64">目标：<span class="bold">60</span>个</div>
+        </div>
+        <div class="fl p16-50">
+          <div class="progress-pie-chart" id="piechart-2" data-percent="27">
+            <div class="ppc-progress">
+              <div class="ppc-progress-fill"></div>
+            </div>
+            <div class="ppc-percents">
+              <div class="pcc-percents-wrapper">
+                <span>%</span>
+              </div>
+            </div>
+          </div>
+          <div class="f14 cb ta-c po-a w200 mt-160">已面试：<span class="bold">4</span>个</div>
+          <div class="f14 c1 ta-c po-a w200 mt-64">目标：<span class="bold">15</span>个</div>
+        </div>
+        <div class="fl p16-50">
+          <div class="progress-pie-chart" id="piechart-3" data-percent="33">
+            <div class="ppc-progress">
+              <div class="ppc-progress-fill"></div>
+            </div>
+            <div class="ppc-percents">
+              <div class="pcc-percents-wrapper">
+                <span>%</span>
+              </div>
+            </div>
+          </div>
+          <div class="f14 cb ta-c po-a w200 mt-160">已Offer：<span class="bold">1</span>个</div>
+          <div class="f14 c1 ta-c po-a w200 mt-64">目标：<span class="bold">3</span>个</div>
+        </div>
+        <div class="fl p16-50">
+          <div class="progress-pie-chart" id="piechart-4" data-percent="75">
+            <div class="ppc-progress">
+              <div class="ppc-progress-fill"></div>
+            </div>
+            <div class="ppc-percents">
+              <div class="pcc-percents-wrapper">
+                <span>%</span>
+              </div>
+            </div>
+          </div>
+          <div class="f14 cb ta-c po-a w200 mt-160">完成业绩：<span class="bold">6.0万</span></div>
+          <div class="f14 c1 ta-c po-a w200 mt-64">目标：<span class="bold">8.0万</span></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</body>
+<script>
+  /*-----今日待办 勾选完成效果----*/
+  $("#check1").click(function(e) {
+    var tr = $(this).parent().parent()
+    tr.addClass("td-l");
+    window.setTimeout(function() {
+      $("#check1").parent().parent().children().velocity("fadeOut", {
+        duration: 250,
+        easing: "easeOutCubic"
+      }).remove
+    }, 300)
+  });
+  /*-----备注 拂过预览效果-----*/
+  $("#h-note1").mouseenter(function(e) {
+    $("#h-note1 p").velocity("fadeIn", {
+      duration: 300
+    })
+  });
+  $("#h-note1").mouseleave(function(e) {
+    $("#h-note1 p").velocity("fadeOut", {
+      duration: 200
+    })
+  });
+  /*--选中总览--*/
+  //$("#overview").addClass("nav-a-selected");
+  /*--“新增”和“账号”拂过展开下拉菜单*/
+  $("#add").mouseenter(function(e) {
+    $("#add ul").show()
+  });
+  $("#add").mouseleave(function(e) {
+    $("#add ul").hide()
+  });
+  $("#account").mouseenter(function(e) {
+    $("#account ul").show()
+  });
+  $("#account").mouseleave(function(e) {
+    $("#account ul").hide()
+  });
+
+</script>
+
+<script>
+  /*--饼状图--*/
+  $(function() {
+    var $ppc = $('#piechart-1'),
+      percent = parseInt($ppc.data('percent')),
+      deg = 360 * percent / 100;
+    if (percent > 50) {
+      $ppc.addClass('gt-50');
+    }
+    $('#piechart-1 .ppc-progress-fill').css('transform', 'rotate(' + deg + 'deg)');
+    $('#piechart-1 .ppc-percents span').html(percent + '%');
+  });
+  /*--以下是重复,id不同--*/
+  $(function() {
+    var $ppc = $('#piechart-2'),
+      percent = parseInt($ppc.data('percent')),
+      deg = 360 * percent / 100;
+    if (percent > 50) {
+      $ppc.addClass('gt-50');
+    }
+    $('#piechart-2 .ppc-progress-fill').css('transform', 'rotate(' + deg + 'deg)');
+    $('#piechart-2 .ppc-percents span').html(percent + '%');
+  });
+  $(function() {
+    var $ppc = $('#piechart-3'),
+      percent = parseInt($ppc.data('percent')),
+      deg = 360 * percent / 100;
+    if (percent > 50) {
+      $ppc.addClass('gt-50');
+    }
+    $('#piechart-3 .ppc-progress-fill').css('transform', 'rotate(' + deg + 'deg)');
+    $('#piechart-3 .ppc-percents span').html(percent + '%');
+  });
+  $(function() {
+    var $ppc = $('#piechart-4'),
+      percent = parseInt($ppc.data('percent')),
+      deg = 360 * percent / 100;
+    if (percent > 50) {
+      $ppc.addClass('gt-50');
+    }
+    $('#piechart-4 .ppc-progress-fill').css('transform', 'rotate(' + deg + 'deg)');
+    $('#piechart-4 .ppc-percents span').html(percent + '%');
+  });
+
+</script>
+
+</html>

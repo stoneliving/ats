@@ -1,0 +1,330 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>新增公司</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/cityselect.css">
+<link rel="stylesheet" href="css/select2.css">
+<script src="js/cityselect.js"></script>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+</style>
+</head>
+
+<body class="bg-ec pb24">
+<div class="po-f t0 ml-434 l50p z99">
+  <div class="h64 bg-db w868 m-a bxsh0-2-5">
+    <div class="lh64 cw bold f20 ml24 fl"><span class="ic f24 fw-n"></span> 新增公司</div>
+    <div class="fr bg-w cb p4-16 bdrs2 mr24 mt24 f14 cu-po ho-1f">发布</div>
+    <div class="fr bg-w cb p4-16 bdrs2 mr16 mt24 f14 cu-po ho-red" onClick="window.close()">取消</div>
+  </div>
+</div>
+<div class="w868 m-a mt80">
+  <div class="mt24 card1-nbg p24 f14 bg-f7" id="Parent">
+    <div class="mt16">
+      <span class="c2 bold">状态<span class="red po-a mt-5">*</span>：</span>
+      <span class="ml12">
+        <input type="radio" checked name="pipe-stat" id="qianzai">
+        <label for="qianzai"></label>
+        <span class="c1">潜在客户</span>
+      </span>
+      <span class="ml12">
+        <input type="radio" name="pipe-stat" id="yixiang">
+        <label for="yixiang"></label>
+        <span class="c1">意向客户</span>
+      </span>
+      <span class="ml12">
+        <input type="radio" name="pipe-stat" id="tanpan">
+        <label for="tanpan"></label>
+        <span class="c1">签约谈判</span>
+      </span>
+      <span class="ml12">
+        <input type="radio" name="pipe-stat" id="yiqian">
+        <label for="yiqian"></label>
+        <span class="c1">已签约</span>
+      </span>
+      <span class="ml12 pl16 bdl1">
+        <input type="radio" name="pipe-stat" id="kehuchi">
+        <label for="kehuchi"></label>
+        <span class="c1">客户池</span>
+      </span>
+    </div>
+    <div class="bg-ec f16 c1 bold p4-8 bdl5 mt24">附件</div>
+    <label class="label d-ib card1 cb mt16 p816 bdrs2 ho-blue cu-po ml12 trans ho-sh"><input type="file"><span class="ic f24"></span><span>上传附件</span></label>
+    <div class="bg-ec f16 c1 bold p4-8 bdl5 mt24">公司信息</div>
+    <div class="mt16 p0-16">
+      <div class="fl lh46 w360">
+        <div>
+          <span class="d-ib w80 c2">公司名称<span class="red po-a mt-5">*</span>：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div>
+          <span class="d-ib w80 c2">发票抬头：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div>
+          <span class="d-ib w80 c2">城市<span class="red po-a mt-5">*</span>：</span>
+          <input type="text" id="citySelect1" class="w240 p8 h32">
+        </div>
+        <div>
+          <span class="d-ib w80 c2">行业<span class="red po-a mt-5">*</span>：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div>
+          <span class="d-ib w80 c2">电话：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div>
+          <span class="d-ib w80 c2">网址：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+      </div>
+      <div class="fl lh46">
+        <div>
+          <span class="d-ib w80 c2">公司性质：</span>
+          <select name="" id="select-cnature" class="select-con w240">
+            <option></option>            
+            <option>私营/民营企业</option>
+            <option>国内上市公司</option>
+            <option>国有企业</option>
+            <option>中外合营（合资/合作）</option>
+            <option>外商独资/外企办事处</option>
+            <option>政府机关/非盈利机构</option>
+            <option>事业单位</option>
+            <option>其他</option>
+            <option></option>
+          </select>
+          <script>
+          /*公司性质select实例化*/
+$('#select-team,#select-status,#select-cnature,#select-csize').select2({
+  minimumResultsForSearch: Infinity,
+  placeholder: '',
+});
+          </script>
+        </div>
+        <div>
+          <span class="d-ib w80 c2">公司规模：</span>
+          <select name="" id="select-csize" class="select-con w240">
+            <option></option>            
+            <option>1~49人</option>
+            <option>50~99人</option>
+            <option>100~499人</option>
+            <option>500~999人</option>
+            <option>1000~2000人</option>
+            <option>2000~5000人</option>
+            <option>5000~10000人</option>
+            <option>10000人以上</option>
+          </select>
+          <script>
+$('#select-team,#select-status,#select-cnature,#select-csize').select2({
+  minimumResultsForSearch: Infinity,
+  placeholder: '',
+});
+          </script>
+        </div>
+        <div>
+          <span class="d-ib w80 c2">经营状态：</span>
+          <select name="" id="select-status" class="w240">
+            <option></option>
+            <option>在营</option>
+            <option>倒闭</option>
+          </select>
+        </div>
+        <script>
+        $('#select-status').select2({placeholder:'',minimumResultsForSearch:Infinity});
+        </script>
+        <div><span class="d-ib w86 c2">加入文件夹：</span>
+          <span class="d-ib ml-6">
+            <input id="tofolder" type="text" class="w240 p8 h32">
+            <div id="div-changefolder" class="note hidden" style="margin-top:0px;">
+              <div>
+               <div class="fl w86 c2">选择文件夹：</div>
+               <div class="here-ul fl bg-w w184 p8 clear">
+                 <ul id="talfolder-source" class="mh168 ovy-a"><!--全页面的人才库文件夹管理-->
+                   <li class="folder-select li-no lh30 ho-ec ho-cb cu-po"><span class="ic f20 cf6 mr4"></span><span>默认文件夹</span></li>
+                   <li id="newfolder" class="folder-select li-no lh30 hidden ho-ec ho-cb cu-po"><span class="ic f20 cf6 mr4"></span><input type="text" onKeyUp="confirmFolder(event)" onBlur="" class="w120 pl4 lh24"></li>
+                   <li class="li-no lh30"><span class="addfolder cu-po cb"><span class="ic f24"></span>新增文件夹</span></li>
+                 </ul>
+               </div>
+               <div class="clear"></div>
+              </div>
+              <div class="bdt1-d">
+                <span class="fr pt8">
+                  <span class="cfolder-cancel ho-u c2 cu-po">取消</span>
+                  <span class="cfolder-confirm ml16 cb bold cu-po ho-u">确认</span>
+                </span>
+                <div class="clear"></div>
+              </div>
+            </div>
+          </span>
+        </div>
+<script>
+/*--单击加入文件夹输入框--*/
+$('#tofolder').on('focus',function(){
+	$('#div-changefolder').show();
+	});
+$(document).on('click',function(){
+	if(!$(event.target).closest('#div-changefolder').length&&!$(event.target).closest('#tofolder').length){$('#div-changefolder').hide()}
+	});	
+/*--新建文件夹、选择文件夹功能--*/
+function confirmFolder(e) {
+  var input = $('input:focus');
+  var text = input.val();
+  if (e.keyCode == 13) {
+    $('.folder-select').removeClass('bg-b cw').addClass('ho-cb ho-ec');
+    input.parent().removeClass('ho-cb ho-ec').addClass('bg-b cw');
+    input.replaceWith('<span>'+text+'</span>');
+  }
+};
+$('.addfolder').on('click', function() {
+  var that =$(this);
+  var folderForClone = that.parent().siblings('#newfolder'); 
+  var newfolder = $(folderForClone).clone();
+  newfolder.removeAttr('id');
+  newfolder.css({
+    'display': 'block'
+  });
+  newfolder.insertBefore($(folderForClone));
+  newfolder.children('input').focus();
+});
+$(document).on('click', '.folder-select', function() {
+  $(this).siblings('.folder-select').removeClass('bg-b cw').addClass('ho-cb ho-ec');
+  $(this).removeClass('ho-cb ho-ec').addClass('bg-b cw');
+});
+/*--更改文件夹功能--*/
+$('.cfolder-confirm').on('click',function(){
+	var newFolderName = $('#talfolder-source .bg-b span:last-child').html();
+	$('#tofolder').val(newFolderName);
+	$('#div-changefolder').hide();
+	});
+$('.cfolder-cancel').on('click',function(){
+	$(this).parents('.note').hide();
+	});	
+</script>
+        <div>
+          <span class="d-ib w80 c2">负责BD：</span>
+           <select name="" id="select-bd" class="select-position w240">
+             <option value="-1"></option>
+             <optgroup label="凤凰队">
+               <option value="">张</option>
+               <option value="">王</option>
+               <option value="">李</option>
+             </optgroup>  
+             <optgroup label="热火队">
+               <option value="">赵</option>
+               <option value="">刘</option>
+             </optgroup>  
+             <optgroup label="麒麟队">
+               <option value="">邓</option>
+               <option value="">周</option>
+             </optgroup>  
+           </select>
+        </div>
+     <script>
+	 /*BD选择实例化*/
+     $('#select-bd').select2({
+  minimumResultsForSearch: Infinity,
+  placeholder: {
+    id: '-1', // the value of the option
+    text: ''
+  }
+		 });
+     </script>
+      </div>
+      <div class="clear lh46">
+        <div>
+          <span class="d-ib w80 c2">地址：</span>
+          <input type="text" class="w360 p8 h32">
+        </div>
+        <div class="c2 fl">公司简介：</div>
+        <div class="fl ml14 mt8">
+          <textarea name="" id="" class="w700 h240 p8 lh24 wh-pw" ></textarea>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div id="scrollto" class="bg-ec f16 c1 bold p4-8 bdl5 mt24">联系人
+      <span id="btn-addcontact" class="fr ic f24 fw-n bg-b cw bdrs12 cu-po trans ho-sh"></span>
+    </div>
+    <div class="contact">
+      <div class="mt16 p0-16">
+        <div class="fl lh46 w360">
+          <div><span class="d-ib w80 c2">姓名<span class="red po-a mt-5">*</span>：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+          <div><span class="d-ib w80 c2">性别：</span>
+            <span>
+              <input type="radio" name="gender" id="radio-male">
+              <label for="radio-male" class="lh24"></label>
+              <span class="c2">男</span>
+            </span>
+            <span class="ml24">
+              <input type="radio" name="gender" id="radio-female">
+              <label for="radio-female" class="lh24"></label>
+              <span class="c2">女</span>
+            </span>
+          </div>
+          <div><span class="d-ib w80 c2">职位<span class="red po-a mt-5">*</span>：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+          <div><span class="d-ib w80 c2">状态：</span>
+            <span>
+              <input type="radio" name="status" id="zaizhi">
+              <label for="zaizhi" class="lh24"></label>
+              <span class="c2">在职</span>
+            </span>
+            <span class="ml24">
+              <input type="radio" name="status" id="lizhi">
+              <label for="lizhi" class="lh24"></label>
+              <span class="c2">离职</span>
+            </span>
+          </div>
+          <div><span class="d-ib w80 c2">电话<span class="red po-a mt-5">*</span>：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+          <div><span class="d-ib w80 c2">邮箱：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+        </div>
+        <div class="fl lh46">
+          <div><span class="d-ib w80 c2">QQ：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+          <div><span class="d-ib w86 c2">微信：</span>
+            <input type="text" class="w240 p8 h32 ml-6">
+          </div>
+          <div><span class="d-ib fl w80 c2">备注：</span>
+          <div class="fl mt8 ml4">
+            <textarea name="" id="" class="w240 h150 p8 lh24 wh-pw" ></textarea>
+          </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+/*--新增和删除联系人--*/
+var IDindex = 0;
+$('#btn-addcontact').click(function(e) {
+	IDindex++;
+    $('<div class="mt16 p24-16 bdb1-d"> <div class="fl lh46 w360"> <div><span class="d-ib w80 c2">姓名<span class="red po-a mt-5">*</span>：</span> <input type="text" class="w240 p8 h32"> </div> <div><span class="d-ib w80 c2">性别：</span> <span> <input type="radio" name="gender'+IDindex+'" id="radio-male'+IDindex+'"> <label for="radio-male'+IDindex+'" class="lh24"></label> <span class="c2">男</span> </span> <span class="ml24"> <input type="radio" name="gender'+IDindex+'" id="radio-female'+IDindex+'"> <label for="radio-female'+IDindex+'" class="lh24"></label> <span class="c2">女</span> </span> </div> <div><span class="d-ib w80 c2">职位<span class="red po-a mt-5">*</span>：</span> <input type="text" class="w240 p8 h32"> </div> <div><span class="d-ib w80 c2">状态：</span> <span> <input type="radio" name="status'+IDindex+'" id="zaizhi'+IDindex+'"> <label for="zaizhi'+IDindex+'" class="lh24"></label> <span class="c2">在职</span> </span> <span class="ml24"> <input type="radio" name="status'+IDindex+'" id="lizhi'+IDindex+'"> <label for="lizhi'+IDindex+'" class="lh24"></label> <span class="c2">离职</span> </span> </div> <div><span class="d-ib w80 c2">电话<span class="red po-a mt-5">*</span>：</span> <input type="text" class="w240 p8 h32"> </div> <div><span class="d-ib w80 c2">邮箱：</span> <input type="text" class="w240 p8 h32"> </div> </div> <div class="fl lh46"> <div><span class="d-ib w80 c2">QQ：</span> <input type="text" class="w240 p8 h32"> </div> <div><span class="d-ib w86 c2">微信：</span> <input type="text" class="w240 p8 h32 ml-6"> </div> <div><span class="d-ib fl w80 c2">备注：</span> <div class="fl mt8 ml4"> <textarea name="" id="" class="w240 h150 p8 lh24 wh-pw"></textarea> </div> </div> </div> <div class="btn-delcon fr ic f24 c3 mt8 ho-cr cu-po"></div> <div class="clear"></div> </div>').prependTo('.contact');
+	window.setTimeout(function(){$('#scrollto').velocity("scroll",{duration:600})},300);
+});
+$('.contact').on('click','.btn-delcon',function(){
+	$(this).parent().velocity("slideUp",{duration:200,easing:"easeOutCubic",complete:function(){$(this).remove();}})
+	});
+</script>
+<script>
+/*--城市选择实例化--*/
+var currentcity=new Vcity.CitySelector({input:'citySelect1'});
+/*--下拉框select实例化--*/
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>公司详情</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<style>
+</style>
+</head>
+
+<body>
+<button onclick="notifyMe()">Notify me!</button>
+</body>
+<script>
+// request permission on page load
+document.addEventListener('DOMContentLoaded', function () {
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+});
+
+function notifyMe() {
+  if (!Notification) {
+    alert('Desktop notifications not available in your browser. Try Chromium.'); 
+    return;
+  }
+
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+  else {
+    var notification = new Notification('你有一条新消息', {
+      icon: 'images/notify-icon.png',
+      body: "邮件主题",
+    });
+
+    notification.onclick = function () {
+      window.open("http://www.yotujob.com");      
+    };
+    
+  }
+
+}
+</script>
+</html>

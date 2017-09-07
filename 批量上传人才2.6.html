@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>批量上传人才</title>
+  <link rel="shortcut icon" href="images/logo_favicon.png">
+  <link rel="stylesheet" href="css/main-New.css">
+  <link rel="stylesheet" href="css/select2.css">
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/jquery-scrolltofixed-min.js"></script>
+  <script src="js/components.js"></script>
+</head>
+<style>
+  .success-background{
+    background-image: url(images/waterplants.png);height:200px;background-size: contain;background-repeat: no-repeat;background-position:center;background-color: #4285f4;
+  }  
+  </style>
+<body>
+  <div class="card1" style="margin:30px auto 40px auto;width: 868px;">
+    <div descript="上传成功" class=" ta-c">
+      <div class="success-background" ></div>
+      <div class="ic f96 c-gr"></div>
+      <h2 class="fw-n c-gr ">成功上传<span class="bold f32 p0-4">53</span>份简历</h2>
+      <p class="mt8">感谢你提升了仕通人才库质量！</p>
+      <div class="mt16"><img src="images/medal.svg" alt=""></div>
+      <p class="f14 c3 mt16">你已累计上传860份简历，当前成就：<a href="链接到人才排行榜" class="a cb">沉静湖泊</a></p>
+      <p class="f14 c3 mt8">再上传120份简历解锁下级成就</p>
+      <div class="ta-c mt16"><span class="btn-flat-b">继续上传简历</span></div>
+    </div>
+    <div descript="正在上传" class="p24">
+      <h1 class="fw-n f24">批量上传人才</h1>
+      <div style="border:2px dashed #2196f3;height: 200px;margin:24px">
+        <!--此处为上传控件-->
+      </div>
+      <p class="c-c ta-c f12 mt-12">仅限导入3M以下，html、htm、doc、docx、pdf、mht、txt格式的简历文件<br>单次最多导入100份</p>
+    </div>
+    <div descript="上传解析结果" class="p24 ">
+      <h2 class="fw-n f14">
+        <div descript="进展状态1">正在上传简历文件...<span class="c3 f12">（请不要关闭当前页面）</span></div>
+        <div descript="进展状态2" class="hidden">文件上传已完成，正在解析中...<span class="c3 f12">（可以关闭当前页面，不会影响后台解析）</span></div>
+      </h2>
+      <div class="mt16"><span class="btn-flat-b" id="btn-batch-addPos">批量加入职位</span></div>
+      <table class="bdcl lh46 ta-l f12">
+        <tr>
+          <th class="w60 ta-c"><input type="checkbox" id="checkAll"><label for="checkAll" class="lh-n fw-n"></label></th>
+          <th class="w300">文件</th>
+          <th class="w80">大小</th>
+          <th class="w360">状态</th>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="ta-c"><input type="checkbox" id="chk-file1"><label for="chk-file1" class="lh-n"></label></td>
+          <td><span class="fileicon others"></span><span class="fileicon jpg"></span><span class="fileicon pdf"></span><span class="fileicon doc"></span><span class="fileicon xls"></span><span class="fileicon ppt"></span><span class="fileicon txt"></span><span class="fileicon html"></span></td>
+          <td>365KB</td>
+          <td>解析中...</td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="ta-c"><input type="checkbox" id="chk-file2"><label for="chk-file2" class="lh-n"></label></td>
+          <td><span class="fileicon doc"></span><span>某某的简历.docx</span></td>
+          <td>365KB</td>
+          <td><span class="ic f18 c-gr"></span><span>上传成功，<a href="" class="a cb">查看该简历</a></span></td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="ta-c"><input type="checkbox" id="chk-file3"><label for="chk-file3" class="lh-n"></label></td>
+          <td><span class="fileicon"></span><span>某某的简历.docx</span></td>
+          <td>365KB</td>
+          <td><span class="ic f18 red"></span><span class="red">上传失败，联系方式（电话或邮箱）不能为空</span></td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="ta-c"><input type="checkbox" id="chk-file4"><label for="chk-file4" class="lh-n"></label></td>
+          <td><span class="fileicon"></span><span>某某的简历.docx</span></td>
+          <td>365KB</td>
+          <td><span class="ic f18 red"></span><span class="red">上传失败，无法解析该文件</span></td>
+        </tr>
+      </table>
+    </div>
+    <div descript="解析结果-空状态" class="ta-c pb48">
+      <div class="ic f96 c-d"></div>
+      <p class="c3">随时随地，我的云端人才库</p>
+      <ul class="c3 f12 lh30 mt16">
+        <li class="li-no"><span class="ic f18 cb mr4"></span>全文搜索：可以对简历全文进行搜索，有效利用闲置简历</li>
+        <li class="li-no"><span class="ic f18 cb mr4"></span>原件预览：若对解析后的简历有疑问，可随时预览原文件</li>
+        <li class="li-no"><span class="ic f18 cb mr4"></span>下载原件：简历文件将会存储在云端，随时随地可以下载</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!--批量上传弹窗-->
+  <div id="popup-batch-addPos" class="hidden">
+    <div class="popup-wrapper">
+      <div class="popup-container">
+        <div class="popup-header">批量加入职位</div>
+        <div class="popup-content">
+          <div>
+          <span class="mr16">将选中的<span>16</span>个人才加入职位</span>
+          <select name="" id="select-pos" class="w200">
+            <optgroup label="公司A">
+              <option value="">职位1</option>
+              <option value="">职位2</option>
+            </optgroup>
+          </select>
+          <span class="btn-flat-b ml24">确认加入</span>
+          </div>
+          <table class="bdcl ta-l f12 lh40 mt16">
+            <tr>
+              <th class="w40"></th>
+              <th class="w120">选中的人才</th>
+              <th class="w400">加入职位结果</th>
+            </tr>
+            <tr class="bdt1">
+              <td class="ta-c">1.</td>
+              <td><a href="" class="a cb">王精英.doc</a></td>
+              <td><span class="c-c"><span class="ic f18"></span>未选择职位</span></td>
+            </tr>
+            <tr>
+              <td class="ta-c">1.</td>
+              <td><a href="" class="a cb">王精英.doc</a></td>
+              <td><span><span class="ic f18 c-gr"></span>已成功加入职位：【某某职位】</span></td>
+            </tr>
+            <tr>
+              <td class="ta-c">1.</td>
+              <td><a href="" class="a cb">王精英.doc</a></td>
+              <td><span><span class="ic f18 red"></span>加入职位失败：该人选已存在，处于【骆小根】的项目关键流程</span></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span id="btn-close-popup" class="btn-flat-b">关闭</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+//调用文件类型图标，在共用方法components.js，List库模块有用到  
+//  fileIcon(); 
+
+
+//单击单行列表复选框
+  $(document).on('click', '[id^="chk-"]', function() { 
+    var checked = $(this).is(':checked'); //判断当前行是否已被选中
+    if (checked) {
+      $(this).parents('tr').removeClass('ho-ec').addClass('selected-bg'); //若取消选中则 恢复正常样式
+    } else {
+      $(this).parents('tr').addClass('ho-ec').removeClass('selected-bg'); //若选中则增加选中样式
+    }
+  });
+
+//单击全选复选框
+  $('#checkAll').on('click', function() { 
+    var checked = $(this).is(':checked'); //判断是否已经全选
+    if (checked) {
+      $('[id^="chk-"]').prop('checked', true).parents('tr').removeClass('ho-ec selected-bg').addClass('selected-bg'); //取消全选,恢复正常样式
+    } else {
+      $('[id^="chk-"]').prop('checked', false).parents('tr').removeClass('ho-ec selected-bg').addClass('ho-ec'); //全选，增加选中样式
+    }
+  });
+  
+  
+  /*批量加入职位弹窗*/
+  $('#btn-batch-addPos').on('click',function(){
+    //必须选中解析有效的简历，否则提示“请先选择有效的简历”
+    popin('#popup-batch-addPos');
+  });
+  
+  /*初始化下拉选择职位*/
+  $('#select-pos').select2({placeholder:'请选择职位'});
+
+  
+  /*关闭弹窗*/
+  $('#btn-close-popup').on('click',function(){
+    popout('#popup-batch-addPos');
+  });
+</script>
+
+</html>

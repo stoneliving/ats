@@ -1,0 +1,1948 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>人才详情</title>
+  <link rel="shortcut icon" href="images/logo_favicon.png">
+  <link rel="stylesheet" href="css/main-New.css">
+  <link rel="stylesheet" href="css/cityselect.css">
+  <link rel="stylesheet" href="js/ori-select2/select2.min.css">
+  <!--<link rel="stylesheet" href="css/select2.css">-->
+  <link rel="stylesheet" href="css/autocomplete.css">
+  <link rel="stylesheet" href="css/datepicker.css">
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!--<script src="js/select2.min.js"></script>-->
+  <script src="js/ori-select2/select2.full.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/cityselect.js"></script>
+  <script src="js/jquery.autocomplete.min.js"></script>
+  <script src="js/datepicker.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/sticky-kit.min.js"></script>
+</head>
+
+<body class="bg-ec">
+  <div class="header-2ndpage">
+    <h2 class="cw pl16 fw-n" style="line-height: 52px;"><span class="ic f32 fw-n mr4"></span>人才详情页</h2>
+  </div>
+  <div class="content">
+    <div class="fl w868">
+      <div class="card1 p1016">
+        <div class="ic ca7 fl f64 bd1-e0"></div>
+        <div class="fl ml16">
+          <div class="mt4"> <span class="c1 bold f15 pr8">王精英</span> <span class="bold c1">ID12345678</span> <span class="cw bdrs2 bg-b p0-4 f14">MPC</span> <span class="bg-b f14 cw p0-4 bdrs2">看机会</span> </div>
+          <div class="c3 f14 mt16"> 输入者： <span>系统</span> <span class="ml16">2016-05-10 11:25</span> <span class="ml16">系统录入</span> </div>
+        </div>
+        <div class="fr mt4">
+          <div class="fl p4-16 w80 ta-c cu-po ho-sh1 c2 ho-cb hidden"> <span class="ic f32"></span>
+            <p class="mt8"><span class="f14">未获取</span></p>
+          </div>
+          <div class="fl w72 p4-16 ta-c cu-po ho-sh1 c2 ho-cb"> <span class="ic f32"></span>
+            <p class="mt8"><span class="f14">附件</span><span class="cb bold f16">0</span></p>
+          </div>
+          <div class="fl w72 p4-16 ta-c cu-po ho-sh1 c2 ho-cb"> <span class="ic f32"></span>
+            <p class="mt8"><span class="f14">操作</span></p>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="mt16 f14">
+        <div>
+          <div class="tab fl c2 ta-c p8 cu-po bd-3 bg-w" data-id="#tab1"> <span class="ic f24"></span> <span><span class="bold pr4">4</span>简历</span>
+          </div>
+          <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab2"> <span class="ic f24"></span> <span><span class="bold pr4">2</span>职位</span>
+          </div>
+          <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab3"> <span class="ic f24"></span> <span><span class="bold pr4">2</span>偏好</span>
+          </div>
+          <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab4"> <span class="ic f24"></span> <span><span class="bold pr4">1</span>待办</span>
+          </div>
+          <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab5"> <span class="ic f24"></span> <span><span class="bold pr4">4</span>备注</span>
+          </div>
+          <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab6"> <span class="ic f24"></span> <span><span class="bold pr4">3</span>日志</span>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="card1 c1">
+          <div id="tab1" class=" tabs">
+            <div>
+              <div id="btn-editcv" class="card1 fr f14 p816 cb ho-blue cu-po mt16 ml16 mr24 trans ho-sh"> <span class="ic f24 ml-5"></span> 编辑当前简历 </div>
+              <div id="btn-addcv" class="card1 fr f14 p816 cb ho-blue cu-po mt16 trans ho-sh"> <span class="ic f24 ml-5"></span> 新增简历 </div>
+              <div class="clear"></div>
+            </div>
+            <div class="lh36 pl24"> <span data-showID="#cv-t1" class="cv-t p816 bdt3-b">默认简历</span> <span data-showID="#cv-t2" class="cv-t p816 ho-cb cu-po">原始简历</span> </div>
+
+            <div class="bdt1 mt-1"></div>
+            <div id="edit-cv" class="hidden p24 bg-f7">
+              <div id="stickToTop" class="po-r z150">
+                <div id="edit-cv-save" class=" bg-b fr f14 p4-16 cw ho-1f cu-po bdrs2 ml24 trans"> <span class="ic f24 ml-5"></span> 保存 </div>
+                <div id="edit-cv-cancel" class=" fr bg9e f14 p4-16 cw cu-po ml40 bdrs2 trans"> <span class="ic f24 ml-5"></span> 取消 </div>
+              </div>
+              <script>
+                /*滚动页面时保持取消编辑cv和保存编辑cv在顶部*/
+                $('#stickToTop').stick_in_parent().on("sticky_kit:stick", function(e) {
+                    $('#edit-cv-save,#edit-cv-cancel').addClass('card5-nbg');
+                  })
+                  .on("sticky_kit:unstick", function(e) {
+                    $('#edit-cv-save,#edit-cv-cancel').removeClass('card5-nbg');
+                  });
+
+              </script>
+              <div class="bg-ec f16 c1 bold p4-8 bdl5">附件</div>
+              <div class="mt8 p0-16">
+                <div class="fl lh46 w360">
+                  <div> <span class="d-ib w80 c2">简历解析：</span>
+                    <label class="label d-ib card1 cb bg-b mt16 p816 bdrs2 ho-blue cu-po ml12 lh-n trans ho-sh">
+                    <input type="file">
+                    <span class="ic f24"></span><span>上传附件</span></label>
+                    <span class="d-ib card1 cb bg-b mt16 p816 bdrs2 ho-blue cu-po ml12 lh-n trans ho-sh" id="btn-paste"><span class="ic f24 pr4"></span><span>粘贴文本</span></span>
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div> <span class="d-ib w80 c2">照片：</span>
+                    <label class="label d-ib card1 cb bg-b mt16 p816 bdrs2 ho-blue cu-po ml12 lh-n trans ho-sh">
+                    <input type="file">
+                    <span class="ic f24"></span><span>上传照片</span></label>
+                  </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="bg-ec f16 c1 bold p4-8 bdl5 mt24">个人信息</div>
+              <div class="mt16 p0-16">
+                <div class="fl lh46 w360">
+                  <div><span class="d-ib w80 c2">姓名<span class="red po-a mt-5">*</span>：</span>
+                    <input type="text" class="w240 p8 h32" value="王精英">
+                  </div>
+                  <div><span class="d-ib w80 c2">性别：</span> <span>
+                  <input type="radio" name="gender" id="radio-male" checked>
+                  <label for="radio-male" class="lh24"></label>
+                  <span class="c2">男</span> </span> <span class="ml24">
+                  <input type="radio" name="gender" id="radio-female">
+                  <label for="radio-female" class="lh24"></label>
+                  <span class="c2">女</span> </span>
+                  </div>
+                  <div><span class="d-ib w80 c2">生日：</span>
+                    <input type="text" class="w240 p8 h32" value="1985年7月">
+                  </div>
+                  <div><span class="d-ib w80 c2">籍贯：</span>
+                    <input type="text" class="w240 p8 h32" value="广东">
+                  </div>
+                  <div><span class="d-ib w80 c2">学历：</span>
+                    <select name="scholar" class="scholar w240">
+                    <option></option>
+                    <option>博士后</option>
+                    <option>博士</option>
+                    <option>MBA/EMBA</option>
+                    <option>硕士</option>
+                    <option selected>本科</option>
+                    <option>大专</option>
+                    <option>中专</option>
+                    <option>中技</option>
+                    <option>高中</option>
+                    <option>初中</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div><span class="d-ib w80 c2">电话：</span>
+                    <input type="text" class="w240 p8 h32">
+                  </div>
+                  <div><span class="d-ib w80 c2">邮箱：</span>
+                    <input type="text" class="w240 p8 h32">
+                  </div>
+                  <div><span class="d-ib w80 c2">QQ：</span>
+                    <input type="text" class="w240 p8 h32">
+                  </div>
+                  <div><span class="d-ib w80 c2">微信：</span>
+                    <input type="text" class="w240 p8 h32">
+                  </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="bg-ec f16 c1 bold p4-8 bdl5 mt24">求职信息</div>
+              <div class="mt16 p0-16">
+                <div class="fl lh46 w360">
+                  <div><span class="d-ib w80 c2">求职状态：</span> <span>
+                  <input type="radio" name="status" id="radio-bkl">
+                  <label for="radio-bkl" class="lh24"></label>
+                  <span class="c2">不考虑</span> </span> <span class="ml16">
+                  <input type="radio" name="status" id="radio-kjh" checked>
+                  <label for="radio-kjh" class="lh24"></label>
+                  <span class="c2">看机会</span> </span> <span class="ml16">
+                  <input type="radio" name="status" id="radio-zgz">
+                  <label for="radio-zgz" class="lh24"></label>
+                  <span class="c2">找工作</span> </span>
+                  </div>
+                  <div><span class="d-ib w80 c2">当前职位：</span>
+                    <input type="text" class="w240 p8 h32">
+                  </div>
+                  <div><span class="d-ib w80 c2">当前公司：</span>
+                    <input id="currentCompInput" type="text" value="东软集团股份有限公司" class="w240 p8 h32">
+                  </div>
+                  <div><span class="d-ib w80 c2">当前行业：</span>
+                    <input type="text" value="互联网/游戏" class="w240 p8 h32">
+                  </div>
+                  <div><span class="d-ib w80 c2">当前年薪：</span>
+                    <input type="text" value="15" class="w56 p8 h32">
+                    <span class="c3">万</span> <span class="c3 p1016">~</span>
+                    <input type="text" value="20" class="w56 p8 h32">
+                    <span class="c3">万</span> </div>
+                  <div><span class="d-ib w80 c2">当前城市：</span>
+                    <input type="text" value="深圳" id="citySelect1" class="w240 p8 h32">
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div><span class="d-ib w80 c2">到岗时间：</span>
+                    <input type="text" class="w121 p8 h32">
+                  </div>
+                  <div><span class="d-ib w80 c2">期望职位：</span>
+                    <input type="text" class="w240 p8 h32">
+                  </div>
+                  <div><span class="d-ib w80 c2">期望公司：</span>
+                    <input type="text" class="w240 p8 h32">
+                  </div>
+                  <div><span class="d-ib w86 c2">期望行业：</span>
+                    <input type="text" class="w240 p8 h32 ml-6">
+                  </div>
+                  <div><span class="d-ib w80 c2">期望年薪：</span>
+                    <input type="text" class="w56 p8 h32">
+                    <span class="c3">万</span> <span class="c3 p1016">~</span>
+                    <input type="text" class="w56 p8 h32">
+                    <span class="c3">万</span> </div>
+                  <div><span class="d-ib w80 c2">期望城市：</span>
+                    <input type="text" id="citySelect2" class="w240 p8 h32">
+                  </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="edu bg-ec bg-ec f16 c1 bold p4-8 bdl5 mt24">教育经历 <span id="btn-addedu" class="fr ic f24 fw-n bg-b cw bdrs12 cu-po trans ho-sh"></span> </div>
+              <div class="mt16 p0-16 pb24 bdb1-d">
+                <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po"></div>
+                <div class="fl lh46 w360">
+                  <div><span class="d-ib w80 c2">学校：</span>
+                    <input value="北京大学" type="text" class="school w240 p8 h32">
+                  </div>
+                  <div><span class="d-ib w80 c2">专业：</span>
+                    <input value="计算机科学与技术" type="text" class="major w240 p8 h32">
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div><span class="d-ib w80 c2">在校时间：</span>
+                    <input type="text" value="2007年09月" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months">
+                    <span class="c3 p1016">~</span>
+                    <input type="text" value="2011年06月" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months" data-today-button="true">
+                  </div>
+                  <div><span class="d-ib w80 c2">学历：</span>
+                    <select name="scholar" class="scholar w240">
+                    <option></option>
+                    <option>博士后</option>
+                    <option>博士</option>
+                    <option>MBA/EMBA</option>
+                    <option selected>硕士</option>
+                    <option>本科</option>
+                    <option>大专</option>
+                    <option>中专</option>
+                    <option>中技</option>
+                    <option>高中</option>
+                    <option>初中</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="mt16 p0-16">
+                <div class="fl lh46 w360">
+                  <div><span class="d-ib w80 c2">学校：</span>
+                    <input type="text" value="华中科技大学" placeholder='联想测试：输入“北京”' class="school w240 p8 h32">
+                  </div>
+                  <div><span class="d-ib w80 c2">专业：</span>
+                    <input type="text" value="计算机科学与技术" placeholder='联想测试：输入“管理”' class="major w240 p8 h32">
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div><span class="d-ib w80 c2">在校时间：</span>
+                    <input type="text" value="2007年09月" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months">
+                    <span class="c3 p1016">~</span>
+                    <input type="text" value="2011年06月" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months" data-today-button="true">
+                  </div>
+                  <div><span class="d-ib w80 c2">学历：</span>
+                    <select name="scholar" class="scholar w240">
+                    <option></option>
+                    <option>博士后</option>
+                    <option>博士</option>
+                    <option>MBA/EMBA</option>
+                    <option>硕士</option>
+                    <option selected>本科</option>
+                    <option>大专</option>
+                    <option>中专</option>
+                    <option>中技</option>
+                    <option>高中</option>
+                    <option>初中</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="job bg-ec f16 c1 bold p4-8 bdl5 mt24">工作经历 <span id="btn-addjob" class="fr ic f24 fw-n bg-b cw bdrs12 cu-po trans ho-sh"></span> </div>
+              <div class="mt16 p0-16 pb24 bdb1-d">
+                <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po"></div>
+                <div class="fl lh46 w360">
+                  <div><span class="d-ib w80 c2">公司：</span>
+                    <input value="东软集团股份有限公司" type="text" class="w240 p8 h32">
+                  </div>
+                  <div><span class="d-ib w80 c2">职位：</span>
+                    <input type="text" value="Java高级开发工程师" class="w240 p8 h32">
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div><span class="d-ib w80 c2">在职时间：</span>
+                    <input type="text" value="2011年09月" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months">
+                    <span class="c3 p1016">~</span>
+                    <input type="text" value="至今" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months" data-today-button="true">
+                  </div>
+                </div>
+                <div class="clear lh46"> <span class="d-ib w80 c2">工作描述：</span>
+                  <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4">1、  具备JAVA/J2EE三年以上开发经验，Java基础扎实，熟悉JSP/Servlet、html/JavaScript/Jquery以及主流框架技术；
+2、  熟悉Oracle、MsSql、Mysql等数据库至少其中一种，熟悉SQL语言；
+3、  开发经验丰富，能迅速完成交办相关工作；
+4、  需具备需求分析和系统设计能力；
+5、  沟通能力良好，具备团队合作精神，能适应一定压力开展工作。
+1、按照研发标准过程，进行项目具体的设计、编码、单元测试（如需要还包括集成测试）、Bug修复工作。
+2、参加项目详细需求评审、设计评审和代码评审。
+3、协助项目经理进行项目各类变更进行影响分析。
+4、负责项目核心功能或关键业务的设计及开发。
+5、积极参与同行评审、技术交流等，学习和分享研发的经验和技术技能，共同提高研发效率和系统质量。
+6、按照软件项目计划以及项目执行计划按时完成各项项目任务。
+7、主动积极发掘、提出和规避项目各个环节可能存在的系统缺陷或项目风险。</textarea>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="mt16 p0-16">
+                <div class="fl lh46 w360">
+                  <div><span class="d-ib w80 c2">公司：</span>
+                    <input value="东软集团股份有限公司" type="text" class="w240 p8 h32">
+                  </div>
+                  <div><span class="d-ib w80 c2">职位：</span>
+                    <input value="Java高级开发工程师" type="text" class="w240 p8 h32">
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div><span class="d-ib w80 c2">在职时间：</span>
+                    <input value="2011年09月" type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months">
+                    <span class="c3 p1016">~</span>
+                    <input value="2011年09月" type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months" data-today-button="true">
+                  </div>
+                </div>
+                <div class="clear lh46"> <span class="d-ib w80 c2">工作描述：</span>
+                  <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4">1、  具备JAVA/J2EE三年以上开发经验，Java基础扎实，熟悉JSP/Servlet、html/JavaScript/Jquery主流框架技术；
+2、  熟悉Oracle、MsSql、Mysql等数据库至少其中一种，熟悉SQL语言；
+3、  开发经验丰富，能迅速完成交办相关工作；
+4、  需具备需求分析和系统设计能力；
+5、  沟通能力良好，具备团队合作精神，能适应一定压力开展工作。</textarea>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="proj bg-ec f16 c1 bold p4-8 bdl5 mt24">项目经历<span id="btn-addproj" class="fr ic f24 fw-n bg-b cw bdrs12 cu-po trans ho-sh"></span></div>
+              <div class="mt16 p0-16 pb24 bdb1-d">
+                <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po"></div>
+                <div class="fl lh46 w360">
+                  <div><span class="d-ib w80 c2">项目名称：</span>
+                    <input value="供应链管理系统" type="text" class="w240 p8 h32">
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div><span class="d-ib w80 c2">项目时间：</span>
+                    <input type="text" value="2011年09月" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months">
+                    <span class="c3 p1016">~</span>
+                    <input type="text" value="至今" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months">
+                  </div>
+                </div>
+                <div class="clear lh46"> <span class="d-ib w80 c2">项目描述：</span>
+                  <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4">主要解决货物进出口报关,收货,发货,并与香港海关联网自动产生报关数据.
+软件环境： J2EE + IBM DataPower + JBOSS + Oracle 
+开发工具： Eclipse + SVN </textarea>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="mt16 p0-16">
+                <div class="fl lh46 w360">
+                  <div><span class="d-ib w80 c2">项目名称：</span>
+                    <input value="供应链管理系统" type="text" class="w240 p8 h32">
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div><span class="d-ib w80 c2">项目时间：</span>
+                    <input type="text" value="2011年09月" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months">
+                    <span class="c3 p1016">~</span>
+                    <input type="text" value="至今" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months" data-today-button="true">
+                  </div>
+                </div>
+                <div class="clear lh46"> <span class="d-ib w80 c2">项目描述：</span>
+                  <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4">管理供应链数据,集成ERP系统数据.包括供应商数据,采购数据,来料检查,质量投诉管理模块. 加快供应链流程,实现电子化,提高80%效率. 
+软件环境： C# + IIS7 + SQL Server2008 
+开发工具： VS2008 + SVN </textarea>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="skill bg-ec f16 c1 bold p4-8 bdl5 mt24">职业技能</div>
+              <div class="mt16 p0-16">
+                <div class="btn-addskill fr ic f24 c3 mt8 ho-cb cu-po"></div>
+                <div class="fl lh46 w360">
+                  <div><span class="d-ib w80 c2">技能：</span>
+                    <input value="Java" type="text" class="w240 p8 h32">
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div><span class="d-ib w80 c2">掌握程度：</span>
+                    <select name="skill" class="w80">
+                    <option></option>
+                    <option selected>精通</option>
+                    <option>熟练</option>
+                    <option>一般</option>
+                    <option>了解</option>
+                  </select>
+                    <span class="d-ib ml24 c2">使用时间：</span>
+                    <input value="36" type="text" class="w60 h32 p8">
+                    <span class="c2">个月</span> </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="p0-16">
+                <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po ml8"></div>
+                <div class="btn-addskill fr ic f24 c3 mt8 ho-cb cu-po"></div>
+                <div class="fl lh46 w360">
+                  <div><span class="d-ib w80 c2">技能：</span>
+                    <input value="Oracle" type="text" class="w240 p8 h32">
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div><span class="d-ib w80 c2">掌握程度：</span>
+                    <select name="skill" class="w80">
+                    <option></option>
+                    <option selected>精通</option>
+                    <option>熟练</option>
+                    <option>一般</option>
+                    <option>了解</option>
+                  </select>
+                    <span class="d-ib ml24 c2">使用时间：</span>
+                    <input value="24" type="text" class="w60 h32 p8">
+                    <span class="c2">个月</span> </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="p0-16">
+                <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po ml8"></div>
+                <div class="btn-addskill fr ic f24 c3 mt8 ho-cb cu-po"></div>
+                <div class="fl lh46 w360">
+                  <div><span class="d-ib w80 c2">技能：</span>
+                    <input value="Informix" type="text" class="w240 p8 h32">
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div><span class="d-ib w80 c2">掌握程度：</span>
+                    <select name="skill" class="w80">
+                    <option></option>
+                    <option selected>精通</option>
+                    <option>熟练</option>
+                    <option>一般</option>
+                    <option>了解</option>
+                  </select>
+                    <span class="d-ib ml24 c2">使用时间：</span>
+                    <input value="16" type="text" class="w60 h32 p8">
+                    <span class="c2">个月</span> </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="skill bg-ec f16 c1 bold p4-8 bdl5 mt24">语言能力</div>
+              <div class="mt16 p0-16">
+                <div class="btn-addlan fr ic f24 c3 mt8 ho-cb cu-po"></div>
+                <div class="fl lh46 w360">
+                  <div><span class="d-ib w80 c2">语言：</span>
+                    <input value="英语" type="text" class="w240 p8 h32">
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div><span class="d-ib w80 c2">掌握程度：</span>
+                    <select name="skill" class="w80">
+                    <option></option>
+                    <option>精通</option>
+                    <option selected>熟练</option>
+                    <option>一般</option>
+                    <option>了解</option>
+                  </select>
+                    <span class="d-ib ml24 c2">使用时间：</span>
+                    <input value="68" type="text" class="w60 h32 p8">
+                    <span class="c2">个月</span> </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="p0-16">
+                <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po ml8"></div>
+                <div class="btn-addlan fr ic f24 c3 mt8 ho-cb cu-po"></div>
+                <div class="fl lh46 w360">
+                  <div><span class="d-ib w80 c2">语言：</span>
+                    <input value="日语" type="text" class="w240 p8 h32">
+                  </div>
+                </div>
+                <div class="fl lh46">
+                  <div><span class="d-ib w80 c2">熟练程度：</span>
+                    <select name="skill" class="w80">
+                    <option></option>
+                    <option>精通</option>
+                    <option>熟练</option>
+                    <option selected>一般</option>
+                    <option>了解</option>
+                  </select>
+                    <span class="d-ib ml24 c2">使用时间：</span>
+                    <input value="20" type="text" class="w60 h32 p8">
+                    <span class="c2">个月</span> </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="bg-ec f16 c1 bold p4-8 bdl5 mt24">个人评价</div>
+              <div class="mt16 p0-16">
+                <div class="clear lh46"> <span class="d-ib w80 c2">评价内容：</span>
+                  <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4">我是一个对理想有着执着追求的人，为人热情、大方，逻辑思维能力较强，勤于思考。热爱编程，对代码质量精益求精。擅长JAVA服务端开发。
+精通JAVA,熟悉主流J2EE开发框架。熟悉常用设计模式。熟悉JVM。
+熟悉mysql、oracle、DB2等数据库
+熟悉socket编程，熟悉mina、netty等nio框架。熟悉TCP/UDP/HTTP/XMPP等网络协议。
+熟悉linux下的基本操作并安装部署程序。
+熟悉tomcat、nginx等服务器技术。
+熟悉JavaScript、Html等前端技术。
+熟悉svn、git等版本管理工具
+了解android应用开发。
+具有金融、电信、医疗等行业经验。 </textarea>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="bg-ec f16 c1 bold p4-8 bdl5 mt24">其它</div>
+              <div class="mt16 p0-16">
+                <div class="clear lh46"> <span class="d-ib w80 c2">其它：</span>
+                  <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4 mb16"></textarea>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </div>
+            <!--解析简历-->
+            <div id="cv-t1" class="p24">
+              <div class="bg-f2 f16 c1 bold p4-8 bdl5 mt16">个人信息
+                <div class="fr f14 fw-n">发布于2016-06-01</div>
+              </div>
+              <div class="mt16 p0-16 lh30">
+                <div class="fl w360">
+                  <div><span class="d-ib w80 c3">姓名：</span> <span>王精英</span></div>
+                  <div><span class="d-ib w80 c3">性别：</span> 男</div>
+                  <div><span class="d-ib w80 c3">生日：</span>&nbsp;<span>1985年5月2日</span></div>
+                  <div><span class="d-ib w80 c3">籍贯：</span> 广东</div>
+                  <div><span class="d-ib w80 c3">学历：</span> <span>本科</span></div>
+                </div>
+                <div class="fl">
+                  <div><span class="d-ib w80 c3">电话：</span> <span>******</span></div>
+                  <div><span class="d-ib w80 c3">邮箱：</span> <span>******</span></div>
+                  <div><span class="d-ib w80 c3">QQ：</span> ******</div>
+                  <div><span class="d-ib w80 c3">微信：</span> <span>******</span></div>
+                  <div><span class="d-ib w80 c3">工作经验：</span> <span>15年</span></div>
+                </div>
+                <div class="fr ic f96 ca7 bd1-e0 h120 w120 lh-n"></div>
+                <div class="clear"></div>
+              </div>
+              <div class="bg-f2 f16 c1 bold p4-8 bdl5 mt16">求职信息</div>
+              <div class="mt16 p0-16 lh30">
+                <div class="fl w360">
+                  <div><span class="d-ib w80 c3">目前状态：</span> 看机会</div>
+                  <div><span class="d-ib w80 c3">当前职位：</span> Java高级开发工程师</div>
+                  <div><span class="d-ib w80 c3">当前公司：</span> 东软集团股份有限公司</div>
+                  <div><span class="d-ib w80 c3">当前行业：</span> 互联网/游戏</div>
+                  <div><span class="d-ib w80 c3">当前年薪：</span> 15~20万</div>
+                  <div><span class="d-ib w80 c3">当前城市：</span> 广州</div>
+                </div>
+                <div class="fl">
+                  <div><span class="d-ib w80 c3">到岗时间：</span> 1个月</div>
+                  <div><span class="d-ib w80 c3">期望职位：</span> Java开发主管</div>
+                  <div><span class="d-ib w80 c3">期望公司：</span> 东软集团股份有限公司</div>
+                  <div><span class="d-ib w80 c3">期望行业：</span> 互联网/游戏</div>
+                  <div><span class="d-ib w80 c3">期望年薪：</span> 20~25万</div>
+                  <div><span class="d-ib w80 c3">期望城市：</span> 深圳</div>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="bg-f2 f16 c1 bold p4-8 bdl5 mt16">教育经历</div>
+              <div class="mt16 p0-16 lh30">
+                <div> <span class="d-ib w184 c3"><span>2007.09</span><span class="p0-16">~</span><span>2011.06</span></span> <span class="d-ib w160">北京大学</span> <span class="d-ib w160">计算机科学与技术</span> <span>硕士</span> </div>
+                <div><span class="d-ib w184 c3"><span>2007.09</span><span class="p0-16">~</span><span>2011.06</span></span> <span class="d-ib w160">华中科技大学</span> <span class="d-ib w160">计算机科学与技术</span> <span>本科</span></div>
+              </div>
+              <div class="bg-f2 f16 c1 bold p4-8 bdl5 mt16">工作经历</div>
+              <div class="mt16 p0-16 lh30">
+                <div class="bdt1-d"> <span class="c1">Java高级开发工程师</span> <span class="p0-16 ce0">|</span> <span class="c1 bold">东软集团股份有限公司</span> <span class="p0-16 ce0">|</span> <span class="c3"><span>20011.09</span><span class="p0-16">~</span><span>至今</span><span class="ml8">（4年9个月）</span></span>
+                </div>
+                <div class="c3 fl">工作职责：</div>
+                <div class="fl w700 ml14">
+                  <p class="wh-pw lh30 c2 f13">1、 具备JAVA/J2EE三年以上开发经验，Java基础扎实，熟悉JSP/Servlet、html/JavaScript/Jquery以及主流框架技术； 2、 熟悉Oracle、MsSql、Mysql等数据库至少其中一种，熟悉SQL语言； 3、 开发经验丰富，能迅速完成交办相关工作； 4、 需具备需求分析和系统设计能力； 5、 沟通能力良好，具备团队合作精神，能适应一定压力开展工作。 1、按照研发标准过程，进行项目具体的设计、编码、单元测试（如需要还包括集成测试）、Bug修复工作。 2、参加项目详细需求评审、设计评审和代码评审。 3、协助项目经理进行项目各类变更进行影响分析。 4、负责项目核心功能或关键业务的设计及开发。 5、积极参与同行评审、技术交流等，学习和分享研发的经验和技术技能，共同提高研发效率和系统质量。 6、按照软件项目计划以及项目执行计划按时完成各项项目任务。 7、主动积极发掘、提出和规避项目各个环节可能存在的系统缺陷或项目风险。
+                  </p>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="mt16 p0-16 lh30">
+                <div class="bdt1-d"> <span class="c1">Java高级开发工程师</span> <span class="p0-16 ce0">|</span> <span class="c1 bold">东软集团股份有限公司</span> <span class="p0-16 ce0">|</span> <span class="c3"><span>20011.09</span><span class="p0-16">~</span><span>至今</span><span class="ml8">（4年9个月）</span></span>
+                </div>
+                <div class="c3 fl">工作职责：</div>
+                <div class="fl w700 ml12">
+                  <p class="wh-pw lh30 c2 f13">1、 具备JAVA/J2EE三年以上开发经验，Java基础扎实，熟悉JSP/Servlet、html/JavaScript/Jquery主流框架技术； 2、 熟悉Oracle、MsSql、Mysql等数据库至少其中一种，熟悉SQL语言； 3、 开发经验丰富，能迅速完成交办相关工作； 4、 需具备需求分析和系统设计能力； 5、 沟通能力良好，具备团队合作精神，能适应一定压力开展工作。 </p>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="bg-f2 f16 c1 bold p4-8 bdl5 mt16">项目经历</div>
+              <div>
+                <div class="mt16 p0-16 lh30">
+                  <div class="bdt1-d"> <span class="c1 bold">供应链管理系统</span> <span class="p0-16 ce0">|</span> <span class="c3"><span>20011.09</span><span class="p0-16">~</span><span>至今</span><span class="ml8">（4年9个月）</span></span>
+                  </div>
+                  <div class="c3 fl">工作职责：</div>
+                  <div class="fl w700 ml12">
+                    <p class="wh-pw lh30 c2 f13">管理供应链数据,集成ERP系统数据.包括供应商数据,采购数据,来料检查,质量投诉管理模块. 加快供应链流程,实现电子化,提高80%效率. 软件环境： C# + IIS7 + SQL Server2008 开发工具： VS2008 + SVN </p>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="mt16 p0-16 lh30">
+                  <div class="bdt1-d"> <span class="c1 bold">供应链管理系统</span> <span class="p0-16 ce0">|</span> <span class="c3"><span>20011.09</span><span class="p0-16">~</span><span>至今</span><span class="ml8">（4年9个月）</span></span>
+                  </div>
+                  <div class="c3 fl">工作职责：</div>
+                  <div class="fl w700 ml12">
+                    <p class="wh-pw lh30 c2 f13">主要解决货物进出口报关,收货,发货,并与香港海关联网自动产生报关数据. 软件环境： J2EE + IBM DataPower + JBOSS + Oracle 开发工具： Eclipse + SVN </p>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </div>
+              <div class="bg-f2 f16 c1 bold p4-8 bdl5 mt16">职业技能</div>
+              <div class="p0-16 mt16 lh24">
+                <div> <span class="d-ib w240">Java</span><span class="d-ib w160">精通</span><span class="d-ib w160">36个月</span> </div>
+                <div><span class="d-ib w240">Oracle</span><span class="d-ib w160">精通</span><span class="d-ib w160">24个月</span></div>
+                <div><span class="d-ib w240">Informix</span><span class="d-ib w160">熟练</span><span class="d-ib w160">16个月</span></div>
+              </div>
+              <div class="bg-f2 f16 c1 bold p4-8 bdl5 mt16">语言水平</div>
+              <div class="p0-16 mt16 lh24">
+                <div><span class="d-ib w240">英语</span><span class="d-ib w160">良好</span></div>
+                <div><span class="d-ib w240">日语</span><span class="d-ib w160">一般</span></div>
+              </div>
+              <div class="bg-f2 f16 c1 bold p4-8 bdl5 mt16">个人描述</div>
+              <div class="p0-16 mt16 lh24">
+                <p class="wh-pw c2">我是一个对理想有着执着追求的人，为人热情、大方，逻辑思维能力较强，勤于思考。热爱编程，对代码质量精益求精。擅长JAVA服务端开发。 精通JAVA,熟悉主流J2EE开发框架。熟悉常用设计模式。熟悉JVM。 熟悉mysql、oracle、DB2等数据库 熟悉socket编程，熟悉mina、netty等nio框架。熟悉TCP/UDP/HTTP/XMPP等网络协议。 熟悉linux下的基本操作并安装部署程序。 熟悉tomcat、nginx等服务器技术。 熟悉JavaScript、Html等前端技术。 熟悉svn、git等版本管理工具 了解android应用开发。 具有金融、电信、医疗等行业经验。 </p>
+              </div>
+              <div class="bg-f2 f16 c1 bold p4-8 bdl5 mt16">其它</div>
+              <div class="p0-16 mt16 lh24">
+                <p class="wh-pw lh24"></p>
+              </div>
+            </div>
+            <!--原始简历-->
+            <div id="cv-t2" class="p24">原始简历预览</div>
+          </div>
+          <script>
+            /*单击编辑和新增简历，保存、取消*/
+            $('#btn-editcv,#btn-addcv').on('click', function() {
+              $('#cv-t1').hide();
+              $('#edit-cv').show();
+            });
+            $('#edit-cv-cancel,#edit-cv-save').on('click', function() {
+              $('#cv-t1').show();
+              $('#edit-cv').hide();
+            });
+
+          </script>
+          <div id="tab2" class="hidden tabs pb24">
+            <div id="btn-addposition" class="card1 fl f14 p816 cb ho-blue cu-po mt16 ml16 trans ho-sh mb16"> <span class="ic f24 ml-5"></span> 加入新职位 </div>
+            <div id="btn-recposition" class="card1 fl f14 p816 cb ho-blue cu-po mt16 ml16 trans ho-sh mb16 hidden"> <span class="ic f24 ml-5"></span> 推荐新职位 </div>
+            <div class="clear">
+              <table class="bdcl ta-l">
+                <tr class="c2 h48">
+                  <th class="w86 pl16 ">Pipeline</th>
+                  <th class="w220 pl4">招聘流程</th>
+                  <th class="w160">推荐的职位</th>
+                  <th class="w121">职位状态</th>
+                  <th class="w160">客户公司</th>
+                  <th class="w121">推荐报告</th>
+                </tr>
+                <tr class="bdt1 h64
+          		 ho-ec">
+                  <td class="pl16"><a href="" class="a c1">查看</a></td>
+                  <td class="expand-hire-process"><span class="ic f20 c3"></span> <span>未过保证期</span> <span class="p0-4 bdrs2 c3"><span class="cb bold">15天</span><span class="f12">/90天</span></span><span class="ic-expand ho-cb cu-po ml4 ic f24 d-ib trans"></span></td>
+                  <td>
+                    <div class="ol w150"><a href="" class="a c1">某某职位</a></div>
+                  </td>
+                  <td><span class="cw bdrs2 bgok p0-4">已关闭-成功</span></td>
+                  <td>
+                    <div class="ol w154"><a href="" class="a c1">某某公司</a></div>
+                  </td>
+                  <td><span class="ic f18 c2"></span>未生成<span class="ml8 cb cu-po" onClick="window.open('推荐报告
+                制作.html','_blank','height='+screen.height+', width='+screen.width+'location=0,titlebar=0,status=0,left=0')">制作</span></td>
+                </tr>
+                <tr class="detail hidden">
+                  <!--此为展开招聘流程详情-->
+                  <td colspan="6">
+                    <div class="bg-w p24">
+                      <ul class="tl-container lh-n f14">
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已入职</span> <span class="cw bdrs2 bgok p0-4 ml4">已过保证期</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已入职</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>待入职</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>待发Offer</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                            <div class="bdt1 c2"> <span>备注：</span>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dolorem, nam, aspernatur explicabo laborum sit hic nobis praesentium fugit non eos quasi ut autem at esse veritatis recusandae voluptate! Quam.</p>
+                            </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>面试：待2面</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>面试：待1面</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已推荐职位</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已加入职位</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="bdt1 h64 ho-ec">
+                  <td class="pl16">查看</td>
+                  <td class="expand-hire-process"><span class="ic f20 c3"></span> <span>未过保证期</span> <span class="p0-4 bdrs2 c3"><span class="cb bold">15天</span><span class="f12">/90天</span></span><span class="ic-expand ho-cb cu-po ml4 ic f24 d-ib trans"></span></td>
+                  <td>
+                    <div class="ol w150"><a href="" class="a c1">某某职位</a></div>
+                  </td>
+                  <td><span class="cw bdrs2 bgok p0-4">已关闭-成功</span></td>
+                  <td>
+                    <div class="ol w154"><a href="" class="a c1">某某公司</a></div>
+                  </td>
+                  <td><span class="ic f18 c2"></span>编辑中<span class="ml8 cb cu-po">编辑</span></td>
+                </tr>
+                <tr class="detail hidden">
+                  <!--此为展开招聘流程详情-->
+                  <td colspan="6">
+                    <div class="bg-w p24">
+                      <ul class="tl-container lh-n f14">
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已入职</span> <span class="cw bdrs2 bgok p0-4 ml4">已过保证期</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已入职</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>待入职</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>待发Offer</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                            <div class="bdt1 c2"> <span>备注：</span>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dolorem, nam, aspernatur explicabo laborum sit hic nobis praesentium fugit non eos quasi ut autem at esse veritatis recusandae voluptate! Quam.</p>
+                            </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>面试：待2面</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>面试：待1面</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已推荐职位</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已加入职位</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="bdt1 h64 ho-ec">
+                  <td class="pl16">查看</td>
+                  <td class="expand-hire-process"><span class="ic f20 c3"></span> <span>未过保证期</span> <span class="p0-4 bdrs2 c3"><span class="cb bold">15天</span><span class="f12">/90天</span></span><span class="ic-expand ho-cb cu-po ml4 ic f24 d-ib trans"></span></td>
+                  <td>
+                    <div class="ol w150"><a href="" class="a c1">某某职位</a></div>
+                  </td>
+                  <td><span class="cw bdrs2 bgok p0-4">已关闭-成功</span></td>
+                  <td>
+                    <div class="ol w154"><a href="" class="a c1">某某公司</a></div>
+                  </td>
+                  <td><span class="ic f18 c2"></span>已发布<span class="ml8 cb cu-po">管理</span></td>
+                </tr>
+                <tr class="detail hidden">
+                  <!--此为展开招聘流程详情-->
+                  <td colspan="6">
+                    <div class="bg-w p24">
+                      <ul class="tl-container lh-n f14">
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已入职</span> <span class="cw bdrs2 bgok p0-4 ml4">已过保证期</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已入职</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>待入职</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>待发Offer</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                            <div class="bdt1 c2"> <span>备注：</span>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dolorem, nam, aspernatur explicabo laborum sit hic nobis praesentium fugit non eos quasi ut autem at esse veritatis recusandae voluptate! Quam.</p>
+                            </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>面试：待2面</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>面试：待1面</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已推荐职位</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                        <li class="li-no pb12 clear">
+                          <div class="fl tl-ic"></div>
+                          <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已加入职位</span>
+                            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                          </div>
+                          <div class="clear"></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!--<div class="clear lh64 ">
+            <div class="bold c2 lh46"> <span class="d-ib w80 pl24">操作</span> <span class="d-ib w184">推荐的职位</span> <span class="d-ib w160">招聘流程</span> <span class="d-ib w184">客户公司</span> <span class="d-ib w120">职位状态</span> </div>
+            <div class="c1 bdt1 ho-ec"> <span class="d-ib w80 pl24"> <span class="op-menu"> <span class="ic c2 f24 cu-po po-r"></span> </span> </span> <span class="d-ib w184"><a href="" class="a c1">Java开发主管</a></span> <span class="d-ib w160"> <span>已入职</span> <span class="cw bdrs2 bgok p0-4">已过保证期</span> </span> <span class="d-ib w184"><a href="" class="c1 a">深圳市Cretek技术有限...</a></span> <span class="d-ib w120"><span class="cw bdrs2 bgok p0-4">已关闭-成功</span></span> <span class="expand-collapse ho-cb cu-po"><span class="text">展开详情</span><span class="ic f24 d-ib trans"></span></span> </div>
+            <div class="bg-w p24 hidden">
+              <ul class="tl-container lh-n f14">
+                <li class="li-no pb12 clear">
+                  <div class="fl tl-ic"></div>
+                  <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已入职</span> <span class="cw bdrs2 bgok p0-4 ml4">已过保证期</span>
+                    <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+                <li class="li-no pb12 clear">
+                  <div class="fl tl-ic"></div>
+                  <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已入职</span>
+                    <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+                <li class="li-no pb12 clear">
+                  <div class="fl tl-ic"></div>
+                  <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>待入职</span>
+                    <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+                <li class="li-no pb12 clear">
+                  <div class="fl tl-ic"></div>
+                  <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>待发Offer</span>
+                    <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                    <div class="bdt1 c2"> <span>备注：</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dolorem, nam, aspernatur explicabo laborum sit hic nobis praesentium fugit non eos quasi ut autem at esse veritatis recusandae voluptate! Quam.</p>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+                <li class="li-no pb12 clear">
+                  <div class="fl tl-ic"></div>
+                  <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>面试：待2面</span>
+                    <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+                <li class="li-no pb12 clear">
+                  <div class="fl tl-ic"></div>
+                  <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>面试：待1面</span>
+                    <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+                <li class="li-no pb12 clear">
+                  <div class="fl tl-ic"></div>
+                  <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已推荐职位</span>
+                    <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+                <li class="li-no pb12 clear">
+                  <div class="fl tl-ic"></div>
+                  <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已加入职位</span>
+                    <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="c1 bdt1 ho-ec"> <span class="d-ib w80 pl24"> <span class="op-menu"> <span class="ic c2 f24 cu-po po-r"></span> </span> </span> <span class="d-ib w184"><a href="" class="a c1">Java高级开发工程师</a></span> <span class="d-ib w160"> <span>面试：2面</span> <span class="cw bdrs2 bg9e p0-4">未到场</span> </span> <span class="d-ib w184"><a href="" class="c1 a">深圳市Cretek技术有限...</a></span> <span class="d-ib w120"><span class="cw bdrs2 bg9e p0-4">已关闭-失败</span></span> <span class="expand-collapse ho-cb cu-po"><span class="text">展开详情</span><span class="ic f24 d-ib trans"></span></span> </div>
+            <div class="bg-w p24 hidden">
+              <ul class="tl-container lh-n f14">
+                <li class="li-no pb24 clear">
+                  <div class="fl tl-ic"></div>
+                  <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>面试：2面</span> <span class="p0-4 bg9e cw bdrs2">未到场</span>
+                    <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+                <li class="li-no pb24 clear">
+                  <div class="fl tl-ic"></div>
+                  <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>面试：待2面</span>
+                    <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+                <li class="li-no pb24 clear">
+                  <div class="fl tl-ic"></div>
+                  <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>面试：待1面</span>
+                    <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+                <li class="li-no pb24 clear">
+                  <div class="fl tl-ic"></div>
+                  <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已推荐职位</span>
+                    <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+                <li class="li-no pb24 clear">
+                  <div class="fl tl-ic"></div>
+                  <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <span>已加入职位</span>
+                    <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+              </ul>
+            </div>
+            <script>
+			/*展开详情收起详情*/
+            $('.expand-collapse').on('click',function(){
+				var expanded = $(this).children('.ic').hasClass('r180');
+				var detail = $(this).parent().next();
+				if (expanded) {
+					$(this).children('.ic').removeClass('r180');
+					$(this).children('.text').html('展开详情');
+					$(detail).hide();
+					} else{
+						$(this).children('.ic').addClass('r180');
+						$(this).children('.text').html('收起详情');
+						$(detail).show();
+						}
+				});
+            </script> 
+          </div>-->
+            <!--职位tab为空时显示以下内容-->
+            <!-- <div class="clear">
+          <div class="ic ta-c f96 c-c mt8"></div>
+          <p class="c3 ta-c f18">没有推荐过职位</p>
+        </div> -->
+          </div>
+          <div id="tab3" class="hidden tabs pb24">
+            <div id="btn-editfavor" class="card1 fl f14 p816 cb ho-blue cu-po mt16 ml16 trans ho-sh mb16"> <span class="ic f24 ml-5"></span> 编辑偏好 </div>
+            <div id="btn-editfavor-cancel" class="hidden fl bg9e f14 p4-16 cw cu-po mt24 ml40 bdrs2"> <span class="ic f24 ml-5"></span> 取消 </div>
+            <div id="btn-editfavor-save" class="hidden bg-b fl f14 p4-16 cw ho-1f cu-po bdrs2 mt24 ml24"> <span class="ic f24 ml-5"></span> 保存 </div>
+            <div id="favor-noedit" class="p16-24 clear">
+              <div class="fl lh36 w360">
+                <div><span class="d-ib w80 c3">期望职位：</span> Java开发主管</div>
+                <div><span class="d-ib w80 c3">期望公司：</span> 东软集团股份有限公司</div>
+                <div><span class="d-ib w80 c3">期望行业：</span> 互联网/游戏</div>
+                <div><span class="d-ib w80 c3">期望年薪：</span> 20~25万</div>
+                <div><span class="d-ib w80 c3">期望城市：</span> 深圳</div>
+                <div><span class="d-ib w80 c3">其它偏好：</span> </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div id="favor-edit" class="hidden p16-24 bg-f7 clear">
+              <div class="fl lh36 w360">
+                <div><span class="d-ib w80 c3">期望职位：</span>
+                  <input value="Java开发主管" type="text" class="h30 p8 w240">
+                </div>
+                <div><span class="d-ib w80 c3">期望公司：</span>
+                  <input value="东软集团股份有限公司" type="text" class="h30 p8 w240">
+                </div>
+                <div><span class="d-ib w80 c3">期望行业：</span>
+                  <input value="互联网/游戏" type="text" class="h30 p8 w240">
+                </div>
+                <div><span class="d-ib w80 c3">期望年薪：</span>
+                  <input value="20" type="text" class="w56 p8 h32">
+                  <span class="c3">万</span> <span class="c3 ">~</span>
+                  <input value="25" type="text" class="w56 p8 h32">
+                  <span class="c3">万</span> </div>
+                <div><span class="d-ib w80 c3">期望城市：</span>
+                  <input value="深圳市" id="favor-cityselect" type="text" class="h30 p8 w120">
+                </div>
+                <div><span class="d-ib w80 c3">其它偏好：</span>
+                  <input type="text" class="h30 p8 w240">
+                </div>
+              </div>
+              <script>
+                var currentcity = new Vcity.CitySelector({
+                  input: 'favor-cityselect'
+                });
+
+              </script>
+              <div class="clear"></div>
+            </div>
+            <script>
+              $('#btn-editfavor').on('click', function() {
+                $('#btn-editfavor-cancel,#btn-editfavor-save').show();
+                $('#favor-edit').show();
+                $('#favor-noedit').hide();
+              });
+              $('#btn-editfavor-cancel,#btn-editfavor-save').on('click', function() {
+                $('#btn-editfavor-cancel,#btn-editfavor-save').hide();
+                $('#favor-edit').hide();
+                $('#favor-noedit').show();
+              });
+
+            </script>
+          </div>
+          <div id="tab4" class="tabs hidden">
+            <div class="card1 fl f14 p816 cb ho-blue cu-po mt16 ml16 trans ho-sh"> <span class="ic f24 ml-5"></span> 新增待办 </div>
+            <!--<div class="clear c1 pb16">
+            <table class="ta-l bdcl">
+              <tr class="c2 h64">
+                <th class="w40"></th>
+                <th class="w104">待办类型</th>
+                <th class="w66">操作</th>
+                <th class="w160">关联事项</th>
+                <th class="w160">开始时间</th>
+                <th class="w160">结束时间</th>
+                <th class="w104">创建者</th>
+                <th class="w104">关联人员</th>
+                <th class="w86">备注</th>
+              </tr>
+              <tr class="h64 bdt1 ho-ec">
+                <td class="ta-r">
+                  <input type="checkbox" id="chk-comp1">
+                  <label for="chk-comp1"></label>
+                </td>
+                <td>跟进面试</td>
+                <td><span class="ic f24 c2"></span></td>
+                <td>王精英</td>
+                <td>2016-07-23 10:30</td>
+                <td>2016-07-23 16:30</td>
+                <td><a href="" class="a c1">王翔</a></td>
+                <td><a href="" class="a c1">谢菲</a></td>
+                <td><span class="a c2"><span class="ic f24"></span>0</span></td>
+              </tr>
+            </table>
+          </div>   -->
+            <!--待办tab为空时显示以下内容-->
+            <div class="pt16 pb24 clear">
+              <div class="ic ta-c f96 c-c mt8"></div>
+              <p class="c3 ta-c f18">没有待办事项</p>
+            </div>
+          </div>
+          <div id="tab5" class="tabs hidden pb24">
+            <div id="btn-newnote" class="card1 fl f14 p816 cb ho-blue cu-po mt16 ml16 trans ho-sh mb24"> <span class="ic f24 ml-5"></span> 新增备注 </div>
+            <div class="clear"></div>
+            <!--<ul class="tl-container ml16 lh-n f14">
+            <li id="newnote" class="hidden li-no pb12 clear">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                <textarea name="" id="" class="p0-4 w100p h120"></textarea>
+                <div class="po-a" style="margin:-28px 0 0 700px;">
+                  <span id="newnote-cancel" class="ic f24 red cu-po ho-u"></span>                
+                  <span id="newnote-confirm" class="ic f24 c-gr cu-po ho-u"></span>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li class="li-no pb12 clear">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                <p class="wh-pw lh24">一些备注</p>
+                <div class="c3 bdt">
+                  <span>2015-09-03</span>
+                  <span class="ml8">15:30</span>
+                  <span class="ml24 pr4">顾问:</span>
+                  <span>王某某</span>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li class="li-no pb12 clear">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                <p class="wh-pw lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum corrupti optio fugit est ipsa at aliquid quo debitis non! Corporis, iusto, inventore voluptates sapiente incidunt aliquam totam molestias deserunt.</p>
+                <div class="c3">
+                  <span>2015-09-03</span>
+                  <span class="ml8">15:30</span>
+                  <span class="ml24 pr4">顾问:</span>
+                  <span>王某某</span>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li class="li-no pb12 clear">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                <p class="wh-pw lh24">一些备注</p>
+                <div class="c3 bdt">
+                  <span>2015-09-03</span>
+                  <span class="ml8">15:30</span>
+                  <span class="ml24 pr4">顾问:</span>
+                  <span>王某某</span>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li class="li-no pb12 clear">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                <p class="wh-pw lh24">一些备注</p>
+                <div class="c3 bdt">
+                  <span>2015-09-03</span>
+                  <span class="ml8">15:30</span>
+                  <span class="ml24 pr4">顾问:</span>
+                  <span>王某某</span>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li class="li-no pb12 clear">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                <p class="wh-pw lh24">一些备注</p>
+                <div class="c3 bdt">
+                  <span>2015-09-03</span>
+                  <span class="ml8">15:30</span>
+                  <span class="ml24 pr4">顾问:</span>
+                  <span>王某某</span>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+          </ul>-->
+            <!--备注tab为空时显示以下内容-->
+            <div class="clear">
+              <div class="ic ta-c f96 c-c "></div>
+              <p class="c3 ta-c f18">没有备注</p>
+            </div>
+          </div>
+          <script>
+            /*判断页外链接是否含#tab跳转并转向相应跳转*/
+            var hash = window.location.hash;
+            if (hash != '') {
+              var tabID = '[data-id="' + hash + '"]';
+              $(document).ready(function(e) {
+                $(tabID).trigger('click');
+              });
+            }
+
+          </script>
+          <script>
+            /*获得YYYY-MM-DD格式日期*/
+            function getYMD(date) {
+              var d = new Date(date),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate(),
+                year = d.getFullYear();
+
+              if (month.length < 2) month = '0' + month;
+              if (day.length < 2) day = '0' + day;
+
+              return [year, month, day].join('-');
+            };
+            /*取得HH:MM格式时间*/
+            function getHM(date) {
+              var d = new Date(date),
+                hour = '' + d.getHours(),
+                minute = '' + d.getMinutes();
+              if (hour.length < 2) hour = '0' + hour;
+              if (minute.length < 2) minute = '0' + minute;
+              return hour + ':' + minute;
+            };
+            /*新增备注*/
+            $('#btn-newnote').on('click', function() {
+              $('#newnote').show();
+              $('#newnote textarea').val('').focus();
+            });
+            /*确认新增备注*/
+            $('#newnote-confirm').on('click', function() {
+              var notetext = $('#newnote textarea').val();
+              var hastext = notetext.trim().length;
+              if (hastext) {
+                $('#newnote').hide();
+                var role = "顾问",
+                  name = "王某某",
+                  today = getYMD(Date()),
+                  time = getHM(Date());
+                $('<li class="li-no pb12 clear"> <div class="fl ml16 tl-ldot"></div> <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <p class="wh-pw lh24">' + notetext + '</p> <div class="c3 bdt"> <span>' + today + '</span> <span class="ml8">' + time + '</span> <span class="ml24 pr4">' + role + ':</span> <span>' + name + '</span> </div> </div> <div class="clear"></div> </li>').insertAfter('#newnote');
+              } else {
+                $('#newnote textarea').focus()
+              }
+
+            });
+            /*取消新增备注*/
+            $('#newnote-cancel').on('click', function() {
+              $('#newnote').hide();
+            });
+
+          </script>
+          <div id="tab6" class="tabs pb24 pt48 hidden">
+            <!--<ul class="tl-container ml16 lh-n f14">
+            <li class="li-no pb12 clear">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                <p class="wh-pw lh24">更新简历</p>
+                <div class="c3 bdt">
+                  <span>2015-09-03</span>
+                  <span class="ml8">15:30</span>
+                  <span class="ml24 pr4">系统:</span>
+                  <span>爬虫</span>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li class="li-no pb12 clear">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl w700 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+                <p class="wh-pw lh24">更新简历</p>
+                <div class="c3">
+                  <span>2015-09-03</span>
+                  <span class="ml8">15:30</span>
+                  <span class="ml24 pr4">系统:</span>
+                  <span>爬虫</span>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+          </ul>  -->
+            <!--日志tab为空时显示以下内容-->
+            <div class="clear">
+              <div class="ic ta-c f96 c-c"></div>
+              <p class="c3 ta-c f18">没有日志</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fl ml32 w300">
+      <div class="card1 f14 pb16 mb16">
+        <div class="card-header">
+          <span class="ic f18 mr4"></span>TA的标签<span class="txt-button-b ml16 btn-edit-tag f14"><span class="ic f18"></span><span>编辑<!--当该简历一个标签都没有的时候可以隐藏编辑按钮--></span></span><span class="cu-po ml16 ho-u btn-edit-cancel red hidden"><span class="ic f18"></span><span>取消</span></span><span class="cu-po ho-u ml16 btn-edit-save c-gr hidden"><span class="ic f18"></span><span>保存</span></span>
+        </div>
+        <div class="tags-container mt8 p8">
+          <div class="tal-tag "><span class="tag-name">高级java工程师</span></div>
+          <div class="tal-tag"><span class="tag-name">架构能力强</span></div>
+          <div class="tal-tag"><span class="tag-name">高并发经验</span></div>
+          <div class="btn-addTag c2 f12"><span class="ic f20"></span><span class="pt2">添加标签</span></div>
+          <div class="tag-input hidden"><input type="text"></div>
+        </div>
+      </div>
+      <div class="card1 f14 pb16">
+        <div class="card-header"><span class="ic f20 pr4"></span>相似的人才
+          <div class="fr f13 ho-u cu-po">查看全部</div>
+        </div>
+        <div class="c1 p816 mt8">
+          <div class="fl ic f48 bd1-e0 ca7 mr16 mt8"></div>
+          <div class="fl lh24">
+            <div><a href="" class="a c1">王精英 / ID12345678</a></div>
+            <div class="c2">Java高级开发工程师</div>
+            <div class="c3">深圳市腾讯计算机科技有限公司</div>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="c1 p816 mt8">
+          <div class="fl ic f48 bd1-e0 ca7 mr16 mt8"></div>
+          <div class="fl lh24">
+            <div><a href="" class="a c1">王精英 / ID12345678</a></div>
+            <div class="c2">Java高级开发工程师</div>
+            <div class="c3">深圳市腾讯计算机科技有限公司</div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <!--<div class="hidden card1 f14 pb16">
+      <div class="card-header"><span class="ic f20 pr8"></span><span class="bold cb">2</span>个进展中的职位
+        <div class="fr f13 ho-u cu-po">加入新职位</div>
+      </div>
+      <div class="mt16 ml32">
+        <select name="" class="select-position w240">
+          <option value="-1"></option>
+          <optgroup label="公司A">
+          <option selected>Java高级开发工程师</option>
+          </optgroup>
+          <optgroup label="公司B">
+          <option selected>Java开发工程师</option>
+          </optgroup>
+        </select>
+        <script>
+/*选择职位实例化*/
+$('.select-position').select2({ placeholder: {
+id: '-1', // the value of the option
+text: '请选择职位'
+}});
+</script> 
+      </div>
+      <div class="mt16 ml32">
+        <div class="c3 fl ta-c w60 p4-088 cu-n op06">
+          <div class="ic f24 pt8"></div>
+          <div>推荐</div>
+          <span class="r-chevs"></span> </div>
+        <div class="c3 fl ta-c w60 p4-088 cu-n op06">
+          <div class="ic f24 pt8"></div>
+          <div>面试</div>
+          <span class="r-chevs"></span> </div>
+        <div class="c3 fl ta-c w60 p4-088 cu-n op06">
+          <div class="ic f24 pt8"></div>
+          <div>Offer</div>
+          <span class="r-chevs"></span> </div>
+        <div class="cb fl ta-c w60 p4-088 cu-po">
+          <div class="ic f24 pt8"></div>
+          <div>入职</div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="ta-c mt8 p4-0 c2 ho-blue bdt1-d bdrs2 cu-po"><span class="ic f24 pr8"></span>不合适</div>
+    </div>-->
+    </div>
+  </div>
+  <!--弹框背景-->
+  <div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z150"></div>
+  <!--加入职位弹窗-->
+  <div id="popup-addto" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+    <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>加入职位</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">加入职位：</span>
+      <select name="" class="select-position w240">
+      <option value="-1"></option>
+      <optgroup label="公司A">
+      <option value="">Java高级开发工程师</option>
+      <option value="">iOS开发工程师</option>
+      <option value="">安卓开发工程师</option>
+      </optgroup>
+      <optgroup label="公司B">
+      <option value="">产品经理</option>
+      <option value="">前端工程师</option>
+      </optgroup>
+      <optgroup label="公司C">
+      <option value="">算法工程师</option>
+      </optgroup>
+      <optgroup label="公司D">
+      <option value="">Java高级开发工程师</option>
+      <option value="">iOS开发工程师</option>
+      <option value="">安卓开发工程师</option>
+      </optgroup>
+      <optgroup label="公司E">
+      <option value="">产品经理</option>
+      <option value="">前端工程师</option>
+      </optgroup>
+      <optgroup label="公司F">
+      <option value="">算法工程师</option>
+      </optgroup>
+    </select>
+    </div>
+    <div class="p816"> <span class="d-ib w80"></span>
+      <input id="chk-addto" checked type="checkbox">
+      <label for="chk-addto"></label>
+      <span class="c2">同时加入人才库：</span> <span class="ic f24 cf6"></span> <span class="c2">默认文件夹</span> <span class="d-ib ml4 c2"> <span class="changefolder td-u ho-cb cu-po">更改</span> </span>
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认加入</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--推荐职位弹窗-->
+  <div id="popup-recommend" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+    <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>推荐职位</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">推荐职位：</span>
+      <select name="" class="select-position w240">
+      <option value="-1"></option>
+      <optgroup label="公司A">
+      <option value="">Java高级开发工程师</option>
+      <option value="">iOS开发工程师</option>
+      <option value="">安卓开发工程师</option>
+      </optgroup>
+      <optgroup label="公司B">
+      <option value="">产品经理</option>
+      <option value="">前端工程师</option>
+      </optgroup>
+      <optgroup label="公司C">
+      <option value="">算法工程师</option>
+      </optgroup>
+      <optgroup label="公司D">
+      <option value="">Java高级开发工程师</option>
+      <option value="">iOS开发工程师</option>
+      <option value="">安卓开发工程师</option>
+      </optgroup>
+      <optgroup label="公司E">
+      <option value="">产品经理</option>
+      <option value="">前端工程师</option>
+      </optgroup>
+      <optgroup label="公司F">
+      <option value="">算法工程师</option>
+      </optgroup>
+    </select>
+    </div>
+    <div class="p816"> <span class="d-ib w80"></span>
+      <input id="chk-recom" checked type="checkbox">
+      <label for="chk-recom"></label>
+      <span class="c2">同时加入人才库：</span> <span class="ic f24 cf6"></span> <span class="c2">默认文件夹</span> <span class="d-ib ml4 c2"> <span class="changefolder td-u ho-cb cu-po">更改</span> </span>
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认推荐</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--加入人才库弹窗-->
+  <div id="popup-talent" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+    <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>加入人才库</h4>
+    <div class="mt8 p816"> <span class="d-ib w86 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div id="div-talfolder" class="p816"> <span class="fl w86 c2">选择文件夹：</span>
+      <div class="here-ul2 fl bg-w w200 p8">
+        <ul id="talfolder-source" class="mh168 ovy-a">
+          <!--全页面的人才库文件夹管理-->
+          <li class="folder-select li-no lh30 ho-ec ho-cb cu-po"><span class="ic f20 cf6 mr4"></span><span>默认文件夹</span></li>
+          <li id="newfolder" class="folder-select li-no lh30 hidden ho-ec ho-cb cu-po"><span class="ic f20 cf6 mr4"></span>
+            <input type="text" onKeyUp="confirmFolder(event)" class="w120 pl4 lh24">
+          </li>
+          <li class="li-no lh30"><span class="addfolder cu-po cb"><span class="ic f24"></span>新增文件夹</span>
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div id="div-changefolder" class="note hidden">
+      <div> <span class="fl w86 c2">选择文件夹：</span>
+        <div class="here-ul fl bg-w w184 p8"> </div>
+        <div class="clear"></div>
+      </div>
+      <div class="bdt1-d"> <span class="fr pt8"> <span class="cfolder-cancel ho-u c2 cu-po">取消</span> <span class="cfolder-confirm ml16 cb bold cu-po ho-u">确认</span> </span>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认加入</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--操作冒泡提示-->
+  <div id="toast" class="hidden po-f z200 t0 cw card5-nbg l50p t50p mt80 ml-58 op0 p16-24 bg-toa"></div>
+  <!--公司列表操作menu-->
+  <div id="dropmenu" style="margin:-50px 0 0 -8px" class="hidden po-a card5 lh30 ta-l cu-po trans sc0 op0">
+    <div id="m-rec" class="p0-10 ho-blue">推荐简历</div>
+    <div id="m-interview" class="p0-10 ho-blue">安排面试</div>
+    <div id="m-pass" class="p0-10 ho-blue">通过面试</div>
+    <div id="m-offer" class="p0-10 ho-blue">签订Offer</div>
+    <div id="m-signin" class="p0-10 ho-blue">入职</div>
+    <div id="m-invoice" class="p0-10 ho-blue">开发票</div>
+    <div id="m-improper" class="p0-10 ho-blue bdt1">不合适</div>
+    <div id="m-note" class="p0-10 ho-blue">添加备注</div>
+    <div id="m-task" class="p0-10 ho-blue">添加待办</div>
+  </div>
+</body>
+<script>
+  $('.cv-t').on('click', function() { //单击简历tab切换
+    $('.cv-t.bdt3-b').removeClass('bdt3-b').addClass('ho-cb cu-po'); //样式
+    $(this).addClass('bdt3-b').removeClass('ho-cb cu-po'); //样式
+    $('[id^="cv-t"]').hide(); //先隐藏所有tab简历
+    $($(this).attr('data-showID')).show(); //再显示单击tab对应的简历
+  });
+
+</script>
+<script>
+  /*---------职位模块---------*/
+  /*点击操作icon弹出操作菜单*/
+  $('.op-menu').click(function(e) {
+    var that = $(this);
+    var visibility = $(that).has('#dropmenu').length;
+    if (visibility) {
+      $('#dropmenu').addClass('sc0 op0');
+      var Icon = $(that).children('.ic');
+      $(Icon).removeClass('cb z50');
+      setTimeout(function() {
+        $('#dropmenu').appendTo('body')
+      }, 150);
+    } else {
+      $('#dropmenu').appendTo(that);
+      $('#dropmenu').show();
+      var Icon = $(that).children('.ic');
+      $(Icon).addClass('cb z50');
+      setTimeout(function() {
+        $('#dropmenu').removeClass('sc0 op0')
+      }, 1);
+    }
+  });
+  /*单击任意地方关闭菜单*/
+  $(document).on('click', function() {
+    var that = $('#dropmenu').parent();
+    var Icon = $('#dropmenu').siblings();
+    if (!$(event.target).closest(that).length) {
+      $('#dropmenu').addClass('sc0 op0');
+      $(Icon).removeClass('cb z50');
+      setTimeout(function() {
+        $('#dropmenu').appendTo('body')
+      }, 150);
+    }
+  });
+
+  /*加入新职位*/
+  $('#btn-addposition').on('click', function() {
+    $('#popbg,#popup-addto').velocity('fadeIn', {
+      duration: 200
+    });
+  });
+  $('#popbg,.pop-cancel').on('click', function() {
+    $('#popbg,#popup-addto,#popup-recommend,#popup-mpc,#popup-talent').velocity('fadeOut', {
+      duration: 150
+    })
+  });
+  /*推荐新职位*/
+  $('#btn-recposition').on('click', function() {
+    $('#popbg,#popup-recommend').velocity('fadeIn', {
+      duration: 200
+    })
+  });
+  /*确认操作后的冒泡提示*/
+  $('.pop-confirm').on('click', function() {
+    var ID = $(this).parent().parent().parent();
+    ID = $(ID).attr('id');
+    switch (ID) {
+      case 'popup-addto':
+        toast('已成功加入职位');
+        break;
+      case 'popup-recommend':
+        toast('已成功推荐职位');
+        break;
+      case 'popup-mpc':
+        toast('已成功设为MPC');
+        break;
+      case 'popup-talent':
+        toast('已加入人才库');
+    };
+    $('#popbg,#popup-addto,#popup-recommend,#popup-mpc,#popup-talent').velocity('fadeOut', {
+      duration: 150
+    });
+    toast();
+  });
+
+</script>
+<script>
+  /*--------简历编辑模块--------*/
+  /*--新增教育经历--*/
+  $('#btn-addedu').click(function(e) {
+    $('.edu').after('<div class="mt16 p0-16 pb24 bdb1-d"> <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po"></div> <div class="fl lh46 w360"> <div><span class="d-ib w80 c2">学校：</span> <input type="text" class="school w240 p8 h32"> </div> <div><span class="d-ib w80 c2">专业：</span> <input type="text" class="major w240 p8 h32"> </div> </div> <div class="fl lh46"> <div><span class="d-ib w80 c2">在校时间：</span> <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months"> <span class="c3 p1016">~</span> <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months" data-today-button="true"> </div> <div><span class="d-ib w80 c2">学历：</span> <select name="scholar" class="scholar w240"> <option></option> <option>博士后</option> <option>博士</option> <option>MBA/EMBA</option> <option>硕士</option> <option>本科</option> <option>大专</option> <option>中专</option> <option>中技</option> <option>高中</option> <option>初中</option> </select>  </div> </div> <div class="clear"></div> </div>');
+    $('.scholar').select2({
+      placeholder: " ",
+      minimumResultsForSearch: Infinity
+    });
+    $('.school').autocomplete({
+      lookup: schools
+    });
+    $('.major').autocomplete({
+      lookup: majors
+    });
+  });
+  /*--删除新增内容--*/
+  $($('.edu').parent()).on('click', '.btn-del', function() {
+    $(this).parent().velocity("slideUp", {
+      duration: 200,
+      easing: "easeOutCubic",
+      complete: function() {
+        $(this).remove()
+      }
+    })
+  });
+  /*--新增工作经历--*/
+  $('#btn-addjob').click(function(e) {
+    $('.job').after('<div class="mt16 p0-16 pb24 bdb1-d"> <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po"></div> <div class="fl lh46 w360"> <div><span class="d-ib w80 c2">公司：</span> <input type="text" class="w240 p8 h32"> </div> <div><span class="d-ib w80 c2">职位：</span> <input type="text" class="w240 p8 h32"> </div> </div> <div class="fl lh46"> <div><span class="d-ib w80 c2">在职时间：</span> <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months"> <span class="c3 p1016">~</span> <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months" data-today-button="true"> </div> </div> <div class="clear lh46"> <span class="d-ib w80 c2">工作描述：</span> <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4"></textarea> </div> <div class="clear"></div> </div>')
+  });
+  //新增时间选择input实例化
+  $($('.job').parent()).on('click', '.datepicker-here', function() {
+    $('.datepicker-here').datepicker();
+    $('.datepicker-here').data('datepicker');
+    $(this).datepicker().data('datepicker').show();
+  });
+  /*--新增项目经历--*/
+  $('#btn-addproj').click(function(e) {
+    $('.proj').after('<div class="mt16 p0-16 pb24 bdb1-d"> <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po"></div> <div class="fl lh46 w360"> <div><span class="d-ib w80 c2">项目名称：</span> <input type="text" class="w240 p8 h32"> </div> </div> <div class="fl lh46"> <div><span class="d-ib w80 c2">项目时间：</span> <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months"> <span class="c3 p1016">~</span> <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months"> </div> </div> <div class="clear lh46"> <span class="d-ib w80 c2">项目描述：</span> <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4"></textarea> </div> <div class="clear"></div> </div>')
+  });
+  /*--新增职业技能--*/
+  $($('.edu').parent()).on('click', '.btn-addskill', function() {
+    $($(this).parent()).after('<div class="p0-16"> <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po ml8"></div> <div class="btn-addskill fr ic f24 c3 mt8 ho-cb cu-po"></div> <div class="fl lh46 w360"> <div><span class="d-ib w80 c2">技能：</span> <input type="text" class="w240 p8 h32"> </div> </div> <div class="fl lh46"> <div><span class="d-ib w80 c2">掌握程度：</span> <select name="skill" class="w80"> <option></option> <option>精通</option> <option>熟练</option> <option>一般</option> <option>了解</option> </select> <span class="d-ib ml24 c2">使用时间：</span> <input type="text" class="w60 h32 p8"> <span class="c2">个月</span>  </div> </div> <div class="clear"></div> </div>');
+    $('select').select2({
+      placeholder: " ",
+      minimumResultsForSearch: Infinity
+    });
+  })
+  /*--新增语言能力--*/
+  $($('.edu').parent()).on('click', '.btn-addlan', function() {
+    $($(this).parent()).after('<div class="p0-16"> <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po ml8"></div> <div class="btn-addlan fr ic f24 c3 mt8 ho-cb cu-po"></div> <div class="fl lh46 w360"> <div><span class="d-ib w80 c2">语言：</span> <input type="text" class="w240 p8 h32"> </div> </div> <div class="fl lh46"> <div><span class="d-ib w80 c2">熟练程度：</span> <select name="skill" class="w80"> <option></option> <option>精通</option> <option>熟练</option> <option>一般</option> <option>了解</option> </select> <span class="d-ib ml24 c2">使用时间：</span> <input type="text" class="w60 h32 p8"> <span class="c2">个月</span> </div> </div> <div class="clear"></div> </div>');
+    $('select').select2({
+      placeholder: " ",
+      minimumResultsForSearch: Infinity
+    });
+  })
+  /*--选择学历下拉框实例化--*/
+  $('select').select2({
+    placeholder: " ",
+    minimumResultsForSearch: Infinity
+  });
+
+  /*--输入学校自动联想--*/
+  var schools = [{
+      value: '北京大学'
+    },
+    {
+      value: '北京航空航天大学'
+    },
+    {
+      value: '北京邮电大学'
+    },
+    {
+      value: '北京师范大学'
+    },
+    {
+      value: '北京科技大学'
+    },
+    {
+      value: '北京理工大学'
+    },
+    {
+      value: '北京化工大学'
+    },
+    {
+      value: '北京交通大学'
+    },
+    {
+      value: '北京工商大学'
+    },
+    {
+      value: '北京联合大学'
+    },
+    {
+      value: '北京第二外国语学院'
+    },
+    // ...
+  ];
+  $('.school').autocomplete({
+    lookup: schools
+  });
+  /*用ajax方法:
+  $('#school').autocomplete({
+      serviceUrl: '/filepath/schools',
+  });
+  */
+  /*--输入专业自动联想--*/
+  var majors = [{
+      value: '人力资源管理'
+    },
+    {
+      value: '行政管理'
+    },
+    {
+      value: '城市管理'
+    },
+    {
+      value: '物流管理'
+    },
+    {
+      value: '旅游管理'
+    },
+    {
+      value: '酒店管理'
+    },
+    {
+      value: '工商管理'
+    },
+    // ...
+  ];
+  $('.major').autocomplete({
+    lookup: majors
+  });
+  /*用ajax方法:
+  $('#school').autocomplete({
+      serviceUrl: '/filepath/schools',
+  });
+  */
+  /*--城市选择实例化--*/
+  var currentcity = new Vcity.CitySelector({
+    input: 'citySelect1'
+  });
+  var currentcity = new Vcity.CitySelector({
+    input: 'citySelect2'
+  });
+
+</script>
+<script>
+  /*--职位模块下收起展开职位*/
+  $("#btn-colap").click(function(e) {
+    var contents = $(this).parent().next();
+    if ($("#btn-colap").hasClass('r90')) {
+      $("#btn-colap").removeClass('r90');
+      contents.show()
+    } else {
+      $("#btn-colap").addClass('r90');
+      contents.hide()
+    }
+  });
+  /*--切换tab--*/
+  $('.tab').click(function(e) {
+    var tabid = $(this).attr('data-id');
+    $('.tab').removeClass('bg-w bd-3').addClass('ho-cb');
+    $(this).addClass('bg-w bd-3').removeClass('ho-cb');
+    $('.tabs').hide();
+    $(tabid).show();
+  });
+  /*--选中人才库--*/
+  $("#talent").addClass("nav-a-selected");
+  /*--“新增”和“账号”拂过展开下拉菜单*/
+  $("#add").mouseenter(function(e) {
+    $("#add ul").show()
+  });
+  $("#add").mouseleave(function(e) {
+    $("#add ul").hide()
+  });
+  $("#account").mouseenter(function(e) {
+    $("#account ul").show()
+  });
+  $("#account").mouseleave(function(e) {
+    $("#account ul").hide()
+  });
+
+</script>
+
+<script>
+  $('.expand-hire-process').on('click', function() {
+    var icon = $(this).children('.ic-expand');
+    var expanded = icon.hasClass('r180');
+    if (expanded) {
+      $(this).parent().next('.detail').hide();
+      icon.removeClass('r180');
+    } else {
+      $(this).parent().next('.detail').show();
+      icon.addClass('r180');
+    }
+  });
+
+</script>
+<script>
+  $('..tag-edit-select').select2({
+    data: ["已存在标签1", "已存在标签2", "已存在标签3"], //此处为系统已录入过的标签
+    tags: true,
+    tokenSeparators: [','],
+    placeholder: "Add your tags here"
+  });
+
+</script>
+<script>
+  /*简历标签相关JS*/
+
+  /*【简历标签】----------begin---------*/
+
+  /*添加标签按钮*/
+  $('.btn-addTag').on('click', function() {
+    var status = $(this).children(':last').html();
+    if (status == "添加标签") {
+      $(this).siblings('.tag-input').show(); //显示标签input
+      $(this).siblings('.tag-input').children('input').focus(); //input获取焦点，方便用户输入
+      $(this).html('<span class="ic f20"></span><span class="pt2">关闭添加</span>'); //变换此按钮为关闭添加
+    } else {
+      $(this).siblings('.tag-input').hide(); //隐藏标签input
+      $(this).html('<span class="ic f20"></span><span class="pt2">添加标签</span>'); //变换次按钮为添加标签
+    }
+  });
+
+  /*添加标签：输入框自动联想*/
+  var Tags = [{
+      value: '标签1',
+      data: 'tag1'
+    },
+    // ...
+    {
+      value: '标签N',
+      data: 'tagN'
+    }
+  ];
+  $('.tag-input input').autocomplete({
+    lookup: Tags,
+    onSelect: function(suggestion) {
+      var insertTag = '<div class="tal-tag"><span class="tag-name">' + suggestion.value + '</span></div>'; //tag标签的元素
+      var target = $(this).parents('.tags-container'); //插入位置
+      $(insertTag).prependTo(target); //插入相应标签
+      $(this).val(''); //清空标签输入框
+      window.setTimeout(function() { //插入的新标签颜色更改，让用户知道键入了新标签
+        target.children(':nth-child(1)').velocity({
+          backgroundColor: '#2196f3'
+        }, 500);
+        target.children(':nth-child(1)').velocity('reverse', 500);
+      }, 10);
+      //    alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+    }
+  });
+
+  /*添加标签：输入框键盘Enter事件*/
+  $('.tag-input input').on('keyup', function(e) { //标签输入框enter事件
+    var key = e.which;
+    if (key == 13) { //Enter键
+      var inputValue = $(this).val().trim(); //当前键入的值，移除空格
+      var insertTag = '<div class="tal-tag"><span class="tag-name">' + inputValue + '</span></div>'; //tag标签的元素
+      var target = $(this).parents('.tags-container'); //插入位置
+      if (inputValue.length > 0) { //不为空的时候才添加标签
+        $(insertTag).prependTo(target); //插入相应标签
+        $(this).val(''); //清空标签输入框
+        window.setTimeout(function() { //插入的新标签颜色更改，让用户知道键入了新标签
+          target.children(':nth-child(1)').velocity({
+            backgroundColor: '#2196f3'
+          }, 500);
+          target.children(':nth-child(1)').velocity('reverse', 500);
+        }, 10);
+      }
+    } else if (key == 27) { //Esc键
+      $(this).parent().hide();
+      $(this).parent().siblings('.btn-addTag').html('<span class="ic f20"></span><span class="pt2">添加标签</span>').show();
+    }
+  });
+
+  /*标签编辑按钮*/
+  $('.btn-edit-tag').on('click', function() {
+    var tagsContainer = $(this).parent().siblings('.tags-container'); //定位所要编辑的标签容器
+    $(this).hide(); //隐藏编辑按钮
+    $(this).siblings('.btn-edit-save,.btn-edit-cancel').show(); //显示取消和保存按钮
+    tagsContainer.find('.btn-addTag').hide(); //隐藏添加标签按钮
+    tagsContainer.find('.tal-tag').addClass('tal-tag-edit'); //展示标签转换成可编辑状态
+    tagsContainer.find('.tag-input').hide(); //隐藏输入框
+
+  });
+  /*编辑状态-保存按钮*/
+  $('.btn-edit-save').on('click', function() {
+    var tagsContainer = $(this).parent().siblings('.tags-container'); //定位所要编辑的标签容器
+    $(this).siblings('.btn-edit-tag').show(); //显示编辑按钮
+    $(this).hide(); //隐藏保存按钮
+    $(this).siblings('.btn-edit-cancel').hide(); //隐藏取消按钮
+    tagsContainer.find('.btn-addTag').show(); //显示添加标签按钮
+    tagsContainer.find('.tal-tag').removeClass('tal-tag-edit'); //编辑标签转换成展示状态
+    tagsContainer.find('.tal-tag[style*="opacity: 0"]').remove(); //移除掉编辑状态下删除的标签
+    tagsContainer.find('.tag-input').hide(); //隐藏输入框
+    tagsContainer.find('.btn-addTag').html('<span class="ic f20"></span><span class="pt2">添加标签</span>'); //若是添加标签状态下单击了编辑，然后再取消，要还原‘关闭添加’为‘添加标签'
+  });
+
+  /*编辑状态-取消按钮*/
+  $('.btn-edit-cancel').on('click', function() {
+    var tagsContainer = $(this).parent().siblings('.tags-container'); //定位所要编辑的标签容器
+    $(this).siblings('.btn-edit-tag').show(); //显示编辑按钮
+    $(this).hide(); //隐藏取消按钮
+    $(this).siblings('.btn-edit-save').hide(); //隐藏保存按钮
+    tagsContainer.find('.btn-addTag').show(); //显示添加标签按钮
+    tagsContainer.find('.tal-tag').removeClass('tal-tag-edit'); //编辑标签转换成展示状态
+    tagsContainer.find('.tal-tag[style*="opacity: 0"]').velocity('reverse', 1).show(); //还原编辑状态下删除的标签
+    tagsContainer.siblings('.tag-input').hide(); //隐藏输入框
+    tagsContainer.find('.btn-addTag').html('<span class="ic f20"></span><span class="pt2">添加标签</span>'); //若是添加标签状态下单击了编辑，然后再取消，要还原‘关闭添加’为‘添加标签'
+  });
+
+  /*编辑状态-删除单个标签*/
+  $('.tags-container').on('click', '.tal-tag.tal-tag-edit', function() { //单击删除标签，删除动画完成后仅隐藏
+    $(this).velocity({
+      translateX: "-120px",
+      opacity: 0
+    }, {
+      duration: 150,
+      complete: function() {
+        $(this).hide();
+      }
+    });
+  });
+
+  /*【简历标签】----------end---------*/
+
+</script>
+
+</html>

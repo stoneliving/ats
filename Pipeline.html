@@ -1,0 +1,4172 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Pipeline</title>
+  <link rel="shortcut icon" href="images/logo_favicon.png">
+  <link rel="stylesheet" href="css/main-New.css">
+  <link rel="stylesheet" href="css/select2.css">
+  <link rel="stylesheet" href="css/cityselect.css">
+  <link rel="stylesheet" href="css/datepicker.css">
+  <link rel="stylesheet" href="css/main-New.css">
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/datepicker.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/jquery-scrolltofixed-min.js"></script>
+  <script src="js/autogrow.min.js"></script>
+  <style>
+
+
+  </style>
+</head>
+
+<body>
+  <header class="header"></header>
+  <div class="content f14">
+    <div class="card1 mb16 f14">
+      <div class="bg-f2 c2 p816"> <span class="ic f24"></span>筛选: <span class="filter-tag d-ib a ml24 cu-po">职位名称
+      <div class="note hidden">
+        <div class="mt8">
+          <select name="" id="select-company" class="select-con w240">
+            <option></option>
+            <option>A公司</option>
+            <option>B公司(选择后自动添加B的联系人)</option>
+            <option>C公司</option>
+            <option>D公司</option>
+            <option>E公司</option>
+            <option>F公司</option>
+            <option>G公司</option>
+            <option>H公司</option>
+            <option>I公司</option>
+            <option>G公司</option>
+            <option>K公司</option>
+            <option>L公司</option>
+            <option>M公司</option>
+            <option>N公司</option>
+            <option>O公司</option>
+            <option>P公司</option>
+            <option>Q公司</option>
+            <option>R公司</option>
+            <option>S公司</option>
+            <option>T公司</option>
+            <option>U公司</option>
+            <option>V公司</option>
+            <option>W公司</option>
+            <option>X公司</option>
+            <option>Y公司</option>
+            <option>Z公司</option>
+          </select>
+        </div>
+        <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+    </div>
+    </span> <span class="filter-tag d-ib a ml24 cu-po">职位状态
+      <div class="note hidden">
+        <div class="mt8">
+          <select name="" id="select-status" class="select-con w160">
+            <option></option>
+            <option>潜在客户</option>
+            <option>意向客户</option>
+            <option>签约谈判中</option>
+            <option>已签约客户</option>
+            <option>客户池</option>
+          </select>
+        </div>
+        <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+  </div>
+  </span> <span class="filter-tag d-ib a ml24 cu-po">城市
+      <div class="note hidden">
+        <div class="mt8">
+          <input type="text" id="citySelect1" class="w160 p8 h32">
+        </div>
+        <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+  </div>
+  </span> <span class="filter-tag d-ib a ml24 cu-po">行业
+      <div class="note hidden">
+        <div class="mt8">
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+  </div>
+  </span> <span class="filter-tag d-ib a ml24 cu-po">所属顾问
+      <div class="note hidden">
+        <div class="mt8">
+          <select name="" id="select-bd" class="select-position w160">
+            <option value="-1"></option>
+            <optgroup label="凤凰队">
+            <option value="">张</option>
+            <option value="">王</option>
+            <option value="">李</option>
+            </optgroup>
+            <optgroup label="热火队">
+            <option value="">赵</option>
+            <option value="">刘</option>
+            </optgroup>
+            <optgroup label="麒麟队">
+            <option value="">邓</option>
+            <option value="">周</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+  </div>
+  </span> <span class="filter-tag d-ib a ml24 cu-po">所属团队
+      <div class="note hidden">
+        <div class="mt8">
+          <select name="" id="select-team" class="select-con w160">
+            <option></option>
+            <option>凤凰队</option>
+            <option>麒麟队</option>
+            <option>热火队</option>
+          </select>
+        </div>
+        <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+  </div>
+  </span> <span class="filter-tag d-ib a ml24 cu-po">创建者
+      <div class="note hidden">
+        <div class="mt8">
+          <input type="radio" name="creator" value="personal" id="personal">
+          <label for="personal"></label>
+          个人
+          <input type="radio" name="creator" value="group" id="group">
+          <label for="group" class="ml16"></label>
+          团队
+          <div class="select-personal hidden mt8">
+            <select name="" class="select-personal w160" id="select-personal">
+              <option value="-1"></option>
+              <optgroup label="BD">
+              <option value="">高阳</option>
+              <option value="">刘达文</option>
+              <option value="">潘春雷</option>
+              </optgroup>
+              <optgroup label="顾问">
+              <option value="">王翔</option>
+              <option value="">宋艳</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="select-group hidden mt8">
+            <select name="" class="select-group w160" id="select-group">
+              <option value="-1"></option>
+              <optgroup label="BD团队">
+              <option value="">热火队</option>
+              <option value="">麒麟队</option>
+              </optgroup>
+              <optgroup label="顾问团队">
+              <option value="">火箭队</option>
+              <option value="">凤凰队</option>
+              <option value="">勇士队</option>
+              <option value="">灰熊队</option>
+              </optgroup>
+            </select>
+          </div>
+          <script>
+/*切换个人和团队筛选*/			
+$('input[name="creator"]').on('click', function() {
+  var that = $(this);
+  var value = $('input[name="creator"]:checked').val();
+  if (value == "personal") {
+    $('.select-personal').show();$('.select-group').hide();
+  } else {
+    $('.select-personal').hide();$('.select-group').show();
+  }
+})           
+</script> 
+        </div>
+        <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+  </div>
+  </span> <span class="filter-tag d-ib a ml24 cu-po">创建时间
+      <div class="note c2 hidden">
+        <div class="p4-0">
+          <input type="radio" value="week" name="cre-time" id="week">
+          <label for="week"></label>
+          一周内</div>
+        <div class="p4-0">
+          <input type="radio" value="month" name="cre-time" id="month">
+          <label for="month"></label>
+          一月内</div>
+        <div class="p4-0">
+          <input type="radio" value="month3" name="cre-time" id="month3">
+          <label for="month3"></label>
+          三月内</div>
+        <div class="p4-0">
+          <input type="radio" value="custom" name="cre-time" id="custom">
+          <label for="custom"></label>
+          自定义</div>
+        <div class="custom hidden">
+          <div class="ml16">
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="start">
+          </div>
+          <div class="ta-c ml16">~</div>
+          <div class="ml16">
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="end">
+          </div>
+        </div>
+        <script>
+          $('input[name="cre-time"]').on('click',function(){
+              var that = $(this);
+              var value = $('input[name="cre-time"]:checked').val();
+              if(value == "custom"){
+                  $(that).parent().siblings('.custom').show()} else{$(that).parent().siblings('.custom').hide()}
+              })
+          </script>
+        <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+  </div>
+  </span> <span class="filter-tag d-ib a ml24 cu-po">领取时间
+      <div class="note hidden">
+        <div class="p4-0">
+          <input type="radio" value="week" name="get-time" id="week1">
+          <label for="week1"></label>
+          一周内</div>
+        <div class="p4-0">
+          <input type="radio" value="month" name="get-time" id="month1">
+          <label for="month1"></label>
+          一月内</div>
+        <div class="p4-0">
+          <input type="radio" value="month3" name="get-time" id="month31">
+          <label for="month31"></label>
+          三月内</div>
+        <div class="p4-0">
+          <input type="radio" value="custom" name="get-time" id="custom1">
+          <label for="custom1"></label>
+          自定义</div>
+        <div class="custom hidden">
+          <div class="ml16">
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="start1">
+          </div>
+          <div class="ta-c ml16">~</div>
+          <div class="ml16">
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="end1">
+          </div>
+        </div>
+        <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+  </div>
+  </span> <span class="filter-tag d-ib a ml24 cu-po">最后操作时间
+      <div class="note hidden">
+        <div class="p4-0">
+          <input type="radio" value="week" name="op-time" id="week2">
+          <label for="week2"></label>
+          一周内</div>
+        <div class="p4-0">
+          <input type="radio" value="month" name="op-time" id="month2">
+          <label for="month2"></label>
+          一月内</div>
+        <div class="p4-0">
+          <input type="radio" value="month3" name="op-time" id="month32">
+          <label for="month32"></label>
+          三月内</div>
+        <div class="p4-0">
+          <input type="radio" value="custom" name="op-time" id="custom2">
+          <label for="custom2"></label>
+          自定义</div>
+        <div class="custom hidden">
+          <div class="ml16">
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="start2">
+          </div>
+          <div class="ta-c ml16">~</div>
+          <div class="ml16">
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="end2">
+          </div>
+        </div>
+        <div class="mt16 mb8"> <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span> <span class="filter-cancel fr p4-8 ho-u">取消</span> </div>
+  </div>
+  </span>
+  <span class="f14 fr ml16"><input type="checkbox" id="allpos"><label for="allpos">查看所有职位</label></span>
+  </div>
+  <div class="p816 mt8 c1"> <span class="fl p3-4">所有职位</span> <span class="ic f24 c3 mr-8 fl"></span> <span class="tag-search"> <span class="c3">职位状态：</span> <span>进展中</span><span class="ic ml4 f16 c3"></span> </span> <span class="ml8 fl">共<span class="bold cb f16 m0-4">60</span>份相关简历</span> <span class="fl cb bold cu-po ml24 f14">清空筛选条件</span>
+    <div class="clear"></div>
+  </div>
+  </div>
+  <div class="lh36 c2 bg-ec po-r z50 stickToTop">
+    <div class="tab fl pl8 pr8 cu-po ho-cb" data-id="#tab1"> <span class="ic f24"></span> <span><span class="bold f20 mr4">1</span>智能匹配</span>
+    </div>
+    <div class="tab fl pl24 pr8 cu-po ho-cb" data-id="#tab2"> <span class="ic f24"></span> <span><span class="cb bold f20 mr4">9</span>加入</span> <span class="pi-chev"></span> </div>
+    <div class="tab fl pl24 pr8 cu-po ho-cb" data-id="#tab3"> <span class="ic f24"></span> <span><span class="cb bold f20 mr4">1</span>推荐</span> <span class="pi-chev"></span> </div>
+    <div class="tab fl pl24 pr8 cu-po ho-cb" data-id="#tab4"> <span class="ic f24"></span> <span><span class="cb bold f20 mr4">1</span>面试</span> <span class="pi-chev"></span> </div>
+    <div class="tab fl pl24 pr8 cu-po ho-cb" data-id="#tab5"> <span class="ic f24"></span> <span><span class="cb bold f20 mr4">1</span>Offer</span> <span class="pi-chev"></span> </div>
+    <div class="tab fl pl24 pr8 cu-po ho-cb" data-id="#tab6"> <span class="ic f24"></span> <span><span class="cb bold f20 mr4">2</span>入职</span> <span class="pi-chev"></span> </div>
+    <div class="tab fl pl24 pr8 cu-po ho-cb" data-id="#tab7"> <span class="ic f24"></span> <span><span class="cb bold f20 mr4">2</span>保证期</span> <span class="pi-chev"></span> </div> 
+    <div class="tab fl pl24 pr8 cu-po ho-cb" data-id="#tab8"> <span class="ic f24"></span> <span><span class="cb bold f20 mr4">3</span>已过保</span> <span class="pi-chev"></span> </div>
+    <div class="tab fr pl8 pr8 cu-po bg-w" data-id="#tab9"> <span class="ic f24"></span> <span><span class="bold f20 mr4">11</span>不合适</span>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="card1 c1 pt8">
+    <div id="tab1" class="tabs hidden">
+      <table class="c1 bdcl ta-l c1">
+        <tr class="c2 h64 f13" style="border:none;">
+          <th class="w52"></th>
+          <th class="w104">候选人</th>
+          <th class="w66">操作</th>
+          <th class="w200">招聘流程</th>
+          <th class="w66"> 备注 </th>
+          <th class="w200">匹配的职位</th>
+          <th class="w112">职位优先级</th>
+          <th class="w109">职位状态</th>
+          <th class="w200">客户公司</th>
+          <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="matchcv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王精英</span> </a>
+          </td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span></span><span>未开始</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+      </table>
+    </div>
+    <div id="tab2" class="tabs hidden">
+      <table class="c1 bdcl ta-l c1">
+        <tr class="c2 h64 f13" style="border:none;">
+          <th class="w52"></th>
+          <th class="w104 ta-l">候选人</th>
+          <th class="w66">操作</th>
+          <th class="w200">招聘流程</th>
+          <th class="w66"> 备注 </th>
+          <th class="w200">加入的职位</th>
+          <th class="w112">职位优先级</th>
+          <th class="w109">职位状态</th>
+          <th class="w200">客户公司</th>
+          <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="addtocv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王精英</span> </a> <span class="ic f20 po-a c-sta mt-12"></span></td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>已加入职位</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="addtocv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王精英</span> </a> <span class="ic f20 po-a c-sta mt-12"></span></td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>已加入职位</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="addtocv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王精英</span> </a> <span class="ic f20 po-a c-sta mt-12"></span></td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>已加入职位</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="addtocv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王精英</span> </a> <span class="ic f20 po-a c-sta mt-12"></span></td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>已加入职位</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="addtocv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王精英</span> </a> <span class="ic f20 po-a c-sta mt-12"></span></td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>已加入职位</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="addtocv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王精英</span> </a> <span class="ic f20 po-a c-sta mt-12"></span></td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>已加入职位</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="addtocv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王精英</span> </a> <span class="ic f20 po-a c-sta mt-12"></span></td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>已加入职位</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="addtocv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王精英</span> </a> <span class="ic f20 po-a c-sta mt-12"></span></td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>已加入职位</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="addtocv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王精英</span> </a> <span class="ic f20 po-a c-sta mt-12"></span></td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>已加入职位</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+        <!--若无数据则放入以下内容 <tr class="bdt1..>....</tr>  -->
+
+        <!--<td colspan="12"><div class="ta-c pt16 pb16">
+              <div class="ic f96 ce0"></div>
+              <p class="c3 f16">此阶段暂无候选人</p>
+              <a href="" class="a cb ho-u lh30">试试智能匹配</a> </div></td>-->
+      </table>
+    </div>
+    <div id="tab3" class="tabs hidden">
+      <table class="c1 bdcl ta-l c1">
+        <tr class="c2 h64 f13" style="border:none;">
+          <th class="w52"></th>
+          <th class="w104 ta-l">候选人</th>
+          <th class="w66">操作</th>
+          <th class="w200">招聘流程</th>
+          <th class="w66"> 备注 </th>
+          <th class="w200">推荐的职位</th>
+          <th class="w112">职位优先级</th>
+          <th class="w109">职位状态</th>
+          <th class="w200">客户公司</th>
+          <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="reccv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+          </td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>已推荐职位</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="reccv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+          </td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c-gr"></span> <span class="c-gr">已通过筛选</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+      </table>
+    </div>
+    <div id="tab4" class="tabs hidden">
+      <table class="c1 bdcl ta-l c1">
+        <tr class="c2 h64 f13" style="border:none;">
+          <th class="w52"></th>
+          <th class="w104 ta-l">候选人</th>
+          <th class="w66">操作</th>
+          <th class="w200">招聘流程</th>
+          <th class="w66"> 备注 </th>
+          <th class="w200">推荐的职位</th>
+          <th class="w112">职位优先级</th>
+          <th class="w109">职位状态</th>
+          <th class="w200">客户公司</th>
+          <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="intercv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+          </td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td class="hireprocess"><span class="ic f20 c3"></span> <span>面试</span> <span>：待1面</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="intercv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+          </td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td class="c-gr hireprocess"><span class="ic f20"></span> <span>面试</span><span>：通过1面</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+      </table>
+    </div>
+    <div id="tab5" class="tabs hidden">
+      <table class="c1 bdcl ta-l c1">
+        <tr class="c2 h64 f13" style="border:none;">
+          <th class="w52"></th>
+          <th class="w104 ta-l">候选人</th>
+          <th class="w66">操作</th>
+          <th class="w200">招聘流程</th>
+          <th class="w66"> 备注 </th>
+          <th class="w200">推荐的职位</th>
+          <th class="w112">职位优先级</th>
+          <th class="w109">职位状态</th>
+          <th class="w200">客户公司</th>
+          <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="offercv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+          </td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>待发Offer</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+      </table>
+    </div>
+    <div id="tab6" class="tabs hidden">
+      <table class="c1 bdcl ta-l c1">
+        <tr class="c2 h64 f13" style="border:none;">
+          <th class="w52"></th>
+          <th class="w104 ta-l">候选人</th>
+          <th class="w66">操作</th>
+          <th class="w200">招聘流程</th>
+          <th class="w66"> 备注 </th>
+          <th class="w200">推荐的职位</th>
+          <th class="w112">职位优先级</th>
+          <th class="w109">职位状态</th>
+          <th class="w200">客户公司</th>
+          <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="entrycv-1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+          </td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>待入职</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="entrycv-2" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+          </td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>待入职</span></td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+      </table>
+    </div>
+    <div id="tab7" class="tabs hidden">
+      <table class="c1 bdcl ta-l c1">
+        <tr class="c2 h64 f13" style="border:none;">
+          <th class="w52"></th>
+          <th class="w104 ta-l">候选人</th>
+          <th class="w66">操作</th>
+          <th class="w200">招聘流程</th>
+          <th class="w66"> 备注 </th>
+          <th class="w200">推荐的职位</th>
+          <th class="w112">职位优先级</th>
+          <th class="w109">职位状态</th>
+          <th class="w200">客户公司</th>
+          <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+        </tr>
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="guarantee-cv1" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+          </td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c3"></span> <span>未过保证期</span> <span class="p0-4 bdrs2 c3"><span class="cb bold">26天</span><span class="f12">/90天</span></span>
+          </td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+        
+      </table>
+    </div>
+    <div id="tab8" class="tabs hidden">
+      <table class="c1 bdcl ta-l c1">
+        <tr class="c2 h64 f13" style="border:none;">
+          <th class="w52"></th>
+          <th class="w104 ta-l">候选人</th>
+          <th class="w66">操作</th>
+          <th class="w200">招聘流程</th>
+          <th class="w66"> 备注 </th>
+          <th class="w200">推荐的职位</th>
+          <th class="w112">职位优先级</th>
+          <th class="w109">职位状态</th>
+          <th class="w200">客户公司</th>
+          <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+        </tr>
+        
+        <tr class="bdt1 h64 ho-ec">
+          <td></td>
+          <td id="guarantee-cv2" class="ta-l cv-link">
+            <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+          </td>
+          <td><span class="op-menu"> <span class="ic c2 f24 cu-po po-r ho-cb"></span> </span>
+          </td>
+          <td><span class="ic f20 c-gr"></span> <span class="c-gr">已过保证期</span><span class="p0-4 bdrs2 c3"><span class="c-gr bold">126天</span><span class="f12">/90天</span></span>
+          </td>
+          <td><span class="note-ho ho-cb c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+            </span>
+          </td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+          </td>
+          <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+          <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+          <td>
+            <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+          </td>
+          <td>2016-06-13</td>
+        </tr>
+      </table>
+    </div>
+    <div id="tab9" class="tabs">
+      <div class="unfit-tabs-header c2 bdb1">
+        <div class="d-ib ml24 c3">不合适统计：</div>
+        <div data-id="#unfit-all" class="unfit-tab bdb3-b cb">总计<span class="bold ml4 f16">1216</span></div>
+        <div data-id="#unfit-add" class="unfit-tab">加入阶段<span class="bold ml4 f16">600</span></div>
+        <div data-id="#unfit-rec" class="unfit-tab">推荐阶段<span class="bold ml4 f16">400</span></div>
+        <div data-id="#unfit-inter" class="unfit-tab">面试阶段<span class="bold ml4 f16">100</span></div>
+        <div data-id="#unfit-offer" class="unfit-tab">Offer阶段<span class="bold ml4 f16">60</span></div>
+        <div data-id="#unfit-entry" class="unfit-tab">入职阶段<span class="bold ml4 f16">40</span></div>
+        <div data-id="#unfit-gura" class="unfit-tab">保证期阶段<span class="bold ml4 f16">20</span></div>
+      </div>
+      <script>
+        /*单击不合适分类tab，更改tab样式，显示相应tab内的table*/
+        $(document).on('click', '.unfit-tab', function() {
+          $('.unfit-tab').removeClass('bdb3-b cb');
+          $(this).addClass('bdb3-b cb');
+          var tableID = $(this).attr('data-id');
+          $('#unfit-tables-wrapper div').hide();
+          $(tableID).show();
+        });
+      </script>
+      <div id="unfit-tables-wrapper">
+        <div id="unfit-all">
+          <table class="c1 bdcl ta-l c1 mt24">
+            <tr class="c2 f13 h30" style="border:none;">
+              <th class="w48 ta-l"></th>
+              <th class="w104 ta-l">候选人</th>
+              <th class="w66">操作</th>
+              <th class="w200">招聘流程</th>
+              <th class="w66"> 备注 </th>
+              <th class="w200">推荐的职位</th>
+              <th class="w112">职位优先级</th>
+              <th class="w109">职位状态</th>
+              <th class="w200">客户公司</th>
+              <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>已加入职位</span> <span class="bg9e bdrs2 p0-4 cw">不合适</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>已加入职位</span> <span class="bg9e bdrs2 p0-4 cw">不感兴趣</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>已推荐职位</span> <span class="bg9e bdrs2 p0-4 cw">不合适</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>已推荐职位</span> <span class="bg9e bdrs2 p0-4 cw">待定</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>面试：1面</span> <span class="bg9e bdrs2 p0-4 cw">未到场</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>待发Offer</span> <span class="bg9e bdrs2 p0-4 cw">拒绝Offer</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>待发Offer</span> <span class="bg9e bdrs2 p0-4 cw">薪酬不合适</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>待入职</span> <span class="bg9e bdrs2 p0-4 cw">放弃入职</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>待入职</span> <span class="bg9e bdrs2 p0-4 cw">取消录用</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>已入职</span> <span class="bg9e bdrs2 p0-4 cw">辞职</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>已入职</span> <span class="bg9e bdrs2 p0-4 cw">辞退</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+          </table>
+        </div>
+        <div id="unfit-add" class="hidden">
+          <table class="c1 bdcl ta-l c1 mt24">
+            <tr class="c2 f13 h30" style="border:none;">
+              <th class="w48 ta-l"></th>
+              <th class="w104 ta-l">候选人</th>
+              <th class="w66">操作</th>
+              <th class="w200">招聘流程</th>
+              <th class="w66"> 备注 </th>
+              <th class="w200">推荐的职位</th>
+              <th class="w112">职位优先级</th>
+              <th class="w109">职位状态</th>
+              <th class="w200">客户公司</th>
+              <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>已加入职位</span> <span class="bg9e bdrs2 p0-4 cw">不合适</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>已加入职位</span> <span class="bg9e bdrs2 p0-4 cw">不感兴趣</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+          </table>
+        </div>
+        <div id="unfit-rec" class="hidden">
+          <table class="c1 bdcl ta-l c1 mt24">
+            <tr class="c2 f13 h30" style="border:none;">
+              <th class="w48 ta-l"></th>
+              <th class="w104 ta-l">候选人</th>
+              <th class="w66">操作</th>
+              <th class="w200">招聘流程</th>
+              <th class="w66"> 备注 </th>
+              <th class="w200">推荐的职位</th>
+              <th class="w112">职位优先级</th>
+              <th class="w109">职位状态</th>
+              <th class="w200">客户公司</th>
+              <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>已推荐职位</span> <span class="bg9e bdrs2 p0-4 cw">不合适</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>已推荐职位</span> <span class="bg9e bdrs2 p0-4 cw">待定</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+          </table>
+        </div>
+        <div id="unfit-inter" class="hidden">
+          <table class="c1 bdcl ta-l c1 mt24">
+            <tr class="c2 f13 h30" style="border:none;">
+              <th class="w48 ta-l"></th>
+              <th class="w104 ta-l">候选人</th>
+              <th class="w66">操作</th>
+              <th class="w200">招聘流程</th>
+              <th class="w66"> 备注 </th>
+              <th class="w200">推荐的职位</th>
+              <th class="w112">职位优先级</th>
+              <th class="w109">职位状态</th>
+              <th class="w200">客户公司</th>
+              <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>面试：1面</span> <span class="bg9e bdrs2 p0-4 cw">未到场</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+          </table>
+        </div>
+        <div id="unfit-offer" class="hidden">
+          <table class="c1 bdcl ta-l c1 mt24">
+            <tr class="c2 f13 h30" style="border:none;">
+              <th class="w48 ta-l"></th>
+              <th class="w104 ta-l">候选人</th>
+              <th class="w66">操作</th>
+              <th class="w200">招聘流程</th>
+              <th class="w66"> 备注 </th>
+              <th class="w200">推荐的职位</th>
+              <th class="w112">职位优先级</th>
+              <th class="w109">职位状态</th>
+              <th class="w200">客户公司</th>
+              <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>待发Offer</span> <span class="bg9e bdrs2 p0-4 cw">拒绝Offer</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>待发Offer</span> <span class="bg9e bdrs2 p0-4 cw">薪酬不合适</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+          </table>
+        </div>
+        <div id="unfit-entry" class="hidden">
+          <table class="c1 bdcl ta-l c1 mt24">
+            <tr class="c2 f13 h30" style="border:none;">
+              <th class="w48 ta-l"></th>
+              <th class="w104 ta-l">候选人</th>
+              <th class="w66">操作</th>
+              <th class="w200">招聘流程</th>
+              <th class="w66"> 备注 </th>
+              <th class="w200">推荐的职位</th>
+              <th class="w112">职位优先级</th>
+              <th class="w109">职位状态</th>
+              <th class="w200">客户公司</th>
+              <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>待入职</span> <span class="bg9e bdrs2 p0-4 cw">放弃入职</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>待入职</span> <span class="bg9e bdrs2 p0-4 cw">取消录用</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+          </table>
+        </div>
+        <div id="unfit-gura" class="hidden">
+          <table class="c1 bdcl ta-l c1 mt24">
+            <tr class="c2 f13 h30" style="border:none;">
+              <th class="w48 ta-l"></th>
+              <th class="w104 ta-l">候选人</th>
+              <th class="w66">操作</th>
+              <th class="w200">招聘流程</th>
+              <th class="w66"> 备注 </th>
+              <th class="w200">推荐的职位</th>
+              <th class="w112">职位优先级</th>
+              <th class="w109">职位状态</th>
+              <th class="w200">客户公司</th>
+              <th class="sort w120 cu-po ho-cb"> <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span> <span class="descend ic f24 ce0 po-a mt1 ml-20"></span> <span>最后操作时间</span> </th>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>已入职</span> <span class="bg9e bdrs2 p0-4 cw">辞职</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+            <tr class="bdt1 h64 ho-ec">
+              <td class="w48 ta-l pl16"><input type="checkbox" id="cv1">
+                <label for="cv1"></label></td>
+              <td>
+                <a href="Talent-2nd.html" target="_blank" class="a p8-0 cb bold"> <span>王二英</span> </a>
+              </td>
+              <td><span class="undo-cv ic f24 ho-cr cu-po" title="撤销不合适"></span></td>
+              <td><span class="ic f20 c3"></span> <span>已入职</span> <span class="bg9e bdrs2 p0-4 cw">辞退</span></td>
+              <td><span class="c2"> <span><span class="ic f20 pr4 w"></span><span>5</span></span>
+                </span>
+              </td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">Java高级开发工程师</a> </div>
+              </td>
+              <td><span class="cw bdrs2 bg-b p0-4">高</span></td>
+              <td><span class="cw bdrs2 bg-b p0-4">进展中</span></td>
+              <td>
+                <div class="w178 ol"> <a href="" class="a c1">深圳市Bravos科技股份有限公司</a> </div>
+              </td>
+              <td>2016-06-13</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+  <div class="ta-c p8 bg9e cw bdrs2 card1-nbg ho-bg6 cu-po">查看更多<span class="ic f24"></span></div>
+  <div class="ta-c p8 c3">已是列表底部了</div>
+  </div>
+  <!--操作menu-->
+  <div id="dropmenu" class="hidden po-a card5 lh30 ta-l cu-po trans sc0 op0">
+    <div id="m-toposition" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>加入职位</div>
+    <div id="m-recommend" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>推荐职位</div>
+    <div id="m-passrec" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>通过筛选</div>
+    <div id="m-interview" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>安排面试</div>
+    <div id="m-checkinter" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>查看面试安排</div>
+    <div id="m-passcurrent" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>通过本轮面试</div>
+    <div id="m-interview2" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>安排下轮面试</div>
+    <div id="m-passinter" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>待发Offer</div>
+    <div id="m-signoffer" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>签订Offer</div>
+    <div id="m-checkoffer" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>查看Offer</div>
+    <div id="m-entry" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>入职</div>
+    <div id="m-checkentry" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>查看入职信息</div>
+    <div id="m-managevisit" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>管理入职回访</div>
+    <div id="m-invoice" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>开发票</div>
+    <div id="m-notify" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>通知开票</div>
+    <div id="m-editinvo" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>编辑发票</div>
+    <div id="m-checkinvo" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>查看发票</div>
+    <div id="m-unfit" class="bdt1-d p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>不合适</div>
+    <div id="m-nomatch" class="bdt1-d p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>不匹配</div>
+    <div id="m-undo" class="bdt1-d p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>撤销上次操作</div>
+  </div>
+  <!--公共备注-->
+  <div id="notes" class="note hidden">
+    <div class="p4-0 mh240 w360 ovy-a Scrollable">
+      <div class="btn-newnote fl cb ml32 mb8 cu-po"><span class="ic f24"></span> 新增备注</div>
+      <ul class="tl-container c1 lh-n f14 clear">
+        <li class="li-no pb12 clear">
+          <div class="fl ml16 tl-ldot"></div>
+          <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+            <p class="wh-pw lh24">一些备注</p>
+            <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+          </div>
+          <div class="clear"></div>
+        </li>
+        <li class="li-no pb12 clear">
+          <div class="fl ml16 tl-ldot"></div>
+          <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+            <p class="wh-pw lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum corrupti optio fugit </p>
+            <div class="c3"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+          </div>
+          <div class="clear"></div>
+        </li>
+        <li class="li-no pb12 clear">
+          <div class="fl ml16 tl-ldot"></div>
+          <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+            <p class="wh-pw lh24">一些备注</p>
+            <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+          </div>
+          <div class="clear"></div>
+        </li>
+        <li class="li-no pb12 clear">
+          <div class="fl ml16 tl-ldot"></div>
+          <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+            <p class="wh-pw lh24">一些备注</p>
+            <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+          </div>
+          <div class="clear"></div>
+        </li>
+        <li class="li-no pb12 clear">
+          <div class="fl ml16 tl-ldot"></div>
+          <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+            <p class="wh-pw lh24">一些备注</p>
+            <div class="c3 bdt"> <span>2015-09-03</span> <span class="ml8">15:30</span> <span class="ml24 pr4">顾问:</span> <span>王某某</span> </div>
+          </div>
+          <div class="clear"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--箭头--><i class="pre-p hidden"></i>
+  <!--简历预览-->
+  <div class="cv-preview hidden po-f f14 z99 card5-nbg bg-ec bdrs2 bd1c w820 l50p" style="padding-top:16px;margin-left:-436px;">
+    <div id="cv-content" class="card1 pl8 pr8 h100p ovy-a pt16 pb48 Scrollable">
+      <div class="bg-f2 f16 c1 bold p4-8 clear">个人信息
+        <div class="fr f14 fw-n">发布于2016-06-01</div>
+      </div>
+      <div class="mt16 p0-16 lh30">
+        <div class="fl w360">
+          <div><span class="d-ib w80 c3">候选人：</span> <span>王精英</span></div>
+          <div><span class="d-ib w80 c3">性别：</span> 男</div>
+          <div><span class="d-ib w80 c3">生日：</span>&nbsp;<span>1985年</span></div>
+          <div><span class="d-ib w80 c3">籍贯：</span> 广东</div>
+          <div><span class="d-ib w80 c3">学历：</span> <span>本科</span></div>
+        </div>
+        <div class="fl">
+          <div><span class="d-ib w80 c3">联系电话：</span> <span>******</span></div>
+          <div><span class="d-ib w80 c3">联系邮箱：</span> <span>******</span></div>
+          <div><span class="d-ib w80 c3">QQ：</span> ******</div>
+          <div><span class="d-ib w80 c3">微信：</span> <span>******</span></div>
+          <div><span class="d-ib w80 c3">工作经验：</span> <span>15年</span></div>
+        </div>
+        <div class="fr ic f96 ca7 bd1-e0 h120 w120 lh-n"></div>
+        <div class="clear"></div>
+      </div>
+      <div class="bg-f2 f16 c1 bold p4-8 mt16">求职信息</div>
+      <div class="mt16 p0-16 lh30">
+        <div class="fl w360">
+          <div><span class="d-ib w80 c3">目前状态：</span> 看机会/不考虑/找工作</div>
+          <div><span class="d-ib w80 c3">到岗时间：</span> 一个月</div>
+          <div><span class="d-ib w80 c3">当前城市：</span> 广州</div>
+        </div>
+        <div class="fl">
+          <div><span class="d-ib w80 c3">目前年薪：</span> 15~20万</div>
+          <div><span class="d-ib w80 c3">期望年薪：</span> 20~25万</div>
+          <div><span class="d-ib w80 c3">期望城市：</span> 深圳</div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="bg-f2 f16 c1 bold p4-8 mt16">教育经历</div>
+      <div class="mt16 p0-16 lh30">
+        <div> <span class="d-ib w184 c3"><span>2007.09</span><span class="p0-16">~</span><span>2011.06</span></span> <span class="d-ib w160">北京大学</span> <span class="d-ib w160">计算机科学与技术</span> <span>硕士</span> </div>
+        <div><span class="d-ib w184 c3"><span>2007.09</span><span class="p0-16">~</span><span>2011.06</span></span> <span class="d-ib w160">华中科技大学</span> <span class="d-ib w160">计算机科学与技术</span> <span>本科</span></div>
+      </div>
+      <div class="bg-f2 f16 c1 bold p4-8 mt16">工作经历</div>
+      <div class="mt16 p0-16 lh30">
+        <div class="bdt1-d"> <span class="c1">Java高级开发工程师</span> <span class="p0-16 ce0">|</span> <span class="c1 bold">东软集团股份有限公司</span> <span class="p0-16 ce0">|</span> <span class="c3"><span>20011.09</span><span class="p0-16">~</span><span>至今</span><span class="ml8">（4年9个月）</span></span>
+        </div>
+        <div class="c3 fl">工作职责：</div>
+        <div class="fl w700 ml14">
+          <p class="wh-pw lh30 c2 f13">1、 具备JAVA/J2EE三年以上开发经验，Java基础扎实，熟悉JSP/Servlet、html/JavaScript/Jquery以及主流框架技术； 2、 熟悉Oracle、MsSql、Mysql等数据库至少其中一种，熟悉SQL语言； 3、 开发经验丰富，能迅速完成交办相关工作； 4、 需具备需求分析和系统设计能力； 5、 沟通能力良好，具备团队合作精神，能适应一定压力开展工作。 1、按照研发标准过程，进行项目具体的设计、编码、单元测试（如需要还包括集成测试）、Bug修复工作。 2、参加项目详细需求评审、设计评审和代码评审。 3、协助项目经理进行项目各类变更进行影响分析。 4、负责项目核心功能或关键业务的设计及开发。 5、积极参与同行评审、技术交流等，学习和分享研发的经验和技术技能，共同提高研发效率和系统质量。 6、按照软件项目计划以及项目执行计划按时完成各项项目任务。 7、主动积极发掘、提出和规避项目各个环节可能存在的系统缺陷或项目风险。
+          </p>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="mt16 p0-16 lh30">
+        <div class="bdt1-d"> <span class="c1">Java高级开发工程师</span> <span class="p0-16 ce0">|</span> <span class="c1 bold">东软集团股份有限公司</span> <span class="p0-16 ce0">|</span> <span class="c3"><span>20011.09</span><span class="p0-16">~</span><span>至今</span><span class="ml8">（4年9个月）</span></span>
+        </div>
+        <div class="c3 fl">工作职责：</div>
+        <div class="fl w700 ml12">
+          <p class="wh-pw lh30 c2 f13">1、 具备JAVA/J2EE三年以上开发经验，Java基础扎实，熟悉JSP/Servlet、html/JavaScript/Jquery主流框架技术； 2、 熟悉Oracle、MsSql、Mysql等数据库至少其中一种，熟悉SQL语言； 3、 开发经验丰富，能迅速完成交办相关工作； 4、 需具备需求分析和系统设计能力； 5、 沟通能力良好，具备团队合作精神，能适应一定压力开展工作。 </p>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="bg-f2 f16 c1 bold p4-8 mt16">项目经历</div>
+      <div>
+        <div class="mt16 p0-16 lh30">
+          <div class="bdt1-d"> <span class="c1 bold">供应链管理系统</span> <span class="p0-16 ce0">|</span> <span class="c3"><span>20011.09</span><span class="p0-16">~</span><span>至今</span><span class="ml8">（4年9个月）</span></span>
+          </div>
+          <div class="c3 fl">工作职责：</div>
+          <div class="fl w700 ml12">
+            <p class="wh-pw lh30 c2 f13">管理供应链数据,集成ERP系统数据.包括供应商数据,采购数据,来料检查,质量投诉管理模块. 加快供应链流程,实现电子化,提高80%效率. 软件环境： C# + IIS7 + SQL Server2008 开发工具： VS2008 + SVN </p>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="mt16 p0-16 lh30">
+          <div class="bdt1-d"> <span class="c1 bold">供应链管理系统</span> <span class="p0-16 ce0">|</span> <span class="c3"><span>20011.09</span><span class="p0-16">~</span><span>至今</span><span class="ml8">（4年9个月）</span></span>
+          </div>
+          <div class="c3 fl">工作职责：</div>
+          <div class="fl w700 ml12">
+            <p class="wh-pw lh30 c2 f13">主要解决货物进出口报关,收货,发货,并与香港海关联网自动产生报关数据. 软件环境： J2EE + IBM DataPower + JBOSS + Oracle 开发工具： Eclipse + SVN </p>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="bg-f2 f16 c1 bold p4-8 mt16">职业技能</div>
+      <div class="p0-16 mt16 lh24">
+        <div> <span class="d-ib w240">Java</span><span class="d-ib w160">精通</span><span class="d-ib w160">36个月</span> </div>
+        <div><span class="d-ib w240">Oracle</span><span class="d-ib w160">精通</span><span class="d-ib w160">24个月</span></div>
+        <div><span class="d-ib w240">Informix</span><span class="d-ib w160">熟练</span><span class="d-ib w160">16个月</span></div>
+      </div>
+      <div class="bg-f2 f16 c1 bold p4-8 mt16">语言水平</div>
+      <div class="p0-16 mt16 lh24">
+        <div><span class="d-ib w240">英语</span><span class="d-ib w160">良好</span></div>
+        <div><span class="d-ib w240">日语</span><span class="d-ib w160">一般</span></div>
+      </div>
+      <div class="bg-f2 f16 c1 bold p4-8 mt16">个人描述</div>
+      <div class="p0-16 mt16 lh24">
+        <p class="wh-pw c2">我是一个对理想有着执着追求的人，为人热情、大方，逻辑思维能力较强，勤于思考。热爱编程，对代码质量精益求精。擅长JAVA服务端开发。 精通JAVA,熟悉主流J2EE开发框架。熟悉常用设计模式。熟悉JVM。 熟悉mysql、oracle、DB2等数据库 熟悉socket编程，熟悉mina、netty等nio框架。熟悉TCP/UDP/HTTP/XMPP等网络协议。 熟悉linux下的基本操作并安装部署程序。 熟悉tomcat、nginx等服务器技术。 熟悉JavaScript、Html等前端技术。 熟悉svn、git等版本管理工具 了解android应用开发。 具有金融、电信、医疗等行业经验。 </p>
+      </div>
+      <div class="bg-f2 f16 c1 bold p4-8 mt16">其它</div>
+      <div class="p0-16 mt16 lh24">
+        <p class="wh-pw c2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, nisi, corporis veritatis adipisci nostrum tenetur enim maiores aliquid porro sed error non nulla totam maxime hic quaerat qui consectetur harum.</p>
+      </div>
+    </div>
+  </div>
+  <!--弹框背景-->
+  <div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z99"></div>
+  <!--新增备注框-->
+  <li id="newnote" class="hidden li-no pb12 clear">
+    <div class="fl ml16 tl-ldot"></div>
+    <div class="fl w280 w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+      <textarea name="" id="" class="p0-4 lh24 w100p h120"></textarea>
+      <div class="po-a" style="margin:-168px 0 0 218px;"> <span id="newnote-cancel" class="ic f24 red cu-po ho-u"></span> <span id="newnote-confirm" class="ic f24 c-gr cu-po ho-u"></span> </div>
+    </div>
+    <div class="clear"></div>
+  </li>
+
+  <!--【智推】加入职位-->
+  <div id="popup-addto" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>加入职位</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">加入职位：</span> <span class="ic f24 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80"></span> <span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span> </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认加入</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--【加入】不合适-->
+  <div id="popup-recommendnot" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>不合适</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c1"> <span class="d-ib w80 c2">推荐职位：</span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">原因：</span>
+      <input type="radio" name="recnot" checked id="rec-rsn">
+      <label for="rec-rsn" class="c2">不感兴趣</label>
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认不合适</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--【加入】推荐职位-->
+  <div id="popup-recommend" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 ml-212" style="margin-top:-230px;">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>推荐职位</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c1"> <span class="d-ib w80 c2">推荐职位：</span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80"></span> <span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">创建待办：</span>
+      <input type="radio" name="crtask" checked id="no-task">
+      <label for="no-task" checked class="c2">否</label>
+      <input type="radio" name="crtask" id="with-task">
+      <label for="with-task" class="c2 ml24">是</label>
+    </div>
+    <div class="hidden">
+      <div class="p816 c2"> <span class="d-ib w80 c2">起始时间：</span>
+        <input type="text" class="datepicker-here h32 w136 pl4" data-timepicker="true" data-date-format="yyyy-mm-dd"> ~
+        <input type="text" class="datepicker-here h32 w136 pl4" data-timepicker="true" data-date-format="yyyy-mm-dd">
+      </div>
+      <div class="p816 c2"> <span class="d-ib w80 c2">提醒：</span> <span>开始前</span>
+        <input type="text" class="p8 h32 ml8 w60">
+        <span class="choose-mh ml8 cu-po d-ib lh-n"> <span>分钟</span> <span class="ic f24 c3"></span>
+        <div class="note hidden">
+          <input type="radio" name="choose-mh" id="minutes" value="分钟" checked>
+          <label for="minutes" class="d-b">分钟</label>
+          <input type="radio" name="choose-mh" id="hours" value="小时">
+          <label for="hours" class="d-b mt8">小时</label>
+        </div>
+        </span>
+      </div>
+      <div class="p816"> <span class="d-ib w80 c2">待办备注：</span>
+        <input type="text" class="w300 p8 h32">
+      </div>
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认推荐</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--【推荐】“已推荐职位”状态，不合适-->
+  <div id="popup-interviewnot" class="hidden
+ po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>不合适</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c1"> <span class="d-ib w80 c2">推荐职位：</span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">原因：</span>
+      <input type="radio" name="internot" checked id="internot1">
+      <label for="internot1" class="c2">不合适</label>
+      <input type="radio" name="internot" id="internot2">
+      <label for="internot2" class="c2 ml24">待定</label>
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认不合适</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--【推荐】通过筛选-->
+  <div id="popup-passrec" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 ml-212" style="margin-top:-230px;">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>通过筛选</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c1"> <span class="d-ib w80 c2">推荐职位：</span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80"></span> <span class="ic f20 c3"></span> <span>深圳市Bravos科技股份有限公司</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">创建待办：</span>
+      <input type="radio" name="crtask8" checked id="no-task8">
+      <label for="no-task8" checked class="c2">否</label>
+      <input type="radio" name="crtask8" id="with-task8">
+      <label for="with-task8" class="c2 ml24">是</label>
+    </div>
+    <div class="hidden">
+      <div class="p816 c2"> <span class="d-ib w80 c2">起始时间：</span>
+        <input type="text" class="datepicker-here h32 w136 pl4" data-timepicker="true" data-date-format="yyyy-mm-dd"> ~
+        <input type="text" class="datepicker-here h32 w136 pl4" data-timepicker="true" data-date-format="yyyy-mm-dd">
+      </div>
+      <div class="p816 c2"> <span class="d-ib w80 c2">提醒：</span> <span>开始前</span>
+        <input type="text" class="p8 h32 ml8 w60">
+        <span class="choose-mh ml8 cu-po d-ib lh-n"> <span>分钟</span> <span class="ic f24 c3"></span>
+        <div class="note hidden">
+          <input type="radio" name="choose-mh" id="minutes" value="分钟" checked>
+          <label for="minutes" class="d-b">分钟</label>
+          <input type="radio" name="choose-mh" id="hours" value="小时">
+          <label for="hours" class="d-b mt8">小时</label>
+        </div>
+        </span>
+      </div>
+      <div class="p816"> <span class="d-ib w80 c2">待办备注：</span>
+        <input type="text" class="w300 p8 h32">
+      </div>
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认通过筛选</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--【推荐】#已通过筛选#状态，不合适-->
+  <div id="popup-passrecnot" class="hidden
+ po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>不合适</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c1"> <span class="d-ib w80 c2">推荐职位：</span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">原因：</span>
+      <input type="radio" name="internot" checked id="internot1">
+      <label for="internot1" class="c2">候选人放弃</label>
+      <input type="radio" name="internot" id="internot2">
+      <label for="internot2" class="c2 ml24">企业方取消</label>
+      <input type="radio" name="internot" id="internot2">
+      <label for="internot2" class="c2 ml24">待定</label>
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认不合适</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <!--【推荐】安排面试-->
+  <div id="popup-interview" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 ml-212 mt-200">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>安排面试 </h4>
+    <div class="p816 c2"> <span class="d-ib w80">面试：</span> <span class="ic f24 c3"></span> <span>王精英</span> <span class="ic f24 ce0"></span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">面试进展：</span> <span class="bold c1">1</span> <span class="c2">面</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">面试时间：</span>
+      <input type="text" class="datepicker-here w160 p8 h32" data-timepicker="true" data-date-format="yyyy-mm-dd">
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">创建待办：</span>
+      <input type="radio" name="crtask4" checked id="no-task4">
+      <label for="no-task4" class="c2">否</label>
+      <input type="radio" name="crtask4" id="with-task4">
+      <label for="with-task4" class="c2 ml24">是</label>
+    </div>
+    <div class="hidden">
+      <div class="p816 c2"> <span class="d-ib w80 c2">提醒：</span> <span>面试前</span>
+        <input type="text" class="p8 h32 ml8 w60">
+        <span class="choose-mh ml8 cu-po d-ib lh-n"> <span>分钟</span> <span class="ic f24 c3"></span>
+        <div class="note hidden">
+          <input type="radio" name="choose-mh1" id="minutes1" value="分钟" checked>
+          <label for="minutes1" class="d-b">分钟</label>
+          <input type="radio" name="choose-mh1" id="hours1" value="小时">
+          <label for="hours1" class="d-b mt8">小时</label>
+        </div>
+        </span>
+        <script>
+
+
+        </script>
+      </div>
+      <div class="p816"> <span class="d-ib w80 c2">待办备注：</span>
+        <input type="text" class="w300 p8 h32">
+      </div>
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认安排</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--【面试】查看面试安排弹窗-->
+  <div id="popup-checkinter" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 ml-212 mt-200">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>面试安排 <span id="edit-inter" class="fr cu-po fw-n f14 cb"><span class="ic f20"></span><span>编辑</span></span>
+    </h4>
+    <div class="p816 c2"> <span class="d-ib w80">面试：</span> <span class="ic f24 c3"></span> <span>王精英</span> <span class="ic f24 ce0"></span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">面试进展：</span> <span class="bold c1">2</span> <span class="c2">面</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">面试时间：</span> <span class="c1">2016-08-10 15:02</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span> <span class="c1">公司老板王先生亲自面试</span> </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-confirm ml24 cb bold cu-po ho-u">OK</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <script>
+    /*单击编辑面试安排*/
+    $('#edit-inter').on('click', function() {
+      $('#popup-checkinter').hide();
+      $('#popup-editinter').css('opacity', 1).show();
+    });
+
+  </script>
+  <!--【面试】查看面试→编辑安排弹窗-->
+  <div id="popup-editinter" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 ml-212 mt-200">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>面试安排 </h4>
+    <div class="p816 c2"> <span class="d-ib w80">面试：</span> <span class="ic f24 c3"></span> <span>王精英</span> <span class="ic f24 ce0"></span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">面试进展：</span> <span class="bold c1">2</span> <span class="c2">面</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">面试时间：</span>
+      <input type="text" class="datepicker-here w160 p8 h32" data-timepicker="true" value="2016-08-10 15:02" data-date-format="yyyy-mm-dd">
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" value="公司老板王先生亲自面试" class="w300 p8 h32">
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">更新安排</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <!--【面试】通过本轮面试-->
+  <div id="popup-passcurrent" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 ml-212 mt-200">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>通过本轮面试 </h4>
+    <div class="p816 c2"> <span class="d-ib w80">候选人：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c2"> <span class="d-ib w80 c2">招聘流程：</span> <span class="ic f20 c3"></span> <span>面试：待2面</span> <span class="ic f24 c3 ml16"></span> <span class="ic f20 c-gr ml16"></span> <span class="c-gr">面试：通过2面</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">创建待办：</span>
+      <input type="radio" name="crtask9" checked id="no-task9">
+      <label for="no-task9" class="c2">否</label>
+      <input type="radio" name="crtask9" id="with-task9">
+      <label for="with-task9" class="c2 ml24">是</label>
+    </div>
+    <div class="hidden">
+      <div class="p816 c2"> <span class="d-ib w80 c2">开始时间：</span>
+        <input type="text" class="datepicker-here w160 p8 h32" data-timepicker="true" data-date-format="yyyy-mm-dd">
+      </div>
+      <div class="p816"> <span class="d-ib w80 c2">待办备注：</span>
+        <input type="text" class="w300 p8 h32">
+      </div>
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <!--【面试】通过本轮面试→不合适弹窗-->
+  <div id="popup-currentnot" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212 c1">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>不合适</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c1"> <span class="d-ib w80 c2">推荐职位：</span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">原因：</span>
+      <input type="radio" name="currentnot" checked id="currentnot1">
+      <label for="currentnot1">候选人放弃</label>
+      <input type="radio" name="currentnot" id="currentnot2">
+      <label for="currentnot2" class="ml24">企业方取消</label>
+      <input type="radio" name="currentnot" id="currentnot3">
+      <label for="currentnot3" class="ml24">待定</label>
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认不合适</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <!--【面试】（不能进入待发Offer）不合适弹窗-->
+  <div id="popup-offernot" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212 c1">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>不合适</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c1"> <span class="d-ib w80 c2">推荐职位：</span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">原因：</span>
+      <input type="radio" name="offernot" checked id="offernot1">
+      <label for="offernot1">未通过面试</label>
+      <input type="radio" name="offernot" id="offernot2">
+      <label for="offernot2" class="ml24">未到场</label>
+      <input type="radio" name="offernot" id="offernot3">
+      <label for="offernot3" class="ml24">待定</label>
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认不合适</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <!--【面试】安排下轮面试弹窗-->
+  <div id="popup-interview2" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 ml-212 mt-200">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>安排下轮面试 </h4>
+    <div class="p816 c2"> <span class="d-ib w80">面试：</span> <span class="ic f24 c3"></span> <span>王精英</span> <span class="ic f24 ce0"></span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">面试进展：</span> <span class="bold c1">2</span> <span class="c2">面</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">面试时间：</span>
+      <input type="text" class="datepicker-here w160 p8 h32" data-timepicker="true" data-date-format="yyyy-mm-dd">
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">创建待办：</span>
+      <input type="radio" name="crtask1" checked id="no-task1">
+      <label for="no-task1" class="c2">否</label>
+      <input type="radio" name="crtask1" id="with-task1">
+      <label for="with-task1" class="c2 ml24">是</label>
+    </div>
+    <div class="hidden">
+      <div class="p816 c2"> <span class="d-ib w80 c2">提醒：</span> <span>面试前</span>
+        <input type="text" class="p8 h32 ml8 w60">
+        <span class="choose-mh ml8 cu-po d-ib lh-n"> <span>分钟</span> <span class="ic f24 c3"></span>
+        <div class="note hidden">
+          <input type="radio" name="choose-mh2" id="minutes2" value="分钟" checked>
+          <label for="minutes2" class="d-b">分钟</label>
+          <input type="radio" name="choose-mh2" id="hours2" value="小时">
+          <label for="hours2" class="d-b mt8">小时</label>
+        </div>
+        </span>
+      </div>
+      <div class="p816"> <span class="d-ib w80 c2">待办备注：</span>
+        <input type="text" class="w300 p8 h32">
+      </div>
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认安排</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--【面试】面试阶段→（不能进入待发Offer）不合适弹窗-->
+  <div id="popup-offernot" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212 c1">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>不合适</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c1"> <span class="d-ib w80 c2">推荐职位：</span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">原因：</span>
+      <input type="radio" name="offernot" checked id="offernot1">
+      <label for="offernot1">未通过面试</label>
+      <input type="radio" name="offernot" id="offernot2">
+      <label for="offernot2" class="ml24">未到场</label>
+      <input type="radio" name="offernot" id="offernot3">
+      <label for="offernot3" class="ml24">待定</label>
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认不合适</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--【面试】待发offer弹窗-->
+  <div id="popup-passinter" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 ml-212 mt-200">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>通过面试 </h4>
+    <div class="p816 c2"> <span class="d-ib w80">候选人：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c2"> <span class="d-ib w80 c2">招聘流程：</span> <span class="ic f20 c3"></span> <span>面试：待2面</span> <span class="ic f24 c3 ml16"></span> <span class="ic f20 c3 ml16"></span> <span>待发Offer</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">创建待办：</span>
+      <input type="radio" name="crtask2" checked id="no-task2">
+      <label for="no-task2" class="c2">否</label>
+      <input type="radio" name="crtask2" id="with-task2">
+      <label for="with-task2" class="c2 ml24">是</label>
+    </div>
+    <div class="hidden">
+      <div class="p816 c2"> <span class="d-ib w80 c2">开始时间：</span>
+        <input type="text" class="datepicker-here w160 p8 h32" data-timepicker="true" data-date-format="yyyy-mm-dd">
+      </div>
+      <div class="p816"> <span class="d-ib w80 c2">待办备注：</span>
+        <input type="text" class="w300 p8 h32">
+      </div>
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <!--【offer】签订Offer弹窗-->
+  <div id="popup-signoffer" class="hidden">
+    <div class="popup-wrapper-nbg">
+      <div class="card5-nbg bg-f2 c2">
+        <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>签订Offer</h4>
+        <table class="lh46 bdcl ml24 ta-l mt8 mr24">
+          <tr>
+            <td class="w86">年薪<span class="red po-a mt-5">*</span></td>
+            <td class="w240"><span class="po-a c3 ml64">元</span><input type="text" class="h30 w240 p0-4"></td>
+          </tr>
+          <tr>
+            <td class="va-t">年薪说明<span class="red po-a mt-5">*</span></td>
+            <td><textarea name="" id="" class="w240 h30 mt8 p4"></textarea></td>
+          </tr>
+          <tr>
+            <td>入职时间<span class="red po-a mt-5">*</span></td>
+            <td><input type="text" class="h30 w240 pl4"></td>
+          </tr>
+          <tr>
+            <td>备注</td>
+            <td><input type="text" class="h30 w240 pl4"></td>
+          </tr>
+        </table>
+        <div class="pl8">
+          <div class="p816"> <span class="d-ib w80 c2">创建待办：</span>
+            <input type="radio" name="crtask6" checked id="no-task6">
+            <label for="no-task6" class="c2">否</label>
+            <input type="radio" name="crtask6" id="with-task6">
+            <label for="with-task6" class="c2 ml24">是</label>
+          </div>
+          <div class="hidden">
+            <div class="p816 c2"> <span class="d-ib w80 c2">开始时间：</span>
+              <input type="text" class="datepicker-here w160 p8 h32" data-timepicker="true" data-date-format="yyyy-mm-dd">
+            </div>
+            <div class="p816"> <span class="d-ib w80 c2">待办备注：</span>
+              <input type="text" class="w240 p8 h32">
+            </div>
+          </div>
+        </div>
+        <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认</span> </span>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--【offer】【入职】【保证期】查看Offer弹窗-->
+  <div id="popup-checkoffer" class="hidden po-f bg-f2 w588 l50p card5-nbg t50p f14 z200 ml-212 c2" style="margin:-300px;">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>查看Offer <span id="edit-offer" class="fr cu-po fw-n f14 cb"><span class="ic f20"></span><span>编辑</span></span>
+    </h4>
+    <table class="lh46 bdcl ml24 ta-l">
+      <tr>
+        <th class="w150 pl16">薪酬类型</th>
+        <th class="w240">说明</th>
+        <th class="w150 pr16 ta-r">金额(￥)</th>
+      </tr>
+      <tr class="bdt1">
+        <td class="pl16">年薪<span class="red po-a mt-5">*</span></td>
+        <td>无</td>
+        <td class="ta-r c1">250000</td>
+      </tr>
+      <tr class="bdt1">
+        <td class="pl16">奖金</td>
+        <td>无</td>
+        <td class="ta-r c1"></td>
+      </tr>
+      <tr class="bdt1">
+        <td class="pl16">其它</td>
+        <td>无</td>
+        <td class="ta-r c1"></td>
+      </tr>
+      <tr class="bdt1">
+        <td></td>
+        <td></td>
+        <td class="ta-r">总计：￥<span class="ml4 bold">250000</span></td>
+      </tr>
+    </table>
+    <div class="pb8 ml24"> <span class="d-ib w80 c2">入职日期：</span> <span class="c1">2016-09-01</span> </div>
+    <div class="p816 ml8"> <span class="d-ib w80 c2">备注：</span> <span class="c1">先前的备注</span> </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-confirm ml24 cb bold cu-po ho-u">OK</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <script>
+    /*查看Offer时单击编辑*/
+    $('#edit-offer').on('click', function() {
+      $('#popup-checkoffer').hide();
+      $('#popup-editoffer').css('opacity', 1).show();
+    });
+
+  </script>
+  <!--【Offer】【入职】【保证期】查看Offer→编辑Offer弹窗-->
+  <div id="popup-editoffer" class="hidden po-f bg-f2 w588 l50p card5-nbg t50p f14 z200 ml-212 c2" style="margin:-300px;">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>查看Offer</h4>
+    <table class="lh46 bdcl ml24 ta-l">
+      <tr>
+        <th class="w150 pl16">薪酬类型</th>
+        <th class="w240">说明</th>
+        <th class="w150 pr16 ta-r">总额(￥)</th>
+      </tr>
+      <tr class="bdt1">
+        <td class="pl16">年薪<span class="red po-a mt-5">*</span></td>
+        <td><input type="text" class="h30 w240 p0-4"></td>
+        <td class=" ta-r"><input value="250000" id="num12" type="text" class="h30 w80 ta-r p0-4" onKeyUp="sumT2()"></td>
+      </tr>
+      <tr class="bdt1">
+        <td class="pl16">奖金</td>
+        <td><input type="text" class="h30 w240 p0-4"></td>
+        <td class=" ta-r"><input id="num22" type="text" class="h30 w80 ta-r p0-4" onKeyUp="sumT2()"></td>
+      </tr>
+      <tr class="bdt1">
+        <td class="pl16">其它</td>
+        <td><input type="text" class="h30 w240 p0-4"></td>
+        <td class=" ta-r"><input id="num32" type="text" class="h30 w80 ta-r p0-4" onKeyUp="sumT2()"></td>
+      </tr>
+      <tr class="bdt1">
+        <td></td>
+        <td></td>
+        <td class="ta-r">总计：￥<span id="totalsum2" class="ml4 bold">250000</span></td>
+      </tr>
+    </table>
+    <script>
+      /*对框内输入的数字加和计算（第2处）*/
+      function sumT2(e) {
+        var num1 = Number($('#num12').val()),
+          num2 = Number($('#num22').val()),
+          num3 = Number($('#num32').val()),
+          totalsum = num1 + num2 + num3;
+        $('#totalsum2').html(totalsum);
+        charge2();
+      };
+
+    </script>
+    <div class="p816 ml8"> <span class="d-ib w80 c2">入职日期：</span>
+      <input value="2016-09-01" type="text" class="datepicker-here w300 p8 h32" data-date-format="yyyy-mm-dd">
+    </div>
+    <div class="p816 ml8"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" value="先前的备注" class="w300 p8 h32">
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">更新Offer</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--【Offer】→（不能签Offer）不合适弹窗-->
+  <div id="popup-entrynot" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212 c1">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>不合适</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c1"> <span class="d-ib w80 c2">推荐职位：</span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">原因：</span>
+      <input type="radio" name="entrynot" checked id="entrynot1">
+      <label for="entrynot1">候选人放弃</label>
+      <input type="radio" name="entrynot" id="entrynot2">
+      <label for="entrynot2" class="ml24">薪酬不合适</label>
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认不合适</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--【入职】入职弹窗-->
+  <div id="popup-entry" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 ml-212 mt-200">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>入职 </h4>
+    <div class="p816 c2"> <span class="d-ib w80">候选人：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c2"> <span class="d-ib w80 c2">招聘流程：</span> <span class="ic f20 c3"></span> <span>待入职</span> <span class="ic f24 c3 ml16"></span> <span class="ic f20 c3 ml16"></span> <span>已入职</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">入职日期：</span>
+      <input id="entrydate" value="" type="text" class="datepicker-here w300 p8 h32" data-date-format="yyyy-mm-dd">
+    </div>
+    <div class="p816 c2"> <span class="d-ib w80 c2">保证期：</span>
+      <select name="" id="select-warr" class="w56">
+      <option>1</option>
+      <option>2</option>
+      <option selected>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+    </select>
+      <script>
+        $('#select-warr').select2({
+          minimumResultsForSearch: Infinity
+        });
+
+      </script>
+      <span>个月</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">创建待办：</span>
+      <input type="radio" name="crtask5" checked id="no-task5">
+      <label for="no-task5" class="c2">否</label>
+      <input type="radio" name="crtask5" id="with-task5">
+      <label for="with-task5" class="c2 ml24">是</label>
+    </div>
+    <div class="hidden">
+      <div class="p816 c2"> <span class="d-ib w80 c2">开始时间：</span>
+        <input type="text" class="datepicker-here w160 p8 h32" data-timepicker="true" data-date-format="yyyy-mm-dd">
+      </div>
+      <div class="p816"> <span class="d-ib w80 c2">待办备注：</span>
+        <input type="text" class="w300 p8 h32">
+      </div>
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--【】待入职阶段→（未入职）不合适弹窗-->
+  <div id="popup-entrynot2" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212 c1">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>不合适</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c1"> <span class="d-ib w80 c2">推荐职位：</span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">原因：</span>
+      <input type="radio" name="entrynot2" checked id="entrynot21">
+      <label for="entrynot21">候选人放弃</label>
+      <input type="radio" name="entrynot2" id="entrynot22">
+      <label for="entrynot22" class="ml24">薪酬不合适</label>
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认不合适</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--查看入职弹窗-->
+  <div id="popup-checkentry" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 ml-212 mt-200">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>入职信息</h4>
+    <div class="p816 c1"> <span class="d-ib w80 c2">候选人：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c1"> <span class="d-ib w80 c2">招聘流程：</span> <span class="ic f20 c3"></span> <span>待入职</span> <span class="ic f24 c3 ml16"></span> <span class="ic f20 c3 ml16"></span> <span>已入职</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">入职日期：</span> <span>2016年12月1日</span> </div>
+    <div class="p816 c1"> <span class="d-ib w80 c2">保证期：</span> <span>3个月</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2 fl">备注：</span> <span class="d-ib w280">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta illo, ut pariatur commodi voluptatibus, voluptas, adipisci alias tempore placeat, veniam a blanditiis incidunt sunt rerum. Iste cupiditate eius fugit quam.</span> </div>
+    <div class="hidden">
+      <div class="p816 c2"> <span class="d-ib w80 c2">开始时间：</span>
+        <input type="text" class="datepicker-here w160 p8 h32" data-timepicker="true" data-date-format="yyyy-mm-dd">
+      </div>
+      <div class="p816"> <span class="d-ib w80 c2">待办备注：</span>
+        <input type="text" class="w300 p8 h32">
+      </div>
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u cb bold cu-po">确认</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--管理回访记录弹窗-->
+  <div id="popup-visit" class="hidden w820 card5-nbg bg-f2 po-f l50p t50p z150 f14 c1 ovy-a" style="margin:-40vh 0 0 -410px;width:830px">
+    <div class="ta-l bold cw f16 bg-hdr p816"><span class="ic f24 fw-n"></span>保证期回访管理<span id="close-visit" class="fr ic red f24 cu-po"></span></div>
+    <iframe src="Pipeline-iframe保证期回访管理.html" frameborder="0" style="width:830px;height:70vh"></iframe>
+    <div class="hidden ta-l bold c3e f16 pt8 pl24 bg-db"><span data-id="v1" class="p4-16 d-ib bdt-r2 bg-f2 cu-po">入职一周回访</span><span data-id="v2" class="p4-16 d-ib ml24 cw06 bdt-r2 cu-po">入职一月回访</span><span data-id="v3" class="p4-16 ml24 d-ib cw06 bdt-r2 cu-po">转正前一周回访</span><span class="fr ic f24 "></span> <span class="pop-cancel fr ic f24 cw mr16 ho-cr cu-po"></span> </div>
+    <div class="hidden pl30 h70v pt16 pb40 ovy-a Scrollable">
+      <div id="v1">
+        <div id="v1-display">
+          <div class="f14 lh36"><span class="d-ib w240"><span class="c2">候选人：</span><span>王精英</span></span><span class="d-ib"><span class="c2">入职公司：</span>深圳市腾讯计算机科技有限公司</span>
+          </div>
+          <div class="f14 lh36"><span class="d-ib w240"><span class="c2">入职时间：</span><span>2016-11-24</span></span><span class="d-ib"><span class="c2">回访时间：</span><span>2016-12-01</span></span>
+          </div>
+          <div class="c2 lh36">回访内容：</div>
+          <div class="mt8"><span class="c2 bold">1、对公司环境是否满意：</span><span class="ml16">
+          <input type="radio" checked disabled>
+          <label for=""></label>
+          满意</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, tempore, consectetur quaerat fugiat totam distinctio </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">2、是否了解公司的基本制度：</span><span class="ml16">
+          <input type="radio" checked disabled>
+          <label for=""></label>
+          比较了解</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, ipsa, commodi vel unde sit illum perspiciatis natus temporibus sed soluta. Iure, temporibus dolor facere fuga fugiat esse ullam similique illo! </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">3、是否已经认识所在部门及关联部门的同事：</span><span class="ml16">
+          <input type="radio" checked disabled>
+          <label for=""></label>
+          完全认识</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">4、是否有安排了指导老师？ 指导老师的具体职位是？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">5、是否已经安排了具体工作？具体工作内容是？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, ducimus ad distinctio minima minus aperiam. Nostrum, provident consectetur consequatur quo dolore dolores ipsum accusamus earum in autem cupiditate nemo vero.</p>
+          </div>
+          <div class="mt16"><span class="c2 bold">6、是否有需要我们去协助解决的问题？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, tempore, consectetur quaerat </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">7、其它？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, tempore, consectetur quaerat fugiat totam distinctio Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, quidem, maiores, voluptas ullam beatae assumenda vero omnis aperiam debitis totam reiciendis ex vel expedita natus modi repellat neque officia nam?</p>
+          </div>
+        </div>
+        <div id="v1-edit" class="hidden">
+          <div class="f14 lh36"><span class="d-ib w240"><span class="c2">候选人：</span><span>王精英</span></span><span class="d-ib"><span class="c2">入职公司：</span>深圳市腾讯计算机科技有限公司</span>
+          </div>
+          <div class="f14 lh36"><span class="d-ib w240"><span class="c2">入职时间：</span><span>2016-11-24</span></span><span class="d-ib"><span class="c2">回访时间：</span><span>
+          <input type="text" class="h32 pl4" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',})" value="2016-09-01">
+          </span></span>
+          </div>
+          <div class="c2 lh36">回访内容：</div>
+          <div class="mt8"><span class="c2 bold">1、对公司环境是否满意：</span>
+            <input type="radio" id="v1-11">
+            <label for="v1-11" class="ml16">满意</label>
+            <input type="radio" id="v1-12">
+            <label for="v1-12" class="ml16">比较满意</label>
+            <input type="radio" id="v1-13">
+            <label for="v1-13" class="ml16">一般</label>
+            <input type="radio" id="v1-14">
+            <label for="v1-14" class="ml16">不满意</label>
+          </div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1" placeholder="详情">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, quis, temporibus accusamus delectus iste soluta adipisci velit maxime tempora blanditiis magni pariatur dolores nisi voluptatem perspiciatis aspernatur unde recusandae voluptatibus.</textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">2、是否了解公司的基本制度:</span>
+            <input type="radio" id="v1-21">
+            <label for="v1-21" class="ml16">了解</label>
+            <input type="radio" id="v1-22">
+            <label for="v1-22" class="ml16">比较了解</label>
+            <input type="radio" id="v1-23">
+            <label for="v1-23" class="ml16">不了解</label>
+          </div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1" placeholder="详情"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">3、是否已经认识所在部门及关联部门的同事：</span>
+            <input type="radio" id="v1-31">
+            <label for="v1-31" class="ml16">完全认识</label>
+            <input type="radio" id="v1-32">
+            <label for="v1-32" class="ml16">基本认识</label>
+            <input type="radio" id="v1-33">
+            <label for="v1-33" class="ml16">不认识</label>
+          </div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1" placeholder="详情"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">4、是否有安排了指导老师？ 指导老师的具体职位是？</span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">5、是否已经安排了具体工作？具体工作内容是？</span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">6、是否有需要我们去协助解决的问题？</span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">7、其它？</span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+        </div>
+        <div id="v1-ops" class="po-a cb" style="right:24px;top:56px">
+          <div class="edit mt16 ta-c p4-16 ho-bd-b bd1-c cu-po bdrs2"><span class="ic f20 mr4"></span>编辑</div>
+          <div class="save mt16 ta-c p4-16 ho-bd-b bd1-c cu-po bdrs2 hidden"><span class="ic f20 mr4"></span>保存</div>
+          <div class="export mt16 ta-c p4-16 ho-bd-b bd1-c cu-po bdrs2"><span class="ic f20 mr4"></span>导出</div>
+        </div>
+      </div>
+      <div id="v2" class="hidden">
+        <div id="v2-display">
+          <div class="f14 lh36"><span class="d-ib w240"><span class="c2">候选人：</span><span>王精英</span></span><span class="d-ib"><span class="c2">入职公司：</span>深圳市腾讯计算机科技有限公司</span>
+          </div>
+          <div class="f14 lh36"><span class="d-ib w240"><span class="c2">入职时间：</span><span>2016-11-24</span></span><span class="d-ib"><span class="c2">回访时间：</span><span>2016-12-01</span></span>
+          </div>
+          <div class="c2 lh36">回访内容：</div>
+          <div class="mt8"><span class="c2 bold">1、对公司管理制度与文化是否满意：</span><span class="ml16">
+          <input type="radio" checked disabled>
+          <label for=""></label>
+          满意</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, tempore, consectetur quaerat fugiat totam distinctio </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">2、对公司人际关系的认知是：</span><span class="ml16">
+          <input type="radio" checked="checked" disabled="disabled">
+          <label></label>
+          比较简单</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, ipsa, commodi vel unde sit illum perspiciatis natus temporibus sed soluta. Iure, temporibus dolor facere fuga fugiat esse ullam similique illo! </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">3、是否已经进入到正常的工作状态：</span><span class="ml16">
+          <input type="radio" checked disabled>
+          <label for=""></label>
+          完全进入</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">4、目前的工作内容是否与自己期望的一致？不一致的地方是？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">5、目前是否能有效处理各项日常工作？工作中是否存在困难？困难点在哪里？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, ducimus ad distinctio minima minus aperiam. Nostrum, provident consectetur consequatur quo dolore dolores ipsum accusamus earum in autem cupiditate nemo vero.</p>
+          </div>
+          <div class="mt16"><span class="c2 bold">6、上级领导是否能进行及时的工作指导？需要得到哪些方面的工作支持？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, tempore, consectetur quaerat </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">7、是否有需要我们去协助解决的问题？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, tempore, consectetur quaerat fugiat totam distinctio Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, quidem, maiores, voluptas ullam beatae assumenda vero omnis aperiam debitis totam reiciendis ex vel expedita natus modi repellat neque officia nam?</p>
+          </div>
+          <div class="mt16"><span class="c2 bold">8、其它？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, tempore, consectetur quaerat fugiat totam distinctio Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, quidem, maiores, voluptas ullam beatae assumenda vero omnis aperiam debitis totam reiciendis ex vel expedita natus modi repellat neque officia nam?</p>
+          </div>
+        </div>
+        <div id="v2-edit" class="hidden">
+          <div class="f14 lh36"><span class="d-ib w240"><span class="c2">候选人：</span><span>王精英</span></span><span class="d-ib"><span class="c2">入职公司：</span>深圳市腾讯计算机科技有限公司</span>
+          </div>
+          <div class="f14 lh36"><span class="d-ib w240"><span class="c2">入职时间：</span><span>2016-11-24</span></span><span class="d-ib"><span class="c2">回访时间：</span><span>
+          <input type="text" class="h32 pl4" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',})" value="2016-09-01">
+          </span></span>
+          </div>
+          <div class="c2 lh36">回访内容：</div>
+          <div class="mt8"><span class="c2 bold">1、对公司管理制度与文化是否满意：</span>
+            <input type="radio" id="v2-11">
+            <label for="v2-11" class="ml16">满意</label>
+            <input type="radio" id="v2-12">
+            <label for="v2-12" class="ml16">比较满意</label>
+            <input type="radio" id="v2-13">
+            <label for="v2-13" class="ml16">一般</label>
+            <input type="radio" id="v2-14">
+            <label for="v2-14" class="ml16">不满意</label>
+          </div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1" placeholder="详情"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">2、对公司人际关系的认知是：</span>
+            <input type="radio" id="v2-21">
+            <label for="v2-21" class="ml16">简单</label>
+            <input type="radio" id="v2-22">
+            <label for="v2-22" class="ml16">比较简单</label>
+            <input type="radio" id="v2-23">
+            <label for="v2-23" class="ml16">复杂</label>
+          </div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1" placeholder="详情"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">3、是否已经进入到正常的工作状态：</span>
+            <input type="radio" id="v2-31">
+            <label for="v2-31" class="ml16">完全进入</label>
+            <input type="radio" id="v2-32">
+            <label for="v2-32" class="ml16">基本进入</label>
+            <input type="radio" id="v2-33">
+            <label for="v2-33" class="ml16">尚未进入</label>
+          </div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1" placeholder="详情"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">4、目前的工作内容是否与自己期望的一致？不一致的地方是？</span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">5、目前是否能有效处理各项日常工作？工作中是否存在困难？困难点在哪里？ </span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">6、上级领导是否能进行及时的工作指导？需要得到哪些方面的工作支持？ </span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">7、是否有需要我们去协助解决的问题？ </span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">8、其它？</span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+        </div>
+        <div id="v2-ops" class="po-a cb" style="right:24px;top:56px">
+          <div class="edit mt16 ta-c p4-16 ho-bd-b bd1-c cu-po bdrs2"><span class="ic f20 mr4"></span>编辑</div>
+          <div class="save mt16 ta-c p4-16 ho-bd-b bd1-c cu-po bdrs2 hidden"><span class="ic f20 mr4"></span>保存</div>
+          <div class="export mt16 ta-c p4-16 ho-bd-b bd1-c cu-po bdrs2"><span class="ic f20 mr4"></span>导出</div>
+        </div>
+      </div>
+      <div id="v3" class="hidden">
+        <div id="v3-display">
+          <div class="f14 lh36"><span class="d-ib w240"><span class="c2">候选人：</span><span>王精英</span></span><span class="d-ib"><span class="c2">入职公司：</span>深圳市腾讯计算机科技有限公司</span>
+          </div>
+          <div class="f14 lh36"><span class="d-ib w240"><span class="c2">入职时间：</span><span>2016-11-24</span></span><span class="d-ib"><span class="c2">回访时间：</span><span>2016-12-01</span></span>
+          </div>
+          <div class="c2 lh36">回访内容：</div>
+          <div class="mt8"><span class="c2 bold">1、是否已经适应公司的制度和文化：</span><span class="ml16">
+          <input type="radio" checked disabled>
+          <label for=""></label>
+          完全适应</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, tempore, consectetur quaerat fugiat totam distinctio </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">2、是否与主要工作关联同事建立了良好的沟通关系：</span><span class="ml16">
+          <input type="radio" checked="checked" disabled="disabled">
+          <label></label>
+          大部分</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, ipsa, commodi vel unde sit illum perspiciatis natus temporibus sed soluta. Iure, temporibus dolor facere fuga fugiat esse ullam similique illo! </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">3、是否愿意在公司长期发展：</span><span class="ml16">
+          <input type="radio" checked disabled>
+          <label for=""></label>
+          看实际情况</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">4、是否已经完全胜任现有的工作安排？不胜任的地方有哪些？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">5、对工作流程和方法有没有什么好的建议？具体有？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, ducimus ad distinctio minima minus aperiam. Nostrum, provident consectetur consequatur quo dolore dolores ipsum accusamus earum in autem cupiditate nemo vero.</p>
+          </div>
+          <div class="mt16"><span class="c2 bold">6、对公司的管理制度和文化有没有什么好的建议？具体有？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, tempore, consectetur quaerat </p>
+          </div>
+          <div class="mt16"><span class="c2 bold">7、如果有机会，是否愿意承担更多的工作职能？具体想承担哪些？ </span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, tempore, consectetur quaerat fugiat totam distinctio Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, quidem, maiores, voluptas ullam beatae assumenda vero omnis aperiam debitis totam reiciendis ex vel expedita natus modi repellat neque officia nam?</p>
+          </div>
+          <div class="mt16"><span class="c2 bold">8、是否有需要我们去协助解决的问题？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, tempore, consectetur quaerat fugiat totam distinctio Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, quidem, maiores, voluptas ullam beatae assumenda vero omnis aperiam debitis totam reiciendis ex vel expedita natus modi repellat neque officia nam?</p>
+          </div>
+          <div class="mt16"><span class="c2 bold">9、其它？</span></div>
+          <div>
+            <p class="w664 wh-pw">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe, tempore, consectetur quaerat fugiat ?</p>
+          </div>
+        </div>
+        <div id="v3-edit" class="hidden">
+          <div class="f14 lh36"><span class="d-ib w240"><span class="c2">候选人：</span><span>王精英</span></span><span class="d-ib"><span class="c2">入职公司：</span>深圳市腾讯计算机科技有限公司</span>
+          </div>
+          <div class="f14 lh36"><span class="d-ib w240"><span class="c2">入职时间：</span><span>2016-11-24</span></span><span class="d-ib"><span class="c2">回访时间：</span><span>
+          <input type="text" class="h32 pl4" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',})" value="2016-09-01">
+          </span></span>
+          </div>
+          <div class="c2 lh36">回访内容：</div>
+          <div class="mt8"><span class="c2 bold">1、是否已经适应公司的制度和文化：</span>
+            <input type="radio" id="v3-11">
+            <label for="v3-11" class="ml16">完全适应</label>
+            <input type="radio" id="v3-12">
+            <label for="v3-12" class="ml16">比较适应</label>
+            <input type="radio" id="v3-13">
+            <label for="v3-13" class="ml16">不太适应</label>
+          </div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1" placeholder="详情"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">2、是否与主要工作关联同事建立了良好的沟通关系：</span>
+            <input type="radio" id="v3-21">
+            <label for="v3-21" class="ml16">大部分</label>
+            <input type="radio" id="v3-22">
+            <label for="v3-22" class="ml16">一半以上</label>
+            <input type="radio" id="v3-23">
+            <label for="v3-23" class="ml16">少部分</label>
+          </div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1" placeholder="详情"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">3、是否愿意在公司长期发展：</span>
+            <input type="radio" id="v3-31">
+            <label for="v3-31" class="ml16">愿意</label>
+            <input type="radio" id="v3-32">
+            <label for="v3-32" class="ml16">看实际情况</label>
+            <input type="radio" id="v3-33">
+            <label for="v3-33" class="ml16">不愿意</label>
+          </div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1" placeholder="详情"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">4、是否已经完全胜任现有的工作安排？不胜任的地方有哪些？</span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">5、对工作流程和方法有没有什么好的建议？具体有？ </span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">6、对公司的管理制度和文化有没有什么好的建议？具体有？ </span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">7、如果有机会，是否愿意承担更多的工作职能？具体想承担哪些？ </span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">8、是否有需要我们去协助解决的问题？ </span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+          <div class="mt16"><span class="c2 bold">9、其它？ </span></div>
+          <div>
+            <textarea name="" class="w664 p8 lh24 mt8" rows="1"></textarea>
+          </div>
+        </div>
+        <div id="v3-ops" class="po-a cb" style="right:24px;top:56px">
+          <div class="edit mt16 ta-c p4-16 ho-bd-b bd1-c cu-po bdrs2"><span class="ic f20 mr4"></span>编辑</div>
+          <div class="save mt16 ta-c p4-16 ho-bd-b bd1-c cu-po bdrs2 hidden"><span class="ic f20 mr4"></span>保存</div>
+          <div class="export mt16 ta-c p4-16 ho-bd-b bd1-c cu-po bdrs2"><span class="ic f20 mr4"></span>导出</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--关闭管理回访提示是否存草稿-->
+  <div id="popup-closeVisit" class="hidden p16 z9999 bg-toa po-f w524 l50p t50p bdrs2 card5-nbg" style="margin:-120px 0 0 -180px;width:360px;">
+    <div class="cw bold ta-c p24-16">内容有改动，是否保存？</div>
+    <div class="ta-c cw p16-24 mb16"><span id="saveVisit" class="mr40 cu-po ho-cfm"><span class="ic f24 c-gr d-ib trans"></span>保存</span><span id="unsaveVisit" class="ml24 cu-po ho-cfm"><span class="ic f24 red d-ib trans"></span>不保存</span>
+    </div>
+  </div>
+  <!--开发票-->
+  <div id="popup-invoice" class="hidden po-f bg-f2 w868 l50p card5-nbg t50p f14 z200 c2" style="margin:-40vh 0 0 -450px;">
+    <h4 class="card-header card1-nbg po-r z50"><span class="ic f24 fw-n pr4"></span>开发票</h4>
+    <div id="container" class="ovy-a ml64 pt8 Scrollable" style="height:70vh;margin-left:140px">
+      <div class="c1 p816 bold">收费信息：</div>
+      <table class="lh46 bdcl ml16 ta-l">
+        <tr>
+          <th class="w150 pl16 fw-n">收费类型</th>
+          <th class="w240 fw-n">说明</th>
+          <th class="w150 pr16 ta-r fw-n">金额(￥)</th>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16">招聘服务费</td>
+          <td><input type="text" class="h30 w240 p0-4"></td>
+          <td class=" ta-r pr16"><input id="num13" type="text" class="h30 w80 ta-r p0-4" onKeyUp="sumT3()"></td>
+        </tr>
+        <tr class="bdt1">
+          <td></td>
+          <td></td>
+          <td class="ta-r pr16">总计：￥<span id="totalsum3" class="ml4 bold">0</span></td>
+        </tr>
+      </table>
+      <script>
+        /*对框内输入的数字加和计算*/
+        function sumT3(e) {
+          var totalsum = Number($('#num13').val());
+          $('#totalsum3').html(totalsum);
+          per();
+          $('#invo-amount').val(totalsum);
+        };
+
+      </script>
+      <div class="c1 pb8 pl16 bold">角色分配：</div>
+      <table id="table-role" class="lh46 bdcl ml16 ta-l">
+        <tr>
+          <th class="w150 pl16 fw-n">角色</th>
+          <th class="w200 fw-n">姓名</th>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16">跟进顾问</td>
+          <td><span>
+          <select name="" class="w160" id="select-role">
+            <option value="-1"></option>
+            <optgroup label="BD">
+            <option>熊佳欢</option>
+            <option>刘达文</option>
+            <option>范群</option>
+            </optgroup>
+            <optgroup label="顾问">
+            <option>王翔</option>
+            <option selected>宋艳</option>
+            <option>张文娟</option>
+            </optgroup>
+          </select>
+          </span></td>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16">项目对接</td>
+          <td><span>
+          <select name="" class="w160" id="select-role">
+            <option value="-1"></option>
+            <optgroup label="BD">
+            <option>熊佳欢</option>
+            <option selected>刘达文</option>
+            <option>范群</option>
+            </optgroup>
+            <optgroup label="顾问">
+            <option>王翔</option>
+            <option>宋艳</option>
+            <option>张文娟</option>
+            </optgroup>
+          </select>
+          </span></td>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16">客户BD</td>
+          <td><span>
+          <select name="" class="w160" id="select-role">
+            <option value="-1"></option>
+            <optgroup label="BD">
+            <option selected>熊佳欢</option>
+            <option>刘达文</option>
+            <option>范群</option>
+            </optgroup>
+            <optgroup label="顾问">
+            <option>王翔</option>
+            <option>宋艳</option>
+            <option>张文娟</option>
+            </optgroup>
+          </select>
+          </span></td>
+        </tr>
+      </table>
+      <script>
+        /*输入百分比框时onKeyUp触发自动计算金额*/
+        function per(e) {
+          var that = $(event.target),
+            target = that.parent().next().children(),
+            rate = Number(that.val()) * 0.01,
+            sum = Number($('#totalsum3').html()),
+            amount = parseInt(sum * rate);
+          target.val(amount);
+        };
+        /*输入金额时onKeyUp触发自动计算百分比*/
+        function updPer(e) {
+          var that = $(event.target),
+            target = that.parent().prev().children('input'),
+            sum = Number($('#totalsum3').html()),
+            rate = Number(that.val()) / sum,
+            rate = rate * 100,
+            rate = rate.toFixed(2);
+          target.val(rate);
+        };
+        /*删除业绩分配的一个角色*/
+        $(document).on('click', '.del-role', function() {
+          $(this).parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {
+              $(this).remove()
+            }
+          });;
+        });
+        /*按钮添加业绩分配显示和隐藏选择员工*/
+        $('#add-role').on('click', function() {
+          $(this).children('div').show()
+        });
+        $(document).on('click', function() {
+          if (!$(event.target).closest('#add-role').length) {
+            $('#add-role .note').hide();
+          };
+        });
+        /*选择员工后在业绩列表添加一条tr*/
+        $('#select-role').on('select2:select', function() {
+          var role = $(this).val();
+          switch (role) {
+            case '张文娟(点我)':
+              $('#add-role div').hide();
+              $('<tr class="bdt1 trans1"> <td class="pl16"><span>张文娟</span><span title="删除" class="del-role ic f24 c3 ml24 ho-cr cu-po"></span></td> <td>顾问</td> <td><input type="text" class="h30 w52 ta-c p0-4" onKeyUp="per()"> %</td> <td class="ta-r pr16"><input type="text" class="h30 w80 ta-r p0-4" onKeyUp="updPer()"></td> </tr> ').appendTo('#table-role');
+              scrollto();
+              var newAdd = $('#table-role tr:last');
+              newAdd.addClass('bg50');
+              window.setTimeout(function() {
+                $(newAdd).removeClass('bg50');
+              }, 1000);
+              window.setTimeout(function() {
+                $(newAdd).removeClass('trans1');
+              }, 2000);
+              break;
+          };
+        });
+
+        function scrollto() {
+          $('#table-role').velocity("scroll", {
+            container: $("#container"),
+            offset: -88
+          });
+        };
+
+      </script>
+      <div class="c1 p816 mt8 bold">开票信息：</div>
+      <div class="pl16">
+        <div class="p816"> <span class="d-ib w104 c2">项目信息：</span> <span>王精英</span> --<span>Java高级开发工程师</span> （<span>深圳市顺丰科技有限公司</span>） </div>
+        <div class="p816 po-r"> <span class="d-ib w104 c2">发票金额：</span> <span class="po-a c3 mt7 ml4">￥</span>
+          <input id="invo-amount" type="text" class="w300 pl24 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">发票抬头：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">纳税人识别号：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">开户行：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">开户账号：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">地址：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">税率：</span>
+          <input id="taxRate" type="text" onKeyUp="tax()" class="w56 p8 h32">
+          <span>%</span> </div>
+        <div class="p816"> <span class="d-ib w104 c2">税额：</span> <span id="taxAmount" class="bold c2"></span> </div>
+        <script>
+          //自动计算税额
+          function tax(e) {
+            var taxAmount = Number($('#invo-amount').val()) * Number($('#taxRate').val()) * 0.01
+            $('#taxAmount').html(taxAmount);
+          };
+
+        </script>
+        <div class="c1 p816 mt8 ml-16 bold">寄送信息：</div>
+        <div class="p816"> <span class="d-ib w104 c2">收件人：</span>
+          <input type="text" class="w150 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">职位：</span>
+          <input type="text" class="w150 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">电话：</span>
+          <input type="text" class="w150 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">寄送地址：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p16"> <span class="d-ib w104 c2">通知财务：</span>
+          <input type="radio" name="noti-finance" id="noti-fi-not">
+          <label for="noti-fi-not" class="c2">否</label>
+          <input type="radio" name="noti-finance" checked id="noti-fi-yes">
+          <label for="noti-fi-yes" class="c2 ml24">是</label>
+        </div>
+        <div class="p16"> <span class="d-ib w104 c2">创建待办：</span>
+          <input type="radio" name="crtask3" checked id="no-task3">
+          <label for="no-task3" class="c2">否</label>
+          <input type="radio" name="crtask3" id="with-task3">
+          <label for="with-task3" class="c2 ml24">是</label>
+        </div>
+        <div class="hidden">
+          <div class="p816 c2"> <span class="d-ib w104 c2">开始时间：</span>
+            <input type="text" class="datepicker-here w160 p8 h32" data-timepicker="true" data-date-format="yyyy-mm-dd">
+          </div>
+          <div class="p816"> <span class="d-ib w104 c2">待办备注：</span>
+            <input type="text" class="w300 p8 h32">
+          </div>
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">备注：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p16"> <span class="c2">
+        <input type="checkbox" checked id="save-invoinfo">
+        <label for="save-invoinfo">保存开票和寄送信息，下次自动调用</label>
+        </span> </div>
+        <div id="empty" class="h120"></div>
+      </div>
+    </div>
+    <div class="bdt1 card1-nbg"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--已入职阶段→（入职后跑了）不合适弹窗-->
+  <div id="popup-entrynot3" class="hidden po-f bg-f2 w424 l50p card5-nbg t50p f14 z200 mt-160 ml-212 c1">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>不合适</h4>
+    <div class="mt8 p816"> <span class="d-ib w80 c2">人才：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c1"> <span class="d-ib w80 c2">推荐职位：</span> <span class="ic f20 c3"></span> <span>Java高级开发工程师</span> </div>
+    <div class="p816"> <span class="d-ib w80 c2">原因：</span>
+      <input type="radio" name="entrynot3" checked id="entrynot31">
+      <label for="entrynot31">候选人放弃</label>
+      <input type="radio" name="entrynot3" id="entrynot32">
+      <label for="entrynot32" class="ml24">薪酬不合适</label>
+    </div>
+    <div class="p816"> <span class="d-ib w80 c2">备注：</span>
+      <input type="text" class="w300 p8 h32">
+    </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认不合适</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--通知开票弹窗-->
+  <div id="popup-notify" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>通知开票</h4>
+    <div class="mt8 p816 ml8"> <span class="d-ib w80 c2">发票金额：</span> <span>￥50000</span> </div>
+    <div class="p816 ml8"> <span class="d-ib w80 c2">相关项目：</span> <span>王精英</span> --<span>Java高级开发工程师</span> </div>
+    <div class="p816 ml8"> <span class="d-ib w80 c2">客户公司：</span> <span>深圳市顺丰科技有限公司</span> </div>
+    <div class="p816 ml8"> <span class="d-ib w80 c2">通知财务：</span> <span>徐俊雅</span> </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认通知</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--编辑发票-->
+  <div id="popup-editinvo" class="hidden po-f bg-f2 w588 l50p card5-nbg t50p f14 z200 c2" style="margin:-280px;">
+    <h4 class="card-header card1-nbg po-r z50"><span class="ic f24 fw-n pr4"></span>编辑发票</h4>
+    <div id="container1" class="ovy-a Scrollable" style="height:440px">
+      <div class="c1 p816 bold">收费信息：</div>
+      <table class="lh46 bdcl ml16 ta-l">
+        <tr>
+          <th class="w150 pl16 fw-n">收费类型</th>
+          <th class="w240 fw-n">说明</th>
+          <th class="w150 pr16 ta-r fw-n">金额(￥)</th>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16">招聘服务费</td>
+          <td><input type="text" class="h30 w240 p0-4"></td>
+          <td class="ta-r pr16"><input id="num14" type="text" class="h30 w80 ta-r p0-4" onKeyUp="sumT4()"></td>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16">咨询服务费</td>
+          <td><input type="text" class="h30 w240 p0-4"></td>
+          <td class=" ta-r pr16"><input id="num24" type="text" class="h30 w80 ta-r p0-4" onKeyUp="sumT4()"></td>
+        </tr>
+        <tr class="bdt1">
+          <td></td>
+          <td></td>
+          <td class="ta-r pr16">总计：￥<span id="totalsum4" class="ml4 bold">0</span></td>
+        </tr>
+      </table>
+      <script>
+        /*对框内输入的数字加和计算*/
+        function sumT4(e) {
+          var num1 = Number($('#num14').val()),
+            num2 = Number($('#num24').val()),
+            totalsum = num1 + num2;
+          $('#totalsum4').html(totalsum);
+          per();
+        };
+
+      </script>
+      <div class="c1 pb8 pl16 bold">业绩分配： <span id="add-role1" class="d-ib po-r ml16"> <span title="添加" class="ic f24 fw-n bg-b cw bdrs12 cu-po trans ho-sh"></span>
+        <div class="note hidden"> <span class="fw-n c1">选择要添加的员工：</span>
+          <select name="" class="w160" id="select-role1">
+          <option value="-1"></option>
+          <optgroup label="BD">
+          <option>高阳</option>
+          <option>刘达文</option>
+          <option>潘春雷</option>
+          </optgroup>
+          <optgroup label="顾问">
+          <option>王翔</option>
+          <option>宋艳</option>
+          <option>张文娟(点我)</option>
+          </optgroup>
+        </select>
+        </div>
+        </span>
+      </div>
+      <table id="table-role1" class="lh46 bdcl ml16 ta-l">
+        <tr>
+          <th class="w150 pl16 fw-n">姓名</th>
+          <th class="w200 fw-n">角色</th>
+          <th class="w80 fw-n">百分比</th>
+          <th class="w109 pr16 ta-r fw-n">金额(￥)</th>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16"><span>王翔</span><span title="删除" class="del-role ic f24 c3 ml24 ho-cr cu-po"></span></td>
+          <td>顾问</td>
+          <td><input type="text" class="h30 w52 ta-c p0-4" onKeyUp="per1()"> %
+          </td>
+          <td class="ta-r pr16"><input type="text" class="h30 w80 ta-r p0-4" onKeyUp="updPer1()"></td>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16"><span>宋艳</span><span title="删除" class="del-role ic f24 c3 ml24 ho-cr cu-po"></span></td>
+          <td>顾问</td>
+          <td><input type="text" class="h30 w52 ta-c p0-4" onKeyUp="per1()"> %
+          </td>
+          <td class="ta-r pr16"><input type="text" class="h30 w80 ta-r p0-4" onKeyUp="updPer1()"></td>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16"><span>高阳</span><span title="删除" class="del-role ic f24 c3 ml24 ho-cr cu-po"></span></td>
+          <td>BD</td>
+          <td><input type="text" class="h30 w52 ta-c p0-4" onKeyUp="per1()"> %
+          </td>
+          <td class="ta-r pr16"><input type="text" class="h30 w80 ta-r p0-4" onKeyUp="updPer1()"></td>
+        </tr>
+      </table>
+      <script>
+        /*输入百分比框时onKeyUp触发自动计算金额*/
+        function per1(e) {
+          var that = $(event.target),
+            target = that.parent().next().children(),
+            rate = Number(that.val()) * 0.01,
+            sum = Number($('#totalsum4').html()),
+            amount = parseInt(sum * rate);
+          target.val(amount);
+        };
+        /*输入金额时onKeyUp触发自动计算百分比*/
+        function updPer1(e) {
+          var that = $(event.target),
+            target = that.parent().prev().children('input'),
+            sum = Number($('#totalsum4').html()),
+            rate = Number(that.val()) / sum,
+            rate = rate * 100,
+            rate = rate.toFixed(2);
+          target.val(rate);
+        };
+        /*删除业绩分配的一个角色*/
+        $(document).on('click', '.del-role', function() {
+          $(this).parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {
+              $(this).remove()
+            }
+          });;
+        });
+        /*按钮添加业绩分配显示和隐藏选择员工*/
+        $('#add-role1').on('click', function() {
+          $(this).children('div').show()
+        });
+        $(document).on('click', function() {
+          if (!$(event.target).closest('#add-role1').length) {
+            $('#add-role1 .note').hide();
+          };
+        });
+        /*选择员工后在业绩列表添加一条tr*/
+        $('#select-role1').on('select2:select', function() {
+          var role = $(this).val();
+          switch (role) {
+            case '张文娟(点我)':
+              $('#add-role1 div').hide();
+              $('<tr class="bdt1 trans1"> <td class="pl16"><span>张文娟</span><span title="删除" class="del-role ic f24 c3 ml24 ho-cr cu-po"></span></td> <td>顾问</td> <td><input type="text" class="h30 w52 ta-c p0-4" onKeyUp="per1()"> %</td> <td class="ta-r pr16"><input type="text" class="h30 w80 ta-r p0-4" onKeyUp="updPer1()"></td> </tr> ').appendTo('#table-role1');
+              scrollto1();
+              var newAdd = $('#table-role1 tr:last');
+              newAdd.addClass('bg50');
+              window.setTimeout(function() {
+                $(newAdd).removeClass('bg50');
+              }, 1000);
+              window.setTimeout(function() {
+                $(newAdd).removeClass('trans1');
+              }, 2000);
+              break;
+          };
+        });
+
+        function scrollto1() {
+          $('#table-role1').velocity("scroll", {
+            container: $("#container1"),
+            offset: -88
+          });
+        };
+
+      </script>
+      <div class="c1 p816 mt8 bold">开票信息：</div>
+      <div class="pl16">
+        <div class="p816"> <span class="d-ib w80 c2">项目信息：</span> <span class="ic f20 c3"></span> <span>王精英</span> <span class="ic f20 c3 ml16"></span> <span>Java高级开发工程师</span> （<span>深圳市顺丰科技有限公司</span>） </div>
+        <div class="p816"> <span class="d-ib w104 c2">发票金额：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">发票抬头：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">纳税人识别号：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">开户行：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">开户账号：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">税率：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="c1 p816 mt8 ml-16 bold">寄送信息：</div>
+        <div class="p816"> <span class="d-ib w104 c2">收件人：</span>
+          <input type="text" class="w150 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">职位：</span>
+          <input type="text" class="w150 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">电话：</span>
+          <input type="text" class="w150 p8 h32">
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">寄送地址：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p16"> <span class="d-ib w104 c2">通知财务：</span>
+          <input type="radio" name="noti-finance1" id="noti-fi-not1">
+          <label for="noti-fi-not1" class="c2">否</label>
+          <input type="radio" name="noti-finance1" checked id="noti-fi-yes1">
+          <label for="noti-fi-yes1" class="c2 ml24">是</label>
+        </div>
+        <div class="p16"> <span class="d-ib w104 c2">创建待办：</span>
+          <input type="radio" name="crtask7" checked id="no-task7">
+          <label for="no-task7" class="c2">否</label>
+          <input type="radio" name="crtask7" id="with-task7">
+          <label for="with-task7" class="c2 ml24">是</label>
+        </div>
+        <div class="hidden">
+          <div class="p816 c2"> <span class="d-ib w104 c2">开始时间：</span>
+            <input type="text" class="datepicker-here w160 p8 h32" data-timepicker="true" data-date-format="yyyy-mm-dd">
+          </div>
+          <div class="p816"> <span class="d-ib w104 c2">待办备注：</span>
+            <input type="text" class="w300 p8 h32">
+          </div>
+        </div>
+        <div class="p816"> <span class="d-ib w104 c2">备注：</span>
+          <input type="text" class="w300 p8 h32">
+        </div>
+        <div class="p16"> <span class="c2">
+        <input type="checkbox" checked id="save-invoinfo1">
+        <label for="save-invoinfo">保存开票和寄送信息，下次自动调用</label>
+        </span> </div>
+      </div>
+    </div>
+    <div class="bdt1 card1-nbg"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--查看发票-->
+  <div id="popup-checkinvo" class="hidden po-f w588 l50p card5 t50p f14 z200 c2" style="margin:-280px;">
+    <h4 class="card-header card1-nbg po-r z50"><span class="ic f24 fw-n pr4"></span>查看发票</h4>
+    <div class="ovy-a bg-w Scrollable" style="height:440px">
+      <div class="c1 p816 bold">收费信息：</div>
+      <table class="lh46 bdcl ml16 ta-l">
+        <tr>
+          <th class="w150 pl16 fw-n">收费类型</th>
+          <th class="w240 fw-n">说明</th>
+          <th class="w150 pr16 ta-r fw-n">金额(￥)</th>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16">招聘服务费</td>
+          <td>无</td>
+          <td class="ta-r pr16">50000</td>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16">咨询服务费</td>
+          <td>无</td>
+          <td class="ta-r pr16">无</td>
+        </tr>
+        <tr class="bdt1">
+          <td></td>
+          <td></td>
+          <td class="ta-r pr16">总计：￥<span class="ml4 bold">50000</span></td>
+        </tr>
+      </table>
+      <div class="c1 pb8 pl16 bold">业绩分配： <span class="d-ib po-r ml16"> </span></div>
+      <table class="lh46 bdcl ml16 ta-l">
+        <tr>
+          <th class="w150 pl16 fw-n">姓名</th>
+          <th class="w200 fw-n">角色</th>
+          <th class="w80 fw-n">百分比</th>
+          <th class="w109 pr16 ta-r fw-n">金额(￥)</th>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16"><span>王翔</span></td>
+          <td>顾问</td>
+          <td>15 %</td>
+          <td class="ta-r pr16">7500</td>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16"><span>宋艳</span></td>
+          <td>顾问</td>
+          <td>5 %</td>
+          <td class="ta-r pr16">2500</td>
+        </tr>
+        <tr class="bdt1">
+          <td class="pl16"><span>高阳</span></td>
+          <td>BD</td>
+          <td>1 %</td>
+          <td class="ta-r pr16">500</td>
+        </tr>
+      </table>
+      <div class="c1 p816 mt8 bold">开票信息：</div>
+      <div class="pl16">
+        <div class="p816"> <span class="d-ib w104 c2">项目信息：</span> <span>王精英</span> --<span>Java高级开发工程师</span> （<span>深圳市顺丰科技有限公司</span>） </div>
+        <div class="p816"> <span class="d-ib w104 c2">发票金额：</span> <span>￥50000</span> </div>
+        <div class="p816"> <span class="d-ib w104 c2">发票抬头：</span> <span>深圳市顺丰科技有限公司</span> </div>
+        <div class="p816"> <span class="d-ib w104 c2">纳税人识别号：</span> <span>123456789</span> </div>
+        <div class="p816"> <span class="d-ib w104 c2">开户行：</span> <span>招商银行深圳市高新园支行</span> </div>
+        <div class="p816"> <span class="d-ib w104 c2">开户账号：</span> <span>6210 5888 7154 2441 23</span> </div>
+        <div class="p816"> <span class="d-ib w104 c2">税率：</span> <span>5 %</span> </div>
+        <div class="c1 p816 mt8 ml-16 bold">寄送信息：</div>
+        <div class="p816"> <span class="d-ib w104 c2">收件人：</span> <span>赵先生</span> </div>
+        <div class="p816"> <span class="d-ib w104 c2">职位：</span> <span>财务经理</span> </div>
+        <div class="p816"> <span class="d-ib w104 c2">电话：</span> <span>18688886666</span> </div>
+        <div class="p816"> <span class="d-ib w104 c2">寄送地址：</span> <span>深圳市南山区高新园南区F12栋403室</span> </div>
+        <div class="p16"> <span class="d-ib w104 c2">通知财务：</span> <span>是</span> </div>
+        <div class="p816"> <span class="d-ib w104 c2">备注：</span> <span>记得附上合同的复印件</span> </div>
+      </div>
+    </div>
+    <div class="bdt1 bg-f2 card1-nbg"> <span class="fr p16-24"> <span class="pop-confirm ml24 cb bold cu-po ho-u">OK</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <!--撤销不合适弹窗-->
+  <div id="popup-undo-cv" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 ml-212 mt-200" style="margin-top: -100px;">
+    <h4 class="card-header"><span class="ic f24 fw-n pr4"></span>撤销不合适</h4>
+    <div class="p816 c2"> <span class="d-ib w80">候选人：</span> <span class="ic f24 c3"></span> <span>王精英</span> </div>
+    <div class="p816 c2"> <span class="d-ib w80 c2">招聘流程：</span> <span class="ic f20 c3"></span> <span>不合适</span> <span class="ic f24 c3 ml16"></span> <span class="ic f20 c3 ml16"></span> <span>入职</span> </div>
+    <div class="bdt1-d mt8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 cb bold cu-po ho-u">确认撤销</span> </span>
+      <div class="clear"></div>
+    </div>
+  </div>
+</body>
+<script>
+  /*新滚动固定--begin--*/
+  $('.stickToTop').scrollToFixed({
+    preFixed: function() {
+      $(this).addClass('card1-nbg');
+    },
+    postFixed: function() {
+      $(this).removeClass('card1-nbg');
+    }
+  });
+  /*新滚动固定--end--*/
+
+</script>
+<script>
+  /*--拂过简历ID，ajax加载简历预览--*/
+  var showcv, delay = 500;
+  $('.cv-link').hover(function() {
+    var that = $(this);
+    showcv = setTimeout(function() {
+      $('.pre-p,.cv-preview').appendTo(that);
+      $('.pre-p,.cv-preview').show();
+    }, delay);
+  }, function() {
+    clearTimeout(showcv);
+    $('.pre-p,.cv-preview').hide();
+  });
+
+</script>
+<script>
+  /*--切换tab--*/
+  $('.tab').click(function(e) {
+    var tabid = $(this).attr('data-id'),
+      that = $(this),
+      num = tabid.charAt(4);
+    $('#stickToTop').removeClass('card5-nbg');
+    $('[data-id].bg-w').removeClass('bdt3b');
+    $('#scrollTo').velocity("scroll");
+    if (num > 1 && num < 8) {
+      $('.pi-chev1').removeClass('pi-chev1').addClass('pi-chev');
+      $(that).next().children('span:last').removeClass('pi-chev').addClass('pi-chev1');
+    } else {
+      $('.pi-chev1').removeClass('pi-chev1').addClass('pi-chev');
+    };
+    $('.tab').removeClass('bg-w bd-3').addClass('ho-cb');
+    $(that).addClass('bg-w').removeClass('ho-cb');
+    $('.tabs').hide();
+    $(tabid).show();
+  });
+
+  /*将人才移出职位*/
+  $('.remove-cv').on('click', function() {
+    $(this).parents('tr').addClass('td-l').velocity("fadeOut", {
+      duration: 500,
+      complete: function() {
+        $(this).remove()
+      }
+    });
+  });
+
+</script>
+<script>
+  /*--id小菜单--点击操作icon弹出操作菜单--*/
+  $('.op-menu').click(function(e) {
+    var that = $(this),
+      All = $('#dropmenu div');
+    var beforeSts = $(this).parents('tr').children('td:nth-child(4)').children('span:nth-child(2)').html(); //取得招聘流程
+    var cgr = that.parents('tr').children('td:nth-child(4)').hasClass('c-gr');
+    switch (beforeSts) {
+      case '未开始':
+        All.hide();
+        $('#m-toposition,#m-nomatch').show();
+        break;
+      case '已加入职位':
+        All.hide();
+        $('#m-recommend,#m-unfit').show();
+        break;
+      case '已推荐职位':
+        All.hide();
+        $('#m-interview,#m-passrec,#m-unfit').show();
+        break;
+      case '已通过筛选':
+        All.hide();
+        $('#m-interview,#m-unfit').show();
+        break;
+      case '面试':
+        if (cgr) {
+          All.hide();
+          $('#m-checkinter,#m-interview2,#m-passinter,#m-unfit').show();
+        } else {
+          All.hide();
+          $('#m-checkinter,#m-passcurrent,#m-interview2,#m-passinter,#m-unfit').show();
+        }
+        break;
+      case '待发Offer':
+        All.hide();
+        $('#m-signoffer,#m-unfit').show();
+        break;
+      case '待入职':
+        All.hide();
+        $('#m-checkoffer,#m-entry,#m-unfit').show();
+        break;
+      case '未过保证期':
+        All.hide();
+        $('#m-checkentry,#m-managevisit,#m-invoice,#m-unfit').show();
+        break;
+      case '已过保证期':
+        All.hide();
+        $('#m-checkentry,#m-managevisit,#m-invoice').show();
+        break;
+      case '未通知开票':
+        All.hide();
+        $('#m-checkinvo,#m-editinvo,#m-notify').show();
+        break;
+      case '待财务开票':
+      case '票已寄出':
+      case '已到款':
+      case '逾期未到款':
+        All.hide();
+        $('#m-checkinvo').show();
+        break;
+      case '已作废':
+      case '已驳回':
+        All.hide();
+        $('#m-editinvo,#m-checkinvo').show();
+        break;
+    }; //根据招聘流程状态，控制菜单的可操作内容
+    var has = $(that).has('#dropmenu').length;
+    var visible = !$('#dropmenu').hasClass('sc0');
+    var icons = $('.op-menu').children('.ic');
+    var Icon = $(that).children('.ic');
+    if (has && visible) {
+      $('#dropmenu').addClass('sc0 op0');
+      $(Icon).removeClass('cb z50');
+      setTimeout(function() {
+        $('#dropmenu').hide();
+      }, 150);
+    } else {
+      $('#dropmenu').appendTo(that);
+      $('#dropmenu').show();
+      $(icons).removeClass('cb z50');
+      $(Icon).addClass('cb z50');
+      setTimeout(function() {
+        $('#dropmenu').removeClass('sc0 op0')
+      }, 1);
+    }
+  });
+  /*单击任意地方关闭菜单*/
+  $(document).on('click', function() {
+    var that = $('#dropmenu').parent();
+    var Icon = $('#dropmenu').siblings();
+    if (!$(event.target).closest(that).length) {
+      $('#dropmenu').addClass('sc0 op0');
+      $(Icon).removeClass('cb z50');
+    };
+  });
+
+</script>
+<script>
+  /*控制是否创建待办*/
+  $('[name^="crtask"]').on('click', function() {
+    var id = $(this).next().html(),
+      taskdiv = $(this).parent().next();
+    if (id == "是") {
+      taskdiv.show();
+      $('#empty').show()
+    } else {
+      taskdiv.hide();
+      $('#empty').hide()
+    };
+  });
+  /*因为创建待办已到底，展示需向上滚动（提升用户体验）*/
+  $('[for="with-task3"]').on('click', function() {
+    $('[for="with-task3"]').velocity("scroll", {
+      container: $("#container")
+    });
+  });
+
+  /*待办提前提醒：选择时间和分钟*/
+  $('.choose-mh').on('click', function() {
+    $(this).children('.note').show();
+  });
+  $('[name^="choose-mh"]').on('click', function() {
+    var target = $(this).parent().siblings(':first-child');
+    $(target).html($(this).val());
+    $(this).parent().hide();
+    event.stopPropagation();
+  });
+
+</script>
+<script>
+  /*---------id小菜单----------*/
+  /*Pipleline阶段计数*/
+  var mtch = $('[data-id="#tab1"]').find('.f20'),
+    mtchNo = Number(mtch.html()), //智匹
+    topos = $('[data-id="#tab2"]').find('.f20'),
+    toposNo = Number(topos.html()), //加入
+    rec = $('[data-id="#tab3"]').find('.f20'),
+    recNo = Number(rec.html()), //推荐
+    inter = $('[data-id="#tab4"]').find('.f20'),
+    interNo = Number(inter.html()), //面试
+    offer = $('[data-id="#tab5"]').find('.f20'),
+    offerNo = Number(offer.html()), //Offer
+    entry = $('[data-id="#tab6"]').find('.f20'),
+    entryNo = Number(entry.html()), //入职
+    guarantee = $('[data-id="#tab9"]').find('.f20'),
+    guaranteeNo = Number(guarantee.html()), //保证期
+    unfit = $('[data-id="#tab7"]').find('.f20'),
+    unfitNo = Number(unfit.html()), //不合适
+    invo = $('[data-id="#tab8"]').find('.f20'),
+    invoNo = Number(invo.html()); //发票
+
+  /*加入职位*/
+  $('#m-toposition').on('click', function() {
+    $('#popbg,#popup-addto').velocity('fadeIn', 200)
+  });
+  /*推荐职位*/
+  $('#m-recommend').on('click', function() {
+    $('#popbg,#popup-recommend').velocity('fadeIn', 200)
+  });
+  /*通过筛选*/
+  $('#m-passrec').on('click', function() {
+    $('#popbg,#popup-passrec').velocity('fadeIn', 200)
+  });
+  /*安排面试*/
+  $('#m-interview').on('click', function() {
+    $('#popbg,#popup-interview').velocity('fadeIn', 200)
+  });
+  /*通过本轮面试*/
+  $('#m-passcurrent').on('click', function() {
+    $('#popbg,#popup-passcurrent').velocity('fadeIn', 200)
+  });
+  /*安排下轮面试*/
+  $('#m-interview2').on('click', function() {
+    $('#popbg,#popup-interview2').velocity('fadeIn', 200)
+  });
+  /*查看面试安排*/
+  $('#m-checkinter').on('click', function() {
+    $('#check-inter-ok').show();
+    $('#popbg,#popup-checkinter').velocity('fadeIn', 200)
+  });
+  /*通过面试*/
+  $('#m-passinter').on('click', function() {
+    $('#popbg,#popup-passinter').velocity('fadeIn', 200)
+  });
+  /*签订Offer*/
+  $('#m-signoffer').on('click', function() {
+    $('#popbg,#popup-signoffer').velocity('fadeIn', 200)
+  });
+  /*查看Offer*/
+  $('#m-checkoffer').on('click', function() {
+    $('#popbg,#popup-checkoffer').velocity('fadeIn', 200)
+  });
+  /*入职*/
+  $('#m-entry').on('click', function() {
+    $('#entrydate').val(getYMD(Date())); //赋值当天日期给日期输入栏
+    $('#popbg,#popup-entry').velocity('fadeIn', 200)
+  });
+  /*查看入职信息*/
+  $('#m-checkentry').on('click', function() {
+    $('#popbg,#popup-checkentry').velocity('fadeIn', 200);
+  })
+  /*管理入职回访*/
+  $('#m-managevisit').on('click', function() {
+    $('#popbg,#popup-visit').velocity("fadeIn", 200);
+  });
+  /*开发票*/
+  $('#m-invoice').on('click', function() {
+    $('#popbg,#popup-invoice').velocity('fadeIn', 200)
+  });
+  /*通知开票*/
+  $('#m-notify').on('click', function() {
+    $('#popbg,#popup-notify').velocity('fadeIn', 200)
+  });
+  /*编辑发票*/
+  $('#m-editinvo').on('click', function() {
+    $('#popbg,#popup-editinvo').velocity('fadeIn', 200)
+  });
+  /*查看发票*/
+  $('#m-checkinvo').on('click', function() {
+    $('#popbg,#popup-checkinvo').velocity('fadeIn', 200)
+  });
+  /*不匹配*/
+  $('#m-nomatch').on('click', function() {
+    var mtch = $('[data-id="#tab2"]').find('.f20'),
+      mtchNo = Number(mtch.html());
+    $(this).parents('tr').velocity("fadeOut", {
+      duration: 500,
+      complete: function() {
+        $('#dropmenu').appendTo('body');
+        $(this).remove();
+      }
+    });
+    mtch.html(mtchNo - 1);
+  });
+  /*不合适*/
+  $('#m-unfit').on('click', function() {
+    var type = $(this).parents('td').next().children('span:nth-child(2)').html(); //判断不合适类型
+    var cgr = $(this).parents('td').next().hasClass('c-gr')
+    switch (type) {
+      case '已加入职位':
+        $('#popup-recommendnot,#popbg').velocity('fadeIn', 200);
+        break;
+      case '已推荐职位':
+        $('#popup-interviewnot,#popbg').velocity('fadeIn', 200);
+        break;
+      case '已通过筛选':
+        $('#popup-passrecnot,#popbg').velocity('fadeIn', 200);
+        break;
+      case '面试':
+        if (cgr) {
+          $('#popup-currentnot,#popbg').velocity('fadeIn', 200);
+        } else {
+          $('#popup-offernot,#popbg').velocity('fadeIn', 200);
+        }
+        break;
+      case '待发Offer':
+        $('#popup-entrynot,#popbg').velocity('fadeIn', 200);
+        break;
+      case '待入职':
+        $('#popup-entrynot2,#popbg').velocity('fadeIn', 200);
+        break;
+      case '未过保证期':
+        $('#popup-entrynot3,#popbg').velocity('fadeIn', 200);
+        break;
+    };
+  });
+  /*--弹窗的确认操作--*/
+  $(document).on('click', '.pop-confirm', function() {
+    var type = $(this).parents('[id]').attr('id'); //判断确认类型
+    switch (type) {
+
+      case 'popup-undo-cv': //撤销不合适
+        $('#popup-undo-cv,#popbg').velocity('fadeOut', 150);
+        toast('已撤销不合适');
+        break;
+
+      case 'popup-addto': //确认加入职位
+        $('#popup-addto,#popbg').velocity('fadeOut', 150);
+        setTimeout(function() {
+          flyToElement($('#matchcv-1'), topos);
+        }, 200);
+        setTimeout(function() {
+          $('#matchcv-1').parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {
+              $('#dropmenu').appendTo('body');
+              $(this).remove();
+            }
+          });
+        }, 700);
+        setTimeout(function() {
+          mtch.html(--mtchNo);
+          topos.html(++toposNo);
+        }, 1100);
+        break;
+      case 'popup-recommendnot': //确认不合适→(不能推荐)已加入职位阶段
+        $('#popup-recommendnot,#popbg').velocity('fadeOut', 150);
+        setTimeout(function() {
+          flyToElement($('#addtocv-1'), unfit);
+        }, 200);
+        setTimeout(function() {
+          $('#addtocv-1').parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {
+              $('#dropmenu').appendTo('body');
+              $(this).remove();
+            }
+          });
+        }, 700);
+        setTimeout(function() {
+          topos.html(--toposNo);
+          unfit.html(++unfitNo);
+        }, 1100);
+        break;
+      case 'popup-recommend': //确认推荐职位
+        $('#popup-recommend,#popbg').velocity('fadeOut', 150);
+        setTimeout(function() {
+          flyToElement($('#addtocv-1'), rec);
+        }, 200);
+        setTimeout(function() {
+          $('#addtocv-1').parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {
+              $('#dropmenu').appendTo('body');
+              $(this).remove();
+            }
+          });
+        }, 700);
+        setTimeout(function() {
+          topos.html(--toposNo);
+          rec.html(++recNo);
+        }, 1100);
+        break;
+      case 'popup-interviewnot': //确认不合适→(不能安排面试)已推荐职位阶段
+        $('#popup-interviewnot,#popbg').velocity('fadeOut', 150);
+        setTimeout(function() {
+          flyToElement($('#reccv-1'), unfit);
+        }, 200);
+        setTimeout(function() {
+          $('#reccv-1').parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {
+              $('#dropmenu').appendTo('body');
+              $(this).remove();
+            }
+          });
+        }, 700);
+        setTimeout(function() {
+          rec.html(--recNo);
+          unfit.html(++unfitNo);
+        }, 1100);
+        break;
+      case 'popup-passrec': //确认通过筛选
+        $('#popup-passrec,#popbg').velocity('fadeOut', 150);
+        toast('操作成功');
+        break;
+      case 'popup-passrecnot': //确认不合适→(不能安排面试)已通过筛选段
+        $('#popup-passrecnot,#popbg').velocity('fadeOut', 150);
+        setTimeout(function() {
+          flyToElement($('#reccv-1'), unfit);
+        }, 200);
+        setTimeout(function() {
+          $('#reccv-1').parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {
+              $('#dropmenu').appendTo('body');
+              $(this).remove();
+            }
+          });
+        }, 700);
+        setTimeout(function() {
+          rec.html(--recNo);
+          unfit.html(++unfitNo);
+        }, 1100);
+        break;
+      case 'popup-interview': //确认安排面试
+        $('#popup-interview,#popbg').velocity('fadeOut', 150);
+        setTimeout(function() {
+          flyToElement($('#reccv-1'), inter);
+        }, 200);
+        setTimeout(function() {
+          $('#reccv-1').parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {
+              $('#dropmenu').appendTo('body');
+              $(this).remove();
+            }
+          });
+        }, 700);
+        setTimeout(function() {
+          rec.html(--recNo);
+          inter.html(++interNo);
+        }, 1100);
+        break;
+      case 'popup-passcurrent': //确认通过本轮面试
+        $('#popup-passcurrent,#popbg').velocity('fadeOut', 150);
+        toast('操作成功');
+        break;
+      case 'popup-interview2': //确认安排下轮面试
+        $('#popup-interview2,#popbg').velocity('fadeOut', 150);
+        toast('操作成功');
+        break;
+      case 'popup-checkinter': //查看面试安排
+        $('#popup-checkinter,#popbg').velocity('fadeOut', 150);
+        break;
+      case 'popup-editinter': //查看面试→编辑安排
+        $('#popup-editinter,#popbg').velocity('fadeOut', 150);
+        toast('已更新面试安排');
+        break;
+      case 'popup-passinter': //确认面试通过
+        $('#popup-passinter,#popbg').velocity('fadeOut', 150);
+        setTimeout(function() {
+          flyToElement($('#intercv-1'), offer);
+        }, 200);
+        setTimeout(function() {
+          $('#intercv-1').parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {
+              $('#dropmenu').appendTo('body');
+              $(this).remove();
+            }
+          });
+        }, 700);
+        setTimeout(function() {
+          inter.html(--interNo);
+          offer.html(++offerNo);
+        }, 1100);
+        break;
+      case 'popup-offernot': //确认不合适→(不能进入待发Offer)已推荐职位阶段
+        $('#popup-offernot,#popbg').velocity('fadeOut', 150);
+        setTimeout(function() {
+          flyToElement($('#intercv-1'), unfit);
+        }, 200);
+        setTimeout(function() {
+          $('#intercv-1').parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {
+              $('#dropmenu').appendTo('body');
+              $(this).remove();
+            }
+          });
+        }, 700);
+        setTimeout(function() {
+          inter.html(--interNo);
+          unfit.html(++unfitNo);
+        }, 1100);
+        break;
+      case 'popup-signoffer': //确认签订Offer
+        $('#popup-signoffer,#popbg').velocity('fadeOut', 150);
+        setTimeout(function() {
+          flyToElement($('#offercv-1'), entry);
+        }, 200);
+        setTimeout(function() {
+          $('#offercv-1').parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {              
+              $('#dropmenu').appendTo('body');
+              $(this).remove();
+            }
+          });
+        }, 700);
+        setTimeout(function() {
+          offer.html(--offerNo);
+          entry.html(++entryNo);
+        }, 1100);
+        break;
+      case 'popup-checkoffer': //查看Offer
+        $('#popup-checkoffer,#popbg').velocity('fadeOut', 150);
+        break;
+      case 'popup-editoffer': //查看Offer→编辑Offer
+        $('#popup-editoffer,#popbg').velocity('fadeOut', 150);
+        toast('已更新Offer信息');
+        break;
+      case 'popup-entrynot2': //确认不合适→(没有入职)待入职阶段
+        $('#popup-entrynot2,#popbg').velocity('fadeOut', 150);
+        setTimeout(function() {
+          flyToElement($('#entrycv-1'), unfit);
+        }, 200);
+        setTimeout(function() {
+          $('#entrycv-1').parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {
+              $('#dropmenu').appendTo('body');
+              $(this).remove();
+            }
+          });
+        }, 700);
+        setTimeout(function() {
+          entry.html(--entryNo);
+          unfit.html(++unfitNo);
+        }, 1100);
+        break;
+      case 'popup-entry': //入职
+        $('#popup-entry,#popbg').velocity('fadeOut', 150);
+        setTimeout(function() {
+          flyToElement($('#entrycv-1'), guarantee);
+        }, 200);
+        setTimeout(function() {
+          $('#entrycv-1').parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {
+              $('#dropmenu').appendTo('body');
+              $(this).remove();
+            }
+          });
+        }, 700);
+        setTimeout(function() {
+          entry.html(--entryNo);
+          guarantee.html(++guaranteeNo);
+        }, 1100);
+        break;
+      case 'popup-entrynot3': //确认不合适→(入职后跑了)保证期阶段
+        $('#popup-entrynot3,#popbg').velocity('fadeOut', 150);
+        setTimeout(function() {
+          flyToElement($('#guarantee-cv1'), unfit);
+        }, 200);
+        setTimeout(function() {
+          $('#guarantee-cv1').parents('tr').velocity("fadeOut", {
+            duration: 500,
+            complete: function() {
+              $('#dropmenu').appendTo('body');
+              $(this).remove();
+            }
+          });
+        }, 700);
+        setTimeout(function() {
+          guarantee.html(--guaranteeNo);
+          unfit.html(++unfitNo);
+        }, 1100);
+        break;
+      case 'popup-invoice': //确认开发票
+        $('#popup-invoice,#popbg').velocity('fadeOut', 150);
+        setTimeout(function() {
+          flyToElement($('#entrycv-2'), invo);
+        }, 200);
+        setTimeout(function() {
+          invo.html(++invoNo);
+        }, 1100);
+        break;
+      case 'popup-notify': //通知开票
+        $('#popup-notify,#popbg').velocity('fadeOut', 150);
+        toast('已通知财务开票');
+        break;
+      case 'popup-editinvo': //编辑发票
+        $('#popup-editinvo,#popbg').velocity('fadeOut', 150);
+        toast('已更新发票信息');
+        break;
+      case 'popup-checkinvo': //查看发票
+        $('#popup-checkinvo,#popbg').velocity('fadeOut', 150);
+    };
+  });
+  /*--弹窗单击取消--*/
+  $('#popbg,.pop-cancel').on('click', function() {
+    var visitVisible = $('#popup-visit').is(':visible');
+    if (visitVisible) {} else {
+      $('#popbg,[id^="popup"]').velocity('fadeOut', 150)
+    }
+  });
+  $('#close-visit').on('click', function() {
+    $('#popup-closeVisit').velocity("fadeIn", 200);
+  })
+  $('#saveVisit').on('click', function() {
+    $('#popup-closeVisit,#popup-visit,#popbg').velocity("fadeOut", 150);
+    toast('回访保存成功');
+  })
+  $('#unsaveVisit').on('click', function() {
+    $('#popup-closeVisit,#popup-visit,#popbg').velocity("fadeOut", 150);
+  })
+
+</script>
+<script>
+  //飞入动画函数
+  function flyToElement(flyer, flyingTo) {
+    var $func = $(this);
+    var divider = 3;
+    var flyerClone = $(flyer).clone();
+    $(flyerClone).css({
+      position: 'absolute',
+      top: $(flyer).offset().top + "px",
+      left: $(flyer).offset().left + "px",
+      opacity: 1,
+      'z-index': 1000
+    });
+    $('body').append($(flyerClone));
+    var gotoX = $(flyingTo).offset().left - 8;
+    var gotoY = $(flyingTo).offset().top;
+    $(flyerClone).velocity({
+        opacity: 0.4,
+        left: gotoX,
+        top: gotoY,
+        scaleX: 0.8,
+        scaleY: 0.8,
+        //width: $(flyer).width()/divider,
+        //height: $(flyer).height()/divider,
+      }, 800,
+      function() {
+        $(flyingTo).fadeOut('fast', function() {
+          $(flyingTo).fadeIn('fast', function() {
+            $(flyerClone).fadeOut('fast', function() {
+              $(flyerClone).remove();
+            });
+          });
+        });
+      });
+  };
+
+</script>
+
+<script>
+  /*拂过note-ho出现和隐藏备注*/
+  $(document).on('mouseenter', '.note-ho', function() {
+    $('#notes').appendTo(this);
+    $('#notes').show();
+  });
+  $(document).on('mouseleave', '.note-ho', function() {
+    var newnoteVisible = $('#newnote').is(':visible');
+    if (newnoteVisible) {} else {
+      $('#notes').hide();
+    };
+  });
+  /*单击其它地方关闭notes*/
+  $(document).on('click', function() {
+    if (!$(event.target).closest('#notes').length) {
+      $('#notes').hide();
+    }
+  });
+  /*--------备注系统-------------*/
+  /*获得YYYY-MM-DD格式日期*/
+  function getYMD(date) {
+    var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+  };
+  /*取得HH:MM格式时间*/
+  function getHM(date) {
+    var d = new Date(date),
+      hour = '' + d.getHours(),
+      minute = '' + d.getMinutes();
+    if (hour.length < 2) hour = '0' + hour;
+    if (minute.length < 2) minute = '0' + minute;
+    return hour + ':' + minute;
+  };
+  /*新增备注*/
+  $('.btn-newnote').on('click', function() {
+    $('#newnote').prependTo($(this).siblings());
+    $('#newnote').show();
+    $('#newnote textarea').val('').focus();
+  });
+  /*确认新增备注，有一处变动（w280）*/
+  $('#newnote-confirm').on('click', function() {
+    var notetext = $('#newnote textarea').val();
+    var hastext = notetext.trim().length;
+    if (hastext) {
+      $('#newnote').hide();
+      var role = "顾问",
+        name = "王某某",
+        today = getYMD(Date()),
+        time = getHM(Date());
+      $('<li class="li-no pb12 clear"> <div class="fl ml16 tl-ldot"></div> <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <p class="wh-pw lh24">' + notetext + '</p> <div class="c3 bdt"> <span>' + today + '</span> <span class="ml8">' + time + '</span> <span class="ml24 pr4">' + role + ':</span> <span>' + name + '</span> </div> </div> <div class="clear"></div> </li>').insertAfter('#newnote');
+    } else {
+      $('#newnote textarea').focus()
+    }
+  });
+  /*取消新增备注*/
+  $('#newnote-cancel').on('click', function() {
+    $('#newnote').hide();
+  });
+
+</script>
+<script>
+  /*--列表表头单击排序：小图标填色--*/
+  $('.sort').on('click', function() {
+    var des = $(this).children('.descend');
+    var ase = $(this).children('.ascend');
+    $(this).siblings().children('.cb').removeClass('cb').addClass('ce0');
+    if ($(des).hasClass('cb')) {
+      $(ase).removeClass('ce0').addClass('cb');
+      $(des).removeClass('cb').addClass('ce0')
+    } else {
+      $(des).removeClass('ce0').addClass('cb');
+      $(ase).removeClass('cb').addClass('ce0');
+    }
+  });
+  /*--移除筛选标签--*/
+  $('.tag-search').on('click', function() {
+    $(this).velocity({
+      left: "-120px",
+      opacity: 0,
+    }, {
+      duration: 150,
+      complete: function() {
+        $(this).remove();
+      }
+    });
+  });
+  /*--单击筛选标签--*/
+  $('.filter-tag').on('click', function() {
+    $(this).siblings().children('div').hide();
+    $(this).children('div').show();
+  });
+  $('.filter-add,.filter-cancel').on('click', function(e) {
+    event.stopPropagation();
+    $(this).parent().parent().hide();
+  });
+  /*单击文档任意位置关闭筛选框*/
+  $(document).on('click', function(e) {
+    if (!$(event.target).closest('.filter-tag').length && !$(event.target).closest('[class^="datepicker"]').length && !$(event.target).closest('.select2-container').length) {
+      $('.filter-tag .note').hide()
+    }
+  });
+  /*--自定义时间收起展示--*/
+  $('input[name$="time"]').on('click', function() {
+    var that = $(this);
+    var value = $('input[name$="time"]:checked').val();
+    if (value == "custom") {
+      $(that).parent().siblings('.custom').show()
+    } else {
+      $(that).parent().siblings('.custom').hide()
+    }
+  })
+  /*--自定义时间选择--*/
+  var $start = $('#start'),
+    $end = $('#end');
+  $start.datepicker({
+    onSelect: function(fd, date) {
+      $end.data('datepicker')
+        .update('minDate', date)
+    }
+  })
+  $end.datepicker({
+    onSelect: function(fd, date) {
+      $start.data('datepicker')
+        .update('maxDate', date)
+    }
+  });
+  var $start1 = $('#start1'),
+    $end1 = $('#end1');
+  $start1.datepicker({
+    onSelect: function(fd, date) {
+      $end1.data('datepicker')
+        .update('minDate', date)
+    }
+  })
+  $end1.datepicker({
+    onSelect: function(fd, date) {
+      $start1.data('datepicker')
+        .update('maxDate', date)
+    }
+  });
+  var $start2 = $('#start2'),
+    $end2 = $('#end2');
+  $start2.datepicker({
+    onSelect: function(fd, date) {
+      $end2.data('datepicker')
+        .update('minDate', date)
+    }
+  })
+  $end2.datepicker({
+    onSelect: function(fd, date) {
+      $start2.data('datepicker')
+        .update('maxDate', date)
+    }
+  });
+  /*--选择select实例化--*/
+  $('#select-company').select2({
+    placeholder: " ",
+  });
+  $('#select-bd,#select-personal,#select-group,#select-role,#select-role1').select2({
+    minimumResultsForSearch: Infinity,
+    placeholder: {
+      id: '-1', // the value of the option
+      text: ''
+    }
+  });
+  $('#select-role').select2({
+    minimumResultsForSearch: 8,
+    placeholder: {
+      id: '-1', // the value of the option
+      text: ''
+    }
+  });
+  $('#select-team,#select-status,#select-cnature,#select-csize').select2({
+    minimumResultsForSearch: Infinity,
+    placeholder: '',
+  });
+  /*--选中Pipeline--*/
+  $("#pipeline").addClass("nav-a-selected");
+  /*--“新增”和“账号”拂过展开下拉菜单*/
+  $("#add").mouseenter(function(e) {
+    $("#add ul").show()
+  });
+  $("#add").mouseleave(function(e) {
+    $("#add ul").hide()
+  });
+  $("#account").mouseenter(function(e) {
+    $("#account ul").show()
+  });
+  $("#account").mouseleave(function(e) {
+    $("#account ul").hide()
+  });
+
+</script>
+<script>
+  /*判断页外链接是否含#tab跳转并转向相应跳转*/
+  var hash = window.location.hash;
+  if (hash != '') {
+    var tabID = '[data-id="' + hash + '"]';
+    $(document).ready(function(e) {
+      $(tabID).trigger('click');
+    });
+  };
+
+</script>
+<!--招聘流程弹窗内容-->
+<div class="note hidden" id="hireprocess">
+  <div class="mh240 ovy-a po-r pl4 Scrollable">
+    <table class="bdcl lh36 bdl1">
+      <tr>
+        <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-20 20:00</td>
+        <td class="f13 c1 w220">
+          <div><span class="ic f20 c3 mr4"></span>入职<span class="ml16 f12 c3">操作者：刘文辉</span></div>
+          <div class="f12 c3 lh-n">
+            <p><span>备注：</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, praesentium, maxime, tempora.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-19 19:00</td>
+        <td class="f13 w240">
+          <div><span class="ic f20 c3 mr4"></span>签订Offer<span class="ml16 f12 c3">操作者：刘文辉</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-18 18:00</td>
+        <td class="f13"><span class="ic f20 c3 mr4"></span>待发Offer<span class="ml16 f12 c3">操作者：刘文辉</span></td>
+      </tr>
+      <tr>
+        <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-17 17:00</td>
+        <td class="f13"><span class="ic f20 c3 mr4"></span>面试：通过2面<span class="ml16 f12 c3">操作者：刘文辉</span></td>
+      </tr>
+      <tr>
+        <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-16 16:00</td>
+        <td class="f13"><span class="ic f20 c3 mr4"></span>面试：待2面<span class="ml16 f12 c3">操作者：刘文辉</span></td>
+      </tr>
+      <tr>
+        <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-15 15:00</td>
+        <td class="f13"><span class="ic f20 c3 mr4"></span>面试：通过1面<span class="ml16 f12 c3">操作者：刘文辉</span></td>
+      </tr>
+      <tr>
+        <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-14 14:00</td>
+        <td class="f13"><span class="ic f20 c3 mr4"></span>面试：待1面<span class="ml16 f12 c3">操作者：刘文辉</span></td>
+      </tr>
+      <tr>
+        <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-13 13:00</td>
+        <td class="f13"><span class="ic f20 c3 mr4"></span>已通过筛选<span class="ml16 f12 c3">操作者：刘文辉</span></td>
+      </tr>
+      <tr>
+        <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-12 12:00</td>
+        <td class="f13"><span class="ic f20 c3 mr4"></span>推荐职位<span class="ml16 f12 c3">操作者：刘文辉</span></td>
+      </tr>
+      <tr>
+        <td class="c3 f13 w150 pl16 l-dot va-t">2016-10-11 11:00</td>
+        <td class="f13"><span class="ic f20 c3 mr4"></span>加入职位<span class="ml16 f12 c3">操作者：刘文辉</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<script>
+  /*--招聘流程拂过显示内容--*/
+  $(document).on('mouseenter', '.hireprocess', function() {
+    var that = $(this);
+    showHireprocess = setTimeout(function() {
+      $('#hireprocess').appendTo(that).show();
+    }, 500);
+  });
+  $(document).on('mouseleave', '.hireprocess', function() {
+    var that = $(this);
+    clearTimeout(showHireprocess);
+    $('#hireprocess').hide().appendTo('body')
+  });
+
+</script>
+<script>
+  /*--textarea输入自动增长长度--*/
+  $('textarea').autogrow();
+
+</script>
+<script>
+  /*保证期回访弹窗内功能----------begin----------*/
+  $('#v1-ops .edit').on('click', function() { //回访1单击编辑
+    $('#v1-edit,#v1-ops .save').show();
+    $('#v1-display,#v1-ops .edit,#v1-ops .export').hide();
+  });
+  $('#v1-ops .save').on('click', function() { //回访1单击保存
+    $('#v1-edit,#v1-ops .save').hide();
+    $('#v1-display,#v1-ops .edit,#v1-ops .export').show();
+  });
+  $('#v2-ops .edit').on('click', function() { //回访2单击编辑
+    $('#v2-edit,#v2-ops .save').show();
+    $('#v2-display,#v2-ops .edit,#v2-ops .export').hide();
+  });
+  $('#v2-ops .save').on('click', function() { //回访2单击保存
+    $('#v2-edit,#v2-ops .save').hide();
+    $('#v2-display,#v2-ops .edit,#v2-ops .export').show();
+  });
+  $('#v3-ops .edit').on('click', function() { //回访3单击编辑
+    $('#v3-edit,#v3-ops .save').show();
+    $('#v3-display,#v3-ops .edit,#v3-ops .export').hide();
+  });
+  $('#v3-ops .save').on('click', function() { //回访3单击保存
+    $('#v3-edit,#v3-ops .save').hide();
+    $('#v3-display,#v3-ops .edit,#v3-ops .export').show();
+  });
+  $('[data-id^="v"]').on('click', function() { //三个回访tab切换
+    $(this).siblings('.d-ib').removeClass('bg-f2').addClass('cw06');
+    $(this).removeClass('cw06').addClass('bg-f2');
+    var id = '#' + $(this).attr('data-id');
+    $(id).siblings().hide();
+    $(id).show();
+  });
+  /*保证期回访弹窗内功能----------end----------*/
+
+</script>
+<script>
+  $(document).on('click', '.undo-cv', function() { // 不合适阶段单击撤销按钮
+    $('#popup-undo-cv,popbg').velocity('fadeIn', 150);
+  })
+
+</script>
+
+</html>

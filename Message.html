@@ -1,0 +1,802 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>消息</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main-New.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/datepicker.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/datepicker.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/components.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/UE editor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/UE editor/ueditor.all.min.js"> </script>
+    
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+.z-up:hover{z-index:50;}
+.z-up:focus{z-index: 50;}
+.select2-container .select2-selection--multiple{
+	min-height:40px; padding:4px 0 0 10px;position: relative;}
+.select2-container .select2-selection--multiple .select2-selection__rendered{max-height:60px;overflow-y: auto;}	
+.li-con{border-bottom:1px solid #e0e0e0;cursor:pointer;padding:8px;list-style:none;}
+#msg-table td:first-child {cursor: default;}
+</style>
+
+</head>
+
+<body class="bg-ec">
+<header class="header"></header>
+<div class="content">
+  <div class="fl w200">
+    <div class="card1 pb16">
+      <div class="card-header">
+        <span class="ic f20"></span> 我的消息
+      </div>
+      <div class="c1 f14 p816 cb cu-po mt8">
+        <span>收件箱</span>
+        <span class="ta-r fr">13</span>
+      </div>
+      <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+        <span>草稿箱</span>
+        <span class="ta-r fr">2</span>
+      </div>
+      <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+        <span>已发送</span>
+        <span class="ta-r fr">2</span>
+      </div>
+    </div>
+  </div>  
+  <div class="fl w968 ml32">
+    <div id="add-newM" class="card1 a fl f14 p816 cb ho-blue cu-po trans ho-sh po-r z50">
+      <span class="ic f24 ml-5"></span> 发送新消息
+    </div>
+    <div class="fl card1 ml32">
+      <input type="text" placeholder="搜索消息" class="w360 p1016 f14 h40">
+      <span class="ic f24 bg-b cw cu-po ho-1f p8 va-1 ml-5" onClick="window.open('search-2nd.html','_parent')"></span>
+    </div>
+    <div class="card1 mt16 fl clear w968 f14 pb16">
+      <div class="p1016 mt8">
+        <div id="markAll" class="fl">
+          <span class="cb bold cu-po ho-cb">全部标记为已读</span>
+        </div>
+        <div id="deleteAll" class="fl ml24">
+          <span class="cb bold cu-po ho-cr">删除所选</span>
+        </div>
+        <div class="fr c2">
+          <span class="ml16">
+            <span>每页显示：</span>
+            <a href="" class="a ml8 cb">20</a>
+            <a href="" class="a ml8 c2">30</a>
+            <a href="" class="a ml8 c2">50</a>
+          </span>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <table id="msg-table" class="c1 bdcl ta-l c1">
+        <tr class="c2 h48 f13">
+          <th class="w54 pl16 fw-n">
+            <input type="checkbox" id="task-all">
+            <label for="task-all"></label>
+          </th>
+          <th class="w120">发送方</th>
+          <th class="w44"></th>
+          <th class=" w588">主题</th>
+          <th class="sort w136 cu-po ho-cb">
+            <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+            <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+            <span>发送时间</span>
+          </th>
+        </tr>
+        <tr class="msg bdt1 bold h48 cu-po ho-bdl">
+          <td class="pl16 fw-n">
+            <input type="checkbox" id="task-1">
+            <label for="task-1"></label>
+          </td>
+          <td>高阳</td>
+          <td><span class="ic f20 c2 fw-n"></span></td>
+          <td>
+          <span>分配公司：</span>
+          <span class="ic f20 c3 fw-n"></span><span>深圳市顺丰科技有限公司</span>
+          </td>
+          <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="msg bdt1 bold h48 cu-po ho-bdl">
+          <td class="pl16 fw-n">
+            <input type="checkbox" id="task-1">
+            <label for="task-1"></label>
+          </td>
+          <td>高阳</td>
+          <td><span class="ic f20 c2 fw-n"></span></td>
+          <td>
+          <span>分配公司：</span>
+          <span class="ic f20 c3 fw-n"></span><span>深圳市顺丰科技有限公司</span>
+          </td>
+          <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="msg bdt1 h48 bg-ec ho-bdl cu-po">
+          <td class="pl16 fw-n">
+            <input type="checkbox" id="task-5">
+            <label for="task-5"></label>
+          </td>
+          <td>公司</td>
+          <td></td>
+          <td>
+          <a href="" class="a c1">        
+            <span class="ic f20 c3 fw-n"></span><span>深圳市顺丰科技有限公司</span>
+          </a>
+          </td>
+          <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="msg bdt1 bold h48 cu-po ho-bdl">
+          <td class="pl16 fw-n">
+            <input type="checkbox" id="task-1">
+            <label for="task-1"></label>
+          </td>
+          <td>高阳</td>
+          <td><span class="ic f20 c2 fw-n"></span></td>
+          <td>
+          <span>分配公司：</span>
+          <span class="ic f20 c3 fw-n"></span><span>深圳市顺丰科技有限公司</span>
+          </td>
+          <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="msg bdt1 h48 bg-ec ho-bdl cu-po">
+          <td class="pl16 fw-n">
+            <input type="checkbox" id="task-5">
+            <label for="task-5"></label>
+          </td>
+          <td>公司</td>
+          <td></td>
+          <td>
+          <a href="" class="a c1">        
+            <span class="ic f20 c3 fw-n"></span><span>深圳市顺丰科技有限公司</span>
+          </a>
+          </td>
+          <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="msg bdt1 h48 bg-ec ho-bdl cu-po">
+          <td class="pl16 fw-n">
+            <input type="checkbox" id="task-5">
+            <label for="task-5"></label>
+          </td>
+          <td>公司</td>
+          <td></td>
+          <td>
+          <a href="" class="a c1">        
+            <span class="ic f20 c3 fw-n"></span><span>深圳市顺丰科技有限公司</span>
+          </a>
+          </td>
+          <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="msg bdt1 h48 bg-ec ho-bdl cu-po">
+          <td class="pl16 fw-n">
+            <input type="checkbox" id="task-5">
+            <label for="task-5"></label>
+          </td>
+          <td>公司</td>
+          <td></td>
+          <td>
+          <a href="" class="a c1">        
+            <span class="ic f20 c3 fw-n"></span><span>深圳市顺丰科技有限公司</span>
+          </a>
+          </td>
+          <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="msg bdt1 h48 bg-ec ho-bdl cu-po">
+          <td class="pl16 fw-n">
+            <input type="checkbox" id="task-5">
+            <label for="task-5"></label>
+          </td>
+          <td>公司</td>
+          <td></td>
+          <td>
+          <a href="" class="a c1">        
+            <span class="ic f20 c3 fw-n"></span><span>深圳市顺丰科技有限公司</span>
+          </a>
+          </td>
+          <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="msg bdt1 bold h48 cu-po ho-bdl">
+          <td class="pl16 fw-n">
+            <input type="checkbox" id="task-1">
+            <label for="task-1"></label>
+          </td>
+          <td>高阳</td>
+          <td><span class="ic f20 c2 fw-n"></span></td>
+          <td>
+          <span>分配公司：</span>
+          <span class="ic f20 c3 fw-n"></span><span>深圳市顺丰科技有限公司</span>
+          </td>
+          <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="msg bdt1 h48 bg-ec ho-bdl cu-po">
+          <td class="pl16 fw-n">
+            <input type="checkbox" id="task-5">
+            <label for="task-5"></label>
+          </td>
+          <td>公司</td>
+          <td></td>
+          <td>
+          <a href="" class="a c1">        
+            <span class="ic f20 c3 fw-n"></span><span>深圳市顺丰科技有限公司</span>
+          </a>
+          </td>
+          <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="msg bdt1 h48 bg-ec ho-bdl cu-po">
+          <td class="pl16 fw-n">
+            <input type="checkbox" id="task-5">
+            <label for="task-5"></label>
+          </td>
+          <td>公司</td>
+          <td></td>
+          <td>
+          <a href="" class="a c1">        
+            <span class="ic f20 c3 fw-n"></span><span>深圳市顺丰科技有限公司</span>
+          </a>
+          </td>
+          <td>2016-08-01 15:30</td>
+        </tr>
+        <tr class="bdt1 h64 c2 ta-r bg-w">
+          <td colspan="11" class="w968">
+            <ul class="page-nav-ul c1" style="display:inline-block; margin:0; padding:0;">
+              <li class="p-active">
+                <a class="page-a-tag" href="">首页</a>
+              </li>
+              <li class="p-active" style="padding:0 8px 0 8px;">
+                <a class="page-a-tag" href=""><span class="ic f24 c3"></span></a>
+              </li>
+              <li class="p-active-selected">
+                <a class="page-a-tag-selected" href="">1</a>
+              </li>
+              <li class="p-active">
+                <a class="page-a-tag" href="">2</a>
+              </li>
+              <li class="p-active">
+                <a class="page-a-tag" href="">3</a>
+              </li>
+              <li class="p-active">
+                <a class="page-a-tag" href="">4</a>
+              </li>
+              <li class="p-active">
+                <a class="page-a-tag" href="">5</a>
+              </li>
+              <li class="p-active" style="padding:0 8px 0 8px;">
+                <a class="page-a-tag" href=""><span class="ic f24 c3"></span></a>
+              </li>
+              <li class="p-active">
+                <a class="page-a-tag" href="">尾页</a>
+              </li>
+              <li class="p-active" style="border:none;">
+                <a class="page-a-tag" href="">共92页</a>
+              </li>
+              <li class="p-active" style="border:none;">
+                跳转到<input type="text" class="w40 h32 ml4 mr4 p0-4">页
+              </li>
+              <li class="clear li-no"></li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--发送新消息-->
+<div id="pop-newM" class="hidden po-f bg-f2 l50p card5 t50p f14 z200 c1" style="margin:-315px 0 0 -512px;width:1024px;">
+  <div class="bg-hdr cw f15 p816">发送新消息<span class="close-pop fr ic f20 ho-red cu-po"></span></div>
+  <div>
+  <div class="po-a" style="right:16px;top:45px;z-index:999">
+    <span class="add-contact d-ib po-r ml16">
+      <span title="添加联系人" class="ic f24 fw-n bg-b cw bdrs12 cu-po trans ho-sh"></span>
+    </span>
+  </div>
+  <select name="" id="select-recipients" multiple class="h40 w1024 c2">
+     <option value="-1"></option>
+     <optgroup label="BD">
+       <option>高阳(yang.gao)</option>
+       <option>刘达文(devin.liu)</option>
+       <option>潘春雷(nick.pan)</option>
+     </optgroup>  
+     <optgroup label="顾问">
+       <option>王翔(kevin.wan)</option>
+       <option>宋艳(sonia.song)</option>
+       <option>张文娟(vivian.zhang)</option>
+       <option>刘谋立(sendim.wang)</option>
+       <option>谢菲(fei.xie)</option>
+       <option>邓芷芮(dongdong.deng)</option>
+     </optgroup>  
+  </select>
+  <input type="text" class="c1 w100p h40 pl16 mt-1 po-r z-up" placeholder="主题">
+  <script id="editor" type="text/plain" style="width:1024px; height:443px"></script>
+  <div class="po-a" style="bottom:9px;left:16px;z-index:999">
+    <span class="sendMessage bg-b cw p4-8 bdrs2 ho-1f cu-po">
+      <span class="ic f20"></span>
+      发送
+    </span>
+    <span class="saveDraft cu-po p4-8 ho-u ho-cb ml24">存草稿</span>
+    <span class="close-pop cu-po p4-8 ho-u ho-cr ml16">取消</span>    
+  </div>
+  <div>
+</div>
+  </div>
+</div>
+<!--查看消息-->
+<div id="pop-checkM" class="hidden po-f bg-f2 l50p card5 t50p f14 z200 c1" style="margin:-315px 0 0 -512px;width:1024px;">
+  <div class="bg-hdr cw f15 p816">查看消息<span class="close-pop fr ic f20 ho-red cu-po"></span></div>
+  <div>
+  <div class="w100p bg-w ovy-a Scrollable" style="height:557px">
+    <div class="bg-f2 f14">
+      <div class="bold pl16 lh30 f15">消息的主题</div>
+      <div class="pl16 lh24">
+        <span class="d-ib c2 w76">发件人：</span>
+        <span>王翔</span>
+      </div>
+      <div class="pl16 lh24">
+        <span class="d-ib c2 w76">发送时间：</span>
+        <span>2016-08-11</span>
+        <span>周四</span>
+        <span>18:56</span>
+      </div>
+      <div class="pl16 lh24">
+        <span class="d-ib c2 w76">收件人：</span>
+        <span>宋艳</span>；
+        <span>张文娟</span>；
+      </div>
+      <div class="pl16 lh24">
+        <span class="d-ib c2 w76">附件：</span>
+        <span class="cu-po cb">        
+          <span class="ic f20"></span>
+          <span>2</span>
+        </span>
+        <span class="c3">（TMT下周计划安排.xls...）</span>
+      </div>
+    </div>
+    <div class="p8 wh-pw"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, asperiores, voluptates, voluptas aperiam blanditiis voluptate explicabo ab error tenetur facere aliquam iusto non maiores numquam recusandae ullam dolores iste! Harum.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ea, officia, temporibus maiores vel similique facilis voluptates magni officiis asperiores quae labore ab nobis possimus ducimus explicabo esse harum sint.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, asperiores, voluptates, voluptas aperiam blanditiis voluptate explicabo ab error tenetur facere aliquam iusto non maiores numquam recusandae ullam dolores iste! Harum.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ea, officia, temporibus maiores vel similique facilis voluptates magni officiis asperiores quae labore ab nobis possimus ducimus explicabo esse harum sint.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, asperiores, voluptates, voluptas aperiam blanditiis voluptate explicabo ab error tenetur facere aliquam iusto non maiores numquam recusandae ullam dolores iste! Harum.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ea, officia, temporibus maiores vel similique facilis voluptates magni officiis asperiores quae labore ab nobis possimus ducimus explicabo esse harum sint.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, asperiores, voluptates, voluptas aperiam blanditiis voluptate explicabo ab error tenetur facere aliquam iusto non maiores numquam recusandae ullam dolores iste! Harum.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ea, officia, temporibus maiores vel similique facilis voluptates magni officiis asperiores quae labore ab nobis possimus ducimus explicabo esse harum sint.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, asperiores, voluptates, voluptas aperiam blanditiis voluptate explicabo ab error tenetur facere aliquam iusto non maiores numquam recusandae ullam dolores iste! Harum.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ea, officia, temporibus maiores vel similique facilis voluptates magni officiis asperiores quae labore ab nobis possimus ducimus explicabo esse harum sint.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, asperiores, voluptates, voluptas aperiam blanditiis voluptate explicabo ab error tenetur facere aliquam iusto non maiores numquam recusandae ullam dolores iste! Harum.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ea, officia, temporibus maiores vel similique facilis voluptates magni officiis asperiores quae labore ab nobis possimus ducimus explicabo esse harum sint.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, asperiores, voluptates, voluptas aperiam blanditiis voluptate explicabo ab error tenetur facere aliquam iusto non maiores numquam recusandae ullam dolores iste! Harum.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ea, officia, temporibus maiores vel similique facilis voluptates magni officiis asperiores quae labore ab nobis possimus ducimus explicabo esse harum sint.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, asperiores, voluptates, voluptas aperiam blanditiis voluptate explicabo ab error tenetur facere aliquam iusto non maiores numquam recusandae ullam dolores iste! Harum.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ea, officia, temporibus maiores vel similique facilis voluptates magni officiis asperiores quae labore ab nobis possimus ducimus explicabo esse harum sint.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, asperiores, voluptates, voluptas aperiam blanditiis voluptate explicabo ab error tenetur facere aliquam iusto non maiores numquam recusandae ullam dolores iste! Harum.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ea, officia, temporibus maiores vel similique facilis voluptates magni officiis asperiores quae labore ab nobis possimus ducimus explicabo esse harum sint.
+    </div>
+  </div>
+  <div class="pb8 pl16 pt8 bdt1 bg-f2">
+    <span id="replyMsg" class="bg-b cw p4-8 bdrs2 ho-1f cu-po">
+      <span class="ic f20"></span>
+      回复
+    </span>
+    <span id="replyAll" class="cu-po p4-8 ho-u ho-cb ml24"><span class="ic f20"></span>
+    回复全部</span>
+    <span id="forwardMsg" class="cu-po p4-8 ho-u ho-cr ml16">转发</span>    
+    <span id="btn-delM" class="cu-po p4-8 ho-u ho-cr ml16">删除</span>    
+  </div>
+  <div>
+</div>
+  </div>
+</div>
+<!--选择联系人-->
+<div id="pop-chooseCon" class="hidden po-f bg-pop t0 w100p h100p z9999">
+  <div class="w524 po-r bg-w l50p t50p" style="margin:-240px 0 0 -262px">
+    <div class="bg-hdr cw f15 p816">选择联系人<span class="close-2ndpop fr ic f20 ho-red cu-po"></span></div>
+    <div class="bdb1 f14 ovy-a" style="max-height:80px; min-height:40px;padding-top:2px;">
+      <ul class="mt4">
+        <li class="li-no tag-search">
+          <span class="c1">高阳</span><span class="ic ml4 f16 c3"></span>
+        </li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <div class="h400 bg-f2 pt16 f14">
+      <div class="ta-c f15">
+        <span class="tab c2 ta-c p4-8 cu-po bd-3 bg-w" data-id="#tab1">
+          <span class="ic f24"></span>
+          <span class="f14">个人</span>
+        </span>
+        <span class="tab c2 ta-c p4-8 cu-po ho-cb" data-id="#tab2">
+          <span class="ic f24"></span>
+          <span class="f14">群组</span>
+        </span>
+      </div>
+      <div class="bg-w mt1 ovy-a" style="max-height:320px;">
+        <div id="tab1" class="tabs p16">
+          <ul>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-ID="yang.gao@stonghr.com">高阳</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-ID="yang.gao@stonghr.com">高阳</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c-sta"></span>
+              <span data-ID="yang.gao@stonghr.com">邓芷芮</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-ID="yang.gao@stonghr.com">高阳</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-ID="yang.gao@stonghr.com">高阳</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-ID="yang.gao@stonghr.com">高阳</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c-sta"></span>
+              <span data-ID="yang.gao@stonghr.com">邓芷芮</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-ID="yang.gao@stonghr.com">高阳</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-ID="yang.gao@stonghr.com">高阳</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-ID="yang.gao@stonghr.com">高阳</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c-sta"></span>
+              <span data-ID="yang.gao@stonghr.com">邓芷芮</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-ID="yang.gao@stonghr.com">高阳</span>
+            </li>
+          </ul>
+        </div>
+        <div id="tab2" class="tabs p16 hidden">
+          <ul>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-memberID="gaoyang">全体成员</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-groupID="yang.gao@stonghr.com">武汉仕通咨询企业管理有限公司</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-groupID="yang.gao@stonghr.com">深圳仕通智达企业咨询管理有限公司</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-groupID="yang.gao@stonghr.com">商务中心</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-groupID="yang.gao@stonghr.com">综合业务部</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-groupID="yang.gao@stonghr.com">TMT业务一部</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-groupID="yang.gao@stonghr.com">TMT业务二部</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-groupID="yang.gao@stonghr.com">金融业务部</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-groupID="yang.gao@stonghr.com">数据平台部</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-groupID="yang.gao@stonghr.com">财务部</span>
+            </li>
+            <li class="li-con ho-ec">
+              <span class="ic f20 c3e"></span>
+              <span data-groupID="yang.gao@stonghr.com">行政人事部</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="po-a" style="bottom:8px;right:16px;">
+      <span class=" close-2ndpop bg-b cw p4-8 bdrs2 ho-1f cu-po f14">确认</span>
+      <span class=" close-2ndpop c1 p4-8 bdrs2 ho-u cu-po f14">取消</span>
+    </div>
+  </div>
+</div>
+<!--若编辑器内有内容，是否存草稿弹窗-->
+<div id="pop-confirmClose" class="hidden w100p h100p po-f bg-pop t0 z9999">
+  <div class="w524 po-r bg-w l50p t50p" style="margin:-100px 0 0 -262px">
+    <div class="bg-hdr cw f15 p816">离开提示<span class="close-2ndpop fr ic f20 ho-red cu-po"></span></div>
+    <div class="bg-w">
+      <div class="ta-c mt24">
+       <span class="ic f32 cb bdrs12 d-ib po-r"></span>
+       <span>内容已被修改，是否将此消息存为草稿？</span>            
+      </div>
+      <div class="ta-r mt24 f14 pb12">
+       <span id="saveLeave" class=" bg-b cw p4-8 bdrs2 ho-1f cu-po">保存</span>
+       <span id="discardLeave" class=" ml16 mr16 ho-u ho-cb cu-po">不保存</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!--确认删除弹窗-->
+<div id="pop-delConfirm" class="hidden w100p h100p po-f bg-pop t0 z9999">
+  <div class="w524 po-r bg-w l50p t50p" style="margin:-100px 0 0 -262px">
+    <div class="bg-hdr cw f15 p816">删除提示<span class="close-2ndpop fr ic f20 ho-red cu-po"></span></div>
+    <div class="bg-w">
+      <div class="ta-c mt24">
+       <span class="ic f32 cb bdrs12 d-ib po-r"></span>
+       <span>删除后，此消息将不再显示</span>            
+      </div>
+      <div class="ta-r mt24 f14 pb12">
+       <span id="delM" class="bg-r cw p4-8 bdrs2 ho-red cu-po">删除</span>
+       <span id="cancelDelM" class="close-2ndpop ml16 mr16 ho-u ho-cb cu-po">取消</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!--回复消息-->
+<div id="pop-replyM" class="hidden po-f bg-f2 l50p card5 t50p f14 z200 c1" style="margin:-315px 0 0 -512px;width:1024px;">
+  <div class="bg-hdr cw f15 p816">回复消息<span class="close-pop fr ic f20 ho-red cu-po"></span></div>
+  <div>
+  <div class="po-a" style="right:16px;top:45px;z-index:999">
+    <span class="add-contact d-ib po-r ml16">
+      <span title="添加联系人" class="ic f24 fw-n bg-b cw bdrs12 cu-po trans ho-sh"></span>
+    </span>
+  </div>
+  <select name="" id="select-recipients1" multiple class="h40 w1024 c2">
+     <option value="-1"></option>
+     <optgroup label="BD">
+       <option>高阳(yang.gao)</option>
+       <option>刘达文(devin.liu)</option>
+       <option>潘春雷(nick.pan)</option>
+     </optgroup>  
+     <optgroup label="顾问">
+       <option>王翔(kevin.wan)</option>
+       <option>宋艳(sonia.song)</option>
+       <option>张文娟(vivian.zhang)</option>
+       <option>刘谋立(sendim.wang)</option>
+       <option>谢菲(fei.xie)</option>
+       <option>邓芷芮(dongdong.deng)</option>
+     </optgroup>  
+  </select>
+  <input type="text" class="c1 w100p h40 pl16 mt-1 po-r z-up" placeholder="主题">
+  <script id="editor1" type="text/plain" style="width:1024px; height:443px"></script>
+  <div class="po-a" style="bottom:9px;left:16px;z-index:999">
+    <span class="sendMessage bg-b cw p4-8 bdrs2 ho-1f cu-po">
+      <span class="ic f20"></span>
+      发送
+    </span>
+    <span class="saveDraft cu-po p4-8 ho-u ho-cb ml24">存草稿</span>
+    <span class="close-pop cu-po p4-8 ho-u ho-cr ml16">取消</span>    
+  </div>
+  <div>
+</div>
+  </div>
+</div>
+<!--弹框背景--><div id="popbg" class="hidden bg-pop po-a h100p w100p t0 z150"></div>
+<!--新增备注框-->
+<li id="newnote" class="hidden li-no pb12 clear">
+  <div class="fl ml16 tl-ldot"></div>
+  <div class="fl w280 w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+    <textarea name="" id="" class="p0-4 lh24 w100p h120"></textarea>
+    <div class="po-a" style="margin:-168px 0 0 218px;">
+      <span id="newnote-cancel" class="ic f24 red cu-po ho-u"></span>                
+      <span id="newnote-confirm" class="ic f24 c-gr cu-po ho-u"></span>
+    </div>
+  </div>
+  <div class="clear"></div>
+</li>
+<!--操作冒泡提示-->
+<div id="toast" class="hidden op0 po-f z200 cw card5-nbg l50p t50p mt80 ml-58 p16-24 bg-toa">
+<span class="ic f24 cb bdrs12 d-ib po-r"></span>
+<span></span>
+</div>
+</body>
+<script type="text/javascript">
+//实例化Ueditor文本编辑器
+var ue = UE.getEditor('editor');
+var ue1 = UE.getEditor('editor1');
+</script>
+<script>
+/*打开发送新消息*/
+$('#add-newM').on('click',function(){
+	$('#pop-newM,#popbg').velocity("fadeIn",200);
+	});
+/*关闭或取消发送新消息*/
+$('#close-newM').on('click',function(){
+	$('#pop-newM,#popbg').velocity("fadeOut",150);
+	});
+/*选择收件人实例化*/
+$('#select-recipients,#select-recipients1').select2({
+  minimumResultsForSearch: Infinity,
+  placeholder: {
+    id: '-1', // the value of the option
+    text: '收件人'
+  }
+});
+/*添加联系人button*/
+$('.add-contact').on('click',function(){
+	$('#pop-chooseCon,#popbg').velocity("fadeIn",200);
+	});
+/*--移除筛选标签--*/
+$('.tag-search').on('click',function(){
+	$(this).velocity({left:"-120px",opacity:0,},{duration:150,complete:function(){$(this).remove();}});
+	});
+/*--切换联系人弹窗个人和群组tab--*/
+$('.tab').click(function(e) {
+	var tabid = $(this).attr('data-id');
+    $('.tab').removeClass('bg-w bd-3').addClass('ho-cb');
+	$(this).addClass('bg-w bd-3').removeClass('ho-cb');
+	$('.tabs').hide();
+	$(tabid).show();
+});
+/*关闭选择联系人弹窗*/
+$('.close-2ndpop').on('click',function(){
+	$(this).parents('[id]').velocity("fadeOut",150);
+	});
+/*取消或关闭弹窗*/
+$('.close-pop').on('click',function(){
+	var editorContent = UE.getEditor('editor').getContent();//判断编辑器内是否有内容
+	if (editorContent=='') {
+		$(this).parents('[id]').velocity("fadeOut",150);
+		$('#popbg').velocity("fadeOut",150);
+		} else {
+			$('#pop-confirmClose').velocity("fadeIn",200);
+			};
+	});
+/*存草稿*/
+$('.saveDraft').on('click',function(){
+	$('#pop-newM,#pop-replyM,#popbg').velocity("fadeOut",150);
+	toast('已成功存草稿');
+	});
+/*发送*/
+$('.sendMessage').on('click',function(){
+	$('#pop-newM,#pop-replyM,#popbg').velocity("fadeOut",150);
+	toast('已成功发送');
+	});
+/*离开提示*/	
+$('#saveLeave').on('click',function(){
+	$('#pop-confirmClose,#pop-newM,#popbg').velocity("fadeOut",150);
+	toast('已成功存为草稿');
+	});
+$('#discardLeave').on('click',function(){
+	$('#pop-confirmClose,#pop-newM,#popbg').velocity("fadeOut",150);
+	});
+/*单击打开→查看消息*/
+$('.msg').on('click',function(){
+	var that = $(this);
+	$('.msg').removeClass('markMsg');
+	that.removeClass('bold').addClass('bg-ec markMsg');
+	$('#pop-checkM,#popbg').velocity("fadeIn",200);
+	});	
+$('#msg-table td:first-child').on('click',function(){
+	event.stopPropagation();
+	});	
+/*查看消息→删除*/	
+$('#btn-delM').on('click',function(){
+	$('#pop-delConfirm').velocity("fadeIn",150);
+	});//阅读消息时点击删除，弹出删除确认弹窗
+$('#delM').on('click',function(){
+	$('.markMsg').remove();//删除当前条消息
+	$('#pop-checkM,#pop-delConfirm,#popbg').velocity("fadeOut",150);
+	toast('消息已删除');
+	});
+/*查看消息→回复或转发消息*/
+$('#replyMsg,#replyAll,#forwardMsg').on('click',function(){
+	$('#pop-checkM').hide();
+	$('#pop-replyM').css('opacity',1).show();
+	});
+
+</script>
+<script>
+/*待办提前提醒：选择时间和分钟*/
+$('.choose-mh').on('click',function(){
+$(this).children('.note').show();
+});
+$('[name^="choose-mh"]').on('click',function(){
+var target = $(this).parent().siblings(':first-child');
+$(target).html($(this).val());
+$(this).parent().hide();
+event.stopPropagation();
+});	
+</script>
+
+<script>
+/*拂过note-ho出现和隐藏备注*/	
+var showNote;
+$('.note-ho').hover(function(){
+	var that = $(this);
+	showNote = setTimeout(function(){
+		that.children('.note').velocity("fadeIn",200);
+		},300);
+	},function(){
+		var that = $(this);
+		clearTimeout(showNote);
+		that.children('.note').velocity("fadeOut",150);
+		});		
+/*--------备注系统-------------*/
+/*获得YYYY-MM-DD格式日期*/
+function getYMD(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+};
+/*取得HH:MM格式时间*/
+function getHM(date) {
+    var d = new Date(date),
+        hour =''+ d.getHours(),
+        minute =''+ d.getMinutes();
+	if(hour.length<2) hour = '0'+hour;
+	if(minute.length<2) minute = '0'+minute;	
+    return hour+':'+minute;
+};
+/*新增备注*/
+$('.btn-newnote').on('click',function(){
+	$('#newnote').prependTo($(this).siblings());
+	$('#newnote').show();
+	$('#newnote textarea').val('').focus();
+	});
+/*确认新增备注，有一处变动（w280）*/	
+$('#newnote-confirm').on('click',function(){
+	var notetext = $('#newnote textarea').val();
+	var hastext = notetext.trim().length;
+	if(hastext){
+	$('#newnote').hide();
+	var role = "顾问",
+	name = "王某某",
+	today = getYMD(Date()),
+	time = getHM(Date());
+	$('<li class="li-no pb12 clear"> <div class="fl ml16 tl-ldot"></div> <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <p class="wh-pw lh24">'+notetext+'</p> <div class="c3 bdt"> <span>'+today+'</span> <span class="ml8">'+time+'</span> <span class="ml24 pr4">'+role+':</span> <span>'+name+'</span> </div> </div> <div class="clear"></div> </li>').insertAfter('#newnote');
+		} else {
+			$('#newnote textarea').focus()}
+	});
+/*取消新增备注*/
+$('#newnote-cancel').on('click',function(){
+	$('#newnote').hide();
+	});		
+</script>
+<script>
+/*--列表表头单击排序：小图标填色--*/	
+$('.sort').on('click',function(){
+	var des = $(this).children('.descend');
+	var ase = $(this).children('.ascend');
+	$(this).siblings().children('.cb').removeClass('cb').addClass('ce0');
+	if($(des).hasClass('cb')){
+		$(ase).removeClass('ce0').addClass('cb');$(des).removeClass('cb').addClass('ce0')} else {
+			$(des).removeClass('ce0').addClass('cb');$(ase).removeClass('cb').addClass('ce0');}
+	});
+/*--选中待办--*/
+$("#message").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过展开下拉菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});
+</script>
+</html>

@@ -1,0 +1,414 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>新增职位</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main-New.css">
+<link rel="stylesheet" href="css/cityselect.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/datepicker.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/cityselect.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/datepicker.js"></script>
+
+</head>
+
+<body class="bg-ec pb24">
+<!--非签约谈判公司不准立项弹窗-->
+<div id="popup-positionNotAllowed" class="hidden">
+  <div class="popup-wrapper-nbg">
+    <div class="card5-nbg bg-toa p24 f16">
+      <div class="cw"><span class="ic-alertbg"></span><span class="ic f24 cb bdrs12 d-ib po-r mr4"></span>该公司尚未进入签约谈判阶段，无法立项，请联系BD同事修改</div>
+  <div>
+    <table class="bdcl mt12 cw" style="margin-left:28px">
+      <tr class="h32">
+        <td class="w86 op06">公司名称</td>
+        <td>深圳市腾邦国际商业服务股份有限公司</td>
+      </tr>
+      <tr class="h32">
+        <td class="op06">当前状态</td>
+        <td>签约谈判中</td>
+      </tr>
+      <tr class="h32">
+        <td class="op06">跟进BD</td>
+        <td>朱荷花</td>
+      </tr>
+    </table>
+  </div>
+  <div class="ta-r"><span id="confirm-notify" class="bg-b cw p4-16 bdrs2 ho-1f cu-po">确认</span></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="po-f t0 ml-434 l50p z99">
+  <div class="h64 bg-db w868 m-a bxsh0-2-5">
+    <div class="lh64 cw bold f20 ml24 fl"><span class="ic f24 fw-n"></span> 新增职位</div>
+    <div class="fr bg-w cb p4-16 bdrs2 mr24 mt24 f14 cu-po ho-blue">发布</div>
+    <div class="fr bg-w cb p4-16 bdrs2 mr16 mt24 f14 cu-po ho-red" onClick="window.close()">取消</div>
+  </div>
+</div>
+<div style="height:80px"></div>
+<div class="w868 m-a">
+  <div class="card1-nbg bg-f7 p24 f14" id="Parent">
+    <div class="p24">
+      <span class="c2 bold">状态：</span> 
+      <span class="ml24">
+        <input type="radio" checked name="status" id="jinzhan">
+        <label for="jinzhan"></label>
+        <span class="c1">进展中</span> 
+      </span> 
+      <span class="ml12">
+        <input type="radio" name="status" id="zanting">
+        <label for="zanting"></label>
+        <span class="c1">暂停中</span> 
+      </span>
+      <span class="ml12">
+        <input type="radio" name="status" id="guanbi">
+        <label for="guanbi"></label>
+        <span class="c1">已关闭</span> 
+      </span>
+    </div>
+    <div class="bg-ec f16 c1 bold p4-8 bdl5">相关附件</div>
+    <div class="mt16 p0-16">
+      <div class="fl lh46 w360">
+        <div>
+          <label class="label d-ib card1 cb bg-b mt8 p816 bdrs2 ho-blue cu-po lh-n trans ho-sh"><input type="file"><span class="ic f24"></span><span>上传附件</span></label>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="bg-ec f16 c1 bold p4-8 bdl5 mt24">职位信息</div>
+    <div class="mt16 p0-16">
+      <div class="fl lh46 w360">
+        <div><span class="d-ib w80 c2">职位名称<span class="red po-a mt-5">*</span>：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div><span class="d-ib w80 c2">客户公司<span class="red po-a mt-5">*</span>：</span>
+          <span class="lh-n d-ib">  
+            <select name="" id="select-company" class="select-con w240">
+              <option></option>            
+              <option>A公司</option>
+              <option>B公司(选择后自动添加B的联系人)</option>
+              <option>C公司</option>
+              <option>D公司</option>
+              <option>E公司</option>
+              <option>F公司</option>
+              <option>G公司</option>
+              <option>H公司</option>
+              <option>I公司</option>
+              <option>G公司</option>
+              <option>K公司</option>
+              <option>L公司</option>
+              <option>M公司</option>
+              <option>N公司</option>
+              <option>O公司</option>
+              <option>P公司</option>
+              <option>Q公司</option>
+              <option>R公司</option>
+              <option>S公司</option>
+              <option>T公司</option>
+              <option>U公司</option>
+              <option>V公司</option>
+              <option>W公司</option>
+              <option>X公司</option>
+              <option>Y公司</option>
+              <option>Z公司</option>
+            </select>
+          </span>      
+        </div>
+        <div><span class="d-ib w80 c2">职能：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div><span class="d-ib w80 c2">行业：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div><span class="d-ib w80 c2">年薪范围：</span>
+          <input type="text" class="w56 p8 h32">
+          <span class="c3">万</span>
+          <span class="c3 p1016">~</span>
+          <input type="text" class="w56 p8 h32">
+          <span class="c3">万</span>
+        </div>
+        <div><span class="d-ib w80 c2">工作城市：</span>
+          <input type="text" id="citySelect1" class="w240 p8 h32">
+        </div>
+      </div>
+      <div class="fl lh46">
+        <div><span class="d-ib w80 c2">优先级：</span>
+          <select id="select-priority" name="priority" class="w104" >
+            <option></option>
+            <option>高</option>
+            <option>中</option>
+            <option>低</option>
+          </select>
+        </div>
+        <div><span class="d-ib w80 c2">开始日期：</span>
+          <input id="start" type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd">
+        </div>
+        <div><span class="d-ib w80 c2">结束日期：</span>
+          <input id="end" type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd">
+        </div>
+        <script>
+  /*--自定义时间选择--*/
+var $start = $('#start'),
+  $end = $('#end');
+$start.datepicker({
+  onSelect: function(fd, date) {
+    $end.data('datepicker')
+      .update('minDate', date)
+  }
+})
+$end.datepicker({
+  onSelect: function(fd, date) {
+    $start.data('datepicker')
+      .update('maxDate', date)
+  }
+});        </script>
+        <div><span class="d-ib w80 c2">招聘人数：</span>
+          <input on type="text" class="w56 p8 h32">
+          <span class="c3">人</span>
+        </div>
+        <div><span class="d-ib w80 c2">跟进顾问：</span>
+        <span class="lh-n d-ib">  
+          <select name="" id="select-consultant" class="w240" multiple>
+          	<option>顾问A</option>
+            <option>顾问B</option>
+            <option>顾问C</option>
+            <option>顾问D</option>
+            <option>顾问E</option>
+            <option>顾问F</option>
+            <option>顾问G</option>
+          	<option>顾问H</option>
+            <option>顾问I</option>
+            <option>顾问J</option>
+            <option>顾问K</option>
+            <option>顾问L</option>
+            <option>顾问M</option>
+            <option>顾问N</option>
+          </select>
+        </span>      
+        </div>
+      </div>
+      <div class="clear lh46"><span class="d-ib w80 c2">职位描述：</span>
+        <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4"></textarea>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="contact bg-ec f16 c1 bold p4-8 bdl5 mt24">联系人</div>
+    <div id="div-choose" class="mt16 p0-16">
+      <div class="lh46">
+        <div class="fl w80 c2">选择现有：</div>
+        <div id="prependto-here" class="fl w700 ml4">      
+          <div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r">
+            <div class="fl ic f32 mt12 c-c"></div>
+            <div class="fl ml8">
+              <div><span class="c1 bold">张先生</span> <span class=" ml12 c2">招聘专员</span></div>
+              <div class="c3">电话：<span>18611111111</span></div>
+            </div>
+            <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div>
+          </div>
+          <div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r">
+            <div class="fl ic f32 mt12 c-c"></div>
+            <div class="fl ml8">
+              <div><span class="c1 bold">王先生</span> <span class=" ml12 c2">CEO</span></div>
+              <div class="c3">电话：<span>18622222222</span></div>
+            </div>
+            <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div>
+          </div>
+          <div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r">
+            <div class="fl ic f32 mt12 c-c"></div>
+            <div class="fl ml8">
+              <div><span class="c1 bold">李先生</span> <span class=" ml12 c2">人事专员</span></div>
+              <div class="c3">电话：<span>18633333333</span></div>
+            </div>
+            <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div>
+          </div>
+          <div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r">
+            <div class="fl ic f32 mt12 c-c"></div>
+            <div class="fl ml8">
+              <div><span class="c1 bold">赵先生</span> <span class=" ml12 c2">人事主管</span></div>
+              <div class="c3">电话：<span>18666666666</span></div>
+            </div>
+            <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div>
+          </div>
+          <div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r">
+            <div class="fl ic f32 mt12 c-c"></div>
+            <div class="fl ml8">
+              <div><span class="c1 bold">周先生</span> <span class=" ml12 c2">人事总监</span></div>
+              <div class="c3">电话：<span>18655555555</span></div>
+            </div>
+            <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div>
+          </div>
+          
+
+          <div id="btn-addcontact" class="fl ml24 cb cu-po lh46"><span class="ic f24 mr4"></span>添加新联系人</div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div id="new-contact" class="hidden w820 h400 p24 mt16 bd1-b clear bg-f7">
+      <h3 class="c1">新建联系人
+          <span class="f14 fw-n ml24 c3">
+      <span>所属公司：</span>
+      <span class="ic f20 ml8"></span>
+      <span class="ml4">与发布职位的公司相同</span>
+    </span>
+      </h3>
+      <div class="contact">
+        <div class="mt16 p0-16 f14">
+          <div class="fl lh46 w360">
+            <div><span class="d-ib w80 c2">姓名<span class="red po-a mt-5">*</span>：</span>
+              <input type="text" class="w240 p8 h32">
+            </div>
+            <div><span class="d-ib w80 c2">性别：</span>
+              <span>
+                <input type="radio" name="gender" id="radio-male">
+                <label for="radio-male" class="lh24"></label>
+                <span class="c2">男</span>
+              </span>
+              <span class="ml24">
+                <input type="radio" name="gender" id="radio-female">
+                <label for="radio-female" class="lh24"></label>
+                <span class="c2">女</span>
+              </span>
+            </div>
+            <div><span class="d-ib w80 c2">职位<span class="red po-a mt-5">*</span>：</span>
+              <input type="text" class="w240 p8 h32">
+            </div>
+            <div><span class="d-ib w80 c2">状态：</span>
+              <span>
+                <input type="radio" name="status" id="zaizhi">
+                <label for="zaizhi" class="lh24"></label>
+                <span class="c2">在职</span>
+              </span>
+              <span class="ml24">
+                <input type="radio" name="status" id="lizhi">
+                <label for="lizhi" class="lh24"></label>
+                <span class="c2">离职</span>
+              </span>
+            </div>
+            <div><span class="d-ib w80 c2">电话<span class="red po-a mt-5">*</span>：</span>
+              <input type="text" class="w240 p8 h32">
+            </div>
+            <div><span class="d-ib w80 c2">邮箱：</span>
+              <input type="text" class="w240 p8 h32">
+            </div>
+          </div>
+          <div class="fl lh46">
+            <div><span class="d-ib w80 c2">QQ：</span>
+              <input type="text" class="w240 p8 h32">
+            </div>
+            <div><span class="d-ib w86 c2">微信：</span>
+              <input type="text" class="w240 p8 h32 ml-6">
+            </div>
+            <div><span class="d-ib fl w80 c2">备注：</span>
+            <div class="fl mt8 ml4">
+              <textarea name="" id="" class="w240 h150 p8 lh24 wh-pw" ></textarea>
+            </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div>
+        <span id="btn-create" class="fr p1016 cb ho-blue cu-po ml16">新建并添加</span>
+        <span id="btn-cancel" class="fr p1016 c2 ho-u cu-po">取消</span>
+      </div>
+    </div>
+    <div class="bg-ec f16 c1 bold p4-8 bdl5 mt24">职位偏好</div>
+    <div class="mt16 p0-16">
+      <div class="fl lh46 w360">
+        <div><span class="d-ib w80 c2">偏好公司：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div><span class="d-ib w80 c2">偏好职能：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div><span class="d-ib w80 c2">偏好行业：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div><span class="d-ib w80 c2">偏好年薪：</span>
+          <input type="text" class="w56 p8 h32">
+          <span class="c3">万</span>
+          <span class="c3 p1016">~</span>
+          <input type="text" class="w56 p8 h32">
+          <span class="c3">万</span>
+        </div>
+        <div><span class="d-ib w80 c2">偏好性别：</span> <span>
+        <input type="radio" name="gender" id="radio-mal">
+        <label for="radio-mal" class="lh24"></label>
+        <span class="c2">男</span> </span> <span class="ml24">
+        <input type="radio" name="gender" id="radio-fem">
+        <label for="radio-fem" class="lh24"></label>
+        <span class="c2">女</span> </span>
+        </div>
+      </div>
+      <div class="clear lh46"><span class="d-ib w80 c2">其它偏好：</span>
+        <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4"></textarea>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script>
+/*--选择公司后，ajax加载公司的联系人--*/
+$('#select-company').on('select2:select', function (e) {
+  var Company = $("#select-company").val();
+  if(Company == "B公司(选择后自动添加B的联系人)") {
+	  $('<div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r"> <div class="fl ic f32 mt12 c-c"></div> <div class="fl ml8"> <div><span class="c1 bold">张先生</span> <span class=" ml12 c2">招聘专员</span></div> <div class="c3">电话：<span>18611111111</span></div> </div> <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div> </div> <div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r"> <div class="fl ic f32 mt12 c-c"></div> <div class="fl ml8"> <div><span class="c1 bold">王先生</span> <span class=" ml12 c2">CEO</span></div> <div class="c3">电话：<span>18622222222</span></div> </div> <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div> </div> <div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r"> <div class="fl ic f32 mt12 c-c"></div> <div class="fl ml8"> <div><span class="c1 bold">李先生</span> <span class=" ml12 c2">人事专员</span></div> <div class="c3">电话：<span>18633333333</span></div> </div> <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div> </div> <div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r"> <div class="fl ic f32 mt12 c-c"></div> <div class="fl ml8"> <div><span class="c1 bold">赵先生</span> <span class=" ml12 c2">人事主管</span></div> <div class="c3">电话：<span>18666666666</span></div> </div> <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div> </div> <div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r"> <div class="fl ic f32 mt12 c-c"></div> <div class="fl ml8"> <div><span class="c1 bold">周先生</span> <span class=" ml12 c2">人事总监</span></div> <div class="c3">电话：<span>18655555555</span></div> </div> <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div> </div>').prependTo('#prependto-here')}
+});
+
+/*--------------------------------*/
+$(document).ready(function(e) {
+/*--选择已有联系人--*/
+$(document).on('click','.contact-p',function(){
+    var Selected = $(this).hasClass('bg-w');
+	if (Selected) {
+		$(this).removeClass('bg-w bd1-b');
+		$(this).children('.po-a').addClass('sc0');
+		} else {
+			$(this).addClass('bg-w bd1-b');
+			$(this).children('.po-a').removeClass('sc0');}
+	})	
+/*--新增联系人弹窗--*/
+//弹出
+  $('#btn-addcontact').click(function(e) {
+	  if ($('#new-contact').is(':visible')) {
+		  } else {
+			  $('#new-contact').velocity("slideDown",{duration:150,easing:"easeOutCubic"});
+			  window.setTimeout(function(){$('.contact').velocity("scroll",{offset:-264,duration:600})},300)
+			  }
+  });
+//取消 
+  $('#btn-cancel').click(function(e) {
+	  $('#new-contact').velocity("slideUp",{duration:150,easing:"easeOutCubic"});
+});
+
+});
+/*--btn新建并添加--*/
+  $('#btn-create').click(function(e) {
+    $('<div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r trans1"> <div class="fl ic f32 mt12 c-c"></div> <div class="fl ml8"> <div><span class="c1 bold">新增的</span> <span class=" ml12 c2">职位名称</span></div> <div class="c3">电话：<span>18688888888</span></div> </div> <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div> </div>').prependTo('#prependto-here');
+	$('#new-contact').velocity("slideUp",{duration:150,easing:"easeOutCubic"});
+	var NewAdded = $('#prependto-here>div:first-child')
+	$(NewAdded).addClass('bg50');
+	window.setTimeout(function(){$(NewAdded).removeClass('bg50');},1000);
+	window.setTimeout(function(){$(NewAdded).removeClass('trans1');},2000);
+});
+
+/*--单选公司实例化--*/
+$('#select-company').select2({placeholder:" ",});
+/*--单选优先级实例化--*/
+$('#select-priority').select2({placeholder:" ",minimumResultsForSearch:Infinity});
+/*--多选顾问实例化--*/
+$('#select-consultant').select2({placeholder:" ",minimumResultsForSearch:Infinity});
+/*--城市选择实例化--*/
+var currentcity=new Vcity.CitySelector({input:'citySelect1'});
+var currentcity=new Vcity.CitySelector({input:'citySelect2'});
+</script>
+</html>

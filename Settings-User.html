@@ -1,0 +1,734 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>账号设置-用户管理</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/dropzone.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+</style>
+</head>
+<body class="bg-ec">
+<header class="header  nav-down">
+  <div class="h-contain">
+    <div class="logo fl">优途智聘2.0系统</div>
+    <ul class="fl ml24">
+      <li class="li-no w72 fl">
+        <a href="Overview.html" class="nav-a" id="overview">
+          <div class="ic f20"></div>
+          <div class="f14">总览</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Search-1st.html" class="nav-a" id="search">
+          <div class="ic f20"></div>
+          <div class="f14">搜人才</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Company-1st.html" class="nav-a" id="company">
+          <div class="ic f20"></div>
+          <div class="f14">公司</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Position-1st.html" class="nav-a" id="position">
+          <div class="ic f20"></div>
+          <div class="f14">职位</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Pipeline.html" class="nav-a" id="pipeline">
+          <div class="ic f20"></div>
+          <div class="f14">Pipeline</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Talent-1st.html" class="nav-a" id="talent">
+          <div class="ic f20"></div>
+          <div class="f14">人才库</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="List.html" class="nav-a" id="list">
+          <div class="ic f20"></div>
+          <div class="f14">List库</div>
+        </a>
+      </li> 
+      <li class="li-no w72 fl">
+        <a href="Invoice.html" class="nav-a" id="invoice">
+          <div class="ic f20"></div>
+          <div class="f14">发票</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Report-1.html" class="nav-a" id="report">
+          <div class="ic f20"></div>
+          <div class="f14">报表</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="E-learning.html" class="nav-a" id="elearn">
+          <div class="ic f20"></div>
+          <div class="f14">E-learning</div>
+        </a>
+      </li>      
+    </ul>
+    <ul class="fr">
+      <li class="li-no fl w56">
+        <div class="nav-a" id="add">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14 w104">
+              <li class="li-no">
+                <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a>
+              </li>
+              <li class="li-no">
+                <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a>
+              </li>
+              <li class="li-no">
+                <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 批量导入</a>
+              </li>              
+            </ul>
+        </div>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Todo.html" class="nav-a" id="todo" title="待办">
+          <div class="ic f24 lh46"></div>
+          <div class="badge">9</div>
+        </a>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Message.html" class="nav-a" id="message" title="消息">
+          <div class="ic f24 lh46"></div>
+        <div class="badge">99+</div>
+        </a>
+      </li>      
+      <li class="li-no fl w56">
+        <div href="" class="nav-a" id="account">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14">
+              <li class="li-no">
+                <a href="Settings-Account.html" class="add-li-a"><span class="ic f20"></span> 系统设置</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 使用帮助</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a ho-red"><span class="ic f20"></span> 退出登录</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="content">
+  <div class="fl w200">
+    <div class="card1 pb16 f14">
+      <div class="card-header mb8"><span class="ic f20"></span> 系统设置 </div>
+      <a href="Settings-Account.html" class="a d-b p816 c1 ho-ec cu-po">
+        <span>账号信息</span>
+      </a>
+      <a href="Settings-User.html" class="a d-b cb p816 cu-po">
+        <span>用户管理</span>
+      </a>
+      <a href="Settings-Role.html" class="a d-b c1 p816 ho-cb ho-ec cu-po">
+        <span>角色管理</span>
+      </a>
+      <a href="Settings-Team.html" class="a d-b c1 p816 ho-cb ho-ec cu-po">
+        <span>团队管理</span>
+      </a>
+      <a href="Settings-Dept.html" class="a d-b c1 p816 ho-cb ho-ec cu-po">
+        <span>部门管理</span>
+      </a>
+      <a href="Settings-Acess.html" class="a d-b c1 p816 ho-cb ho-ec cu-po">
+        <span>权限配置</span>
+      </a>
+      <a href="Settings-Cache.html" class="a d-b c1 p816 ho-cb ho-ec cu-po">
+        <span>缓存设置</span>
+      </a>
+    </div>
+  </div> 
+  <div class="fl w968 ml32 f14">
+    <div class="fl">
+      <div id="btn-addRole" class="a card1 fl f14 p816 cb ho-blue cu-po trans ho-sh po-r z50">
+        <span class="ic f24 ml-5"></span> 新增用户
+      </div>
+      <div class="fl card1 ml32">
+        <input type="text" placeholder="搜索用户名" class="w200 p1016 f14 h40" style="border:none">
+        <span class="ic f24 bg-b cw cu-po ho-1f p8 va-1 ml-5"></span>
+      </div>
+    </div>
+    <div class="fl card1 w100p mt16">
+      <div class="mt16">
+        <table class="c1 bdcl ta-l c1">
+          <tr class="c2 h48 f13" style="border:none;">
+            <th class="w120 pl24">序号</th>
+            <th class="w136">用户名</th>
+            <th class="w160">角色</th>
+            <th class="sort w178 pr24 cu-po ho-cb">
+              <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+              <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+              <span>创建时间</span>
+            </th>
+            <th class="sort w178 pr24 cu-po ho-cb">
+              <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+              <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+              <span>最近登录</span>
+            </th>
+            <th class="w200">操作</th>
+          </tr>
+          <tr class="bdt1 h48 ho-ec">
+            <td class="pl24">1</td>
+            <td>郑滔</td>
+            <td>管理员</td>
+            <td>2016-06-13 17:25</td>
+            <td>2016-06-13 17:25</td>
+            <td>
+              <span class="editUser cu-po cb ho-u">修改</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="delUser cu-po cb ho-u">删除</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="userAcess cu-po cb ho-u">权限</span>
+            </td>
+          </tr>
+          <tr class="bdt1 h48 ho-ec">
+            <td class="pl24">2</td>
+            <td>王翔</td>
+            <td>顾问-Leader</td>
+            <td>2016-06-13 17:25</td>
+            <td>2016-06-13 17:25</td>
+            <td>
+              <span class="editUser cu-po cb ho-u">修改</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="delUser cu-po cb ho-u">删除</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="userAcess cu-po cb ho-u">权限</span>
+            </td>
+          </tr>
+          <tr class="bdt1 h48 ho-ec">
+            <td class="pl24">3</td>
+            <td>吴江涛</td>
+            <td>顾问</td>
+            <td>2016-06-13 17:25</td>
+            <td>2016-06-13 17:25</td>
+            <td>
+              <span class="editUser cu-po cb ho-u">修改</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="delUser cu-po cb ho-u">删除</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="userAcess cu-po cb ho-u">权限</span>
+            </td>
+          </tr>
+          <tr class="bdt1 h48 ho-ec">
+            <td class="pl24">4</td>
+            <td>刘达文</td>
+            <td>BD-Leader</td>
+            <td>2016-06-13 17:25</td>
+            <td>2016-06-13 17:25</td>
+            <td>
+              <span class="editUser cu-po cb ho-u">修改</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="delUser cu-po cb ho-u">删除</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="userAcess cu-po cb ho-u">权限</span>
+            </td>
+          </tr>
+          <tr class="bdt1 h48 ho-ec">
+            <td class="pl24">5</td>
+            <td>潘春雷</td>
+            <td>BD</td>
+            <td>2016-06-13 17:25</td>
+            <td>2016-06-13 17:25</td>
+            <td>
+              <span class="editUser cu-po cb ho-u">修改</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="delUser cu-po cb ho-u">删除</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="userAcess cu-po cb ho-u">权限</span>
+            </td>
+          </tr>
+          <tr class="bdt1 h48 ho-ec">
+            <td class="pl24">6</td>
+            <td>徐俊雅</td>
+            <td>财务</td>
+            <td>2016-06-13 17:25</td>
+            <td>2016-06-13 17:25</td>
+            <td>
+              <span class="editUser cu-po cb ho-u">修改</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="delUser cu-po cb ho-u">删除</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="userAcess cu-po cb ho-u">权限</span>
+            </td>
+          </tr>
+          <tr class="bdt1 h48 ho-ec">
+            <td class="pl24">7</td>
+            <td>王翔</td>
+            <td>顾问-Leader</td>
+            <td>2016-06-13 17:25</td>
+            <td>2016-06-13 17:25</td>
+            <td>
+              <span class="editUser cu-po cb ho-u">修改</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="delUser cu-po cb ho-u">删除</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="userAcess cu-po cb ho-u">权限</span>
+            </td>
+          </tr>
+          <tr class="bdt1 h48 ho-ec">
+            <td class="pl24">8</td>
+            <td>吴江涛</td>
+            <td>顾问</td>
+            <td>2016-06-13 17:25</td>
+            <td>2016-06-13 17:25</td>
+            <td>
+              <span class="editUser cu-po cb ho-u">修改</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="delUser cu-po cb ho-u">删除</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="userAcess cu-po cb ho-u">权限</span>
+            </td>
+          </tr>
+          <tr class="bdt1 h48 ho-ec">
+            <td class="pl24">9</td>
+            <td>刘达文</td>
+            <td>BD-Leader</td>
+            <td>2016-06-13 17:25</td>
+            <td>2016-06-13 17:25</td>
+            <td>
+              <span class="editUser cu-po cb ho-u">修改</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="delUser cu-po cb ho-u">删除</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="userAcess cu-po cb ho-u">权限</span>
+            </td>
+          </tr>
+          <tr class="bdt1 h48 ho-ec">
+            <td class="pl24">10</td>
+            <td>潘春雷</td>
+            <td>BD</td>
+            <td>2016-06-13 17:25</td>
+            <td>2016-06-13 17:25</td>
+            <td>
+              <span class="editUser cu-po cb ho-u">修改</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="delUser cu-po cb ho-u">删除</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="userAcess cu-po cb ho-u">权限</span>
+            </td>
+          </tr>
+          <tr class="bdt1 h48 ho-ec">
+            <td class="pl24">11</td>
+            <td>徐俊雅</td>
+            <td>财务</td>
+            <td>2016-06-13 17:25</td>
+            <td>2016-06-13 17:25</td>
+            <td>
+              <span class="editUser cu-po cb ho-u">修改</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="delUser cu-po cb ho-u">删除</span>
+              <span class="ce0 p0-4">|</span>
+              <span class="userAcess cu-po cb ho-u">权限</span>
+            </td>
+          </tr>
+          <tr class="bdt1 h64 c2">
+            <td colspan="6" class="ta-c">
+              <ul class="page-nav-ul c1 d-ib">
+                <li class="p-active">
+                  <a class="page-a-tag" href="">首页</a>
+                </li>
+                <li class="p-active" style="padding:0 8px 0 8px;">
+                  <a class="page-a-tag" href=""><span class="ic f24 c3"></span></a>
+                </li>
+                <li class="p-active-selected">
+                  <a class="page-a-tag-selected" href="">1</a>
+                </li>
+                <li class="p-active">
+                  <a class="page-a-tag" href="">2</a>
+                </li>
+                <li class="p-active">
+                  <a class="page-a-tag" href="">3</a>
+                </li>
+                <li class="p-active">
+                  <a class="page-a-tag" href="">4</a>
+                </li>
+                <li class="p-active">
+                  <a class="page-a-tag" href="">5</a>
+                </li>
+                <li class="p-active" style="padding:0 8px 0 8px;">
+                  <a class="page-a-tag" href=""><span class="ic f24 c3"></span></a>
+                </li>
+                <li class="p-active">
+                  <a class="page-a-tag" href="">尾页</a>
+                </li>
+                <li class="p-active" style="border:none;">
+                  <a class="page-a-tag" href="">共92页</a>
+                </li>
+                <li class="p-active" style="border:none;">
+                  跳转到<input type="text" class="w40 h32 ml4 mr4 p0-4">页
+                </li>
+                <li class="clear li-no"></li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<footer class="footer">
+<p class="f13">© 深圳市仕通优途科技有限公司 2013-2016</p>
+<p class="mt4"> 粤ICP备16038562号-1 16038562号-2</p>
+</footer>
+<!--弹框背景--><div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z150"></div>
+<!--操作冒泡提示-->
+<div id="toast" class="hidden op0 po-f z200 cw card5-nbg l50p t50p mt80 ml-58 p16-24 bg-toa">
+<span class="ic f24 cb bdrs12 d-ib po-r"></span>
+<span></span>
+</div>
+<!--新增用户弹窗-->
+<div id="popup-addUser" class="hidden po-f bg-f2 l50p card5-nbg t50p f14 z200 c2 Scrollable" style="margin:-280px 0 0 -232px;width:464px">
+  <h4 class="card-header po-r z50"><span class="ic f24 fw-n pr4"></span>新增用户</h4>
+  <div class="pl16 pt16 pb16 ml40">
+    <div class="p816">
+     <span class="d-ib w104 c2">用户名：</span>
+     <input type="text" class="w200 pl4 h32">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">角色：</span>
+      <select name="" id="selectRole" class="w200">
+        <option></option>
+        <option>顾问</option>
+        <option>顾问-Leader</option>
+        <option>BD</option>
+        <option>BD-Leader</option>
+        <option>财务</option>
+        <option>管理员</option>
+      </select>
+    </div>
+<script>
+$('#selectRole').select2({minimumResultsForSearch:Infinity,placeholder:''});//选择角色实例化
+</script>
+    <div class="p816">
+     <span class="d-ib w104 c2">所属团队：</span>
+      <select name="" id="selectTeam" class="w200">
+        <option></option>
+        <option>热火队</option>
+        <option>麒麟队</option>
+        <option>炼金队</option>
+      </select>
+    </div>
+<script>
+$('#selectTeam').select2({minimumResultsForSearch:Infinity,placeholder:''});//选择团队实例化
+</script>
+    <div class="p816">
+     <span class="d-ib w104 c2">手机：</span>
+     <input type="text" class="w200 pl4 h32">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">邮箱：</span>
+     <input type="text" class="w200 pl4 h32">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">QQ：</span>
+     <input type="text" class="w200 pl4 h32">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">座机：</span>
+     <input type="text" class="w200 pl4 h32">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">登录密码：</span>
+     <input type="text" class="w200 pl4 h32">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">确认密码：</span>
+     <input type="text" class="w200 pl4 h32">
+    </div>
+  </div>
+  <div class="bdt1">
+    <span class="fr p16-24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 cw bg-b p4-8 bdrs2 cu-po ho-1f">确认新增</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--修改用户弹窗-->
+<div id="popup-editUser" class="hidden po-f bg-f2 l50p card5-nbg t50p f14 z200 c2 Scrollable" style="margin:-280px 0 0 -232px;width:464px">
+  <h4 class="card-header po-r z50"><span class="ic f24 fw-n pr4"></span>修改用户</h4>
+  <div class="ov-y h400" style="padding:16px 0 16px 56px">
+    <div class="p816">
+     <span class="d-ib w104 c2">用户名：</span>
+     <input type="text" class="w200 pl4 h32" value="王翔">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">角色：</span>
+      <select name="" id="selectRole1" class="w200">
+        <option>顾问</option>
+        <option selected>顾问-Leader</option>
+        <option>BD</option>
+        <option>BD-Leader</option>
+        <option>财务</option>
+        <option>管理员</option>
+      </select>
+    </div>
+<script>
+$('#selectRole1').select2({minimumResultsForSearch:Infinity});//选择关联事项实例化
+</script>
+    <div class="p816">
+     <span class="d-ib w104 c2">所属团队：</span>
+      <select name="" id="selectTeam1" class="w200">
+        <option></option>
+        <option selected>热火队</option>
+        <option>麒麟队</option>
+        <option>炼金队</option>
+      </select>
+    </div>
+<script>
+$('#selectTeam1').select2({minimumResultsForSearch:Infinity,placeholder:''});//选择团队实例化
+</script>
+    <div class="p816">
+     <span class="d-ib w104 c2">手机：</span>
+     <input type="text" class="w200 pl4 h32" value="18688886666">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">邮箱：</span>
+     <input type="text" class="w200 pl4 h32" value="alen.wang@stonghr.com">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">手机：</span>
+     <input type="text" class="w200 pl4 h32" value="18688886666">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">邮箱：</span>
+     <input type="text" class="w200 pl4 h32" value="alen.wang@stonghr.com">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">QQ：</span>
+     <input type="text" class="w200 pl4 h32" value="12346678901">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">座机：</span>
+     <input type="text" class="w200 pl4 h32" value="0755-82854737">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">登录密码：</span>
+     <input type="text" class="w200 pl4 h32" value="wangxiang.188">
+    </div>
+    <div class="p816">
+     <span class="d-ib w104 c2">确认密码：</span>
+     <input type="text" class="w200 pl4 h32">
+    </div>
+  </div>
+  <div class="bdt1">
+    <span class="fr p16-24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 cw bg-b p4-8 bdrs2 cu-po ho-1f">确认修改</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--用户权限弹窗-->
+<div id="popup-userAcess" class="hidden po-f bg-f2 l50p card5 t50p f14 z200 c2 Scrollable" style="margin:-302px 0 0 -232px;width:464px">
+  <h4 class="card-header po-r z50"><span class="ic f24 fw-n pr4"></span>用户权限</h4>
+  <div class="pt16">
+    <div class="fl pb16 ml40">
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t bold">模块权限</span>
+      </div>  
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">搜人才</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">公司</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">职位</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">Pipeline</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">人才库</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">List库</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">发票</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">E-learning</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">待办</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">消息</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">账号</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+    </div>
+    <div class="fl pl24 ml24 pb16 bdl1">
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t bold">其它权限</span>
+      </div>  
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">搜人才</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">公司</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">职位</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">Pipeline</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">人才库</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">List库</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">发票</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+      <div class="p816">
+       <span class="d-ib w80 c2 va-t">E-learning</span>
+       <label class="switch"><input type="checkbox" checked><div class="slider round"></div></label>
+      </div>
+    </div>
+  </div>
+  <div class="bdt1 clear">
+    <span class="fr p16-24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 cw bg-b p4-8 bdrs2 cu-po ho-1f">确认修改</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--删除用户弹窗-->
+<div id="popup-delUser" class="hidden po-f bg-f2 l50p card5-nbg t50p f14 z200 c2 Scrollable" style="margin:-80px 0 0 -150px;width:300px">
+  <div class="p24"><span class="ic f24 fw-n pr4 red"></span><span class="f16 bold">确认删除用户：王翔？</span></div>
+  <div class="bdt1">
+    <span class="fr p16-24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 red p4-8 bdrs2 cu-po ho-red">确认删除</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+</body>
+<script>
+/*新增用户按钮弹窗*/
+$('#btn-addRole').on('click',function(){
+	$('#popup-addUser,#popbg').velocity("fadeIn",200);
+	});
+/*修改用户弹窗*/	
+$('.editUser').on('click',function(){
+	$('#popbg,#popup-editUser').velocity("fadeIn",200);
+	});
+/*删除用户弹窗*/
+$('.delUser').on('click',function(){
+	$('#popup-delUser,#popbg').velocity("fadeIn",200);
+	});	
+/*用户权限弹窗*/
+$('.userAcess').on('click',function(){
+	$('#popup-userAcess,#popbg').velocity("fadeIn",200);
+	});	
+/*取消弹窗操作*/
+$('.pop-cancel').on('click',function(){
+	$(this).parents('[id]').velocity("fadeOut",150);
+	$('#popbg').velocity("fadeOut",150);
+	});
+/*确认弹窗操作*/	
+$('.pop-confirm').on('click',function(){
+	var that  = $(this);
+	var type = that.parents('[id]').attr('id');
+	that.parents('[id]').velocity("fadeOut",150);
+	$('#popbg').velocity("fadeOut",150);
+	switch (type) {
+		case 'popup-addUser':
+		toast('已成功新增用户');
+		break;
+		case 'popup-editUser':
+		toast('已成功修改用户信息');
+		break;
+		case 'popup-delUser':
+		toast('已成功删除用户');
+		break;
+		case 'popup-userAcess':
+		toast('已成功修改用户权限');
+		break;
+		};
+	});
+/*单击背景隐藏弹窗*/	
+$('#popbg').on('click',function(){
+	$('#popup-addUser,#popup-delUser,#popup-editUser,#popup-userAcess,#popbg').velocity("fadeOut",150);
+	});
+</script>
+<script>
+/*--操作冒泡提示功能toast()--*/
+function toast(text){
+	$('#toast').children(':last').html(text);
+	$('#toast').show().velocity({marginTop:'-=120',opacity:1,delay:150},{duration:150,easing:'easeOutCubic'});
+	window.setTimeout(function(){
+		$('#toast').velocity('reverse',{complete:function(){$('#toast').hide()}})},1800);
+		};	
+</script>
+<script>
+/*更友善的alert提醒，调用方法：Alert('文本或标签')*/
+function Alert (text){
+	$('#Alert span:last').html(text);
+    $('#Alert').show().velocity({
+		scaleX:[1,[300,20],0],
+		scaleY:[1,[300,20],0],
+		opacity:[1,"easeOutCubic",0],
+		},{duration:300});
+	setTimeout(function(){
+		$('#Alert').velocity("fadeOut",{duration:300});
+		},2000);	
+	};
+</script>
+<script>
+/*--选中账号--*/
+$("#account").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过展开下拉菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});
+</script>
+</html>

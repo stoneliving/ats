@@ -1,0 +1,379 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>E-learning</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/cityselect.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/autocomplete.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/cityselect.js"></script>
+<script src="js/jquery.autocomplete.min.js"></script>
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+.ho-up{ transition:all 0.3s;position: relative;cursor: pointer;}
+.ho-up:hover{ box-shadow:0 6px 10px 0 rgba(0, 0, 0, 0.14),
+                  0 1px 18px 0 rgba(0, 0, 0, 0.12),
+                  0 3px 5px -1px rgba(0, 0, 0, 0.4); transform:translateY(-6px);}
+.Xmask{position:absolute;background-image:url(images/E-learning/E-learning_thumb_X.png);width:270px;height:152px;}				  
+</style>
+</head>
+
+<body class="bg-ec">
+<header class="header  nav-down">
+  <div class="h-contain">
+    <div class="logo fl">优途智聘2.0系统</div>
+    <ul class="fl ml24">
+      <li class="li-no w72 fl">
+        <a href="Overview.html" class="nav-a" id="overview">
+          <div class="ic f20"></div>
+          <div class="f14">总览</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Search-1st.html" class="nav-a" id="search">
+          <div class="ic f20"></div>
+          <div class="f14">搜人才</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Company-1st.html" class="nav-a" id="company">
+          <div class="ic f20"></div>
+          <div class="f14">公司</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Position-1st.html" class="nav-a" id="position">
+          <div class="ic f20"></div>
+          <div class="f14">职位</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Pipeline.html" class="nav-a" id="pipeline">
+          <div class="ic f20"></div>
+          <div class="f14">Pipeline</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Talent-1st.html" class="nav-a" id="talent">
+          <div class="ic f20"></div>
+          <div class="f14">人才库</div>
+        </a>
+      </li>      <li class="li-no w72 fl">
+        <a href="List.html" class="nav-a" id="list">
+          <div class="ic f20"></div>
+          <div class="f14">List库</div>
+        </a>
+      </li> 
+      <li class="li-no w72 fl">
+        <a href="Invoice.html" class="nav-a" id="invoice">
+          <div class="ic f20"></div>
+          <div class="f14">发票</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Report-1.html" class="nav-a" id="report">
+          <div class="ic f20"></div>
+          <div class="f14">报表</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="E-learning.html" class="nav-a" id="elearn">
+          <div class="ic f20"></div>
+          <div class="f14">E-learning</div>
+        </a>
+      </li>      
+    </ul>
+    <ul class="fr">
+      <li class="li-no fl w56">
+        <div class="nav-a" id="add">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14 w104">
+              <li class="li-no">
+                <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a>
+              </li>
+              <li class="li-no">
+                <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a>
+              </li>
+              <li class="li-no">
+                <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 批量导入</a>
+              </li>              
+            </ul>
+        </div>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Todo.html" class="nav-a" id="todo" title="待办">
+          <div class="ic f24 lh46"></div>
+          <div class="badge">9</div>
+        </a>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Message.html" class="nav-a" id="message" title="消息">
+          <div class="ic f24 lh46"></div>
+        <div class="badge">99+</div>
+        </a>
+      </li>      
+      <li class="li-no fl w56">
+        <div href="" class="nav-a" id="account">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14">
+              <li class="li-no">
+                <a href="Settings-Account.html" class="add-li-a"><span class="ic f20"></span> 系统设置</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 使用帮助</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a ho-red"><span class="ic f20"></span> 退出登录</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="content">
+  <div class="ta-c f18 c2">
+    <span class="bdb3-b bold c1 cu-po">顾问课程</span>
+    <span class="ml32 ho-cb cu-po">BD课程</span>    
+  </div>
+  <div class="mt16">  
+    <a href="E-learning_1.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask"></div>
+      <img src="images/E-learning/E-learning_thumb (28).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>1.项目分析</h4>
+        <div class="lh30 f14 c2">王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.了解职位详细信息;     b.了解客户公司背景；   c.了解行业背景。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_2.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask hidden"></div>
+      <img src="images/E-learning/E-learning_thumb (38).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>2.行业知识分享</h4>
+        <div class="lh30 f14 c2">王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.行业发展情况与行业龙头企业发展情况；   b.行业代表性职位人选背景、分布、薪资状况；   c.不同行业的人在心理特征、风格、文化的差异。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_3.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask hidden"></div>
+      <img src="images/E-learning/E-learning_thumb (51).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>3.信息收集分享</h4>
+        <div class="lh30 f14 c2">王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.网络知识搜集；   b.与候选人、同行等沟通学习搜集。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_4.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask hidden"></div>
+      <img src="images/E-learning/E-learning_thumb (1).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>4.招聘渠道运营</h4>
+        <div class="lh30 f14 c2">王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.猎聘、微薄、脉脉等平台运营；   b.QQ、微信等聊天工具运营。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_5.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask"></div>
+      <img src="images/E-learning/E-learning_thumb (5).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>5.CC技巧</h4>
+        <div class="lh30 f14 c2">谢菲 · 张文娟 · 王凯茜 · 王翔</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.CC技术人员技巧；   b.CC销售人员与职能人员技巧。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_6.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask"></div>
+      <img src="images/E-learning/E-learning_thumb (15).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>6.线上搜索技巧</h4>
+        <div class="lh30 f14 c2">王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.CJOL、51job、智联等人才网站搜索技巧；   b.猎聘、领英等招聘平台等搜索技巧；   c.各大相关论坛搜索技巧。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_7.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask"></div>
+      <img src="images/E-learning/E-learning_thumb (8).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>7.简历分析分享</h4>
+        <div class="lh30 f14 c2">王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.如何向项目经理提问；   b.操作过程中与候选人共同分析。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_8.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask"></div>
+      <img src="images/E-learning/E-learning_thumb (20).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>8.与客户HR电话沟通话术</h4>
+        <div class="lh30 f14 c2">王敏 · 任远</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.与客户HR建立感情；   b.引导客户HR配合我们工作。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_9.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <img src="images/E-learning/E-learning_thumb (39).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>9.与候选人电话沟通话术</h4>
+        <div class="lh30 f14 c2">王伟 · 王翔 · 王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.与候选人首次电话沟通；   b.与候选人持续联系沟通；   c.与候选人建立感情联系沟通。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_10.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask"></div>
+      <img src="images/E-learning/E-learning_thumb (27).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>10.与候选人面试技巧</h4>
+        <div class="lh30 f14 c2">邓冬冬 · 田力纯 · 江一成</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.与候选人电话面试；   b.与候选人面对面面试。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_11.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask"></div>
+      <img src="images/E-learning/E-learning_thumb (42).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>11.候选人说服技巧</h4>
+        <div class="lh30 f14 c2">王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.异地候选人说服；   b.行业差别说服；   c.客户公司、职位说服。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_12.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask"></div>
+      <img src="images/E-learning/E-learning_thumb (2).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>12.客户关系维护</h4>
+        <div class="lh30 f14 c2">王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.与客户HR电话沟通；   b.与客户HR面对面沟通。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_13.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask"></div>
+      <img src="images/E-learning/E-learning_thumb (25).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>13.候选人辅导</h4>
+        <div class="lh30 f14 c2">王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.候选人初次面试辅导；   b.候选人复试、终试面试辅导；   c.候选人离职辅导；   d.试用期跟进；   e.候选人职业生涯规划、设计。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_14.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask"></div>
+      <img src="images/E-learning/E-learning_thumb (11).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>14.候选人简历的介绍</h4>
+        <div class="lh30 f14 c2">王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.与候选人沟通简历信息以外的职能、个人信息；   b.总结候选人背景经历。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_15.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask"></div>
+      <img src="images/E-learning/E-learning_thumb (6).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>15.候选人背景调查</h4>
+        <div class="lh30 f14 c2">王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.主观背景调查；   b.客观背景调查。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_16.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask"></div>
+      <img src="images/E-learning/E-learning_thumb (53).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>16.薪资谈判</h4>
+        <div class="lh30 f14 c2">王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.与客户方的谈判；   b.与候选人方的谈判;    c.候选人薪酬合理分析与建议；   d.行业、职位普遍薪资结构的介绍。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+    <a href="E-learning_17.html" class="a d-b c1 card1 ml24 mt24 ho-up">
+      <div class="Xmask"></div>
+      <img src="images/E-learning/E-learning_thumb (22).jpg" alt="" width="270px" class="d-ib va-m">
+      <div class="p1016 d-ib va-m">
+        <h4>17.回款跟踪</h4>
+        <div class="lh30 f14 c2">王凯茜</div>
+        <div class="f13 lh24 c3 mt8">
+          <p class=" f14 w820 wh-pw">a.公司内部财务、快递的跟踪；   b.客户公司的流程、财务跳跃。</p>
+          <span class="ic f18"></span> <span>2h 55m</span>
+          <span class="ic f18 ml24"></span> <span>183</span>次
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+</body>
+<script>
+/*--选中总览--*/
+$("#elearn").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过显示菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});</script>
+</html>

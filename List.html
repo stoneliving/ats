@@ -1,0 +1,533 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>List库</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main-New.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/dropzone.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/dropzone.js"></script>
+
+</head>
+<body>
+<header class="header"></header>
+<div class="content">
+  <div class="fl w200">
+    <div class="card1 pb16">
+      <div class="card-header">
+        <span class="ic f20"></span> List库
+        <span class="fr f13 ho-u ho-cb cu-po">编辑</span>
+      </div>
+        <div class="cb f14 p816 cu-po mt8">
+          <span class="ic f20 cf6"></span>
+          <span>默认文件夹</span>
+          <span class="ta-r fr">1236</span>
+        </div>
+        <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+          <span class="ic f20 cf6"></span>
+          <span>TMT公司</span>
+          <span class="ta-r fr">136</span>
+        </div>
+        <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+          <span class="ic f20 cf6"></span>
+          <span>金融公司</span>
+          <span class="ta-r fr">136</span>
+        </div>
+    </div>
+  </div>  
+  <div class="fl w968 ml32">
+    <div class="fl">
+      <div id="btn-upload" class="card1 fl f14 p816 cb ho-blue cu-po trans ho-sh po-r z50">
+        <span class="ic f24 ml-5"></span> 上传文件
+      </div>
+    </div>
+    <div class="fl card1 ml32">
+      <input type="text" placeholder="搜索文档名" class="w360 p1016 f14 h40">
+      <span class="ic f24 bg-b cw cu-po ho-1f p8 va-1 ml-5" onClick="window.open('search-2nd.html','_parent')"></span>
+    </div>
+    <div class="card1 mt16 fl clear w968 f14">
+      <div class="p1016 bg-w">
+        <div class="fl">
+          <input type="checkbox" id="chk-comp">
+          <label for="chk-comp"></label>
+          <span class="cb bold cu-po ho-cb">批量下载</span>
+        </div>
+        <div class="fr c2">
+          <span class="ml16">
+            <span>每页显示：</span>
+            <a href="" class="a ml8 cb">20</a>
+            <a href="" class="a ml8 c2">30</a>
+            <a href="" class="a ml8 c2">50</a>
+          </span>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div>
+        <table class="c1 bdcl ta-r c1">
+          <tr class="c2 h64 f13" style="border:none;">
+            <th class="w48 ta-l"></th>
+            <th class=" w424 ta-l">
+              <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+              <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+              <span>文件名</span>
+            </th>
+            <th class="w40">操作</th>
+            <th class="sort w120 cu-po ho-cb">
+              <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+              <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+              <span>大小</span>
+            </th>
+            <th class="w160">上传者</th>
+            <th class="sort w240 pr24 cu-po ho-cb">
+              <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+              <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+              <span>更新时间</span>
+            </th>
+          </tr>
+          <style>
+          .fileicon{height: 16px;width: 16px;position: absolute;display: inline-block;background-image: url(images/filetype.png);margin-top:2px;}
+		  .xls{background-position:-90px 0;}
+		  .ppt{background-position:-150px 0;}
+		  .doc{background-position:-60px 0;}
+		  .pdf{background-position:-30px 0;}
+		  .zip{background-position:-240px 0;}
+		  .pic{background-position:0 0;}
+		  .txt{background-position:-120px 0;}
+		  .mp3{background-position:-180px 0;}
+		  .video{background-position:-210px 0;}
+		  .df-icon{background-position:-270px 0;}
+		  
+          </style>
+          <tr class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <input type="checkbox" id="file1">
+              <label for="file1"></label>
+            </td>
+            <td class="ta-l">
+              <span class="fileicon"></span>
+              <span class="ml24">金融200家公司通讯录.xls</span>
+            </td>
+            <td>
+              <span class="ic c2 f24 cu-po po-r ho-cb" title="下载"></span>
+            </td>
+            <td>1.2MB</td>
+            <td>王翔</td>
+            <td class="pr24">2016-06-13 17:25</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <input type="checkbox" id="file2">
+              <label for="file2"></label>
+            </td>
+            <td class="ta-l">
+              <span class="fileicon"></span>
+              <span class="ml24">金融200家公司通讯录.rar</span>
+            </td>
+            <td>
+              <span class="ic c2 f24 cu-po po-r ho-cb" title="下载"></span>
+            </td>
+            <td>1.2MB</td>
+            <td>王翔</td>
+            <td class="pr24">2016-06-13 17:25</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <input type="checkbox" id="file3">
+              <label for="file3"></label>
+            </td>
+            <td class="ta-l">
+              <span class="fileicon"></span>
+              <span class="ml24">金融200家公司通讯录.docx</span>
+            </td>
+            <td>
+              <span class="ic c2 f24 cu-po po-r ho-cb" title="下载"></span>
+            </td>
+            <td>1.2MB</td>
+            <td>王翔</td>
+            <td class="pr24">2016-06-13 17:25</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <input type="checkbox" id="file4">
+              <label for="file4"></label>
+            </td>
+            <td class="ta-l">
+              <span class="fileicon"></span>
+              <span class="ml24">金融200家公司通讯录.ppt</span>
+            </td>
+            <td>
+              <span class="ic c2 f24 cu-po po-r ho-cb" title="下载"></span>
+            </td>
+            <td>1.2MB</td>
+            <td>王翔</td>
+            <td class="pr24">2016-06-13 17:25</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <input type="checkbox" id="file5">
+              <label for="file5"></label>
+            </td>
+            <td class="ta-l">
+              <span class="fileicon"></span>
+              <span class="ml24">金融200家公司通讯录.pdf</span>
+            </td>
+            <td>
+              <span class="ic c2 f24 cu-po po-r ho-cb" title="下载"></span>
+            </td>
+            <td>1.2MB</td>
+            <td>王翔</td>
+            <td class="pr24">2016-06-13 17:25</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <input type="checkbox" id="file1">
+              <label for="file1"></label>
+            </td>
+            <td class="ta-l">
+              <span class="fileicon"></span>
+              <span class="ml24">金融200家公司通讯录.txt</span>
+            </td>
+            <td>
+              <span class="ic c2 f24 cu-po po-r ho-cb" title="下载"></span>
+            </td>
+            <td>1.2MB</td>
+            <td>王翔</td>
+            <td class="pr24">2016-06-13 17:25</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <input type="checkbox" id="file2">
+              <label for="file2"></label>
+            </td>
+            <td class="ta-l">
+              <span class="fileicon"></span>
+              <span class="ml24">金融200家公司通讯录.rar</span>
+            </td>
+            <td>
+              <span class="ic c2 f24 cu-po po-r ho-cb" title="下载"></span>
+            </td>
+            <td>1.2MB</td>
+            <td>王翔</td>
+            <td class="pr24">2016-06-13 17:25</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <input type="checkbox" id="file3">
+              <label for="file3"></label>
+            </td>
+            <td class="ta-l">
+              <span class="fileicon"></span>
+              <span class="ml24">金融200家公司通讯录.docx</span>
+            </td>
+            <td>
+              <span class="ic c2 f24 cu-po po-r ho-cb" title="下载"></span>
+            </td>
+            <td>1.2MB</td>
+            <td>王翔</td>
+            <td class="pr24">2016-06-13 17:25</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <input type="checkbox" id="file4">
+              <label for="file4"></label>
+            </td>
+            <td class="ta-l">
+              <span class="fileicon"></span>
+              <span class="ml24">金融200家公司通讯录.ppt</span>
+            </td>
+            <td>
+              <span class="ic c2 f24 cu-po po-r ho-cb" title="下载"></span>
+            </td>
+            <td>1.2MB</td>
+            <td>王翔</td>
+            <td class="pr24">2016-06-13 17:25</td>
+          </tr>
+          <tr class="bdt1 h64 ho-ec">
+            <td class="w48 ta-l pl16">
+              <input type="checkbox" id="file5">
+              <label for="file5"></label>
+            </td>
+            <td class="ta-l">
+              <span class="fileicon"></span>
+              <span class="ml24">金融200家公司通讯录.pdf</span>
+            </td>
+            <td>
+              <span class="ic c2 f24 cu-po po-r ho-cb" title="下载"></span>
+            </td>
+            <td>1.2MB</td>
+            <td>王翔</td>
+            <td class="pr24">2016-06-13 17:25</td>
+          </tr>
+          <tr class="bdt1 h64 c2">
+            <td colspan="6">
+              <ul class="page-nav-ul c1 d-ib">
+                <li class="p-active">
+                  <a class="page-a-tag" href="">首页</a>
+                </li>
+                <li class="p-active" style="padding:0 8px 0 8px;">
+                  <a class="page-a-tag" href=""><span class="ic f24 c3"></span></a>
+                </li>
+                <li class="p-active-selected">
+                  <a class="page-a-tag-selected" href="">1</a>
+                </li>
+                <li class="p-active">
+                  <a class="page-a-tag" href="">2</a>
+                </li>
+                <li class="p-active">
+                  <a class="page-a-tag" href="">3</a>
+                </li>
+                <li class="p-active">
+                  <a class="page-a-tag" href="">4</a>
+                </li>
+                <li class="p-active">
+                  <a class="page-a-tag" href="">5</a>
+                </li>
+                <li class="p-active" style="padding:0 8px 0 8px;">
+                  <a class="page-a-tag" href=""><span class="ic f24 c3"></span></a>
+                </li>
+                <li class="p-active">
+                  <a class="page-a-tag" href="">尾页</a>
+                </li>
+                <li class="p-active" style="border:none;">
+                  <a class="page-a-tag" href="">共92页</a>
+                </li>
+                <li class="p-active" style="border:none;">
+                  跳转到<input type="text" class="w40 h32 ml4 mr4 p0-4">页
+                </li>
+                <li class="clear li-no"></li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--<img src="images/emptyStates-list.png" alt="">-->
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--弹框背景--><div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z150"></div>
+<!--操作冒泡提示--><div id="toast" class="hidden po-f z200 t0 cw card5-nbg l50p t50p mt80 ml-58 op0 p16-24 bg-toa"></div>
+<!--警告提示-->
+<div id="Alert" class="hidden po-f z200 cw card5-nbg l50p t50p ml-120 mt-64 p16-24 bg-toa">
+  <span class="ic-alertbg" ></span>
+  <span class="ic f24 cb bdrs12 d-ib po-r"></span>
+  <span></span>
+</div>
+<!--选择文件夹弹窗-->
+<div id="dialog-choosefolder" class="hidden po-f bg-f2 l50p card5-nbg t50p f14 z200" style="width:320px;margin:-160px 0 0 -160px">
+  <h4 class="card-header fw-n">上传到文件夹:</h4>
+  <div class="p16-24">
+   <div class="bg-w p8">
+     <ul id="talfolder-source" class="mh168 ovy-a">
+       <li class="folder-select li-no lh30 ho-ec ho-cb cu-po"><span class="ic f20 cf6 mr4"></span><span>默认文件夹</span></li>
+       <li id="newfolder" class="folder-select li-no lh30 hidden ho-ec ho-cb cu-po"><span class="ic f20 cf6 mr4"></span><input type="text" onKeyUp="confirmFolder(event)" class="w120 pl4 lh24"></li>
+       <li class="li-no lh30"><span class="addfolder cu-po cb"><span class="ic f24"></span>新增文件夹</span></li>
+     </ul>
+   </div>
+  </div>
+  <div>
+    <span class="fr p16-24">
+      <span id="close-choosefolder" class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="nextStep ml24 cw bg-b p4-8 bdrs2 ho-1f op06 cu-n">下一步</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+  </div>
+<!--上传附件弹窗-->
+<div id="dialog-upload" class="hidden z150 w820 h332 card5-nbg bg-f7 po-f l50p t50p mt-160 ml-410 p24">
+  <h3 class="c1">上传文件
+    <span class="f14 c2 fw-n ml16">至文件夹</span>
+    <span class="fw-n f14">
+      <span class="ic f24 cf6"></span>
+      <span id="folderName" class="c2">默认文件夹</span>
+    </span>
+  </h3>
+  <form action="/file-upload" class="dropzone ovy-a Scrollable w100p mt24 p8 bg-w cu-po" style="height:200px"></form>
+  <div class="mt16">
+    <span id="btn-cfmupload" class="fr p4-8 cw bg-b bdrs2 ho-1f cu-po ml16">确定</span>
+    <span id="btn-cancelupload" class="fr p4-8 c2 ho-u cu-po">取消</span>
+  </div>
+</div>
+</body>
+<script>
+/*单击checkbox给当前tr添加或移除背景色*/
+$('[id^="file"]').on('click',function(){
+	var checked = $(this).is(':checked'),
+	tr = $(this).parents('tr');
+	if (checked) {
+		$(tr).removeClass('ho-ec').addClass('bg-ec');
+		} else{
+			$(tr).removeClass('bg-ec').addClass('ho-ec');
+			};
+	});
+</script>
+<script>
+/*图标加载：根据文件名后缀加载不同图标*/
+function iconSys(){
+  $('.fileicon').each(function(){
+	  var that=$(this),
+	  filetype = $(this).siblings().html(),
+	  index = filetype.lastIndexOf('.'),
+	  filetype = filetype.substr(index+1);
+	  switch (filetype){
+		  case 'xls':
+		  case 'xlsx':
+		  that.addClass('xls');
+		  break;
+		  case 'doc':
+		  case 'docx':
+		  that.addClass('doc');
+		  break;
+		  case 'ppt':
+		  case 'pptx':
+		  that.addClass('ppt');
+		  break;
+		  case 'pdf':
+		  that.addClass('pdf');
+		  break;
+		  case 'zip':
+		  case 'rar':
+		  that.addClass('zip');
+		  break;
+		  case 'wav':
+		  case 'mp3':
+		  case 'wma':
+		  case 'mid':
+		  case 'ogg':
+		  case 'ape':
+		  case 'aac':
+		  that.addClass('mp3');
+		  break;
+		  case 'avi':
+		  case 'mov':
+		  case 'mpeg':
+		  case 'wmv':
+		  case 'rm':
+		  case 'mp4':
+		  case 'rmvb':
+		  case '3gp':
+		  case 'swf':
+		  case 'flv':
+		  case 'swf':
+		  case 'mkv':
+		  that.addClass('video');
+		  break;
+		  case 'txt':
+		  that.addClass('txt');
+		  break;
+		  case 'jpg':
+		  case 'png':
+		  case 'bmp':
+		  case 'gif':
+		  case 'svg':
+		  that.addClass('pic');
+		  break;
+		  default:
+		  that.addClass('df-icon');
+		  break;
+		  };
+	  });
+	};
+</script>
+<script>
+/*---文档加载后运行图标加载--*/
+$(document).ready(function(e) {
+    iconSys();
+});
+/*--单击上传文件显示弹窗--*/
+$('#btn-upload').on('click',function(){
+	$('#dialog-choosefolder,#popbg').velocity("fadeIn",200);
+	});
+/*取消选择文件夹*/	
+$('#close-choosefolder').on('click',function(){
+	$('#dialog-choosefolder,#popbg').velocity("fadeOut",150);
+	});
+/*取消上传*/	
+$('#btn-cancelupload,#btn-cfmupload').on('click',function(){
+	$('#dialog-upload,#popbg').velocity("fadeOut",{duration:150});
+	});	
+/*下一步（传参数文件夹id）*/
+$(document).on('click','.nextStep.cu-po',function(){
+	var folderName = $('.folder-select.bg-b').children(':last-child').html();
+	$('#folderName').html(folderName);
+	alert(folderName);
+	$('#dialog-choosefolder').hide();
+	$('#dialog-upload').css('opacity',1).show();
+	});
+	
+	
+/*--列表表头单击排序：小图标填色--*/	
+$('.sort').on('click',function(){
+	var des = $(this).children('.descend');
+	var ase = $(this).children('.ascend');
+	$(this).siblings().children('.cb').removeClass('cb').addClass('ce0');
+	if($(des).hasClass('cb')){
+		$(ase).removeClass('ce0').addClass('cb');$(des).removeClass('cb').addClass('ce0')} else {
+			$(des).removeClass('ce0').addClass('cb');$(ase).removeClass('cb').addClass('ce0');}
+	});
+</script>
+<script>
+/*--操作冒泡提示功能toast()--*/
+function toast(){
+	$('#toast').show().velocity({marginTop:'-=120',opacity:1,delay:150},{duration:150,easing:'easeOutCubic'});
+	window.setTimeout(function(){
+		$('#toast').velocity('reverse',{complete:function(){$('#toast').hide()}})},1800);
+		};		
+</script>
+<script>
+/*更友善的alert提醒，调用方法：Alert('文本或标签')*/
+function Alert (text){
+	$('#Alert span:last').html(text);
+    $('#Alert').show().velocity({
+		scaleX:[1,[300,20],0],
+		scaleY:[1,[300,20],0],
+		opacity:[1,"easeOutCubic",0],
+		},{duration:300});
+	setTimeout(function(){
+		$('#Alert').velocity("fadeOut",{duration:300});
+		},2000);	
+	};
+</script>
+<script>
+/*--选中公司--*/
+$("#list").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过展开下拉菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});
+</script>
+<script>
+/*--新建文件夹、选择文件夹功能--*/
+function confirmFolder(e) {
+  var input = $('input:focus');
+  var text = input.val();
+  if (e.keyCode == 13) {
+    $('.folder-select').removeClass('bg-b cw').addClass('ho-cb ho-ec');
+    input.parent().removeClass('ho-cb ho-ec').addClass('bg-b cw');
+    input.replaceWith('<span>'+text+'</span>');
+  }
+};
+$('.addfolder').on('click', function() {
+  var that =$(this);
+  var folderForClone = that.parent().siblings('#newfolder'); 
+  var newfolder = $(folderForClone).clone();
+  newfolder.removeAttr('id');
+  newfolder.css({
+    'display': 'block'
+  });
+  newfolder.insertBefore($(folderForClone));
+  newfolder.children('input').focus();
+});
+/*选择文件夹功能*/
+$(document).on('click', '.folder-select', function() {
+  $(this).siblings('.folder-select').removeClass('bg-b cw').addClass('ho-cb ho-ec');
+  $(this).removeClass('ho-cb ho-ec').addClass('bg-b cw');
+  $('.nextStep').removeClass('op06 cu-n').addClass('cu-po');
+});
+</script>
+</html>

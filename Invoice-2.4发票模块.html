@@ -1,0 +1,1800 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>发票</title>
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/cleave.min.js"></script>
+  <script src="js/autogrow.min.js"></script>
+  <script src="js/My97DatePicker/WdatePicker.js"></script>
+  <script src="js/components.js"></script>
+  <link rel="stylesheet" href="css/datepicker.css">
+  <link rel="stylesheet" href="css/main-New.css">
+  <link rel="stylesheet" href="css/select2.css">
+</head>
+<style>
+  .f12 input {
+    font-size: 12px
+  }
+
+</style>
+
+<body>
+  <header class="header"></header>
+  <main class="main">
+    <section class="side-bar">
+      <div class="card1 pb16">
+        <div class="card-header">
+          <span class="ic f20"></span> 我的发票
+        </div>
+        <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+          <span>待申请开票</span>
+          <span class="ta-r fr">13</span>
+        </div>
+        <div class="c1 f14 p816 cb cu-po bdt1-d bdl5">
+          <span>所有发票</span>
+          <span class="ta-r fr">13</span>
+        </div>
+        <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+          <span>草稿</span>
+          <span class="ta-r fr">2</span>
+        </div>
+        <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+          <span>审核确认中</span>
+          <span class="ta-r fr">2</span>
+        </div>
+        <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+          <span>待财务开票</span>
+          <span class="ta-r fr">2</span>
+        </div>
+        <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+          <span>已开票待寄出</span>
+          <span class="ta-r fr">3</span>
+        </div>
+        <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+          <span>已寄出未到款</span>
+          <span class="ta-r fr">3</span>
+        </div>
+        <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+          <span>已到款</span>
+          <span class="ta-r fr">1</span>
+        </div>
+        <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+          <span>已驳回</span>
+          <span class="ta-r fr">1</span>
+        </div>
+        <div class="c1 f14 p816 ho-cb ho-ec cu-po">
+          <span>已作废</span>
+          <span class="ta-r fr">1</span>
+        </div>
+      </div>
+    </section>
+    <section class="content-r">
+      <section class="content-options">
+        <span id="btn-applyInvo" class="btn-paper">
+      <span class="ic f24 ml-5"></span> 申请开票
+        </span>
+        <span class="d-ib card1 po-r ho-sh2 trans ml24">
+      <span class="ic f24 c-c ml4"></span>
+        <input type="text" placeholder="输入公司名查询相关发票" id="select-companName" autofocus="" name="companName" class="f14 h40 bdrs2 w360 pl4" style="border:none;" autocomplete="off">
+        </span>
+        <div class="clear"></div>
+      </section>
+      <section class="content-filter">
+        <div class="filters"><span class="ic f24"></span>筛选 职位名 候选人名 推荐顾问 BD</div>
+        <div class="filter-result">所有发票 共 1 张发票</div>
+      </section>
+      <section class="content-results">
+        <div class="results-header">
+          <div class="fr c2">
+            <span id="sel_page_count" class="ml16" hasrender="Y">
+          <span>每页显示：</span><a href="javascript:;" value="20" class="showCount a ml8 cb">20</a><a href="javascript:;" value="30" class="showCount a ml8 c2">30</a><a href="javascript:;" value="50" class="showCount a ml8 c2">50</a></span>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div>
+          <table class="bdcl ta-l c1">
+            <tr class="c2 h48">
+              <th class="pl16"></th>
+              <th class="w80">发票</th>
+              <th class="w48">操作</th>
+              <th class="w104">发票状态</th>
+              <th class="w56">备注</th>
+              <th class="w80">已回款</th>
+              <th class="w66">候选人</th>
+              <th class="w136">推荐的职位</th>
+              <th class="w136">客户公司</th>
+              <th class="w60">对接人</th>
+              <th class="w60">BD</th>
+              <th class="w60">顾问</th>
+              <th class="w66 ta-r pr8">已开票</th>
+            </tr>
+            <tr class="h64 bdt1 ho-ec">
+              <td></td>
+              <td class=""><span data-feeType="" class="invo-link cu-po bold cb">￥30,000</span></td>
+              <td><span class="op-menu"><span class="ic c2 f24 cu-po po-r"></span> </span>
+              </td>
+              <td><span class="invo-status red">待申请开票</span><span class="overdue-txt">（逾期13天）</span></td>
+              <td>
+                <div class="note-ho ho-cb c2 cu-de"> <span><span class="ic f20 pr4"></span><span>5</span></span>
+                </div>
+              </td>
+              <td>￥0</td>
+              <td>王某某</td>
+              <td><span class="w120 ol">高级Java开发工程师</span></td>
+              <td><span class="w120 ol">深圳市某某科技股份有限公司</span></td>
+              <td>张文娟</td>
+              <td>刘达文</td>
+              <td>骆小根</td>
+              <td class="ta-r pr8">10天</td>
+            </tr>
+            <tr class="h64 bdt1 ho-ec">
+              <td></td>
+              <td><span data-feeType="（首款）" class="invo-link cu-po bold cb">￥30,000</span></td>
+              <td><span class="op-menu"><span class="ic c2 f24 cu-po po-r"></span> </span>
+              </td>
+              <td><span class="invo-status">草稿</span></td>
+              <td>
+                <div class="note-ho ho-cb c2 cu-de"> <span><span class="ic f20 pr4"></span><span>5</span></span>
+                </div>
+              </td>
+              <td>￥0</td>
+              <td>王某某</td>
+              <td><span class="w120 ol">高级Java开发工程师</span></td>
+              <td><span class="w120 ol">深圳市某某科技股份有限公司</span></td>
+              <td>张文娟</td>
+              <td>刘达文</td>
+              <td>骆小根</td>
+              <td class="ta-r pr8">10天</td>
+            </tr>
+            <tr class="h64 bdt1 ho-ec">
+              <td></td>
+              <td><span data-feeType="（首款）" class="invo-link cu-po bold cb">￥30,000</span></td>
+              <td><span class="op-menu"><span class="ic c2 f24 cu-po po-r"></span> </span>
+              </td>
+              <td><span class="invo-status">待审核</span></td>
+              <td>
+                <div class="note-ho ho-cb c2 cu-de"> <span><span class="ic f20 pr4"></span><span>5</span></span>
+                </div>
+              </td>
+              <td>￥0</td>
+              <td>王某某</td>
+              <td><span class="w120 ol">高级Java开发工程师</span></td>
+              <td><span class="w120 ol">深圳市某某科技股份有限公司</span></td>
+              <td>张文娟</td>
+              <td>刘达文</td>
+              <td>骆小根</td>
+              <td class="ta-r pr8">10天</td>
+            </tr>
+            <tr class="h64 bdt1 ho-ec">
+              <td></td>
+              <td><span data-feeType="（尾款）" class="invo-link cu-po bold cb">￥30,000</span></td>
+              <td><span class="op-menu"><span class="ic c2 f24 cu-po po-r"></span> </span>
+              </td>
+              <td><span class="invo-status c-gr">审核通过</span></td>
+              <td>
+                <div class="note-ho ho-cb c2 cu-de"> <span><span class="ic f20 pr4"></span><span>5</span></span>
+                </div>
+              </td>
+              <td>￥0</td>
+              <td>王某某</td>
+              <td><span class="w120 ol">高级Java开发工程师</span></td>
+              <td><span class="w120 ol">深圳市某某科技股份有限公司</span></td>
+              <td>张文娟</td>
+              <td>刘达文</td>
+              <td>骆小根</td>
+              <td class="ta-r pr8">10天</td>
+            </tr>
+            <tr class="h64 bdt1 ho-ec">
+              <td></td>
+              <td><span data-feeType="（全款）" class="invo-link cu-po bold cb">￥30,000</span></td>
+              <td><span class="op-menu"><span class="ic c2 f24 cu-po po-r"></span> </span>
+              </td>
+              <td><span class="invo-status bg-r cw p0-4">已驳回</span></td>
+              <td>
+                <div class="note-ho ho-cb c2 cu-de"> <span><span class="ic f20 pr4"></span><span>5</span></span>
+                </div>
+              </td>
+              <td>￥0</td>
+              <td>王某某</td>
+              <td><span class="w120 ol">高级Java开发工程师</span></td>
+              <td><span class="w120 ol">深圳市某某科技股份有限公司</span></td>
+              <td>张文娟</td>
+              <td>刘达文</td>
+              <td>骆小根</td>
+              <td class="ta-r pr8">10天</td>
+            </tr>
+            <tr class="h64 bdt1 ho-ec">
+              <td></td>
+              <td><span class="invo-link cu-po bold cb">￥30,000</span></td>
+              <td><span class="op-menu"><span class="ic c2 f24 cu-po po-r"></span> </span>
+              </td>
+              <td><span class="invo-status">待财务开票</span></td>
+              <td>
+                <div class="note-ho ho-cb c2 cu-de"> <span><span class="ic f20 pr4"></span><span>5</span></span>
+                </div>
+              </td>
+              <td>￥0</td>
+              <td>王某某</td>
+              <td><span class="w120 ol">高级Java开发工程师</span></td>
+              <td><span class="w120 ol">深圳市某某科技股份有限公司</span></td>
+              <td>张文娟</td>
+              <td>刘达文</td>
+              <td>骆小根</td>
+              <td class="ta-r pr8">10天</td>
+            </tr>
+            <tr class="h64 bdt1 ho-ec">
+              <td></td>
+              <td><span class="invo-link cu-po bold cb">￥30,000</span></td>
+              <td><span class="op-menu"><span class="ic c2 f24 cu-po po-r"></span> </span>
+              </td>
+              <td><span class="invo-status cw bg-b p0-4">已开票待寄出</span></td>
+              <td>
+                <div class="note-ho ho-cb c2 cu-de"> <span><span class="ic f20 pr4"></span><span>5</span></span>
+                </div>
+              </td>
+              <td>￥0</td>
+              <td>王某某</td>
+              <td><span class="w120 ol">高级Java开发工程师</span></td>
+              <td><span class="w120 ol">深圳市某某科技股份有限公司</span></td>
+              <td>张文娟</td>
+              <td>刘达文</td>
+              <td>骆小根</td>
+              <td class="ta-r pr8">10天</td>
+            </tr>
+            <tr class="h64 bdt1 ho-ec">
+              <td></td>
+              <td><span class="invo-link cu-po bold cb">￥30,000</span></td>
+              <td><span class="op-menu"><span class="ic c2 f24 cu-po po-r"></span> </span>
+              </td>
+              <td><span class="invo-status c1 bg-yl p0-4">已寄出未到款</span></td>
+              <td>
+                <div class="note-ho ho-cb c2 cu-de"> <span><span class="ic f20 pr4"></span><span>5</span></span>
+                </div>
+              </td>
+              <td>￥0</td>
+              <td>王某某</td>
+              <td><span class="w120 ol">高级Java开发工程师</span></td>
+              <td><span class="w120 ol">深圳市某某科技股份有限公司</span></td>
+              <td>张文娟</td>
+              <td>刘达文</td>
+              <td>骆小根</td>
+              <td class="ta-r pr8">10天</td>
+            </tr>
+            <tr class="h64 bdt1 ho-ec">
+              <td></td>
+              <td><span class="invo-link cu-po bold cb">￥30,000</span></td>
+              <td><span class="op-menu"><span class="ic c2 f24 cu-po po-r"></span> </span>
+              </td>
+              <td><span class="invo-status bd1-gr c-gr p0-4 bdrs2">已到款-部分</span></td>
+              <td>
+                <div class="note-ho ho-cb c2 cu-de"> <span><span class="ic f20 pr4"></span><span>5</span></span>
+                </div>
+              </td>
+              <td>￥0</td>
+              <td>王某某</td>
+              <td><span class="w120 ol">高级Java开发工程师</span></td>
+              <td><span class="w120 ol">深圳市某某科技股份有限公司</span></td>
+              <td>张文娟</td>
+              <td>刘达文</td>
+              <td>骆小根</td>
+              <td class="ta-r pr8">10天</td>
+            </tr>
+            <tr class="h64 bdt1 ho-ec">
+              <td></td>
+              <td><span class="invo-link cu-po bold cb">￥30,000</span></td>
+              <td><span class="op-menu"><span class="ic c2 f24 cu-po po-r"></span> </span>
+              </td>
+              <td><span class="invo-status bgok cw p0-4">已到款-全款</span></td>
+              <td>
+                <div class="note-ho ho-cb c2 cu-de"> <span><span class="ic f20 pr4"></span><span>5</span></span>
+                </div>
+              </td>
+              <td>￥0</td>
+              <td>王某某</td>
+              <td><span class="w120 ol">高级Java开发工程师</span></td>
+              <td><span class="w120 ol">深圳市某某科技股份有限公司</span></td>
+              <td>张文娟</td>
+              <td>刘达文</td>
+              <td>骆小根</td>
+              <td class="ta-r pr8">10天</td>
+            </tr>
+            <tr class="h64 bdt1 ho-ec">
+              <td></td>
+              <td><span class="invo-link cu-po bold cb">￥30,000</span></td>
+              <td><span class="op-menu"><span class="ic c2 f24 cu-po po-r"></span> </span>
+              </td>
+              <td><span class="invo-status bg-toa cw p0-4">已作废</span></td>
+              <td>
+                <div class="note-ho ho-cb c2 cu-de"> <span><span class="ic f20 pr4"></span><span>5</span></span>
+                </div>
+              </td>
+              <td>￥0</td>
+              <td>王某某</td>
+              <td><span class="w120 ol">高级Java开发工程师</span></td>
+              <td><span class="w120 ol">深圳市某某科技股份有限公司</span></td>
+              <td>张文娟</td>
+              <td>刘达文</td>
+              <td>骆小根</td>
+              <td class="ta-r pr8">10天</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!--弹窗：发票详情和编辑弹窗-->
+  <div id="popup-invoDetail" class="">
+    <div class="popup-wrapper" style="z-index:199">
+      <div class="card5 po-r" style="width:1000px;">
+        <div class="popup-header bdb1"><span class="ic f18 fw-n pr4"></span>发票详情<span onclick="$('#popup-invoDetail').velocity('fadeOut',150);" class="fr ic f24 fw-n cu-po ho-cr"></span></div>
+        <div class="popup-content Scrollable">
+          <ul id="invo" class="tl-container f14">
+            <!--2edit申请开票编辑-->
+            <li data-id="invo-2edit" id="applyInvo" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 w868">
+                <div class="c1 lh30">申请开票</div>
+                <div class="p8 mt4 bg-f2 c2">
+                  <div class="mt16">
+                    <div class="bold c1">选择客户开票信息<span class="mt8 fw-n f12 ml16 c3"><span class="cb">开票信息填写表下载</span>（供发给客户填写）</span>
+                    </div>
+                    <div class="mt16">
+                      <select name="" id="select-invo-content" class="w120">
+                              <option>招聘服务费</option>
+                              <option>咨询服务费</option>
+                            </select><input type="radio" name="invo-type" id="invo-type-special" checked>
+                      <label for="invo-type-special" class="ml16">增值税专用票</label>
+                      <input type="radio" name="invo-type" id="invo-type-normal">
+                      <label for="invo-type-normal" class="ml16">增值税普通票</label></div>
+                    <div>
+                      <div class="client-invo">
+                        <table class="bdcl lh30 f12">
+                          <tr>
+                            <td class="w60">发票抬头：</td>
+                            <td><input type="text" disabled class="input-display lh24 pl4 w178 cu-po" value="发票抬头"></td>
+                          </tr>
+                          <tr>
+                            <td>纳税人号：</td>
+                            <td><input type="text" disabled class="input-display input-4digits lh24 pl4 w178 cu-po" value="纳税人号"></td>
+                          </tr>
+                          <tr>
+                            <td>开户行：</td>
+                            <td><input type="text" disabled class="input-display lh24 pl4 w178 cu-po" value="开户行"></td>
+                          </tr>
+                          <tr>
+                            <td>银行账号：</td>
+                            <td><input type="text" disabled class="input-display input-4digits lh24 pl4 w178 cu-po" value="银行账号"></td>
+                          </tr>
+                          <tr>
+                            <td>电话：</td>
+                            <td><input type="text" disabled class="input-display lh24 pl4 w178 cu-po" value="电话"></td>
+                          </tr>
+                          <tr>
+                            <td class="va-t">地址：</td>
+                            <td><input type="text" disabled class="input-display lh24 pl4 w178 cu-po" value="地址"></td>
+                          </tr>
+                        </table>
+                        <div class="card-ops">
+                          <span class="btn-delete-card ic f24 ho-cr c-c" title="删除"></span><span class="btn-edit-card ic f24 ml8 ho-cb c-c" title="编辑"></span>
+                        </div>
+                        <div class="edit-ops ta-r p8 hidden">
+                          <span class="btn-cancel-edit btn-flat-c">取消</span><span class="btn-save-edit btn-flat-b ml8">保存</span>
+                        </div>
+                      </div>
+                      <div id="add-client-invo" class="hidden p8 mr24 fl mt16 bd2-d">
+                        <h3 class="c2 f14 mb8">新增客户开票信息</h3>
+                        <table class="bdcl lh40 f14">
+                          <tr>
+                            <td class="w80">发票抬头：</td>
+                            <td class="w300"><input type="text" value="默认值是该公司的全名" class="h30 w300 pl4"></td>
+                          </tr>
+                          <tr>
+                            <td>纳税人号：</td>
+                            <td><input type="text" class="input-4digits h30 w300 pl4"></td>
+                          </tr>
+                          <tr>
+                            <td>开户行：</td>
+                            <td><input type="text" class="h30 w300 pl4"></td>
+                          </tr>
+                          <tr>
+                            <td>银行账号：</td>
+                            <td><input type="text" class="input-4digits h30 w300 pl4"></td>
+                          </tr>
+                          <tr>
+                            <td>电话：</td>
+                            <td><input type="text" class="input-4digits h30 w300 pl4"></td>
+                          </tr>
+                          <tr>
+                            <td class="va-t">地址：</td>
+                            <td><textarea name="" id="" class="h30 mt4 p4 w300"></textarea></td>
+                          </tr>
+                        </table>
+                        <div class="ta-r"><span id="btn-cancel-add-client-invo" onclick="" class="button-flat-c">取消</span><span id="btn-save-add-client-invo" class="button-flat-b ml24">保存</span></div>
+                      </div>
+                      <div id="btn-add-client-invo" class="fl cb mt16 button-flat-c"><span class="ic f24"></span>新增开票信息</div>
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+                  <div class="mt24">
+                    <div class="c1 bold">选择寄送信息</div>
+                    <div>
+                      <div class="client-mail">
+                        <table class="bdcl lh30 f12">
+                          <tr>
+                            <td class="w60">收件人：</td>
+                            <td><input disabled type="text" class="input-display lh24 pl4 w178" value="收件人"></td>
+                          </tr>
+                          <tr>
+                            <td>联系方式：</td>
+                            <td><input disabled type="text" class="input-display lh24 pl4 w178" value="电话"></td>
+                          </tr>
+                          <tr>
+                            <td class="va-t">寄送地址：</td>
+                            <td><input disabled type="text" class="input-display lh24 pl4 w178" value="招商银行深圳高新园支行某某楼东5034"></td>
+                          </tr>
+                        </table>
+                        <div class="card-ops">
+                          <span class="btn-delete-card ic f24 ho-cr c-c" title="删除"></span><span class="btn-edit-card ic f24 ml8 ho-cb c-c" title="编辑"></span>
+                        </div>
+                        <div class="edit-ops ta-r p8 hidden">
+                          <span class="btn-cancel-edit btn-flat-c">取消</span><span class="btn-save-edit btn-flat-b ml8">保存</span>
+                        </div>
+                      </div>
+
+                      <div id="add-client-mail" class="hidden p8 mr24 fl mt16 bd2-d">
+                        <h3 class="c2 f14 mb8">新增寄送信息</h3>
+                        <table class="bdcl lh40">
+                          <tr>
+                            <td class="w88">收件人：</td>
+                            <td class="w200"><input type="text" class="h30 w120"></td>
+                          </tr>
+                          <tr>
+                            <td>联系方式：</td>
+                            <td><input type="text" class="h30 w300"></td>
+                          </tr>
+                          <tr>
+                            <td class="va-t">寄送地址：</td>
+                            <td><textarea name="" id="" class="h30 p4 mt4 w300"></textarea></td>
+                          </tr>
+                        </table>
+                        <div class="ta-r"><span id="btn-cancel-add-client-mail" class="button-flat-c">取消</span><span id="btn-save-add-client-mail" class="button-flat-b ml24">保存</span></div>
+                      </div>
+                      <div id="btn-add-client-mail" class="fl button-flat-c mt16"><span class="ic f24"></span>新增寄送信息</div>
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+                  <div class="mt24">
+                    <div class="fl">
+                      <div class="c1 bold p8-0">确认金额及付款通知书</div>
+                      <div>
+                        <table class="bdcl lh40 f12">
+                          <tr>
+                            <td class="w72">收款类型：</td>
+                            <td class="lh-n c1"><select name="" id="select-fee-type" class="w280">
+                              <option>首款</option>
+                              <option>尾款</option>
+                              <option>全款</option>
+                            </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Offer年薪：</td>
+                            <td><input type="text" value="200000" class="input-money h30 w280" data-link="#letter-salary"></td>
+                          </tr>
+                          <tr>
+                            <td class="va-t">年薪说明：</td>
+                            <td><textarea name="" data-link="#letter-salary-describe" id="" class="h30 w280 p4 va-m">12.5k月薪 x 16薪</textarea></td>
+                          </tr>
+                          <tr>
+                            <td>总服务费：</td>
+                            <td><input type="text" data-link="#letter-servicefee" value="40000" class="input-money h30 w280"></td>
+                          </tr>
+                          <tr>
+                            <td>服务费说明：</td>
+                            <td><input type="text" data-link="#letter-servicefee-describe" class="h30 w280 pl4" placeholder="例：年薪￥200,000 x 收费比 20%" value="￥200,000 x 20%"></td>
+                          </tr>
+                          <tr class="allfee-hide">
+                            <td>首款：</td>
+                            <td><input type="text" data-link="#letter-firstfee" value="24000" class="input-money h30 w280"></td>
+                          </tr>
+                          <tr class="allfee-hide">
+                            <td>首款说明：</td>
+                            <td><input type="text" data-link="#letter-firstfee-describe" class="h30 w280 pl4" value="￥40,000 x 60%"></td>
+                          </tr>
+                          <tr class="allfee-hide">
+                            <td>尾款：</td>
+                            <td><input type="text" data-link="#letter-restfee" value="40000" class="input-money h30 w280"></td>
+                          </tr>
+                          <tr class="allfee-hide">
+                            <td>尾款说明：</td>
+                            <td><input type="text" data-link="#letter-restfee-describe" class="h30 w280 pl4" value="￥40,000 - ￥24,000"></td>
+                          </tr>
+                          <tr>
+                            <td>开票金额：</td>
+                            <td class="c1"><input type="text" value="24000" data-link=".letter-amount" class="input-money h30 w120"><input type="checkbox" id="chk-refund"><label for="chk-refund" class="lh-n ml16 c2">有退款冲抵</label></td>
+                          </tr>
+                          <tr>
+                            <td class="va-t">备注：</td>
+                            <td><textarea name="" id="" class="h30 mt4 p4 w280"></textarea></td>
+                          </tr>
+                        </table>
+                        <div id="refund-display" class=" p8 lh30 mt8 bd1-d-r red">
+                          <h3 class="f14 red">退款冲抵</h3>
+                          <p><span class="pr8">冲抵金额：</span>￥30,000</p>
+                          <p><span class="pr8">退款项目：</span>王某某<span class="p0-4 c3">-</span>高级Java工程师</p>
+                          <p><span class="pr8">相关人员：</span><span class="mr4">王某某<span class="c3 f12">(顾问)</span></span><span class="mr4">王某某<span class="c3 f12">(对接人)</span></span><span class="mr4">王某某<span class="c3 f12">(BD)</span></span>
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="fl ml16">
+                      <div class="card1 mt36 f12 lh24 p8" style="width:460px">
+                        <h3 class=" f14 ta-c">付款通知书<span class="fw-n ml12 f12">(<span class="letter-first">首款</span><span class="letter-rest hidden">尾款</span><span class="letter-all hidden">全款</span>)</span>
+                        </h3>
+                        <p><span class="cb">武汉斗鱼网络科技有限公司</span>：</p>
+                        <p class="ti-24">您好！</p>
+                        <p class="ti-24">我公司给贵公司推荐的候选人<span class="cb p0-4">王精英</span>于<span class="cb p0-4">2016-06-01</span>正式入职，<span class="letter-rest hidden">现已过保证期；</span>根据合同规定贵公司应在该人选<span class="letter-first">入职后</span><span class="letter-rest select2-hidden-accessible">过保证期后</span><span class="cb p0-4">10</span>个工作日内支付<span class="letter-first cb p0-4">首笔</span><span class="letter-rest cb p0-4 hidden">剩余</span><span class="letter-all cb p0-4 hidden">全部</span>服务费<span class="letter-amount cb p0-4">¥17160</span>元，
+                          <!--生成的付款通知书中要有：（人民币大写：XXXX）-->付款明细如下：</p>
+                        <table class="bdcl lh40 w100p">
+                          <tr class="bdt1">
+                            <td class="w120 pl16">描述</td>
+                            <td class="w300">金额</td>
+                          </tr>
+                          <tr class="bdt1">
+                            <td class="pl16">姓名：<span class="cb">王精英</span></td>
+                            <td>
+                              <div class="lh30">
+                                <p>年薪：<span id="letter-salary" class="cb">￥200,000</span>元（<span id="letter-salary-describe">12.5k月薪 x 16薪</span>）</p>
+                                <p>服务费：<span id="letter-servicefee" class="cb">￥40,000</span>元（<span id="letter-servicefee-describe">￥200,000 x 20%</span>）</p>
+                                <p class="allfee-hide">首款：<span id="letter-firstfee" class="cb">￥40,000</span>元（<span id="letter-firstfee-describe">￥40,000 x 60%</span>）</p>
+                                <p class="allfee-hide">尾款：<span id="letter-restfee" class="cb">￥40,000</span>元（<span id="letter-restfee-describe">￥40,000 - ￥24,000</span>）</p>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="bdt1">
+                            <td class="pl16">前期已付金额</td>
+                            <td><span id="letter-paid-before" class="cb">￥0</span></td>
+                          </tr>
+                          <tr class="bdt1 bdb1">
+                            <td class="pl16">本次需支付金额</td>
+                            <td><span class="letter-amount cb">￥24,000</span></td>
+                          </tr>
+                        </table>
+                        <p class="p16">转入账户：
+                          <!--账户根据客户合同条款中的“签约主体”自动选择--><span class="cb">深圳市仕通智达企业管理咨询有限公司</span></p>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+
+
+                  <div class="ta-r clear pt8 mt16 bdt1"><span class="pop-cancel button-flat-c">取消</span><span class="button-flat-c ml8">存草稿</span><span id="p-apply" class="button-flat-b ml8">申请开票</span>
+                  </div>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+
+            <!--x作废展示-->
+            <li data-id="invo-x" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 lh30">
+                <p><span class="invo-status bg-toa cw p0-4 bdrs2">作废</span><span class="f12 c3 ml16">操作时间：2017-05-02 16:00</span><span class="f12 c3 ml16">操作者：某某</span></p>
+                <div class="w868 p8 c2">
+                  <table class="bdcl lh30 f14">
+
+                    <tr>
+                      <td class="w80 va-t">作废备注：</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+
+            <!--xedit作废操作-->
+            <li data-id="invo-xedit" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 w868">
+                <div class="c1 lh30">作废发票</div>
+                <div class="p8 bg-f2">
+                  <div>
+                    <table class="bdcl lh36 c2">
+                      <tr>
+                        <td class="w80 va-t">作废备注：</td>
+                        <td><textarea name="" id="" class="w240 mt4 h64"></textarea></td>
+                      </tr>
+                    </table>
+                    <div class="ta-r"><span class="button-flat-c">取消</span><span class="button-flat-r ml8">作废</span></div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="clear"></div>
+            </li>
+
+            <!--7展示：到款-->
+            <li data-id="invo-7" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 lh30">
+                <p><span class="p0-4 bgok cw bdrs2">到款-全部</span>或<span class="c-gr p0-4 bdrs2 bd1-gr">到款-部分</span><span class="ml16 c2">目前已回款：￥30,000</span></p>
+                <div class="p8 c2">
+                  <h3 class="f14">到款2<span class="f12 c3 ml16 fw-n">操作时间：2017-05-02 17:00</span><span class="f12 c3 ml16 fw-n">操作者：某某</span></h3>
+                  <table class="bdcl lh30 f14">
+                    <tr>
+                      <td class="w80">发票金额：</td>
+                      <td>￥30,000</td>
+                    </tr>
+
+
+                    <tr>
+                      <td>本次到款：</td>
+                      <td>￥10,000</td>
+                    </tr>
+                    <tr>
+                      <td>到款日期：</td>
+                      <td>2017-06-12</td>
+                    </tr>
+                    <tr>
+                      <td class="w80">到款备注：</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="p8 c2">
+                  <h3 class="f14">到款1<span class="f12 c3 ml16 fw-n">操作时间：2017-05-02 17:00</span><span class="f12 c3 ml16 fw-n">操作者：某某</span></h3>
+                  <table class="bdcl lh30 f14">
+                    <tr>
+                      <td class="w80">发票金额：</td>
+                      <td>￥30,000</td>
+                    </tr>
+
+                    <tr>
+                      <td>本次到款：</td>
+                      <td>￥20,000</td>
+                    </tr>
+                    <tr>
+                      <td>到款日期：</td>
+                      <td>2017-06-12</td>
+                    </tr>
+                    <tr>
+                      <td class="w80">到款备注：</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+
+            <!--7edit到款操作-->
+            <li data-id="invo-7edit" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 w868">
+                <div class="c1 lh30">到款</div>
+                <div class="p8 bg-f2">
+                  <table class="bdcl lh36 f14 c2">
+                    <tr>
+                      <td class="w80">发票金额：</td>
+                      <td>￥30,000</td>
+                    </tr>
+                    <tr>
+                      <td>已到金额：</td>
+                      <td>￥0</td>
+                    </tr>
+                    <tr>
+                      <td>本次到款：</td>
+                      <td><input type="text" class="input-money h30 w160"></td>
+                    </tr>
+                    <tr>
+                      <td>到款日期：</td>
+                      <td><input type="text" class="h30 pl4 w160"></td>
+                    </tr>
+                    <tr>
+                      <td class="va-t">到款备注：</td>
+                      <td><textarea name="" id="" class="w240 h64 mt4 p4"></textarea></td>
+                    </tr>
+                  </table>
+                  <div class="ta-r"><span class="button-flat-c">取消</span><span class="button-flat-b ml8">到款</span></div>
+                </div>
+
+              </div>
+              <div class="clear"></div>
+            </li>
+
+
+            <!--6展示：寄出发票-->
+            <li data-id="invo-6" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 lh30">
+                <p>寄出发票<span class="f12 c3 ml16">操作时间：2017-05-02 16:00</span><span class="f12 c3 ml16">操作者：某某</span></p>
+                <div class="w868 p8 c2">
+                  <table class="bdcl lh30 f14">
+                    <tr>
+                      <td class="w80">寄出日期：</td>
+                      <td>2017-05-03</td>
+                    </tr>
+                    <tr>
+                      <td class="w80">快递名称：</td>
+                      <td>顺丰</td>
+                    </tr>
+                    <tr>
+                      <td class="w80">快递单号：</td>
+                      <td>13543455646</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+
+            <!--6edit：寄出发票-->
+            <li data-id="invo-6edit" id="mailInvo" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 w868">
+                <div class="c1 lh30">寄出发票</div>
+                <div class="p8 bg-f2">
+                  <table class="bdcl lh36 f14 c2">
+                    <tr>
+                      <td class="w80">寄出日期：</td>
+                      <td><input type="text" class="h30 pl4" value="2017-05-01"></td>
+                    </tr>
+                    <tr>
+                      <td>快递名称：</td>
+                      <td><input type="text" class="h30 pl4"></td>
+                    </tr>
+                    <tr>
+                      <td>快递单号：</td>
+                      <td><input type="text" class="h30 pl4"></td>
+                    </tr>
+                  </table>
+                  <div class="ta-r"><span class="button-flat-c">取消</span><span class="button-flat-b ml8">寄出</span></div>
+                </div>
+
+              </div>
+              <div class="clear"></div>
+            </li>
+
+            <!--5展示：开具发票-->
+            <li data-id="invo-5" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 lh30">
+                <p>开具发票<span class="f12 c3 ml16">操作时间：2017-05-02 16:00</span><span class="f12 c3 ml16">操作者：某某</span></p>
+                <div class="w868 p8 c2">
+                  <table class="bdcl lh30 f14">
+                    <tr>
+                      <td class="w80">开票日期：</td>
+                      <td>2017-05-03</td>
+                    </tr>
+                    <tr>
+                      <td class="w80">发票编号：</td>
+                      <td>12346548964</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+
+            <!--5edit：开具发票-->
+            <li data-id="invo-5edit" id="mailInvo" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 w868">
+                <div class="c1 lh30">开具发票</div>
+                <div class="p8 bg-f2">
+                  <table class="bdcl lh36 f14 c2">
+                    <tr>
+                      <td class="w80">开票日期：</td>
+                      <td><input type="text" class="h30 pl4" value="2017-05-01"></td>
+                    </tr>
+                    <tr>
+                      <td>发票编号：</td>
+                      <td><input type="text" class="h30 pl4"></td>
+                    </tr>
+                  </table>
+                  <div class="ta-r"><span class="button-flat-c">取消</span><span class="button-flat-b ml8">开具发票</span></div>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+
+            <!--4展示：通知财务开票-->
+            <li data-id="invo-4" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 lh30">
+                <p>通知财务开票<span class="f12 c3 ml16">操作时间：2017-05-02 16:00</span><span class="f12 c3 ml16">操作者：某某</span></p>
+                <div class="w868 p8 c2">
+                  <p>已和客户确认付款通知书内容，可以进行开票</p>
+                  <p>通知备注：<span>备注内容</span></p>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+
+            <!--4edit：通知财务开票-->
+            <li data-id="invo-4edit" id="mailInvo" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 w868">
+                <div class="c1 lh30">通知财务开票</div>
+                <div class="p8 bg-f2">
+                  <table class="bdcl lh36 f14 c2">
+                    <tr>
+                      <td colspan="2">已和客户确认付款通知书内容，可以进行开票操作</td>
+                    </tr>
+                    <tr>
+                      <td class="w80 va-t">备注：</td>
+                      <td><textarea name="" id="" class="h30 p4 mt4 w240"></textarea></td>
+                    </tr>
+                  </table>
+                  <div class="ta-r"><span class="button-flat-c">取消</span><span class="button-flat-b ml8">通知开票</span></div>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+
+
+            <!--31展示：通过申请-->
+            <li data-id="invo-31" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 lh30">
+                <p>审核通过<span class="f12 c3 ml16">操作时间：2017-05-02 16:00</span><span class="f12 c3 ml16">操作者：某某</span></p>
+                <div class="w868 p8 c2">
+                  <div><span class="cb"><span class="ic f24"></span>下载付款通知书</span>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+
+            <!--30展示：驳回申请-->
+            <li data-id="invo-30" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 lh30">
+                <p><span class="p0-4 bg-r cw bdrs2">驳回申请</span><span class="f12 c3 ml16">操作时间：2017-05-02 16:00</span><span class="f12 c3 ml16">操作者：某某</span></p>
+                <div class="w868 p8 c2">
+                  <table class="bdcl lh30 f14">
+                    <tr>
+                      <td class="w80 va-t">驳回原因：</td>
+                      <td>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed neque ab ut rem unde, est, maxime asperiores. Sapiente pariatur, placeat qui, alias, possimus veritatis illo sit est assumenda corporis magni.</p>
+                      </td>
+                    </tr>
+                  </table>
+                  <div class="clear"></div>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+
+            <!--3edit：审核申请操作-->
+            <li data-id="invo-3edit" id="auditInvo" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 w868">
+                <div class="lh30">审核申请</div>
+                <div class="p8 bg-f2">
+                  <p class="c2 p8-0">请根据下方的<span class="c1 p0-4">项目信息</span>和<span class="c1 p0-4">申请开票</span>进行审核</p>
+                  <div id="auditInov-fail" class="hidden">
+                    <table class="bdcl lh36 f14 c2">
+                      <tr>
+                        <td class="w80 va-t">驳回原因：</td>
+                        <td>
+                          <div>
+                            <ul class="lh-n">
+                              <li class="li-no mt8"><input type="radio" name="disapproveReasons" id="disReason1"><label for="disReason1" onclick="$('#dis-otherReason').hide()">开票信息不全</label></li>
+                              <li class="li-no mt8"><input type="radio" name="disapproveReasons" id="disReason2"><label for="disReason2" onclick="$('#dis-otherReason').hide()">缺少纳税人识别号</label></li>
+                              <li class="li-no mt8"><input type="radio" name="disapproveReasons" id="disReason3"><label for="disReason3" onclick="$('#dis-otherReason').hide()">银行账号错误</label></li>
+                              <li class="li-no mt8"><input type="radio" name="disapproveReasons" id="disReason4"><label for="disReason4" class="d-ib" onclick="$('#dis-otherReason').show()">其它<div><textarea name="" id="dis-otherReason" class="w320 mt8 h64 p4 hidden"></textarea></div></label></li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                    <div class="ta-r"><span onclick="$('#auditInov-fail').velocity('slideUp',150);window.setTimeout(function(){$('#audit-ops-bar').show()},151)" class="button-flat-c">取消</span><span class="button-flat-r ml8">确认驳回</span></div>
+                  </div>
+                  <div id="audit-ops-bar" class="ta-r"><span onclick="$('#auditInov-fail').velocity('slideDown',200);$(this).parent().hide();" class="button-flat-r ml16"><span class="ic f18 mr4"></span>驳回申请</span><span onclick="toast('已通过该开票申请');$('#popup-invoDetail').velocity('fadeOut',150)" class="button-flat-b ml16"><span class="ic f18 mr4"></span>通过申请</span>
+                  </div>
+
+
+
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+
+            <!---2展示：申请开票-包含已提交待审核 和 草稿状态-->
+            <li data-id="invo-2" class="li-no pb24">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 lh30">
+                <p>申请开票<span class="red">（草稿）</span><span class="f12 c3 ml16">操作时间：2017-05-01 16:00</span><span class="f12 c3 ml16">操作者：某某</span></p>
+                <div class="w868 p8 bd2-d c2">
+                  <div>
+                    <div class="fl">
+                      <div class="c2 bold">客户开票信息</div>
+                      <div>
+                        <table class="bdcl lh30 f14">
+                          <tr>
+                            <td class="w80">开票内容：</td>
+                            <td class="w360">招聘服务费</td>
+                          </tr>
+                          <tr>
+                            <td>发票类型：</td>
+                            <td>增值税专用票</td>
+                          </tr>
+                          <tr>
+                            <td>发票抬头：</td>
+                            <td>某某公司</td>
+                          </tr>
+                          <tr>
+                            <td>纳税人号：</td>
+                            <td><span>1354 1354 3468 4867 GH</span><span class="txt-button-b cb ml16" onclick="copyTaxNo(this)">复制</span></td>
+                          </tr>
+                          <tr>
+                            <td>开户行：</td>
+                            <td>招商银行深圳高新园支行</td>
+                          </tr>
+                          <tr>
+                            <td>银行账号：</td>
+                            <td>1231242235423452</td>
+                          </tr>
+                          <tr>
+                            <td>电话：</td>
+                            <td>0755-123213412</td>
+                          </tr>
+                          <tr>
+                            <td class="va-t">地址：</td>
+                            <td>
+                              <p class="lh24 mt4">深圳市高新园Lorem ipsum dolor sit amet</p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="fl">
+                      <div class="c2 bold">寄送信息</div>
+                      <div>
+                        <table class="bdcl lh30 f14">
+                          <tr>
+                            <td class="w80">收件人：</td>
+                            <td class="w300">王某某</td>
+                          </tr>
+                          <tr>
+                            <td>联系方式：</td>
+                            <td>18688886666</td>
+                          </tr>
+                          <tr>
+                            <td>寄送地址：</td>
+                            <td>深圳市南山区高新科技园B区A12栋503室</td>
+                          </tr>
+                        </table>
+
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="mt24">
+                    <div class="fl">
+                      <div class="c2 bold">金额及付款通知书</div>
+                      <div>
+                        <table class="bdcl lh30 f14">
+                          <tr>
+                            <td class="w90">收款类型：</td>
+                            <td>首款
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>年薪</td>
+                            <td>￥200,000</td>
+                          </tr>
+                          <tr>
+                            <td>年薪说明</td>
+                            <td>offer字段的年薪说明</td>
+                          </tr>
+                          <tr>
+                            <td>应收服务费：</td>
+                            <td>￥40,000</td>
+                          </tr>
+                          <tr>
+                            <td>服务费说明：</td>
+                            <td>￥200,000 x 20%</td>
+                          </tr>
+                          <tr>
+                            <td>首款：</td>
+                            <td>￥24,000</td>
+                          </tr>
+                          <tr>
+                            <td>首款说明：</td>
+                            <td>￥40,000 x 60%</td>
+                          </tr>
+                          <tr>
+                            <td>尾款：</td>
+                            <td>￥16,000</td>
+                          </tr>
+                          <tr>
+                            <td>尾款说明：</td>
+                            <td>￥40,000 - ￥24,000</td>
+                          </tr>
+                          <tr>
+                            <td>开票金额：</td>
+                            <td>￥24,000</td>
+                          </tr>
+                          <tr>
+                            <td class="va-t">备注：</td>
+                            <td class="w280 pr16">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt facere cupiditate </p>
+                            </td>
+                          </tr>
+
+                        </table>
+                        <div id="refund-display" class=" p8 lh30 mt8 bd1-d-r red">
+                          <h3 class="f14 red">退款冲抵</h3>
+                          <p><span class="pr8">冲抵金额：</span>￥30,000</p>
+                          <p><span class="pr8">退款项目：</span>王某某<span class="p0-4 c3">-</span>高级Java工程师</p>
+                          <p><span class="pr8">相关人员：</span><span class="mr4">王某某<span class="c3 f12">(顾问)</span></span><span class="mr4">王某某<span class="c3 f12">(对接人)</span></span><span class="mr4">王某某<span class="c3 f12">(BD)</span></span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fl">
+                      <div class="card1-nbg bg-f2 mt36 f12 lh24 p8" style="width:460px">
+                        <h3 class=" f14 ta-c">付款通知书<span class="fw-n ml12 f12">(<span class="letter-first">首款</span><span class="letter-rest hidden">尾款</span><span class="letter-all hidden">全款</span>)</span>
+                        </h3>
+                        <p><span class="cb">武汉斗鱼网络科技有限公司</span>：</p>
+                        <p class="ti-24">您好！</p>
+                        <p class="ti-24">我公司给贵公司推荐的候选人<span class="cb p0-4">王精英</span>于<span class="cb p0-4">2016-06-01</span>正式入职，根据合同规定贵公司应在该人选入职后<span class="cb p0-4">10</span>个工作日内支付<span class="cb p0-4">首笔</span>服务费¥<span class="cb p0-4">17160</span>元，付款明细如下：</p>
+                        <table class="bdcl lh40 w100p">
+                          <tr class="bdt1">
+                            <td class="w120 pl16">描述</td>
+                            <td class="w300">金额</td>
+                          </tr>
+                          <tr class="bdt1">
+                            <td class="pl16">姓名：<span class="cb">王精英</span></td>
+                            <td>
+                              <div class="lh30">
+                                <p>年薪：<span class="cb">￥200,000</span>元（<span>12.5k月薪 x 16薪</span>）</p>
+                                <p>服务费：<span class="cb">￥40,000</span>元（<span>￥200,000 x 20%</span>）</p>
+                                <p>首款：<span class="cb">￥24,000</span>元（<span>￥40,000 x 60%</span>）</p>
+                                <p>尾款：<span class="cb">￥16,000</span>元（<span>￥40,000 - ￥24,000</span>）</p>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="bdt1">
+                            <td class="pl16">前期已付金额</td>
+                            <td>￥<span class="cb">0</span></td>
+                          </tr>
+                          <tr class="bdt1 bdb1">
+                            <td class="pl16">本次需支付金额</td>
+                            <td>￥<span class="cb">0</span></td>
+                          </tr>
+                        </table>
+                        <p class="p16">转入账户：
+                          <!--账户根据客户合同条款中的“签约主体”自动选择--><span class="cb">深圳市仕通智达企业管理咨询有限公司</span></p>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+
+            <!--1展示：项目信息-->
+            <li data-id="invo-1" class="li-no pb12">
+              <div class="fl ml16 tl-ldot"></div>
+              <div class="fl ml16 lh30">
+                <p>项目信息<span class="f12 c3 ml16">入职时间：2017-05-01</span> <span class="f12 c3 ml16">过保证期时间：2017-08-01</span></p>
+                <div class="w868 p8 bd2-d c2">
+                  <div class="fl">
+                    <div class="c2 bold">条款参考</div>
+                    <div>
+                      <table class="bdcl lh30 f14">
+                        <tr>
+                          <td class="w80">签约主体：</td>
+                          <td class="w360">仕通智达 or 仕通优途</td>
+                        </tr>
+                        <tr>
+                          <td>客户名称：</td>
+                          <td>某某公司</td>
+                        </tr>
+                        <tr>
+                          <td>客户状态：</td>
+                          <td>签约谈判</td>
+                        </tr>
+                        <tr>
+                          <td>合同原件：</td>
+                          <td>未签订 or <span class="cu-po cb">预览</span></td>
+                        </tr>
+                        <tr>
+                          <td>收费比例：</td>
+                          <td>年薪20% or ￥13000元/单 or <span class="cu-po cb d-ib ho-showNote">查看详情
+                          <div class="note hidden">
+                 <table id="feeRate-lvl3-display" class="bdcl c2 lh36">
+                          <tr>
+                            <td>①</td>
+                            <td class="w104"></td>
+                            <td class="w60 ta-c">年薪</td>
+                            <td class="w120"><span class="pr8">&#60;</span> 30
+
+                            <span>万元</span></td>
+                          <td>收费 20 %
+                          </td>
+                        </tr>
+                        <tr class="bdt1-d">
+                          <td>②</td>
+                          <td class="ta-r">30万元
+                            <span class="pl8">≤ </span></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td class="w120"><span class="pr8">&#60;</span> 50
+                            <span>万元</span></td>
+                          <td>收费 23 %
+                          </td>
+                        </tr>
+                        <tr class="bdt1-d">
+                          <td>③</td>
+                          <td class="ta-r">50万元
+                            <span class="pl8">≤ </span></td>
+                          <td class="w60 ta-c">年薪</td>
+                          <td></td>
+                          <td>收费 25 %
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    </span>
+                    </td>
+                    </tr>
+                    <tr>
+                      <td>最低收费：</td>
+                      <td>￥10,000</td>
+                    </tr>
+                    <tr>
+                      <td>首款比例：</td>
+                      <td>80%</td>
+                    </tr>
+                    <tr>
+                      <td>保证期：</td>
+                      <td>3个月</td>
+                    </tr>
+                    <tr>
+                      <td>退费比例：</td>
+                      <td>20%</td>
+                    </tr>
+                    <tr>
+                      <td>付款期限：</td>
+                      <td>5天</td>
+                    </tr>
+                    <tr>
+                      <td>备注：</td>
+                      <td>某某公司</td>
+                    </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="fl">
+                  <div class="c2 bold">Offer参考</div>
+                  <div>
+                    <table class="bdcl lh30 f14">
+                      <tr>
+                        <td class="w80">候选人：</td>
+                        <td class="w300">王某某</td>
+                      </tr>
+                      <tr>
+                        <td>推荐顾问：</td>
+                        <td>骆小根</td>
+                      </tr>
+                      <tr>
+                        <td>对接人：</td>
+                        <td>张文娟</td>
+                      </tr>
+                      <tr>
+                        <td>客户BD：</td>
+                        <td>刘达文</td>
+                      </tr>
+                      <tr>
+                        <td>推荐职位：</td>
+                        <td>高级Java开发工程师</td>
+                      </tr>
+                      <tr>
+                        <td>客户公司：</td>
+                        <td>人人聚财</td>
+                      </tr>
+                      <tr>
+                        <td>保证期：</td>
+                        <td>3个月</td>
+                      </tr>
+                      <tr>
+                        <td>入职情况：</td>
+                        <td>未过保证期 9天/90天</td>
+                      </tr>
+                      <tr>
+                        <td>Offer年薪：</td>
+                        <td>￥250,000</td>
+                      </tr>
+                      <tr>
+                        <td>薪酬说明：</td>
+                        <td>（空）</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+        </div>
+        <div class="clear"></div>
+        </li>
+        </ul>
+
+        <!--退款冲抵二级弹窗-->
+        <div id="refund" class="hidden">
+          <div class="popup-2nd-tier-wrapper">
+            <div class="card5 po-r" style="width:700px;">
+              <div class="popup-header">请选择退款项目：</div>
+              <div class="popup-content">
+                <div class="p8 ovy-a" style="max-height:288px;">
+                  <table id="refundTable" class="bdcl">
+                    <tr class="select-tr ho-e5 h40 cu-de">
+                      <td class="w90 pl16">王某某</td>
+                      <td class="w178"><span class="ic f20 c3"></span>未过保证期 5天/90天</td>
+                      <td class="w160"><span class="ol w150">高级java工程师</span></td>
+                      <td class="w200"><span class="ol w186">深圳市某某科技有限公司</span></td>
+                    </tr>
+                    <tr class="select-tr ho-e5 h40 cu-de">
+                      <td class="w90 pl16">王某某</td>
+                      <td class="w178"><span class="ic f20 c3"></span>未过保证期 5天/90天</td>
+                      <td class="w160"><span class="ol w150">高级java工程师</span></td>
+                      <td class="w200"><span class="ol w186">深圳市某某科技有限公司</span></td>
+                    </tr>
+                    <tr class="select-tr ho-e5 h40 cu-de">
+                      <td class="w90 pl16">王某某</td>
+                      <td class="w178"><span class="ic f20 c3"></span>未过保证期 5天/90天</td>
+                      <td class="w160"><span class="ol w150">高级java工程师</span></td>
+                      <td class="w200"><span class="ol w186">深圳市某某科技有限公司</span></td>
+                    </tr>
+                  </table>
+                </div>
+                <div id="refundInput" class="hidden p8 bg-f2 lh36">
+                  <div><span class="d-ib c2 w120">可退款总额：</span><span>￥10,000 <span class="f12 c2 ml8">(￥50,000 回款 x 20% 退款比例)</span></span>
+                  </div>
+                  <div><span class="d-ib c2 w120">已冲抵金额：</span>￥0</div>
+                  <div><span class="d-ib c2 w120">请输入冲抵金额: </span><input type="text" class="input-money h30"></div>
+                </div>
+              </div>
+              <div class="popup-footer">
+                <span class="button-flat-c" onclick="$('#refund').velocity('fadeOut',150);$('#chk-refund').prop('checked',false)">取消</span>
+                <span onclick="$('#refund').velocity('fadeOut',150);$('#refund-display').velocity('slideDown',150);" class="button-flat-b ml8">确认冲抵</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!--弹窗：申请新开票，第一步弹窗选择项目-->
+  <div id="popup-chooseProject" class="hidden">
+    <div class="popup-wrapper">
+      <div class="card5 po-r f14">
+        <div class="popup-header">选择申请开票项目</div>
+        <div class="popup-content" style="max-height:288px;overflow-y:auto;">
+          <table class="bdcl">
+            <tr class="select-tr ho-e5 h40 cu-de">
+              <td class="w90 pl16">王某某</td>
+              <td class="w178"><span class="ic f20 c3"></span>未过保证期 5天/90天</td>
+              <td class="w160"><span class="ol w150">高级java工程师</span></td>
+              <td class="w200"><span class="ol w186">深圳市某某科技有限公司</span></td>
+            </tr>
+            <tr class="select-tr ho-e5 h40 cu-de">
+              <td class="w90 pl16">王某某</td>
+              <td class="w178"><span class="ic f20 c3"></span>未过保证期 5天/90天</td>
+              <td class="w160"><span class="ol w150">高级java工程师</span></td>
+              <td class="w200"><span class="ol w186">深圳市某某科技有限公司</span></td>
+            </tr>
+            <tr class="select-tr ho-e5 h40 cu-de">
+              <td class="w90 pl16">王某某</td>
+              <td class="w178"><span class="ic f20 c3"></span>未过保证期 5天/90天</td>
+              <td class="w160"><span class="ol w150">高级java工程师</span></td>
+              <td class="w200"><span class="ol w186">深圳市某某科技有限公司</span></td>
+            </tr>
+          </table>
+        </div>
+        <div class="popup-footer"><span class="pop-cancel button-flat-c ml8">取消</span><span onclick="" id="btn-next-to-invoice" class="button-flat-b ml8">下一步</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--弹窗：从列表中移除-->
+  <div id="popup-m-remove" data-IDtoShow='data-id="m-remove"' class="hidden">
+    <div class="popup-wrapper">
+      <div class="card5 po-r">
+        <div class="popup-header"><span class="ic f24 pr4 fw-n"></span>从列表中移除</div>
+        <div class="popup-content">
+          <div class="lh30">
+            <p>确认从待申请开票列表中移除以下项目？</p>
+            <p><span class="c2 d-ib w72">候选人:</span>王某某</p>
+            <p><span class="c2  d-ib w72">推荐职位:</span>某某职位</p>
+            <p><span class="c2  d-ib w72">客户公司:</span>深圳某某公司</p>
+          </div>
+          <div class="bg-f2 p8 mt16 c2">提示：移除后，仍可以通<span class="mr16 ml16">"申请开票"</span>按钮找到此项目，并提交开票申请</div>
+        </div>
+        <div class="popup-footer">
+          <span class="button-flat-c pop-cancel">取消</span><span class="button-flat-b ml16" onclick="toast('已从列表中移除');$('#popup-m-remove').velocity('fadeOut',150)">确认</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--职位列表操作menu-->
+  <div id="dropmenu" class="f14 po-a card5 lh30 ta-l cu-po trans op0 sc0 hidden">
+    <div id="m-check" data-IDtoShow="#popup-invoDetail" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>查看发票详情</div>
+    <div id="m-apply" data-IDtoShow='data-id="invo-2edit"' class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>申请开票</div>
+    <div id="m-remove" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>从列表中移除</div>
+    <div id="m-audit" data-IDtoShow='data-id="invo-3edit"' class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>审核申请</div>
+
+    <div id="m-notify" data-IDtoShow='data-id="invo-4edit"' class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>通知财务开票</div>
+    <div id="m-download" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>下载付款通知书</div>
+    <div id="m-reedit" data-IDtoShow='data-id="invo-2edit"' class="p0-10 ho-blue bdt1-d"><span class="ic f20 c3 pr4"></span>重新修改申请</div>
+    <div id="m-open" data-IDtoShow='data-id="invo-5edit"' class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>开具发票</div>
+
+    <div id="m-send" data-IDtoShow='data-id="invo-6edit"' class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>寄出发票</div>
+    <div id="m-receive" data-IDtoShow='data-id="invo-7edit"' class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>到款</div>
+    <div id="m-invalid" data-IDtoShow='data-id="invo-xedit"' class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>作废</div>
+    <div id="m-edit" data-IDtoShow='data-id="invo-2edit"' class="p0-10 ho-blue bdt1-d"><span class="ic f20 c3 pr4"></span>编辑</div>
+  </div>
+</body>
+<script>
+  /*选择首款类型时，控制相应展示的内容*/
+  $('#select-fee-type').on('select2:select', function() {
+    var feeType = $(this).val();
+    switch (feeType) {
+      case '首款':
+        $('.letter-rest,.letter-all').hide();
+        $('.letter-first,.allfee-hide').show();
+        break;
+      case '尾款':
+        $('.letter-first,.letter-all').hide();
+        $('.letter-rest,.allfee-hide').show();
+        break;
+      case '全款':
+        $('.allfee-hide,.letter-first,.letter-rest').hide();
+        $('.letter-all').show();
+        break;
+    }
+  })
+
+  /*付款通知书实时编辑更新----begin-----*/
+  $('[data-link]').on('focus', function() { //编辑框聚焦时高亮右侧相应区域
+    var ID = $(this).attr('data-link');
+    $(ID).each(function() {
+      $(this).velocity({
+        backgroundColor: '#90d7ff',
+        backgroundColorAlpha: 1,
+        finish: function() {
+          $(ID).velocity({
+            backgroundColorAlpha: 0
+          }, 1000)
+        }
+      });
+    })
+  });
+
+  $('[data-link]').on('keyup', function() { //每次按键输入自动更新右侧付款通知书内容
+    var ID = $(this).attr('data-link');
+    $(ID).html($(this).val());
+  });
+  /*付款通知书实时编辑更新----end-----*/
+
+
+  /*初始化文本域自动增长*/
+  $(document).ready(function() {
+    $('textarea').autogrow();
+  });
+
+  /*初始化选择开票内容*/
+  $('#select-invo-content,#select-fee-type').select2({
+    minimumResultsForSearch: Infinity
+  });
+
+  /*格式化输入人民币￥的input框，自动添加￥符号，三位一分隔*/
+  $('.input-money').each(function() {
+    new Cleave($(this), {
+      numeral: true,
+      numeralThousandsGroupStyle: 'thousand',
+      prefix: '￥'
+    });
+  });
+
+  /*格式化输入长数字的input框，四位一分隔*/
+  $('.input-4digits').each(function() {
+    new Cleave($(this), {
+      blocks: [4, 4, 4, 4, 4, 4],
+      uppercase: true
+    });
+  });
+
+  /*单击退款冲抵*/
+  $(document).on('click', '#chk-refund', function() {
+    var checked = $(this).is(':checked');
+    if (checked) { //未选中情况下弹出退款选择#refund
+      $('#refund').velocity('fadeIn', 150);
+    } else { //若已选中，则收起展示退款信息
+      $('#refund-display').velocity('slideUp', 150);
+    }
+  });
+
+  /*退款冲抵选择同公司下的可退款项目*/
+  $('.select-tr').on('click', function() { //新增开票和退款冲抵的选择项目
+    $(this).addClass('selected-bg').siblings().removeClass('selected-bg'); //当前行添加选中背景，其它行移除背景
+
+
+    if ($(this).parents('#refund').length) { //如果是退款冲抵选择项目
+      if ($('#refundInput').is(':visible')) { //冲抵金额input已存在时获取焦点
+        $('#refundInput input').focus();
+      } else { //初次显示“冲抵金额”input，然后获取焦点
+        $('#refundInput').velocity('slideDown', 150);
+        window.setTimeout(function() {
+          $('#refundInput input').focus();
+        }, 151);
+      };
+    }
+  });
+
+  /*选择客户开票信息*/
+  $(document).on('click', '.client-invo', function() {
+    $(this).siblings().removeClass('card-selected');
+    $(this).addClass('card-selected');
+  });
+
+  /*删除选中的客户开票信息*/
+  $('.client-invo .btn-delete-card').on('click', function() {
+    event.stopPropagation();
+    $(this).parents('.client-invo').velocity('slideUp', 200);
+  });
+
+  /*编辑客户开票信息*/
+  $('.btn-edit-card').on('click', function() {
+    event.stopPropagation();
+    $(this).parent('.card-ops').hide();
+    $(this).parent('.card-ops').siblings('.edit-ops').show();
+    $(this).parents('[class^="client-"]').addClass('edit').find('input').removeClass('input-display cu-po').attr('disabled', false);
+    $(this).parents('[class^="client-"]').addClass('edit').find('input').each(function(){//存原始值到oriValue属性
+      $(this).attr('oriValue',$(this).val());
+    });
+  });
+
+  /*取消或保存编辑客户开票信息*/
+  $('.btn-cancel-edit,.btn-save-edit').on('click', function() {
+    $(this).parents('[class^="client-"]').removeClass('edit').find('input').addClass('input-display cu-po').attr('disabled', true);
+    $(this).parent().hide().siblings().show();
+    if ($(this).hasClass('btn-save-edit')) {
+      toast('保存成功');
+      $(this).parents('[class^="client-"]').find('input').removeAttr('oriValue');//移除oriValue属性
+    } else {
+      $(this).parents('[class^="client-"]').find('input').each(function(){//从属性oriValue恢复原始值
+        $(this).val($(this).attr('oriValue'));
+      });
+    }
+  });
+
+  /*新增客户开票信息*/
+  $('#btn-add-client-invo').on('click', function() {
+    $('#add-client-invo').velocity('slideDown', 200);
+    $(this).hide();
+  });
+
+  /*取消新增客户开票信息*/
+  $('#btn-cancel-add-client-invo').on('click', function() {
+    $('#add-client-invo').velocity('slideUp', 150);
+    window.setTimeout(function() {
+      $('#btn-add-client-invo').show();
+    }, 151);
+  });
+
+  /*保存新增的客户开票信息*/
+  $('#btn-save-add-client-invo').on('click', function() {
+    $('#add-client-invo').hide();
+    $('#btn-add-client-invo').show();
+    $('.client-invo.card-selected').removeClass('card-selected');
+    var parentID = $('.client-invo').parent();
+    $(parentID).prepend('<div class="client-invo card-selected"> <table class="bdcl lh30 f12"> <tr> <td class="w60">发票抬头：</td> <td>某某公司</td> </tr> <tr> <td>纳税人号：</td> <td>1231 4254 1355 234</td> </tr> <tr> <td>开户行：</td> <td>招商银行深圳高新园支行</td> </tr> <tr> <td>银行账号：</td> <td>1231242235423452</td> </tr> <tr> <td>电话：</td> <td>0755-123213412</td> </tr> <tr> <td class="va-t">地址：</td> <td> <p class="lh24 mt4">深圳市高新园Lorem ipsum dolor sit amet</p> </td> </tr> </table> <div class="card-ops"> <span class="btn-delete-card ic f24 ho-cr c-c" title="删除"></span><span class="btn-edit-card ic f24 ml8 ho-cb c-c" title="编辑"></span> </div> </div>');
+    $('.client-invo:first-child').addClass('trans1');
+    window.setTimeout(function() {
+      $('.client-invo:first-child').addClass('bg50');
+    }, 1);
+    window.setTimeout(function() {
+      $('.client-invo:first-child').removeClass('bg50');
+    }, 1001);
+    window.setTimeout(function() {
+      $('.client-invo:first-child').removeClass('trans1');
+    }, 2001);
+  });
+
+  /*选择寄送信息*/
+  $(document).on('click', '.client-mail', function() {
+    $(this).siblings().removeClass('card-selected');
+    $(this).addClass('card-selected');
+  });
+
+  /*删除选中的寄送信息*/
+  $('.client-mail .btn-delete-card').on('click', function() {
+    event.stopPropagation();
+    $(this).parents('.client-mail').velocity('slideUp', 200);
+  });
+
+  /*新增寄送信息*/
+  $('#btn-add-client-mail').on('click', function() {
+    $('#add-client-mail').velocity('slideDown', 200);
+    $(this).hide();
+  });
+
+  /*取消新增寄送信息*/
+  $('#btn-cancel-add-client-mail').on('click', function() {
+    $('#add-client-mail').velocity('slideUp', 150);
+    window.setTimeout(function() {
+      $('#btn-add-client-mail').show();
+    }, 151);
+  });
+
+  /*保存新增寄送信息*/
+  $('#btn-save-add-client-mail').on('click', function() {
+    $('#add-client-mail').hide();
+    $('#btn-add-client-mail').show();
+    $('.client-mail.card-selected').removeClass('card-selected');
+    var parentID = $('.client-mail').parent();
+    $(parentID).prepend(html);
+    $('.client-mail:first-child').addClass('trans1');
+    window.setTimeout(function() {
+      $('.client-mail:first-child').addClass('bg50');
+    }, 1);
+    window.setTimeout(function() {
+      $('.client-mail:first-child').removeClass('bg50');
+    }, 1001);
+    window.setTimeout(function() {
+      $('.client-mail:first-child').removeClass('trans1');
+    }, 2001);
+  });
+
+
+
+  /*顶部的申请开票大按钮*/
+  $('#btn-applyInvo').click(function() {
+    $('#popup-chooseProject').velocity('fadeIn', 200);
+  });
+
+  /*选择申请开票项目后，单击下一步*/
+  $('#btn-next-to-invoice').click(function() {
+    $('#popup-invoDetail').velocity('fadeIn', 150);
+    $('#popup-chooseProject').hide();
+    $('#invo>li').hide();
+    $('[data-id="invo-1"],[data-id="invo-2edit"]').show();
+
+  });
+
+  /*点击menu弹出操作菜单，根据状态控制可操作按钮*/
+  $('.op-menu').click(function(e) {
+    $('.trID').removeClass('trID');
+    $(this).parents('tr').addClass('trID'); //增加class标记当前操作行，方便取回数据
+    var that = $(this),
+      All = $('#dropmenu>div');
+    var beforeSts = that.parents('tr').find('.invo-status').html() //取得职位的现有状态
+    switch (beforeSts) {
+      case '待申请开票':
+        All.hide();
+        $('#m-apply,#m-remove').show();
+        break;
+      case '草稿':
+        All.hide();
+        $('#m-edit').show();
+        break;
+      case '待审核':
+        All.hide();
+        $('#m-audit,#m-edit').show();
+        break;
+      case '审核通过':
+        All.hide();
+        $('#m-notify,#m-download,#m-reedit').show();
+        break;
+      case '待财务开票':
+        All.hide();
+        $('#m-open,#m-edit').show();
+        break;
+      case '已驳回':
+        All.hide();
+        $('#m-edit').show();
+        break;
+      case '已开票待寄出':
+        All.hide();
+        $('#m-send,#m-invalid,#m-edit').show();
+        break;
+      case '已寄出未到款':
+        All.hide();
+        $('#m-receive,#m-invalid,#m-edit').show();
+        break;
+      case '已作废':
+      case '已到款-全款':
+        All.hide();
+        $('#m-check,#m-edit').show();
+        break;
+      case '已到款-部分':
+        All.hide();
+        $('#m-receive,#m-invalid,#m-edit').show();
+        break;
+    };
+
+    var has = $(that).has('#dropmenu').length;
+    var visible = !$('#dropmenu').hasClass('sc0');
+    var icons = $('.op-menu').children('.ic');
+    var Icon = $(that).children('.ic');
+    if (has && visible) {
+      $('#dropmenu').addClass('sc0 op0');
+      $(Icon).removeClass('cb z50');
+      setTimeout(function() {
+        $('#dropmenu').hide();
+      }, 150);
+    } else {
+      $('#dropmenu').appendTo(that);
+      $('#dropmenu').show();
+      $(icons).removeClass('cb z50');
+      $(Icon).addClass('cb z50');
+      setTimeout(function() {
+        $('#dropmenu').removeClass('sc0 op0')
+      }, 1);
+    }
+  });
+
+  /*单击任意地方关闭菜单*/
+  $(document).on('click', function() {
+    var that = $('#dropmenu').parent();
+    var Icon = $('#dropmenu').siblings();
+    if (!$(event.target).closest(that).length) {
+      $('#dropmenu').addClass('sc0 op0');
+      $(Icon).removeClass('cb z50');
+    };
+  });
+
+  /*单击操作按钮出现发票详情窗，根据状态控制展示相应的详情和可操作内容*/
+  $(document).on('click', '#dropmenu>div', function() {
+    var menuID = $(this).attr('id');
+    if (menuID == "m-remove") { //如果单击按钮是“从列表中移除”，则显示移除弹窗
+      $('#popup-m-remove').velocity('fadeIn', 200);
+    } else { //其它情况均显示发票详情
+      $('#popup-invoDetail').velocity('fadeIn', 200);
+    };
+    var invoSts = $('.trID').find('.invo-status').html();
+    var hideAll = function() {
+      $('#invo>li').hide();
+    };
+    switch (invoSts) {
+      case '待申请开票':
+        hideAll();
+        $('[data-id="invo-1"]').show();
+        break;
+      case '草稿':
+        hideAll();
+        $('[data-id="invo-1"]').show();
+        break;
+      case '待审核':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"]').show();
+        break;
+      case '审核通过':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"]').show();
+        break;
+      case '待财务开票':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"]').show();
+        break;
+      case '已驳回':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"],[data-id="invo-30"]').show();
+        break;
+      case '已开票待寄出':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"],[data-id="invo-31"]').show();
+        break;
+      case '已寄出未到款':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"],[data-id="invo-31"],[data-id="invo-4"]').show();
+        break;
+      case '已到款-部分':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"],[data-id="invo-31"],[data-id="invo-4"],[data-id="invo-5"]').show();
+        break;
+      case '已到款-全款':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"],[data-id="invo-31"],[data-id="invo-4"],[data-id="invo-5"]').show();
+        break;
+      case '已作废':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"],[data-id="invo-31"],[data-id="invo-4"],[data-id="invo-x"]').show();
+        break;
+    }
+    $('[' + $(this).attr('data-IDtoShow') + ']').show();
+  });
+
+  /*单击弹窗内的取消，隐藏弹窗*/
+  $('.pop-cancel').on('click', function() {
+    $(this).parents('[id^="popup"]').velocity('fadeOut', 150);
+  });
+
+  /*单击发票数字链接，出现发票详情弹窗*/
+  $(document).on('click', '.invo-link', function() {
+    var that = $(this);
+    var hideAll = function() {
+      $('#invo>li').hide();
+    };
+    var invoSts = that.parents('tr').find('.invo-status').html(); //取得职位的现有状态
+    $('#popup-invoDetail').velocity('fadeIn', 200);
+    switch (invoSts) { //控制发票详情弹窗哪些list展示
+      case '待申请开票':
+        hideAll();
+        $('[data-id="invo-1"]').show();
+        break;
+      case '草稿':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"]').show();
+        break;
+      case '待审核':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"]').show();
+        break;
+      case '审核通过':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"],[data-id="invo-31"]').show();
+        break;
+      case '待财务开票':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"],[data-id="invo-31"],[data-id="invo-4"]').show();
+        break;
+      case '已驳回':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"],[data-id="invo-30"]').show();
+        break;
+      case '已开票待寄出':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"],[data-id="invo-31"],[data-id="invo-4"],[data-id="invo-5"]').show();
+        break;
+      case '已寄出未到款':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"],[data-id="invo-31"],[data-id="invo-4"],[data-id="invo-5"],[data-id="invo-6"]').show();
+        break;
+      case '已到款-部分':
+      case '已到款-全款':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"],[data-id="invo-31"],[data-id="invo-4"],[data-id="invo-5"],[data-id="invo-6"],[data-id="invo-7"]').show();
+        break;
+      case '已作废':
+        hideAll();
+        $('[data-id="invo-1"],[data-id="invo-2"],[data-id="invo-31"],[data-id="invo-4"],[data-id="invo-x"]').show();
+        break;
+    }
+  });
+
+  /*复制公司纳税人号*/
+  function copyTaxNo(target) {
+    var text = $(target).siblings().text().replace(/\s/g, '');
+    $('<input type="text" id="dummy">').appendTo('body');
+    document.getElementById('dummy').value = text;
+    dummy.select();
+    document.execCommand("copy");
+    $('#dummy').remove();
+    toast('已复制');
+  };
+
+</script>
+<script>
+  $(".header").load("header.html");
+
+</script>
+
+</html>

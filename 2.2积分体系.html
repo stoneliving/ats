@@ -1,0 +1,807 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>积分面板</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main-New.css">
+<link rel="stylesheet" href="css/cityselect.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/autocomplete.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/cityselect.js"></script>
+<script src="js/jquery.autocomplete.min.js"></script>
+</head>
+
+<body>
+<header class="header">
+  <div class="headerwrapper">
+    <div class="logo fl">优途智聘2.0系统</div>
+    <ul class="nav-main">
+      <li> <a href="Overview.html" class="nav-a" >
+        <div></div>
+        <div>总览</div>
+        </a> </li>
+      <li> <a href="Search-1st.html" class="nav-a" >
+        <div></div>
+        <div>搜人才</div>
+        </a> </li>
+      <li> <a href="Company-1st.html" class="nav-a">
+        <div></div>
+        <div>公司</div>
+        </a> </li>
+      <li> <a href="Position-1st.html" class="nav-a">
+        <div></div>
+        <div>职位</div>
+        </a> </li>
+      <li> <a href="Pipeline.html" class="nav-a">
+        <div></div>
+        <div>Pipeline</div>
+        </a> </li>
+      <li> <a href="Talent-1st.html" class="nav-a">
+        <div></div>
+        <div>人才库</div>
+        </a> </li>
+      <li> <a href="List.html" class="nav-a">
+        <div></div>
+        <div>List库</div>
+        </a> </li>
+      <li> <a href="Invoice.html" class="nav-a">
+        <div></div>
+        <div>发票</div>
+        </a> </li>
+      <li> <a href="Report-1.html" class="nav-a">
+        <div></div>
+        <div>报表</div>
+        </a> </li>
+      <li> <a href="E-learning.html" class="nav-a">
+        <div></div>
+        <div>E-learning</div>
+        </a> </li>
+    </ul>
+    <ul class="nav-sub">
+      <li>
+        <div class="drop-down nav-a" id="add">
+          <div class="ic f24 lh46"></div>
+          <ul class="drop-down-list add-ul">
+            <li> <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a> </li>
+            <li> <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a> </li>
+            <li> <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a> </li>
+            <li> <a href="" class="add-li-a"><span class="ic f20"></span> 批量导入</a> </li>
+          </ul>
+        </div>
+      </li>
+      <li> <a href="Todo.html" class="nav-a" id="todo" title="待办">
+        <div class="ic f24 lh46"></div>
+        <div class="badge">9</div>
+        </a> </li>
+      <li> <a href="msg.html" class="nav-a" id="msg" title="消息">
+        <div class="ic f24 lh46"></div>
+        <div class="badge">5</div>
+        </a> </li>
+      <li> <span class="nav-account" id="account"><img src="images/default-profile-pic.jpg" class="nav-profile-pic" alt="">
+        <div class="account-dropdown hidden">
+          <a href="" class="board">
+						<div><img src="images/animals/level1.png" class="level-pic" alt=""></div>
+						<div class="info-wrapper">
+							<p><span class="d-ib w40 c3">积分</span><span class="color-orange">503分</span></p>
+							<p><span class="d-ib w40 c3">头衔</span><span class="color-orange">高手</span></p>
+							<p><span class="d-ib w40 c3">优币</span><span class="color-orange">503分</span></p>
+						</div>
+          </a>
+          <div class="wrapper pl16 pr16 pb8"> <a href="" class="sys-setting bdt1"><span class="ic f18 mr4"></span>系统设置</a> <a href="" class="sys-help"><span class="ic f18 mr4"></span>使用帮助</a> <a href="" class="sys-logout"><span class="ic f18 mr4"></span>退出登录</a> </div>
+        </div>
+        </span> </li>
+    </ul>
+  </div>
+</header>
+<div class="rank-wrapper">
+  <div class="ov-score">积分
+    <div class="rank hidden">
+      <p><span class="c2 d-ib w76">我的积分：</span><span class="c-ora">503分</span></p>
+      <p><span class="c2 d-ib w76">本月排名：</span><span class="c-ora">第3名</span><span class="c3 f12">（顾问）</span></p>
+      <div class="rank-tab-header c2 bdb1">
+        <div data-id="#rank-score-cons" class="rank-tab cb bdb3-b">顾问</div>
+        <div data-id="#rank-score-bd" class="rank-tab">BD</div>
+      </div>
+      <div class="tab-content-wrapper">
+        <table id="rank-score-cons" class="rank-table">
+          <tr class="c3">
+            <td class="w48">排名</td>
+            <td class="w66">姓名</td>
+            <td class="w66">头衔</td>
+            <td class="w60">本月得分</td>
+          </tr>
+          <tr>
+            <td>No.1</td>
+            <td>李红叶西</td>
+            <td>小兔猎手</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.2</td>
+            <td>顾问</td>
+            <td>老虎猎手</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.3</td>
+            <td>顾问</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.4</td>
+            <td>顾问</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.5</td>
+            <td>顾问</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+        </table>
+        <table id="rank-score-bd" class="rank-table hidden">
+          <tr class="c3">
+            <td class="w48">排名</td>
+            <td class="w52">姓名</td>
+            <td class="w66">头衔</td>
+            <td class="w60">本月得分</td>
+          </tr>
+          <tr>
+            <td>No.1</td>
+            <td>BD</td>
+            <td>小兔猎手</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.2</td>
+            <td>BD</td>
+            <td>老虎猎手</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.3</td>
+            <td>BD</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.4</td>
+            <td>BD</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.5</td>
+            <td>BD</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+        </table>
+      </div>
+      <em></em> </div>
+  </div>
+  <div class="bdt1"></div>
+  <div class="ov-ubi">优币
+    <div class="rank hidden">
+      <p><span class="c2 d-ib w76">我的优币：</span><span class="c-ora">503枚</span></p>
+      <p><span class="c2 d-ib w76">本月排名：</span><span class="c-ora">第3名</span></p>
+      <div class="rank-tab-header c2 bdb1">
+        <div data-id="#rank-ubi-cons" class="rank-tab cb bdb3-b">顾问</div>
+        <div data-id="#rank-ubi-bd" class="rank-tab">BD</div>
+      </div>
+      <div class="tab-content-wrapper">
+        <table id="rank-ubi-cons" class="rank-table">
+          <tr class="c3">
+            <td class="w48">排名</td>
+            <td class="w60">姓名</td>
+            <td class="w66">头衔</td>
+            <td class="w66">本月得币</td>
+          </tr>
+          <tr>
+            <td>No.1</td>
+            <td>张三</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.2</td>
+            <td>张三</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.3</td>
+            <td>张三</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.4</td>
+            <td>张三</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.5</td>
+            <td>张三</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+        </table>
+        <table id="rank-ubi-bd" class="rank-table hidden">
+          <tr class="c3">
+            <td class="w48">排名</td>
+            <td class="w60">姓名</td>
+            <td class="w66">头衔</td>
+            <td class="w66">本月得币</td>
+          </tr>
+          <tr>
+            <td>No.1</td>
+            <td>BD</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.2</td>
+            <td>BD</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.3</td>
+            <td>BD</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.4</td>
+            <td>BD</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>No.5</td>
+            <td>BD</td>
+            <td>大师</td>
+            <td>213</td>
+          </tr>
+        </table>
+      </div>
+      <em></em> </div>
+  </div>
+</div>
+<main class="main">
+  <div class="content">
+    <div class="score-dashboard-container card1 p24">
+      <div class="score-overview-wrapper mb24">
+        <div class="profile-pic-wrapper"><img src="images/animals/level1.png" alt="" class="profile-pic"></div>
+        <div class="score-overview">
+          <h2 class="cb">吴江涛</h2>
+          <p class="c3 mt4">加入系统已有123天，一路走来，感谢有你</p>
+          <p class="mt8"><span>头衔：</span><span class="c-ora bold f16">逗鱼</span><span class="ml16">积分：</span><span class="c-ora bold f16">503分</span><span class="ml16">优币：</span><span class="c-ora bold f16">503枚</span><span class="cb ml40">获取规则</span></p>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="my-score pt16 bdt1">
+        <h2 class="fw-n f18">我的积分 </h2>
+        <p class="c2 mt12"><span class="c-ora bold mr4">153</span>积分 / 再获得<span>356</span>分可升级到<span class="c-ora bold">小企</span></p>
+        <div class="score-indicator-wrapper">
+          <div class="score-bar-container">
+            <div class="line-bar"><span class="line-score-length" style="width:60px"><!--通过js更改样式“line-score-length”的width属性调整长度--></span></div>
+            <div class="level-dot-bar">
+              <div class="level-dot-wrapper"><span class="active-dot"></span></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+            </div>
+            <div class="level-pic-bar">
+              <div class="level-pic-wrapper"><img src="images/animals/level1.png" class="level-pic" alt=""></div>
+              <div class="level-pic-wrapper"></div>
+              <div class="level-pic-wrapper"></div>
+              <div class="level-pic-wrapper"></div>
+              <div class="level-pic-wrapper"></div>
+              <div class="level-pic-wrapper"></div>
+              <div class="level-pic-wrapper"></div>
+              <div class="level-pic-wrapper"></div>
+              <div class="level-pic-wrapper"></div>
+              <div class="level-pic-wrapper"></div>
+              <div class="level-pic-wrapper"></div>
+              <div class="level-pic-wrapper"></div>
+            </div>
+            <div class="level-title-bar">
+              <div class="level-title-wrapper">
+                <p>小鱼猎手</p>
+                <p>0~14分</p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>小兔猎手</p>
+                <p>15分</p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>小鹿猎手</p>
+                <p>60分</p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>野猪猎手</p>
+                <p>135分</p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>狐狸猎手</p>
+                <p>240分</p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>豹子猎手</p>
+                <p>375分</p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>狮子猎手</p>
+                <p>540分</p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>老猎手</p>
+                <p>735分</p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>银牌猎手</p>
+                <p>1200分</p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>金牌猎手</p>
+                <p>1800分</p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>灵魂猎手</p>
+                <p>2700分</p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>魔王猎手</p>
+                <p>3900分</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="my-ubi mt36">
+        <h2 class="fw-n f18">我的优币<span class="cb cu-po f14 ml8">兑换规则</span></h2>
+        <p class="c2 mt12"><span class="c-ora bold mr4">153</span>枚 / 再获得<span>356</span>枚可兑换下一级礼物</p>
+        <div class="score-indicator-wrapper">
+          <div class="score-bar-container">
+            <div class="line-bar"><span class="line-ubi-length" style="width:240px"><!--通过js更改样式“line-ubi-length”的width属性调整长度--></span></div>
+            <div class="level-dot-bar">
+              <div class="level-dot-wrapper"><span class="active-dot"></span></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+              <div class="level-dot-wrapper"></div>
+            </div>
+            <div class="gift-pic-bar">
+              <div class="gift-pic-wrapper"></div>
+              <div class="gift-pic-wrapper"><img src="images/gift.png" class="gift-pic" alt="" style="width:24px"></div>
+              <div class="gift-pic-wrapper"><img src="images/gift.png" class="gift-pic inactive-gift" alt="" style="width:35px"></div>
+              <div class="gift-pic-wrapper"><img src="images/gift.png" class="gift-pic inactive-gift" alt="" style="width:40px"></div>
+              <div class="gift-pic-wrapper"><img src="images/gift.png" class="gift-pic inactive-gift" alt="" style="width:48px"></div>
+              <div class="gift-pic-wrapper"><img src="images/gift.png" class="gift-pic inactive-gift" alt="" style="width:56px"></div>
+              <div class="gift-pic-wrapper"><img src="images/gift.png" class="gift-pic inactive-gift" alt="" style="width:64px"></div>
+            </div>
+            <div class="level-title-bar">
+              <div class="level-title-wrapper">
+                <p>原点</p>
+                <p>0</p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>奖品6</p>
+                <p>320枚</p>
+                <p><span class="reward-exchange-active">兑换</span></p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>奖品5</p>
+                <p>640枚</p>
+                <p><span class="reward-exchange-inactive">兑换</span></p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>奖品4</p>
+                <p>960枚</p>
+                <p><span class="reward-exchange-inactive">兑换</span></p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>奖品3</p>
+                <p>1600枚</p>
+                <p><span class="reward-exchange-inactive">兑换</span></p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>奖品2</p>
+                <p>2560枚</p>
+                <p><span class="reward-exchange-inactive">兑换</span></p>
+              </div>
+              <div class="level-title-wrapper">
+                <p>奖品1</p>
+                <p>3840枚</p>
+                <p><span class="reward-exchange-inactive">兑换</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="records-wrapper">
+        <h2 class="fw-n f18 mt48 pb12">积分、优币记录</h2>
+        <div class="score-records fl">
+          <p class="c2 mt4">积分 <span class="c-ora bold mr4">1530</span>分 / 近一月获得<span class="c-ora">56</span>分</p>
+          <table class="score-records-table">
+            <tr class="bg-f2">
+              <td class="pl16 w102">积分</td>
+              <td class="w160">时间</td>
+              <td class="w160">说明</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr class="bg-f2">
+              <td colspan="3"><div class="ta-r pr8"> <span class="ic f24 cu-po ho-cb p0-4"></span>1<span class="ic f24 cu-po ho-cb p0-4"></span>共<span>23</span>页<span class="ml24">跳转到</span>
+                  <input type="text" class="w40  ml4 mr4 p0-4">
+                  页 </div></td>
+            </tr>
+          </table>
+        </div>
+        <div class="ubi-records fl ml83">
+          <p class="c2 mt4">当前优币 <span class="c-ora bold mr4">230</span>枚 / 总计获取<span class="c-ora">1530</span> 总计消耗<span class="c-gr">1300</span></p>
+          <table class="score-records-table">
+            <tr class="bg-f2">
+              <td class="pl16 w102">优币</td>
+              <td class="w160">时间</td>
+              <td class="w160">说明</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-gr">-200</td>
+              <td>2016-10-20</td>
+              <td>兑换三等奖</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-gr">-800</td>
+              <td>2016-10-20</td>
+              <td>兑换二等奖</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr>
+              <td class="pl16 c-ora">+1</td>
+              <td>2016-10-20</td>
+              <td>录入一家公司</td>
+            </tr>
+            <tr class="bg-f2">
+              <td colspan="3"><div class="ta-r pr8"> <span class="ic f24 cu-po ho-cb p0-4"></span>1<span class="ic f24 cu-po ho-cb p0-4"></span>共<span>23</span>页<span class="ml24">跳转到</span>
+                  <input type="text" class="w40  ml4 mr4 p0-4">
+                  页 </div></td>
+            </tr>
+          </table>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="rule mb24">
+        <h2 class="fw-n f18 mt48">获取规则</h2>
+        <table class="rule-table">
+          <tr class="c3 bold">
+            <td class="pl24 w262">激励事项</td>
+            <td class="w120">增加积分</td>
+            <td class="w120">增加优币</td>
+            <td class="w300">说明</td>
+          </tr>
+          <tr>
+            <td class="pl24">录入一家公司</td>
+            <td>1分</td>
+            <td>1枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">增加一次电话沟通</td>
+            <td>1分</td>
+            <td>1枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">增加一次拜访</td>
+            <td>1分</td>
+            <td>3枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">签约一家公司</td>
+            <td>2分</td>
+            <td>10枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">新客户放出首个职位</td>
+            <td>--</td>
+            <td>10枚</td>
+            <td>一个客户最多一次</td>
+          </tr>
+          <tr>
+            <td class="pl24">客户增加1个职位</td>
+            <td>--</td>
+            <td>2枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">自己BD的公司出Offer</td>
+            <td>--</td>
+            <td>1枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">自己BD的公司回款</td>
+            <td>--</td>
+            <td>1枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="op0">0</td>
+          </tr>
+          <tr>
+            <td class="pl24">添加一个人才到职位</td>
+            <td>1分</td>
+            <td>1枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">推荐一个人才</td>
+            <td>1分</td>
+            <td>3枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">人才通过筛选</td>
+            <td>1分</td>
+            <td>3枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">新增一次面试</td>
+            <td>2分</td>
+            <td>5枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">新增一个Offer</td>
+            <td>2分</td>
+            <td>20枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">新增MPC</td>
+            <td>2分</td>
+            <td>3枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">Offer回款</td>
+            <td>--</td>
+            <td>5枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">自己所录的人才被同事拿去推荐</td>
+            <td>--</td>
+            <td>5枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="pl24">自己所录的人才被同事成功Offer</td>
+            <td>--</td>
+            <td>5枚</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td class="op0">0</td>
+          </tr>
+          <tr>
+            <td class="pl24">登录系统</td>
+            <td>1分</td>
+            <td>1枚</td>
+            <td> 同个账号每天最多一次</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+<!--兑换礼品弹窗-->
+<div id="popup-redeem" class="hidden">
+  <div class="popup-wrapper">
+    <div id="pre-redeem-wrapper" class="p24 cw card5" style="background-color:#ff9125 ">
+      <h3 class="mb16">请选择兑换礼物：</h3>
+      <div class="presents-wrapper">
+        <input id="present-11" type="radio" name="present-1">
+        <label for="present-11" class="mr24 ho-cb">蒙牛真果粒一箱（12包） 380币
+</label>
+        <input id="present-12" type="radio" name="present-1">
+        <label for="present-12" class="mr24 ho-cb">金爸爸白咖啡（1.25千克）400币
+</label>
+        <input id="present-13" type="radio" name="present-1">
+        <label for="present-13" class="mr24 ho-cb">G7咖啡（50小包）390币</label>
+        <input id="present-13" type="radio" name="present-1">
+        <label for="present-13" class="mr24 ho-cb">百草味干果组合（碧更、腰果、夏威夷）400币</label>
+        <input id="present-13" type="radio" name="present-1">
+        <label for="present-13" class="mr24 ho-cb">海南贵妃芒果（1.5kg）340币</label>
+      </div>
+      <div class="mt24"><span id="cfm-redeem" class="fr ml24 cu-po bg-w c-ora p4-8 ho-ec bdrs2"><span class="ic f18"></span>确认兑换</span><span id="cancel-redeem" class="fr cu-po ho-u p4-8"><span class="ic f18"></span>取消</span></div>
+    </div>
+    <div id="redeem-success-wrapper" class="hidden">
+      <div id="success-redticket" class="p24" style="border:3px dashed #fff;padding:48px;">
+        <div class="card5 cw p24 lh24 po-r" style="background-color:#ba2b31;width:470px;">
+          <h3 class="f32 mb8">兑换成功！</h3>
+          <p class="bold f18 lh40">优币<span>-600</span></p>
+          <p><span class="d-ib w86">兑换者：</span><span>吴江涛</span></p>
+          <p><span class="d-ib w86">兑换奖品：</span><span>某某某奖品</span></p>
+          <p><span class="d-ib w86">兑换时间：</span><span>2017-03-02 15:22</span></p>
+          <i style="position:absolute;right:24px;bottom:24px;"> 
+          <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In  -->
+          <svg version="1.1"
+							 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+							 x="0px" y="0px" width="99.021px" height="95.548px" viewBox="0 0 99.021 95.548" enable-background="new 0 0 99.021 95.548"
+							 xml:space="preserve">
+            <defs> </defs>
+            <g>
+              <path fill="#FFFFFF" d="M22.687,19.979c-6.961-4.949-8.06-7.794-5.459-12.927c3.013-5.946,9.065-8.902,15.124-5.811
+								c6.445,3.288,12.109,8.107,18.088,12.24c3.42-2.958,7.453-6.98,12.025-10.244c4.161-2.971,9.063-4.4,14.153-2.026
+								c3.962,1.848,7.51,4.928,6.877,9.355c-0.476,3.331-3.434,6.308-5.269,9.411c3.809,0,8.993,0.07,14.175-0.021
+								c4.535-0.079,6.679,2.014,6.619,6.553c-0.068,5.148-0.016,10.297-0.016,15.811c-15.215,0-30.092,0-45.577,0
+								c0-6.061-0.089-12.04,0.041-18.015c0.058-2.648-0.409-4.383-3.577-4.198c-2.745,0.16-4.506,0.824-4.371,4.215
+								c0.233,5.84,0.065,11.697,0.065,17.959c-15.21,0-30.077,0-45.513,0c0-5.853-0.201-11.676,0.075-17.476
+								c0.168-3.538,2.687-4.889,6.112-4.845C11.521,20.029,16.787,19.979,22.687,19.979z M43.656,17.386
+								c0.352-0.833,0.705-1.666,1.057-2.499c-4.654-3.347-9.073-7.114-14.042-9.901c-3.556-1.995-7.425,0.414-8.873,4.55
+								c-1.528,4.363,1.683,5.809,4.712,6.286C32.166,16.714,37.934,16.904,43.656,17.386z M55.198,15.06
+								c0.371,0.711,0.741,1.422,1.112,2.133c5.44-0.423,10.902-0.669,16.314-1.331c3.455-0.423,6.531-1.84,5.542-6.299
+								c-0.875-3.947-5.739-6.665-9.286-4.562C64.034,7.873,59.732,11.663,55.198,15.06z"/>
+              <path fill="#FFFFFF" d="M45.655,95.5c-12.271,0-23.995-0.008-35.718,0.005c-3.23,0.004-5.544-1.336-5.57-4.73
+								C4.257,76.147,4.32,61.516,4.32,46.499c13.949,0,27.454,0,41.335,0C45.655,62.701,45.655,78.795,45.655,95.5z"/>
+              <path fill="#FFFFFF" d="M53.61,46.366c13.665,0,27.036,0,41.203,0c0,1.964,0,3.776,0,5.587c0,12.234-0.087,24.468,0.042,36.7
+								c0.05,4.768-1.842,6.95-6.731,6.892c-11.351-0.133-22.704-0.042-34.514-0.042C53.61,79.13,53.61,63.057,53.61,46.366z"/>
+            </g>
+          </svg>
+          </i> </div>
+      </div>
+      <div id="success-notice" class="ta-c cw">
+        <p class="f32 mt16 bold">请发截图到人事部，后领取奖品</p>
+        <p class="mt24"><span id="close-all-redeem" class="f16 bg-b p8 ho-1f cu-po bdrs2">截图发完啦，点我关闭</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--弹框背景-->
+<div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z150"></div>
+</body>
+<script>
+//鼠标拂过显示和隐藏账号信息
+$(document).on('mouseenter','.nav-account',function(){
+	$('.account-dropdown').show();
+	});
+$(document).on('mouseleave','.nav-account',function(){
+	$('.account-dropdown').hide();
+	});
+	
+//拂过显示和隐藏积分排名
+$('.ov-score').on('mouseenter',function(){
+	$(this).children('.rank').show();
+	});	
+$('.ov-score').on('mouseleave',function(){
+	$(this).children('.rank').hide();
+	});	
+
+//拂过显示和隐藏优币排名
+$('.ov-ubi').on('mouseenter',function(){
+	$(this).children('.rank').show();
+	});	
+$('.ov-ubi').on('mouseleave',function(){
+	$(this).children('.rank').hide();
+	});	
+	
+//切换顾问和BD排名	
+$(document).on('click','.rank-tab',function(){
+	var showID = $(this).attr('data-id');
+	$(this).siblings().removeClass('cb bdb3-b');
+	$(this).addClass('cb bdb3-b');
+	$(showID).siblings().hide();	
+	$(showID).show();
+});	
+	
+	
+//单击兑换弹出窗口
+$(document).on('click','.reward-exchange-active',function(){
+	$('#popbg,#popup-redeem').velocity('fadeIn',200);
+});
+
+//单击取消兑换
+$('#cancel-redeem').on('click',function(){
+	$('#popbg,#popup-redeem').velocity('fadeOut',150);
+});	
+
+//单击确认兑换
+$('#cfm-redeem').on('click',function(){
+	$('#pre-redeem-wrapper').hide();
+	$('#redeem-success-wrapper').show();
+});	
+
+//发完截图关闭弹窗
+$('#close-all-redeem').on('click',function(){
+	$('#pre-redeem-wrapper').show();
+	$('#redeem-success-wrapper').hide();
+	$('#popbg,#popup-redeem').hide();
+});	
+</script>
+</html>

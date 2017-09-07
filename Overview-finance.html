@@ -1,0 +1,398 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>总览</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main.css">
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+</style>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+</head>
+
+<body class="bg-ec">
+<header class="header">
+  <div class="h-contain">
+    <div class="logo fl">优途智聘2.0系统</div>
+    <ul class="fl ml24">
+      <li class="li-no w72 fl">
+        <a href="Overview.html" class="nav-a" id="overview">
+          <div class="ic f20"></div>
+          <div class="f14">总览</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Search-1st.html" class="nav-a" id="search">
+          <div class="ic f20"></div>
+          <div class="f14">搜人才</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Company-1st.html" class="nav-a" id="company">
+          <div class="ic f20"></div>
+          <div class="f14">公司</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Position-1st.html" class="nav-a" id="position">
+          <div class="ic f20"></div>
+          <div class="f14">职位</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Pipeline.html" class="nav-a" id="pipeline">
+          <div class="ic f20"></div>
+          <div class="f14">Pipeline</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Talent-1st.html" class="nav-a" id="talent">
+          <div class="ic f20"></div>
+          <div class="f14">人才库</div>
+        </a>
+      </li>      <li class="li-no w72 fl">
+        <a href="List.html" class="nav-a" id="list">
+          <div class="ic f20"></div>
+          <div class="f14">List库</div>
+        </a>
+      </li> 
+      <li class="li-no w72 fl">
+        <a href="Invoice.html" class="nav-a" id="invoice">
+          <div class="ic f20"></div>
+          <div class="f14">发票</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Report-1.html" class="nav-a" id="report">
+          <div class="ic f20"></div>
+          <div class="f14">报表</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="E-learning.html" class="nav-a" id="elearn">
+          <div class="ic f20"></div>
+          <div class="f14">E-learning</div>
+        </a>
+      </li>      
+    </ul>
+    <ul class="fr">
+      <li class="li-no fl w56">
+        <div class="nav-a" id="add">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14 w104">
+              <li class="li-no">
+                <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a>
+              </li>
+              <li class="li-no">
+                <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a>
+              </li>
+              <li class="li-no">
+                <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 批量导入</a>
+              </li>              
+            </ul>
+        </div>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Todo.html" class="nav-a" id="todo" title="待办">
+          <div class="ic f24 lh46"></div>
+          <div class="badge">9</div>
+        </a>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Message.html" class="nav-a" id="message" title="消息">
+          <div class="ic f24 lh46"></div>
+        <div class="badge">99+</div>
+        </a>
+      </li>      
+      <li class="li-no fl w56">
+        <div href="" class="nav-a" id="account">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14">
+              <li class="li-no">
+                <a href="Settings-Account.html" class="add-li-a"><span class="ic f20"></span> 系统设置</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 使用帮助</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a ho-red"><span class="ic f20"></span> 退出登录</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+    </ul>
+    <div class="clear"></div>
+  </div>
+</header>
+<div class="content">
+  <div class="card1 w588 fl bdrs2">
+    <div class="card-header">
+      <span class="ic f24"></span> <span class="f16">今日待办 -（<span>6</span> 项</span>）
+      <a href="" class="a f14 fr cb ho-u">查看全部</a>
+    </div>
+    <div class="bg-w h332">
+      <table class="bdcl w100p f14 c1 ta-l">
+        <tr class="c2">
+          <th class="pl8 w44"> </th>
+          <th class="p160 w80 ta-l">类型</th>
+          <th class="w280 ta-l">关联内容</th>
+          <th class="">备注</th>
+          <th class="pr16 ta-r">开始时间</th>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="pl8 w44">
+            <input type="checkbox" id="check1">
+            <label for="check1"></label>
+          </td>
+          <td class="p160 w80">
+            <span>跟进面试</span>
+          </td>
+          <td class="w280">
+          <!--此处职位最长11个汉字，超过请截断，否则排版会错行-->
+            <a class="a c1" href="Position-2st.html"><span class="ic c2 f20"></span> <span>Java高级开发工程师</span></a>
+            <a href="Talent-2nd.html" class="a c1 ml8"><span class="ic c2 f20"></span> <span>王精英</span></a>
+          </td>
+          <td class="">
+            <div class="a c1" id="h-note1">
+              <span class="ic f20 c2 pr4"></span><span>1</span>
+              <p class="note hidden mw176 c2"><span>备注的内容，与待办相关，候选人 公司、职位、注意事项之类的</span></p>
+            </div>
+       </td>
+          <td class="pr16 ta-r">
+            <span>2016-06-06 10:00</span>
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="pl8 w44">
+            <input type="checkbox" id="check2">
+            <label for="check2"></label>
+          </td>
+          <td class="p160 w80">
+            <span>跟进面试</span>
+          </td>
+          <td class="w280">
+            <a class="a c1" href="Position-2nd.html"><span class="ic c2 f20"></span> <span>Java高级开发工程师</span></a>
+            <a href="Talent-2nd.html" class="a c1 ml8"><span class="ic c2 f20"></span> <span>王精英</span></a>
+          </td>
+          <td class="">
+            <div class="a c1" id="h-note2">
+              <span class="ic f20 c2 pr4"></span><span>0</span>
+              <p class="note hidden"><span>备注的内容，与待办相关，候选人 公司、职位、注意事项之类的</span></p>
+            </div>
+       </td>
+          <td class="pr16 ta-r">
+            <span>2016-06-06 10:00</span>
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="pl8 w44">
+            <input type="checkbox" id="check3">
+            <label for="check3"></label>
+          </td>
+          <td class="p160 w80">
+            <span>跟进面试</span>
+          </td>
+          <td class="w280">
+            <a class="a c1" href="Position-2nd.html"><span class="ic c2 f20"></span> <span>Java高级开发工程师</span></a>
+            <a href="Talent-2nd.html" class="a c1 ml8"><span class="ic c2 f20"></span> <span>王精英</span></a>
+          </td>
+          <td class="">
+            <div class="a c1" id="h-note3">
+              <span class="ic f20 c2 pr4"></span><span>0</span>
+              <p class="note hidden"><span>备注的内容，与待办相关，候选人 公司、职位、注意事项之类的</span></p>
+            </div>
+       </td>
+          <td class="pr16 ta-r">
+            <span>2016-06-06 10:00</span>
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="pl8 w44">
+            <input type="checkbox" id="check4">
+            <label for="check4"></label>
+          </td>
+          <td class="p160 w80">
+            <span>跟进面试</span>
+          </td>
+          <td class="w280">
+            <a class="a c1" href="Position-2nd.html"><span class="ic c2 f20"></span> <span>Java高级开发工程师</span></a>
+            <a href="Talent-2nd.html" class="a c1 ml8"><span class="ic c2 f20"></span> <span>王精英</span></a>
+          </td>
+          <td class="">
+            <div class="a c1" id="h-note4">
+              <span class="ic f20 c2 pr4"></span><span>0</span>
+              <p class="note hidden"><span>备注的内容，与待办相关，候选人 公司、职位、注意事项之类的</span></p>
+            </div>
+       </td>
+          <td class="pr16 ta-r">
+            <span>2016-06-06 10:00</span>
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td class="pl8 w44">
+            <input type="checkbox" id="check5">
+            <label for="check5"></label>
+          </td>
+          <td class="p160 w80">
+            <span>跟进面试</span>
+          </td>
+          <td class="w280">
+            <a class="a c1" href="Position-2nd.html"><span class="ic c2 f20"></span> <span>Java高级开发工程师</span></a>
+            <a href="Talent-2nd.html" class="a c1 ml8"><span class="ic c2 f20"></span> <span>王精英</span></a>
+          </td>
+          <td class="">
+            <div class="a c1" id="h-note5">
+              <span class="ic f20 c2 pr4"></span><span>0</span>
+              <p class="note hidden"><span>备注的内容，与待办相关，候选人 公司、职位、注意事项之类的</span></p>
+            </div>
+       </td>
+          <td class="pr16 ta-r">
+            <span>2016-06-06 10:00</span>
+          </td>
+        </tr>
+      </table>
+      <!--当表格内容为空时，将以下隐藏的div改为显示-->
+      <div class="pt48 hidden" >
+        <div class="ic ta-c f96 c3"></div>
+        <p class="c3 ta-c f20">没有待办事项了</p>
+        <p class="c3 ta-c mt8">找点事做？</p>
+      </div>
+    </div>    
+  </div>
+  <div class="card1 w588 fl bg-w ml24">
+    <div class="card-header">
+      <span class="ic f24"></span> <span class="f16">消息</span>
+      <a href="" class="a f14 fr cb ho-u">查看全部</a>
+    </div>
+    <a href="Message.html" class="h332 a">
+      <table class="bdcl w100p f14 c1 ta-l">
+        <tr class="c2 h54">
+          <th class="pl24 ta-l w120">发送方</th>
+          <th class="w320">主题</th>
+          <th class="">发送时间</th>
+        </tr>
+        <tr class="bdt1 ho-ec h54">
+          <td class="pl24">
+            <span class="c1">王翔</span>
+          </td>
+          <td>
+            请开票
+          </td>
+          <td>
+            2016-08-01 15:30
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec h54">
+          <td class="pl24">
+            <span class="c1">王翔</span>
+          </td>
+          <td>
+            请开票
+          </td>
+          <td>
+            2016-08-01 15:30
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec h54">
+          <td class="pl24">
+            <span class="c1">王翔</span>
+          </td>
+          <td>
+            请开票
+          </td>
+          <td>
+            2016-08-01 15:30
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec h54">
+          <td class="pl24">
+            <span class="c1">王翔</span>
+          </td>
+          <td>
+            请开票
+          </td>
+          <td>
+            2016-08-01 15:30
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec h54">
+          <td class="pl24">
+            <span class="c1">王翔</span>
+          </td>
+          <td>
+            请开票
+          </td>
+          <td>
+            2016-08-01 15:30
+          </td>
+        </tr>
+      </table>
+    </a>
+  </div>
+  <div class="card1 w100p fl bg-w mt24">
+    <div class="card-header">
+      <span class="ic f24"></span> <span class="f16">发票概览</span>
+      <a href="" class="a f14 fr cb ho-u">查看全部</a>
+    </div>
+    <div class="pt16 pb24 pl48">
+      <div class="mt8">
+        <a href="" class="a2 ho-ec fl ta-c p16-24 ml64">
+          <div class="bold f24 cb">40</div>
+          <div class="f15 c1 mt8">待开票</div>
+        </a>
+        <a href="" class="a2 ho-ec fl ta-c p16-24 ml64">
+          <div class="bold f24 cb">40</div>
+          <div class="f15 c1 mt8">已寄出</div>
+        </a>
+        <a href="" class="a2 ho-ec fl ta-c p16-24 ml64">
+          <div class="bold f24 cb">40</div>
+          <div class="f15 c1 mt8">已到款</div>
+        </a>
+        <a href="" class="a2 ho-ec fl ta-c p16-24 ml64">
+          <div class="bold f24 cb">40</div>
+          <div class="f15 c1 mt8">逾期未到款</div>
+        </a>
+        <a href="" class="a2 ho-ec fl ta-c p16-24 ml64">
+          <div class="bold f24 cb">40</div>
+          <div class="f15 c1 mt8">已驳回</div>
+        </a>
+        <a href="" class="a2 ho-ec fl ta-c p16-24 ml64">
+          <div class="bold f24 cb">40</div>
+          <div class="f15 c1 mt8">已作废</div>
+        </a>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+</body>
+<script>
+/*-----今日待办 勾选完成效果----*/
+$("#check1").click(function(e) {
+	var tr =  $(this).parent().parent()
+    tr.addClass("td-l");
+	window.setTimeout(function(){
+		$("#check1").parent().parent().children().velocity("fadeOut",{duration:250,easing:"easeOutCubic"}).remove},300)
+});
+/*-----备注 拂过预览效果-----*/
+$("#h-note1").mouseenter(function(e) {
+    $("#h-note1 p").velocity("fadeIn",{duration:300})
+});
+$("#h-note1").mouseleave(function(e) {
+    $("#h-note1 p").velocity("fadeOut",{duration:200})
+});
+/*--选中总览--*/
+$("#overview").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过展开下拉菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});</script>
+
+</html>

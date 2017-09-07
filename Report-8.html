@@ -1,0 +1,609 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>报表-发票分析</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/cityselect.css">
+<link rel="stylesheet" href="css/datepicker.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/datepicker.js"></script>
+<script src="js/cityselect.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/sticky-kit.min.js"></script>
+<script src="js/highcharts.js"></script>
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+.hide{display: none;}
+div.stickyHeader {
+        top:0;
+        position:fixed;
+        _position:absolute;
+    }
+</style>
+</head>
+
+<body class="bg-ec">
+<header class="header  nav-down">
+  <div class="h-contain">
+    <div class="logo fl">优途智聘2.0系统</div>
+    <ul class="fl ml24">
+      <li class="li-no w72 fl">
+        <a href="Overview.html" class="nav-a" id="overview">
+          <div class="ic f20"></div>
+          <div class="f14">总览</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Search-1st.html" class="nav-a" id="search">
+          <div class="ic f20"></div>
+          <div class="f14">搜人才</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Company-1st.html" class="nav-a" id="company">
+          <div class="ic f20"></div>
+          <div class="f14">公司</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Position-1st.html" class="nav-a" id="position">
+          <div class="ic f20"></div>
+          <div class="f14">职位</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Pipeline.html" class="nav-a" id="pipeline">
+          <div class="ic f20"></div>
+          <div class="f14">Pipeline</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Talent-1st.html" class="nav-a" id="talent">
+          <div class="ic f20"></div>
+          <div class="f14">人才库</div>
+        </a>
+      </li>      <li class="li-no w72 fl">
+        <a href="List.html" class="nav-a" id="list">
+          <div class="ic f20"></div>
+          <div class="f14">List库</div>
+        </a>
+      </li> 
+      <li class="li-no w72 fl">
+        <a href="Invoice.html" class="nav-a" id="invoice">
+          <div class="ic f20"></div>
+          <div class="f14">发票</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Report-1.html" class="nav-a" id="report">
+          <div class="ic f20"></div>
+          <div class="f14">报表</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="E-learning.html" class="nav-a" id="elearn">
+          <div class="ic f20"></div>
+          <div class="f14">E-learning</div>
+        </a>
+      </li>      
+    </ul>
+    <ul class="fr">
+      <li class="li-no fl w56">
+        <div class="nav-a" id="add">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14 w104">
+              <li class="li-no">
+                <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a>
+              </li>
+              <li class="li-no">
+                <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a>
+              </li>
+              <li class="li-no">
+                <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 批量导入</a>
+              </li>              
+            </ul>
+        </div>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Todo.html" class="nav-a" id="todo" title="待办">
+          <div class="ic f24 lh46"></div>
+          <div class="badge">9</div>
+        </a>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Message.html" class="nav-a" id="message" title="消息">
+          <div class="ic f24 lh46"></div>
+        <div class="badge">99+</div>
+        </a>
+      </li>      
+      <li class="li-no fl w56">
+        <div href="" class="nav-a" id="account">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14">
+              <li class="li-no">
+                <a href="Settings-Account.html" class="add-li-a"><span class="ic f20"></span> 系统设置</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 使用帮助</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a ho-red"><span class="ic f20"></span> 退出登录</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="f16 card2 po-r z2 mt52" style="background-color: transparent">
+  <div class="cen-1200 c2 ta-c">
+  <a href="Report-1.html" class="tab a c2 fl p1232 cu-po ho-cb">
+    <span class="f14">KPI-顾问</span>
+  </a>
+  <a href="Report-2.html" class="tab a c2 fl p1232 cu-po ho-cb">
+    <span class="f14">KPI-BD</span>
+  </a>
+  <a href="Report-3.html" class="tab a c2 fl p1232 cu-po ho-cb">
+    <span class="f14">客户分析</span>
+  </a>
+  <a href="Report-4.html" class="tab a c2 fl p1232 cu-po ho-cb">
+    <span class="f14">职位分析</span>
+  </a>
+  <a href="Report-5.html" class="tab a c2 fl p1232 cu-po ho-cb">
+    <span class="f14">候选人分析</span>
+  </a>
+  <a href="Report-6.html" class="tab a c2 fl p1232 cu-po ho-cb">
+    <span class="f14">Offer分析</span>
+  </a>
+  <a href="Report-7.html" class="tab a c2 fl p1232 cu-po ho-cb">
+    <span class="f14">业绩分析</span>
+  </a>
+  <a href="Report-8.html" class="tab a fl p1232 cu-po c1 bold bdb3-b">
+    <span class="f14">发票分析</span>
+  </a>
+  <div class="clear"></div>
+  </div>
+</div>
+<div class="content" style="margin-top:0;">
+  <div>
+    <div class="card1 f14 pb16 pt8">
+      <div class="tabs">
+        <div class="bdb1-d f14">
+          <div class="c2 p816 bg-f2">
+            <span class="ic f24"></span>筛选:
+            <span class="filter-tag d-ib a ml24 cu-po">部门
+              <div class="note hidden">
+                <div class="mt8">
+                  <select name="" id="select-comp" class="w240">
+                    <option></option>            
+                    <option>深圳仕通人才有限公司</option>
+                    <option>深圳合作伙伴有限公司</option>
+                    <option>武汉仕通咨询有限公司</option>
+                    <option>成都新分部公司</option>
+                  </select>
+                </div>
+                <div class="mt16 mb8">
+                  <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span>
+                  <span class="filter-cancel fr p4-8 ho-u">取消</span>
+                </div>
+              </div>
+            </span>
+            <span class="filter-tag d-ib a ml24 cu-po">统计时间
+              <div class="note hidden c1">
+                <div class="p4-0"><input type="radio" value="day" name="cre-time" id="day"><label for="day">至今</label></div>
+                <div class="p4-0"><input type="radio" value="week" name="cre-time" id="week"><label for="week">一周内</label></div>
+                <div class="p4-0"><input type="radio" value="month" name="cre-time" id="month"><label for="month">一月内</label></div>
+                <div class="p4-0"><input type="radio" value="month3" name="cre-time" id="month3"><label for="month3">三月内</label></div>
+                <div class="p4-0"><input type="radio" value="custom" name="cre-time" id="custom"><label for="custom">自定义</label></div>
+                <div class="custom hidden">
+                  <div class="ml16">
+                    <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="start">
+                  </div>
+                  <div class="ta-c ml16">~</div>
+                  <div class="ml16">
+                    <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="end">
+                  </div>
+                </div>
+                <div class="mt16 mb8">
+                  <span class="fr ml16 filter-add p4-16 cw bg-b bdrs2 ho-1f">添加</span>
+                  <span class="filter-cancel fr p4-8 ho-u">取消</span>
+                </div>
+              </div>
+            </span>
+          </div>
+          <div class="pl24 pt8 c1 pb8">
+            <span class="fl c2 d-ib p2-4">报表：</span>
+            <span class="fl c1 ml8 p2-4"><span class="c3">部门：</span>所有部门，<span class="c3">统计时间：</span>至今</span>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="personal">
+          <div id="invoice-1" class="fl mt24" style="width:400px; height:240px;"></div>
+    <script>
+$(function () { 
+$('#invoice-1').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: '收款情况'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: '占比',
+            colorByPoint: true,
+            data: [{
+                name: '已到款',
+                y: 82.32
+            }, {
+                name: '应收款',
+                y: 17.68,
+            }]
+        }]
+    });
+});      
+    </script>
+          <div class="fr c2 mr16 clear">
+            <span class="card1 f14 p4-8 cb ho-blue cu-po trans ho-sh po-r z50 bdrs2">
+              <span class="ic f24 pr4"></span>导出Excel
+            </span>
+          </div>
+          <table class="c1 bdcl ta-l c1 clear">
+            <tr class="stickToTop c2 h48">
+              <th class="w200 pl48">发票</th>
+              <th class="w120">候选人</th>
+              <th class="w240">推荐的职位</th>
+              <th class="w320">客户公司</th>
+              <th class="sort w160 cu-po ho-cb">
+                <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+                <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+                <span>已到款</span>
+              </th>
+              <th class="sort w160 cu-po ho-cb">
+                <span class="ascend ic f24 ce0 po-a mt-5 ml-20"></span>
+                <span class="descend ic f24 ce0 po-a mt1 ml-20"></span>
+                <span>应收款</span>
+              </th>
+            </tr>
+            <tr style="height:0">
+              <th class="w200"></th>
+              <th class="w120"></th>
+              <th class="w240"></th>
+              <th class="w320"></th>
+              <th class="w160"></th>
+              <th class="w160"></th>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 ho-ec">
+             <td class="pl48 bold cb">￥80,000</td>
+             <td>王精英</td>
+             <td>Java高级开发工程师</td>
+             <td>深圳市Bravos科技股份有限公司</td>
+             <td>￥30,000</td>
+             <td>￥50,000</td>
+            </tr>
+            <tr class="bdt1 h48 bold">
+             <td class="pl48"><span class="po-a" style="margin-left:-42px;">总计：</span><span class="cb bold">￥6,800,000</span></td>
+             <td>72个候选人</td>
+             <td>68个职位</td>
+             <td>26个客户</td>
+             <td>
+               <span class="cb">￥4,320,000</span>
+             </td>
+             <td>
+               <span class="cb">￥2,500,000</span>
+             </td>
+            </tr>
+          </table>      
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--弹框背景--><div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z150"></div>
+<!--操作冒泡提示-->
+<div id="toast" class="hidden op0 po-f z200 cw card5-nbg l50p t50p mt80 ml-58 p16-24 bg-toa">
+<span class="ic f24 cb bdrs12 d-ib po-r"></span>
+<span></span>
+</div>
+</body>
+<script>
+/*切换个人/团队/公司报表*/
+function scrollT(){
+	$('body').velocity("scroll")}//滚动到顶
+$('[for^="team"]').on('click',function(){
+	$(this).parents('.p1016').siblings('.group').show();
+	$(this).parents('.p1016').siblings('.personal,.company').hide();
+	scrollT();
+	});
+$('[for^="personal"]').on('click',function(){
+	$(this).parents('.p1016').siblings('.personal').show();
+	$(this).parents('.p1016').siblings('.group,.company').hide();
+	scrollT();
+	});
+$('[for^="comp"]').on('click',function(){
+	$(this).parents('.p1016').siblings('.company').show();
+	$(this).parents('.p1016').siblings('.group,.personal').hide();
+	scrollT();
+	});
+</script>        
+<script>
+/*--操作冒泡提示功能toast()--*/
+function toast(text){
+	$('#toast').children(':last').html(text);
+	$('#toast').show().velocity({marginTop:'-=120',opacity:1,delay:150},{duration:150,easing:'easeOutCubic'});
+	window.setTimeout(function(){
+		$('#toast').velocity('reverse',{complete:function(){$('#toast').hide()}})},1800);
+		};	
+</script>
+<script>
+/*固定tabs在表头*/
+function stickToTop(){	
+	$('.stickToTop').stick_in_parent({recalc_every: 1}).on("sticky_kit:stick", function(e) {
+		$('.stickToTop').addClass('card2');
+		$('.stickToTop th').addClass('pt16');
+	  }).on("sticky_kit:unstick", function(e) {
+		$('.stickToTop').removeClass('card2');
+		$('.stickToTop th').removeClass('pt16');
+	  });
+	};
+stickToTop();	
+</script>
+<script>
+/*--列表表头单击排序：小图标填色--*/	
+$('.sort').on('click',function(){
+	var des = $(this).children('.descend');
+	var ase = $(this).children('.ascend');
+	$(this).siblings().children('.cb').removeClass('cb').addClass('ce0');
+	if($(des).hasClass('cb')){
+		$(ase).removeClass('ce0').addClass('cb');$(des).removeClass('cb').addClass('ce0')} else {
+			$(des).removeClass('ce0').addClass('cb');$(ase).removeClass('cb').addClass('ce0');}
+	});
+/*--移除筛选标签--*/
+$('.tag-search').on('click',function(){
+	$(this).velocity({left:"-120px",opacity:0,},{duration:150,complete:function(){$(this).remove();}});
+	});
+/*--单击筛选标签--*/
+$('.filter-tag').on('click', function() {
+  $(this).siblings().children('div').hide();
+  $(this).children('div').show();
+});
+$('.filter-add,.filter-cancel').on('click', function(e) {
+  event.stopPropagation();
+  $(this).parent().parent().hide();
+});
+/*单击文档任意位置关闭筛选框*/
+$(document).on('click', function(e) {
+  if (!$(event.target).closest('.filter-tag').length && !$(event.target).closest('[class^="datepicker"]').length && !$(event.target).closest('.select2-container').length) {
+    $('.filter-tag .note').hide()
+  }
+});
+/*--自定义时间收起展示--*/
+$('input[name$="time"]').on('click', function() {
+    var that = $(this);
+    var value = $('input[name$="time"]:checked').val();
+    if (value == "custom") {
+      $(that).parent().siblings('.custom').show()
+    } else {
+      $(that).parent().siblings('.custom').hide()
+    }
+  });
+/*--自定义时间选择:起始时间--*/
+var $start = $('#start'),
+  $end = $('#end');
+$start.datepicker({
+  onSelect: function(fd, date) {
+    $end.data('datepicker')
+      .update('minDate', date)
+  }
+})
+$end.datepicker({
+  onSelect: function(fd, date) {
+    $start.data('datepicker')
+      .update('maxDate', date)
+  }
+});
+/*--选择select实例化--*/
+$('#select-conTeam,#select-city,#select-comp').select2({
+  placeholder: " ",minimumResultsForSearch: Infinity,
+});
+/*--选中报表--*/
+$("#report").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过展开下拉菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});
+</script>
+<script>
+/*
+ Highcharts销售漏斗模块
+ Highcharts funnel module
+
+ (c) 2010-2016 Torstein Honsi
+
+ License: www.highcharts.com/license
+*/
+(function(b){typeof module==="object"&&module.exports?module.exports=b:b(Highcharts)})(function(b){var r=b.getOptions(),x=r.plotOptions,s=b.seriesTypes,F=b.merge,E=function(){},B=b.each;x.funnel=F(x.pie,{animation:!1,center:["50%","50%"],width:"90%",neckWidth:"30%",height:"100%",neckHeight:"25%",reversed:!1,dataLabels:{connectorWidth:1,connectorColor:"#606060"},size:!0,states:{select:{color:"#C0C0C0",borderColor:"#000000",shadow:!1}}});s.funnel=b.extendClass(s.pie,{type:"funnel",animate:E,translate:function(){var a=
+function(i,a){return/%$/.test(i)?a*parseInt(i,10)/100:parseInt(i,10)},b=0,d=this.chart,c=this.options,e=c.reversed,f=c.ignoreHiddenPoint,p=d.plotWidth,d=d.plotHeight,n=0,r=c.center,g=a(r[0],p),o=a(r[1],d),s=a(c.width,p),j,t,k=a(c.height,d),u=a(c.neckWidth,p),C=a(c.neckHeight,d),v=o-k/2+k-C,a=this.data,y,z,x=c.dataLabels.position==="left"?1:0,A,l,D,q,h,w,m;this.getWidthAt=t=function(i){var a=o-k/2;return i>v||k===C?u:u+(s-u)*(1-(i-a)/(k-C))};this.getX=function(i,a){return g+(a?-1:1)*(t(e?2*o-i:i)/
+2+c.dataLabels.distance)};this.center=[g,o,k];this.centerX=g;B(a,function(a){if(!f||a.visible!==!1)b+=a.y});B(a,function(a){m=null;z=b?a.y/b:0;l=o-k/2+n*k;h=l+z*k;j=t(l);A=g-j/2;D=A+j;j=t(h);q=g-j/2;w=q+j;l>v?(A=q=g-u/2,D=w=g+u/2):h>v&&(m=h,j=t(v),q=g-j/2,w=q+j,h=v);e&&(l=2*o-l,h=2*o-h,m=m?2*o-m:null);y=["M",A,l,"L",D,l,w,h];m&&y.push(w,m,q,m);y.push(q,h,"Z");a.shapeType="path";a.shapeArgs={d:y};a.percentage=z*100;a.plotX=g;a.plotY=(l+(m||h))/2;a.tooltipPos=[g,a.plotY];a.slice=E;a.half=x;if(!f||a.visible!==
+!1)n+=z})},drawPoints:function(){var a=this,b=a.chart.renderer,d,c,e;B(a.data,function(f){e=f.graphic;c=f.shapeArgs;d=f.pointAttr[f.selected?"select":""];e?e.attr(d).animate(c):f.graphic=b.path(c).attr(d).add(a.group)})},sortByAngle:function(a){a.sort(function(a,b){return a.plotY-b.plotY})},drawDataLabels:function(){var a=this.data,b=this.options.dataLabels.distance,d,c,e,f=a.length,p,n;for(this.center[2]-=2*b;f--;)e=a[f],c=(d=e.half)?1:-1,n=e.plotY,p=this.getX(n,d),e.labelPos=[0,n,p+(b-5)*c,n,p+
+b*c,n,d?"right":"left",0];s.pie.prototype.drawDataLabels.call(this)}});r.plotOptions.pyramid=b.merge(r.plotOptions.funnel,{neckWidth:"0%",neckHeight:"0%",reversed:!0});b.seriesTypes.pyramid=b.extendClass(b.seriesTypes.funnel,{type:"pyramid"})});
+</script>
+</html>

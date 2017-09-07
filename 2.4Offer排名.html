@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Offer排行榜</title>
+  <link rel="shortcut icon" href="images/logo_favicon.png">
+  <link rel="stylesheet" href="css/main-New.css">
+  <link rel="stylesheet" href="css/select2.css">
+  <link rel="stylesheet" href="css/cityselect.css">
+  <link rel="stylesheet" href="css/datepicker.css">
+  <link rel="stylesheet" href="css/viewer.min.css">
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/js.cookie.js"></script>
+  <script src="js/My97DatePicker/WdatePicker.js"></script>
+  <script src="js/cityselect.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/highcharts.js"></script>
+  <script src="js/jquery-scrolltofixed-min.js"></script>
+  <script src="js/autogrow.min.js"></script>
+  <script src="js/viewer.min.js"></script>
+  <script src="js/components.js"></script>
+</head>
+<body>
+ 
+ 
+  <div class="offer-rank">
+    <div class="offer-rank-wrapper sts1">
+      <div class="offer-rank-content p8 hidden" style="translateY:60px;opacity:0;">
+        <h3 id="offer-rank-header" class="lh36">
+          <p class="f14 pl48 bdb1">
+            <span class="switch fw-n">
+              <input type="radio" class="switch-input" name="offerViewToggle" value="monthView" id="monthView" checked>
+              <label for="monthView" class="switch-label switch-label-off">本月</label>
+              <input type="radio" class="switch-input" name="offerViewToggle" value="seasonView" id="seasonView">
+              <label for="seasonView" class="switch-label switch-label-on">本季度</label>
+              <span class="switch-selection"></span>
+            </span>
+            <span class="ml8">Offer排行榜</span>
+            <span id="btn-close-offer-rank" class="ic f24 fr fw-n c3 ho-cr cu-po"></span>
+          </p>
+          <div class="ta-c f12 c2">
+            <div class="w72 fl">排名</div>
+            <div class="w96 fl ta-l">顾问</div>
+            <div class="w90 fl ta-l">团队</div>
+            <div class="w60 fl">Offer数</div>
+            <div class="w96 fl">Offer金额</div>
+            <div class="w60 fl">较上季度</div>
+            <div class="clear"></div>
+          </div>
+        </h3>
+        <div class="Scrollable" style="height:440px;overflow-y:auto;">
+          <div class="emptyState-offer-rank"></div><!--月或季度的空状态-->
+          <table class="bdcl f12 ta-c c2 lh40 hidden">
+            <tr class="c2">
+              <th class="w72"></th>
+              <th class="w96"></th>
+              <th class="w90"></th>
+              <th class="w60"></th>
+              <th class="w96"></th>
+              <th class="w60"></th>
+            </tr>
+            <tr>
+              <td><img src="images/offerRank/gold-medal.png" alt="" style="height:30px;margin-bottom:-8px;"></td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td><span class="red">↑<span class="bold">3</span></span>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="images/offerRank/silver-medal.png" alt="" style="height:30px;margin-bottom:-8px;"></td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td><span class="c-gr">↓<span class="bold">1</span></span>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="images/offerRank/bronze-medal.png" alt="" style="height:30px;margin-bottom:-8px;"></td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td><span class="bold">→0</span></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td><span class="red">↑<span class="bold">3</span></span>
+              </td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td><span class="red">↑<span class="bold">3</span></span>
+              </td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td><span class="red">↑<span class="bold">3</span></span>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td><span class="red">↑<span class="bold">3</span></span>
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td><span class="red">↑<span class="bold">3</span></span>
+              </td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td><span class="red">↑<span class="bold">3</span></span>
+              </td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td><span class="red">↑<span class="bold">3</span></span>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="images/offerRank/comeon.gif" style="margin-bottom:-8px;" alt=""></td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td><span class="red">↑<span class="bold">3</span></span>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="images/offerRank/comeon.gif" style="margin-bottom:-8px;" alt=""></td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td><span class="red">↑<span class="bold">3</span></span>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="images/offerRank/comeon.gif" style="margin-bottom:-8px;" alt=""></td>
+              <td class="ta-l"><img src="images/default-profile-pic.jpg" alt="" class="offer-rank-wechat">骆小根</td>
+              <td class="ta-l">TMT业务部</td>
+              <td>3</td>
+              <td>￥300,000</td>
+              <td><span class="red">↑<span class="bold">3</span></span>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+
+      </div>
+    </div>
+    <img src="images/offerRank/offerTrophy.png" class="offer-rank-trophy tro1" alt="">
+  </div>
+  <div style="height:2000px"></div>
+</body>
+<script>
+  $('.offer-rank').click(function() { //单击Offer-rank展开看板
+    $('.offer-rank-wrapper').velocity({
+      width: '500px',
+      height: '540px',
+      borderTopRightRadius: '2px'
+    }, 300);
+    $('.offer-rank-trophy').velocity({
+      bottom: '500px',
+      left: '16px',
+      height: '36px'
+    }, {
+      duration: 300
+    });
+    setTimeout(function() {
+
+      $('.offer-rank-content').show(function() {
+        $('.offer-rank-content').velocity({
+          translateY: 0,
+          opacity: 1
+        }, {
+          duration: 150
+        })
+      });
+    }, 51);
+  });
+
+
+  $('#btn-close-offer-rank').click(function(event) { //单击关闭Offer季度排行榜
+    event.stopPropagation();
+    $('.offer-rank-content').velocity({
+      translateY: 30,
+      opacity: 0
+    }, {
+      duration: 100,
+      complete: function() {
+        $('.offer-rank-content').css('display', 'none')
+      }
+    });
+
+    setTimeout(function() {
+      $('.offer-rank-wrapper').velocity({
+        width: '64px',
+        height: '64px',
+        borderTopRightRadius: '80px'
+      }, {
+        duration: 300
+      });
+      $('.offer-rank-trophy').velocity({
+        bottom: 0,
+        left: 0,
+        height: '48px'
+      }, {
+        duration: 300
+      });
+    }, 101);
+  });
+
+  
+
+ $('#seasonView').on('click',function(){//单击本季度
+
+ });
+   $('#monthView').on('click',function(){//单击本月
+ 
+ });
+</script>
+
+</html>

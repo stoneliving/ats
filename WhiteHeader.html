@@ -1,0 +1,1044 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>公司</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/cityselect.css">
+<link rel="stylesheet" href="css/datepicker.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/datepicker.js"></script>
+<script src="js/cityselect.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+.nav-a{background-color: #fff;color: #bbb;}
+.nav-a .ic{font-size:32px;color:#bbb;}
+.nav-a .f14{color: #666;}
+.header{background-color: #fff;}
+.add-li-a{background-color: #fff; color: #bbb;}
+</style>
+</head>
+
+<body>
+<header class="header  nav-down">
+  <div class="h-contain">
+    <div class="logo fl">优途智聘2.0系统</div>
+    <ul class="fl ml24">
+      <li class="li-no w72 fl">
+        <a href="Overview.html" class="nav-a" id="overview">
+          <div class="ic f20"></div>
+          <div class="f14">人才</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Search-1st.html" class="nav-a" id="search">
+          <div class="ic f20"></div>
+          <div class="f14">搜人才</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Company-1st.html" class="nav-a" id="company">
+          <div class="ic f20"></div>
+          <div class="f14">公司</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Position-1st.html" class="nav-a" id="position">
+          <div class="ic f20"></div>
+          <div class="f14">职位</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Pipeline.html" class="nav-a" id="pipeline">
+          <div class="ic f20"></div>
+          <div class="f14">Pipeline</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Talent-1st.html" class="nav-a" id="talent">
+          <div class="ic f20"></div>
+          <div class="f14">人才库</div>
+        </a>
+      </li>      <li class="li-no w72 fl">
+        <a href="List.html" class="nav-a" id="list">
+          <div class="ic f20"></div>
+          <div class="f14">List库</div>
+        </a>
+      </li> 
+      <li class="li-no w72 fl">
+        <a href="Invoice.html" class="nav-a" id="invoice">
+          <div class="ic f20"></div>
+          <div class="f14">发票</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Report.html" class="nav-a" id="report">
+          <div class="ic f20"></div>
+          <div class="f14">报表</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="E-learning.html" class="nav-a" id="elearn">
+          <div class="ic f20"></div>
+          <div class="f14">E-learning</div>
+        </a>
+      </li>      
+    </ul>
+    <ul class="fr">
+      <li class="li-no fl w56">
+        <div class="nav-a" id="add">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14 w104" style=" display:block; background-color:white;">
+              <li class="li-no">
+                <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a>
+              </li>
+              <li class="li-no">
+                <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a>
+              </li>
+              <li class="li-no">
+                <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 批量导入</a>
+              </li>              
+            </ul>
+        </div>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Todo.html" class="nav-a" id="todo" title="待办">
+          <div class="ic f24 lh46"></div>
+        </a>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Message.html" class="nav-a" id="message" title="消息">
+          <div class="ic f24 lh46"></div>
+        </a>
+      </li>      
+      <li class="li-no fl w56">
+        <div href="" class="nav-a" id="account">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14">
+              <li class="li-no">
+                <a href="Settings-Account.html" class="add-li-a"><span class="ic f20"></span> 系统设置</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 使用帮助</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a ho-red"><span class="ic f20"></span> 退出登录</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<!--联系人详情-->
+<div id="cnotes" class="hidden note w240 p80816">
+  <div class="h240 ov-y Scrollable">
+    <div class="c1">
+      <div class="fl lh30">
+        <div><span class="d-ib w44 c3">性别：</span> <span>男</span></div>
+        <div><span class="d-ib w44 c3">职位：</span> <span>招聘经理</span></div>
+        <div><span class="d-ib w44 c3">状态：</span> 在职</div>
+        <div><span class="d-ib w44 c3">电话：</span> <span>18612345678</span></div>
+        <div><span class="d-ib w44 c3">邮箱：</span> <span>test@abcompany.com</span></div>
+      </div>
+      <div class="fl lh30">
+        <div>
+          <span class="d-ib w44 c3">QQ：</span>
+          <span>1234567890</span>
+        </div>
+        <div>
+          <span class="d-ib w44 c3">微信：</span>
+          <span>zhihui.zhang</span>
+        </div>
+        <div>
+          <span class="d-ib w44 c3">录入：</span>
+          <span>高阳</span>
+        </div>
+        <div>
+          <span class="d-ib w44 c3 fl">备注：</span>
+          <p class="fl ml4 mt7 lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quod, deleniti voluptatibus</p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>        
+  </div>
+</div>
+<!--公共备注-->
+<div id="notes" class="note hidden">
+  <div class="p4-0 mh240 w360 ovy-a Scrollable" >
+    <div class="btn-newnote fl cb ml32 mb8 cu-po"><span class="ic f24"></span> 新增备注</div>
+    <ul class="tl-container c1 lh-n f14 clear">
+      <li class="li-no pb12 clear">
+        <div class="fl ml16 tl-ldot"></div>
+        <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+          <p class="wh-pw lh24">一些备注</p>
+          <div class="c3 bdt">
+            <span>2015-09-03</span>
+            <span class="ml8">15:30</span>
+            <span class="ml24 pr4">顾问:</span>
+            <span>王某某</span>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </li>
+      <li class="li-no pb12 clear">
+        <div class="fl ml16 tl-ldot"></div>
+        <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+          <p class="wh-pw lh24">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum corrupti optio fugit </p>
+          <div class="c3">
+            <span>2015-09-03</span>
+            <span class="ml8">15:30</span>
+            <span class="ml24 pr4">顾问:</span>
+            <span>王某某</span>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </li>
+      <li class="li-no pb12 clear">
+        <div class="fl ml16 tl-ldot"></div>
+        <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+          <p class="wh-pw lh24">一些备注</p>
+          <div class="c3 bdt">
+            <span>2015-09-03</span>
+            <span class="ml8">15:30</span>
+            <span class="ml24 pr4">顾问:</span>
+            <span>王某某</span>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </li>
+      <li class="li-no pb12 clear">
+        <div class="fl ml16 tl-ldot"></div>
+        <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+          <p class="wh-pw lh24">一些备注</p>
+          <div class="c3 bdt">
+            <span>2015-09-03</span>
+            <span class="ml8">15:30</span>
+            <span class="ml24 pr4">顾问:</span>
+            <span>王某某</span>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </li>
+      <li class="li-no pb12 clear">
+        <div class="fl ml16 tl-ldot"></div>
+        <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+          <p class="wh-pw lh24">一些备注</p>
+          <div class="c3 bdt">
+            <span>2015-09-03</span>
+            <span class="ml8">15:30</span>
+            <span class="ml24 pr4">顾问:</span>
+            <span>王某某</span>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </li>
+    </ul>            
+  </div>
+</div>             
+<!--新增备注框-->
+<li id="newnote" class="hidden li-no pb12 clear">
+  <div class="fl ml16 tl-ldot"></div>
+  <div class="fl w280 w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2">
+    <textarea name="" id="" class="p0-4 lh24 w100p h120"></textarea>
+    <div class="po-a" style="margin:-168px 0 0 218px;">
+      <span id="newnote-cancel" class="ic f24 red cu-po ho-u"></span>                
+      <span id="newnote-confirm" class="ic f24 c-gr cu-po ho-u"></span>
+    </div>
+  </div>
+  <div class="clear"></div>
+</li>
+<!--公司列表操作menu-->
+<div id="dropmenu" class="hidden po-a card5 lh30 ta-l cu-po trans sc0 op0">
+  <div id="m-delegate" class="p0-10 ho-blue">分配给BD</div>
+  <div id="m-folder" class="p0-10 ho-blue">加入文件夹</div>
+  <!--<div id="m-task" class="p0-10 ho-blue">添加任务</div>-->
+  <div id="m-claim" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>领取</div>
+  <div id="m-intention" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>意向</div>
+  <div id="m-negotiate" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>谈判</div>
+  <div id="m-contract" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>签约</div>
+  <div id="m-pool" class="p0-10 ho-blue"><span class="ic f20 c3 pr4"></span>放回客户池</div>
+</div>
+<!--加入公司文件夹-->
+<div id="popup-tocomfolder" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>加入文件夹</h4>
+  <div class="mt8 p816">
+    <span class="d-ib w86 c2">公司：</span>
+    <span class="ic f24 c3 pr4"></span>
+    <span>深圳市Bravos股份科技有限公司</span>
+  </div>
+  <div class="p816">
+   <span class="fl w86 c2">选择文件夹：</span>
+   <div class="fl bg-w w200 p8">
+     <ul id="talfolder-source" class="mh168 ovy-a">
+       <li class="folder-select li-no lh30 ho-ec ho-cb cu-po"><span class="ic f20 cf6 mr4"></span><span>默认文件夹</span></li>
+       <li id="newfolder" class="folder-select li-no lh30 hidden ho-ec ho-cb cu-po"><span class="ic f20 cf6 mr4"></span><input type="text" onKeyUp="confirmFolder(event)" class="w120 pl4 lh24"></li>
+       <li class="li-no lh30"><span class="addfolder cu-po cb"><span class="ic f24"></span>新增文件夹</span></li>
+     </ul>
+   </div>
+   <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+  <div class="bdt1-d mt8">
+    <span class="fr p16-24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 cb bold cu-po ho-u">确认加入</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--领取客户-->
+<div id="popup-claim" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>领取公司</h4>
+  <div class="mt8 p816">
+    <span class="d-ib w86 c2">公司：</span>
+    <span class="ic f24 c3 pr4"></span>
+    <span>深圳市Bravos股份科技有限公司</span>
+  </div>
+  <div class="mt8 p816">
+    <span class="d-ib w86 c2">公司状态：</span>
+    <span>客户池</span>
+    <span class="ic f24 c3 ml24"></span>
+    <span class="cw bdrs2 bg50 p0-4 ml24">潜在客户</span>
+  </div>
+  <div class="clear"></div>
+  <div class="bdt1-d mt8">
+    <span class="fr p16-24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 cb bold cu-po ho-u">确认领取</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--设为意向-->
+<div id="popup-intention" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>设为意向客户</h4>
+  <div class="mt8 p816">
+    <span class="d-ib w86 c2">公司：</span>
+    <span class="ic f24 c3 pr4"></span>
+    <span>深圳市Bravos股份科技有限公司</span>
+  </div>
+  <div class="mt8 p816">
+    <span class="d-ib w86 c2">公司状态：</span>
+    <span class="cw bdrs2 bg50 p0-4">潜在客户</span>
+    <span class="ic f24 c3 ml24"></span>
+    <span class="cw bdrs2 bg75 p0-4 ml24">意向客户</span>
+  </div>
+  <div class="clear"></div>
+  <div class="bdt1-d mt8">
+    <span class="fr p16-24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 cb bold cu-po ho-u">确认</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--设为谈判-->
+<div id="popup-negotiate" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>设为签约谈判</h4>
+  <div class="mt8 p816">
+    <span class="d-ib w86 c2">公司：</span>
+    <span class="ic f24 c3 pr4"></span>
+    <span>深圳市Bravos股份科技有限公司</span>
+  </div>
+  <div class="mt8 p816">
+    <span class="d-ib w86 c2">公司状态：</span>
+    <span class="cw bdrs2 bg75 p0-4">意向客户</span>
+    <span class="ic f24 c3 ml24"></span>
+    <span class="cw bdrs2 bg-b p0-4 ml24">签约谈判</span>
+  </div>
+  <div class="clear"></div>
+  <div class="bdt1-d mt8">
+    <span class="fr p16-24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 cb bold cu-po ho-u">确认</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--设为签约-->
+<div id="popup-contract" class="hidden po-f bg-f2 w424 l50p card5-nbg t50p f14 z200 c2" style="margin:-290px 0 0 -212px;">
+  <h4 class="p816 cw bg-hdr f15"><span class="d-ib w86">签约：</span><span><span class="ic f20 pr4 fw-n"></span><span class="f15 fw-n">深圳市Bravos股份科技有限公司</span></span></h4>
+  <div class="mt8 p816">
+    <span class="d-ib w86 c2">公司状态：</span>
+    <span class="cw bdrs2 bg-b p0-4">签约谈判</span>
+    <span class="ic f24 c3 ml24"></span>
+    <span class="cw bdrs2 bgok p0-4 ml24">已签约</span>
+  </div>
+  <div class="p816">
+    <span class="d-ib w86">合同名称：</span>
+    <span><input type="text" class="h32 p8 w262"></span>
+  </div>
+  <div class="p816">
+    <span class="d-ib w86 f14">合同期限：</span>
+      <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="start3">
+      <span class="p0-16">~</span>
+      <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy-mm-dd" id="end3">
+  </div>
+  <div class="p816">
+    <span class="d-ib w86 f14">附件：</span>
+    <span class="ic f24"></span>
+    <span>0</span>
+    <label class="label d-ib cb bdrs2 cu-po ml12"><input type="file"><span class="ic f24"></span><span>上传</span></label>
+  </div>
+  <div class="p816">
+    <span class="d-ib w86 f14">收费标准：</span>
+    <span><input type="text" class="h32 p8 w56"></span>
+    <span>%</span>
+  </div>
+  <div class="p816">
+    <span class="d-ib w86 f14">保证期：</span>
+    <select name="" id="select-warrantime" class="w86">
+      <option></option>
+      <option>1个月</option>
+      <option>2个月</option>
+      <option>3个月</option>
+      <option>4个月</option>
+      <option>5个月</option>
+      <option>6个月</option>
+      <option>7个月</option>
+      <option>8个月</option>
+      <option>9个月</option>
+      <option>10个月</option>
+      <option>11个月</option>
+      <option>12个月</option>		
+    </select>
+    <script>
+    $('#select-warrantime').select2({
+        minimumResultsForSearch:Infinity,
+        placeholder:'',
+        });
+    </script>  
+  </div>
+  <div class="p816"><span class="d-ib w86 f14">收费方式：</span>
+    <input type="radio" id="paybyM">
+    <label for="paybyM">按月薪</label>
+    <input type="radio" id="paybyY">
+    <label for="paybyY" class="ml24">按年薪</label>
+  </div>
+  <div class="p816">
+    <span class="d-ib w86 f14">首款比例：</span>
+    <span><input type="text" class="h32 p8 w56"></span>
+    <span>%</span>
+  </div>
+  <div class="p816">
+    <span class="d-ib w86 f14">退款比例：</span>
+    <span><input type="text" class="h32 p8 w56"></span>
+    <span>%</span>  
+  </div>
+  <div class="p816">
+    <span class="d-ib w86 f14">备注：</span>
+    <span><input type="text" placeholder="付款方式、退款比例等" class="h32 p8 w262"></span>
+  </div>
+  <div class="mt8 bdt1">
+    <span class="fr p16">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 cw bg-b p4-8 cu-po bdrs2 ho-1f">确认</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--分配BD-->
+<div id="popup-delegate" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>分配BD</h4>
+  <div class="mt8 p816">
+    <span class="d-ib w86 c2">公司：</span>
+    <span class="ic f24 c3 pr4"></span>
+    <span>深圳市Bravos股份科技有限公司</span>
+  </div>
+  <div class="mt8 p816">
+    <span class="d-ib w86 c2">分配给BD：</span>
+     <select name="" id="select-bd2" class="select-position w160">
+       <option value="-1"></option>
+       <optgroup label="凤凰队">
+         <option value="">张</option>
+         <option value="">王</option>
+         <option value="">李</option>
+       </optgroup>  
+       <optgroup label="热火队">
+         <option value="">赵</option>
+         <option value="">刘</option>
+       </optgroup>  
+       <optgroup label="麒麟队">
+         <option value="">邓</option>
+         <option value="">周</option>
+       </optgroup>  
+     </select>
+     <script>
+	 /*BD选择实例化*/
+     $('#select-bd2').select2({
+  minimumResultsForSearch: Infinity,
+  placeholder: {
+    id: '-1', // the value of the option
+    text: ''
+  }
+		 });
+     </script>
+  </div>
+  <div class="clear"></div>
+  <div class="bdt1-d mt8">
+    <span class="fr p16-24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 cb bold cu-po ho-u">确认分配</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--编辑公司文件夹-->
+<div id="popup-editcomfolder" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>编辑文件夹</h4>
+  <div class="p16-24">
+   <div class="bg-w p8  mh240 ovy-a">
+     <ul>
+       <li class="folder-select1 po-r li-no lh36 pl8 ho-ec">
+         <span class="ic f20 cf6 mr4"></span>
+         <span>默认文件夹</span>
+       </li>
+       <li class="folder-select1 po-r li-no lh36 pl8 ho-ec">
+         <span class="ic f20 cf6 mr4"></span>
+         <span>已存在的文件夹</span>
+         <div class="fr mr16">
+           <span class="hidden editf-btn ic f24 c3 cu-po ho-cb"></span>
+           <span class="hidden delef-btn ic f24 c3 cu-po ho-cr"></span>
+         </div>
+          <div id="del-confirm" class="hidden note w280 ml-6 mt-5" style="margin-top:-4px;margin-left:-6px;">
+            <div class="p8">
+              <span>删后内容将移至</span>
+              <span class="ic f20 cf6 ml8 mr4"></span>默认文件夹
+              <span id="del-confirm-confirm" class="fr red ho-u cu-po ml16">确认删除</span>
+              <span id="del-confirm-cancel" class="fr c3 ho-u cu-po">取消</span>
+            </div>
+          </div>
+         
+       </li>
+       <li id="newfolder1" class="hidden folder-select1 po-r li-no lh36 pl8 ho-ec ho-show2">
+         <span class="ic f20 cf6 mr4"></span>
+         <input type="text" onKeyUp="confirmFolder1(event)" onBlur="onBlur(event)" class="w120 pl4 lh24">
+         <div class="fr mr16">
+           <span class="hidden editf-btn ic f24 c3 cu-po ho-cb"></span>
+           <span class="hidden delef-btn ic f24 c3 cu-po ho-cr"></span>
+         </div>
+       </li>
+       <li class="li-no lh30 p8"><span class="addfolder1 cu-po cb"><span class="ic f24"></span>新增文件夹</span></li>
+     </ul>
+   </div>
+  </div>
+   <span id="close-editfolder" class="ic f32 red d-ib po-a cu-po" style="right:0;top:0;padding:2px"></span>
+  </div>
+
+<!--弹框背景--><div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z150"></div>
+<!--操作冒泡提示--><div id="toast" class="hidden po-f z200 t0 cw card5-nbg l50p t50p mt80 ml-58 op0 p16-24 bg-toa"></div>
+<!--放回客户池-->
+<div id="popup-pool" class="hidden po-f bg-f2 w424 t0 l50p card5-nbg t50p f14 z200 mt-160 ml-212">
+  <h4 class=" card-header"><span class="ic f24 fw-n pr4"></span>放回客户池</h4>
+  <div class="mt8 p816">
+    <span class="d-ib w86 c2">公司：</span>
+    <span class="ic f24 c3 pr4"></span>
+    <span>深圳市Bravos股份科技有限公司</span>
+  </div>
+  <div class="mt8 p816">
+    <span class="d-ib w86 c2">公司状态：</span>
+    <span class="cw bdrs2 bg50 p0-4">当前状态</span>
+    <span class="ic f24 c3 ml24"></span>
+    <span class="c1 ml24">客户池</span>
+  </div>
+  <div class="clear"></div>
+  <div class="bdt1-d mt8">
+    <span class="fr p16-24">
+      <span class="pop-cancel ho-u c2 cu-po">取消</span>
+      <span class="pop-confirm ml24 cb bold cu-po ho-u">确认</span>
+    </span>
+    <div class="clear"></div>
+  </div>
+</div>
+</body>
+<script>
+$('#close-editfolder').on('click',function(){
+	$('#popup-editcomfolder,#popbg').velocity("fadeOut",{duration:150});
+	});
+</script>
+
+<script>
+/*拂过联系人显示联系人详情*/
+$('.cnote-ho').hover(function(){
+	$('#cnotes').appendTo(this);
+	$('#cnotes').velocity("fadeIn",{duration:200});
+	},function(){
+		$('#cnotes').velocity("fadeOut",{duration:150});
+		});		
+</script>
+<script>
+/*拂过note-ho出现和隐藏备注*/	
+$('.note-ho').hover(function(){
+	var that = $(this);
+	noteHo = setTimeout(function(){
+		$('#notes').appendTo(that);
+		$('#notes').velocity("fadeIn",{duration:200});
+		},200);
+	},function(){
+		clearTimeout(noteHo);
+		$('#notes').velocity("fadeOut",{duration:150});
+		});		
+/*--------备注系统-------------*/
+/*获得YYYY-MM-DD格式日期*/
+function getYMD(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+};
+/*取得HH:MM格式时间*/
+function getHM(date) {
+    var d = new Date(date),
+        hour =''+ d.getHours(),
+        minute =''+ d.getMinutes();
+	if(hour.length<2) hour = '0'+hour;
+	if(minute.length<2) minute = '0'+minute;	
+    return hour+':'+minute;
+};
+/*新增备注*/
+$('.btn-newnote').on('click',function(){
+	$('#newnote').prependTo($(this).siblings());
+	$('#newnote').show();
+	$('#newnote textarea').val('').focus();
+	});
+/*确认新增备注，有一处变动（w280）*/	
+$('#newnote-confirm').on('click',function(){
+	var notetext = $('#newnote textarea').val();
+	var hastext = notetext.trim().length;
+	if(hastext){
+	$('#newnote').hide();
+	var role = "顾问",
+	name = "王某某",
+	today = getYMD(Date()),
+	time = getHM(Date());
+	$('<li class="li-no pb12 clear"> <div class="fl ml16 tl-ldot"></div> <div class="fl w280 ml16 l-chev p4-8 bg-f2 lh30 bdrs2"> <p class="wh-pw lh24">'+notetext+'</p> <div class="c3 bdt"> <span>'+today+'</span> <span class="ml8">'+time+'</span> <span class="ml24 pr4">'+role+':</span> <span>'+name+'</span> </div> </div> <div class="clear"></div> </li>').insertAfter('#newnote');
+		} else {
+			$('#newnote textarea').focus()}
+	});
+/*取消新增备注*/
+$('#newnote-cancel').on('click',function(){
+	$('#newnote').hide();
+	});		
+</script>
+<script>
+/*----弹窗滚轮到顶控制----*/
+$('.Scrollable').on('DOMMouseScroll mousewheel', function(ev) {
+    var $this = $(this),
+        scrollTop = this.scrollTop,
+        scrollHeight = this.scrollHeight,
+        height = $this.height(),
+        delta = (ev.type == 'DOMMouseScroll' ?
+            ev.originalEvent.detail * -40 :
+            ev.originalEvent.wheelDelta),
+        up = delta > 0;
+
+    var prevent = function() {
+        ev.stopPropagation();
+        ev.preventDefault();
+        ev.returnValue = false;
+        return false;
+    }
+
+    if (!up && -delta > scrollHeight - height - scrollTop) {
+        // Scrolling down, but this will take us past the bottom.
+        $this.scrollTop(scrollHeight);
+
+        return prevent();
+    } else if (up && delta > scrollTop) {
+        // Scrolling up, but this will take us past the top.
+        $this.scrollTop(0);
+        return prevent();
+    }
+});
+</script>
+<script>/*--文件夹管理系统功能：增删改--*/
+/*拂过<li>出现改删图标*/
+$(document).on('mouseenter','.folder-select1',function(){
+	$(this).find('.delef-btn').show();
+	$(this).find('.editf-btn').show();
+	});
+$(document).on('mouseleave','.folder-select1',function(){
+	$(this).find('.delef-btn').hide();
+	$(this).find('.editf-btn').hide();
+	});
+/*文件夹改名*/
+$(document).on('click','.editf-btn',function(){
+   var that = $(this);
+   var text = that.parent().prev().html();
+   that.parent().before('<input type="text" onKeyUp="confirmFolder1(event)" class="w120 pl4 lh24">');
+   that.parent().prev().val(text);
+   that.parent().prev().prev().remove();
+   that.parent().prev().select();
+	});
+/*删除文件夹*/
+$('#popup-editcomfolder').on('click','.delef-btn',function(){
+	var that = $(this).parent().parent();
+	$('#del-confirm').appendTo(that);
+	$('#del-confirm').show();
+	});
+$('#del-confirm').on('click','#del-confirm-cancel',function(){
+	$('#del-confirm').hide();
+	});
+$('#del-confirm').on('click','#del-confirm-confirm',function(){
+	var defaultFolder = $(this).parents('ul').children('li:first-child');
+	$(this).parents('.folder-select1').velocity("slideUp",{duration:200,complete:function(){$('#del-confirm').hide().appendTo(defaultFolder);}});
+	});	
+/*命名输入框enter事件*/		
+function confirmFolder1(e) {
+  var input = $('input:focus');
+  var text = input.val();
+  if (e.keyCode == 13) {
+    input.replaceWith('<span>'+text+'</span>');
+  }
+};
+/*---文件夹命名框失去焦点---*/
+function onBlur(e) {
+  var input = $(event.target);
+  var text = input.val();
+  var notext = text.trim();
+  if (notext=='') {
+	  input.focus();
+	  } else {
+		  input.replaceWith('<span>'+text+'</span>');
+		  }
+};
+$('.addfolder1').on('click', function() {
+  var that =$(this);
+  var folderForClone = that.parent().siblings('#newfolder1'); 
+  var newfolder = $('#newfolder1').clone();
+  if ($('input:focus').length==1){
+	  } else {
+  newfolder.removeAttr('id');
+  newfolder.css({
+	'display': 'block'
+  });
+  newfolder.insertBefore($(folderForClone));
+  newfolder.children('input').focus();
+
+		  }
+});
+
+</script>
+<script>
+/*--新建文件夹、选择文件夹功能--*/
+function confirmFolder(e) {
+  var input = $('input:focus');
+  var text = input.val();
+  if (e.keyCode == 13) {
+    $('.folder-select').removeClass('bg-b cw').addClass('ho-cb ho-ec');
+    input.parent().removeClass('ho-cb ho-ec').addClass('bg-b cw');
+    input.replaceWith('<span>'+text+'</span>');
+  }
+};
+$('.addfolder').on('click', function() {
+  var that =$(this);
+  var folderForClone = that.parent().siblings('#newfolder'); 
+  var newfolder = $(folderForClone).clone();
+  newfolder.removeAttr('id');
+  newfolder.css({
+    'display': 'block'
+  });
+  newfolder.insertBefore($(folderForClone));
+  newfolder.children('input').focus();
+});
+$(document).on('click', '.folder-select', function() {
+  $(this).siblings('.folder-select').removeClass('bg-b cw').addClass('ho-cb ho-ec');
+  $(this).removeClass('ho-cb ho-ec').addClass('bg-b cw');
+});
+</script>
+<script>
+/*--操作冒泡提示--*/
+function toast(){
+	$('#toast').show().velocity({marginTop:'-=120',opacity:1,delay:150},{duration:150,easing:'easeOutCubic'});
+	window.setTimeout(function(){
+		$('#toast').velocity('reverse',{complete:function(){$('#toast').hide()}})},1800);
+		};	
+/*--单击编辑公司文件夹--*/
+$('#edit-comfolder').on('click',function(){
+	$('#popbg,#popup-editcomfolder').velocity('fadeIn',{duration:200});
+	});
+/*--------id小菜单---------*/
+/*领取该客户*/
+$('#m-claim').on('click',function(){
+	$('#popbg,#popup-claim').velocity('fadeIn',{duration:200});
+	});
+/*意向*/
+$('#m-intention').on('click',function(){
+	$('#popbg,#popup-intention').velocity('fadeIn',{duration:200});
+	});
+/*谈判*/
+$('#m-negotiate').on('click',function(){
+	$('#popbg,#popup-negotiate').velocity('fadeIn',{duration:200});
+	});
+/*签约*/
+$('#m-contract').on('click',function(){
+	$('#popbg,#popup-contract').velocity('fadeIn',{duration:200});
+	});
+/*分配BD*/
+$('#m-delegate').on('click',function(){
+	$('#popbg,#popup-delegate').velocity('fadeIn',{duration:200});
+	});
+/*放回客户池*/
+$('#m-pool').on('click',function(){
+	$('#popbg,#popup-pool').velocity('fadeIn',{duration:200});
+	});	
+/*加入公司文件夹*/
+$('#m-folder').on('click',function(){
+	$('#popbg,#popup-tocomfolder').velocity('fadeIn',{duration:200});
+	});
+/*--弹窗确认操作--*/	
+$('.pop-confirm').on('click',function(){
+	var ID = $(this).parent().parent().parent();
+	ID = $(ID).attr('id');
+	switch(ID) {
+		case 'popup-claim':
+		$('#toast').html('已成功领取客户');
+		break;
+		case 'popup-delegate':
+		$('#toast').html('已成功分配给BD')
+		break;
+		case 'popup-tocomfolder':
+		$('#toast').html('已成功加入文件夹')
+		break;
+		case 'popup-contract':
+		$('#toast').html('已成功设为已签约')
+		break;
+		case 'popup-intention':
+		$('#toast').html('已成功设为意向客户')
+		break;
+		case 'popup-negotiate':
+		$('#toast').html('已成功设为签约谈判')
+		break;
+		case 'popup-pool':
+		$('#toast').html('已成功放回客户池')
+		break;
+		};
+	$('#popbg,#popup-claim,#popup-delegate,#popup-tocomfolder,#popup-contract,#popup-negotiate,#popup-intention,#popup-pool').velocity('fadeOut',{duration:150});
+	toast();
+	});		
+
+/*--弹窗单击取消--*/
+$('#popbg,.pop-cancel').on('click',function(){
+	$('#popbg,#popup-tocomfolder,#popup-editcomfolder,#popup-claim,#popup-delegate,#popup-contract,#popup-intention,#popup-claim,#popup-negotiate,#popup-pool').velocity('fadeOut',{duration:150})
+	});
+	
+/*--城市选择实例化--*/
+var currentcity=new Vcity.CitySelector({input:'citySelect1'});
+/*--列表表头单击排序：小图标填色--*/	
+$('.sort').on('click',function(){
+	var des = $(this).children('.descend');
+	var ase = $(this).children('.ascend');
+	$(this).siblings().children('.cb').removeClass('cb').addClass('ce0');
+	if($(des).hasClass('cb')){
+		$(ase).removeClass('ce0').addClass('cb');$(des).removeClass('cb').addClass('ce0')} else {
+			$(des).removeClass('ce0').addClass('cb');$(ase).removeClass('cb').addClass('ce0');}
+	});
+/*--移除筛选标签--*/
+$('.tag-search').on('click',function(){
+	$(this).velocity({left:"-120px",opacity:0,},{duration:150,complete:function(){$(this).remove();}});
+	});
+/*--单击筛选标签--*/
+$('.filter-tag').on('click', function() {
+  $(this).siblings().children('div').hide();
+  $(this).children('div').show();
+});
+$('.filter-add,.filter-cancel').on('click', function(e) {
+  event.stopPropagation();
+  $(this).parent().parent().hide();
+});
+/*单击文档任意位置关闭筛选框*/
+$(document).on('click', function(e) {
+  if (!$(event.target).closest('.filter-tag').length && !$(event.target).closest('[class^="datepicker"]').length && !$(event.target).closest('.select2-container').length) {
+    $('.filter-tag .note').hide()
+  }
+});
+/*--自定义时间收起展示--*/
+$('input[name$="time"]').on('click', function() {
+    var that = $(this);
+    var value = $('input[name$="time"]:checked').val();
+    if (value == "custom") {
+      $(that).parent().siblings('.custom').show()
+    } else {
+      $(that).parent().siblings('.custom').hide()
+    }
+  })
+  /*--自定义时间选择--*/
+var $start = $('#start'),
+  $end = $('#end');
+$start.datepicker({
+  onSelect: function(fd, date) {
+    $end.data('datepicker')
+      .update('minDate', date)
+  }
+})
+$end.datepicker({
+  onSelect: function(fd, date) {
+    $start.data('datepicker')
+      .update('maxDate', date)
+  }
+});
+var $start1 = $('#start1'),
+  $end1 = $('#end1');
+$start1.datepicker({
+  onSelect: function(fd, date) {
+    $end1.data('datepicker')
+      .update('minDate', date)
+  }
+})
+$end1.datepicker({
+  onSelect: function(fd, date) {
+    $start1.data('datepicker')
+      .update('maxDate', date)
+  }
+});
+var $start2 = $('#start2'),
+  $end2 = $('#end2');
+$start2.datepicker({
+  onSelect: function(fd, date) {
+    $end2.data('datepicker')
+      .update('minDate', date)
+  }
+})
+$end2.datepicker({
+  onSelect: function(fd, date) {
+    $start2.data('datepicker')
+      .update('maxDate', date)
+  }
+});
+var $start3 = $('#start3'),
+  $end3 = $('#end3');
+$start3.datepicker({
+  onSelect: function(fd, date) {
+    $end3.data('datepicker')
+      .update('minDate', date)
+  }
+})
+$end3.datepicker({
+  onSelect: function(fd, date) {
+    $start3.data('datepicker')
+      .update('maxDate', date)
+  }
+});
+/*--选择select实例化--*/
+$('#select-company').select2({
+  placeholder: " ",
+});
+$('#select-bd').select2({
+  minimumResultsForSearch: Infinity,
+  placeholder: {
+    id: '-1', // the value of the option
+    text: ''
+  }
+});
+$('#select-team,#select-status,#select-cnature,#select-csize').select2({
+  minimumResultsForSearch: Infinity,
+  placeholder: '',
+});
+/*--拂过搜索结果更改背景色--*/
+$('.detail-list').mouseenter(function(e) {
+  $(this).prev().addClass('bg-ec')
+});
+$('.detail-list').mouseleave(function(e) {
+  $(this).prev().removeClass('bg-ec')
+});
+/*--点击操作icon弹出操作菜单--*/
+$('.op-menu').click(function(e) {
+	var that = $(this);
+	var beforeSts = $(that).parent().siblings(':nth-child(4)').children().html();
+	switch(beforeSts){
+		case '客户池':
+		$('#m-claim,#m-delegate').show();
+		$('#m-contract,#m-intention,#m-negotiate,#m-pool').hide();
+		break;
+		case '潜在客户':
+		$('#m-delegate,#m-intention,#m-negotiate,#m-pool').show();
+		$('#m-contract,#m-claim').hide();
+		break;
+		case '意向客户':
+		$('#m-delegate,#m-contract,#m-negotiate,#m-pool').show();
+		$('#m-intention,#m-claim').hide();
+		break;
+		case '签约谈判':
+		$('#m-delegate,#m-contract,#m-pool').show();
+		$('#m-intention,#m-claim,#m-negotiate').hide();
+		break;
+		case '已签约':
+		$('#m-delegate').show();
+		$('#m-intention,#m-claim,#m-negotiate,#m-contract,#m-pool').hide();
+		break;
+		case '待续约':
+		$('#m-delegate,#m-contract,#m-pool').show();
+		$('#m-intention,#m-claim,#m-negotiate').hide();
+		break;
+		};
+	var has = $(that).has('#dropmenu').length;
+	var visible = !$('#dropmenu').hasClass('sc0');
+	var icons = $('.op-menu').children('.ic');
+	var Icon = $(that).children('.ic');
+	if (has&&visible) {
+		$('#dropmenu').addClass('sc0 op0');
+		$(Icon).removeClass('cb z50');
+		setTimeout(function(){
+			$('#dropmenu').hide();
+			},150);
+		} else {
+			$('#dropmenu').appendTo(that);
+			$('#dropmenu').show();
+			$(icons).removeClass('cb z50');
+			$(Icon).addClass('cb z50');
+			setTimeout(function() {
+			  $('#dropmenu').removeClass('sc0 op0')
+			}, 1);
+			}	
+});
+/*单击任意地方关闭菜单*/$(document).on('click',function(){
+	var that = $('#dropmenu').parent();
+	var Icon = $('#dropmenu').siblings();
+	if(!$(event.target).closest(that).length){
+		  $('#dropmenu').addClass('sc0 op0');
+		  $(Icon).removeClass('cb z50');
+		}
+	});
+/*--列表-详情切换--*/
+$("#showlist").click(function(e) {
+  $(".detail-list").hide();
+  $('.h64').removeClass('bdt12').addClass('bdt1');
+  $("#showgrid").removeClass('cb').addClass('ho-bd');
+  $(this).addClass('cb').removeClass('ho-bd');
+});
+$("#showgrid").click(function(e) {
+  $(".detail-list").show();
+  $('.h64').removeClass('bdt1').addClass('bdt12');
+  $("#showlist").removeClass('cb').addClass('ho-bd');
+  $(this).addClass('cb').removeClass('ho-bd');
+});
+/*--选中公司--*/
+$("#company").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过展开下拉菜单*/
+$("#add").mouseenter(function(e) {
+  $("#add ul").show()
+});
+$("#add").mouseleave(function(e) {
+  $("#add ul").hide()
+});
+$("#account").mouseenter(function(e) {
+  $("#account ul").show()
+});
+$("#account").mouseleave(function(e) {
+  $("#account ul").hide()
+});</script>
+
+</html>

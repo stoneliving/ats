@@ -1,0 +1,529 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>新增人才</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main-New.css">
+<link rel="stylesheet" href="css/cityselect.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/autocomplete.css">
+<link rel="stylesheet" href="css/dropzone.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/cityselect.js"></script>
+<script src="js/jquery.autocomplete.min.js"></script>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/dropzone.js"></script>
+          <style>
+          .fileicon{height: 16px;width: 16px;position: absolute;display: inline-block;background-image: url(images/filetype.png);margin-top:2px;}
+		  .xls{background-position:-90px 0;}
+		  .ppt{background-position:-150px 0;}
+		  .doc{background-position:-60px 0;}
+		  .pdf{background-position:-30px 0;}
+		  .zip{background-position:-240px 0;}
+		  .pic{background-position:0 0;}
+		  .txt{background-position:-120px 0;}
+		  .mp3{background-position:-180px 0;}
+		  .video{background-position:-210px 0;}
+		  .df-icon{background-position:-270px 0;}
+		  
+          </style>
+</head>
+
+<body class="bg-ec pb24">
+<div class="po-f t0 ml-434 l50p z99">
+  <div class="h64 bg-db w868 m-a bxsh0-2-5">
+    <div class="lh64 cw bold f20 ml24 fl"><span class="ic f24 fw-n"></span> 新增人才</div>
+    <div class="fr bg-w cb p4-16 bdrs2 mr24 mt24 f14 cu-po ho-1f">发布</div>
+    <div class="fr bg-w cb p4-16 bdrs2 mr16 mt24 f14 cu-po ho-red" onClick="window.close()">取消</div>
+  </div>
+</div>
+<div class="w868 m-a mt80">
+  <div class="mt24 card1-nbg bg-f7 p24 f14" id="Parent">
+    <div class="p24 fl w360"> <span class="c2 bold">MPC：</span> <span class="ml24">
+      <input type="radio" name="mpc" id="qianzai">
+      <label for="qianzai"></label>
+      <span class="c1">是</span> </span> <span class="ml12">
+      <input type="radio" name="mpc" id="yixiang">
+      <label for="yixiang"></label>
+      <span class="c1">否</span> </span> </div>
+    <div class="fl p24"><span class="bold ">加入职位：</span>
+      <select name="" class="select-position w240">
+        <optgroup label="公司A">
+        <option value="A">Java高级开发工程师</option>
+        <option value="A">iOS开发工程师</option>
+        <option value="A">安卓开发工程师</option>
+        </optgroup>
+        <optgroup label="公司B">
+        <option value="B">产品经理</option>
+        <option value="B">前端工程师</option>
+        </optgroup>
+        <optgroup label="公司C">
+        <option value="C">算法工程师</option>
+        </optgroup>
+        <optgroup label="公司D">
+        <option value="D">Java高级开发工程师</option>
+        <option value="D">iOS开发工程师</option>
+        <option value="D">安卓开发工程师</option>
+        </optgroup>
+        <optgroup label="公司E">
+        <option value="D">产品经理</option>
+        <option value="D">前端工程师</option>
+        </optgroup>
+        <optgroup label="公司F">
+        <option value="E">算法工程师</option>
+        </optgroup>
+      </select>
+      <script>
+/*选择职位实例化*/
+$('.select-position').select2({
+  placeholder: "请选择职位",
+  minimumResultsForSearch: 4
+});
+</script> 
+    </div>
+    <div class="bg-ec f16 c1 bold p4-8 bdl5 clear">附件</div>
+    <div class="p16">
+    	<div class="fl w360">
+    		<span class="d-ib w80 c2">简历解析：</span>
+    		<label class="hidden label d-ib card1 p4-16 cb cu-po ho-sh trans ho-blue"><input type="file"><span class="ic f24"></span>上传简历</label>
+    		<span class="p4-16 d-ib"><span class="fileicon doc"></span>
+              <span class="ml24 w102 ol">简历.docx</span><label for="" class="label cb ml24"><input type="file">重新上传</label></span>
+    	</div>
+    	<div class="fl">
+    		<span class="d-ib w80 c2">照片：</span>
+    		<label class="label d-ib card1 cb cu-po ho-sh trans ho-blue p4-16"><input type="file"><span class="ic f24"></span>上传照片</label>
+    	</div>
+    	<div class="clear"></div>
+    </div>
+    <!--dropzone上传方式：<div class="mt16 p0-16 hidden">
+      <div class="fl lh46 w360">
+        <div> <span class="d-ib w80 c2">简历解析：</span> <span id="upload-cv" class="label d-ib card1 cb bg-b mt16 p816 bdrs2 ho-blue cu-po ml12 lh-n trans ho-sh"><span class="ic f24"></span><span>上传简历</span></span> <span class="d-ib card1 cb bg-b mt16 p816 bdrs2 ho-blue cu-po ml12 lh-n trans ho-sh" id="btn-paste"><span class="ic f24 pr4"></span><span>粘贴文本</span></span> </div>
+      </div>
+      <div class="fl lh46">
+        <div> <span class="d-ib w80 c2">照片：</span>
+          <label id="uploadpic" class="label d-ib card1 cb bg-b mt16 p816 bdrs2 ho-blue cu-po ml12 lh-n trans ho-sh"><span class="ic f24"></span><span>上传照片</span></label>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>-->
+    <div class="bg-ec f16 c1 bold p4-8 bdl5 mt8">个人信息</div>
+    <div class="mt16 p0-16">
+      <div class="fl lh46 w360">
+        <div><span class="d-ib w80 c2">姓名<span class="red po-a mt-5">*</span>：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div><span class="d-ib w80 c2">性别：</span> <span>
+          <input type="radio" name="gender" id="radio-male">
+          <label for="radio-male" class="lh24"></label>
+          <span class="c2">男</span> </span> <span class="ml24">
+          <input type="radio" name="gender" id="radio-female">
+          <label for="radio-female" class="lh24"></label>
+          <span class="c2">女</span> </span> </div>
+        <div><span class="d-ib w80 c2">出生年月：</span>
+          <input type="text" class="datepicker-here w240 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months">
+        </div>
+        <div><span class="d-ib w80 c2">籍贯：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div><span class="d-ib w80 c2">学历：</span>
+          <select name="scholar" class="scholar w240" >
+            <option></option>
+            <option>博士后</option>
+            <option>博士</option>
+            <option>MBA/EMBA</option>
+            <option>硕士</option>
+            <option>本科</option>
+            <option>大专</option>
+            <option>中专</option>
+            <option>中技</option>
+            <option>高中</option>
+            <option>初中</option>
+          </select>
+        </div>
+      </div>
+      <div class="fl lh46">
+        <div><span class="d-ib w80 c2">电话：<span class="red po-a mt-5">*</span></span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div><span class="d-ib w80 c2">邮箱：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div><span class="d-ib w80 c2">QQ：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div><span class="d-ib w80 c2">微信：</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+<!--展开收起详情div-->    
+		<div class="toggle-detail ta-c mt16">
+			<span id="toggle-detail" class="cb cu-po"><span>展开详情</span><span class="ic f24 d-ib trans"></span></span>
+		</div>
+   <script>//toggle展开收起
+		$('#toggle-detail').on('click',function(){
+			var target = $(this).children('span:first-child');
+			var targetHtml= target.html();
+			if(targetHtml=='展开详情'){
+				target.html('收起详情')
+			} else{
+				target.html('展开详情')
+			}
+			$('#hide-detail-wrapper').toggle();
+			$(this).children(':last').toggleClass('r180');
+		});
+		</script>
+    <div id="hide-detail-wrapper" class="hidden"><!--div包住隐藏部分-->
+      <div class="bg-ec f16 c1 bold p4-8 bdl5 mt24">求职信息</div>
+      <div class="mt16 p0-16">
+        <div class="fl lh46 w360">
+          <div><span class="d-ib w80 c2">求职状态：</span> <span>
+            <input type="radio" name="status" id="radio-bkl">
+            <label for="radio-bkl" class="lh24"></label>
+            <span class="c2">在职</span> </span> <span class="ml16">
+            <input type="radio" name="status" id="radio-kjh">
+            <label for="radio-kjh" class="lh24"></label>
+            <span class="c2">离职</span> </span> <span class="ml16">
+            <input type="radio" name="status" id="radio-zgz">
+            <label for="radio-zgz" class="lh24"></label>
+            <span class="c2">找工作</span> </span> </div>
+          <div><span class="d-ib w80 c2">当前职位：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+          <div><span class="d-ib w80 c2">当前公司：</span>
+            <input id="currentCompInput" type="text" class="w240 p8 h32">
+          </div>
+          <div><span class="d-ib w80 c2">当前行业：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+          <div><span class="d-ib w80 c2">当前年薪：</span>
+            <input type="text" class="w56 p8 h32">
+            <span class="c3">万</span> <span class="c3 p1016">~</span>
+            <input type="text" class="w56 p8 h32">
+            <span class="c3">万</span> </div>
+          <div><span class="d-ib w80 c2">当前城市：</span>
+            <input type="text" id="citySelect1" class="w240 p8 h32">
+          </div>
+        </div>
+        <div class="fl lh46">
+          <div><span class="d-ib w80 c2">到岗时间：</span>
+            <input type="text" class="w121 p8 h32">
+          </div>
+          <div><span class="d-ib w80 c2">期望职位：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+          <div><span class="d-ib w80 c2">期望公司：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+          <div><span class="d-ib w86 c2">期望行业：</span>
+            <input type="text" class="w240 p8 h32 ml-6">
+          </div>
+          <div><span class="d-ib w80 c2">期望年薪：</span>
+            <input type="text" class="w56 p8 h32">
+            <span class="c3">万</span> <span class="c3 p1016">~</span>
+            <input type="text" class="w56 p8 h32">
+            <span class="c3">万</span> </div>
+          <div><span class="d-ib w80 c2">期望城市：</span>
+            <input type="text" id="citySelect2" class="w240 p8 h32">
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="edu bg-ec bg-ec f16 c1 bold p4-8 bdl5 mt24">教育经历 <span id="btn-addedu" class="fr ic f24 fw-n bg-b cw bdrs12 cu-po trans ho-sh"></span> </div>
+      <div class="mt16 p0-16">
+        <div class="fl lh46 w360">
+          <div><span class="d-ib w80 c2">学校：</span>
+            <input type="text" placeholder='联想测试：输入“北京”' class="school w240 p8 h32">
+          </div>
+          <div><span class="d-ib w80 c2">专业：</span>
+            <input type="text" placeholder='联想测试：输入“管理”' class="major w240 p8 h32">
+          </div>
+        </div>
+        <div class="fl lh46">
+          <div><span class="d-ib w80 c2">在校时间：</span>
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months">
+            <span class="c3 p1016">~</span>
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months" data-today-button="true">
+          </div>
+          <div><span class="d-ib w80 c2">学历：</span>
+            <select name="scholar" class="scholar w240" >
+              <option></option>
+              <option>博士后</option>
+              <option>博士</option>
+              <option>MBA/EMBA</option>
+              <option>硕士</option>
+              <option>本科</option>
+              <option>大专</option>
+              <option>中专</option>
+              <option>中技</option>
+              <option>高中</option>
+              <option>初中</option>
+            </select>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="job bg-ec f16 c1 bold p4-8 bdl5 mt24">工作经历 <span id="btn-addjob" class="fr ic f24 fw-n bg-b cw bdrs12 cu-po trans ho-sh"></span> </div>
+      <div class="mt16 p0-16">
+        <div class="fl lh46 w360">
+          <div><span class="d-ib w80 c2">公司：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+          <div><span class="d-ib w80 c2">职位：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+        </div>
+        <div class="fl lh46">
+          <div><span class="d-ib w80 c2">在职时间：</span>
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months">
+            <span class="c3 p1016">~</span> <span class="d-ib po-r">
+            <input type="text" class=" w104 p8 h32" onClick="WdatePicker({dateFmt:'yyyy-MM',onpicked:removeT})" onMouseDown="triggerTill(event)">
+            </span> </div>
+        </div>
+        <div class="clear lh46"> <span class="d-ib w80 c2">工作描述：</span>
+          <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4"></textarea>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="proj bg-ec f16 c1 bold p4-8 bdl5 mt24">项目经历<span id="btn-addproj" class="fr ic f24 fw-n bg-b cw bdrs12 cu-po trans ho-sh"></span></div>
+      <div class="mt16 p0-16">
+        <div class="fl lh46 w360">
+          <div><span class="d-ib w80 c2">项目名称：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+        </div>
+        <div class="fl lh46">
+          <div><span class="d-ib w80 c2">项目时间：</span>
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months">
+            <span class="c3 p1016">~</span>
+            <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months" data-today-button="true">
+          </div>
+        </div>
+        <div class="clear lh46"> <span class="d-ib w80 c2">项目描述：</span>
+          <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4"></textarea>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="skill bg-ec f16 c1 bold p4-8 bdl5 mt24">职业技能</div>
+      <div class="mt16 p0-16">
+        <div class="btn-addskill fr ic f24 c3 mt8 ho-cb cu-po"></div>
+        <div class="fl lh46 w360">
+          <div><span class="d-ib w80 c2">技能：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+        </div>
+        <div class="fl lh46">
+          <div><span class="d-ib w80 c2">掌握程度：</span>
+            <select name="skill" class="w80" >
+              <option></option>
+              <option>精通</option>
+              <option>熟练</option>
+              <option>一般</option>
+              <option>了解</option>
+            </select>
+            <span class="d-ib ml24 c2">使用时间：</span>
+            <input type="text" class="w60 h32 p8">
+            <span class="c2">个月</span> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="skill bg-ec f16 c1 bold p4-8 bdl5 mt24">语言能力</div>
+      <div class="mt16 p0-16">
+        <div class="btn-addlan fr ic f24 c3 mt8 ho-cb cu-po"></div>
+        <div class="fl lh46 w360">
+          <div><span class="d-ib w80 c2">语言：</span>
+            <input type="text" class="w240 p8 h32">
+          </div>
+        </div>
+        <div class="fl lh46">
+          <div><span class="d-ib w80 c2">熟练程度：</span>
+            <select name="skill" class="w80" >
+              <option></option>
+              <option>精通</option>
+              <option>熟练</option>
+              <option>一般</option>
+              <option>了解</option>
+            </select>
+            <span class="d-ib ml24 c2">使用时间：</span>
+            <input type="text" class="w60 h32 p8">
+            <span class="c2">个月</span> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="bg-ec f16 c1 bold p4-8 bdl5 mt24">个人评价</div>
+      <div class="mt16 p0-16">
+        <div class="clear lh46"> <span class="d-ib w80 c2">评价内容：</span>
+          <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4"></textarea>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="bg-ec f16 c1 bold p4-8 bdl5 mt24">其它</div>
+      <div class="mt16 p0-16">
+        <div class="clear lh46"> <span class="d-ib w80 c2">其它：</span>
+          <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4 mb16"></textarea>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--黏贴文本弹窗-->
+<div class="dialog-paste hidden w820 h332 card5-nbg bg-f7 po-f l50p t50p mt-160 ml-410 p24">
+  <h3 class="c1">粘贴文本</h3>
+  <textarea name="" class="w100p Scrollable h172 mt24 p8"></textarea>
+  <div class="mt16"> <span class="fr p1016 cw bg-b bdrs2 ho-1f cu-po ml16">简历解析</span> <span id="btn-cancel" class="fr p1016 c2 ho-u cu-po">取消</span> </div>
+</div>
+<!--上传附件弹窗-->
+<div id="dialog-upload" class="hidden w820 h332 card5-nbg bg-f7 po-f l50p t50p mt-160 ml-410 p24">
+  <h3 class="c1">上传简历<span class="f14 c2 fw-n ml16">(仅接收.xls/.doc/.docs)</span></h3>
+  <form action="/file-upload" class="dropzone ovy-a Scrollable w100p h172 mt24 p8 bg-w">
+  </form>
+  <div class="mt16"> <span id="analyze-cv" class="fr p1016 cw bg-b bdrs2 ho-1f cu-po ml16">简历解析</span> <span id="btn-cancelupload" class="fr p1016 c2 ho-u cu-po">取消</span> </div>
+</div>
+<script>
+/*单击上传简历*/
+$('#upload-cv').on('click',function(){
+	$('#dialog-upload').show();});
+$('#btn-cancelupload').on('click',function(){
+	$('#dialog-upload').hide();});	
+</script> 
+<!--上传照片弹窗-->
+<div id="dialog-uploadpic" class="hidden w820 h332 card5-nbg bg-f7 po-f l50p t50p mt-160 ml-410 p24">
+  <h3 class="c1">上传照片<span class="f14 c2 fw-n ml16">(仅接收1MB以下的.jpg/.png)</span></h3>
+  <form action="/file-upload" class="dropzone w100p h172 mt24 p8 bg-w" style="border:2px dashed #2196f3;">
+  </form>
+  <div class="mt16"> <span id="confirm-pic" class="fr p1016 cw bg-b bdrs2 ho-1f cu-po ml16">确认</span> <span id="btn-cancelpic" class="fr p1016 c2 ho-u cu-po">取消</span> </div>
+</div>
+<script>
+/*单击上传照片*/
+$('#uploadpic').on('click',function(){
+	$('#dialog-uploadpic').show();});
+$('#btn-cancelpic').on('click',function(){
+	$('#dialog-uploadpic').hide();});	
+</script>
+</body>
+<script>
+/*----id滚轮控制----*/
+$('.Scrollable').on('DOMMouseScroll mousewheel', function(ev) {
+    var $this = $(this),
+        scrollTop = this.scrollTop,
+        scrollHeight = this.scrollHeight,
+        height = $this.height(),
+        delta = (ev.type == 'DOMMouseScroll' ?
+            ev.originalEvent.detail * -40 :
+            ev.originalEvent.wheelDelta),
+        up = delta > 0;
+
+    var prevent = function() {
+        ev.stopPropagation();
+        ev.preventDefault();
+        ev.returnValue = false;
+        return false;
+    }
+
+    if (!up && -delta > scrollHeight - height - scrollTop) {
+        // Scrolling down, but this will take us past the bottom.
+        $this.scrollTop(scrollHeight);
+
+        return prevent();
+    } else if (up && delta > scrollTop) {
+        // Scrolling up, but this will take us past the top.
+        $this.scrollTop(0);
+        return prevent();
+    }
+});
+</script>
+<script>
+/*--粘贴文本弹窗和关闭--*/
+$('#btn-paste').click(function(e) {
+    $('.dialog-paste').show();
+	$('.dialog-paste textarea').focus();
+});
+$('#btn-cancel').click(function(e) {
+    $('.dialog-paste').hide();
+});
+/*--新增教育经历--*/
+$('#btn-addedu').click(function(e) {
+    $('.edu').after('<div class="mt16 p0-16 pb24 bdb1-d"> <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po"></div> <div class="fl lh46 w360"> <div><span class="d-ib w80 c2">学校：</span> <input type="text" class="school w240 p8 h32"> </div> <div><span class="d-ib w80 c2">专业：</span> <input type="text" class="major w240 p8 h32"> </div> </div> <div class="fl lh46"> <div><span class="d-ib w80 c2">在校时间：</span> <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months"> <span class="c3 p1016">~</span> <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months" data-today-button="true"> </div> <div><span class="d-ib w80 c2">学历：</span> <select name="scholar" class="scholar w240"> <option></option> <option>博士后</option> <option>博士</option> <option>MBA/EMBA</option> <option>硕士</option> <option>本科</option> <option>大专</option> <option>中专</option> <option>中技</option> <option>高中</option> <option>初中</option> </select>  </div> </div> <div class="clear"></div> </div>');
+	$('.scholar').select2({placeholder:" ",minimumResultsForSearch:Infinity});
+	$('.school').autocomplete({lookup: schools});
+	$('.major').autocomplete({lookup: majors});
+});
+/*--删除新增内容--*/
+$($('.edu').parent()).on('click','.btn-del',function(){
+	$(this).parent().velocity("slideUp",{duration:200,easing:"easeOutCubic",complete:function(){$(this).remove()} })
+	});
+/*--新增工作经历--*/
+$('#btn-addjob').click(function(e) {
+    $('.job').after('<div class="mt16 p0-16 pb24 bdb1-d"> <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po"></div> <div class="fl lh46 w360"> <div><span class="d-ib w80 c2">公司：</span> <input type="text" class="w240 p8 h32"> </div> <div><span class="d-ib w80 c2">职位：</span> <input type="text" class="w240 p8 h32"> </div> </div> <div class="fl lh46"> <div><span class="d-ib w80 c2">在职时间：</span> <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months"> <span class="c3 p1016">~</span> <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months" data-today-button="true"> </div> </div> <div class="clear lh46"> <span class="d-ib w80 c2">工作描述：</span> <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4"></textarea> </div> <div class="clear"></div> </div>')
+});
+//新增时间选择input实例化
+$($('.job').parent()).on('click','.datepicker-here',function(){
+$('.datepicker-here').datepicker();
+$('.datepicker-here').data('datepicker');
+$(this).datepicker().data('datepicker').show();
+	});
+/*--新增项目经历--*/
+$('#btn-addproj').click(function(e) {
+    $('.proj').after('<div class="mt16 p0-16 pb24 bdb1-d"> <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po"></div> <div class="fl lh46 w360"> <div><span class="d-ib w80 c2">项目名称：</span> <input type="text" class="w240 p8 h32"> </div> </div> <div class="fl lh46"> <div><span class="d-ib w80 c2">项目时间：</span> <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months"> <span class="c3 p1016">~</span> <input type="text" class="datepicker-here w104 p8 h32" data-date-format="yyyy年mm月" data-min-view="months" data-view="months"> </div> </div> <div class="clear lh46"> <span class="d-ib w80 c2">项目描述：</span> <textarea name="" id="" class="fr w700 h150 p8 lh24 wh-pw mt10 mr4"></textarea> </div> <div class="clear"></div> </div>')
+});
+/*--新增职业技能--*/	
+$($('.edu').parent()).on('click','.btn-addskill',function(){
+    $($(this).parent()).after('<div class="p0-16"> <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po ml8"></div> <div class="btn-addskill fr ic f24 c3 mt8 ho-cb cu-po"></div> <div class="fl lh46 w360"> <div><span class="d-ib w80 c2">技能：</span> <input type="text" class="w240 p8 h32"> </div> </div> <div class="fl lh46"> <div><span class="d-ib w80 c2">掌握程度：</span> <select name="skill" class="w80"> <option></option> <option>精通</option> <option>熟练</option> <option>一般</option> <option>了解</option> </select> <span class="d-ib ml24 c2">使用时间：</span> <input type="text" class="w60 h32 p8"> <span class="c2">个月</span>  </div> </div> <div class="clear"></div> </div>');
+//	$('select').select2({placeholder:" ",minimumResultsForSearch:Infinity});
+	})
+/*--新增语言能力--*/	
+$($('.edu').parent()).on('click','.btn-addlan',function(){
+    $($(this).parent()).after('<div class="p0-16"> <div class="btn-del fr ic f24 c3 mt8 ho-cr cu-po ml8"></div> <div class="btn-addlan fr ic f24 c3 mt8 ho-cb cu-po"></div> <div class="fl lh46 w360"> <div><span class="d-ib w80 c2">语言：</span> <input type="text" class="w240 p8 h32"> </div> </div> <div class="fl lh46"> <div><span class="d-ib w80 c2">熟练程度：</span> <select name="skill" class="w80"> <option></option> <option>精通</option> <option>熟练</option> <option>一般</option> <option>了解</option> </select><span class="d-ib ml24 c2">使用时间：</span> <input type="text" class="w60 h32 p8"> <span class="c2">个月</span> </div> </div> <div class="clear"></div> </div>');
+//	$('select').select2({placeholder:" ",minimumResultsForSearch:Infinity});
+	})	
+/*--选择学历下拉框实例化--*/
+//$('select').select2({placeholder:" ",minimumResultsForSearch:Infinity});
+
+/*--输入学校自动联想--*/
+var schools = [
+   { value: '北京大学'},
+   { value: '北京航空航天大学'},
+   { value: '北京邮电大学'},
+   { value: '北京师范大学'},
+   { value: '北京科技大学'},
+   { value: '北京理工大学'},
+   { value: '北京化工大学'},
+   { value: '北京交通大学'},
+   { value: '北京工商大学'},
+   { value: '北京联合大学'},
+   { value: '北京第二外国语学院'},
+   // ...
+];
+$('.school').autocomplete({lookup: schools});
+/*用ajax方法:
+$('#school').autocomplete({
+    serviceUrl: '/filepath/schools',
+});
+*/
+/*--输入专业自动联想--*/
+var majors = [
+   { value: '人力资源管理'},
+   { value: '行政管理'},
+   { value: '城市管理'},
+   { value: '物流管理'},
+   { value: '旅游管理'},
+   { value: '酒店管理'},
+   { value: '工商管理'},
+   // ...
+];
+$('.major').autocomplete({lookup: majors});
+/*用ajax方法:
+$('#school').autocomplete({
+    serviceUrl: '/filepath/schools',
+});
+*/
+/*--城市选择实例化--*/
+var currentcity=new Vcity.CitySelector({input:'citySelect1'});
+var currentcity=new Vcity.CitySelector({input:'citySelect2'});
+</script>
+</html>

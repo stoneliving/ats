@@ -1,0 +1,702 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>发票报表</title>
+  <link rel="shortcut icon" href="images/logo_favicon.png">
+  <link rel="stylesheet" href="css/main-New.css">
+  <link rel="stylesheet" href="css/select2.css">
+  <link rel="stylesheet" href="css/cityselect.css">
+  <link rel="stylesheet" href="css/datepicker.css">
+  <link rel="stylesheet" href="css/jquery.contextMenu.min.css">
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/datepicker.js"></script>
+  <script src="js/cityselect.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/jquery-scrolltofixed-min.js"></script>
+  <script src="js/highcharts.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/jquery.contextMenu.min.js"></script>
+</head>
+<style>
+  .fullwidth {
+    width: calc(100% - 48px);
+    margin: 30px auto;
+  }
+  
+  .invo-table tr:hover {
+    /*    background-color: #eceff1*/
+  }
+  
+  .invo-table td {
+    border: 1px solid #ccc;
+    cursor: cell;
+  }
+  [class^="context-menu-icon-"],[class^=" context-menu-icon-"]{
+    font-family: 'yotujob' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    height: 24px;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .context-menu-icon-paint::before {
+    content: url('images/paint.svg');
+  }  
+  
+  .context-menu-icon-unpaint::before {
+    content: url('images/unpaint.svg');
+  }
+  
+  .tb-header th {
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  td.td-selected {
+    box-shadow: 0 0 12px #4285f4;
+    position: relative;
+    z-index: 99;
+/*    background-color: white;*/
+  }
+  
+  .td-input {
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+  }
+  .bg-yellow{background-color:yellow;}
+  .bg-yellow.ho-ec:hover{background-color: yellow;}
+</style>
+
+<body>
+  <header class="header"></header>
+  <ul class="context-menu-list context-menu-root hidden" style="top: 282px; left: 78px; z-index: 1;display: none; ">
+    <li class="context-menu-item context-menu-icon context-menu-icon-paint context-menu-hover context-menu-visible"><span>Foo</span></li>
+    <li class="context-menu-item "><span>Bar</span></li>
+  </ul>
+  <main class="fullwidth">
+    <div class="f14">
+      <div class="tab fl c2 ta-c p8 cu-po bd-3 bg-w" data-id="#tab1"><span class="fileicon xls"></span>项目收入统计表</div>
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab2"><span class="fileicon xls"></span>数据透视表</div>
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab3"><span class="fileicon xls"></span>应收账款表</div>
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab4"><span class="fileicon xls"></span>已回款项目表</div>
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab5">
+        <!--其它-->
+      </div>
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab6">
+        <!--其它-->
+      </div>
+      <div class="tab fl c2 ta-c p8 cu-po ho-cb" data-id="#tab7">
+        <!--其它-->
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <div class="card1" style="overflow-x:auto;">
+      <div class="ta-r mt8"><span class="f14 cb ho-cb cu-po mr16" id="export-btn"><span class="ic f20 pr4"></span>导出Excel</span></div>
+      <div class="p816 f12 c2 bg-f2 mb8 mt8"><span class="ic f24"></span>筛选：<span class="filter a">客户</span><span class="filter a">项目名称</span><span class="filter a">候选人</span></div>
+      <table class="invo-table f12 bdcl ta-l lh40">
+        <tr class="h48 lh-n tb-header">
+          <th rowspan=3>
+            <div>序号</div>
+          </th>
+          <th rowspan=3>
+            <div>项目号</div>
+          </th>
+          <th rowspan=3>
+            <div>客户</div>
+          </th>
+          <th rowspan=3>
+            <div>项目名称</div>
+          </th>
+          <th rowspan=3>
+            <div>候选人</div>
+          </th>
+          <th rowspan=3>
+            <div>年薪</div>
+          </th>
+          <th rowspan=3>
+            <div>合同<br>费率</div>
+          </th>
+          <th rowspan=3>
+            <div>入职日期</div>
+          </th>
+          <th rowspan=3>
+            <div>应收款时间</div>
+          </th>
+          <th colspan="4">
+            <div class="ta-c">应收账款跟进</div>
+          </th>
+          <th colspan="2" bgcolor="#dedede">
+            <div class="ta-c">外部佣金</div>
+          </th>
+          <th colspan="4" bgcolor="#dedede">
+            <div class="ta-c">内部提成</div>
+          </th>
+          <th rowspan="3" bgcolor="#dedede">
+            <div>税费</div>
+          </th>
+          <th rowspan="3" bgcolor="#dedede">
+            <div>其它<br>费用</div>
+          </th>
+          <th rowspan="3" bgcolor="#dedede">
+            <div>毛利</div>
+          </th>
+          <th rowspan="3" bgcolor="#dedede">
+            <div>毛利率</div>
+          </th>
+          <th rowspan="3">
+            <div>发票<br>类型</div>
+          </th>
+          <th rowspan="3">
+            <div>开票日期</div>
+          </th>
+          <th rowspan="3">
+            <div>发票编号</div>
+          </th>
+          <th rowspan="3">
+            <div>实际收款<br>日期</div>
+          </th>
+          <th rowspan="3">
+            <div>实际收款<br>费率</div>
+          </th>
+          <th rowspan="3">
+            <div>Offer时间</div>
+          </th>
+          <th rowspan="3">
+            <div>完成部门</div>
+          </th>
+          <th rowspan="3">
+            <div>完成人</div>
+          </th>
+          <th rowspan="3">
+            <div>对接人</div>
+          </th>
+          <th rowspan="3">
+            <div>BD</div>
+          </th>
+          <th rowspan="3">
+            <div>备注</div>
+          </th>
+        </tr>
+        <tr class="lh-n tb-header">
+          <th rowspan="2">应收<br>金额</th>
+          <th rowspan="2">已收<br>金额</th>
+          <th rowspan="2">待收<br>金额</th>
+          <th rowspan="2">是否<br>超期</th>
+          <th rowspan="2" bgcolor="#dedede">佣金<br>金额</th>
+          <th rowspan="2" bgcolor="#dedede">是否<br>已付</th>
+          <th rowspan="2" bgcolor="#dedede">提成总额</th>
+          <th colspan="2" bgcolor="#dedede">
+            <div class="ta-c">已支付提成</div>
+          </th>
+          <th rowspan="2" bgcolor="#dedede">待支付提成金额</th>
+        </tr>
+        <tr class="lh-n tb-header">
+          <th bgcolor="#dedede">金额</th>
+          <th bgcolor="#dedede">付款日期</th>
+        </tr>
+        <!--以下空行控制单元格宽度-->
+        <tr>
+          <td>
+            <div class="w32"></div>
+          </td>
+          <td>
+            <div class="w44"></div>
+          </td>
+          <td>
+            <div class="w102"></div>
+          </td>
+          <td>
+            <div class="w102"></div>
+          </td>
+          <td>
+            <div class="w52"></div>
+          </td>
+          <td>
+            <div class="w60"></div>
+          </td>
+          <td>
+            <div class="w40"></div>
+          </td>
+          <td>
+            <div class="w80"></div>
+          </td>
+          <td>
+            <div class="w80"></div>
+          </td>
+          <td>
+            <div class="w52"></div>
+          </td>
+          <td>
+            <div class="w52"></div>
+          </td>
+          <td>
+            <div class="w52"></div>
+          </td>
+          <td>
+            <div class="w40"></div>
+          </td>
+          <td>
+            <div class="w52"></div>
+          </td>
+          <td>
+            <div class="w40"></div>
+          </td>
+          <td>
+            <div class="w52"></div>
+          </td>
+          <td>
+            <div class="w52"></div>
+          </td>
+          <td>
+            <div class="w80"></div>
+          </td>
+          <td>
+            <div class="w52"></div>
+          </td>
+          <td>
+            <div class="w48"></div>
+          </td>
+          <td>
+            <div class="w40"></div>
+          </td>
+          <td>
+            <div class="w40"></div>
+          </td>
+          <td>
+            <div class="w48"></div>
+          </td>
+          <td>
+            <div class="w40"></div>
+          </td>
+          <td>
+            <div class="w80"></div>
+          </td>
+          <td>
+            <div class="w80"></div>
+          </td>
+          <td>
+            <div class="w80"></div>
+          </td>
+          <td>
+            <div class="w72"></div>
+          </td>
+          <td>
+            <div class="w80"></div>
+          </td>
+          <td>
+            <div class="w60"></div>
+          </td>
+          <td>
+            <div class="w60"></div>
+          </td>
+          <td>
+            <div class="w60"></div>
+          </td>
+          <td>
+            <div class="w60"></div>
+          </td>
+          <td>
+            <div class="w120"></div>
+          </td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td>1</td>
+          <td>S1</td>
+          <td>
+            <div class="w102 ol">深圳市广田智能有限公司</div>
+          </td>
+          <td>PHP开发工程师</td>
+          <td>王精英</td>
+          <td>286000</td>
+          <td>22%</td>
+          <td>2016/09/20</td>
+          <td>2016/09/25</td>
+          <td>31460</td>
+          <td>31460</td>
+          <td>-</td>
+          <td>否</td>
+          <td class="edit number">12356</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td>专票</td>
+          <td>2017/10/02</td>
+          <td>79846517</td>
+          <td>2017/10/05</td>
+          <td>25%</td>
+          <td>2017/08/31</td>
+          <td>TMT</td>
+          <td>霍少锋</td>
+          <td>王翔</td>
+          <td>刘谋立</td>
+          <td>需退票重开</td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td>1</td>
+          <td>S1</td>
+          <td>
+            <div class="w102 ol">深圳市广田智能有限公司</div>
+          </td>
+          <td>PHP开发工程师</td>
+          <td>王精英</td>
+          <td>286000</td>
+          <td>22%</td>
+          <td>2016/09/20</td>
+          <td>2016/09/25</td>
+          <td>31460</td>
+          <td>31460</td>
+          <td>-</td>
+          <td>否</td>
+          <td class="edit number">12356</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td>专票</td>
+          <td>2017/10/02</td>
+          <td>79846517</td>
+          <td>2017/10/05</td>
+          <td>25%</td>
+          <td>2017/08/31</td>
+          <td>TMT</td>
+          <td>霍少锋</td>
+          <td>王翔</td>
+          <td>刘谋立</td>
+          <td>需退票重开</td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td>1</td>
+          <td>S1</td>
+          <td>
+            <div class="w102 ol">深圳市广田智能有限公司</div>
+          </td>
+          <td>PHP开发工程师</td>
+          <td>王精英</td>
+          <td>286000</td>
+          <td>22%</td>
+          <td>2016/09/20</td>
+          <td>2016/09/25</td>
+          <td>31460</td>
+          <td>31460</td>
+          <td>-</td>
+          <td>否</td>
+          <td class="edit number">12356</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td>专票</td>
+          <td>2017/10/02</td>
+          <td>79846517</td>
+          <td>2017/10/05</td>
+          <td>25%</td>
+          <td>2017/08/31</td>
+          <td>TMT</td>
+          <td>霍少锋</td>
+          <td>王翔</td>
+          <td>刘谋立</td>
+          <td>需退票重开</td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td>1</td>
+          <td>S1</td>
+          <td>
+            <div class="w102 ol">深圳市广田智能有限公司</div>
+          </td>
+          <td>PHP开发工程师</td>
+          <td>王精英</td>
+          <td>286000</td>
+          <td>22%</td>
+          <td>2016/09/20</td>
+          <td>2016/09/25</td>
+          <td>31460</td>
+          <td>31460</td>
+          <td>-</td>
+          <td>否</td>
+          <td class="edit number">12356</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td>专票</td>
+          <td>2017/10/02</td>
+          <td>79846517</td>
+          <td>2017/10/05</td>
+          <td>25%</td>
+          <td>2017/08/31</td>
+          <td>TMT</td>
+          <td>霍少锋</td>
+          <td>王翔</td>
+          <td>刘谋立</td>
+          <td>需退票重开</td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td>1</td>
+          <td>S1</td>
+          <td>
+            <div class="w102 ol">深圳市广田智能有限公司</div>
+          </td>
+          <td>PHP开发工程师</td>
+          <td>王精英</td>
+          <td>286000</td>
+          <td>22%</td>
+          <td>2016/09/20</td>
+          <td>2016/09/25</td>
+          <td>31460</td>
+          <td>31460</td>
+          <td>-</td>
+          <td>否</td>
+          <td class="edit number">12356</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td>专票</td>
+          <td>2017/10/02</td>
+          <td>79846517</td>
+          <td>2017/10/05</td>
+          <td>25%</td>
+          <td>2017/08/31</td>
+          <td>TMT</td>
+          <td>霍少锋</td>
+          <td>王翔</td>
+          <td>刘谋立</td>
+          <td>需退票重开</td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td>1</td>
+          <td>S1</td>
+          <td>
+            <div class="w102 ol">深圳市广田智能有限公司</div>
+          </td>
+          <td>PHP开发工程师</td>
+          <td>王精英</td>
+          <td>286000</td>
+          <td>22%</td>
+          <td>2016/09/20</td>
+          <td>2016/09/25</td>
+          <td>31460</td>
+          <td>31460</td>
+          <td>-</td>
+          <td>否</td>
+          <td class="edit number">12356</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td>专票</td>
+          <td>2017/10/02</td>
+          <td>79846517</td>
+          <td>2017/10/05</td>
+          <td>25%</td>
+          <td>2017/08/31</td>
+          <td>TMT</td>
+          <td>霍少锋</td>
+          <td>王翔</td>
+          <td>刘谋立</td>
+          <td>需退票重开</td>
+        </tr>
+        <tr class="bdt1 ho-ec">
+          <td>1</td>
+          <td>S1</td>
+          <td>
+            <div class="w102 ol">深圳市广田智能有限公司</div>
+          </td>
+          <td>PHP开发工程师</td>
+          <td>王精英</td>
+          <td>286000</td>
+          <td>22%</td>
+          <td>2016/09/20</td>
+          <td>2016/09/25</td>
+          <td>31460</td>
+          <td>31460</td>
+          <td>-</td>
+          <td>否</td>
+          <td class="edit number">12356</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td class="edit">-</td>
+          <td>专票</td>
+          <td>2017/10/02</td>
+          <td>79846517</td>
+          <td>2017/10/05</td>
+          <td>25%</td>
+          <td>2017/08/31</td>
+          <td>TMT</td>
+          <td>霍少锋</td>
+          <td>王翔</td>
+          <td>刘谋立</td>
+          <td>需退票重开</td>
+        </tr>
+      </table>
+    </div>
+  </main>
+
+</body>
+
+<script>
+  /*鼠标右键初始化*/
+  $.contextMenu({
+    selector: 'td',
+    items: {
+      paintCell: {
+        name: '标记单元格',
+        icon: 'paint',
+        callback: function(key, opt) {
+          $(this).addClass('bg-yellow')
+        }
+      },
+      paintRow: {
+        name: '标记整行',
+        icon: 'paint',
+        callback: function(key, opt) {
+          $(this).parent().addClass('bg-yellow')
+        }
+      },
+      unpaintRow: {
+        name: '清除该行所有标记',
+        icon: 'unpaint',
+        callback: function(key, opt) {
+          $(this).removeClass('bg-yellow');
+          $(this).parent().removeClass('bg-yellow');
+          $(this).siblings().removeClass('bg-yellow');
+        }
+      }
+    }
+  });
+
+  /*鼠标单击时标记单元格*/
+  $('td').on('mousedown', function(e) {
+    $('.td-selected').removeClass('td-selected');
+    $(this).addClass('td-selected');
+    if(e.button==2){
+      
+    }
+  });
+
+  /*单击表格外部区域取消选中或编辑*/
+  $(document).on('click', function() {
+    if (!$(event.target).closest('.invo-table').length) {
+      $('.td-selected').removeClass('td-selected');
+    }
+  });
+
+  /*单击单元格，可编辑部分调用编辑*/
+  $('.invo-table td').on('click', function() {
+    var that = $(this);
+    var oriValue = that.html();
+    that.attr('oriValue',oriValue);
+    if (that.hasClass('edit')) {
+      if (that.hasClass('number')) {
+        that.empty().append('<input type="number" class="td-input">');
+      } else {
+        that.empty().append('<input type="text" class="td-input">');
+      }
+      that.find('input').val(oriValue).select();
+    } 
+  });
+
+/*可编辑单元格失去焦点时*/
+  $('.invo-table').on('focusout','.td-input',function(){
+    var newValue = $(this).val();
+    $(this).parent().html(newValue);
+    $(this).parent().attr('oriValue',newValue);
+  });
+  
+  $('.invo-table').on('keyup','.td-input',function(e){
+      var td = $(this).parent();
+      var newValue = $(this).val();
+    if(e.keyCode==27){
+      $(this).blur();
+      td.html(td.attr('oriValue'));
+    } else if (e.keyCode==13){
+      $(this).blur();
+      td.html(newValue);
+    }
+  });
+
+
+
+
+
+  /*滚动的时候滚动固定大表表头--begin--*/
+  $('.stickToTop').scrollToFixed({
+    preFixed: function() {
+      that.addClass('card2-nbg');
+    },
+    postFixed: function() {
+      $(this).removeClass('card2-nbg');
+    }
+  });
+  /*滚动的时候滚动固定大表表头--end--*/
+
+
+
+
+  /*--单击筛选标签--*/
+  $('.filter-tag').on('click', function() {
+    $(this).siblings().children('div').hide();
+    $(this).children('div').show();
+  });
+  $('.filter-add,.filter-cancel').on('click', function(e) {
+    event.stopPropagation();
+    $(this).parents('.note').hide();
+  });
+
+  /*单击文档任意位置关闭筛选框*/
+  $(document).on('click', function(e) {
+    if (!$(event.target).closest('.filter-tag').length && !$(event.target).closest('[class^="datepicker"]').length && !$(event.target).closest('.select2-container').length) {
+      $('.filter-tag .note').hide()
+    }
+  });
+
+</script>
+
+</html>

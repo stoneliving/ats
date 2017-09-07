@@ -1,0 +1,252 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>升级弹窗</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main-New.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/dropzone.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+</head>
+<body>
+
+    <div class="card5 w588" style="background-color: #e8f4fe;height: 1300px; ">
+      <h2 class="bg-b cw p16 f16">智聘系统已更新<span class="ic f24 fw-n"></span></h2>
+      <div class="p16">
+        <div class="p16 f14 ovy-a bd1-b bg-w" style="height:1140px">
+          <h3>V2.4.0升级<span class="f13 c3 fw-n ml16">2017-05-20</span></h3>
+          <p class="lh24">本次更新主要为发票模块和公司合同条款，财务数据逐步与系统对接，顾问、BD业绩更易统计。另增加顾问KPI指标提示，Offer排行榜等功能，改进了客户分析报表，以及其它一些优化。</p>
+          <p class="lh24"><span class="red bold">特别感谢：</span>骆小根、陈燕琳、邓芷芮、刘达文、段金香等小伙伴提出的意见建议使系统进一步完善，在此特奖励优币50枚。 期待大家更多的反馈 -- Mark</p>
+          <br>
+          <h4 class="p4-0">【公司合同条款】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>客户设为签约谈判，增加谈判条款录入</li>
+            <li class="li-no"><span class="mr4 c3">-</span>客户设为已签约，增加合同扫描件上传</li>
+            <li class="li-no"><span class="mr4 c3">-</span>可在客户详情中预览合同扫描件</li>
+            <li class="li-no"><span class="mr4 c3">-</span>合同增加多种状态标识，增加作废操作</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【发票模块】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>对发票业务流程进行了整体优化</li>
+            <li class="li-no"><span class="mr4 c3">-</span>左侧增加代申请开票状态，微信自动提醒对接人开票</li>
+            <li class="li-no"><span class="mr4 c3">-</span>时间线展示发票详情，一目了然</li>
+            <li class="li-no"><span class="mr4 c3">-</span>发票数据与条款挂钩，更加准确</li>
+            <li class="li-no"><span class="mr4 c3">-</span>增加退款冲抵功能，款项流动全程纪录</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【客户分析报表】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>调整为3阶展开式报表，相关项目和推荐候选人更易查看</li>
+            <li class="li-no"><span class="mr4 c3">-</span>增加客户搜索功能，快速定位单个客户报表</li>
+            <li class="li-no"><span class="mr4 c3">-</span>与顾问端PL数据实时联动，增强协作</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【Offer排行榜】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>根据录入的年薪和公司条款计算Offer金额</li>
+            <li class="li-no"><span class="mr4 c3">-</span>季度排名，较上季度排名变化</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【顾问KPi指标提示】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>个人及团队的KPI指标提示，动态更新，实时跟进</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【公司模块】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>增加KA标识添加和取消功能</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【用户行为分析】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>增加用户行为分析报表</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【Pipeline调整】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>移除发票环节，调整offer录入内容</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【推荐报告功能】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>增加推荐顾问英文名字段，下载的报告默认为英文名</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【其它优化】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>共用组件性能提升，其它反馈优化</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ta-r pr16">
+        <input type="checkbox" id="notifyNext" checked>
+        <label for="notifyNext" class="mr24 f14 ho-cb c3">下次不再提示</label>
+        <span id="iknow" class="bg-b cw p4-8 bdrs2 ho-1f cu-po f14">我知道了</span></div>
+    </div>
+  
+
+
+
+
+<!--2.4升级日志弹窗-->
+<div id="updatesLog" class="c1 hidden">
+  <div class="popup-wrapper">
+    <div class="card5 w588" style="background-color: #e8f4fe;height: 527px;">
+      <h2 class="bg-b cw p16 f16">智聘系统已更新<span class="ic f24 fw-n"></span></h2>
+      <div class="p16">
+        <div class="p16 f14 ovy-a bd1-b bg-w" style="height:400px">
+          <h3>V2.4.0升级<span class="f13 c3 fw-n ml16">2017-05-20</span></h3>
+          <p class="lh24">本次更新主要为发票模块和公司合同条款，财务数据逐步与系统对接，顾问、BD业绩更易统计。另增加顾问KPI指标提示，Offer排行榜等功能，改进了客户分析报表，以及其它一些优化。</p>
+          <p class="lh24"><span class="red bold">特别感谢：</span>骆小根、陈燕琳、邓芷芮、刘达文、段金香等小伙伴提出的意见建议使系统进一步完善，在此特奖励优币50枚。 期待大家更多的反馈 -- Mark</p>
+          <br>
+          <h4 class="p4-0">【公司合同条款】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>客户设为签约谈判，增加谈判条款录入</li>
+            <li class="li-no"><span class="mr4 c3">-</span>客户设为已签约，增加合同扫描件上传</li>
+            <li class="li-no"><span class="mr4 c3">-</span>可在客户详情中预览合同扫描件</li>
+            <li class="li-no"><span class="mr4 c3">-</span>合同增加多种状态标识，增加作废操作</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【发票模块】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>对发票业务流程进行了整体优化</li>
+            <li class="li-no"><span class="mr4 c3">-</span>左侧增加代申请开票状态，微信自动提醒对接人开票</li>
+            <li class="li-no"><span class="mr4 c3">-</span>时间线展示发票详情，一目了然</li>
+            <li class="li-no"><span class="mr4 c3">-</span>发票数据与条款挂钩，更加准确</li>
+            <li class="li-no"><span class="mr4 c3">-</span>增加退款冲抵功能，款项流动全程纪录</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【客户分析报表】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>调整为3阶展开式报表，相关项目和推荐候选人更易查看</li>
+            <li class="li-no"><span class="mr4 c3">-</span>增加客户搜索功能，快速定位单个客户报表</li>
+            <li class="li-no"><span class="mr4 c3">-</span>与顾问端PL数据实时联动，增强协作</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【Offer排行榜】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>根据录入的年薪和公司条款计算Offer金额</li>
+            <li class="li-no"><span class="mr4 c3">-</span>季度排名，较上季度排名变化</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【顾问KPi指标提示】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>个人及团队的KPI指标提示，动态更新，实时跟进</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【用户行为分析】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>增加用户行为分析报表</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【Pipeline调整】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>移除发票环节，调整offer录入内容</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【推荐报告功能】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>增加推荐顾问英文名字段，下载的报告默认为英文名</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【其它优化】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>共用组件性能提升，其它反馈优化</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ta-r pr16">
+        <input type="checkbox" id="notifyNext" checked>
+        <label for="notifyNext" class="mr24 f14 ho-cb c3">下次不再提示</label>
+        <span id="iknow" class="bg-b cw p4-8 bdrs2 ho-1f cu-po f14">我知道了</span></div>
+    </div>
+  </div>
+</div>
+
+
+<!--2.2升级日志弹窗-->
+<!--<div id="updatesLog" class="">
+  <div class="popup-wrapper">
+    <div class="card5 w588" style="background-color: #e8f4fe;height: 527px;">
+      <h2 class="bg-b cw p16 f16">智聘系统已更新<span class="ic f24 fw-n"></span></h2>
+      <div class="p16">
+        <div class="p16 f14 ovy-a bd1-b bg-w" style="height:400px">
+          <h3>V2.2.0.1升级<span class="f13 c3 fw-n ml16">2017-02-26</span></h3>
+          <p class="lh24">本次更新主要为List库和积分模块，共享List快速找人，积分激励产出。另有部分优化和bug修复。</p>
+          <br>
+          <h4 class="p4-0">【新增积分优币体系】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>关键业务操作增加积分和优币</li>
+            <li class="li-no"><span class="mr4 c3">-</span>12个积分等级头像等你解锁</li>
+            <li class="li-no"><span class="mr4 c3">-</span>7种不同奖品，优币兑换</li>
+            <li class="li-no"><span class="mr4 c3">-</span>月度积分、优币排名，跟小伙伴pk一下</li>
+            <li class="li-no"><span class="mr4 c3">-</span>积分优币记录，一目了然</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【List模块全新改版】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>导入List表格并解析到系统</li>
+            <li class="li-no"><span class="mr4 c3">-</span>按公司名查找相关list</li>
+            <li class="li-no"><span class="mr4 c3">-</span>在List结果中按姓名、职位、部门筛选</li>
+            <li class="li-no"><span class="mr4 c3">-</span>对List进行编辑、标记失效、备注操作</li>
+            <li class="li-no"><span class="mr4 c3">-</span>记录并共享List操作日志，提升协同效率</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【新增Offer恭贺】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>签订Offer时，全员推送恭贺弹窗，可查看Offer大致信息</li>
+            <li class="li-no"><span class="mr4 c3">-</span>弹窗内可以为出Offer的同事点赞</li>
+          </ul>
+          <br>
+          <h4 class="p4-0">【优化修复】</h4>
+          <ul class="lh24">
+            <li class="li-no"><span class="mr4 c3">-</span>Pipeline：不合适分类，统计查看各阶段的人才</li>
+            <li class="li-no"><span class="mr4 c3">-</span>Pipeline：不合适阶段新增撤回操作，将人才撤回到正常流程中</li>
+            <li class="li-no"><span class="mr4 c3">-</span>人才库：新增搜索框，快速找到自己录入的人才</li>
+            <li class="li-no"><span class="mr4 c3">-</span>职位立项：减少4个必录字段，工作地址增加“海外”</li>
+            <li class="li-no"><span class="mr4 c3">-</span>公司详情：联系人显示方式调整为多行全部展开</li>
+            <li class="li-no"><span class="mr4 c3">-</span>顾问报表：推荐数字可以点击展开，查看具体推荐的人才</li>
+            <li class="li-no"><span class="mr4 c3">-</span>顾问报表：布局优化调整，统计时间重命名为“当天/本周/本月/自定义”</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ta-r pr16">
+        <input type="checkbox" id="notifyNext" checked>
+        <label for="notifyNext" class="mr24 f14 ho-cb c3">下次不再提示</label>
+        <span id="iknow" class="bg-b cw p4-8 bdrs2 ho-1f cu-po f14">我知道了</span></div>
+    </div>
+  </div>
+</div>-->
+<style>
+	
+	</style>
+
+<!--企业微信关注 弹窗-->
+<div id="popup-wexin" class="hidden">
+  <div class="popup-wrapper">
+    <div class="po-r"> 
+       <img src="images/popup-wexin.png" class="card5-nbg" alt=""> 
+       <span id="close-popup" class="ic f32 cw ho-red t0 po-a cu-po" style="right:0"></span>
+       <div class="bottom-btns-wrapper"> 
+         <span id="btn-iknow" class="cw cu-po ho-u mr24">我已关注</span> 
+         <span id="btn-nexTime" class="cw cu-po ho-u">下次再说</span> 
+       </div>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+$(document).on('click','#iknow',function(){//单击 btn我知道了
+	$('#updatesLog').velocity('fadeOut',150)
+});
+	
+	
+$(document).on('click','#close-popup',function(){//单击关闭企业微信弹窗
+	$('#popup-wexin').velocity('fadeOut',150)
+});	
+	</script>
+</html>

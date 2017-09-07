@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>List库</title>
+  <link rel="shortcut icon" href="images/logo_favicon.png">
+  <link rel="stylesheet" href="css/main-New.css">
+  <link rel="stylesheet" href="css/select2.css">
+  <link rel="stylesheet" href="css/dropzone.css">
+  <link rel="stylesheet" href="css/viewer.min.css">
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/velocity.min.js"></script>
+  <script src="js/dropzone.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/viewer.min.js"></script>
+</head>
+<style>
+  
+  </style>
+<body>
+  <header class="header"></header>
+  <main class="main">
+    <section class="search-section">
+      <div class="searchbar-wrapper fl card1 ho-sh2">
+        <input type="text" placeholder="输入公司名称查找相关List" class="w360 p1016 f14 h40" style="border:none;">
+        <span class="search-btn"></span> </div>
+      <div class="upload-btn-wrapper fl ml40">
+        <div id="upload-btn" class="upload-btn card1 ho-blue ho-sh"> <span class="ic f24 ml-5"></span> 上传List文件</div>
+      </div>
+      <div class="clear"></div>
+    </section>
+    <section class="contents card1 mt24 f14">
+      <div class="p16">共<span class="bold cb f16 m0-4">60</span>条相关List</div>
+      <table class="bdcl ta-l c1 f12 lh46">
+        <tr class="c2">
+          <th class="w32"></th>
+          <th class="w820">文件名</th>
+<!--
+          <th class="w120">操作</th>
+-->
+          <th class="w120">查看次数</th>
+          <th class="w136">文件大小</th>
+          <th class="w120">激活状态</th>
+          <th class="w136">更新日期</th>
+        </tr>
+        <tr class="bdt1 ho-e5">
+          <td></td>
+          <td><span class="fileicon jpg"></span><span class="a c1 view-file list-name">某某公司通讯录.jpg Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem non harum facilis enim voluptas similique dolores possimus at molestiae. Ad recusandae quasi distinctio? Veniam quas nihil aperiam fugiat accusantium nisi.</span></td>
+<!--
+          <td><span class="cu-po ho-cb view-file">查看文件</span></td>
+-->
+          <td>0次</td>
+          <td>365KB</td>
+          <td>已激活</td>
+          <td>2010-10-23 18:30</td>
+        </tr>
+        <tr class="bdt1 ho-e5">
+          <td></td>
+          <td><span class="fileicon xls"></span><span class="a c1 view-file list-name">某某公司通讯录.pdf</span></td>
+<!--
+          <td><span class="cu-po ho-cb view-file">查看文件</span></td>
+-->
+          <td>0次</td>
+          <td>365KB</td>
+          <td>未激活</td>
+          <td>2010-10-23 18:30</td>
+        </tr>
+        <tr class="h48 bdt1">
+          <td colspan="6">
+            <div>此处为分页</div>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </main>
+  <!--全屏弹窗-->
+  <div id="popup-view-file" class="hidden">
+    <div class="popup-wrapper">
+      <div class="fcpop-close"></div>
+      <div class="popup-container h100p ovy-a w868">
+        <!--空状态-->
+        <div descript="空状态" id="empty" class="fx-center h100p hidden">
+          <div class="ta-c">
+            <img src="images/waiticon.jpg" alt="">
+            <p class="f24 mt16 c2">请稍等...</p>
+            <div class="lh24 f14 c3 mt8">
+              <p>正在生成此文档的预览，需要几十秒至3分钟不等</p>
+              <p>生成预览只需一次，以后可直接浏览</p>
+            </div>
+            <div class="mt16"><span class="btn-flat-b">刷新试试</span></div>
+          </div>
+        </div>
+        <!--生成预览失败状态-->
+        <div descript="生成预览失败状态" class="fx-center h100p hidden">
+          <div class="ta-c">
+            <img src="images/preview-error.jpg" alt="">
+            <p class="f24 mt16 c2">生成预览失败了...</p>
+            <div class="lh24 f14 c3 mt8">
+              <p>此文档可能已经损坏，或者不是常规格式</p>
+              <p>去找找其它文件吧</p>
+            </div>
+          </div>
+        </div>
+        <div descript="非空状态，放百度预览">
+          <!--此处放百度预览的html，宽度为868px-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--图片浏览器-->
+  <ul id="viewerContainer" class="hidden-visual cu-in">
+    <li><img data-original="/images/contractTest/001.jpg" src="/images/imageIcon.jpg" alt="合同1"></li>
+  </ul>
+
+
+</body>
+
+
+<script>
+  /*调用文件类型图标*/
+  fileIcon();
+
+  var viewer = new Viewer(document.getElementById('viewerContainer'), { //初始化图片浏览器
+    transition: false,
+    url: 'data-original',
+    navbar:0,
+    ready:function(){$('.viewer-next,.viewer-prev').css('display','none');}
+  });
+
+  
+
+
+
+  $('.view-file').on('click', function() { //单击文件名或查看文件，弹出弹窗
+    var fileName = $(this).parent().prev().children(':nth-child(2)').html();
+    var fileType = fileName.substr(fileName.lastIndexOf('.') + 1);
+    switch (fileType) {
+      case 'jpg':
+      case 'png':
+      case 'bmp':
+      case 'gif':
+      case 'svg':
+        viewer.show();
+        break;
+      default:
+        popin('#popup-view-file'); //弹窗 
+        break;
+    }
+  });
+
+</script>
+
+</html>

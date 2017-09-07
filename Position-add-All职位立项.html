@@ -1,0 +1,482 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>新增立项职位</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main-New.css">
+<link rel="stylesheet" href="css/cityselect.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/autocomplete.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/cityselect.js"></script>
+<script src="js/jquery.autocomplete.min.js"></script>
+<script src="js/autogrow.min.js"></script>
+<script src="js/Scrollable.js"></script>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<style>
+@font-face {
+	font-family: yotujob;
+	src: url(webfonts/yotujob.ttf)
+}
+.citySelector,[lang="zh-cn"]{margin-top: -30px;}	
+</style>
+</head>
+
+<body class="bg-ec">
+<div class="content fx-center">
+  <div class="w868 card1-nbg bg-f7 p24">
+    <div><span class="bold f18 c3e"><span class="ic f24 fw-n mr4"></span>新增立项职位</span><span id="importPosition" class="f14 cb ml24 cu-po"><span class="ic f20 mr4"></span>从已发布职位导入</span></div>
+    <div class="ta-c mt36"> <span data-id="#tab1" class="cb p5-48 bd3side"><span class="cb">1.</span><span class="bold">职位信息</span></span> <span data-id="#tab2" class="c2 p5-48 cu-po"><span class="cb">2.</span><span class="bold">职位分析</span></span> <span data-id="#tab3" class="c2 p5-48 cu-po"><span class="cb">3.</span><span class="bold">行动方案</span></span> </div>
+    <div class="bdt1-b f14 pl48 mt5">
+      <div id="tab1">
+        <div class="mt36"><span class="d-ib w80 c2">职位名称<span class="red po-a mt-5">*</span></span>
+          <input type="text" class="w240 h32 p8">
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">客户公司<span class="red po-a mt-5">*</span></span>
+          <input type="text" id="select-company" class="w240 h32 p8">
+        </div>
+        <div class="mt36">
+          <div class="fl w80 c2">联系人</div>
+					<div id="prependto-here" class="ml4 fl lh40 bd1-c p16 bdrs2" style="width:640px">
+						<div class="fl lh46">
+							<div><span class="d-ib w40 c2">姓名</span>
+								<input type="text" class="w240 p8 h32">
+							</div>
+							<div><span class="d-ib w40 c2">性别</span> <span>
+								<input type="radio" name="gender" id="radio-male">
+								<label for="radio-male" class="lh24"></label>
+								<span class="c2">男</span> </span> <span class="ml24">
+								<input type="radio" name="gender" id="radio-female">
+								<label for="radio-female" class="lh24"></label>
+								<span class="c2">女</span> </span> </div>
+							<div><span class="d-ib w40 c2">职位</span>
+								<input type="text" class="w240 p8 h32">
+							</div>
+							<div><span class="d-ib w40 c2">状态</span> <span>
+								<input type="radio" name="gender" id="radio-male">
+								<label for="radio-male" class="lh24"></label>
+								<span class="c2">在职</span> </span> <span class="ml24">
+								<input type="radio" name="gender" id="radio-female">
+								<label for="radio-female" class="lh24"></label>
+								<span class="c2">离职</span> </span> </div>
+							<div><span class="d-ib w40 c2">电话</span>
+								<input type="text" class="w240 p8 h32">
+							</div>
+							<div><span class="d-ib w40 c2">手机</span>
+								<input type="text" class="w240 p8 h32">
+							</div>
+						</div>
+						<div class="fl lh46 ml24">
+							<div><span class="d-ib w40 c2">邮箱</span>
+								<input type="text" class="w240 p8 h32">
+							</div>
+							<div><span class="d-ib w40 c2">QQ</span>
+								<input type="text" class="w240 p8 h32">
+							</div>
+							<div><span class="d-ib w40 c2">微信</span>
+								<input type="text" class="w240 p8 h32 ">
+							</div>
+							<div><span class="d-ib fl w40 c2">备注</span>
+								<div class="fl mt8 ml4">
+									<textarea name="" id="" class="w240 h120 p8 lh24 wh-pw h64" style="height:100px"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+          <div class="clear"></div>
+        </div>
+        <div class="mt24"><span class="d-ib w80 c2">所属职能<span class="red po-a mt-5">*</span></span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">所属行业<span class="red po-a mt-5">*</span></span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">年薪范围<span class="red po-a mt-5">*</span></span>
+          <input type="text" class="w56 p8 h32">
+          <span class="c3">万</span> <span class="c3 p1016">~</span>
+          <input type="text" class="w56 p8 h32">
+          <span class="c3">万</span> </div>
+        <div class="mt36"><span class="d-ib w80 c2">汇报对象<span class="red po-a mt-5">*</span></span>
+          <input type="text" class="w120 p8 h32">
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">下属人数<span class="red po-a mt-5">*</span></span>
+          <input type="text" class="w56 p8 h32">
+          <span class="c3">人</span> </div>
+        <div class="mt36"><span class="d-ib w80 c2">工作城市<span class="red po-a mt-5">*</span></span>
+          <input type="text" id="citySelect1" class="w120 p8 h32">
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">跟进顾问<span class="red po-a mt-5">*</span></span> <span class="lh-n d-ib">
+          <select name="" id="select-consultant" class="w240" multiple>
+            <option>顾问A</option>
+            <option>顾问B</option>
+            <option>顾问C</option>
+            <option>顾问D</option>
+            <option>顾问E</option>
+            <option>顾问F</option>
+            <option>顾问G</option>
+            <option>顾问H</option>
+            <option>顾问I</option>
+            <option>顾问J</option>
+            <option>顾问K</option>
+            <option>顾问L</option>
+            <option>顾问M</option>
+            <option>顾问N</option>
+          </select>
+          </span> </div>
+        <div class="mt36"><span class="d-ib w80 c2">项目对接人<span class="red po-a mt-5">*</span></span> <span class="lh-n d-ib">
+          <select name="" id="select-contactperson" class="w240" multiple>
+            <option>顾问A</option>
+            <option>顾问B</option>
+            <option>顾问C</option>
+            <option>顾问D</option>
+            <option>顾问E</option>
+            <option>顾问F</option>
+            <option>顾问G</option>
+            <option>顾问H</option>
+            <option>顾问I</option>
+            <option>顾问J</option>
+            <option>顾问K</option>
+            <option>顾问L</option>
+            <option>顾问M</option>
+            <option>顾问N</option>
+          </select>
+          </span> </div>
+        <div class="mt36"><span class="d-ib w80 c2">职位描述<span class="red po-a mt-5">*</span></span>
+          <textarea name="" id="" class="fr p8 lh24 wh-pw mr24" style="width:664px"></textarea>
+          <div class="clear"></div>
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">任职资格<span class="red po-a mt-5">*</span></span>
+          <textarea name="" id="" class="fr p8 lh24 wh-pw mr24 w664"></textarea>
+          <div class="clear"></div>
+        </div>
+        <div class="fr f15 mt36 mb8"> <span class="cancelSubmit a c2 p4-16 bdrs2 bd1-c ho-red mr24 cu-po">取消</span> <span id="next1" class="bg-b cw p4-16 bdrs2 ho-1f mr24 cu-po">下一步</span> </div>
+      </div>
+      <div id="tab2" class="hidden">
+        <div class="mt36"><span class="d-ib w80 c2">项目评级</span>
+          <select id="select-priority" name="priority" class="w104" >
+            <option></option>
+            <option>高</option>
+            <option>中</option>
+            <option>低</option>
+          </select>
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">招聘原因</span>
+          <textarea name="" id="" class="fr p8 lh24 wh-pw mr24 w664"></textarea>
+          <div class="clear"></div>
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">核心需求</span>
+          <textarea name="" id="" class="fr p8 lh24 wh-pw mr24 w664"></textarea>
+          <div class="clear"></div>
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">企业优势</span>
+          <textarea name="" id="" class="fr p8 lh24 wh-pw mr24 w664"></textarea>
+          <div class="clear"></div>
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">职位卖点</span>
+          <textarea name="" id="" class="fr p8 lh24 wh-pw mr24 w664"></textarea>
+          <div class="clear"></div>
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">职位难点</span>
+          <textarea name="" id="" class="fr p8 lh24 wh-pw mr24 w664"></textarea>
+          <div class="clear"></div>
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">偏好行业</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">偏好职能</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">偏好企业</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">偏好学校</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div class="mt36"> <span class="d-ib w80 c2">偏好性别：</span> 
+          <span>
+          <input type="radio" name="gender" id="radio-gender" checked>
+          <label for="radio-gender" class="lh24"><span class="c2">不限</span></label>
+          </span> <span class="ml24">
+          <input type="radio" name="gender" id="radio-mal">
+          <label for="radio-mal" class="lh24"><span class="c2">男</span></label>
+          </span> <span class="ml24">
+          <input type="radio" name="gender" id="radio-fem">
+          <label for="radio-fem" class="lh24"><span class="c2">女</span></label>
+          </span> </div>
+        <div class="fr f15 mt36 mb8"> <span class="cancelSubmit a c2 p4-16 bdrs2 bd1-c ho-red mr24 cu-po">取消</span><span id="before2" class="c2 p4-16 bdrs2 bd1-c ho-cb ho-bd-b mr24 cu-po" >上一步</span> <span id="next2" class="bg-b cw p4-16 bdrs2 ho-1f mr24 cu-po">下一步</span> </div>
+      </div>
+      <div id="tab3" class="hidden">
+        <div class="mt36"><span class="d-ib w80 c2">核心渠道</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">一般渠道</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">其它渠道</span>
+          <input type="text" class="w240 p8 h32">
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">预计周期</span>
+          <input id="start" type="text" class="w104 p8 h32" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',})">
+          <span class="p0-4 c3">~</span>
+          <input id="end" type="text" class="w104 p8 h32" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',})">
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">周项目关键成果计划</span>
+          <textarea name="" id="" class="fr p8 lh24 wh-pw mr24 w664"></textarea>
+          <div class="clear"></div>
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">内部资源</span>
+          <textarea name="" id="" class="fr p8 lh24 wh-pw mr24 w664"></textarea>
+          <div class="clear"></div>
+        </div>
+        <div class="mt36"><span class="d-ib w80 c2">外部资源</span>
+          <textarea name="" id="" class="fr p8 lh24 wh-pw mr24 w664"></textarea>
+          <div class="clear"></div>
+        </div>
+        <div class="fr f15 mt36 mb8"> <span class="cancelSubmit c2 p4-16 bdrs2 bd1-c ho-red mr24 cu-po">取消</span><span id="before3" class="c2 p4-16 bdrs2 bd1-c ho-cb ho-bd-b mr24 cu-po">上一步</span> <span class="bg-b cw p4-16 bdrs2 ho-1f mr24 cu-po">提交</span> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--弹框背景-->
+<div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z150"></div>
+<!--操作冒泡提示-->
+<div id="toast" class="hidden op0 po-f z200 cw card5-nbg l50p t50p mt80 ml-58 p16-24 bg-toa"> <span class="ic f24 cb bdrs12 d-ib po-r"></span> <span></span> </div>
+<!--从已发布职位导入弹窗-->
+<div id="pop-import" class="hidden card5-nbg bg-f7 po-f l50p t50p z150" style="width:520px;height:460px;margin:-230px 0 0 -260px">
+  <h4 class="card-header"><span class="ic f24 fw-n mr4"></span><span>从已发布的职位导入</span><span class="fw-n f14 fr red ml24"><span class="ic f20"></span>导入职位会覆盖已输入的内容</span></h4>
+  <div class="p24 f14">
+    <div class="mt12 c1 ml16"> <span class="d-ib w120">按公司查找职位：</span><span>
+      <input id="import-company" type="text" class="h36 w300 pl4" placeholder="输入公司名称，按回车键搜索">
+      </span> <span class="ic f24 ml-40 c3"></span> </div>
+    <div class="mt36 ml16">
+      <div class="fl w120">单击选择职位：</div>
+      <div class="fl bg-w">
+        <ul class="w300 mh240 ovy-a Scrollable select-position">
+          <li class="li-no bdt1 lh46 cu-po ho-cb ho-ec pl16"><span class="w262 ol">移动端自动化测试开发工程师</span></li>
+          <li class="li-no bdt1 lh46 cu-po ho-cb ho-ec pl16"><span class="w262 ol">移动端自动化测试开发工程师</span></li>
+          <li class="li-no bdt1 lh46 cu-po ho-cb ho-ec pl16"><span class="w262 ol">移动端自动化测试开发工程师</span></li>
+          <li class="li-no bdt1 lh46 cu-po ho-cb ho-ec pl16"><span class="w262 ol">移动端自动化测试开发工程师</span></li>
+          <li class="li-no bdt1 lh46 cu-po ho-cb ho-ec pl16"><span class="w262 ol">移动端自动化测试开发工程师</span></li>
+          <li class="li-no bdt1 lh46 cu-po ho-cb ho-ec pl16"><span class="w262 ol">移动端自动化测试开发工程师</span></li>
+        </ul>
+      </div>
+      <!--当该公司没有发布过立项职位时，显示内容--begin-->
+      <div class="hidden fl w300 ta-c c2">
+        <p class="ic f64 c-c"></p>
+        该公司没有立项职位 </div>
+      <!--当该公司没有发布过立项职位时，显示内容--end--> 
+    </div>
+    <div class="clear mt24 f15 po-a" style="right:24px;bottom:24px"><span id="cancel-import" class="p816 cb bold ho-u cu-po">取消</span><span id="confirm-import" class="bg-b cw bdrs2 p4-16 ml24 ho-1f cu-po">确认导入</span></div>
+  </div>
+</div>
+<!--取消发布弹窗-是否存草稿-->
+<div id="pop-cancelSubmit" class="hidden po-f w424 card5 l50p t50p z200 pb48" style="margin:-120px 0 0 -212px">
+  <h4 class="card-header">取消发布职位<span id="close-pop" class="fr ic f24 red fw-n cu-po"></span></h4>
+  <div class="ta-c mt36">是否保存已填信息到草稿？</div>
+  <div class="ta-c mt36"><span class="p816 bd1-c ho-red cu-po bdrs2">不保存</span><span class="bg-b cw bdrs2 ho-1f p816 cu-po ml24">存草稿</span></div>
+</div>
+</body>
+<script>
+/*--操作冒泡提示功能toast()--*/
+function toast(text){
+	$('#toast').children(':last').html(text);
+	$('#toast').show().velocity({marginTop:'-=120',opacity:1,delay:150},{duration:150,easing:'easeOutCubic'});
+	window.setTimeout(function(){
+		$('#toast').velocity('reverse',{complete:function(){$('#toast').hide()}})},1800);
+		};	
+</script>
+<script>
+/*单击从已发布职位导入*/
+$('#importPosition').on('click',function(){
+	$('#popbg,#pop-import').velocity('fadeIn',200);
+	});
+$('#popbg,#cancel-import,#confirm-import').on('click',function(){
+	$('#popbg,#pop-import').velocity('fadeOut',200);
+	});	
+/*单击三个tab切换*/	
+$('[data-id^="#tab"]').on('click',function(){
+	var that = $(this),id=that.attr('data-id');
+	$('[data-id^="#tab"]').removeClass('cb bd3side').addClass('c2 cu-po');
+	that.removeClass('c2 cu-po').addClass('cb bd3side');
+	$('[id^="tab"]').hide();
+	$(id).show();
+})	
+/*选择要导入的职位*/	
+$('.select-position li').on('click',function(){
+	$(this).siblings().removeClass('bg-b cw').addClass('ho-cb ho-ec');
+	$(this).removeClass('ho-cb ho-ec').addClass('bg-b cw');
+	});
+/*取消发布职位*/
+$('.cancelSubmit').on('click',function(){
+	$('#popbg,#pop-cancelSubmit').velocity('fadeIn',200);
+});
+$('#popbg,#close-pop').on('click',function(){
+	$('#popbg,#pop-cancelSubmit').velocity('fadeOut',150);	
+})	
+/*--单选优先级实例化--*/
+$('#select-priority').select2({placeholder:" ",minimumResultsForSearch:Infinity});	
+/*--textarea输入自动增长长度--*/
+$('textarea').autogrow();
+/*--输入公司名称自动联想--*/
+$('#select-company').autocomplete({
+	serviceUrl: '',
+});
+/*--选择公司后，ajax加载公司的联系人--*/
+$('#select-company').on('select2:select', function (e) {
+  var Company = $("#select-company").val();
+  if(Company == "B公司(选择后自动添加B的联系人)") {
+	  $('<div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r"> <div class="fl ic f32 mt12 c-c"></div> <div class="fl ml8"> <div><span class="c1 bold">张先生</span> <span class=" ml12 c2">招聘专员</span></div> <div class="c3">电话<span>18611111111</span></div> </div> <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div> </div> <div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r"> <div class="fl ic f32 mt12 c-c"></div> <div class="fl ml8"> <div><span class="c1 bold">王先生</span> <span class=" ml12 c2">CEO</span></div> <div class="c3">电话<span>18622222222</span></div> </div> <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div> </div>').prependTo('#prependto-here')}
+});
+
+/*--选择已有联系人--*/
+$(document).ready(function(e) {
+$(document).on('click','.contact-p',function(){
+    var Selected = $(this).hasClass('bg-w');
+	if (Selected) {
+		$(this).removeClass('bg-w bd1-b');
+		$(this).children('.po-a').addClass('sc0');
+		} else {
+			$(this).addClass('bg-w bd1-b');
+			$(this).children('.po-a').removeClass('sc0');}
+	})	
+/*--新增联系人弹窗--*/
+//弹出
+  $('#btn-addcontact').click(function(e) {
+	  if ($('#new-contact').is(':visible')) {
+		  } else {
+			  $('#new-contact').velocity("slideDown",{duration:150,easing:"easeOutCubic"});
+			  window.setTimeout(function(){$('.contact').velocity("scroll",{offset:-264,duration:600})},300)
+			  }
+  });
+//取消 
+  $('#btn-cancel').click(function(e) {
+	  $('#new-contact').velocity("slideUp",{duration:150,easing:"easeOutCubic"});
+});
+
+});
+/*--btn新建并添加--*/
+  $('#btn-create').click(function(e) {
+    $('<div class="contact-p fl lh24 mr16 mb16 p8 bdrs2 bd1-e0 cu-po ho-bd-b po-r trans1"> <div class="fl ic f32 mt12 c-c"></div> <div class="fl ml8"> <div><span class="c1 bold">新增的</span> <span class=" ml12 c2">职位名称</span></div> <div class="c3">电话<span>18688888888</span></div> </div> <div class="po-a ic f24 cb t-8 r-8 trans sc0"></div> </div>').prependTo('#prependto-here');
+	$('#new-contact').velocity("slideUp",{duration:150,easing:"easeOutCubic"});
+	var NewAdded = $('#prependto-here>div:first-child')
+	$(NewAdded).addClass('bg50');
+	window.setTimeout(function(){$(NewAdded).removeClass('bg50');},1000);
+	window.setTimeout(function(){$(NewAdded).removeClass('trans1');},2000);
+});
+
+
+/*--多选顾问实例化--*/
+$('#select-consultant,#select-contactperson').select2({placeholder:" ",minimumResultsForSearch:Infinity});
+
+
+
+
+
+/*--选中总览--*/
+$("#position").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过显示菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});
+	</script>
+<script>
+/*单击下一步*/	
+$('#next1').on('click',function(){
+	$('#tab1').hide();
+	$('#tab2').show();
+	$('[data-id="#tab1"]').removeClass('cb bd3side').addClass('c2 cu-po');
+	$('[data-id="#tab2"]').addClass('cb bd3side').removeClass('c2 cu-po');	
+	$('body').velocity('scroll',150)
+});	
+$('#next2').on('click',function(){
+	$('#tab2').hide();
+	$('#tab3').show();
+	$('[data-id="#tab2"]').removeClass('cb bd3side').addClass('c2 cu-po');
+	$('[data-id="#tab3"]').addClass('cb bd3side').removeClass('c2 cu-po');	
+	$('body').velocity('scroll',150)
+});	
+/*单击上一步*/	
+$('#before3').on('click',function(){
+	$('#tab3').hide();
+	$('#tab2').show();
+	$('[data-id="#tab3"]').removeClass('cb bd3side').addClass('c2 cu-po');
+	$('[data-id="#tab2"]').addClass('cb bd3side').removeClass('c2 cu-po');	
+	$('body').velocity('scroll',150)
+});	
+$('#before2').on('click',function(){
+	$('#tab2').hide();
+	$('#tab1').show();
+	$('[data-id="#tab2"]').removeClass('cb bd3side').addClass('c2 cu-po');
+	$('[data-id="#tab1"]').addClass('cb bd3side').removeClass('c2 cu-po');	
+	$('body').velocity('scroll',150)
+});	
+	</script>	
+<script>
+/*弹窗滚轮控制*/	
+$('.Scrollable').on('DOMMouseScroll mousewheel', function(ev) {
+    var $this = $(this),
+        scrollTop = this.scrollTop,
+        scrollHeight = this.scrollHeight,
+        height = $this.height(),
+        delta = (ev.type == 'DOMMouseScroll' ?
+            ev.originalEvent.detail * -40 :
+            ev.originalEvent.wheelDelta),
+        up = delta > 0;
+
+    var prevent = function() {
+        ev.stopPropagation();
+        ev.preventDefault();
+        ev.returnValue = false;
+        return false;
+    };
+
+    if (!up && -delta > scrollHeight - height - scrollTop) {
+        // Scrolling down, but this will take us past the bottom.
+        $this.scrollTop(scrollHeight);
+
+        return prevent();
+    } else if (up && delta > scrollTop) {
+        // Scrolling up, but this will take us past the top.
+        $this.scrollTop(0);
+        return prevent();
+    }
+});
+$('.autocomplete-suggestions').on('DOMMouseScroll mousewheel', function(ev) {
+    var $this = $(this),
+        scrollTop = this.scrollTop,
+        scrollHeight = this.scrollHeight,
+        height = $this.height(),
+        delta = (ev.type == 'DOMMouseScroll' ?
+            ev.originalEvent.detail * -40 :
+            ev.originalEvent.wheelDelta),
+        up = delta > 0;
+
+    var prevent = function() {
+        ev.stopPropagation();
+        ev.preventDefault();
+        ev.returnValue = false;
+        return false;
+    };
+
+    if (!up && -delta > scrollHeight - height - scrollTop) {
+        // Scrolling down, but this will take us past the bottom.
+        $this.scrollTop(scrollHeight);
+
+        return prevent();
+    } else if (up && delta > scrollTop) {
+        // Scrolling up, but this will take us past the top.
+        $this.scrollTop(0);
+        return prevent();
+    }
+});
+	
+	</script>	
+<script>
+/*--城市选择实例化--*/
+var currentcity=new Vcity.CitySelector({input:'citySelect1'});	
+	</script>
+</html>

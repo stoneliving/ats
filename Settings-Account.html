@@ -1,0 +1,360 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>账号设置-账号信息</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/dropzone.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/dropzone.js"></script>
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+</style>
+</head>
+<body class="bg-ec">
+<header class="header  nav-down">
+  <div class="h-contain">
+    <div class="logo fl">优途智聘2.0系统</div>
+    <ul class="fl ml24">
+      <li class="li-no w72 fl">
+        <a href="Overview.html" class="nav-a" id="overview">
+          <div class="ic f20"></div>
+          <div class="f14">总览</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Search-1st.html" class="nav-a" id="search">
+          <div class="ic f20"></div>
+          <div class="f14">搜人才</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Company-1st.html" class="nav-a" id="company">
+          <div class="ic f20"></div>
+          <div class="f14">公司</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Position-1st.html" class="nav-a" id="position">
+          <div class="ic f20"></div>
+          <div class="f14">职位</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Pipeline.html" class="nav-a" id="pipeline">
+          <div class="ic f20"></div>
+          <div class="f14">Pipeline</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Talent-1st.html" class="nav-a" id="talent">
+          <div class="ic f20"></div>
+          <div class="f14">人才库</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="List.html" class="nav-a" id="list">
+          <div class="ic f20"></div>
+          <div class="f14">List库</div>
+        </a>
+      </li> 
+      <li class="li-no w72 fl">
+        <a href="Invoice.html" class="nav-a" id="invoice">
+          <div class="ic f20"></div>
+          <div class="f14">发票</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Report-1.html" class="nav-a" id="report">
+          <div class="ic f20"></div>
+          <div class="f14">报表</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="E-learning.html" class="nav-a" id="elearn">
+          <div class="ic f20"></div>
+          <div class="f14">E-learning</div>
+        </a>
+      </li>      
+    </ul>
+    <ul class="fr">
+      <li class="li-no fl w56">
+        <div class="nav-a" id="add">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14 w104">
+              <li class="li-no">
+                <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a>
+              </li>
+              <li class="li-no">
+                <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a>
+              </li>
+              <li class="li-no">
+                <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 批量导入</a>
+              </li>              
+            </ul>
+        </div>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Todo.html" class="nav-a" id="todo" title="待办">
+          <div class="ic f24 lh46"></div>
+          <div class="badge">9</div>
+        </a>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Message.html" class="nav-a" id="message" title="消息">
+          <div class="ic f24 lh46"></div>
+        <div class="badge">99+</div>
+        </a>
+      </li>      
+      <li class="li-no fl w56">
+        <div href="" class="nav-a" id="account">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14">
+              <li class="li-no">
+                <a href="Settings-Account.html" class="add-li-a"><span class="ic f20"></span> 系统设置</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 使用帮助</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a ho-red"><span class="ic f20"></span> 退出登录</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="content">
+  <div class="fl w200">
+    <div class="card1 pb16 f14">
+      <div class="card-header mb8"><span class="ic f20"></span> 系统设置 </div>
+      <a href="Settings-Account.html" class="a d-b p816 cb cu-po">
+        <span>账号信息</span>
+      </a>
+      <a href="Settings-User.html" class="a d-b c1 p816 ho-cb ho-ec cu-po">
+        <span>用户管理</span>
+      </a>
+      <a href="Settings-Role.html" class="a d-b c1 p816 ho-cb ho-ec cu-po">
+        <span>角色管理</span>
+      </a>
+      <a href="Settings-Dept.html" class="a d-b c1 p816 ho-cb ho-ec cu-po">
+        <span>部门管理</span>
+      </a>
+      <a href="Settings-Team.html" class="a d-b c1 p816 ho-cb ho-ec cu-po">
+        <span>团队管理</span>
+      </a>
+      <a href="Settings-Acess.html" class="a d-b c1 p816 ho-cb ho-ec cu-po">
+        <span>权限配置</span>
+      </a>
+      <a href="Settings-Cache.html" class="a d-b c1 p816 ho-cb ho-ec cu-po">
+        <span>缓存设置</span>
+      </a>
+    </div>
+  </div>  
+  <div class="fl card1 w968 ml32 f14 p24">
+    <div class="bg-ec f16 c1 bold p4-8 bdl5">用户信息
+       <span id="btn-editInfo" class="f14 fw-n cb ml24 cu-po"><span class="ic f20"></span>编辑</span>
+    </div>
+    <div id="oriInfo" class="lh40 mt16 pl16">
+      <div>
+        <span class="d-ib w80 c2">姓名：</span>
+        <span>王翔</span>
+      </div>
+      <div><span class="d-ib w80 c2">手机：</span> <span>18688886666</span></div>
+      <div><span class="d-ib w80 c2">邮箱：</span> <span>wang.xiang@stonghr.com</span></div>
+      <div><span class="d-ib w80 c2">QQ：</span> <span>1234567890</span></div>
+      <div><span class="d-ib w80 c2">座机：</span> <span>0755-82854737</span></div>
+      <div>
+        <span class="d-ib w80 c2">角色：</span>
+        <span>顾问-Leader</span>
+      </div>
+      <div>
+        <span class="d-ib w80 c2">团队:</span>
+        <span>热火队</span>
+      </div>
+      <div>
+        <span class="d-ib w80 c2">部门:</span>
+        <span>武汉分公司</span>
+      </div>
+    </div>
+    <div id="editInfo" class="hidden lh40 mt16 pl16 bg-f2">
+      <div>
+        <span class="d-ib w80 c2">姓名：</span>
+        <span>王翔</span>
+      </div>
+      <div><span class="d-ib w80 c2">手机：</span> <input type="text" class="h32 w200 pl4" value="18688886666"></div>
+      <div><span class="d-ib w80 c2">邮箱：</span> <input type="text" class="h32 w200 pl4" value="wang.xiang@stonghr.com"></div>
+      <div><span class="d-ib w80 c2">QQ：</span> <input type="text" class="h32 w200 pl4" value="1234567890"></div>
+      <div><span class="d-ib w80 c2">座机：</span> <input type="text" class="h32 w200 pl4" value="0755-82854737"></div>
+      <div>
+        <span class="d-ib w80 c2">角色：</span>
+        <span>顾问</span>
+      </div>
+      <div>
+        <span class="d-ib w80 c2">职位：</span>
+        <span>leader</span>
+      </div>
+      <div>
+        <span class="d-ib w80 c2">团队:</span>
+        <span>热火队</span>
+      </div>
+      <div>
+        <span class="d-ib w80 c2">部门:</span>
+        <span>武汉分公司</span>
+      </div>
+      <div>
+       <span class="ml192">
+         <span class="hideInfo cu-po ho-u">取消</span>
+         <span id="saveInfo" class="hideInfo ml24 p4-8 bg-b cw ho-1f cu-po bdrs2">保存</span>
+       </span>
+      </div>
+    </div>
+<script>
+/*编辑用户信息*/
+$('#btn-editInfo').on('click',function(){
+	$('#oriInfo').hide();
+	$('#editInfo').show();
+	});
+/*隐藏用户信息编辑*/	
+$('.hideInfo').on('click',function(){
+	$('#editInfo').hide();
+	$('#oriInfo').show();
+	});
+/*保存用户信息编辑*/	
+$('#saveInfo').on('click',function(){
+	toast('已成功修改信息');
+	});
+</script>    
+    <div class="bg-ec f16 c1 bold p4-8 bdl5 mt24">登录信息</div>
+    <div class="lh46 mt16 pl16">
+      <div>
+        <span class="d-ib w80 c2">登录邮箱：</span>
+        <span>xiang.wang@stonghr.com</span>
+      </div>
+      <div id="oriPwd">
+        <span class="d-ib w80 c2">登录密码：</span>
+        <span>*******</span>
+        <span id="btn-changePwd" class="cb ml24 cu-po"><span class="ic f20"></span>修改密码</span>
+      </div>
+      <div id="changePwd" class="hidden">      
+        <div>
+          <span class="d-ib w80 c2">新密码：</span>
+          <input type="password" class="h30 w160 pl4"  placeholder="请输入新密码">
+        </div>
+        <div>
+          <span class="d-ib w80 c2">确认密码：</span>
+          <input type="password" class="h30 w160 pl4" placeholder="重复输入新密码">
+        </div>
+        <div>
+         <span class="ml140">
+           <span class="hidePwd cu-po ho-u">取消</span>
+           <span id="savePwd" class="hidePwd ml24 p4-8 bg-b cw ho-1f cu-po bdrs2">保存</span>
+         </span>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+/*修改密码*/
+$('#btn-changePwd').on('click',function(){
+	$('#oriPwd').hide();
+	$('#changePwd').show();
+	});
+/*隐藏修改密码弹窗*/	
+$('.hidePwd').on('click',function(){
+	$('#changePwd').hide();
+	$('#oriPwd').show();
+	});
+/*保存修改*/
+$('#savePwd').on('click',function(){
+	toast('已成功修改密码');
+	});	
+</script>  
+  <div class="clear"></div>
+</div>
+<!--弹框背景--><div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z150"></div>
+<!--操作冒泡提示-->
+<div id="toast" class="hidden op0 po-f z200 cw card5-nbg l50p t50p mt80 ml-58 p16-24 bg-toa">
+<span class="ic f24 cb bdrs12 d-ib po-r"></span>
+<span></span>
+</div>
+<!--上传附件弹窗-->
+<div id="dialog-upload" class="hidden z150 w820 h332 card5-nbg bg-f7 po-f l50p t50p mt-160 ml-410 p24">
+  <h3 class="c1">上传文件
+    <span class="f14 c2 fw-n ml16">至文件夹</span>
+    <span class="fw-n f14">
+      <span class="ic f24 cf6"></span>
+      <span class="c2">默认文件夹</span>
+      <span class="d-ib ml4 c2">
+        <span class="changefolder td-u ho-cb cu-po">更改</span>
+        <div id="div-changefolder" class="note hidden">
+          <div>
+           <span class="fl w86 c2">选择文件夹：</span>
+           <div class="here-ul fl clear bg-w w184 p8">
+             <ul id="talfolder-source" class="mh168 ovy-a">
+               <li class="folder-select li-no lh30 ho-ec ho-cb cu-po"><span class="ic f20 cf6 mr4"></span><span>默认文件夹</span></li>
+               <li id="newfolder" class="folder-select li-no lh30 hidden ho-ec ho-cb cu-po"><span class="ic f20 cf6 mr4"></span><input type="text" onKeyUp="confirmFolder(event)" class="w120 pl4 lh24"></li>
+               <li class="li-no lh30"><span class="addfolder cu-po cb"><span class="ic f24"></span>新增文件夹</span></li>
+             </ul>
+           </div>
+           <div class="clear"></div>
+          </div>
+          <div class="bdt1-d">
+            <span class="fr pt8">
+              <span class="cfolder-cancel ho-u c2 cu-po">取消</span>
+              <span class="cfolder-confirm ml16 cb bold cu-po ho-u">确认</span>
+            </span>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </span>
+    </span>
+  </h3>
+  <form action="/file-upload" class="dropzone ovy-a Scrollable w100p h172 mt24 p8 bg-w cu-po"></form>
+  <div class="mt16">
+    <span id="btn-cfmupload" class="fr p1016 cw bg-b bdrs2 ho-1f cu-po ml16">确定</span>
+    <span id="btn-cancelupload" class="fr p1016 c2 ho-u cu-po">取消</span>
+  </div>
+</div>
+</body>
+<script>
+/*--操作冒泡提示功能toast()--*/
+function toast(text){
+	$('#toast').children(':last').html(text);
+	$('#toast').show().velocity({marginTop:'-=120',opacity:1,delay:150},{duration:150,easing:'easeOutCubic'});
+	window.setTimeout(function(){
+		$('#toast').velocity('reverse',{complete:function(){$('#toast').hide()}})},1800);
+		};	
+</script>
+<script>
+/*更友善的alert提醒，调用方法：Alert('文本或标签')*/
+function Alert (text){
+	$('#Alert span:last').html(text);
+    $('#Alert').show().velocity({
+		scaleX:[1,[300,20],0],
+		scaleY:[1,[300,20],0],
+		opacity:[1,"easeOutCubic",0],
+		},{duration:300});
+	setTimeout(function(){
+		$('#Alert').velocity("fadeOut",{duration:300});
+		},2000);	
+	};
+</script>
+<script>
+/*--选中账号--*/
+$("#account").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过展开下拉菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});
+</script>
+</html>

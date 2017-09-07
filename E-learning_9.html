@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>E-learning</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/cityselect.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/autocomplete.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/cityselect.js"></script>
+<script src="js/jquery.autocomplete.min.js"></script>
+<style>
+@font-face{font-family: yotujob; src:url(webfonts/yotujob.ttf)}
+.ho-up{ transition:all 0.3s;position: relative;cursor: pointer;}
+.ho-up:hover{ box-shadow:0 6px 10px 0 rgba(0, 0, 0, 0.14),
+                  0 1px 18px 0 rgba(0, 0, 0, 0.12),
+                  0 3px 5px -1px rgba(0, 0, 0, 0.4); transform:translateY(-6px);}
+</style>
+</head>
+
+<body class="bg-ec">
+<header class="header  nav-down">
+  <div class="h-contain">
+    <div class="logo fl">优途智聘2.0系统</div>
+    <ul class="fl ml24">
+      <li class="li-no w72 fl">
+        <a href="Overview.html" class="nav-a" id="overview">
+          <div class="ic f20"></div>
+          <div class="f14">总览</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Search-1st.html" class="nav-a" id="search">
+          <div class="ic f20"></div>
+          <div class="f14">搜人才</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Company-1st.html" class="nav-a" id="company">
+          <div class="ic f20"></div>
+          <div class="f14">公司</div>
+        </a>
+      </li>
+      <li class="li-no w72 fl">
+        <a href="Position-1st.html" class="nav-a" id="position">
+          <div class="ic f20"></div>
+          <div class="f14">职位</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Pipeline.html" class="nav-a" id="pipeline">
+          <div class="ic f20"></div>
+          <div class="f14">Pipeline</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Talent-1st.html" class="nav-a" id="talent">
+          <div class="ic f20"></div>
+          <div class="f14">人才库</div>
+        </a>
+      </li>      <li class="li-no w72 fl">
+        <a href="List.html" class="nav-a" id="list">
+          <div class="ic f20"></div>
+          <div class="f14">List库</div>
+        </a>
+      </li> 
+      <li class="li-no w72 fl">
+        <a href="Invoice.html" class="nav-a" id="invoice">
+          <div class="ic f20"></div>
+          <div class="f14">发票</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="Report-1.html" class="nav-a" id="report">
+          <div class="ic f20"></div>
+          <div class="f14">报表</div>
+        </a>
+      </li>      
+      <li class="li-no w72 fl">
+        <a href="E-learning.html" class="nav-a" id="elearn">
+          <div class="ic f20"></div>
+          <div class="f14">E-learning</div>
+        </a>
+      </li>      
+    </ul>
+    <ul class="fr">
+      <li class="li-no fl w56">
+        <div class="nav-a" id="add">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14 w104">
+              <li class="li-no">
+                <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a>
+              </li>
+              <li class="li-no">
+                <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a>
+              </li>
+              <li class="li-no">
+                <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 批量导入</a>
+              </li>              
+            </ul>
+        </div>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Todo.html" class="nav-a" id="todo" title="待办">
+          <div class="ic f24 lh46"></div>
+          <div class="badge">9</div>
+        </a>
+      </li>
+      <li class="li-no fl w56">
+        <a href="Message.html" class="nav-a" id="message" title="消息">
+          <div class="ic f24 lh46"></div>
+        <div class="badge">99+</div>
+        </a>
+      </li>      
+      <li class="li-no fl w56">
+        <div href="" class="nav-a" id="account">
+          <div class="ic f24 lh46"></div>
+            <ul class="add-ul f14">
+              <li class="li-no">
+                <a href="Settings-Account.html" class="add-li-a"><span class="ic f20"></span> 系统设置</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a"><span class="ic f20"></span> 使用帮助</a>
+              </li>
+              <li class="li-no">
+                <a href="" class="add-li-a ho-red"><span class="ic f20"></span> 退出登录</a>
+              </li>
+            </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="content">
+  <div class="c1 card1 mt24">
+    <img src="images/E-learning/E-learning_thumb (39).jpg" alt="" width="270px" class="d-ib va-m">
+    <div class="p1016 d-ib va-m">
+      <h4>9.与候选人电话沟通话术</h4>
+      <div class="lh30 f14 c2">王伟 · 王翔 · 王凯茜</div>
+      <div class="f13 lh24 c3 mt8">
+        <p class=" f14 w820 wh-pw">a.与候选人首次电话沟通；   b.与候选人持续联系沟通；   c.与候选人建立感情联系沟通。</p>
+        <span class="ic f18"></span> <span>2h 55m</span>
+        <span class="ic f18 ml24"></span> <span>183</span>次
+      </div>
+    </div>
+    <div class="d-ib va-m f15">
+     <a href="E-learning.html" class="d-b a c1 p8-0">回目录</a>
+     <a href="" class="d-b a c1 p8-0">上一章</a>
+     <a href="" class="d-b a c1 p8-0">下一章</a>
+    </div>
+  </div>
+  <div class="mt24 f14">
+    <div class="tab fl c1 bold ta-c p8 cu-po bd-3 bg-w" data-id="#tab1">a.与候选人首次电话沟通</div>
+    <div class="tab fl c1 ta-c p8 cu-po ho-cb" data-id="#tab2">b.与候选人持续保持沟通</div>
+    <div class="tab fl c1 ta-c p8 cu-po ho-cb" data-id="#tab3">c.与候选人建立感情联系沟通</div>
+    <div class="clear"></div>    
+  </div>
+  <div class="card1 p24"> 
+    <div id="tab1" class="tabs">
+      <iframe src="E-learning files/与候选人电话沟通基本话术（细节）——Kathy.htm" frameborder="0" width="100%" height="1420px"></iframe>
+      <div class="fr lh24 cu-po ho-cb" data-ref="[data-id='#tab2']">
+        <div class="f14 c3">下一节<span class="ic f24"></span></div>
+        <div>b.与候选人持续保持沟通</div>
+      </div>   
+      <div class="clear"></div>
+    </div> 
+    <div id="tab2" class="tabs hidden">
+      <iframe src="E-learning files/项目作业指导书-Kathy01.htm" frameborder="0" width="100%" height="1400px"></iframe>
+      <div class="fl lh24 cu-po ho-cb" data-ref="[data-id='#tab1']">
+        <div class="f14 c3 fl"><span class="ic f24"></span>上一节</div>
+        <div class="clear">a.与候选人首次电话沟通</div>
+      </div>   
+      <div class="fr lh24 cu-po ho-cb" data-ref="[data-id='#tab3']">
+        <div class="f14 c3 fr">下一节<span class="ic f24"></span></div>
+        <div class="clear">c.与候选人建立感情联系沟通</div>
+      </div>   
+      <div class="clear"></div>
+    </div>
+    <div id="tab3" class="tabs hidden">
+      <img src="E-learning files/15个新增联系人沟通技巧ppt/幻灯片1.PNG" alt="" class="w1152 mt16" >
+      <img src="E-learning files/15个新增联系人沟通技巧ppt/幻灯片2.PNG" alt="" class="w1152 mt16" >
+      <img src="E-learning files/15个新增联系人沟通技巧ppt/幻灯片3.PNG" alt="" class="w1152 mt16" >
+      <img src="E-learning files/15个新增联系人沟通技巧ppt/幻灯片4.PNG" alt="" class="w1152 mt16" >
+      <img src="E-learning files/15个新增联系人沟通技巧ppt/幻灯片5.PNG" alt="" class="w1152 mt16" >
+      <img src="E-learning files/15个新增联系人沟通技巧ppt/幻灯片6.PNG" alt="" class="w1152 mt16" >
+      <img src="E-learning files/15个新增联系人沟通技巧ppt/幻灯片7.PNG" alt="" class="w1152 mt16" >
+      <img src="E-learning files/15个新增联系人沟通技巧ppt/幻灯片8.PNG" alt="" class="w1152 mt16" >
+      <img src="E-learning files/15个新增联系人沟通技巧ppt/幻灯片9.PNG" alt="" class="w1152 mt16" >
+      <img src="E-learning files/15个新增联系人沟通技巧ppt/幻灯片10.PNG" alt="" class="w1152 mt16" >
+      <img src="E-learning files/15个新增联系人沟通技巧ppt/幻灯片11.PNG" alt="" class="w1152 mt16" >
+      <div class="fl lh24 cu-po ho-cb" data-ref="[data-id='#tab2']">
+        <div class="f14 c3 fl"><span class="ic f24"></span>上一节</div>
+        <div class="clear">b.与候选人持续保持沟通</div>
+      </div>   
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+/*--切换tab--*/
+$('.tab').click(function(e) {
+	var tabid = $(this).attr('data-id');
+    $('.tab').removeClass('bg-w bd-3 bold').addClass('ho-cb');
+	$(this).addClass('bg-w bd-3 bold').removeClass('ho-cb');
+	$('.tabs').hide();
+	$(tabid).show();
+});
+/*上下节*/
+$('[data-ref]').on('click',function(){
+	var ID = $(this).attr('data-ref');
+	$(ID).trigger('click');
+	$('.card1.p24').velocity("scroll",{offset:-58});
+	});
+/*--选中总览--*/
+$("#elearn").addClass("nav-a-selected");
+/*--“新增”和“账号”拂过显示菜单*/
+$("#add").mouseenter(function(e) {$("#add ul").show()});
+$("#add").mouseleave(function(e) {$("#add ul").hide()});
+$("#account").mouseenter(function(e) {$("#account ul").show()});
+$("#account").mouseleave(function(e) {$("#account ul").hide()});
+</script>
+<script>
+/*判断页外链接是否含#tab跳转并转向相应跳转*/
+var hash = window.location.hash;
+if(hash!=''){
+ var tabID = '[data-id="'+hash+'"]';
+ $(document).ready(function(e) {
+        $(tabID).trigger('click');
+    });
+ }
+</script>
+
+</html>

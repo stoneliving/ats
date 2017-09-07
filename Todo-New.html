@@ -1,0 +1,595 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>待办</title>
+<link rel="shortcut icon" href="images/logo_favicon.png">
+<link rel="stylesheet" href="css/main-New.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/datepicker.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/datepicker.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/velocity.min.js"></script>
+</head>
+
+<body class="bg-ec">
+<header class="header">
+  <div class="h-contain">
+    <div class="logo fl">优途智聘2.0系统</div>
+    <ul class="fl ml24">
+      <li class="li-no w72 fl"> <a href="Overview.html" class="nav-a" id="overview">
+        <div class="ic f20"></div>
+        <div class="f14">总览</div>
+        </a> </li>
+      <li class="li-no w72 fl"> <a href="Search-1st.html" class="nav-a" id="search">
+        <div class="ic f20"></div>
+        <div class="f14">搜人才</div>
+        </a> </li>
+      <li class="li-no w72 fl"> <a href="Company-1st.html" class="nav-a" id="company">
+        <div class="ic f20"></div>
+        <div class="f14">公司</div>
+        </a> </li>
+      <li class="li-no w72 fl"> <a href="Position-1st.html" class="nav-a" id="position">
+        <div class="ic f20"></div>
+        <div class="f14">职位</div>
+        </a> </li>
+      <li class="li-no w72 fl"> <a href="Pipeline.html" class="nav-a" id="pipeline">
+        <div class="ic f20"></div>
+        <div class="f14">Pipeline</div>
+        </a> </li>
+      <li class="li-no w72 fl"> <a href="Talent-1st.html" class="nav-a" id="talent">
+        <div class="ic f20"></div>
+        <div class="f14">人才库</div>
+        </a> </li>
+      <li class="li-no w72 fl"> <a href="List.html" class="nav-a" id="list">
+        <div class="ic f20"></div>
+        <div class="f14">List库</div>
+        </a> </li>
+      <li class="li-no w72 fl"> <a href="Invoice.html" class="nav-a" id="invoice">
+        <div class="ic f20"></div>
+        <div class="f14">发票</div>
+        </a> </li>
+      <li class="li-no w72 fl"> <a href="Report-1.html" class="nav-a" id="report">
+        <div class="ic f20"></div>
+        <div class="f14">报表</div>
+        </a> </li>
+      <li class="li-no w72 fl"> <a href="E-learning.html" class="nav-a" id="elearn">
+        <div class="ic f20"></div>
+        <div class="f14">E-learning</div>
+        </a> </li>
+    </ul>
+    <ul class="fr">
+      <li class="li-no fl w56">
+        <div class="nav-a" id="add">
+          <div class="ic f24 lh46"></div>
+          <ul class="add-ul f14 w104">
+            <li class="li-no"> <a href="Talent-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增人才</a> </li>
+            <li class="li-no"> <a href="Company-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增公司</a> </li>
+            <li class="li-no"> <a href="Position-add.html" target="new" class="add-li-a"><span class="ic f20"></span> 新增职位</a> </li>
+            <li class="li-no"> <a href="" class="add-li-a"><span class="ic f20"></span> 批量导入</a> </li>
+          </ul>
+        </div>
+      </li>
+      <li class="li-no fl w56"> <a href="Todo.html" class="nav-a" id="todo" title="待办">
+        <div class="ic f24 lh46"></div>
+        <div class="badge">9</div>
+        </a> </li>
+      <li class="li-no fl w56"> <a href="Message.html" class="nav-a" id="message" title="消息">
+        <div class="ic f24 lh46"></div>
+        <div class="badge">99+</div>
+        </a> </li>
+      <li class="li-no fl w56">
+        <div href="" class="nav-a" id="account">
+          <div class="ic f24 lh46"><img src="images/img-wexin-profile.JPG" style="width:32px;border-radius:4px;margin-top:5px;" alt=""></div>
+          <ul class="add-ul f14">
+            <li class="li-no"> <a href="Settings-Account.html" class="add-li-a"><span class="ic f20"></span> 系统设置</a> </li>
+            <li class="li-no"> <a href="" class="add-li-a"><span class="ic f20"></span> 使用帮助</a> </li>
+            <li class="li-no"> <a href="" class="add-li-a ho-red"><span class="ic f20"></span> 退出登录</a> </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="content">
+  <section>
+    <div>
+      <div class="tab fl cb ta-c cu-po bd-3 bg-w p816"><span class="ic f24 mr4"></span>今日待办<span class="bold">10</span></div>
+      <div class="tab fl p816 ml16 c2 ho-cb cu-po"><span class="ic f24 mr4"></span>今日完成<span>8</span></div>
+      <div id="add-todo" class="fl p816 c2 ho-cb cu-po"><span class="ic f24 mr4"></span>新增待办</div>
+      <div id="manage-alltodo" class="fr p816 c2  ho-cb cu-po"><span class="ic f24 mr4"></span>管理所有待办</div>
+    </div>
+    <div class="card1 clear">
+      <div class="lh30 bold c2">
+        <div class="w300 fl pl30">关联事项</div>
+        <div class="w120 fl">待办类型</div>
+        <div class="w120 fl">关联成员</div>
+        <div class="w136 fl">开始日期</div>
+        <div class="w524 fl">代办内容</div>
+        <div class="clear"></div>
+      </div>
+      <div class="todotable-wrapper ovy-a Scrollable" style="height: 160px;">
+        <table id="table-todo" class="bdcl ta-l f14 clear cu-de ovy-a po-r w100p">
+          <tr>
+            <td colspan="5"><div class="clear hidden" id="todoListempty">
+                <div class="ic ta-c f96 c-c"></div>
+                <p class="c3 ta-c f18">没有待办</p>
+              </div></td>
+          </tr>
+          <tr class="h32 c2" style="height:0">
+            <th class="w300 pl30"></th>
+            <th class="w120"></th>
+            <th class="w120"></th>
+            <th class="w136"></th>
+            <th class="w524"></th>
+          </tr>
+          <tr class="h32 ho-ec">
+            <td class="pl30">百度时代网络技术有限公司1</td>
+            <td>公司</td>
+            <td>朱荷花</td>
+            <td>2017-03-18</td>
+            <td>询问下合同事宜</td>
+          </tr>
+          <tr class="h32 ho-ec selected-bg">
+            <td class="pl30 finishedtodo-mark">百度时代网络技术有限公司2</td>
+            <td>公司</td>
+            <td>朱荷花</td>
+            <td>2017-03-18</td>
+            <td>询问下合同事宜</td>
+          </tr>
+          <tr class="h32 ho-ec">
+            <td class="pl30 finishedtodo-mark">百度时代网络技术有限公司3</td>
+            <td>公司</td>
+            <td>朱荷花</td>
+            <td>2017-03-18</td>
+            <td>询问下合同事宜</td>
+          </tr>
+          <tr class="h32 ho-ec">
+            <td class="pl30 finishedtodo-mark">百度时代网络技术有限公司4</td>
+            <td>公司</td>
+            <td>朱荷花</td>
+            <td>2017-03-18</td>
+            <td>询问下合同事宜</td>
+          </tr>
+          <tr class="h32 ho-ec">
+            <td class="pl30">百度时代网络技术有限公司5</td>
+            <td>公司</td>
+            <td>朱荷花</td>
+            <td>2017-03-18</td>
+            <td>询问下合同事宜</td>
+          </tr>
+          <tr class="h32 ho-ec">
+            <td class="pl30 finishedtodo-mark finishedtodo-mark">百度时代网络技术有限公司6</td>
+            <td>公司</td>
+            <td>朱荷花</td>
+            <td>2017-03-18</td>
+            <td>询问下合同事宜</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+  <section id="todoDetail-wrapper" class="mt16 hidden">
+    <div></div>
+    <div class="c2 p816"><a href="" class="a cb f16"><span class="ic f24 mr4"></span>百度时代网路技术有限公司</a><span class="cw bdrs2 bg-b p0-4 ml16">签约谈判</span><span class="ml16"><span class="ic f18 mr4 cf6"></span>重要客户</span><span class="ml16">刘达文</span><span class="ml16">2017-03-01 15:32</span><span class="ml16">手工录入</span></div>
+    <div class="po-r">
+      <div class="fl w424 p816 card1" style="width:416px;">
+        <h3 class="c3e mb8"><span class="ic f24 mr4 fw-n"></span>待办</h3>
+        <div id="current-todo" class="p816 bg-f2"><!--待完成待办-->
+          <h3 class="mb8 f15 c1">当前待办</h3>
+          <p>
+            <input id="noteType_1" type="radio" name="noteType" checked="" value="1">
+            <label for="noteType_1">电话</label>
+            <input id="noteType_2" type="radio" name="noteType" value="2">
+            <label for="noteType_2">拜访</label>
+            <input id="noteType_3" type="radio" name="noteType" value="3">
+            <label for="noteType_3">其它</label>
+            <input id="noteType_4" type="radio" name="noteType" value="4">
+            <label for="noteType_4">无效沟通</label>
+          </p>
+          <textarea name="" id="" class="w360 h64 mt8 p0-4" placeholder="*请输入备注内容"></textarea>
+          <div><span id="btn-finishtodo" class="fr bg-b cw bdrs2 p816 cu-po ho-1f mt8"><span class="ic f18"></span>完成待办</span>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div id="finished-todo" class="hidden p816"><!--已完成待办-->
+          <h3 class="mb8 f15 c1">当前待办</h3>
+          <div class="ta-c f16"><span class="c-gr p816 mt8"><span class="ic f32"></span>已完成</span>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div id="new-todo" class="p816 bg-f2 mt16 mb8"><!--新增待办-->
+          <h3 class="f15 c1">新增待办</h3>
+          <div class="p8-0"><span class="d-ib c2 w72">关联事项:</span><span>百度时代网路技术有限公司</span></div>
+          <div class="p8-0"><span class="d-ib c2 w72">开始日期:</span>
+            <input type="text" class="h32 w262 p0-4">
+          </div>
+          <div class="p8-0"><span class="d-ib c2 w72 fl">代办内容:</span>
+            <textarea name="" id="" class="fl w262 h64 p0-4"></textarea>
+            <div class="clear"></div>
+          </div>
+          <div><span class="fr bg-b cw bdrs2 p816 cu-po ho-1f mt8"><span class="ic f18"></span>新增待办</span>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+      <div class="fl w424 p816 card1 ml24" style="width:416px;">
+        <h3 class="c3e mb16"><span class="ic f24 mr4 fw-n"></span>联系人</h3>
+        <!--隐藏联系人中内容为空的字段-->
+        <div class="lh24 mb8">
+          <h3 class="f15">联系人1</h3>
+          <div><span class="d-ib w60 c2">姓名：</span>罗总<span class="f12 ml16 red">主联系人</span> </div>
+          <div><span class="d-ib w60 c2">性别：</span>男</div>
+          <div><span class="d-ib w60 c2">职位：</span>投资人</div>
+          <div><span class="d-ib w60 c2">状态：</span>在职</div>
+          <div><span class="d-ib w60 c2">电话：</span>13902317323</div>
+          <div><span class="d-ib w60 c2">手机：</span></div>
+          <div><span class="d-ib w60 c2">地址：</span>深圳南山区深圳市软件产业基地(学府路)5E2楼</div>
+          <div><span class="d-ib w60 c2">邮箱：</span></div>
+          <div><span class="d-ib w60 c2">QQ ：</span></div>
+          <div><span class="d-ib w60 c2">微信：</span></div>
+          <div><span class="d-ib w60 c2">备注：</span></div>
+        </div>
+        <div class="lh24 mb8">
+          <h3 class="f15">联系人2</h3>
+          <div><span class="d-ib w60 c2">姓名：</span>罗总<span class="f12 ml16 red">主联系人</span> </div>
+          <div><span class="d-ib w60 c2">性别：</span>男</div>
+          <div><span class="d-ib w60 c2">职位：</span>投资人</div>
+          <div><span class="d-ib w60 c2">状态：</span>在职</div>
+          <div><span class="d-ib w60 c2">电话：</span>13902317323</div>
+          <div><span class="d-ib w60 c2">手机：</span></div>
+          <div><span class="d-ib w60 c2">地址：</span>深圳南山区深圳市软件产业基地(学府路)5E2楼</div>
+          <div><span class="d-ib w60 c2">邮箱：</span></div>
+          <div><span class="d-ib w60 c2">QQ ：</span></div>
+          <div><span class="d-ib w60 c2">微信：</span></div>
+          <div><span class="d-ib w60 c2">备注：</span></div>
+        </div>
+      </div>
+      <div class="fl p816 card1 ml24" style="width:320px;line-height:100%">
+        <h3 class="c3e mb16"><span class="ic f24 mr4 fw-n"></span>备注</h3>
+        <div class="c1 p816 lh30 bdt1">
+          <div class="lh24"> <span class="phone"></span>确认合同情况    以及职位的细节问题      JD已经发过来了</div>
+          <div class="fr c3 f12">输入者：熊佳欢<span class="ml16">2017-03-09</span><span class="ml8">16:39:55</span></div>
+          <div class="clear"></div>
+        </div>
+        <div class="c1 p816 lh30  bdt1">
+          <div class="lh24"> <span class="phone"></span>发合同给张辰          郑重与技术部门同事      拟合同      zhengzhong@akana. com. cn;      baixiangchao@akana. com. cn</div>
+          <div class="fr c3 f12">输入者：熊佳欢<span class="ml16">2017-03-08</span><span class="ml8">09:32:48</span></div>
+          <div class="clear"></div>
+        </div>
+        <div class="c1 p816 lh30 bdt1">
+          <div class="lh24"> <span class="visit"></span>面见了LP      创始人    碰了下产品经理与设计的岗位      想大量看一批人      自己有自己的测评机制      合适可以很快入职</div>
+          <div class="fr c3 f12">输入者：熊佳欢<span class="ml16">2017-03-07</span><span class="ml8">18:18:06</span></div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </section>
+</div>
+<!--新增待办弹窗-->
+<div id="popup-addtodo" class="hidden po-f bg-f2 w588 l50p card5-nbg t50p f14 z200 c2 Scrollable" style="margin:-220px 0 0 -295px;">
+  <h4 class="card-header  po-r z50"><span class="ic f24 fw-n pr4"></span>新增待办</h4>
+  <div id="container" class="ovy-a ml64">
+    <div class="pt16 pb16">
+      <div class="p816 po-r"> <span class="d-ib w104 c2">开始时间：</span>
+        <input type="text" class="datepicker-here w300 pl24 h32" data-timepicker="true" data-date-format="yyyy-mm-dd">
+      </div>
+      <div class="p816"> <span class="d-ib w104 c2">关联事项：</span>
+        <select name="" id="selectType" class="w66">
+          <option>公司</option>
+          <option>人才</option>
+          <option>职位</option>
+        </select>
+        <script>
+$('#selectType').select2({minimumResultsForSearch:Infinity});//选择关联事项实例化
+$('#selectType').on('select2:select',function(){
+	var type = $(this).val();
+	switch(type) {
+		case '人才':
+		$('.wrapper').hide();
+		$('#selectTal').parent().show();
+		break;
+		case '公司':
+		$('.wrapper').hide();
+		$('#selectCom').parent().show();
+		break;
+		case '职位':
+		$('.wrapper').hide();
+		$('#selectPos').parent().show();
+		break;
+		};
+	});//显示隐藏后面的选择
+</script> 
+        <span class="wrapper">
+        <select name="" id="selectTal" class="w220">
+          <option></option>
+          <option >王精英</option>
+          <option >王二英</option>
+          <option >王三英</option>
+        </select>
+        </span> 
+        <script>
+$('#selectTal').select2({placeholder:''});//选择人才实例化
+</script> 
+        <span class="wrapper hidden">
+        <select name="" id="selectCom" class=" w220">
+          <option></option>
+          <option >深圳市A公司</option>
+          <option >深圳市B公司</option>
+          <option >深圳市C公司</option>
+        </select>
+        </span> 
+        <script>
+$('#selectCom').select2({placeholder:''});//选择公司实例化
+</script> 
+        <span class="wrapper hidden">
+        <select name="" id="selectPos" class=" w220">
+          <option></option>
+          <option>Java高级开发工程师</option>
+          <option>职位2</option>
+          <option>职位3</option>
+        </select>
+        <script>
+$('#selectPos').select2({placeholder:''});//选择职位实例化
+</script> 
+        </span> </div>
+      <div class="p816"> <span class="d-ib w104 c2">关联人员：</span>
+        <input type="text" class="w300 p8 h32">
+      </div>
+      <div class="p816"> <span class="d-ib w104 c2">待办内容：</span>
+        <input type="text" class="w300 p8 h32">
+      </div>
+    </div>
+  </div>
+  <div class="mb8"> <span class="fr p16-24"> <span class="pop-cancel ho-u c2 cu-po">取消</span> <span class="pop-confirm ml24 bg-b p4-8 bdrs2 cu-po ho-1f cw">确认新增</span> </span>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--所有待办弹窗-->
+<div id="popup-alltodo" class="hidden card5 p24 po-f z200 h70v l50p t50p" style="width:1200px;height:500px;margin:-250px 0 0 -600px;"> <span id="btn-close-popup-alltodo" class="fr ic f48 red po-a cu-po" style="right:8px;top:8px;"></span>
+  <h3 class="c1">所有待办<span class="cb ml8">132</span><span class="fw-n f16 c2 ml24">未完成<span class="red ml4">56</span><span class="p0-4 c-c">/</span>已完成<span class="c-gr ml4">76</span></span><span class="ml24 f14 fw-n c2"><span class="ic f24 mr4"></span>清空已完成待办</span></h3>
+  <div class="bold c2 f14 lh30 mt24 bg-f2">
+    <div class="fl w300 pl30">关联事项</div>
+    <div class="w120 fl">待办类型</div>
+    <div class="w120 fl">关联成员</div>
+    <div class="w136 fl">开始日期</div>
+    <div class="w300 fl">代办内容</div>
+    <div class="w120 fl">操作</div>
+    <div class="clear"></div>
+  </div>
+  <div class="table-wrapper ovy-a Scrollable" style="height:360px">
+    <table class="bdcl ta-l f14 cu-de ovy-a po-r">
+      <tr class="h32 c2" style="height:0">
+        <th class="w300 pl30"></th>
+        <th class="w120"></th>
+        <th class="w120"></th>
+        <th class="w136"></th>
+        <th class="w300"></th>
+        <th class="w178"></th>
+      </tr>
+      <tr class="h32 ho-ec bdt1">
+        <td class="pl30">百度时代网络技术有限公司5</td>
+        <td>公司</td>
+        <td>朱荷花</td>
+        <td>2017-03-18</td>
+        <td><div class="w280 ol">询问下合同事宜</div></td>
+        <td><span title="改为明天" class="totomorrow ic f24 c2 ho-cb cu-po mr16"></span><span title=" 改为下周一" class="tonextweek ic f24 c2 ho-cb cu-po mr16"></span><span title="删除待办" class="deletetodo ic f24 c2 ho-cr cu-po  mr16"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="h32 ho-ec bdt1">
+        <td class="pl30">百度时代网络技术有限公司5</td>
+        <td>公司</td>
+        <td>朱荷花</td>
+        <td>2017-03-18</td>
+        <td><div class="w280 ol">询问下合同事宜</div></td>
+        <td><span title="改为明天" class="totomorrow ic f24 c2 ho-cb cu-po mr16"></span><span title=" 改为下周一" class="tonextweek ic f24 c2 ho-cb cu-po mr16"></span><span title="删除待办" class="deletetodo ic f24 c2 ho-cr cu-po  mr16"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="h32 ho-ec bdt1">
+        <td class="pl30">百度时代网络技术有限公司5</td>
+        <td>公司</td>
+        <td>朱荷花</td>
+        <td>2017-03-18</td>
+        <td><div class="w280 ol">询问下合同事宜</div></td>
+        <td><span title="改为明天" class="totomorrow ic f24 c2 ho-cb cu-po mr16"></span><span title=" 改为下周一" class="tonextweek ic f24 c2 ho-cb cu-po mr16"></span><span title="删除待办" class="deletetodo ic f24 c2 ho-cr cu-po  mr16"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="h32 ho-ec bdt1">
+        <td class="pl30">百度时代网络技术有限公司5</td>
+        <td>公司</td>
+        <td>朱荷花</td>
+        <td>2017-03-18</td>
+        <td><div class="w280 ol">询问下合同事宜</div></td>
+        <td><span title="改为明天" class="totomorrow ic f24 c2 ho-cb cu-po mr16"></span><span title=" 改为下周一" class="tonextweek ic f24 c2 ho-cb cu-po mr16"></span><span title="删除待办" class="deletetodo ic f24 c2 ho-cr cu-po  mr16"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="h32 ho-ec bdt1">
+        <td class="pl30">百度时代网络技术有限公司5</td>
+        <td>公司</td>
+        <td>朱荷花</td>
+        <td>2017-03-18</td>
+        <td><div class="w280 ol">询问下合同事宜</div></td>
+        <td><span title="改为明天" class="totomorrow ic f24 c2 ho-cb cu-po mr16"></span><span title=" 改为下周一" class="tonextweek ic f24 c2 ho-cb cu-po mr16"></span><span title="删除待办" class="deletetodo ic f24 c2 ho-cr cu-po  mr16"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="h32 ho-ec bdt1">
+        <td class="pl30">百度时代网络技术有限公司5</td>
+        <td>公司</td>
+        <td>朱荷花</td>
+        <td>2017-03-18</td>
+        <td><div class="w280 ol">询问下合同事宜</div></td>
+        <td><span title="改为明天" class="totomorrow ic f24 c2 ho-cb cu-po mr16"></span><span title=" 改为下周一" class="tonextweek ic f24 c2 ho-cb cu-po mr16"></span><span title="删除待办" class="deletetodo ic f24 c2 ho-cr cu-po  mr16"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="h32 ho-ec bdt1">
+        <td class="pl30">百度时代网络技术有限公司5</td>
+        <td>公司</td>
+        <td>朱荷花</td>
+        <td>2017-03-18</td>
+        <td><div class="w280 ol">询问下合同事宜</div></td>
+        <td><span title="改为明天" class="totomorrow ic f24 c2 ho-cb cu-po mr16"></span><span title=" 改为下周一" class="tonextweek ic f24 c2 ho-cb cu-po mr16"></span><span title="删除待办" class="deletetodo ic f24 c2 ho-cr cu-po  mr16"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="h32 ho-ec bdt1">
+        <td class="pl30">百度时代网络技术有限公司5</td>
+        <td>公司</td>
+        <td>朱荷花</td>
+        <td>2017-03-18</td>
+        <td><div class="w280 ol">询问下合同事宜</div></td>
+        <td><span title="改为明天" class="totomorrow ic f24 c2 ho-cb cu-po mr16"></span><span title=" 改为下周一" class="tonextweek ic f24 c2 ho-cb cu-po mr16"></span><span title="删除待办" class="deletetodo ic f24 c2 ho-cr cu-po  mr16"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="h32 ho-ec bdt1">
+        <td class="pl30 finishedtodo-mark">百度时代网络技术有限公司5</td>
+        <td>公司</td>
+        <td>朱荷花</td>
+        <td>2017-03-18</td>
+        <td><div class="w280 ol">询问下合同事宜</div></td>
+        <td><span title="删除待办" class="deletetodo ic f24 c2 ho-cr cu-po  mr16"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="h32 ho-ec bdt1">
+        <td class="pl30 finishedtodo-mark">百度时代网络技术有限公司5</td>
+        <td>公司</td>
+        <td>朱荷花</td>
+        <td>2017-03-18</td>
+        <td><div class="w280 ol">询问下合同事宜</div></td>
+        <td><span title="删除待办" class="deletetodo ic f24 c2 ho-cr cu-po  mr16"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="h32 ho-ec bdt1">
+        <td class="pl30 finishedtodo-mark">百度时代网络技术有限公司5</td>
+        <td>公司</td>
+        <td>朱荷花</td>
+        <td>2017-03-18</td>
+        <td><div class="w280 ol">询问下合同事宜</div></td>
+        <td><span title="删除待办" class="deletetodo ic f24 c2 ho-cr cu-po  mr16"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="h32 ho-ec bdt1">
+        <td class="pl30 finishedtodo-mark">百度时代网络技术有限公司5</td>
+        <td>公司</td>
+        <td>朱荷花</td>
+        <td>2017-03-18</td>
+        <td><div class="w280 ol">询问下合同事宜</div></td>
+        <td><span title="删除待办" class="deletetodo ic f24 c2 ho-cr cu-po  mr16"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<!--弹框背景-->
+<div id="popbg" class="hidden bg-pop po-f h100p w100p t0 z150"></div>
+</body>
+<script>
+
+$(document).on('click','#table-todo tr:not(:first)',function(){////单击待办列表tr（首行除外）事件
+	var finished = $(this).children(':first').hasClass('finishedtodo-mark');//判断是否已经完成（第一个子元素td是否有完成标记mark）
+	if (finished){
+		$('#finished-todo').show();//显示已完成
+		$('#current-todo').hide();//隐藏待完成
+	} else {
+		$('#finished-todo').hide();//隐藏已完成
+		$('#current-todo').show();//显示待完成
+	};
+	$('#table-todo tr.selected-bg').removeClass('selected-bg').addClass('ho-ec');//取消其它已选中的tr背景
+	$(this).addClass('selected-bg').removeClass('ho-ec');//当前单击行tr添加选中背景
+	//查出相关待办数据更新section#todoDetail-wrapper的内容
+});	
+	
+	
+
+$(document).on('click','#btn-finishtodo',function(){//单击完成待办按钮
+	$('tr.selected-bg').children(':first').addClass('finishedtodo-mark');//给当前待办行添加完成标记
+	$('#current-todo').hide();//隐藏当前待办
+	$('#finished-todo').show();//显示已完成
+	//追加一条内容到最右侧备注
+});	
+
+	
+	
+	
+$(document).on('click','.tab',function(){//单击顶端tab：今日待办 & 今日完成
+	$(this).siblings('.tab').removeClass('bg-w cb bd-3').addClass('c2 ho-cb');//移除其它选中tab状态
+	$(this).removeClass('c2 ho-cb').addClass('bg-w cb bd-3');//添加当前选中状态
+});	
+	
+	
+	
+	
+/*新增待办button*/
+$('#add-todo').on('click',function(){
+	$('#popup-addtodo,#popbg').velocity("fadeIn",200);
+	});	
+/*新增待办弹窗内操作*/
+$('.pop-cancel').on('click',function(){
+	$('#popup-addtodo,#popbg').velocity("fadeOut",150);
+	});	
+$('.pop-confirm').on('click',function(){
+	$('#popup-addtodo,#popbg').velocity("fadeOut",150);
+	toast('已新增待办');
+	});	
+
+	
+	
+	
+$('#manage-alltodo').on('click',function(){
+	$('#popup-alltodo,#popbg').velocity('fadeIn',150);
+});	
+$('#btn-close-popup-alltodo').on('click',function(){
+	$('#popup-alltodo,#popbg').velocity('fadeOut',200);
+});	
+	</script>
+<script>
+</script>
+<script>
+/*----弹窗滚轮到顶控制----*/
+$(document).on('DOMMouseScroll mousewheel','.Scrollable',
+							 function(ev) {
+    var $this = $(this),
+        scrollTop = this.scrollTop,
+        scrollHeight = this.scrollHeight,
+        height = $this.height(),
+        delta = (ev.type == 'DOMMouseScroll' ?
+            ev.originalEvent.detail * -40 :
+            ev.originalEvent.wheelDelta),
+        up = delta > 0;
+
+    var prevent = function() {
+        ev.stopPropagation();
+        ev.preventDefault();
+        ev.returnValue = false;
+        return false;
+    }
+
+    if (!up && -delta > scrollHeight - height - scrollTop) {
+        // Scrolling down, but this will take us past the bottom.
+        $this.scrollTop(scrollHeight);
+
+        return prevent();
+    } else if (up && delta > scrollTop) {
+        // Scrolling up, but this will take us past the top.
+        $this.scrollTop(0);
+        return prevent();
+    }
+});
+</script>
+<script>
+/*--选中待办--*/
+$("#todo").addClass("nav-a-selected");
+</script>
+</html>
